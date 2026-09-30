@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matematica: ripasso guidato</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .n{border-bottom:2px solid currentColor;padding:0 .3em}.fr .d{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="./" style="color:#fff;font-size:.85rem">← Torna a Matematica</a></p><h1>Matematica: ripasso guidato</h1><p>Equazioni, scomposizioni, 2° grado · studia da solo, un passo alla volta</p></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Lineari</button>
+<button data-t="u2">2 Scomposizioni</button>
+<button data-t="u3">3 Eq. 2° grado</button>
+<button data-t="u4">4 Sistemi</button>
+<button data-t="u5">5 Diseq. 2° grado</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Gli argomenti sono <b>5</b>. Studiane <b>uno al giorno</b>. Ogni unità ha sempre lo stesso ordine, così ti abitui.</p>
+<div class="box blu"><h3>I 5 passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Ricetta</b>: leggi i passaggi. Sono sempre gli stessi, come una ricetta di cucina.</div></div>
+<div class="step"><b class="n">2</b><div><b>Esempi svolti</b>: rifalli a penna su un foglio senza guardare.</div></div>
+<div class="step"><b class="n">3</b><div><b>Errori</b>: leggi gli errori più comuni. Sono quelli che fanno perdere punti.</div></div>
+<div class="step"><b class="n">4</b><div><b>Allenati</b>: esercizi sempre nuovi. Fai i calcoli <b>su un foglio</b>, poi scegli la risposta. Se sbagli leggi i passaggi. Vai avanti finché fai <b>5 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">5</b><div><b>Quiz di teoria</b>: 5-6 domande brevi sulle regole.</div></div></div>
+<div class="box gia"><h3>Piano suggerito</h3><ul><li>Giorno 1: unità 1 (lineari) · Giorno 2: unità 2 (scomposizioni)</li><li>Giorno 3: unità 3 (2° grado) · Giorno 4: unità 4 (sistemi)</li><li>Giorno 5: unità 5 (disequazioni) · Giorno 6: <b>Prova finale</b> e <b>Orale</b></li></ul>
+<p class="note">Bastano 30-40 minuti al giorno. Fai una pausa a metà.</p></div>
+<div class="box ver"><h3>Consigli</h3><ul><li>Carta e penna sempre pronte: la matematica si impara con la mano.</li><li>Se sbagli non è un problema: leggi i passaggi e riprova con un altro esercizio.</li><li>Prima dell'interrogazione: leggi il <b>Formulario</b> e ripeti a voce le risposte della scheda <b>Orale</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+</main>
+<script>
+/* ========== UTILITÀ ========== */
+const MIN='−';
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+const gcd=(a,b)=>b?gcd(b,a%b):Math.abs(a);
+const lcm=(a,b)=>Math.abs(a*b)/gcd(a,b);
+const N=n=>n<0?MIN+(-n):String(n);
+const SUP={2:'²',3:'³'};
+function poly(cs){
+  const deg=cs.length-1;let out='';
+  cs.forEach((c,i)=>{
+    if(c===0)return;const p=deg-i,a=Math.abs(c);
+    const body=(a===1&&p>0?'':String(a))+(p>0?'x'+(SUP[p]||''):'');
+    if(out==='')out=(c<0?MIN:'')+body;else out+=(c<0?' '+MIN+' ':' + ')+body;
+  });
+  return out||'0';
+}
+const lin=(a,b)=>poly([a,b]);
+const quad=(a,b,c)=>poly([a,b,c]);
+const st=(n,s='')=>n===0?'':' '+(n<0?MIN:'+')+' '+((Math.abs(n)===1&&s)?'':Math.abs(n))+s;
+const fx=r=>lin(1,-r);
+const P=s=>'('+s+')';
+const F=(n,d)=>`<span class="fr"><span class="n">${n}</span><span class="d">${d}</span></span>`;
+const fr=(n,d)=>Math.abs(d)===1?N(n/d):F(N(n),N(d));
+const evalP=(cs,x)=>cs.reduce((s,c)=>s*x+c,0);
+const near=(a,b)=>Math.abs(a-b)<1e-9;
+const compOp=o=>({'>':'<','<':'>','≥':'≤','≤':'≥'}[o]);
+const inclOp=o=>({'>':'≥','<':'≤','≥':'>','≤':'<'}[o]);
+const holds=(v,o)=>o==='>'?v>1e-12:o==='<'?v<-1e-12:o==='≥'?v>=-1e-12:v<=1e-12;
+
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,3)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,ok,tag)=>({q,...mkOpts(correct,wrongs),steps,ok,tag});
+
+/* ========== SEGNI E INTERVALLI ========== */
+function fmtSol(ints){
+  if(!ints.length)return 'nessuna soluzione';
+  if(ints.length===1&&ints[0].lo===-Infinity&&ints[0].hi===Infinity)return 'sempre vera (per ogni x)';
+  if(ints.length===2&&ints[0].lo===-Infinity&&ints[1].hi===Infinity&&ints[0].hi===ints[1].lo&&!ints[0].hiC&&!ints[1].loC)return 'x ≠ '+N(ints[0].hi);
+  return ints.map(i=>{
+    if(i.lo===i.hi)return 'x = '+N(i.lo);
+    if(i.lo===-Infinity)return 'x '+(i.hiC?'≤':'<')+' '+N(i.hi);
+    if(i.hi===Infinity)return 'x '+(i.loC?'≥':'>')+' '+N(i.lo);
+    return N(i.lo)+' '+(i.loC?'≤':'<')+' x '+(i.hiC?'≤':'<')+' '+N(i.hi);
+  }).join(' oppure ');
+}
+/* fs: fattori (x - r); den:true se stanno al denominatore. k = segno costante. */
+function solveSign(fs,k,op){
+  const pts=[...new Set(fs.map(f=>f.r))].sort((a,b)=>a-b);
+  const test=x=>{
+    let s=k,zero=false,undef=false;
+    for(const f of fs){const d=x-f.r;if(d===0){if(f.den)undef=true;else zero=true}else if(d<0)s=-s}
+    if(undef)return false;
+    if(zero)return op==='≥'||op==='≤';
+    return (op==='>'||op==='≥')?s>0:s<0;
+  };
+  const cells=[];
+  for(let i=0;i<=pts.length;i++){
+    let x=i===0?(pts.length?pts[0]-1:0):(i===pts.length?pts[i-1]+1:(pts[i-1]+pts[i])/2);
+    cells.push(test(x));
+    if(i<pts.length)cells.push(test(pts[i]));
+  }
+  const ints=[];let i=0;
+  while(i<cells.length){
+    if(!cells[i]){i++;continue}
+    let j=i;while(j+1<cells.length&&cells[j+1])j++;
+    let lo,loC,hi,hiC;
+    if(i%2===1){lo=pts[(i-1)/2];loC=true}else{const ii=i/2;lo=ii===0?-Infinity:pts[ii-1];loC=false}
+    if(j%2===1){hi=pts[(j-1)/2];hiC=true}else{const jj=j/2;hi=jj===pts.length?Infinity:pts[jj];hiC=false}
+    ints.push({lo,hi,loC,hiC});i=j+1;
+  }
+  return {ints,cells,pts,text:fmtSol(ints)};
+}
+const inInts=(x,ints)=>ints.some(i=>(x>i.lo||(i.loC&&x===i.lo))&&(x<i.hi||(i.hiC&&x===i.hi)));
+
+function signTable(fs,op){
+  const sol=solveSign(fs,1,op),pts=sol.pts;
+  const uniq=pts.map(r=>({r,den:fs.some(f=>f.r===r&&f.den),m:fs.filter(f=>f.r===r).length}));
+  const nC=2*pts.length+1;
+  const sgn=(u,j,idx)=>{ // segno del fattore u nella cella idx
+    const isPt=idx%2===1,i=isPt?(idx-1)/2:idx/2;
+    if(isPt&&j===i)return u.den?'∄':'0';
+    const above=isPt?(j<i):(j<i);
+    return above?'+':(u.m%2===1?'−':'+');
+  };
+  let h='<div class="tblwrap"><table class="sg"><tr><th></th>';
+  for(let c=0;c<nC;c++)h+=c%2===1?`<th class="pt">${N(pts[(c-1)/2])}</th>`:'<th class="iv"></th>';
+  h+='</tr>';
+  uniq.forEach((u,j)=>{
+    h+=`<tr><td class="lab">${u.den?'Denominatore':'Numeratore'}<br>${u.m>1?'('+fx(u.r)+')²':fx(u.r)} ${u.den?'':''}</td>`;
+    for(let c=0;c<nC;c++)h+=`<td>${sgn(u,j,c)}</td>`;
+    h+='</tr>';
+  });
+  h+='<tr class="res"><td class="lab">Risultato</td>';
+  for(let c=0;c<nC;c++){
+    let neg=0,zero=false,und=false;
+    uniq.forEach((u,j)=>{const s=sgn(u,j,c);if(s==='0')zero=true;else if(s==='∄')und=true;else if(s==='−')neg++});
+    const v=und?'∄':zero?'0':(neg%2?'−':'+');
+    h+=`<td class="${sol.cells[c]?'yes':''}">${v}</td>`;
+  }
+  h+='</tr></table></div>';
+  return {html:h,sol};
+}
+function stepsIneq(fs,op,numHtml){
+  const nums=[...new Set(fs.filter(f=>!f.den).map(f=>f.r))],dens=[...new Set(fs.filter(f=>f.den).map(f=>f.r))];
+  const t=signTable(fs,op);
+  const want=(op==='>'||op==='≥')?'positivo (+)':'negativo (−)';
+  let h=numHtml||'';
+  if(nums.length)h+=`<p>Numeratore = 0 per: ${nums.map(r=>'x = '+N(r)).join(' ; ')}</p>`;
+  if(dens.length)h+=`<p>Denominatore = 0 per: ${dens.map(r=>'x = '+N(r)).join(' ; ')} <b>(mai permesso: pallino vuoto)</b></p>`;
+  h+=`<p>Tabella dei segni (le colonne strette sono i punti):</p>${t.html}<p>Cerco dove il risultato è <b>${want}</b>${(op==='≥'||op==='≤')?' oppure zero':''}. Le colonne evidenziate sono la soluzione:</p><p class="m"><b>${t.sol.text}</b></p>`;
+  return h;
+}
+/* esercizio disequazione generico */
+function ineqEx(qHtml,fs,op,g,pre,tag){
+  const sol=solveSign(fs,1,op);
+  const neg=fs.map(f=>({...f,r:-f.r}));
+  const wrongs=[solveSign(fs,1,compOp(op)).text,solveSign(fs,1,inclOp(op)).text,solveSign(neg,1,op).text,solveSign(fs,1,compOp(inclOp(op))).text];
+  const ok=()=>{
+    for(let x=-14;x<=14;x+=0.5){
+      const dn=fs.some(f=>f.den&&x===f.r);
+      const pred=dn?false:holds(g(x),op);
+      if(pred!==inInts(x,sol.ints))return false;
+    }
+    return true;
+  };
+  return mkEx(qHtml,sol.text,wrongs,stepsIneq(fs,op,pre),ok,tag);
+}
+
+/* ========== EQUAZIONI DI 2° GRADO: passaggi ========== */
+function fmtRoots(list){
+  const u=[...new Set(list)].sort((a,b)=>a-b);
+  if(!u.length)return 'nessuna soluzione reale';
+  if(u.length===1)return 'x = '+N(u[0]);
+  return u.map(r=>'x = '+N(r)).join(' oppure ');
+}
+function quadRoots(a,b,c){
+  const D=b*b-4*a*c;if(D<0)return [];
+  const s=Math.sqrt(D);return [(-b-s)/(2*a),(-b+s)/(2*a)];
+}
+function quadSteps(a,b,c){
+  const D=b*b-4*a*c;
+  let h=`<p>Forma normale: <b>${quad(a,b,c)} = 0</b>, con a = ${N(a)}, b = ${N(b)}, c = ${N(c)}</p>`;
+  h+=`<p>Calcolo Δ = b² − 4·a·c = (${N(b)})² − 4·(${N(a)})·(${N(c)}) = <b>${D}</b></p>`;
+  if(D<0)h+='<p>Δ è negativo: <b>nessuna soluzione reale</b>.</p>';
+  else if(D===0)h+=`<p>Δ = 0: due soluzioni uguali. x = ${F(N(-b),N(2*a))} = <b>${N(-b/(2*a))}</b></p>`;
+  else{
+    const s=Math.sqrt(D),r=quadRoots(a,b,c);
+    h+=`<p>Δ è positivo: due soluzioni. √${D} = ${s}</p><p class="m">x = ${F(N(-b)+' ± '+s,N(2*a))}</p><p class="m">x₁ = ${F(N(-b)+' − '+s,N(2*a))} = <b>${N(r[0])}</b> &nbsp;&nbsp; x₂ = ${F(N(-b)+' + '+s,N(2*a))} = <b>${N(r[1])}</b></p>`;
+  }
+  return h;
+}
+function rootWrongs(r1,r2){
+  return [[-r1,-r2],[r1,-r2],[-r1,r2],[r1+1,r2+1],[r1-1,r2-1]].map(fmtRoots);
+}
+
+const dv=(B,A,x0)=>Math.abs(A)===1?`<b>${N(x0)}</b>`+(A===-1?' (dividere per −1 vuol dire cambiare segno)':''):`${F(N(B),N(A))} = <b>${N(x0)}</b>`;
+/* ========== UNITÀ 1: EQUAZIONI E DISEQUAZIONI LINEARI ========== */
+function exEq1(){
+  const a=rnd(2,6),c=rnd(-3,4);if(a===c)return exEq1();
+  const x0=rnd(-6,6),b=rnd(-9,9),d=b+(a-c)*x0,A=a-c,B=d-b;
+  const q=`Risolvi: <b>${lin(a,b)} = ${lin(c,d)}</b>`;
+  const steps=`<p>1. Porto le x a sinistra e i numeri a destra. Chi cambia lato cambia segno:</p><p class="m">${lin(a,0)}${st(-c,'x')} = ${N(d)}${st(-b)}</p>
+<p>2. Riduco (sommo i termini simili):</p><p class="m">${lin(A,0)} = ${N(B)}</p>
+<p>3. Divido per il numero davanti alla x:</p><p class="m">x = ${dv(B,A,x0)}</p>`;
+  const w=[-x0,x0+1,x0-1,x0+2,(d+b)%A===0?(d+b)/A:null].map(v=>v==null?null:'x = '+N(v));
+  return mkEx(q,'x = '+N(x0),w,steps,()=>near(a*x0+b,c*x0+d),'Equazione lineare');
+}
+function exEq2(){
+  const a=rnd(2,5),c=rnd(-2,4);if(a===c)return exEq2();
+  const p=pick([-5,-4,-3,-2,-1,1,2,3,4,5]),b=pick([-8,-6,-4,-3,-2,2,3,5,7]),x0=rnd(-5,5);
+  const A=a-c,d=a*p+b+A*x0;
+  const q=`Risolvi: <b>${a}(${lin(1,p)})${st(b)} = ${lin(c,d)}</b>`;
+  const steps=`<p>1. Tolgo la parentesi: moltiplico ${a} per ogni termine dentro.</p><p class="m">${lin(a,a*p)}${st(b)} = ${lin(c,d)}</p>
+<p>2. Sommo i numeri a sinistra:</p><p class="m">${lin(a,a*p+b)} = ${lin(c,d)}</p>
+<p>3. Porto le x a sinistra e i numeri a destra (cambiano segno):</p><p class="m">${lin(A,0)} = ${N(d-(a*p+b))}</p>
+<p>4. Divido per ${N(A)}:</p><p class="m">x = ${dv(d-(a*p+b),A,x0)}</p>`;
+  const w=[-x0,x0+1,x0-1,x0+2].map(v=>'x = '+N(v));
+  return mkEx(q,'x = '+N(x0),w,steps,()=>near(a*(x0+p)+b,c*x0+d),'Equazione con parentesi');
+}
+function exEq3(){
+  const m=pick([2,3,4,5]),n=pick([2,3,4,6]);
+  const x0=rnd(-5,5),s=rnd(-2,4),t=rnd(-2,4);
+  const p=m*s-x0,q2=n*t-x0,k=s+t,L=lcm(m,n),A=L/m+L/n,Bc=(L/m)*p+(L/n)*q2,B=L*k-Bc;
+  const q=`Risolvi: <b>${F(lin(1,p),m)} + ${F(lin(1,q2),n)} = ${k}</b>`;
+  const cm=L/m===1?'':L/m,cn=L/n===1?'':L/n;
+  const steps=`<p>1. Denominatore comune: m.c.m.(${m}, ${n}) = <b>${L}</b></p>
+<p>2. Moltiplico <b>tutti</b> i termini per ${L} (anche quello dopo l'uguale):</p><p class="m">${cm}(${lin(1,p)}) + ${cn}(${lin(1,q2)}) = ${L*k}</p>
+<p>3. Tolgo le parentesi e sommo:</p><p class="m">${lin(A,Bc)} = ${L*k}</p>
+<p>4. Numeri a destra (cambiano segno):</p><p class="m">${lin(A,0)} = ${N(B)}</p>
+<p>5. Divido:</p><p class="m">x = ${dv(B,A,x0)}</p>`;
+  const w=[-x0,x0+1,x0-1,x0+2].map(v=>'x = '+N(v));
+  return mkEx(q,'x = '+N(x0),w,steps,()=>near((x0+p)/m+(x0+q2)/n,k),'Equazione con frazioni');
+}
+function exEqFr(){
+  for(let tries=0;tries<200;tries++){
+    const p=rnd(-4,4),q2=rnd(-4,4),k=rnd(1,5),m=rnd(1,5);
+    if(p===q2||k===m)continue;
+    const num=k*q2-m*p,den=k-m;if(num%den!==0)continue;
+    const x0=num/den;if(x0===p||x0===q2)continue;
+    const q=`Risolvi: <b>${F(k,lin(1,-p))} = ${F(m,lin(1,-q2))}</b>`;
+    const steps=`<p>1. <b>Condizioni di esistenza</b> (il denominatore non può essere 0): x ≠ ${N(p)} e x ≠ ${N(q2)}</p>
+<p>2. Moltiplico in croce:</p><p class="m">${k}(${fx(q2)}) = ${m}(${fx(p)})</p>
+<p>3. Tolgo le parentesi:</p><p class="m">${lin(k,-k*q2)} = ${lin(m,-m*p)}</p>
+<p>4. Porto le x a sinistra, i numeri a destra:</p><p class="m">${lin(k-m,0)} = ${N(num)}</p>
+<p>5. Divido:</p><p class="m">x = ${dv(num,den,x0)}</p>
+<p>6. Controllo: ${N(x0)} è diverso da ${N(p)} e da ${N(q2)}, quindi <b>va bene</b>.</p>`;
+    const w=[-x0,x0+1,x0-1,p,'impossibile'].map(v=>typeof v==='number'?'x = '+N(v):v);
+    return mkEx(q,'x = '+N(x0),w,steps,()=>near(k/(x0-p),m/(x0-q2)),'Equazione fratta');
+  }
+}
+function exEqFr2(){
+  const p=rnd(1,6);
+  const q=`Risolvi: <b>${F('x',fx(p))} = ${F(p,fx(p))}</b>`;
+  const steps=`<p>1. <b>Condizione di esistenza</b>: x ≠ ${p} (con x = ${p} il denominatore fa 0).</p>
+<p>2. I denominatori sono uguali: li elimino.</p><p class="m">x = ${p}</p>
+<p>3. Ma x = ${p} è <b>proprio il valore escluso</b> al punto 1! Non è accettabile.</p>
+<p>Risultato: l'equazione è <b>impossibile</b> (nessuna soluzione).</p>`;
+  const w=['x = '+p,'x = 0','indeterminata (vale per ogni x)','x = '+N(-p)];
+  return mkEx(q,'impossibile (nessuna soluzione)',w,steps,()=>true,'Equazione fratta: controllo C.E.');
+}
+function exDisLin(){
+  const a=rnd(-4,5),c=rnd(-3,4);if(a===c)return exDisLin();
+  const n=rnd(-6,6),b=rnd(-8,8),d=b+(a-c)*n,A=a-c,B=d-b,op=pick(['>','<','≥','≤']);
+  const op2=A>0?op:compOp(op);
+  const q=`Risolvi: <b>${lin(a,b)} ${op} ${lin(c,d)}</b>`;
+  const fin=`x ${op2} ${N(n)}`;
+  const steps=`<p>1. Porto le x a sinistra e i numeri a destra (cambiano segno):</p><p class="m">${lin(a,0)}${st(-c,'x')} ${op} ${N(d)}${st(-b)}</p>
+<p>2. Riduco:</p><p class="m">${lin(A,0)} ${op} ${N(B)}</p>
+<p>3. Divido per ${N(A)}. ${A<0?'<b>Attenzione: è NEGATIVO, quindi il verso si gira!</b> ('+op+' diventa '+op2+')':'È positivo, il verso resta uguale.'}</p><p class="m">x ${op2} ${Math.abs(A)===1?'<b>'+N(n)+'</b>':F(N(B),N(A))+' = <b>'+N(n)+'</b>'}</p><p class="m"><b>${fin}</b></p>`;
+  const w=[`x ${compOp(op2)} ${N(n)}`,`x ${op2} ${N(-n)}`,`x ${inclOp(op2)} ${N(n)}`,`x ${compOp(op2)} ${N(-n)}`];
+  return mkEx(q,fin,w,steps,()=>{for(let x=-15;x<=15;x+=0.5){if(holds((a-c)*x+b-d,op)!==holds(x-n,op2))return false}return true},'Disequazione lineare');
+}
+function exDisFr(){
+  const a=rnd(-5,5);let b=rnd(-5,5);if(b===a)b=a+1;
+  const n=pick([1,1,2,3]),d=pick([1,1,2]),op=pick(['>','<','≥','≤']);
+  const q=`Risolvi: <b>${F(lin(n,-n*a),lin(d,-d*b))} ${op} 0</b>`;
+  const pre=`<p>La disequazione ha già 0 a destra e una sola frazione. Studio il segno di numeratore e denominatore (i numeri davanti alla x sono positivi, quindi contano solo le radici).</p>`;
+  return ineqEx(q,[{r:a},{r:b,den:true}],op,x=>(n*(x-a))/(d*(x-b)),pre,'Disequazione fratta');
+}
+
+/* ========== UNITÀ 2: SCOMPOSIZIONI ========== */
+const facStr=(k,fs)=>(k===1?'':k===-1?MIN:k)+fs.map(f=>'('+f+')').join('');
+function exFacRacc(){
+  const g=pick([1,2,3,4,5,6]),a=rnd(1,4),b=pick([-7,-5,-4,-3,-2,2,3,5,7]);
+  const cs=[g*a,g*b,0];
+  const q=`Scomponi: <b>${poly(cs)}</b>`;
+  const corr=`${g===1?'':g}x(${lin(a,b)})`;
+  const steps=`<p>Metodo: <b>raccoglimento totale</b>. Cerco cosa hanno in comune tutti i termini.</p><p>Numero in comune: ${g===1?'nessuno (1)':'<b>'+g+'</b>'}. Lettera in comune: <b>x</b> (la potenza più piccola è x).</p><p>Scrivo ${g===1?'':g}x fuori e dentro la parentesi metto quello che resta (divido ogni termine):</p><p class="m">${corr}</p>`;
+  const w=[`${g===1?'':g}(${poly([a,b,0])})`,`${g===1?'':g}x(${lin(a,-b)})`,`x(${lin(g*a,g*b)})`,`${g===1?'':g}x(${lin(a,b+1)})`];
+  return mkEx(q,corr,w,steps,()=>[-2,1,3].every(x=>near(evalP(cs,x),g*x*(a*x+b))),'Raccoglimento');
+}
+function exFacDiff(){
+  const a=pick([1,1,2,3]),b=rnd(2,9);
+  const cs=[a*a,0,-b*b];
+  const q=`Scomponi: <b>${poly(cs)}</b>`;
+  const A=a===1?'x':a+'x';
+  const corr=`(${A} − ${b})(${A} + ${b})`.replace('−',MIN);
+  const steps=`<p>Metodo: <b>differenza di quadrati</b> (due termini, c'è il MENO, tutti e due sono quadrati).</p><p>${poly([a*a,0,0])} = (${A})² e ${b*b} = ${b}²</p><p>Regola: A² − B² = (A − B)(A + B)</p><p class="m">${corr}</p>`;
+  const w=[`(${A} ${MIN} ${b})²`,`(${A} + ${b})²`,`(${A} ${MIN} ${b*b})(${A} + ${b*b})`,`${A}(x ${MIN} ${b})`];
+  return mkEx(q,corr,w,steps,()=>[-3,2,5].every(x=>near(evalP(cs,x),(a*x-b)*(a*x+b))),'Differenza di quadrati');
+}
+function exFacQuadBin(){
+  const a=pick([1,1,2,3]),b=rnd(1,6),sg=pick([1,-1]);
+  const cs=[a*a,2*a*b*sg,b*b];
+  const A=a===1?'x':a+'x',s=sg===1?'+':MIN,so=sg===1?MIN:'+';
+  const q=`Scomponi: <b>${poly(cs)}</b>`;
+  const corr=`(${A} ${s} ${b})²`;
+  const steps=`<p>Metodo: <b>quadrato di binomio</b> (tre termini).</p><p>Il primo e l'ultimo sono quadrati: ${poly([a*a,0,0])} = (${A})² e ${b*b} = ${b}².</p><p>Controllo il doppio prodotto: 2·(${A})·(${b}) = ${2*a*b}x ✔ (segno ${sg===1?'più':'meno'} come nel testo).</p><p>Regola: A² ${s} 2AB + B² = (A ${s} B)²</p><p class="m">${corr}</p>`;
+  const w=[`(${A} ${so} ${b})²`,`(${A} ${MIN} ${b})(${A} + ${b})`,`(${A} ${s} ${b*b})²`,`(${a*a}x ${s} ${b})²`];
+  return mkEx(q,corr,w,steps,()=>[-2,1,4].every(x=>near(evalP(cs,x),(a*x+sg*b)**2)),'Quadrato di binomio');
+}
+function exFacTrin(){
+  let p=rnd(-7,7),q2=rnd(-7,7);if(p===0||q2===0||p===q2)return exFacTrin();
+  const cs=[1,p+q2,p*q2];
+  const q=`Scomponi: <b>${poly(cs)}</b>`;
+  const corr=`(${fx(-p)})(${fx(-q2)})`;
+  const steps=`<p>Metodo: <b>trinomio speciale</b> x² + s·x + p.</p><p>Cerco due numeri che abbiano <b>somma ${N(p+q2)}</b> e <b>prodotto ${N(p*q2)}</b>.</p><p>Provo: ${N(p)} e ${N(q2)} → somma ${N(p+q2)} ✔, prodotto ${N(p*q2)} ✔</p><p>Scrivo (x + primo numero)(x + secondo numero):</p><p class="m">(x ${p<0?MIN:'+'} ${Math.abs(p)})(x ${q2<0?MIN:'+'} ${Math.abs(q2)})</p>`;
+  const w=[`(${fx(p)})(${fx(q2)})`,`(${fx(-p)})(${fx(q2)})`,`(${fx(p)})(${fx(-q2)})`,`(${fx(-p-q2)})(x + 1)`];
+  return mkEx(q,corr,w,steps,()=>[-2,1,3].every(x=>near(evalP(cs,x),(x+p)*(x+q2))),'Trinomio');
+}
+function exFacParz(){
+  const t=rnd(2,7),u=rnd(2,7),sgn=pick([1,-1]);
+  const v=pick(['a','b','k']),w2=pick(['m','n','t']);
+  // v·x + v·t + w·x + w·t  = (x + t)(v + w)
+  const q=`Scomponi: <b>${v}x ${sgn>0?'+':MIN} ${t}${v} + ${w2}x ${sgn>0?'+':MIN} ${t}${w2}</b>`;
+  const inner=`x ${sgn>0?'+':MIN} ${t}`;
+  const corr=`(${inner})(${v} + ${w2})`;
+  const steps=`<p>Metodo: <b>raccoglimento parziale</b> (4 termini: li raggruppo a due a due).</p><p>1. Primi due: ${v}x ${sgn>0?'+':MIN} ${t}${v} = ${v}(${inner})</p><p>2. Ultimi due: ${w2}x ${sgn>0?'+':MIN} ${t}${w2} = ${w2}(${inner})</p><p>3. Le due parentesi sono <b>uguali</b>: raccolgo la parentesi.</p><p class="m">${corr}</p>`;
+  const wr=[`(${inner})(${v} ${MIN} ${w2})`,`(x ${sgn>0?MIN:'+'} ${t})(${v} + ${w2})`,`${v}(${inner}) + ${w2}`,`(${inner})(${v}${w2})`];
+  return mkEx(q,corr,wr,steps,()=>true,'Raccoglimento parziale');
+}
+function exFacRuff(){
+  for(let tries=0;tries<100;tries++){
+    const rs=[rnd(-4,4),rnd(-4,4),rnd(-4,4)];
+    if(new Set(rs).size<3||rs.includes(0))continue;
+    if(!rs.some(r=>Math.abs(r)===1))continue;
+    const [r1,r2,r3]=rs;
+    const cs=[1,-(r1+r2+r3),r1*r2+r1*r3+r2*r3,-r1*r2*r3];
+    const q=`Scomponi: <b>${poly(cs)}</b>`;
+    const sorted=rs.slice().sort((a,b)=>a-b);
+    const corr=sorted.map(r=>'('+fx(r)+')').join('');
+    // ruffini
+    const cands=[];for(let d=1;d<=Math.abs(cs[3]);d++)if(Math.abs(cs[3])%d===0){cands.push(d,-d)}
+    let hit=null,tried=[];
+    for(const c of cands){const v=evalP(cs,c);tried.push(`x = ${N(c)}: ${N(v)}`);if(v===0){hit=c;break}}
+    const rowB=[cs[0]];for(let i=1;i<3;i++)rowB.push(cs[i]+hit*rowB[i-1]);
+    const rem=cs[3]+hit*rowB[2];
+    const others=rs.filter(r=>r!==hit);
+    const steps=`<p>Metodo: <b>Ruffini</b> (grado 3, niente raccoglimenti).</p>
+<p>1. Cerco una radice tra i <b>divisori del termine noto</b> (${N(cs[3])}). Provo a sostituire:</p><p class="m">${tried.join(' &nbsp;·&nbsp; ')}</p>
+<p>Quando il risultato fa <b>0</b> ho trovato la radice: <b>x = ${N(hit)}</b>. Quindi (${fx(hit)}) è un fattore.</p>
+<p>2. Divido con la regola di Ruffini. Riga dei coefficienti: ${cs.map(N).join(' ')}. Numero a sinistra: ${N(hit)}.</p><p class="m">Risultato: ${rowB.map(N).join(' ')} | resto ${N(rem)}</p>
+<p>3. Il quoziente è <b>${poly(rowB)}</b>. È un trinomio: cerco due numeri con somma ${N(-rowB[1])} e prodotto ${N(rowB[2])}: sono ${N(others[0])} e ${N(others[1])}.</p>
+<p>4. Metto insieme tutti i fattori:</p><p class="m">${corr}</p>`;
+    const wr=[sorted.map(r=>'('+fx(-r)+')').join(''),`(${fx(sorted[0])})(${fx(-sorted[1])})(${fx(-sorted[2])})`,`(${fx(-sorted[0])})(${fx(sorted[1])})(${fx(sorted[2])})`,`(${fx(hit)})(${poly(rowB)})`];
+    return mkEx(q,corr,wr,steps,()=>[-3,2,5].every(x=>near(evalP(cs,x),rs.reduce((a,r)=>a*(x-r),1))),'Ruffini');
+  }
+}
+
+/* ========== UNITÀ 3: EQUAZIONI DI 2° GRADO ========== */
+function exQuad(){
+  const kind=pick(['norm','norm','disg1','disg2','spuria','pura','irr','dbl']);
+  const a=pick([1,1,1,2,3]);let r1=rnd(-6,6),r2=rnd(-6,6);
+  let A,B,C,q,pre='',roots,extra='';
+  if(kind==='spuria'){r1=0;r2=pick([-6,-5,-4,-3,-2,2,3,4,5,6]);}
+  if(kind==='pura'){const n=rnd(2,7);r1=-n;r2=n;}
+  if(kind==='dbl')r2=r1;
+  if(kind==='irr'){A=1;B=rnd(-4,4);C=Math.floor(B*B/4)+rnd(1,5);roots=[];}
+  else{A=a;B=-a*(r1+r2);C=a*r1*r2;roots=[r1,r2];}
+  if(kind==='disg1'&&C!==0)q=`${poly([A,B,0])} = ${N(-C)}`;
+  else if(kind==='disg2'){q=`${poly([A,0,0])} = ${lin(-B,-C)}`;}
+  else q=`${quad(A,B,C)} = 0`;
+  let steps='';
+  if(kind==='disg1'&&C!==0)steps+=`<p>Porto tutto a sinistra (il numero cambia segno): <b>${quad(A,B,C)} = 0</b></p>`;
+  if(kind==='disg2')steps+=`<p>Porto tutto a sinistra (i termini cambiano segno): <b>${quad(A,B,C)} = 0</b></p>`;
+  if(kind==='spuria')steps+=`<p>Manca il termine noto (c = 0): <b>equazione spuria</b>. Raccolgo x:</p><p class="m">x(${lin(A,B)}) = 0</p><p>Un prodotto è zero se un fattore è zero: x = 0 oppure ${lin(A,B)} = 0, cioè x = ${fr(-B,A)}.</p><p>(Puoi anche usare la formula qui sotto e ottieni lo stesso.)</p>`;
+  if(kind==='pura')steps+=`<p>Manca la x (b = 0): <b>equazione pura</b>. Basta isolare x²: x² = ${fr(-C,A)}, quindi x = ± ${r2}.</p><p>(Puoi anche usare la formula qui sotto.)</p>`;
+  steps+=quadSteps(A,B,C);
+  const corr=fmtRoots(roots);
+  let wr;
+  if(!roots.length)wr=['x = 1 oppure x = '+MIN+'1','x = 0','x = '+N(-B),'x = '+N(C)+' oppure x = '+N(-C)];
+  else wr=rootWrongs(roots[0],roots[1]).concat(['nessuna soluzione reale']);
+  const cs=[A,B,C];
+  return mkEx(`Risolvi: <b>${q}</b>`,corr,wr,steps,()=>roots.every(r=>near(evalP(cs,r),0))&&(roots.length>0||B*B-4*A*C<0),'Equazione di 2° grado');
+}
+function exQuadFr(){
+  const kind=pick(['a','b']);
+  if(kind==='a'){
+    const r1=rnd(-6,6),r2=rnd(-6,6);if(r1===0||r2===0||r1===r2)return exQuadFr();
+    return exQuadFrCheck(r1,r2);
+  }
+  const p=rnd(-4,4),r=rnd(-4,4);if(p===r)return exQuadFr();
+  const q=`Risolvi: <b>${F(quad(1,-(p+r),p*r),fx(p))} = 0</b>`;
+  const steps=`<p>1. <b>Condizione di esistenza</b>: x ≠ ${N(p)} (il denominatore non può essere 0).</p>
+<p>2. Una frazione è zero quando il <b>numeratore</b> è zero:</p><p class="m">${quad(1,-(p+r),p*r)} = 0</p>${quadSteps(1,-(p+r),p*r)}
+<p>3. Controllo con la condizione del punto 1: la soluzione x = ${N(p)} è <b>vietata</b>, la scarto.</p><p class="m">Resta solo <b>x = ${N(r)}</b></p>`;
+  const wr=[`x = ${N(p)}`,`x = ${N(p)} oppure x = ${N(r)}`,`x = ${N(-r)}`,'nessuna soluzione reale'];
+  return mkEx(q,`x = ${N(r)}`,wr,steps,()=>true,'Equazione fratta di 2° grado (C.E.)');
+}
+function exQuadFrCheck(r1,r2){
+  // costruisce x + n/x = s correttamente: testo con n con segno: x + n/x
+  const s=r1+r2,n=r1*r2;
+  const txt=n>0?`x + ${F(n,'x')} = ${N(s)}`:`x ${MIN} ${F(-n,'x')} = ${N(s)}`;
+  const stp=`<p>1. <b>Condizione di esistenza</b>: x ≠ 0.</p><p>2. Moltiplico tutto per x (il denominatore comune):</p><p class="m">x² ${n>=0?'+':MIN} ${Math.abs(n)} = ${lin(s,0)}</p>
+<p>3. Porto tutto a sinistra (cambia segno):</p><p class="m">${quad(1,-s,n)} = 0</p>${quadSteps(1,-s,n)}
+<p>4. Controllo: nessuna soluzione è 0, quindi vanno bene entrambe.</p>`;
+  const wr=rootWrongs(r1,r2);
+  return mkEx(`Risolvi: <b>${txt}</b>`,fmtRoots([r1,r2]),wr,stp,()=>[r1,r2].every(r=>near(r+n/r,s)),'Equazione fratta di 2° grado');
+}
+
+/* ========== UNITÀ 4: SISTEMI DI 2° GRADO ========== */
+const fmtPair=(x,y)=>`(x = ${N(x)} ; y = ${N(y)})`;
+function fmtSys(pairs){
+  if(!pairs.length)return 'nessuna soluzione';
+  return pairs.slice().sort((a,b)=>a[0]-b[0]).map(p=>fmtPair(p[0],p[1])).join(' e ');
+}
+function exSysPar(){
+  const kind=pick(['due','due','due','tang','none']);
+  let x1=rnd(-4,4),x2=rnd(-4,4);
+  if(kind==='tang')x2=x1;else if(x1===x2)x2=x1+1;
+  const b=rnd(-3,3),q0=rnd(-4,4);
+  let c,m;
+  if(kind==='none'){m=rnd(-2,2);
+    const B2=b-m;const C2=Math.floor(B2*B2/4)+rnd(1,4);c=q0+C2;}
+  else{m=b+(x1+x2);c=q0+x1*x2;}
+  const E=b-m,G=c-q0;
+  const line=pick([0,1])&&m!==0;
+  const lineTxt=line?`${lin(m,0)} ${MIN} y = ${N(-q0)}`:`y = ${lin(m,q0)}`;
+  const sys=`<div class="sys"><div>y = ${quad(1,b,c)}</div><div>${lineTxt}</div></div>`;
+  const roots=[...new Set(quadRoots(1,E,G))];
+  const pairs=roots.map(x=>[x,m*x+q0]);
+  const stepLine=line?`<p>1. Ricavo y dalla seconda equazione (retta): <b>y = ${lin(m,q0)}</b></p>`:`<p>1. La seconda equazione è già “y = …”.</p>`;
+  const steps=`${stepLine}<p>2. <b>Sostituisco</b> nella prima equazione (metto la retta al posto di y):</p><p class="m">${lin(m,q0)} = ${quad(1,b,c)}</p>
+<p>3. Porto tutto a sinistra e riduco:</p><p class="m">${quad(1,E,G)} = 0</p>${quadSteps(1,E,G)}
+${pairs.length?`<p>4. Per ogni x trovo la y con la retta (y = ${lin(m,q0)}):</p><p class="m">${pairs.map(p=>`x = ${N(p[0])} → y = ${N(p[1])}`).join('<br>')}</p>${pairs.length===1?'<p>Δ = 0: la retta tocca la curva in un solo punto (è tangente): <b>una sola soluzione</b>.</p>':''}`:'<p>4. Se Δ è negativo il sistema <b>non ha soluzioni</b>.</p>'}`;
+  const corr=fmtSys(pairs);
+  let wr=[];
+  if(pairs.length){
+    wr.push(fmtSys(pairs.map(p=>[p[1],p[0]])),fmtSys(pairs.map(p=>[-p[0],p[1]])),fmtSys(pairs.map(p=>[p[0],-p[1]])),pairs.length>1?fmtSys([pairs[0]]):'nessuna soluzione');
+    wr.push(fmtSys(pairs.map(p=>[p[0],p[1]+1])));
+  }else wr=[fmtPair(0,q0),fmtPair(1,m+q0)+' e '+fmtPair(-1,-m+q0),fmtPair(-q0,0),fmtPair(2,2*m+q0)];
+  return mkEx(`Risolvi il sistema:${sys}`,corr,wr,steps,()=>pairs.every(p=>near(p[1],p[0]*p[0]+b*p[0]+c)&&near(p[1],m*p[0]+q0))&&(pairs.length>0||E*E-4*G<0),'Sistema parabola e retta');
+}
+function exSysCirc(){
+  const tri=pick([[3,4,5],[6,8,10],[5,12,13],[8,6,10],[4,3,5]]),sg=pick([1,-1]);
+  const [a,b,r]=tri;
+  const none=rnd(0,4)===0;
+  let s=sg*(a+b);
+  if(none)s=sg*(Math.floor(r*1.5)+rnd(1,3));
+  const line=pick([0,1]);
+  const lineTxt=line?`y = ${lin(-1,s)}`:`x + y = ${N(s)}`;
+  const sys=`<div class="sys"><div>x² + y² = ${r*r}</div><div>${lineTxt}</div></div>`;
+  // 2x² - 2s x + s² - r² = 0 -> x² - s x + (s²-r²)/2 = 0
+  const c2=(s*s-r*r)/2;
+  const D=s*s-4*c2;
+  const pairs=(D>=0&&Number.isInteger(c2))?[...new Set(quadRoots(1,-s,c2))].map(x=>[x,s-x]):[];
+  const steps=`<p>1. Ricavo y dalla retta: <b>y = ${lin(-1,s)}</b></p>
+<p>2. Sostituisco nella prima equazione:</p><p class="m">x² + (${lin(-1,s)})² = ${r*r}</p>
+<p>3. Sviluppo il quadrato: (${lin(-1,s)})² = x² ${s>0?MIN:'+'} ${2*Math.abs(s)}x + ${s*s}. Riduco:</p><p class="m">${quad(2,-2*s,s*s-r*r)} = 0</p>
+<p>4. Divido tutto per 2 per semplificare:</p><p class="m">${quad(1,-s,c2)} = 0</p>${quadSteps(1,-s,c2)}
+${pairs.length?`<p>5. Trovo le y con y = ${lin(-1,s)}:</p><p class="m">${pairs.map(p=>`x = ${N(p[0])} → y = ${N(p[1])}`).join('<br>')}</p>`:'<p>5. Δ è negativo: il sistema <b>non ha soluzioni</b>.</p>'}`;
+  const corr=fmtSys(pairs);
+  let wr;
+  if(pairs.length)wr=[fmtSys(pairs.map(p=>[-p[0],p[1]])),fmtSys([pairs[0]]),fmtSys(pairs.map(p=>[p[0],-p[1]])),'nessuna soluzione',fmtSys(pairs.map(p=>[p[0],p[1]+1]))];
+  else wr=[fmtPair(a,b)+' e '+fmtPair(b,a),fmtPair(0,r)+' e '+fmtPair(r,0),fmtPair(a,b),fmtPair(-a,-b)];
+  return mkEx(`Risolvi il sistema:${sys}`,corr,wr,steps,()=>pairs.every(p=>near(p[0]*p[0]+p[1]*p[1],r*r)&&near(p[0]+p[1],s))&&(pairs.length>0||D<0),'Sistema circonferenza e retta');
+}
+
+/* ========== UNITÀ 5: DISEQUAZIONI DI 2° GRADO ========== */
+function exDisQ(){
+  const kind=pick(['2r','2r','2r','neg','dbl','pure','irr','disg']);
+  const op=pick(['>','<','≥','≤']);
+  let cs,fs,g,pre='',opE=op,txt;
+  const rr=()=>{let r1=rnd(-6,6),r2=rnd(-6,6);if(r1===r2)r2=r1+rnd(1,3);return [Math.min(r1,r2),Math.max(r1,r2)]};
+  if(kind==='irr'){
+    const b=rnd(-4,4),c=Math.floor(b*b/4)+rnd(1,5);cs=[1,b,c];
+    const always=(op==='>'||op==='≥');
+    const q=`Risolvi: <b>${quad(1,b,c)} ${op} 0</b>`;
+    const steps=`<p>Equazione associata: ${quad(1,b,c)} = 0</p><p>Δ = (${N(b)})² − 4·1·${c} = <b>${N(b*b-4*c)}</b>, negativo.</p><p>Con Δ &lt; 0 la parabola <b>non tocca mai l'asse x</b>. Il coefficiente di x² è positivo, quindi la parabola sta <b>sempre sopra</b> l'asse: ${quad(1,b,c)} è sempre positivo.</p><p>Quindi con "${op} 0": <b>${always?'sempre vera (per ogni x)':'nessuna soluzione'}</b></p>`;
+    const corr=always?'sempre vera (per ogni x)':'nessuna soluzione';
+    return mkEx(q,corr,[always?'nessuna soluzione':'sempre vera (per ogni x)','x = 0','x < 0 oppure x > 0','x ≠ 0'],steps,()=>{for(let x=-10;x<=10;x+=0.5){if(holds(evalP(cs,x),op)!==always)return false}return true},'Disequazione di 2° grado, Δ negativo');
+  }
+  let r1,r2;
+  if(kind==='dbl'){r1=rnd(-5,5);r2=r1;cs=[1,-2*r1,r1*r1];fs=[{r:r1},{r:r1}];g=x=>evalP(cs,x)}
+  else if(kind==='pure'){const n=rnd(2,7);r1=-n;r2=n;cs=[1,0,-n*n];fs=[{r:r1},{r:r2}];g=x=>evalP(cs,x)}
+  else if(kind==='neg'){[r1,r2]=rr();const a=pick([1,2]);cs=[-a,a*(r1+r2),-a*r1*r2];fs=[{r:r1},{r:r2}];g=x=>evalP(cs,x)}
+  else{[r1,r2]=rr();const a=kind==='disg'?1:pick([1,1,2]);cs=[a,-a*(r1+r2),a*r1*r2];fs=[{r:r1},{r:r2}];g=x=>evalP(cs,x)}
+  let q,eqTxt;
+  if(kind==='disg'){q=`${quad(1,0,0)} ${op} ${lin(-cs[1],-cs[2])}`;pre=`<p>1. Porto tutto a sinistra: <b>${quad(cs[0],cs[1],cs[2])} ${op} 0</b></p>`;}
+  else q=`${quad(cs[0],cs[1],cs[2])} ${op} 0`;
+  if(kind==='neg'){
+    const a=-cs[0];
+    const flipped=cs.map(c=>-c);
+    pre+=`<p>Il coefficiente di x² è <b>negativo</b>. Moltiplico tutto per −1 e <b>giro il verso</b> (${op} diventa ${compOp(op)}):</p><p class="m">${quad(flipped[0],flipped[1],flipped[2])} ${compOp(op)} 0</p>`;
+    opE=compOp(op);
+  }
+  pre+=`<p>Equazione associata (metto = 0) e la risolvo:</p>${quadSteps(kind==='neg'?-cs[0]:cs[0],kind==='neg'?-cs[1]:cs[1],kind==='neg'?-cs[2]:cs[2])}`;
+  if(kind==='dbl')pre+=`<p>Δ = 0: c'è una sola radice (doppia). La parabola tocca l'asse in un punto solo.</p>`;
+  const sol=solveSign(fs,1,opE);
+  const ex=ineqEx(`Risolvi: <b>${q}</b>`,fs,opE,x=>(kind==='neg'?-1:1)*g(x),pre,'Disequazione di 2° grado');
+  // controlla contro la disequazione originale
+  ex.ok=()=>{for(let x=-14;x<=14;x+=0.5){if(holds(evalP(cs,x),op)!==inInts(x,sol.ints))return false}return true};
+  // le opzioni sbagliate devono essere calcolate sull'op finale: già fatto da ineqEx con opE
+  return ex;
+}
+function exDisQFr(){
+  const kind=pick(['a','b']);
+  const pool=[-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6];
+  const rs=shuffle(pool).slice(0,3);
+  const op=pick(['>','<','≥','≤']);
+  if(kind==='a'){
+    const [r1,r2,b]=rs;
+    const q=`Risolvi: <b>${F(quad(1,-(r1+r2),r1*r2),lin(1,-b))} ${op} 0</b>`;
+    const pre=`<p>Ha già 0 a destra. Studio il segno del numeratore (parabola) e del denominatore.</p><p>Numeratore = 0: ${quad(1,-(r1+r2),r1*r2)} = 0 → ${fmtRoots([r1,r2])}</p>`;
+    return ineqEx(q,[{r:r1},{r:r2},{r:b,den:true}],op,x=>((x-r1)*(x-r2))/(x-b),pre,'Disequazione fratta di 2° grado');
+  }
+  const [a,r1,r2]=rs;
+  const q=`Risolvi: <b>${F(lin(1,-a),quad(1,-(r1+r2),r1*r2))} ${op} 0</b>`;
+  const pre=`<p>Ha già 0 a destra. Studio il segno del numeratore e del denominatore (parabola).</p><p>Denominatore = 0: ${quad(1,-(r1+r2),r1*r2)} = 0 → ${fmtRoots([r1,r2])}</p>`;
+  return ineqEx(q,[{r:a},{r:r1,den:true},{r:r2,den:true}],op,x=>(x-a)/((x-r1)*(x-r2)),pre,'Disequazione fratta di 2° grado');
+}
+
+const GENS={
+  u1:[exEq1,exEq2,exEq3,exEqFr,exEqFr2,exDisLin,exDisFr],
+  u2:[exFacRacc,exFacDiff,exFacQuadBin,exFacTrin,exFacParz,exFacRuff],
+  u3:[exQuad,exQuad,exQuad,exQuadFr],
+  u4:[exSysPar,exSysCirc],
+  u5:[exDisQ,exDisQ,exDisQFr]
+};
+const UNITS={u1:'1 · Equazioni e disequazioni lineari',u2:'2 · Scomposizioni',u3:'3 · Equazioni di 2° grado',u4:'4 · Sistemi di 2° grado',u5:'5 · Disequazioni di 2° grado'};
+
+/* ========== CONTENUTI FISSI ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+
+const CONT={
+u1:{
+ ricette:[
+  card('blu','Equazione lineare intera (senza denominatori)',stepsHtml([
+   '<b>Togli le parentesi.</b> Moltiplica il numero fuori per ogni termine dentro.',
+   '<b>Porta le x a sinistra e i numeri a destra.</b> Ogni termine che cambia lato <b>cambia segno</b>.',
+   '<b>Riduci</b>: somma i termini simili. Ottieni qualcosa come <b>a·x = b</b>.',
+   '<b>Dividi</b> per il numero davanti alla x: x = b : a.'])+
+   '<p class="note">Casi strani: <b>0·x = 5</b> è <b>impossibile</b> (nessuna soluzione). <b>0·x = 0</b> è <b>indeterminata</b> (vale per ogni numero).</p>'),
+  card('ver','Equazione con le frazioni',stepsHtml([
+   'Trova il <b>m.c.m.</b> dei denominatori (il numero più piccolo in cui entrano tutti).',
+   '<b>Moltiplica TUTTI i termini</b> per il m.c.m., anche quelli senza frazione. Le frazioni spariscono.',
+   'Poi risolvi come una equazione normale (parentesi, x a sinistra, dividi).'])),
+  card('gia','Equazione fratta (la x è nel denominatore)',stepsHtml([
+   '<b>Condizioni di esistenza (C.E.)</b>: scrivi che ogni denominatore deve essere <b>diverso da 0</b>. Esempio: x − 3 al denominatore → x ≠ 3.',
+   'Elimina i denominatori (in croce o con il m.c.m.) e risolvi.',
+   '<b>Controlla</b>: se la soluzione è un valore escluso dalle C.E., la scarti. Se resta solo quella, l\'equazione è <b>impossibile</b>.'])),
+  card('ros','Disequazione lineare',stepsHtml([
+   'Si risolve <b>esattamente come l\'equazione</b>: parentesi, x a sinistra, riduci.',
+   'Regola d\'oro: se dividi (o moltiplichi) per un numero <b>NEGATIVO</b>, il verso si <b>gira</b>: &gt; diventa &lt;, ≥ diventa ≤.',
+   'La soluzione è una semiretta: <b>x &gt; 3</b> vuol dire tutti i numeri più grandi di 3.'])),
+  card('blu','Disequazione fratta',stepsHtml([
+   '<b>Porta tutto a sinistra</b>, lascia solo 0 a destra, e scrivi un\'unica frazione.',
+   'Studia dove il <b>numeratore</b> è 0 e dove il <b>denominatore</b> è 0.',
+   'Fai la <b>tabella dei segni</b>: una riga per il numeratore, una per il denominatore, una per il risultato (regola dei segni: + per + = +, − per − = +, + per − = −).',
+   'Scegli gli intervalli con il segno che chiede la disequazione (+ per &gt; 0, − per &lt; 0). Il denominatore <b>non può mai essere 0</b>: pallino vuoto.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · equazione</h3><p class="m">3x + 5 = x − 7</p>
+  <p>1. x a sinistra, numeri a destra (cambiano segno): <span class="m">3x − x = −7 − 5</span></p>
+  <p>2. Riduco: <span class="m">2x = −12</span></p>
+  <p>3. Divido per 2: <span class="m">x = −6</span></p></div>
+  <div class="box bia"><h3>Esempio 2 · disequazione con il verso che gira</h3><p class="m">−2x + 6 &gt; 0</p>
+  <p>1. Numero a destra: <span class="m">−2x &gt; −6</span></p>
+  <p>2. Divido per −2. È negativo: <b>giro il verso</b>: <span class="m">x &lt; 3</span></p>
+  <p>Controllo con un numero: x = 0 → −2·0 + 6 = 6 &gt; 0 ✔</p></div>
+  <div class="box bia"><h3>Esempio 3 · equazione fratta</h3><p class="m">${F(4,'x − 1')} = ${F(2,'x')}</p>
+  <p>C.E.: x ≠ 1 e x ≠ 0</p>
+  <p>In croce: <span class="m">4x = 2(x − 1)</span> → <span class="m">4x = 2x − 2</span> → <span class="m">2x = −2</span> → <span class="m">x = −1</span></p>
+  <p>−1 è diverso da 1 e da 0: va bene ✔</p></div>`,
+ errori:['Passi un numero dall\'altra parte e <b>ti dimentichi di cambiare il segno</b>.','Dividi per un numero negativo e <b>non giri il verso</b> della disequazione.','Moltiplichi per il m.c.m. solo <b>alcuni</b> termini invece di tutti.','Nelle equazioni fratte <b>non scrivi le C.E.</b> e non controlli la soluzione.','Nella disequazione fratta <b>elimini il denominatore</b> come nell\'equazione: qui non si può, serve la tabella dei segni.'],
+ orale:[
+  ['Come si risolve una equazione lineare intera?','Prima tolgo le parentesi. Poi porto le x a sinistra e i numeri a destra, cambiando il segno quando passo dall\'altra parte. Riduco e ottengo a·x = b. Infine divido per a. Esempio: 3x + 5 = x − 7 → 2x = −12 → x = −6.'],
+  ['Che cosa sono le condizioni di esistenza?','Sono le condizioni che dicono quali valori della x sono vietati. In una equazione fratta il denominatore non può essere zero. Alla fine controllo che la soluzione trovata non sia uno dei valori vietati.'],
+  ['Che cosa cambia in una disequazione rispetto a una equazione?','Si risolve allo stesso modo, ma se divido o moltiplico per un numero negativo devo girare il verso: maggiore diventa minore. La soluzione non è un numero ma una semiretta, per esempio x > 3.'],
+  ['Come si risolve una disequazione fratta?','Porto tutto a sinistra e lascio zero a destra, con una sola frazione. Trovo dove si annullano numeratore e denominatore. Faccio la tabella dei segni e scelgo gli intervalli con il segno richiesto. Il denominatore non può mai essere zero.'],
+ ],
+ quiz:[
+  ['Passando un numero dall\'altra parte dell\'uguale, che cosa succede?','Cambia segno',['Resta uguale','Diventa zero','Si divide per due'],'Ogni termine che cambia lato cambia segno: + diventa −, − diventa +.'],
+  ['Dividi per −2 entrambi i lati di una disequazione con il segno &gt;. Che cosa fai al segno?','Lo giro: diventa &lt;',['Resta &gt;','Diventa =','Diventa ≥'],'Dividendo per un numero negativo il verso si inverte.'],
+  ['Nell\'equazione 5/(x − 3) = 2, quale valore la x NON può assumere?','3',['5','2','−3'],'Con x = 3 il denominatore x − 3 fa zero, e non si può dividere per zero.'],
+  ['L\'equazione 0·x = 7 è...','impossibile',['indeterminata','x = 7','x = 0'],'Nessun numero moltiplicato per 0 dà 7: nessuna soluzione.'],
+  ['L\'equazione 0·x = 0 è...','indeterminata (vale per ogni x)',['impossibile','x = 0','x = 1'],'0 per qualsiasi numero fa 0: sempre vera.'],
+  ['Prima di risolvere una disequazione fratta devo...','portare tutto a sinistra e lasciare 0 a destra',['moltiplicare per il denominatore','elevare al quadrato','cancellare il denominatore'],'Serve una sola frazione confrontata con 0: poi si studia il segno.'],
+ ]
+},
+u2:{
+ ricette:[
+  card('blu','L\'ordine dei metodi (segui sempre questo ordine)',stepsHtml([
+   '<b>Raccoglimento totale</b>: c\'è un numero o una lettera in tutti i termini? Portalo fuori. 6x² + 9x = <b>3x</b>(2x + 3).',
+   'Poi <b>conta i termini</b> del polinomio che resta:',
+   '<b>2 termini</b> con il meno e due quadrati → <b>differenza di quadrati</b>: A² − B² = (A − B)(A + B).',
+   '<b>3 termini</b> → prima prova il <b>quadrato di binomio</b>: A² ± 2AB + B² = (A ± B)². Se non è un quadrato, è un <b>trinomio</b>: x² + s·x + p → cerca due numeri con <b>somma s</b> e <b>prodotto p</b>.',
+   '<b>4 termini</b> → <b>raccoglimento parziale</b>: raggruppa a due a due e raccogli, fino a trovare due parentesi uguali.',
+   '<b>Grado 3 o più</b> e nessun metodo funziona → <b>Ruffini</b>.',
+   '<b>Controlla</b>: i fattori si possono scomporre ancora? Se sì, continua.'])),
+  card('ver','Trinomio x² + s·x + p (il più usato)',stepsHtml([
+   'Guarda il numero senza x (p) e il numero davanti alla x (s).',
+   'Cerca due numeri che <b>moltiplicati</b> fanno p e <b>sommati</b> fanno s.',
+   'Scrivi (x + primo)(x + secondo). Se un numero è negativo scrivi (x − …).'])+'<p class="note">Consiglio: prima guarda il <b>segno di p</b>. Se p è positivo, i due numeri hanno lo <b>stesso segno</b> (quello di s). Se p è negativo, hanno <b>segno diverso</b>.</p>'),
+  card('gia','Ruffini in breve',stepsHtml([
+   'Scrivi il polinomio in ordine e guarda il <b>termine noto</b> (il numero senza x).',
+   'Prova come valori per x i suoi <b>divisori</b> (±1, ±2, ±3…). Sostituisci: se il risultato è <b>0</b>, quel numero è una radice r.',
+   'Dividi con la regola di Ruffini: ottieni un polinomio di grado più basso.',
+   'Il polinomio è uguale a <b>(x − r) · quoziente</b>. Scomponi il quoziente (di solito un trinomio).'])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · trinomio</h3><p class="m">x² − 5x + 6</p>
+  <p>Cerco due numeri: prodotto <b>6</b>, somma <b>−5</b>. Provo: −2 e −3 (−2·−3 = 6, −2 + −3 = −5 ✔)</p>
+  <p class="m">(x − 2)(x − 3)</p></div>
+  <div class="box bia"><h3>Esempio 2 · più metodi insieme</h3><p class="m">2x³ − 8x</p>
+  <p>1. Raccoglimento totale (2x): <span class="m">2x(x² − 4)</span></p>
+  <p>2. Dentro c'è una differenza di quadrati: <span class="m">2x(x − 2)(x + 2)</span></p></div>
+  <div class="box bia"><h3>Esempio 3 · raccoglimento parziale</h3><p class="m">ax + 3a + bx + 3b</p>
+  <p>Primi due: a(x + 3). Ultimi due: b(x + 3). Parentesi uguali: <span class="m">(x + 3)(a + b)</span></p></div>`,
+ errori:['Parti subito dai prodotti notevoli e ti <b>dimentichi del raccoglimento totale</b>.','Nel trinomio scambi i segni: cerchi somma e prodotto giusti ma scrivi (x + 2) invece di (x − 2).','Provi a scomporre <b>x² + 9</b>: con il più non si scompone!','Ti fermi troppo presto: il fattore che ottieni si può scomporre ancora.','Nel raccoglimento parziale i due gruppi hanno parentesi <b>diverse</b> (controlla i segni).'],
+ orale:[
+  ['Che cosa vuol dire scomporre un polinomio?','Vuol dire scriverlo come prodotto di polinomi più semplici, come per i numeri: 12 = 2·2·3. Per esempio x² − 4 = (x − 2)(x + 2).'],
+  ['In che ordine si provano i metodi?','Per prima cosa il raccoglimento totale. Poi conto i termini: con due termini provo la differenza di quadrati, con tre il quadrato di binomio o il trinomio, con quattro il raccoglimento parziale. Se non basta e il grado è tre o più, uso Ruffini.'],
+  ['Come si scompone un trinomio x² + s·x + p?','Cerco due numeri che moltiplicati fanno p e sommati fanno s. Se sono a e b, il trinomio diventa (x + a)(x + b). Per esempio x² − 5x + 6 = (x − 2)(x − 3).'],
+  ['Come funziona Ruffini?','Provo come radici i divisori del termine noto. Quando sostituendo trovo zero, ho una radice r. Divido il polinomio per (x − r) con la regola di Ruffini e ottengo un polinomio di grado più basso, che scompongo con gli altri metodi.'],
+ ],
+ quiz:[
+  ['Qual è il PRIMO metodo da provare?','Raccoglimento totale',['Differenza di quadrati','Ruffini','Quadrato di binomio'],'Si prova sempre per primo: semplifica tutto il resto.'],
+  ['x² − 49 si scompone con...','differenza di quadrati',['quadrato di binomio','raccoglimento parziale','non si scompone'],'x² e 49 = 7² sono quadrati e c\'è il meno: (x − 7)(x + 7).'],
+  ['x² + 9 si scompone?','No, non si scompone',['(x + 3)(x + 3)','(x + 3)(x − 3)','(x − 3)²'],'La somma di due quadrati non si scompone.'],
+  ['Un polinomio di 4 termini di solito si scompone con...','raccoglimento parziale',['differenza di quadrati','quadrato di binomio','trinomio speciale'],'Raggruppo a due a due e cerco due parentesi uguali.'],
+  ['Nel trinomio x² + 7x + 12 quali due numeri cerchi?','somma 7 e prodotto 12',['somma 12 e prodotto 7','somma 7 e prodotto 7','somma 12 e prodotto 12'],'I numeri sono 3 e 4: 3 + 4 = 7 e 3·4 = 12. Quindi (x + 3)(x + 4).'],
+  ['Con Ruffini quali numeri provi come possibili radici?','I divisori del termine noto',['I divisori del coefficiente di x','Solo 0 e 1','Numeri a caso'],'Il termine noto è il numero senza x: provo ±1, ±2, ecc. fino a trovare 0.'],
+ ]
+},
+u3:{
+ ricette:[
+  card('blu','Equazione di 2° grado: metodo che funziona sempre',stepsHtml([
+   'Portala in <b>forma normale</b>: a·x² + b·x + c = 0 (tutto a sinistra, 0 a destra). Scrivi bene a, b, c <b>con i loro segni</b>.',
+   'Calcola il <b>discriminante</b>: <b>Δ = b² − 4·a·c</b>.',
+   'Guarda il segno di Δ: <b>Δ &gt; 0</b> → due soluzioni diverse. <b>Δ = 0</b> → due soluzioni uguali (una sola). <b>Δ &lt; 0</b> → nessuna soluzione reale.',
+   'Usa la formula: <b>x = (−b ± √Δ) : (2a)</b>. Fai una volta con il + e una volta con il −.'])),
+  card('ver','Le scorciatoie (casi particolari)',
+   '<p><b>Spuria</b>: manca c, per esempio x² − 5x = 0. Raccogli x: x(x − 5) = 0 → x = 0 oppure x = 5.</p><p><b>Pura</b>: manca b, per esempio x² − 25 = 0. Isola x²: x² = 25 → x = ±5. Se x² = numero negativo: nessuna soluzione.</p><p><b>Monomia</b>: x² = 0 → x = 0.</p>'),
+  card('gia','Equazione fratta di 2° grado',stepsHtml([
+   'Scrivi le <b>C.E.</b>: i denominatori sono diversi da 0.',
+   'Moltiplica tutto per il denominatore comune (m.c.m.) e porta in forma normale.',
+   'Risolvi con Δ e la formula.',
+   '<b>Controlla</b> le soluzioni con le C.E.: se una rende zero il denominatore, la <b>scarti</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1</h3><p class="m">x² − 5x + 6 = 0</p>
+  <p>a = 1, b = −5, c = 6</p>
+  <p>Δ = (−5)² − 4·1·6 = 25 − 24 = <b>1</b> (positivo: due soluzioni)</p>
+  <p class="m">x = ${F('5 ± 1','2')}</p>
+  <p>x₁ = ${F('5 − 1','2')} = 2 &nbsp;&nbsp; x₂ = ${F('5 + 1','2')} = 3</p></div>
+  <div class="box bia"><h3>Esempio 2 · fratta</h3><p class="m">x + ${F(6,'x')} = 5</p>
+  <p>C.E.: x ≠ 0. Moltiplico tutto per x: <span class="m">x² + 6 = 5x</span> → <span class="m">x² − 5x + 6 = 0</span></p>
+  <p>Come l'esempio 1: x = 2 oppure x = 3. Nessuno dei due è 0: vanno bene ✔</p></div>
+  <div class="box bia"><h3>Esempio 3 · con scarto</h3><p class="m">${F('x² − x − 6','x − 3')} = 0</p>
+  <p>C.E.: x ≠ 3. Numeratore = 0: x² − x − 6 = 0 → x = −2 oppure x = 3.</p>
+  <p>x = 3 è vietato dalle C.E. → lo scarto. Soluzione: <b>x = −2</b></p></div>`,
+ errori:['Sbagli il segno di b o di c nella formula: scrivi <b>sempre</b> a, b, c con il segno prima di sostituire.','Nel Δ scrivi (−5)² come −25: il quadrato di un numero negativo è <b>positivo</b>.','Dimentichi il <b>2a</b> al denominatore o dividi solo una parte.','Nelle equazioni fratte <b>non controlli</b> le soluzioni con le C.E.','Non porti prima l\'equazione in forma normale (=0).'],
+ orale:[
+  ['Che cos\'è un\'equazione di secondo grado?','È un\'equazione che, ridotta a forma normale, diventa a·x² + b·x + c = 0 con a diverso da zero. La x compare al quadrato.'],
+  ['Che cos\'è il discriminante e che cosa dice?','Il discriminante è Δ = b² − 4ac. Se Δ è positivo ci sono due soluzioni diverse, se Δ è zero le due soluzioni coincidono, se Δ è negativo non ci sono soluzioni reali.'],
+  ['Scrivi la formula risolutiva.','x = (−b ± √Δ) diviso 2a. Con il più ottengo una soluzione, con il meno l\'altra.'],
+  ['Come si risolve una equazione fratta di secondo grado?','Scrivo le condizioni di esistenza, riduco allo stesso denominatore, elimino il denominatore e porto l\'equazione in forma normale. La risolvo con il discriminante. Alla fine scarto le soluzioni che annullano il denominatore.'],
+ ],
+ quiz:[
+  ['Il discriminante Δ vale...','b² − 4ac',['b² + 4ac','−b² − 4ac','b − 4ac'],'Δ = b² − 4·a·c.'],
+  ['Se Δ è negativo l\'equazione...','non ha soluzioni reali',['ha due soluzioni','ha una soluzione doppia','ha sempre x = 0'],'Non si può fare la radice quadrata di un numero negativo.'],
+  ['Se Δ = 0 le soluzioni sono...','due soluzioni uguali (una sola)',['due diverse','nessuna','infinite'],'√0 = 0, quindi con il + e con il − ottengo lo stesso numero.'],
+  ['L\'equazione x² − 5x = 0 si risolve velocemente...','raccogliendo x: x(x − 5) = 0',['con la differenza di quadrati','non si può risolvere','con Ruffini'],'x = 0 oppure x − 5 = 0, cioè x = 5.'],
+  ['Nell\'equazione fratta, dopo aver trovato le soluzioni controllo...','che nessuna renda 0 il denominatore',['che siano positive','che siano intere','che Δ sia positivo'],'Una soluzione che rende zero il denominatore va scartata.'],
+  ['x² = 16 ha come soluzioni...','x = 4 e x = −4',['solo x = 4','solo x = 8','nessuna'],'Sia 4² sia (−4)² fanno 16.'],
+ ]
+},
+u4:{
+ ricette:[
+  card('blu','Sistema di 2° grado: metodo di sostituzione',stepsHtml([
+   'Nel sistema c\'è una equazione di <b>primo grado</b> (la retta) e una di <b>secondo grado</b>.',
+   'Dalla retta <b>ricava una lettera</b>: per esempio y = 2x + 1 (oppure x = …).',
+   '<b>Sostituisci</b> quella espressione nell\'equazione di secondo grado: resta una sola lettera.',
+   'Porta in <b>forma normale</b> e risolvi con Δ e la formula: trovi i valori di x.',
+   'Per <b>ogni x</b> trovato, calcola la <b>y</b> con la retta.',
+   'Scrivi le soluzioni come <b>coppie (x ; y)</b>.'])),
+  card('gia','Quante soluzioni?',
+   '<p>Guarda il Δ dell\'equazione che ottieni dopo la sostituzione:</p><p><b>Δ &gt; 0</b> → due coppie di soluzioni (la retta taglia la curva in due punti).</p><p><b>Δ = 0</b> → una sola coppia (la retta è tangente).</p><p><b>Δ &lt; 0</b> → nessuna soluzione: il sistema è <b>impossibile</b>.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio</h3><div class="sys"><div>y = x² − 2x − 3</div><div>y = x − 1</div></div>
+  <p>1. Sostituisco la seconda nella prima: <span class="m">x − 1 = x² − 2x − 3</span></p>
+  <p>2. Porto tutto a sinistra: <span class="m">x² − 3x − 2 + ... </span> (controlla i segni: x² − 2x − x − 3 + 1)</p>
+  <p class="m">x² − 3x − 2 = 0</p>
+  <p>Δ = 9 + 8 = 17: non è un quadrato perfetto (le soluzioni hanno la radice). Nel compito di solito i numeri sono scelti per tornare interi.</p></div>
+  <div class="box bia"><h3>Esempio con numeri interi</h3><div class="sys"><div>x² + y² = 25</div><div>x + y = 7</div></div>
+  <p>1. Dalla retta: <span class="m">y = 7 − x</span></p>
+  <p>2. Sostituisco: <span class="m">x² + (7 − x)² = 25</span> → <span class="m">2x² − 14x + 24 = 0</span> → <span class="m">x² − 7x + 12 = 0</span></p>
+  <p>3. Δ = 49 − 48 = 1 → x = ${F('7 ± 1','2')} → x = 3 oppure x = 4</p>
+  <p>4. y = 7 − 3 = 4 e y = 7 − 4 = 3</p>
+  <p class="m">Soluzioni: (3 ; 4) e (4 ; 3)</p></div>`,
+ errori:['Trovi le x e ti <b>dimentichi di calcolare le y</b>.','Sviluppi male il quadrato: (7 − x)² = 49 − 14x + x² (<b>non</b> 49 − x²).','Abbini la x sbagliata con la y: calcola la y con la retta per <b>ogni</b> x.','Scrivi le soluzioni separate (x = 3, x = 4, y = 4, y = 3) invece che <b>coppie</b>.'],
+ orale:[
+  ['Come si risolve un sistema di secondo grado?','Dall\'equazione di primo grado ricavo una lettera, per esempio la y. La sostituisco nell\'equazione di secondo grado e ottengo una equazione in una sola incognita. La risolvo con il discriminante. Per ogni x trovato calcolo la y con la retta.'],
+  ['Quante soluzioni può avere?','Due coppie se Δ è positivo, una coppia se Δ è zero (la retta è tangente), nessuna se Δ è negativo.'],
+  ['Come si scrivono le soluzioni?','Come coppie ordinate (x ; y). Per esempio (3 ; 4) e (4 ; 3).'],
+ ],
+ quiz:[
+  ['Come si risolve un sistema con una equazione di primo grado e una di secondo?','Per sostituzione: ricavo una lettera dalla retta e la sostituisco nell\'altra',['Sommando le due equazioni','Facendo il m.c.m.','Con Ruffini'],'È il metodo di sostituzione.'],
+  ['Trovati i valori di x, che cosa fai?','Calcolo le y corrispondenti con la retta',['Ho finito','Ricalcolo Δ','Divido per 2'],'Le soluzioni sono coppie (x ; y): servono anche le y.'],
+  ['Se dopo la sostituzione Δ è negativo, il sistema è...','impossibile',['indeterminato','con una soluzione','con due soluzioni'],'Non ci sono valori reali di x.'],
+  ['Se Δ = 0 le soluzioni sono...','una sola coppia (x ; y)',['due coppie','nessuna','infinite'],'La retta tocca la curva in un solo punto.'],
+  ['Le soluzioni di un sistema si scrivono come...','coppie (x ; y)',['solo valori di x','solo valori di y','una frazione'],'Ogni soluzione è un punto del piano.'],
+ ]
+},
+u5:{
+ ricette:[
+  card('blu','Disequazione di 2° grado: i passaggi',stepsHtml([
+   'Porta tutto a sinistra: <b>a·x² + b·x + c &gt; 0</b> (o &lt;, ≥, ≤). Se <b>a è negativo</b>, moltiplica tutto per −1 e <b>giro il verso</b>.',
+   'Risolvi l\'<b>equazione associata</b> a·x² + b·x + c = 0 (con Δ e formula): trovi le radici x₁ e x₂.',
+   'Disegna la <b>parabola</b> (a &gt; 0: sorride) oppure fai la tabella dei segni.',
+   'Scegli gli intervalli: con <b>&gt; 0</b> prendi le parti <b>esterne</b> alle radici; con <b>&lt; 0</b> prendi la parte <b>interna</b>.'])),
+  card('ver','La regola con Δ',
+   '<p class="m">a &gt; 0. Radici x₁ &lt; x₂</p><p><b>Δ &gt; 0</b>: “&gt; 0” → <b>x &lt; x₁ oppure x &gt; x₂</b> (esterni). “&lt; 0” → <b>x₁ &lt; x &lt; x₂</b> (interni).</p><p><b>Δ = 0</b>: “&gt; 0” → tutti i numeri tranne la radice (x ≠ x₁). “&lt; 0” → nessuna soluzione.</p><p><b>Δ &lt; 0</b>: “&gt; 0” → <b>sempre vera</b>. “&lt; 0” → <b>mai vera</b> (nessuna soluzione).</p><p class="note">Con ≥ e ≤ le radici <b>si includono</b> (pallino pieno). Con &gt; e &lt; no.</p>'),
+  card('gia','Disequazione fratta di 2° grado',stepsHtml([
+   'Porta tutto a sinistra e riduci a una sola frazione, con 0 a destra.',
+   'Trova le radici del <b>numeratore</b> e quelle del <b>denominatore</b> (se è di 2° grado, con Δ).',
+   'Fai la <b>tabella dei segni</b> con una riga per ogni fattore.',
+   'Le radici del denominatore sono <b>sempre escluse</b> (pallino vuoto), anche con ≥ o ≤.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1</h3><p class="m">x² − x − 6 &gt; 0</p>
+  <p>1. Equazione associata: x² − x − 6 = 0 → Δ = 1 + 24 = 25 → x = ${F('1 ± 5','2')} → x = −2 oppure x = 3</p>
+  <p>2. a &gt; 0 e “&gt; 0”: prendo gli <b>esterni</b>.</p>
+  <p class="m">x &lt; −2 oppure x &gt; 3</p></div>
+  <div class="box bia"><h3>Esempio 2</h3><p class="m">x² − 4 &lt; 0</p>
+  <p>Radici: x = −2 e x = 2. “&lt; 0”: prendo l'<b>interno</b>.</p><p class="m">−2 &lt; x &lt; 2</p></div>
+  <div class="box bia"><h3>Esempio 3 · a negativo</h3><p class="m">−x² + 4x − 3 ≥ 0</p>
+  <p>Moltiplico per −1 e giro il verso: <span class="m">x² − 4x + 3 ≤ 0</span></p>
+  <p>Radici: 1 e 3. “≤ 0”: interno, con le radici incluse.</p><p class="m">1 ≤ x ≤ 3</p></div>`,
+ errori:['Non giri il verso quando moltiplichi per −1 (a negativo).','Scegli l\'intervallo <b>sbagliato</b>: ricorda “&gt; 0 esterni, &lt; 0 interno”.','Con ≥ e ≤ non includi le radici; con &gt; e &lt; le includi.','Nella disequazione fratta <b>includi</b> le radici del denominatore: mai!','Con Δ &lt; 0 cerchi le radici: non ci sono, serve solo il ragionamento sulla parabola.'],
+ orale:[
+  ['Come si risolve una disequazione di secondo grado?','Porto tutto a sinistra e faccio in modo che a sia positivo. Risolvo l\'equazione associata e trovo le radici. Poi guardo il segno richiesto: con maggiore di zero prendo le parti esterne alle radici, con minore di zero la parte interna.'],
+  ['Che cosa succede se Δ è negativo?','La parabola non incontra l\'asse x. Se a è positivo sta sempre sopra: la disequazione con maggiore di zero è sempre vera, con minore di zero non ha soluzioni.'],
+  ['Come si risolve una disequazione fratta?','Porto tutto a sinistra e la riduco a una frazione confrontata con zero. Trovo le radici di numeratore e denominatore, faccio la tabella dei segni e scelgo gli intervalli giusti. Le radici del denominatore sono sempre escluse.'],
+ ],
+ quiz:[
+  ['x² − 4 &gt; 0. Radici −2 e 2. La soluzione è...','x &lt; −2 oppure x &gt; 2',['−2 &lt; x &lt; 2','x &gt; 2','x &lt; −2'],'Con &gt; 0 e a positivo prendo gli intervalli esterni.'],
+  ['x² − 4 &lt; 0. Radici −2 e 2. La soluzione è...','−2 &lt; x &lt; 2',['x &lt; −2 oppure x &gt; 2','x &lt; 2','nessuna soluzione'],'Con &lt; 0 e a positivo prendo l\'intervallo interno.'],
+  ['x² + 1 &gt; 0 è...','sempre vera',['mai vera','vera solo per x &gt; 0','vera per x = 1'],'x² è sempre ≥ 0, quindi x² + 1 è sempre positivo.'],
+  ['Se il coefficiente di x² è negativo, prima di tutto...','moltiplico per −1 e giro il verso',['non faccio niente','cambio solo il segno di c','elevo al quadrato'],'Così a diventa positivo e posso usare le regole.'],
+  ['In una disequazione fratta, le radici del denominatore sono...','sempre escluse',['incluse se c\'è ≥','sempre incluse','ignorate'],'Il denominatore non può mai valere 0.'],
+  ['(x − 1)² &gt; 0 è vera...','per ogni x tranne x = 1',['per ogni x','solo per x = 1','mai'],'Il quadrato è zero solo in x = 1: lì non è maggiore di zero.'],
+ ]
+}
+};
+CONT.u4.esempio=`<div class="box bia"><h3>Esempio</h3><div class="sys"><div>x² + y² = 25</div><div>x + y = 7</div></div>
+  <p>1. Dalla retta ricavo y: <span class="m">y = 7 − x</span></p>
+  <p>2. Sostituisco: <span class="m">x² + (7 − x)² = 25</span></p>
+  <p>3. Sviluppo il quadrato: (7 − x)² = 49 − 14x + x². Riduco: <span class="m">2x² − 14x + 24 = 0</span>. Divido per 2: <span class="m">x² − 7x + 12 = 0</span></p>
+  <p>4. Δ = 49 − 48 = 1 → x = ${F('7 ± 1','2')} → x = 3 oppure x = 4</p>
+  <p>5. Trovo le y con y = 7 − x: x = 3 → y = 4; x = 4 → y = 3</p>
+  <p class="m">Soluzioni: (3 ; 4) e (4 ; 3)</p></div>
+  <div class="box bia"><h3>Esempio con la parabola</h3><div class="sys"><div>y = x² − 2x − 3</div><div>y = 2x − 3</div></div>
+  <p>1. La retta è già “y = …”. Sostituisco: <span class="m">2x − 3 = x² − 2x − 3</span></p>
+  <p>2. Porto tutto a sinistra: <span class="m">x² − 4x = 0</span> (equazione spuria)</p>
+  <p>3. Raccolgo: <span class="m">x(x − 4) = 0</span> → x = 0 oppure x = 4</p>
+  <p>4. y = 2·0 − 3 = −3 e y = 2·4 − 3 = 5</p>
+  <p class="m">Soluzioni: (0 ; −3) e (4 ; 5)</p></div>`;
+
+const FORMULARIO=`
+<div class="box blu"><h3>Equazioni e disequazioni lineari</h3><p>Passi un termine dall'altra parte → cambia segno.</p><p>Dividi per un numero <b>negativo</b> → gira il verso (&gt; ↔ &lt;).</p><p>0x = 5 impossibile · 0x = 0 indeterminata.</p><p>Frazioni: moltiplica tutto per il <b>m.c.m.</b> · Fratta: <b>C.E.</b> denominatore ≠ 0.</p></div>
+<div class="box ver"><h3>Scomposizioni</h3><p class="m">A² − B² = (A − B)(A + B)</p><p class="m">A² + 2AB + B² = (A + B)²</p><p class="m">A² − 2AB + B² = (A − B)²</p><p class="m">x² + s·x + p = (x + a)(x + b) &nbsp; con a + b = s e a·b = p</p><p>Ordine: raccoglimento totale → conta i termini → (Ruffini).</p></div>
+<div class="box gia"><h3>Equazione di 2° grado</h3><p class="m">a·x² + b·x + c = 0</p><p class="m">Δ = b² − 4ac</p><p class="m">x = ${F('−b ± √Δ','2a')}</p><p>Δ &gt; 0: due soluzioni · Δ = 0: una doppia · Δ &lt; 0: nessuna reale.</p><p>Spuria (c = 0): x(ax + b) = 0 · Pura (b = 0): x² = −c/a.</p></div>
+<div class="box ros"><h3>Sistema di 2° grado</h3><p>Dalla retta ricavo x o y → sostituisco → risolvo con Δ → trovo l'altra lettera → scrivo le coppie (x ; y).</p></div>
+<div class="box blu"><h3>Disequazione di 2° grado (a &gt; 0, Δ &gt; 0)</h3><p class="m">&gt; 0 → x &lt; x₁ oppure x &gt; x₂ (esterni)</p><p class="m">&lt; 0 → x₁ &lt; x &lt; x₂ (interni)</p><p>Δ = 0: &gt; 0 → x ≠ x₁ · &lt; 0 → nessuna.</p><p>Δ &lt; 0: &gt; 0 → sempre · &lt; 0 → mai.</p><p>a negativo → moltiplica per −1 e gira il verso.</p><p>Fratte: tabella dei segni; radici del denominatore sempre escluse.</p></div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=5;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('mat_prog_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('mat_prog_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi, 3 per ogni unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const list=[];for(const u in GENS)for(let k=0;k<3;k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in GENS)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / 3</b>${res[u]<3?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+</script>
+</body></html>
