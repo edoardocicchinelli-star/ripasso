@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html><html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Primo scritto · 4 ES</title>
 <style>
 body{margin:0;background:#fbf7ec;color:#1d1d1d;font-family:Verdana,Tahoma,Arial,sans-serif;font-size:18px;line-height:1.6}
@@ -7,4 +7,30 @@ main{max-width:640px;margin:0 auto;padding:16px}
 .it{display:block;background:#fff;border:2px solid #d9d2bf;border-radius:14px;padding:16px;margin:12px 0;text-decoration:none;color:inherit;min-height:56px}
 .it b{display:block;font-size:1.1rem;color:#22314d}.it span{font-size:.9rem;color:#555}
 .back{color:#22314d;font-size:.9rem}.vuoto{color:#555}
-</style></head><body><header><h1>Primo scritto · 4 ES</h1><p>Goniometria: prima parte</p></header><main><p><a class="back" href="../">← Indietro</a></p><a class="it" href="ripasso-guidato.html"><b>Ripasso guidato (interattivo)</b><span>Gradi e radianti, circonferenza goniometrica, seno e coseno, tangente, relazioni fondamentali. Ricette, esercizi con soluzioni, quiz, orale, prova finale</span></a><a class="it" href="schede-ricette.pdf"><b>Schede da stampare (PDF)</b><span>Ricette, esempi, errori e formulario in formato telefono</span></a><a class="it" href="materiale-cartaceo/mappe.pdf"><b>Mappe concettuali (PDF)</b><span>7 mappe: una per argomento e la panoramica</span></a><a class="it" href="materiale-cartaceo/mappe-ingrandite.html"><b>Mappe ingrandite (per chi vede poco)</b><span>Testo grande, a colonna, si legge bene anche sul telefono</span></a><a class="it" href="materiale-cartaceo/mappe-ingrandite.pdf"><b>Mappe ingrandite (PDF da stampare)</b><span>Le stesse mappe con scritte grandi, un percorso per pagina</span></a><a class="it" href="materiale-cartaceo/dispensa.pdf"><b>Dispensa da stampare (PDF)</b><span>Teoria ed esercizi da svolgere a matita</span></a><a class="it" href="materiale-cartaceo/soluzioni.pdf"><b>Soluzioni svolte (PDF)</b><span>Per controllare gli esercizi della dispensa</span></a></main></body></html>
+</style></head><body><header><h1>Primo scritto · 4 ES</h1><p>Goniometria: prima parte</p></header><main><p><a class="back" href="../">← Indietro</a></p><a class="it" href="ripasso-guidato.html?v=20261001131928"><b>Ripasso guidato (interattivo)</b><span>Gradi e radianti, circonferenza goniometrica, seno e coseno, tangente, relazioni fondamentali. Ricette, esercizi con soluzioni, quiz, orale, prova finale</span></a><a class="it" href="schede-ricette.pdf?v=20261001131928"><b>Schede da stampare (PDF)</b><span>Ricette, esempi, errori e formulario in formato telefono</span></a><a class="it" href="materiale-cartaceo/mappe.pdf?v=20261001131928"><b>Mappe concettuali (PDF)</b><span>7 mappe: una per argomento e la panoramica</span></a><a class="it" href="materiale-cartaceo/mappe-ingrandite.html?v=20261001131928"><b>Mappe ingrandite (per chi vede poco)</b><span>Testo grande, a colonna, si legge bene anche sul telefono</span></a><a class="it" href="materiale-cartaceo/mappe-ingrandite.pdf?v=20261001131928"><b>Mappe ingrandite (PDF da stampare)</b><span>Le stesse mappe con scritte grandi, un percorso per pagina</span></a><a class="it" href="materiale-cartaceo/dispensa.pdf?v=20261001131928"><b>Dispensa da stampare (PDF)</b><span>Teoria ed esercizi da svolgere a matita</span></a><a class="it" href="materiale-cartaceo/soluzioni.pdf?v=20261001131928"><b>Soluzioni svolte (PDF)</b><span>Per controllare gli esercizi della dispensa</span></a></main><!--AGG--><script>
+(function(){
+ var B="20261001131928",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
