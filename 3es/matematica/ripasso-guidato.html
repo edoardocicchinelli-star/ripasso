@@ -263,10 +263,10 @@ function quadSteps(a,b,c){
   h+=`<p><b>Passo 2 · Calcolo Δ</b> con la formula Δ = b² − 4·a·c. Lo faccio a pezzi:</p>
   <p class="m">b² = (${N(b)})² = ${b*b}<br>4·a·c = 4·(${N(a)})·(${N(c)}) = ${N(4*a*c)}<br>Δ = ${b*b} − (${N(4*a*c)}) = <b>${N(D)}</b></p>`;
   if(D<0)h+='<p><b>Passo 3</b> · Δ è negativo (minore di 0): non si può fare la radice di un numero negativo. Risposta: <b>nessuna soluzione reale</b>.</p>';
-  else if(D===0)h+=`<p><b>Passo 3</b> · Δ = 0: le due soluzioni sono uguali. Uso x = −b : (2a):</p><p class="m">x = ${F(N(-b),N(2*a))} = <b>${N(-b/(2*a))}</b></p>`;
+  else if(D===0)h+=`<p><b>Passo 3</b> · Δ = 0: le due soluzioni sono uguali. Uso x = ${F('−b','2a')}:</p><p class="m">x = ${F(N(-b),N(2*a))} = <b>${N(-b/(2*a))}</b></p>`;
   else{
     const s=Math.sqrt(D),r=quadRoots(a,b,c);
-    h+=`<p><b>Passo 3</b> · Δ è positivo: ci sono due soluzioni. La radice: √${D} = ${s} (perché ${s}·${s} = ${D}).</p><p><b>Passo 4</b> · Metto i numeri nella formula x = (−b ± √Δ) : (2a). Il segno ± vuol dire: una volta con il + e una volta con il −. Sotto la frazione c'è 2a = 2·(${N(a)}) = ${N(2*a)}.</p>
+    h+=`<p><b>Passo 3</b> · Δ è positivo: ci sono due soluzioni. La radice: √${D} = ${s} (perché ${s}·${s} = ${D}).</p><p><b>Passo 4</b> · Metto i numeri nella formula x = ${F('−b ± √Δ','2a')}. Il segno ± vuol dire: una volta con il + e una volta con il −. Sotto la frazione c'è 2a = 2·(${N(a)}) = ${N(2*a)}.</p>
     <p class="m">x₁ = ${F(N(-b)+' − '+s,N(2*a))} = ${F(N(-b-s),N(2*a))} = <b>${N(r[0])}</b></p><p class="m">x₂ = ${F(N(-b)+' + '+s,N(2*a))} = ${F(N(-b+s),N(2*a))} = <b>${N(r[1])}</b></p>`;
   }
   return h;
@@ -835,7 +835,7 @@ u1:{
    '<b>Moltiplica TUTTI i termini</b> per il m.c.m., anche quelli senza frazione e quello dopo l\'uguale. Così le frazioni spariscono.',
    'Ora hai un\'equazione senza frazioni: risolvi come la ricetta A (parentesi, x a sinistra, dividi).'])),
   card('gia','C · Equazione fratta (la x è nel denominatore)',
-   '<p>Qui c\'è una x sotto la frazione, per esempio 4 : (x − 1). Attenzione: <b>non si può dividere per zero</b>.</p>'+
+   `<p>Qui c'è una x sotto la frazione, per esempio ${F(4,'x − 1')}. Attenzione: <b>non si può dividere per zero</b>.</p>`+
    stepsHtml([
    '<b>Scrivi le condizioni di esistenza (C.E.)</b>: ogni denominatore deve essere <b>diverso da 0</b>. Esempio: sotto c\'è x − 3. Scrivo x − 3 ≠ 0, cioè x ≠ 3.',
    'Elimina i denominatori (moltiplicando in croce, o con il m.c.m.) e risolvi come l\'equazione lineare.',
@@ -874,7 +874,7 @@ u1:{
  quiz:[
   ['Passando un numero dall\'altra parte dell\'uguale, che cosa succede?','Cambia segno',['Resta uguale','Diventa zero','Si divide per due'],'Ogni termine che cambia lato cambia segno: + diventa −, − diventa +.'],
   ['Dividi per −2 tutti e due i lati di una disequazione con il segno &gt;. Che cosa fai al segno?','Lo giro: diventa &lt;',['Resta &gt;','Diventa =','Diventa ≥'],'Dividendo per un numero negativo il segno di confronto si inverte.'],
-  ['Nell\'equazione 5 : (x − 3) = 2, quale valore la x NON può assumere?','3',['5','2','−3'],'Con x = 3 il denominatore x − 3 fa zero, e non si può dividere per zero.'],
+  [`Nell'equazione ${F(5,'x − 3')} = 2, quale valore la x NON può assumere?`,'3',['5','2','−3'],'Con x = 3 il denominatore x − 3 fa zero, e non si può dividere per zero.'],
   ['L\'equazione 0·x = 7 è...','impossibile',['indeterminata','x = 7','x = 0'],'Nessun numero moltiplicato per 0 dà 7: nessuna soluzione.'],
   ['Per togliere le frazioni da un\'equazione si moltiplica tutto per...','il m.c.m. dei denominatori',['il numero più grande','zero','il numeratore più piccolo'],'Il m.c.m. è il numero in cui entrano tutti i denominatori: le frazioni spariscono.'],
   ['Le C.E. di un\'equazione fratta servono per...','escludere i valori che rendono zero il denominatore',['trovare la soluzione','moltiplicare per il m.c.m.','cambiare il segno'],'Non si può dividere per zero.'],

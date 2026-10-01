@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fisica: le grandezze fisiche</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="./" style="color:#fff;font-size:.85rem">← Torna a Fisica</a></p><h1>Fisica: le grandezze fisiche</h1><p>Misure, unità, densità · un passo alla volta</p></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u0">0 Potenze di 10</button>
+<button data-t="u1">1 Grandezze e SI</button>
+<button data-t="u2">2 Prefissi</button>
+<button data-t="u3">3 Area e volume</button>
+<button data-t="u4">4 Densità</button>
+<button data-t="u5">5 Notazione scientifica</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo all'interrogazione sulle <b>grandezze fisiche</b>. Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti, con carta e penna vicino. Ogni argomento ha sempre lo stesso ordine, così ti abitui.</p>
+<div class="box gia"><h3>Che cosa è base e che cosa è “in più”</h3>
+<p>Gli appunti esistono in due versioni: una <b>completa</b> e una <b>semplificata</b>. In queste schede il livello <b>base</b> è quello della versione semplificata. Quello che è solo nella versione completa è segnato <b>“in più”</b>.</p>
+<ul><li><b>Base</b>: grandezza fisica e misurare · unità SI (m, s, kg, K) · prefissi chilo, centi, milli · area, volume e litro · densità d = m/V · notazione scientifica.</li>
+<li><b>In più</b>: ordine di grandezza · altri prefissi (mega, etto, deca, deci, micro) · formule inverse della densità · conversione g/cm³ ↔ kg/m³ · m³ ↔ cm³.</li></ul>
+<p class="note">Parti dal base. Passa all'“in più” solo se il tuo insegnante lo richiede.</p></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: i passaggi da fare, sempre uguali.</div></div>
+<div class="step"><b class="n">3</b><div><b>Esempi svolti</b>: ogni passaggio è spiegato. Rifalli a penna su un foglio senza guardare.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni, quelli che fanno perdere punti.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: esercizi sempre nuovi. Fai i calcoli <b>su un foglio</b>, poi scegli la risposta. Se sbagli leggi i passaggi. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz di teoria</b>: poche domande sulle regole.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (6 giorni)</h3><ul><li><b>Giorno 1</b>: unità 0 (potenze di 10) e unità 1 (grandezze e SI)</li><li><b>Giorno 2</b>: unità 2 (prefissi e conversioni)</li><li><b>Giorno 3</b>: unità 3 (area, volume, litro)</li><li><b>Giorno 4</b>: unità 4 (densità)</li><li><b>Giorno 5</b>: unità 5 (notazione scientifica e ordine di grandezza)</li><li><b>Giorno 6</b>: Prova finale, Orale e Formulario</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c'è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Carta e penna sempre pronte: fai i calcoli a mano.</li><li>Scrivi <b>sempre l'unità di misura</b> dopo il numero.</li><li>Se sbagli non è un problema: leggi i passaggi e prova con un altro esercizio.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li><li>Prima dell'interrogazione: leggi il <b>Formulario</b> e ripeti a voce le risposte dell'<b>Orale</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u0"></section><section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== UTILITÀ (fisica) ========== */
+const MIN='−';
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const SUPD={'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻'};
+const sup=n=>String(n).split('').map(c=>SUPD[c]).join('');
+const p10=n=>'10'+sup(n);
+const sh=(a,k)=>Number((a*Math.pow(10,k)).toFixed(9));
+/* numero in formato italiano: virgola decimale, punto per le migliaia (da 4 cifre) */
+function it(x){
+  let s=Number(x).toFixed(9).replace(/0+$/,'').replace(/\.$/,'');
+  let neg=s[0]==='-';if(neg)s=s.slice(1);
+  let [i,f]=s.split('.');
+  if(i.length>=4)i=i.replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  return (neg?MIN:'')+i+(f?','+f:'');
+}
+/* legge un numero scritto con it() (per i controlli) */
+function unit_(s){return parseFloat(String(s).replace(/\./g,'').replace(',','.').replace(MIN,'-'))}
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,ok,tag)=>({q,...mkOpts(correct,wrongs),steps,ok,tag});
+const near=(a,b)=>Math.abs(a-b)<=1e-9*Math.max(1,Math.abs(a),Math.abs(b));
+
+/* ========== ESERCIZI DI FISICA ========== */
+const PFX=[{n:'Mega',s:'M',e:6},{n:'Chilo',s:'k',e:3},{n:'Etto',s:'h',e:2},{n:'Deca',s:'da',e:1},{n:'Deci',s:'d',e:-1},{n:'Centi',s:'c',e:-2},{n:'Milli',s:'m',e:-3},{n:'Micro',s:'μ',e:-6}];
+const UN={m:'metro',s:'secondo',g:'grammo',L:'litro'};
+const BASEU=['m','s','g','L'];
+const pickPfx=()=>Math.random()<0.7?pick([PFX[1],PFX[5],PFX[6]]):pick(PFX);
+const AVALS=[2,3,4,5,7,0.5,1.5,2.5,3.5,12,25,40,250,8,6];
+const pst=n=>n===1?'1 posto':n+' posti';
+const mn=n=>n<0?MIN+(-n):String(n);
+const zeri=n=>n===1?'1 zero':n+' zeri';
+
+/* ---------- Unità 0: potenze di 10 ---------- */
+function exPot(){
+  const t=pick(['val','val','molt','molt','molt','inv']);
+  if(t==='val'){
+    const n=pick([-4,-3,-2,-1,1,2,3,4,5,6]),v=Math.pow(10,n);
+    const q=`Quanto vale <b>${p10(n)}</b>?`;
+    const steps=n>0?`<p>L'esponente è positivo (${n}): ${p10(n)} è un <b>1 seguito da ${zeri(n)}</b>.</p><p class="m">${p10(n)} = ${it(v)}</p>`:
+      `<p>L'esponente è negativo (${mn(n)}): ${p10(n)} è una frazione, ${F(1,it(Math.pow(10,-n)))}.</p><p>Il numero ha <b>${-n} cifre dopo la virgola</b> e l'ultima è 1:</p><p class="m">${p10(n)} = ${it(v)}</p>`;
+    return mkEx(q,it(v),[it(Math.pow(10,-n)),it(Math.pow(10,n+1)),it(Math.pow(10,n-1))],steps,()=>near(unit_(it(v)),v),'Potenze di 10');
+  }
+  if(t==='molt'){
+    const a=pick([1.5,2,2.5,3,3.5,4,4.5,5,6,7,8,9,0.5,1.2]),n=pick([1,2,3,-1,-2,-3]),v=sh(a,n);
+    const q=`Calcola: <b>${it(a)} × ${p10(n)}</b>`;
+    const steps=n>0?`<p>Moltiplicare per ${p10(n)} (${it(Math.pow(10,n))}) vuol dire <b>spostare la virgola a destra di ${pst(n)}</b> (se mancano cifre si aggiungono zeri).</p><p class="m">${it(a)} × ${p10(n)} = ${it(v)}</p>`:
+      `<p>Esponente negativo: moltiplicare per ${p10(n)} vuol dire <b>spostare la virgola a sinistra di ${pst(-n)}</b> (se mancano cifre si aggiungono zeri davanti).</p><p class="m">${it(a)} × ${p10(n)} = ${it(v)}</p>`;
+    return mkEx(q,it(v),[it(sh(a,-n)),it(sh(a,n+1)),it(sh(a,n-1))],steps,()=>near(unit_(it(v)),a*Math.pow(10,n)),'Potenze di 10');
+  }
+  const a=pick([1.5,2,2.5,3,3.5,4,4.5,5,6,7,8,9,1.2]),n=pick([2,3,4,-1,-2,-3]),v=sh(a,n);
+  const q=`Completa: <b>${it(v)} = ${it(a)} × 10<sup>?</sup></b>`;
+  const steps=n>0?`<p>Per passare da ${it(a)} a ${it(v)} la virgola si sposta a <b>destra</b> di ${pst(n)}: l'esponente è <b>positivo</b>: ${n}.</p><p class="m">${it(v)} = ${it(a)} × ${p10(n)}</p>`:
+    `<p>Per passare da ${it(a)} a ${it(v)} la virgola si sposta a <b>sinistra</b> di ${pst(-n)}: l'esponente è <b>negativo</b>: ${mn(n)}.</p><p class="m">${it(v)} = ${it(a)} × ${p10(n)}</p>`;
+  return mkEx(q,p10(n),[p10(-n),p10(n+(n>0?1:-1)),p10(n-(n>0?1:-1))],steps,()=>near(a*Math.pow(10,n),v),'Potenze di 10');
+}
+
+/* ---------- Unità 1: grandezze e SI ---------- */
+const GR=[
+ {g:'tempo',u:'il secondo',s:'s',w:["l'ora","il minuto","il giorno"],ws:['h','min','g']},
+ {g:'lunghezza',u:'il metro',s:'m',w:['il centimetro','il chilometro','il miglio'],ws:['cm','km','mi']},
+ {g:'massa',u:'il chilogrammo',s:'kg',w:['il grammo','la tonnellata','il litro'],ws:['g','t','L']},
+ {g:'temperatura',u:'il kelvin',s:'K',w:['il grado Celsius','il grado Fahrenheit','il termometro'],ws:['°C','°F','T']}
+];
+function exSI(){
+  const G=pick(GR),t=pick(['u','s','g']);const dg=(G.g==='tempo'?'del ':'della ')+G.g,pg=(G.g==='tempo'?'il ':'la ')+G.g;
+  if(t==='u')return mkEx(`Qual è l'unità di misura del Sistema Internazionale (SI) <b>${dg}</b>?`,`${G.u} (${G.s})`,G.w.map((x,i)=>`${x} (${G.ws[i]})`),
+    `<p>Nel SI le quattro grandezze di base hanno queste unità:</p><p class="m">tempo → secondo (s)<br>lunghezza → metro (m)<br>massa → chilogrammo (kg)<br>temperatura → kelvin (K)</p><p>Per ${pg}: <b>${G.u} (${G.s})</b>.</p>`,()=>true,'Il Sistema Internazionale');
+  if(t==='s')return mkEx(`Con quale simbolo si indica l'unità SI <b>${dg}</b> (${G.u.replace(/^(il|lo|la) /,'')})?`,G.s,[...GR.filter(x=>x!==G).map(x=>x.s),...G.ws].slice(0,3),
+    `<p>Il simbolo dell'unità si scrive <b>senza punto</b> e con la maiuscola o minuscola giusta. Per ${pg} è <b>${G.s}</b>.</p><p class="note">Attenzione: il kelvin si scrive con la K <b>maiuscola</b> (la k minuscola è il prefisso chilo).</p>`,()=>true,'Il Sistema Internazionale');
+  const o=pick(GR.filter(x=>x!==G));
+  const art=x=>(x.g==='tempo'?'il ':'la ')+x.g;
+  return mkEx(`Il <b>${G.u.replace(/^(il|lo|la) /,'')}</b> (${G.s}) è l'unità di misura di quale grandezza?`,art(G),
+    GR.filter(x=>x!==G).map(art),
+    `<p>${G.u.charAt(0).toUpperCase()+G.u.slice(1)} (${G.s}) misura ${G.g==='tempo'?'il':'la'} <b>${G.g}</b>.</p>`,()=>true,'Il Sistema Internazionale');
+}
+function exMisura(){
+  const u=pick(['m','cm','kg','s']),n=rnd(2,9);
+  const what={m:'la lunghezza',cm:'la lunghezza',kg:'la massa',s:"l'intervallo di tempo"}[u];
+  const q=`Per misurare ${what} usi l'unità <b>1 ${u}</b>. Nella grandezza da misurare l'unità ci sta <b>${n} volte</b>. Qual è la misura?`;
+  const steps=`<p>Misurare vuol dire vedere <b>quante volte l'unità è contenuta</b> nella grandezza. Se ${n} volte 1 ${u} entrano, la misura è ${n} ${u}.</p><p class="m">${n} × 1 ${u} = ${n} ${u}</p>`;
+  return mkEx(q,`${n} ${u}`,[`${n+1} ${u}`,`1 ${u}`,`${n} volte`].slice(0,3),steps,()=>true,'Misurare');
+}
+
+/* ---------- Unità 2: prefissi e conversioni ---------- */
+function exPref(){
+  const t=pick(['val','toB','toB','fromB','fromB','btw']);
+  const P=pickPfx(),u=pick(BASEU),a=pick(AVALS);
+  const pn=P.n.toLowerCase(),un=UN[u];
+  if(t==='val'){
+    const e=P.e;
+    return mkEx(`Che valore ha il prefisso <b>${pn}</b> (${P.s})?`,p10(e),[p10(-e),p10(e+(e>0?1:-1)),p10(e-(e>0?1:-1))],
+      `<p>Il prefisso <b>${pn}</b> (${P.s}) vale ${p10(e)}, cioè ${it(Math.pow(10,e))}.</p><p>Esempio: 1 ${P.s}${u} = ${it(Math.pow(10,e))} ${u}.</p>`,()=>true,'Prefissi');
+  }
+  if(t==='toB'){
+    const e=P.e,res=sh(a,e);
+    const q=`Converti <b>${it(a)} ${P.s}${u}</b> in ${u}`;
+    const steps=`<p>1. ${P.s}${u} si legge “${pn}${un}”. Il prefisso vale ${p10(e)}: 1 ${P.s}${u} = ${it(Math.pow(10,e))} ${u}.</p><p>2. Moltiplico per ${p10(e)}: ${e>0?'sposto la virgola a <b>destra</b> di '+pst(e):'sposto la virgola a <b>sinistra</b> di '+pst(-e)}.</p><p class="m">${it(a)} ${P.s}${u} = ${it(a)} × ${p10(e)} ${u} = <b>${it(res)} ${u}</b></p>${e>0?'<p class="note">Controllo: il chilo, l\'etto... sono unità più grandi di '+u+', quindi in '+u+' il numero deve diventare più grande.</p>':'<p class="note">Controllo: centi, milli... sono unità più piccole di '+u+', quindi in '+u+' il numero deve diventare più piccolo.</p>'}`;
+    return mkEx(q,`${it(res)} ${u}`,[`${it(sh(a,-e))} ${u}`,`${it(sh(a,e+1))} ${u}`,`${it(sh(a,e-1))} ${u}`],steps,()=>near(unit_(it(res)),a*Math.pow(10,e)),'Conversioni');
+  }
+  if(t==='fromB'){
+    const e=P.e,res=sh(a,-e);
+    const q=`Converti <b>${it(a)} ${u}</b> in ${P.s}${u}`;
+    const steps=`<p>1. 1 ${P.s}${u} = ${it(Math.pow(10,e))} ${u}. Quindi 1 ${u} = ${F(1,it(Math.pow(10,e)))} ${P.s}${u} = ${p10(-e)} ${P.s}${u}.</p><p>2. Moltiplico per ${p10(-e)}: ${(-e)>0?'sposto la virgola a <b>destra</b> di '+pst(-e):'sposto la virgola a <b>sinistra</b> di '+pst(e)}.</p><p class="m">${it(a)} ${u} = ${it(a)} × ${p10(-e)} ${P.s}${u} = <b>${it(res)} ${P.s}${u}</b></p>${e>0?'<p class="note">Controllo: il '+pn+' è più grande di '+u+', quindi nel '+pn+u+' il numero diventa più piccolo.</p>':'<p class="note">Controllo: il '+pn+' è più piccolo di '+u+', quindi nel '+pn+u+' il numero diventa più grande.</p>'}`;
+    return mkEx(q,`${it(res)} ${P.s}${u}`,[`${it(sh(a,e))} ${P.s}${u}`,`${it(sh(a,-e+1))} ${P.s}${u}`,`${it(sh(a,-e-1))} ${P.s}${u}`],steps,()=>near(unit_(it(res)),a*Math.pow(10,-e)),'Conversioni');
+  }
+  let P1=pick([PFX[1],PFX[5],PFX[6]]),P2=pick([PFX[1],PFX[5],PFX[6]]);
+  while(P2===P1)P2=pick([PFX[1],PFX[5],PFX[6]]);
+  const d=P1.e-P2.e,res=sh(a,d);
+  const q=`Converti <b>${it(a)} ${P1.s}${u}</b> in ${P2.s}${u}`;
+  const steps=`<p>Passo dall'<b>unità base</b>.</p><p>1. Da ${P1.s}${u} a ${u}: moltiplico per ${p10(P1.e)}.</p><p>2. Da ${u} a ${P2.s}${u}: moltiplico per ${p10(-P2.e)}.</p><p>In totale: ${p10(P1.e)} × ${p10(-P2.e)} = ${p10(d)}. ${d>0?'Sposto la virgola a <b>destra</b> di '+pst(d)+'.':'Sposto la virgola a <b>sinistra</b> di '+pst(-d)+'.'}</p><p class="m">${it(a)} ${P1.s}${u} = <b>${it(res)} ${P2.s}${u}</b></p>`;
+  return mkEx(q,`${it(res)} ${P2.s}${u}`,[`${it(sh(a,-d))} ${P2.s}${u}`,`${it(sh(a,d+1))} ${P2.s}${u}`,`${it(sh(a,d-1))} ${P2.s}${u}`],steps,()=>near(unit_(it(res)),a*Math.pow(10,d)),'Conversioni');
+}
+
+/* ---------- Unità 3: area, volume, litro ---------- */
+function exArea(){
+  const a=rnd(2,9);let b=rnd(2,9);if(b===a)b=a+1;
+  const q=`Un campo rettangolare è lungo <b>${a} m</b> e largo <b>${b} m</b>. Calcola la sua area.`;
+  const steps=`<p>L'area di un rettangolo si calcola con <b>base × altezza</b>. Le unità si moltiplicano anche loro: m × m = m².</p><p class="m">${a} m × ${b} m = <b>${a*b} m²</b></p>`;
+  return mkEx(q,`${a*b} m²`,[`${a*b} m`,`${2*(a+b)} m²`,`${a*b} m³`],steps,()=>true,'Area');
+}
+function exVol(){
+  const t=pick(['box','cubo']);
+  if(t==='cubo'){
+    const s=rnd(2,6);
+    return mkEx(`Un cubo ha lo spigolo di <b>${s} m</b>. Calcola il suo volume.`,`${s*s*s} m³`,[`${s*s} m³`,`${3*s} m³`,`${s*s*s} m²`],
+      `<p>Il volume del cubo è <b>spigolo × spigolo × spigolo</b>. Le unità: m × m × m = m³.</p><p class="m">${s} × ${s} × ${s} = ${s*s*s}, quindi <b>${s*s*s} m³</b></p>`,()=>true,'Volume');
+  }
+  const a=rnd(2,6),b=rnd(2,6),c=rnd(2,6);
+  const V=a*b*c;
+  return mkEx(`Una stanza è lunga <b>${a} m</b>, larga <b>${b} m</b> e alta <b>${c} m</b>. Calcola il suo volume.`,`${V} m³`,[`${a+b+c} m³`,`${V} m²`,`${a*b} m³`],
+    `<p>Il volume di un parallelepipedo si calcola con <b>lunghezza × larghezza × altezza</b>. Le unità: m × m × m = m³.</p><p class="m">${a} × ${b} × ${c} = <b>${V} m³</b></p>`,()=>true,'Volume');
+}
+function exLitro(){
+  const T=[
+   {from:'m³',to:'L',k:3,why:`1 m³ = 10 dm × 10 dm × 10 dm = 1.000 dm³, e 1 dm³ = 1 L. Quindi 1 m³ = 1.000 L: <b>moltiplico per 1.000</b>.`},
+   {from:'L',to:'m³',k:-3,why:`1 m³ = 1.000 L, quindi 1 L = 0,001 m³: <b>divido per 1.000</b> (sposto la virgola a sinistra di 3 posti).`},
+   {from:'L',to:'dm³',k:0,why:`1 L = 1 dm³: i due numeri sono <b>uguali</b>.`},
+   {from:'dm³',to:'L',k:0,why:`1 dm³ = 1 L: i due numeri sono <b>uguali</b>.`},
+   {from:'L',to:'cm³',k:3,why:`1 L = 1 dm³ e 1 dm³ = 10 cm × 10 cm × 10 cm = 1.000 cm³. Quindi 1 L = 1.000 cm³: <b>moltiplico per 1.000</b>.`},
+   {from:'m³',to:'cm³',k:6,why:`1 m³ = 100 cm × 100 cm × 100 cm = 1.000.000 cm³ = 10⁶ cm³: <b>moltiplico per 10⁶</b>.`},
+   {from:'cm³',to:'m³',k:-6,why:`1 cm³ = 10⁻⁶ m³ (un milionesimo): <b>divido per 1.000.000</b> (sposto la virgola a sinistra di 6 posti).`}
+  ];
+  const t=pick(T),a=pick([1,2,3,5,0.5,2.5,4,7,12,250,500,1500]);
+  const res=sh(a,t.k);
+  const q=`Converti <b>${it(a)} ${t.from}</b> in ${t.to}`;
+  const steps=`<p>${t.why}</p><p class="m">${it(a)} ${t.from} = <b>${it(res)} ${t.to}</b></p>`;
+  const w=[sh(a,-t.k),sh(a,t.k+1),sh(a,t.k-1),sh(a,t.k===0?3:0)].map(v=>`${it(v)} ${t.to}`);
+  return mkEx(q,`${it(res)} ${t.to}`,w,steps,()=>near(unit_(it(res)),a*Math.pow(10,t.k)),'Litro e volume');
+}
+
+/* ---------- Unità 4: densità ---------- */
+const MAT=[['il legno',600],['l\'olio',900],['l\'acqua',1000],['l\'alluminio',2700],['il ferro',7800]];
+function exDens(){
+  const [mat,d]=pick(MAT),V=pick([2,4,5,10,0.5]),m=d*V,t=pick(['d','m','V']);
+  const nome=mat.replace(/^(il|l')\s?/,'');
+  if(t==='d'){
+    return mkEx(`Un blocco di ${nome} ha massa <b>${it(m)} kg</b> e volume <b>${it(V)} m³</b>. Calcola la densità.`,`${it(d)} kg/m³`,[`${it(m*V)} kg/m³`,`${it(V/m)} kg/m³`,`${it(m*10/V)} kg/m³`],
+      `<p>La densità è <b>massa diviso volume</b>:</p><p class="m">d = ${F('m','V')}</p><p>Sostituisco i dati (massa in kg, volume in m³):</p><p class="m">d = ${F(it(m)+' kg',it(V)+' m³')} = <b>${it(d)} kg/m³</b></p>`,()=>near(m/V,d),'Densità');
+  }
+  if(t==='m'){
+    return mkEx(`Un blocco di ${nome} ha densità <b>${it(d)} kg/m³</b> e volume <b>${it(V)} m³</b>. Calcola la massa.`,`${it(m)} kg`,[`${it(d/V)} kg`,`${it(d*V*10)} kg`,`${it(V/d)} kg`],
+      `<p>Dalla formula d = ${F('m','V')} si ottiene la formula inversa: <b>m = d × V</b> (massa = densità × volume).</p><p class="m">m = ${it(d)} kg/m³ × ${it(V)} m³ = <b>${it(m)} kg</b></p>`,()=>near(d*V,m),'Densità');
+  }
+  return mkEx(`Un blocco di ${nome} ha massa <b>${it(m)} kg</b> e densità <b>${it(d)} kg/m³</b>. Calcola il volume.`,`${it(V)} m³`,[`${it(m*d)} m³`,`${it(d/m)} m³`,`${it(m/d*10)} m³`],
+    `<p>Dalla formula d = ${F('m','V')} si ottiene la formula inversa: <b>V = ${F('m','d')}</b> (volume = massa diviso densità).</p><p class="m">V = ${F(it(m)+' kg',it(d)+' kg/m³')} = <b>${it(V)} m³</b></p>`,()=>near(m/d,V),'Densità');
+}
+function exDensConv(){
+  const A=[[0.917,'olio'],[1,'acqua'],[0.8,'alcol'],[2.7,'alluminio'],[7.8,'ferro'],[0.6,'legno'],[13.6,'mercurio'],[0.5,'sughero']];
+  const [a]=pick(A),t=pick(['toSI','toSI','fromSI']);
+  if(t==='toSI'){
+    const res=sh(a,3);
+    return mkEx(`Converti <b>${it(a)} g/cm³</b> in kg/m³`,`${it(res)} kg/m³`,[`${it(sh(a,4))} kg/m³`,`${it(sh(a,-3))} kg/m³`,`${it(sh(a,2))} kg/m³`],
+      `<p>1 g = 10⁻³ kg e 1 cm³ = 10⁻⁶ m³. Quindi:</p><p class="m">1 g/cm³ = ${F('10⁻³ kg','10⁻⁶ m³')} = 10⁻³⁻⁽⁻⁶⁾ kg/m³ = 10³ kg/m³ = 1.000 kg/m³</p><p>Moltiplico per 1.000:</p><p class="m">${it(a)} g/cm³ = ${it(a)} × 1.000 = <b>${it(res)} kg/m³</b></p>`,()=>near(unit_(it(res)),a*1000),'Conversione di densità');
+  }
+  const kg=sh(a,3);
+  return mkEx(`Converti <b>${it(kg)} kg/m³</b> in g/cm³`,`${it(a)} g/cm³`,[`${it(sh(a,3))} g/cm³`,`${it(sh(a,-1))} g/cm³`,`${it(sh(a,1))} g/cm³`],
+    `<p>1 kg/m³ = ${F('10³ g','10⁶ cm³')} = 10⁻³ g/cm³. Cioè 1.000 kg/m³ = 1 g/cm³: <b>divido per 1.000</b>.</p><p class="m">${it(kg)} kg/m³ = ${it(kg)} : 1.000 = <b>${it(a)} g/cm³</b></p>`,()=>near(unit_(it(a))*1000,kg),'Conversione di densità');
+}
+
+/* ---------- Unità 5: notazione scientifica e ordine di grandezza ---------- */
+function exNot(){
+  const mant=[7.5,2.3,2.45,4.5,1.2,3.6,9.1,6.25,8,5,1.05,3.04,2.8,7.2,1.5,9];
+  const a=pick(mant),e=pick([-4,-3,-2,-1,1,2,3,4,5,6]),u=pick(['m','s','kg','K']),v=sh(a,e);
+  const t=pick(['toSci','toSci','toDec']);
+  if(t==='toSci'){
+    const corr=`${it(a)} × ${p10(e)} ${u}`;
+    const w=[`${it(a*10)} × ${p10(e-1)} ${u}`,`${it(a)} × ${p10(-e)} ${u}`,`${it(a/10)} × ${p10(e+1)} ${u}`,`${it(a)} × ${p10(e+1)} ${u}`];
+    const steps=`<p>La forma richiesta è <b>[una cifra diversa da 0] , [altre cifre] × 10 elevato a n</b>.</p><p>1. Metto la virgola <b>dopo la prima cifra diversa da 0</b>: ${it(a)}.</p><p>2. Conto di quanti posti ho spostato la virgola: <b>${Math.abs(e)}</b>. ${e>0?'Il numero di partenza è grande (la virgola è andata verso sinistra): l\'esponente è <b>positivo</b>.':'Il numero di partenza è piccolo (la virgola è andata verso destra): l\'esponente è <b>negativo</b>.'}</p><p class="m">${it(v)} ${u} = <b>${corr}</b></p>`;
+    return mkEx(`Scrivi in notazione scientifica: <b>${it(v)} ${u}</b>`,corr,w,steps,()=>near(unit_(it(a))*Math.pow(10,e),unit_(it(v))),'Notazione scientifica');
+  }
+  const corr=`${it(v)} ${u}`;
+  const steps=`<p>Esponente ${e>0?'positivo':'negativo'} (${mn(e)}): ${e>0?'<b>sposto la virgola a destra</b> di '+pst(e)+' (aggiungo zeri se serve)':'<b>sposto la virgola a sinistra</b> di '+pst(-e)+' (aggiungo zeri davanti se serve)'}.</p><p class="m">${it(a)} × ${p10(e)} ${u} = <b>${corr}</b></p>`;
+  return mkEx(`Scrivi come numero decimale: <b>${it(a)} × ${p10(e)} ${u}</b>`,corr,[`${it(sh(a,-e))} ${u}`,`${it(sh(a,e+1))} ${u}`,`${it(sh(a,e-1))} ${u}`],steps,()=>near(unit_(it(v)),a*Math.pow(10,e)),'Notazione scientifica');
+}
+function exOrd(){
+  const a=pick([1,1.5,2,2.5,3,6,7,8,9]),e=pick([-3,-2,-1,1,2,3,4]),u=pick(['m','s','kg','K']),v=sh(a,e);
+  const up=a>=6,res=up?e+1:e;
+  const q=`Qual è l'ordine di grandezza di <b>${it(v)} ${u}</b>?`;
+  const steps=`<p>L'ordine di grandezza è la <b>potenza di 10 più vicina</b> alla misura.</p><p>1. Scrivo in notazione scientifica: ${it(v)} ${u} = ${it(a)} × ${p10(e)} ${u}.</p><p>2. Guardo il numero davanti (${it(a)}): ${up?'è <b>grande</b> (6 o più), quindi la misura è più vicina a '+p10(e+1)+' che a '+p10(e)+'. L\'esponente <b>sale di uno</b>.':'è <b>piccolo</b> (3 o meno), quindi la misura è più vicina a '+p10(e)+'. L\'esponente <b>resta</b> uguale.'}</p><p class="m">Ordine di grandezza: <b>${p10(res)}</b></p>`;
+  return mkEx(q,p10(res),[p10(up?e:e+1),p10(res+1),p10(res-1)],steps,()=>true,'Ordine di grandezza');
+}
+
+const GENS={
+  u0:[exPot],
+  u1:[exSI,exSI,exMisura],
+  u2:[exPref],
+  u3:[exArea,exVol,exLitro,exLitro],
+  u4:[exDens,exDens,exDensConv],
+  u5:[exNot,exNot,exOrd]
+};
+const UNITS={u0:'0 · Potenze di 10',u1:'1 · Grandezze fisiche e SI',u2:'2 · Prefissi e conversioni',u3:'3 · Area, volume e litro',u4:'4 · La densità',u5:'5 · Notazione scientifica e ordine di grandezza'};
+const PROVA_PLAN={u0:2,u1:2,u2:3,u3:2,u4:3,u5:3};
+
+/* ========== CONTENUTI FISSI (Fisica 3 ES: le grandezze fisiche) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const M=t=>`<span class="m">${t}</span>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+
+const CONT={
+u0:{
+ cose:`<div class="box bia"><p>In fisica si incontrano numeri <b>molto grandi</b> (la distanza tra due città: 200.000 m) e numeri <b>molto piccoli</b> (lo spessore di un capello: 0,00005 m). Per scriverli in modo corto si usano le <b>potenze di 10</b>. Prima di cominciare con la fisica ripassiamo come funzionano: ti serviranno nei prefissi, nelle conversioni e nella notazione scientifica.</p></div>`,
+ ricette:[
+  card('blu','1 · Potenze di 10 con esponente positivo',
+   '<p>10² vuol dire 10 · 10 = 100. 10³ vuol dire 10 · 10 · 10 = 1.000.</p><p><b>Regola:</b> 10 elevato a n è un <b>1 seguito da n zeri</b>.</p><p class="m">10¹ = 10 &nbsp; 10² = 100 &nbsp; 10³ = 1.000 &nbsp; 10⁶ = 1.000.000</p>'),
+  card('ver','2 · Potenze di 10 con esponente negativo',
+   '<p>10⁻¹ vuol dire '+F(1,10)+' = 0,1. 10⁻² vuol dire '+F(1,100)+' = 0,01.</p><p><b>Regola:</b> l\'esponente dice <b>quante cifre ci sono dopo la virgola</b>, e l\'ultima è sempre 1.</p><p class="m">10⁻¹ = 0,1 &nbsp; 10⁻² = 0,01 &nbsp; 10⁻³ = 0,001</p><p class="note">Attenzione: 10⁻² <b>non</b> è −100. Il meno nell\'esponente non rende il numero negativo: lo rende piccolo.</p>'),
+  card('gia','3 · Moltiplicare un numero per una potenza di 10',stepsHtml([
+   'Guarda l\'<b>esponente</b>: è positivo o negativo?',
+   '<b>Positivo</b> → sposta la virgola a <b>destra</b> di tanti posti quanto vale l\'esponente (se mancano cifre aggiungi zeri). '+M('3,5 × 10² = 350'),
+   '<b>Negativo</b> → sposta la virgola a <b>sinistra</b> (se mancano cifre aggiungi zeri davanti). '+M('4 × 10⁻² = 0,04')])),
+  card('ros','Tabella da ricordare',TAB(['Potenza','Numero'],[['10⁻³','0,001'],['10⁻²','0,01'],['10⁻¹','0,1'],['10⁰','1'],['10¹','10'],['10²','100'],['10³','1.000'],['10⁶','1.000.000']])+'<p class="note">10⁰ = 1: ogni numero elevato a zero fa 1.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi</h3>
+ <p>Quanto vale 10⁴? Un 1 seguito da 4 zeri: <b>10.000</b>.</p>
+ <p>Quanto vale 10⁻³? Tre cifre dopo la virgola, l'ultima è 1: <b>0,001</b>.</p>
+ <p>Calcola 2,5 × 10³. Esponente positivo: virgola a destra di 3 posti. 2,5 → 25 → 250 → 2500: <b>2.500</b>.</p>
+ <p>Calcola 7 × 10⁻². Esponente negativo: virgola a sinistra di 2 posti. 7 = 7,0 → 0,7 → 0,07: <b>0,07</b>.</p></div>`,
+ errori:['Scrivi 10² = 20: sbagliato. 10² è 10 · 10 = 100, non 10 · 2.','Scrivi 10⁻² = −100: sbagliato. Il numero è <b>0,01</b>.','Sposti la virgola dalla parte sbagliata: esponente <b>positivo</b> → destra, <b>negativo</b> → sinistra.','Sbagli a contare gli zeri: per 10⁵ gli zeri sono 5.'],
+ orale:[],
+ quiz:[
+  ['Quanto vale 10³?','1.000',['30','100','10.000'],'10³ = 10 · 10 · 10 = 1.000: un 1 seguito da 3 zeri.'],
+  ['Quanto vale 10⁻²?','0,01',['−100','0,1','0,001'],'Esponente negativo: 2 cifre dopo la virgola, l\'ultima è 1: 0,01.'],
+  ['Moltiplicando per 10² la virgola si sposta...','a destra di 2 posti',['a sinistra di 2 posti','a destra di 10 posti','non si sposta'],'Esponente positivo: virgola a destra.'],
+  ['Il numero 10⁰ vale...','1',['0','10','100'],'Ogni numero elevato a zero fa 1.'],
+ ]
+},
+u1:{
+ cose:`<div class="box bia"><p>Una <b>grandezza fisica</b> è una proprietà di un corpo o di un fenomeno che si può <b>misurare</b>. Esempi: la lunghezza di un tavolo, la durata di una lezione, la massa di uno zaino, la temperatura di una stanza. La bellezza o la simpatia, invece, non si misurano: non sono grandezze fisiche.</p>
+ <p><b>Misurare</b> vuol dire confrontare la grandezza con un'<b>unità di misura</b> e vedere <b>quante volte</b> l'unità è contenuta. Per capirsi in tutto il mondo i fisici usano lo stesso sistema di unità: il <b>Sistema Internazionale (SI)</b>.</p></div>`,
+ ricette:[
+  card('blu','A · Come si misura una grandezza',stepsHtml([
+   'Scegli l\'<b>unità di misura</b> (per esempio il metro).',
+   'Vedi <b>quante volte</b> l\'unità sta nella grandezza da misurare.',
+   'Scrivi il <b>numero</b> e l\'<b>unità</b>: un tavolo in cui il metro sta 2 volte è lungo <b>2 m</b>.'])),
+  card('ver','B · Il Sistema Internazionale (SI): le 4 unità da sapere',TAB(['Grandezza','Cosa misura','Unità','Simbolo'],[['Lunghezza','quanto è lungo un oggetto','metro','m'],['Tempo','quanto dura un evento','secondo','s'],['Massa','la quantità di materia (quello che misura la bilancia)','chilogrammo','kg'],['Temperatura','quanto fa caldo o freddo','kelvin','K']])+'<p class="note">Il simbolo si scrive senza punto: m, s, kg, K. L\'unità SI della massa è il <b>chilogrammo</b>, non il grammo.</p>'),
+  card('gia','C · Le grandezze che incontri',
+   '<p><b>Intervallo di tempo</b>: si misura in secondi [s].</p><p><b>Lunghezza</b>: si misura in metri [m].</p><p><b>Massa</b>: è quella che di solito chiamiamo “peso” e si misura con la bilancia, in chilogrammi [kg]. Più avanti vedrai che in fisica massa e peso <b>non sono la stessa cosa</b>.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · misurare</h3><p>Misuro un tavolo con un metro da sarta. Il metro ci sta <b>2 volte</b>. Il tavolo è lungo <b>2 m</b>.</p></div>
+ <div class="box bia"><h3>Esempio 2 · scegliere l'unità giusta</h3><p>Quanto dura una lezione? È una durata, cioè un <b>tempo</b>: unità SI il <b>secondo (s)</b>. Una lezione da un'ora dura 3.600 s.</p><p>Quanto pesa uno zaino? Per la fisica è la <b>massa</b>: unità SI il <b>chilogrammo (kg)</b>.</p></div>`,
+ errori:['Scrivi che l\'unità SI della massa è il grammo: è il <b>chilogrammo</b> (kg).','Scrivi “k” per il kelvin: il kelvin ha la K <b>maiuscola</b> (la k minuscola è il prefisso chilo).','Dimentichi l\'unità dopo il numero: “5” non è una misura, “5 m” sì.','Pensi che l\'ora sia l\'unità SI del tempo: è il <b>secondo</b>.'],
+ orale:[
+  ['Che cos\'è una grandezza fisica e che cosa vuol dire misurare?','Una grandezza fisica è una proprietà di un corpo o di un fenomeno che si può misurare, per esempio la lunghezza. Misurare vuol dire confrontare la grandezza con un\'unità di misura e vedere quante volte l\'unità è contenuta. Esempio: se il metro sta 2 volte in un tavolo, il tavolo è lungo 2 metri.'],
+  ['Che cos\'è il Sistema Internazionale?','È l\'insieme di unità di misura che si usano in tutto il mondo scientifico, così tutti si capiscono. Le unità di base sono: il secondo per il tempo, il metro per la lunghezza, il chilogrammo per la massa e il kelvin per la temperatura.'],
+ ],
+ quiz:[
+  ['Una grandezza fisica è...','una proprietà che si può misurare',['qualsiasi cosa che si vede','un numero qualunque','una formula'],'Per essere una grandezza fisica la proprietà deve poter essere misurata.'],
+  ['Misurare vuol dire...','confrontare con un\'unità e vedere quante volte è contenuta',['indovinare','contare i numeri','pesare sempre'],'Si conta quante volte l\'unità sta nella grandezza.'],
+  ['L\'unità SI della massa è...','il chilogrammo (kg)',['il grammo (g)','il litro (L)','il metro (m)'],'Nel SI la massa si misura in chilogrammi.'],
+  ['Il kelvin (K) misura...','la temperatura',['il tempo','la lunghezza','la massa'],'Il kelvin è l\'unità SI della temperatura.'],
+  ['Quale di queste NON è una grandezza fisica?','la simpatia',['la lunghezza','la durata','la massa'],'La simpatia non si può misurare con uno strumento.'],
+ ]
+},
+u2:{
+ cose:`<div class="box bia"><p>I <b>prefissi</b> sono parole (o lettere) che si mettono davanti all'unità di misura per dire che è <b>più grande</b> o <b>più piccola</b>. Per esempio <b>chilo</b> (k) vuol dire “1.000 volte di più”: 1 chilogrammo sono 1.000 grammi. Servono per non scrivere numeri lunghissimi.</p>
+ <p>Una <b>conversione</b> è passare da un'unità a un'altra, per esempio da chilometri a metri.</p></div>`,
+ ricette:[
+  card('blu','A · I prefissi da sapere',TAB(['Prefisso','Simbolo','Valore'],[['Chilo','k','10³ = 1.000'],['Centi','c','10⁻² = 0,01'],['Milli','m','10⁻³ = 0,001']])+'<p>1 km = 1.000 m &nbsp; 1 cm = 0,01 m &nbsp; 1 mm = 0,001 m</p>'),
+  card('gia','B · In più: gli altri prefissi del SI',TAB(['Prefisso','Simbolo','Valore'],[['Mega','M','10⁶ = 1.000.000'],['Etto','h','10² = 100'],['Deca','da','10¹ = 10'],['Deci','d','10⁻¹ = 0,1'],['Micro','μ','10⁻⁶ = 0,000001']])+'<p class="note">Attenzione: <b>M</b> maiuscola è mega (grande), <b>m</b> minuscola è milli (piccolo).</p>'),
+  card('ver','C · Da prefisso a unità base (per esempio km → m)',stepsHtml([
+   'Scrivi il <b>valore del prefisso</b>: km → k = 10³.',
+   '<b>Moltiplica</b> il numero per quel valore.',
+   'Esponente <b>positivo</b>: sposta la virgola a <b>destra</b>. Esponente <b>negativo</b>: a <b>sinistra</b>.'])+'<p class="note">Controllo: se passi a un\'unità <b>più piccola</b> (km → m) il numero deve diventare <b>più grande</b>.</p>'),
+  card('ros','D · Da unità base a prefisso (per esempio m → km) e da prefisso a prefisso',stepsHtml([
+   'Da unità base a prefisso: <b>moltiplica per l\'inverso</b> del valore del prefisso (m → km: ×10⁻³, cioè sposta la virgola a sinistra di 3 posti).',
+   'Da prefisso a prefisso (per esempio cm → mm): <b>passa dall\'unità base</b>: cm → m → mm.',
+   'Controllo: passando a un\'unità <b>più grande</b> il numero deve diventare <b>più piccolo</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · km → m</h3><p>Converti 3,5 km in m.</p>
+  <p><b>1.</b> k = 10³, quindi 1 km = 1.000 m.</p><p><b>2.</b> Moltiplico: 3,5 × 10³. Esponente positivo: virgola a destra di 3 posti: 3,5 → 35 → 350 → 3500.</p><p class="m">3,5 km = 3.500 m</p></div>
+  <div class="box bia"><h3>Esempio 2 · m → cm</h3><p>Converti 2 m in cm.</p><p>c = 10⁻², quindi 1 cm = 0,01 m e 1 m = 100 cm. Moltiplico per 10²: virgola a destra di 2 posti.</p><p class="m">2 m = 200 cm</p></div>
+  <div class="box bia"><h3>Esempio 3 · prefisso → prefisso</h3><p>Converti 4 cm in mm.</p><p><b>1.</b> cm → m: 4 × 10⁻² = 0,04 m.</p><p><b>2.</b> m → mm: moltiplico per 10³: 0,04 → 40.</p><p class="m">4 cm = 40 mm</p></div>`,
+ errori:['Sposti la virgola dalla parte sbagliata: controlla con il buon senso (un chilometro è più grande di un metro, quindi 2 km sono <b>più</b> di 2 m).','Confondi <b>M</b> (mega) e <b>m</b> (milli), oppure <b>K</b> (kelvin) e <b>k</b> (chilo).','Conti male gli spostamenti: 10³ sono 3 posti, non 30.','Scrivi 1 kg = 100 g: sono <b>1.000</b> g.'],
+ orale:[
+  ['Che cosa sono i prefissi e a che cosa servono?','Sono parole che si mettono davanti all\'unità di misura per moltiplicarla o dividerla per una potenza di 10. Servono per scrivere misure molto grandi o molto piccole senza numeri lunghissimi. Per esempio chilo vale 1.000 volte di più: 1 chilogrammo sono 1.000 grammi.'],
+  ['Come si converte una misura da km a m?','Il prefisso chilo vale 10 alla 3, cioè 1.000. Quindi moltiplico il numero per 1.000, cioè sposto la virgola a destra di tre posti. Per esempio 3,5 km sono 3.500 m.'],
+ ],
+ quiz:[
+  ['Il prefisso chilo (k) vale...','1.000 volte di più',['100 volte di più','1.000 volte di meno','10 volte di più'],'k = 10³ = 1.000.'],
+  ['1 centimetro è...','1/100 di metro (0,01 m)',['100 metri','1/1.000 di metro','1/10 di metro'],'c = 10⁻² = 0,01.'],
+  ['1 mm è...','0,001 m',['0,01 m','1.000 m','0,1 m'],'m = 10⁻³ = 0,001.'],
+  ['2 km sono...','2.000 m',['200 m','0,002 m','20 m'],'Moltiplico per 1.000: 2 × 1.000 = 2.000.'],
+  ['Passando da m a cm il numero...','diventa più grande (×100)',['diventa più piccolo','resta uguale','diventa 0'],'Il centimetro è più piccolo del metro: ce ne vogliono di più.'],
+ ]
+},
+u3:{
+ cose:`<div class="box bia"><p>L'<b>area</b> misura la <b>superficie</b> di una figura piana (quanto spazio occupa sul piano). Il <b>volume</b> misura lo spazio occupato da un oggetto in tre dimensioni. Tutte e due sono grandezze <b>derivate dalla lunghezza</b>: si ottengono moltiplicando lunghezze tra loro.</p>
+ <p>L'area si misura in <b>metri quadrati (m²)</b>, il volume in <b>metri cubi (m³)</b>. Per liquidi e gas si usa spesso il <b>litro (L)</b>.</p></div>`,
+ ricette:[
+  card('blu','A · Area',stepsHtml([
+   'Rettangolo: <b>area = base × altezza</b>.',
+   'Anche le unità si moltiplicano: m × m = <b>m²</b>.',
+   'Scrivi sempre l\'unità: 6 m × 4 m = <b>24 m²</b>.'])),
+  card('ver','B · Volume',stepsHtml([
+   'Parallelepipedo (una scatola): <b>volume = lunghezza × larghezza × altezza</b>. Cubo: <b>spigolo × spigolo × spigolo</b>.',
+   'Le unità: m × m × m = <b>m³</b>.',
+   'Esempio: una stanza 5 m × 4 m × 3 m ha un volume di 5 · 4 · 3 = <b>60 m³</b>.'])),
+  card('gia','C · Il litro',
+   '<p><b>1 L = 1 dm³</b> (un decimetro cubo, cioè un cubo di 10 cm di spigolo).</p><p>1 m³ = 10 dm × 10 dm × 10 dm = 1.000 dm³, quindi <b>1 m³ = 1.000 L</b>.</p><p class="note">Un litro di acqua sta in una bottiglia: un metro cubo è come 1.000 bottiglie.</p>'),
+  card('ros','D · In più: m³ e cm³',
+   '<p>1 m³ = 100 cm × 100 cm × 100 cm = 1.000.000 cm³ = <b>10⁶ cm³</b>.</p><p>Quindi 1 cm³ = 10⁻⁶ m³ (un milionesimo di m³).</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · area</h3><p>Un campo è lungo 8 m e largo 5 m. Area = 8 m × 5 m = <b>40 m²</b>.</p></div>
+  <div class="box bia"><h3>Esempio 2 · volume</h3><p>Un acquario è lungo 5 m, largo 2 m e alto 3 m. Volume = 5 × 2 × 3 = <b>30 m³</b>.</p></div>
+  <div class="box bia"><h3>Esempio 3 · litri</h3><p>Quanti litri sono 2 m³? 1 m³ = 1.000 L, quindi moltiplico per 1.000: <b>2.000 L</b>.</p><p>Quanti m³ sono 500 L? Divido per 1.000: <b>0,5 m³</b>.</p></div>`,
+ errori:['Scrivi l\'area in m invece che in <b>m²</b> (o il volume in m² invece che in <b>m³</b>).','Confondi area e volume: l\'area ha 2 lunghezze moltiplicate, il volume ne ha 3.','Scrivi 1 m³ = 100 L: sono <b>1.000</b> L.','Sommi le lunghezze invece di moltiplicarle.'],
+ orale:[
+  ['Che differenza c\'è tra area e volume? Quali unità hanno?','L\'area misura la superficie di una figura piana e si misura in metri quadrati, m². Il volume misura lo spazio occupato da un oggetto in tre dimensioni e si misura in metri cubi, m³. Sono tutte e due grandezze derivate dalla lunghezza.'],
+  ['Che cos\'è il litro e quanto vale?','Il litro è un\'unità usata per liquidi e gas. Un litro è un decimetro cubo: 1 L = 1 dm³. Un metro cubo è uguale a 1.000 litri.'],
+ ],
+ quiz:[
+  ['L\'area si misura in...','m²',['m','m³','kg'],'L\'area è la superficie: metri quadrati.'],
+  ['Il volume si misura in...','m³',['m²','m','L/m'],'Il volume è lo spazio occupato: metri cubi.'],
+  ['1 L è uguale a...','1 dm³',['1 m³','1 cm²','10 dm³'],'Un litro è un decimetro cubo.'],
+  ['1 m³ è uguale a...','1.000 L',['100 L','10 L','1 L'],'1 m³ = 1.000 dm³ = 1.000 L.'],
+  ['Una stanza è lunga 4 m, larga 3 m e alta 2 m. Il volume è...','24 m³',['9 m³','24 m²','12 m³'],'4 × 3 × 2 = 24, e le unità sono m³.'],
+ ]
+},
+u4:{
+ cose:`<div class="box bia"><p>Metti sulla bilancia due bottiglie da 1 litro: una di latte e una di olio. Il latte pesa <b>di più</b>, anche se occupano lo stesso volume! Questa proprietà della materia si chiama <b>densità</b>.</p>
+ <p>La densità dice <b>quanti chilogrammi di massa ci sono in 1 m³</b> di una sostanza. Dipende dal materiale (il ferro è più denso del legno) e può cambiare con la temperatura.</p></div>`,
+ ricette:[
+  card('blu','A · La formula della densità',
+   '<p class="m">d = '+F('m','V')+'</p><p><b>d</b> = densità, <b>m</b> = massa, <b>V</b> = volume.</p><p>Unità: massa in <b>kg</b>, volume in <b>m³</b>, densità in <b>kg/m³</b>.</p><p>Si legge: “densità uguale massa diviso volume”.</p>'),
+  card('ver','B · Le formule inverse',
+   '<p>Dalla stessa formula si ricavano le altre due:</p><p class="m">m = d · V &nbsp;&nbsp;&nbsp; V = '+F('m','d')+'</p><p><b>Trucco:</b> disegna un triangolo con la m in alto e d e V in basso. Copri la lettera che cerchi: se cerchi m, restano d e V una accanto all\'altra (si moltiplicano). Se cerchi d o V, resta m sopra e l\'altra sotto (si divide).</p>'),
+  card('gia','C · I passi per risolvere un problema',stepsHtml([
+   '<b>Scrivi i dati</b> con le loro unità (massa, volume, densità).',
+   '<b>Scegli la formula</b> giusta: cerchi la densità? la massa? il volume?',
+   '<b>Sostituisci</b> i numeri nella formula.',
+   '<b>Calcola</b> e scrivi il risultato con l\'<b>unità giusta</b> (kg, m³ o kg/m³).'])),
+  card('ros','D · In più: da g/cm³ a kg/m³',
+   '<p>La densità si scrive spesso in <b>g/cm³</b>. Per passare ai kg/m³ si moltiplica per <b>1.000</b>.</p><p>Perché? 1 g = 10⁻³ kg e 1 cm³ = 10⁻⁶ m³, quindi:</p><p class="m">1 g/cm³ = '+F('10⁻³ kg','10⁻⁶ m³')+' = 10³ kg/m³ = 1.000 kg/m³</p><p>Esempio: 0,917 g/cm³ = 0,917 · 1.000 = <b>917 kg/m³</b> (la densità dell\'olio).</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · calcolare la densità</h3><p>Un blocco ha massa 5.000 kg e volume 2 m³. Qual è la densità?</p>
+  <p><b>1. Dati:</b> m = 5.000 kg, V = 2 m³.</p><p><b>2. Formula:</b> cerco la densità: d = ${F('m','V')}</p><p><b>3. Sostituisco e calcolo:</b></p><p class="m">d = ${F('5.000 kg','2 m³')} = 2.500 kg/m³</p></div>
+  <div class="box bia"><h3>Esempio 2 · calcolare la massa</h3><p>Un blocco di alluminio (d = 2.700 kg/m³) ha un volume di 2 m³. Qual è la massa?</p><p>Cerco la massa: m = d · V = 2.700 · 2 = <b>5.400 kg</b>.</p></div>
+  <div class="box bia"><h3>Esempio 3 · conversione (in più)</h3><p>Converti 0,917 g/cm³ in kg/m³.</p><p class="m">0,917 g/cm³ = 0,917 · ${F('10⁻³ kg','10⁻⁶ m³')} = 0,917 · 10³ kg/m³ = 917 kg/m³</p></div>`,
+ errori:['Dividi nel verso sbagliato: la densità è <b>massa diviso volume</b>, non volume diviso massa.','Scrivi l\'unità sbagliata: la densità è in <b>kg/m³</b> (non kg e non m³ da soli).','Usi la formula sbagliata: se cerchi la massa si <b>moltiplica</b> (m = d · V).','Dimentichi di convertire i litri in m³ o i grammi in kg prima di calcolare.'],
+ orale:[
+  ['Che cos\'è la densità e come si calcola?','La densità dice quanti chilogrammi di massa sono contenuti in un metro cubo di una sostanza. Si calcola dividendo la massa per il volume: d uguale m diviso V. Si misura in chilogrammi al metro cubo. Dipende dal materiale e può cambiare con la temperatura.'],
+  ['Perché una bottiglia di latte pesa più di una di olio, a parità di volume?','Perché il latte ha una densità maggiore: nello stesso volume, 1 litro, contiene più massa.'],
+  ['Quali sono le formule inverse della densità?','Dalla formula d uguale m diviso V si ricava la massa: m uguale d per V. Si ricava anche il volume: V uguale m diviso d.'],
+ ],
+ quiz:[
+  ['La densità si calcola con...','massa diviso volume',['volume diviso massa','massa per volume','massa meno volume'],'d = m / V.'],
+  ['L\'unità di misura della densità nel SI è...','kg/m³',['kg','m³','kg · m³'],'Chilogrammi in un metro cubo.'],
+  ['Se cerchi la massa, la formula è...','m = d · V',['m = d : V','m = V : d','m = d + V'],'Dalla formula d = m/V si ricava m = d · V.'],
+  ['Il latte pesa più dell\'olio a parità di volume perché...','ha densità maggiore',['ha meno massa','ha volume maggiore','ha meno densità'],'Più densità vuol dire più massa nello stesso volume.'],
+  ['1 g/cm³ è uguale a...','1.000 kg/m³',['10 kg/m³','1 kg/m³','1.000.000 kg/m³'],'Si moltiplica per 1.000.'],
+ ]
+},
+u5:{
+ cose:`<div class="box bia"><p>La <b>notazione scientifica</b> è un modo di scrivere i numeri molto grandi o molto piccoli con le potenze di 10, per fare prima. Un numero in notazione scientifica ha sempre questa forma:</p>
+ <p class="m">[una cifra diversa da 0] , [altre cifre] × 10<sup>n</sup></p>
+ <p>Cioè: <b>una sola cifra</b> (da 1 a 9) prima della virgola, poi la potenza di 10. Esempio: 750 m = <b>7,5 × 10² m</b>.</p>
+ <p>L'<b>ordine di grandezza</b> è la potenza di 10 più vicina alla misura: serve per farsi un'idea di quanto è grande una cosa.</p></div>`,
+ ricette:[
+  card('blu','A · Dal numero alla notazione scientifica',stepsHtml([
+   'Metti la <b>virgola dopo la prima cifra diversa da 0</b>. Esempio: 750 → 7,50 (= 7,5).',
+   '<b>Conta di quanti posti</b> hai spostato la virgola: sono l\'esponente.',
+   'Numero <b>grande</b> (la virgola è andata a sinistra) → esponente <b>positivo</b>. Numero <b>piccolo</b> (è andata a destra) → esponente <b>negativo</b>.',
+   'Scrivi: <b>[numero] × 10<sup>esponente</sup></b> e non dimenticare l\'unità.'])),
+  card('ver','B · Dalla notazione scientifica al numero',stepsHtml([
+   'Guarda l\'esponente.',
+   'Positivo → virgola a <b>destra</b>. Negativo → virgola a <b>sinistra</b>.',
+   'Se mancano cifre, aggiungi gli <b>zeri</b>.'])),
+  card('gia','C · In più: l\'ordine di grandezza',stepsHtml([
+   'Scrivi la misura in <b>notazione scientifica</b>: a × 10<sup>n</sup>.',
+   'Guarda il numero <b>a</b> davanti. Se è <b>piccolo (1, 2, 3)</b> la misura è più vicina a 10<sup>n</sup>: l\'ordine di grandezza è <b>10<sup>n</sup></b>.',
+   'Se a è <b>grande (6, 7, 8, 9)</b> la misura è più vicina alla potenza dopo: l\'ordine di grandezza è <b>10<sup>n+1</sup></b>.'])+'<p class="note">Con 4 e 5 il caso è dubbio: nei nostri esercizi non compaiono.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · numeri della lezione</h3>
+  <p class="m">750 m = 7,5 × 10² m<br>0,23 s = 2,3 × 10⁻¹ s<br>24,5 kg = 2,45 × 10¹ kg<br>0,0045 K = 4,5 × 10⁻³ K</p></div>
+  <div class="box bia"><h3>Esempio 2 · passo per passo</h3><p>Scrivi 0,0045 K in notazione scientifica.</p>
+  <p><b>1.</b> La prima cifra diversa da 0 è 4: virgola dopo il 4 → 4,5.</p><p><b>2.</b> Ho spostato la virgola di 3 posti, verso destra (il numero è piccolo): esponente <b>−3</b>.</p><p class="m">0,0045 K = 4,5 × 10⁻³ K</p></div>
+  <div class="box bia"><h3>Esempio 3 · ordine di grandezza (in più)</h3>
+  <p>200 m = 2 × 10² m → il 2 è piccolo → ordine di grandezza <b>10²</b>.</p>
+  <p>0,1 m = 1 × 10⁻¹ m → ordine di grandezza <b>10⁻¹</b>.</p>
+  <p>80 = 8 × 10¹ → l'8 è grande, 80 è più vicino a 100 che a 10 → ordine di grandezza <b>10²</b>.</p></div>`,
+ errori:['Scrivi 75 × 10¹ invece di <b>7,5 × 10²</b>: prima della virgola deve esserci <b>una sola cifra</b>.','Sbagli il segno dell\'esponente: numero grande → <b>+</b>, numero piccolo → <b>−</b>.','Conti male i posti dello spostamento della virgola.','Dimentichi l\'unità di misura dopo la potenza di 10.'],
+ orale:[
+  ['Che cos\'è la notazione scientifica? Fai un esempio.','È un modo di scrivere i numeri molto grandi o molto piccoli con le potenze di 10. Si scrive una sola cifra diversa da zero prima della virgola, poi le altre cifre, per dieci elevato a un esponente. Per esempio 750 metri sono 7,5 per 10 alla seconda metri.'],
+  ['Che cos\'è l\'ordine di grandezza?','È la potenza di 10 più vicina alla misura. Per esempio 200 metri sono 2 per 10 alla seconda, quindi l\'ordine di grandezza è 10 alla seconda.'],
+ ],
+ quiz:[
+  ['750 m in notazione scientifica si scrive...','7,5 × 10² m',['75 × 10¹ m','7,5 × 10³ m','0,75 × 10² m'],'Una sola cifra prima della virgola, virgola spostata di 2 posti.'],
+  ['0,23 s in notazione scientifica si scrive...','2,3 × 10⁻¹ s',['2,3 × 10¹ s','23 × 10⁻² s','0,23 × 10¹ s'],'Numero piccolo: esponente negativo.'],
+  ['Un esponente negativo indica che il numero è...','piccolo (minore di 1)',['grande','negativo','uguale a 1'],'Numeri piccoli hanno esponente negativo.'],
+  ['L\'ordine di grandezza di 200 m è...','10²',['10³','10¹','2'],'200 = 2 × 10²: il 2 è piccolo, quindi 10².'],
+  ['La notazione scientifica ha prima della virgola...','una sola cifra diversa da 0',['due cifre','sempre uno zero','nessuna cifra'],'Per esempio 7,5 e non 75.'],
+ ]
+}
+};
+
+const GLOSS=[
+['Grandezza fisica','Una proprietà di un corpo o di un fenomeno che si può misurare (lunghezza, tempo, massa, temperatura).'],
+['Misurare','Confrontare una grandezza con un\'unità di misura e vedere quante volte l\'unità è contenuta.'],
+['Unità di misura','Il “righello” scelto per misurare una grandezza: metro, secondo, chilogrammo, kelvin.'],
+['Sistema Internazionale (SI)','L\'insieme di unità di misura usato da tutti gli scienziati del mondo.'],
+['Massa','La quantità di materia di un corpo. Si misura con la bilancia, in kg.'],
+['Prefisso','Una parola (chilo, centi, milli…) messa davanti all\'unità per moltiplicarla o dividerla per una potenza di 10.'],
+['Potenza di 10','Il numero 10 moltiplicato per sé stesso più volte, scritto 10 con un esponente: 10³ = 1.000.'],
+['Esponente','Il numerino in alto della potenza: dice quante volte si moltiplica il 10 per sé stesso.'],
+['Grandezza derivata','Una grandezza ottenuta combinando altre grandezze: area e volume derivano dalla lunghezza.'],
+['Area','La superficie di una figura. Si misura in m².'],
+['Volume','Lo spazio occupato da un oggetto. Si misura in m³.'],
+['Litro (L)','Unità usata per liquidi e gas: 1 L = 1 dm³.'],
+['Densità','Quanti kg di massa ci sono in 1 m³ di sostanza: d = m : V. Si misura in kg/m³.'],
+['Notazione scientifica','Scrittura di un numero come “una cifra, virgola, altre cifre” per 10 elevato a un esponente.'],
+['Ordine di grandezza','La potenza di 10 più vicina alla misura.'],
+['Conversione','Passare da un\'unità di misura a un\'altra (per esempio da km a m).'],
+];
+
+const FORMULARIO=`
+<div class="box blu"><h3>Potenze di 10</h3><p class="m">10³ = 1.000 &nbsp; 10² = 100 &nbsp; 10¹ = 10 &nbsp; 10⁰ = 1</p><p class="m">10⁻¹ = 0,1 &nbsp; 10⁻² = 0,01 &nbsp; 10⁻³ = 0,001</p><p>× 10<sup>positivo</sup> → virgola a destra · × 10<sup>negativo</sup> → virgola a sinistra.</p></div>
+<div class="box ver"><h3>Unità del SI</h3><p>Lunghezza: metro (m) · Tempo: secondo (s)</p><p>Massa: chilogrammo (kg) · Temperatura: kelvin (K)</p></div>
+<div class="box gia"><h3>Prefissi</h3><p class="m">k = 10³ &nbsp; c = 10⁻² &nbsp; m = 10⁻³</p><p class="m">M = 10⁶ &nbsp; h = 10² &nbsp; da = 10¹ &nbsp; d = 10⁻¹ &nbsp; μ = 10⁻⁶</p><p>Unità più piccola → numero più grande. Unità più grande → numero più piccolo.</p></div>
+<div class="box ros"><h3>Area, volume, litro</h3><p>Area = base × altezza (m²) · Volume = lung. × larg. × alt. (m³)</p><p class="m">1 L = 1 dm³ &nbsp; 1 m³ = 1.000 L &nbsp; 1 m³ = 10⁶ cm³</p></div>
+<div class="box blu"><h3>Densità</h3><p class="m">d = ${F('m','V')} &nbsp;&nbsp; m = d · V &nbsp;&nbsp; V = ${F('m','d')}</p><p>kg, m³, kg/m³ · 1 g/cm³ = 1.000 kg/m³</p></div>
+<div class="box ver"><h3>Notazione scientifica</h3><p class="m">a × 10<sup>n</sup> &nbsp; con 1 ≤ a &lt; 10</p><p>750 m = 7,5 × 10² m · 0,23 s = 2,3 × 10⁻¹ s</p><p>Ordine di grandezza: a piccolo (1, 2, 3) → 10<sup>n</sup> · a grande (6, 7, 8, 9) → 10<sup>n+1</sup></p></div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('fis_prog_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('fis_prog_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+</script>
+</body></html>
