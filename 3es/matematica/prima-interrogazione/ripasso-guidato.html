@@ -71,7 +71,7 @@ body.print #u1{break-before:auto}
 @page{size:110mm 196mm;margin:7mm}
 @media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
 </style></head><body>
-<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Matematica</a></p><h1>Matematica: prima interrogazione</h1><p>Equazioni e disequazioni lineari, intere e fratte</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Matematica</a></p><h1>Matematica: prima interrogazione</h1><p>Equazioni e disequazioni lineari, intere e fratte</p></header>
 <nav>
 <button data-t="guida" class="on">Guida</button>
 <button data-t="u0">0 Da sapere</button>
@@ -1474,21 +1474,11 @@ if(location.hash==='#stampa')document.body.classList.add('print');
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();
 
-/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
-(function(){
-  if(location.hash==='#stampa')return;
-  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
-  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
-  apply();
-  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
-  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
-  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
-})();
 
 </script>
 <!--AGG--><script>
 (function(){
- var B="20261001132722",t0=Date.now(),touched=false,last=0;
+ var B="20261001132929",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;
