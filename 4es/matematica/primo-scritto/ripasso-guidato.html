@@ -102,7 +102,7 @@ body.print #u1{break-before:auto}
 <div class="step"><b class="n">6</b><div><b>Quiz di teoria</b>: poche domande sulle definizioni.</div></div></div>
 <div class="box ver"><h3>Piano suggerito (6 giorni)</h3><ul><li><b>Giorno 1</b>: unità 0 (da sapere prima) e unità 1 (gradi e radianti)</li><li><b>Giorno 2</b>: unità 2 (angoli orientati e circonferenza goniometrica)</li><li><b>Giorno 3</b>: unità 3 (seno e coseno)</li><li><b>Giorno 4</b>: unità 4 (tangente e cotangente)</li><li><b>Giorno 5</b>: unità 5 (relazioni fondamentali)</li><li><b>Giorno 6</b>: Prova finale, Orale e Formulario</li></ul><p class="note">Le unità 1 e 5 sono quelle che più spesso escono nello scritto: dedicaci tempo.</p></div>
 <div class="box bia"><h3>Livello base e “in più”</h3><p>Il livello base è quello della dispensa. Segnato <b>“in più”</b> c'è quello che nella dispensa non c'è: la tabella degli angoli oltre i 180° e i valori di seno e coseno di 30°, 45° e 60°.</p></div>
-<div class="box ros"><h3>Due refusi nella dispensa</h3><ul><li>Nella <b>seconda relazione fondamentale</b> è scritto y<sub>B</sub> = cos α e x<sub>B</sub> = sen α: è il contrario. Giusto: <b>x<sub>B</sub> = cos α</b>, <b>y<sub>B</sub> = sen α</b>.</li><li>Per la <b>cotangente</b> è scritto “α ≠ kπ/2”: giusto è <b>α ≠ kπ</b> (non esiste quando y<sub>B</sub> = 0).</li></ul></div>
+<div class="box ros"><h3>Due refusi nella dispensa</h3><ul><li>Nella <b>seconda relazione fondamentale</b> è scritto y<sub>B</sub> = cos α e x<sub>B</sub> = sin α: è il contrario. Giusto: <b>x<sub>B</sub> = cos α</b>, <b>y<sub>B</sub> = sin α</b>.</li><li>Per la <b>cotangente</b> è scritto “α ≠ kπ/2”: giusto è <b>α ≠ kπ</b> (non esiste quando y<sub>B</sub> = 0).</li></ul></div>
 <div class="box bia"><h3>Consigli per lo scritto</h3><ul><li>Scrivi <b>tutti i passaggi</b> e semplifica sempre le frazioni.</li><li>Prima di scegliere il segno di seno e coseno, trova il <b>quadrante</b> (porta l'angolo tra 0 e 2π).</li><li>Ricorda: <b>coseno = x</b>, <b>seno = y</b>.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
 <h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
 <p class="note">I progressi sono salvati su questo telefono.</p>
@@ -277,21 +277,21 @@ function exEquiv(){
 }
 function exSegniQ(){
   const [n,d,t]=randAngle(false),qd=quadOf(t),R=reduceStep(n,d);
-  const C=['sen α &gt; 0 e cos α &gt; 0','sen α &gt; 0 e cos α &lt; 0','sen α &lt; 0 e cos α &lt; 0','sen α &lt; 0 e cos α &gt; 0'];
+  const C=['sin α &gt; 0 e cos α &gt; 0','sin α &gt; 0 e cos α &lt; 0','sin α &lt; 0 e cos α &lt; 0','sin α &lt; 0 e cos α &gt; 0'];
   const q=`Per l'angolo <b>α = ${ang(n,d)}</b>, qual è il segno di seno e coseno?`;
-  const steps=`<p><b>1.</b> Trovo il quadrante.</p>${R.html}<p>${ang(R.bn,R.bd)} cade nel <b>${QL[qd]}</b>.</p><p><b>2.</b> In ogni quadrante il punto B ha una x (cos) e una y (sin) con segni precisi:</p><p class="m">1° quadrante: cos + , sen +<br>2° quadrante: cos − , sen +<br>3° quadrante: cos − , sen −<br>4° quadrante: cos + , sen −</p><p>Nel ${QL[qd]}: <b>${C[qd]}</b>.</p>${circGon(t,{proj:true})}`;
+  const steps=`<p><b>1.</b> Trovo il quadrante.</p>${R.html}<p>${ang(R.bn,R.bd)} cade nel <b>${QL[qd]}</b>.</p><p><b>2.</b> In ogni quadrante il punto B ha una x (cos) e una y (sin) con segni precisi:</p><p class="m">1° quadrante: cos + , sin +<br>2° quadrante: cos − , sin +<br>3° quadrante: cos − , sin −<br>4° quadrante: cos + , sin −</p><p>Nel ${QL[qd]}: <b>${C[qd]}</b>.</p>${circGon(t,{proj:true})}`;
   return mkEx(q,C[qd],shuffle(C.filter((_,i)=>i!==qd)),steps,()=>true,'Segni di seno e coseno');
 }
 
 /* ---------- Unità 3: seno e coseno sugli assi ---------- */
 function exAssi(){
-  const m=rnd(-6,8),t=m/2,fn=pick(['sen','cos']),k=((m%4)+4)%4;
-  const val=fn==='sen'?[0,1,0,-1][k]:[1,0,-1,0][k];
+  const m=rnd(-6,8),t=m/2,fn=pick(['sin','cos']),k=((m%4)+4)%4;
+  const val=fn==='sin'?[0,1,0,-1][k]:[1,0,-1,0][k];
   const [n,d]=rat(m,2),R=reduceStep(n,d);
   const vs=v=>v<0?MIN+(-v):String(v);
   const px=[1,0,-1,0][k],py=[0,1,0,-1][k];
   const q=`Calcola: <b>${fn} ${m===0?'0':ang(n,d)}</b>`;
-  const steps=`${m===0?'':'<p><b>1.</b> Porto l\'angolo tra 0 e 2π.</p>'+R.html}<p><b>${m===0?'1':'2'}.</b> Trovo il punto B sulla circonferenza: è ${['E(1 ; 0), sull\'asse x positivo','sull\'asse y positivo: B(0 ; 1)','sull\'asse x negativo: B(−1 ; 0)','sull\'asse y negativo: B(0 ; −1)'][k]}.</p><p><b>${m===0?'2':'3'}.</b> Ricorda: <b>cos α = x</b> del punto B e <b>sen α = y</b> del punto B. Qui B(${vs(px)} ; ${vs(py)}), quindi:</p><p class="m">${fn} ${m===0?'0':ang(n,d)} = <b>${vs(val)}</b></p>${circGon(t,{proj:true,axesVals:true})}`;
+  const steps=`${m===0?'':'<p><b>1.</b> Porto l\'angolo tra 0 e 2π.</p>'+R.html}<p><b>${m===0?'1':'2'}.</b> Trovo il punto B sulla circonferenza: è ${['E(1 ; 0), sull\'asse x positivo','sull\'asse y positivo: B(0 ; 1)','sull\'asse x negativo: B(−1 ; 0)','sull\'asse y negativo: B(0 ; −1)'][k]}.</p><p><b>${m===0?'2':'3'}.</b> Ricorda: <b>cos α = x</b> del punto B e <b>sin α = y</b> del punto B. Qui B(${vs(px)} ; ${vs(py)}), quindi:</p><p class="m">${fn} ${m===0?'0':ang(n,d)} = <b>${vs(val)}</b></p>${circGon(t,{proj:true,axesVals:true})}`;
   const pool=['−1','0','1'].filter(x=>x!==vs(val));
   return mkEx(q,vs(val),pool,steps,()=>true,'Seno e coseno sugli assi');
 }
@@ -324,9 +324,9 @@ function exTan(){
   const sn=SSIGN[q]*y1,cn=CSIGN[q]*x1;
   const wantCot=Math.random()<0.3,tn=fh(sn,cn),ct=fh(cn,sn);
   const num=wantCot?cn:sn,den=wantCot?sn:cn,neg=(num<0)!==(den<0);
-  const stepsT=`<p>Uso la definizione: <span class="m">tan α = ${F('sen α','cos α')}</span> e <span class="m">cot α = ${F('cos α','sen α')}</span>.</p><p>Dividere per una frazione vuol dire <b>moltiplicare per la frazione capovolta</b>:</p><p class="m">${wantCot?'cot':'tan'} α = ${fh(num,c)} : ${fh(den,c)} = ${fh(num,c)} · ${fh(c,den)}</p><p>I denominatori ${c} si semplificano tra loro. Resta ${F(Math.abs(num),Math.abs(den))}. Regola dei segni: ${neg?'segni diversi → meno':'segni uguali → più'}.</p><p class="m">${wantCot?'cot':'tan'} α = <b>${wantCot?ct:tn}</b></p>`;
+  const stepsT=`<p>Uso la definizione: <span class="m">tan α = ${F('sin α','cos α')}</span> e <span class="m">cot α = ${F('cos α','sin α')}</span>.</p><p>Dividere per una frazione vuol dire <b>moltiplicare per la frazione capovolta</b>:</p><p class="m">${wantCot?'cot':'tan'} α = ${fh(num,c)} : ${fh(den,c)} = ${fh(num,c)} · ${fh(c,den)}</p><p>I denominatori ${c} si semplificano tra loro. Resta ${F(Math.abs(num),Math.abs(den))}. Regola dei segni: ${neg?'segni diversi → meno':'segni uguali → più'}.</p><p class="m">${wantCot?'cot':'tan'} α = <b>${wantCot?ct:tn}</b></p>`;
   const corr=wantCot?ct:tn;
-  return mkEx(`Se <b>sen α = ${fh(sn,c)}</b> e <b>cos α = ${fh(cn,c)}</b>, quanto vale ${wantCot?'cot':'tan'} α?`,corr,wantCot?[tn,fh(-cn,sn)]:[ct,fh(-sn,cn)],stepsT,()=>near(sn/cn,rat(sn,cn)[0]/rat(sn,cn)[1]),'Tangente e cotangente');
+  return mkEx(`Se <b>sin α = ${fh(sn,c)}</b> e <b>cos α = ${fh(cn,c)}</b>, quanto vale ${wantCot?'cot':'tan'} α?`,corr,wantCot?[tn,fh(-cn,sn)]:[ct,fh(-sn,cn)],stepsT,()=>near(sn/cn,rat(sn,cn)[0]/rat(sn,cn)[1]),'Tangente e cotangente');
 }
 
 /* ---------- Unità 5: relazioni fondamentali ---------- */
@@ -335,16 +335,16 @@ function exRel(){
   const sinV=SSIGN[q]*y1,cosV=CSIGN[q]*x1,t0=pick(['sin','cos','tan']);
   const ql=QL[q],ssn=SSIGN[q]>0?'positivo':'negativo',csn=CSIGN[q]>0?'positivo':'negativo';
   if(t0==='sin'){
-    return mkEx(`Sapendo che <b>cos α = ${fh(cosV,c)}</b> e che α è nel <b>${ql}</b>, calcola sen α.`,fh(sinV,c),[fh(-sinV,c),fh(sinV<0?-x1:x1,c)],
-     `<p><b>1.</b> Prima relazione fondamentale: <span class="m">cos²α + sen²α = 1</span>, quindi <span class="m">sen²α = 1 − cos²α</span>.</p><p><b>2.</b> Calcolo cos²α (un quadrato è sempre positivo):</p><p class="m">cos²α = (${fh(cosV,c)})² = ${F(x1*x1,c*c)}</p><p><b>3.</b> Sottraggo da 1 (scrivo 1 = ${F(c*c,c*c)}):</p><p class="m">sen²α = ${F(c*c,c*c)} − ${F(x1*x1,c*c)} = ${F(y1*y1,c*c)}</p><p><b>4.</b> Faccio la radice (due segni possibili):</p><p class="m">sen α = ± √${F(y1*y1,c*c)} = ± ${fh(y1,c)}</p><p><b>5.</b> Scelgo il segno: nel ${ql} il seno è <b>${ssn}</b>.</p><p class="m">sen α = <b>${fh(sinV,c)}</b></p>`,()=>near(sinV*sinV+cosV*cosV,c*c),'Relazioni fondamentali');
+    return mkEx(`Sapendo che <b>cos α = ${fh(cosV,c)}</b> e che α è nel <b>${ql}</b>, calcola sin α.`,fh(sinV,c),[fh(-sinV,c),fh(sinV<0?-x1:x1,c)],
+     `<p><b>1.</b> Prima relazione fondamentale: <span class="m">cos²α + sin²α = 1</span>, quindi <span class="m">sin²α = 1 − cos²α</span>.</p><p><b>2.</b> Calcolo cos²α (un quadrato è sempre positivo):</p><p class="m">cos²α = (${fh(cosV,c)})² = ${F(x1*x1,c*c)}</p><p><b>3.</b> Sottraggo da 1 (scrivo 1 = ${F(c*c,c*c)}):</p><p class="m">sin²α = ${F(c*c,c*c)} − ${F(x1*x1,c*c)} = ${F(y1*y1,c*c)}</p><p><b>4.</b> Faccio la radice (due segni possibili):</p><p class="m">sin α = ± √${F(y1*y1,c*c)} = ± ${fh(y1,c)}</p><p><b>5.</b> Scelgo il segno: nel ${ql} il seno è <b>${ssn}</b>.</p><p class="m">sin α = <b>${fh(sinV,c)}</b></p>`,()=>near(sinV*sinV+cosV*cosV,c*c),'Relazioni fondamentali');
   }
   if(t0==='cos'){
-    return mkEx(`Sapendo che <b>sen α = ${fh(sinV,c)}</b> e che α è nel <b>${ql}</b>, calcola cos α.`,fh(cosV,c),[fh(-cosV,c),fh(cosV<0?-y1:y1,c)],
-     `<p><b>1.</b> Prima relazione fondamentale: <span class="m">cos²α + sen²α = 1</span>, quindi <span class="m">cos²α = 1 − sen²α</span>.</p><p><b>2.</b> Calcolo sen²α:</p><p class="m">sen²α = (${fh(sinV,c)})² = ${F(y1*y1,c*c)}</p><p><b>3.</b> Sottraggo da 1:</p><p class="m">cos²α = ${F(c*c,c*c)} − ${F(y1*y1,c*c)} = ${F(x1*x1,c*c)}</p><p><b>4.</b> Radice:</p><p class="m">cos α = ± ${fh(x1,c)}</p><p><b>5.</b> Nel ${ql} il coseno è <b>${csn}</b>.</p><p class="m">cos α = <b>${fh(cosV,c)}</b></p>`,()=>true,'Relazioni fondamentali');
+    return mkEx(`Sapendo che <b>sin α = ${fh(sinV,c)}</b> e che α è nel <b>${ql}</b>, calcola cos α.`,fh(cosV,c),[fh(-cosV,c),fh(cosV<0?-y1:y1,c)],
+     `<p><b>1.</b> Prima relazione fondamentale: <span class="m">cos²α + sin²α = 1</span>, quindi <span class="m">cos²α = 1 − sin²α</span>.</p><p><b>2.</b> Calcolo sin²α:</p><p class="m">sin²α = (${fh(sinV,c)})² = ${F(y1*y1,c*c)}</p><p><b>3.</b> Sottraggo da 1:</p><p class="m">cos²α = ${F(c*c,c*c)} − ${F(y1*y1,c*c)} = ${F(x1*x1,c*c)}</p><p><b>4.</b> Radice:</p><p class="m">cos α = ± ${fh(x1,c)}</p><p><b>5.</b> Nel ${ql} il coseno è <b>${csn}</b>.</p><p class="m">cos α = <b>${fh(cosV,c)}</b></p>`,()=>true,'Relazioni fondamentali');
   }
   const tn=fh(sinV,cosV);
   return mkEx(`Sapendo che <b>cos α = ${fh(cosV,c)}</b> e che α è nel <b>${ql}</b>, calcola tan α.`,tn,[fh(-sinV,cosV),fh(cosV,sinV)],
-   `<p><b>1.</b> Trovo prima sen α con la prima relazione: sen²α = 1 − cos²α = ${F(c*c,c*c)} − ${F(x1*x1,c*c)} = ${F(y1*y1,c*c)}. Quindi sen α = ± ${fh(y1,c)}.</p><p><b>2.</b> Nel ${ql} il seno è <b>${ssn}</b>: sen α = ${fh(sinV,c)}.</p><p><b>3.</b> Seconda relazione: <span class="m">tan α = ${F('sen α','cos α')}</span>. Divido per una frazione = moltiplico per la frazione capovolta:</p><p class="m">${fh(sinV,c)} : ${fh(cosV,c)} = ${fh(sinV,c)} · ${fh(c,cosV)} = <b>${tn}</b></p>`,()=>true,'Relazioni fondamentali');
+   `<p><b>1.</b> Trovo prima sin α con la prima relazione: sin²α = 1 − cos²α = ${F(c*c,c*c)} − ${F(x1*x1,c*c)} = ${F(y1*y1,c*c)}. Quindi sin α = ± ${fh(y1,c)}.</p><p><b>2.</b> Nel ${ql} il seno è <b>${ssn}</b>: sin α = ${fh(sinV,c)}.</p><p><b>3.</b> Seconda relazione: <span class="m">tan α = ${F('sin α','cos α')}</span>. Divido per una frazione = moltiplico per la frazione capovolta:</p><p class="m">${fh(sinV,c)} : ${fh(cosV,c)} = ${fh(sinV,c)} · ${fh(c,cosV)} = <b>${tn}</b></p>`,()=>true,'Relazioni fondamentali');
 }
 
 const GENS={
@@ -374,7 +374,7 @@ u0:{
    'Trasforma ogni frazione (moltiplica sopra e sotto per lo stesso numero) e <b>somma i numeratori</b>, il denominatore resta uguale.',
    '<b>Semplifica</b> se puoi (dividi sopra e sotto per lo stesso numero).'])+'<p class="m">'+PI(2,3)+' + '+PI(1,6)+' = '+F('4π','6')+' + '+F('π','6')+' = '+F('5π','6')+'</p><p class="note">Il π si tratta come una lettera: 4π + π = 5π. Non si fa mai “sopra + sopra e sotto + sotto”.</p>'),
   card('ver','2 · Radice di una frazione',
-   '<p>La radice di una frazione è la radice del numeratore diviso la radice del denominatore.</p><p class="m">√'+F(9,25)+' = '+F('√9','√25')+' = '+F(3,5)+'</p><p>Ti serve per la prima relazione fondamentale: sen α = ± √(1 − cos²α).</p>'),
+   '<p>La radice di una frazione è la radice del numeratore diviso la radice del denominatore.</p><p class="m">√'+F(9,25)+' = '+F('√9','√25')+' = '+F(3,5)+'</p><p>Ti serve per la prima relazione fondamentale: sin α = ± √(1 − cos²α).</p>'),
   card('gia','3 · Piano cartesiano e quadranti',
    '<p>Un punto si scrive <b>P(x ; y)</b>: il primo numero è l\'<b>ascissa</b> (asse orizzontale x), il secondo l\'<b>ordinata</b> (asse verticale y).</p><p>I <b>quadranti</b> si contano in senso <b>antiorario</b> partendo da quello in alto a destra:</p>'+TAB(['Quadrante','x','y'],[['1°','+','+'],['2°','−','+'],['3°','−','−'],['4°','+','−']])),
   card('ros','4 · Regola dei segni e proporzioni',
@@ -467,34 +467,34 @@ u2:{
 },
 u3:{
  cose:`<div class="box bia"><p>Prendi la circonferenza goniometrica e un angolo orientato α. Il lato termine dell'angolo incontra la circonferenza in un punto <b>B</b>. Le coordinate di B danno <b>seno e coseno</b>:</p>
- <p class="m">cos α = x<sub>B</sub> (l'<b>ascissa</b> di B) &nbsp;&nbsp; sen α = y<sub>B</sub> (l'<b>ordinata</b> di B)</p>
- <p>Cioè B = (cos α ; sen α). Il coseno si legge sull'asse orizzontale, il seno su quello verticale.</p>${circGon(1/3,{proj:true})}</div>`,
+ <p class="m">cos α = x<sub>B</sub> (l'<b>ascissa</b> di B) &nbsp;&nbsp; sin α = y<sub>B</sub> (l'<b>ordinata</b> di B)</p>
+ <p>Cioè B = (cos α ; sin α). Il coseno si legge sull'asse orizzontale, il seno su quello verticale.</p>${circGon(1/3,{proj:true})}</div>`,
  ricette:[
   card('blu','A · Leggere seno e coseno sulla circonferenza',stepsHtml([
    'Disegna (o immagina) l\'angolo sulla circonferenza e trova il punto <b>B</b>.',
    'Il <b>coseno</b> è la x di B: guarda quanto B è a destra (+) o a sinistra (−) dell\'asse y.',
    'Il <b>seno</b> è la y di B: guarda quanto B è in alto (+) o in basso (−) rispetto all\'asse x.'])),
   card('ver','B · Il seno e il coseno stanno sempre tra −1 e 1',
-   '<p>Il raggio è 1, quindi B non può uscire dal quadrato tra −1 e 1:</p><p class="m">−1 ≤ sen α ≤ 1 &nbsp;&nbsp; −1 ≤ cos α ≤ 1</p><p>Quindi sen α = 2 oppure cos α = −1,5 sono <b>impossibili</b>.</p>'),
-  card('gia','C · Segni nei quadranti',TAB(['Quadrante','cos α (x)','sen α (y)'],[['1°','+','+'],['2°','−','+'],['3°','−','−'],['4°','+','−']])),
-  card('ros','D · Valori agli assi (da sapere a memoria)',TAB(['α','0','π/2','π','3π/2','2π'],[['cos α','1','0','−1','0','1'],['sen α','0','1','0','−1','0']])+'<p class="note">In più (non è nella dispensa): per 30°, 45°, 60° si usano '+F(1,2)+', '+F('√2','2')+', '+F('√3','2')+'. Sen 30° = '+F(1,2)+', sen 45° = '+F('√2','2')+', sen 60° = '+F('√3','2')+'; il coseno è al contrario.</p>'),
+   '<p>Il raggio è 1, quindi B non può uscire dal quadrato tra −1 e 1:</p><p class="m">−1 ≤ sin α ≤ 1 &nbsp;&nbsp; −1 ≤ cos α ≤ 1</p><p>Quindi sin α = 2 oppure cos α = −1,5 sono <b>impossibili</b>.</p>'),
+  card('gia','C · Segni nei quadranti',TAB(['Quadrante','cos α (x)','sin α (y)'],[['1°','+','+'],['2°','−','+'],['3°','−','−'],['4°','+','−']])),
+  card('ros','D · Valori agli assi (da sapere a memoria)',TAB(['α','0','π/2','π','3π/2','2π'],[['cos α','1','0','−1','0','1'],['sin α','0','1','0','−1','0']])+'<p class="note">In più (non è nella dispensa): per 30°, 45°, 60° si usano '+F(1,2)+', '+F('√2','2')+', '+F('√3','2')+'. Sin 30° = '+F(1,2)+', sin 45° = '+F('√2','2')+', sin 60° = '+F('√3','2')+'; il coseno è al contrario.</p>'),
  ],
- esempio:`<div class="box bia"><h3>Esempio 1 · valori agli assi</h3><p>Calcola sen ${PI(5,2)}.</p>
+ esempio:`<div class="box bia"><h3>Esempio 1 · valori agli assi</h3><p>Calcola sin ${PI(5,2)}.</p>
  <p><b>1.</b> Tolgo un giro: ${PI(5,2)} − 2π = ${PI(1,2)}.</p>
  <p><b>2.</b> ${PI(1,2)} è l'asse y positivo: B(0 ; 1).</p>
- <p><b>3.</b> Il seno è la y: <span class="m">sen ${PI(5,2)} = <b>1</b></span></p>${circGon(1/2,{proj:true,axesVals:true})}</div>
- <div class="box bia"><h3>Esempio 2 · segno di seno e coseno</h3><p>α = ${PI(5,4)}: è nel 3° quadrante (tra π e 3π/2). Lì x e y sono negative: <b>cos α &lt; 0 e sen α &lt; 0</b>.</p>${circGon(5/4,{proj:true})}</div>`,
- errori:['Scambi seno e coseno: <b>coseno = x</b> (ascissa), <b>seno = y</b> (ordinata). Il coseno viene prima, come la x.','Dimentichi di ridurre l\'angolo: sen 5π/2 non è 5π/2, è sen π/2 = 1.','Scrivi valori fuori dall\'intervallo [−1 ; 1].','Sbagli il segno nel 2° e 4° quadrante.'],
+ <p><b>3.</b> Il seno è la y: <span class="m">sin ${PI(5,2)} = <b>1</b></span></p>${circGon(1/2,{proj:true,axesVals:true})}</div>
+ <div class="box bia"><h3>Esempio 2 · segno di seno e coseno</h3><p>α = ${PI(5,4)}: è nel 3° quadrante (tra π e 3π/2). Lì x e y sono negative: <b>cos α &lt; 0 e sin α &lt; 0</b>.</p>${circGon(5/4,{proj:true})}</div>`,
+ errori:['Scambi seno e coseno: <b>coseno = x</b> (ascissa), <b>seno = y</b> (ordinata). Il coseno viene prima, come la x.','Dimentichi di ridurre l\'angolo: sin 5π/2 non è 5π/2, è sin π/2 = 1.','Scrivi valori fuori dall\'intervallo [−1 ; 1].','Sbagli il segno nel 2° e 4° quadrante.'],
  orale:[
   ['Come si definiscono seno e coseno di un angolo?','Si prende la circonferenza goniometrica e il punto B in cui il lato termine dell\'angolo incontra la circonferenza. Il coseno di alfa è l\'ascissa di B e il seno di alfa è l\'ordinata di B.'],
   ['Tra quali valori variano seno e coseno?','Tra meno 1 e 1, perché il raggio della circonferenza è 1 e quindi ascissa e ordinata di B non possono superare 1 in valore assoluto.'],
  ],
  quiz:[
   ['Il coseno di un angolo è...','l\'ascissa del punto B',['l\'ordinata del punto B','il raggio','il rapporto y/x'],'cos α = x_B.'],
-  ['Il seno di un angolo è...','l\'ordinata del punto B',['l\'ascissa del punto B','sempre positivo','sempre 1'],'sen α = y_B.'],
+  ['Il seno di un angolo è...','l\'ordinata del punto B',['l\'ascissa del punto B','sempre positivo','sempre 1'],'sin α = y_B.'],
   ['Quale valore NON può avere il seno?','1,5',['−1','0','0,5'],'Il seno sta tra −1 e 1.'],
   ['Quanto vale cos π?','−1',['0','1','π'],'B(−1 ; 0): la x vale −1.'],
-  ['Quanto vale sen 3π/2?','−1',['0','1','3π/2'],'B(0 ; −1): la y vale −1.'],
+  ['Quanto vale sin 3π/2?','−1',['0','1','3π/2'],'B(0 ; −1): la y vale −1.'],
  ]
 },
 u4:{
@@ -511,9 +511,9 @@ u4:{
    '<b>Non esiste</b> quando y<sub>B</sub> = 0, cioè quando B è sull\'<b>asse x</b>: per <b>α = kπ</b> (k intero).',
    'In alternativa: cot α = <b>x<sub>Q</sub></b>, con Q il punto in cui il lato termine incontra la tangente in (0 ; 1).'])+'<p class="note">Attenzione: nella dispensa c\'è scritto “α ≠ kπ/2” per la cotangente. È un refuso: la cotangente non esiste quando y<sub>B</sub> = 0, cioè per α = kπ (0, π, 2π…).</p>'),
   card('gia','C · Valori agli assi e segni',TAB(['α','0','π/2','π','3π/2'],[['tan α','0','non esiste','0','non esiste'],['cot α','non esiste','0','non esiste','0']])+TAB(['Quadrante','1°','2°','3°','4°'],[['tan α','+','−','+','−'],['cot α','+','−','+','−']])),
-  card('ros','D · Se conosci seno e coseno',stepsHtml(['Scrivi la formula: tan α = '+F('sen α','cos α')+' (oppure cot α = '+F('cos α','sen α')+').','Dividere per una frazione vuol dire <b>moltiplicare per la frazione capovolta</b>.','Semplifica e controlla il <b>segno</b> (segni uguali → +, diversi → −).'])),
+  card('ros','D · Se conosci seno e coseno',stepsHtml(['Scrivi la formula: tan α = '+F('sin α','cos α')+' (oppure cot α = '+F('cos α','sin α')+').','Dividere per una frazione vuol dire <b>moltiplicare per la frazione capovolta</b>.','Semplifica e controlla il <b>segno</b> (segni uguali → +, diversi → −).'])),
  ],
- esempio:`<div class="box bia"><h3>Esempio 1 · seno e coseno noti</h3><p>Se sen α = ${fh(3,5)} e cos α = ${fh(4,5)}, quanto vale tan α?</p>
+ esempio:`<div class="box bia"><h3>Esempio 1 · seno e coseno noti</h3><p>Se sin α = ${fh(3,5)} e cos α = ${fh(4,5)}, quanto vale tan α?</p>
  <p class="m">tan α = ${fh(3,5)} : ${fh(4,5)} = ${fh(3,5)} · ${fh(5,4)} = <b>${fh(3,4)}</b></p><p>I denominatori 5 si semplificano. E la cotangente è l'inverso: cot α = <b>${fh(4,3)}</b>.</p></div>
  <div class="box bia"><h3>Esempio 2 · angoli sugli assi</h3><p>tan π = ? B(−1 ; 0): tan = ${F('0','−1')} = <b>0</b>.</p><p>tan ${PI(1,2)} = ? B(0 ; 1): x<sub>B</sub> = 0, quindi la tangente <b>non esiste</b>.</p></div>
  <div class="box bia"><h3>Esempio 3 · il disegno</h3>${circGon(1/6,{proj:true})}<p>Il rapporto tra y<sub>B</sub> (il segmento verde) e x<sub>B</sub> (il segmento blu) è la tangente.</p></div>`,
@@ -531,34 +531,34 @@ u4:{
 },
 u5:{
  cose:`<div class="box bia"><p>Le <b>relazioni fondamentali</b> collegano seno, coseno e tangente. Sono la parte più importante da usare nei problemi: se conosci un valore (e il quadrante) puoi trovare gli altri.</p>
- <p class="m">cos²α + sen²α = 1 &nbsp;&nbsp;&nbsp; tan α = ${F('sen α','cos α')}</p>
- <p class="note">Nella dispensa, nella seconda relazione c'è un refuso: c'è scritto y<sub>B</sub> = cos α e x<sub>B</sub> = sen α. È il contrario: <b>x<sub>B</sub> = cos α</b> e <b>y<sub>B</sub> = sen α</b>.</p></div>`,
+ <p class="m">cos²α + sin²α = 1 &nbsp;&nbsp;&nbsp; tan α = ${F('sin α','cos α')}</p>
+ <p class="note">Nella dispensa, nella seconda relazione c'è un refuso: c'è scritto y<sub>B</sub> = cos α e x<sub>B</sub> = sin α. È il contrario: <b>x<sub>B</sub> = cos α</b> e <b>y<sub>B</sub> = sin α</b>.</p></div>`,
  ricette:[
   card('blu','A · Prima relazione fondamentale',
-   '<p>B(cos α ; sen α) sta sulla circonferenza x² + y² = 1, quindi (teorema di Pitagora):</p><p class="m">cos²α + sen²α = 1</p><p>Da qui:</p><p class="m">sen α = ± √(1 − cos²α) &nbsp;&nbsp; cos α = ± √(1 − sen²α)</p><p>Il segno ± si sceglie guardando il <b>quadrante</b>.</p>'),
+   '<p>B(cos α ; sin α) sta sulla circonferenza x² + y² = 1, quindi (teorema di Pitagora):</p><p class="m">cos²α + sin²α = 1</p><p>Da qui:</p><p class="m">sin α = ± √(1 − cos²α) &nbsp;&nbsp; cos α = ± √(1 − sin²α)</p><p>Il segno ± si sceglie guardando il <b>quadrante</b>.</p>'),
   card('ver','B · Seconda relazione fondamentale',
-   '<p class="m">tan α = '+F('sen α','cos α')+'</p><p>La cotangente è l\'inverso: <span class="m">cot α = '+F('cos α','sen α')+'</span>.</p>'),
+   '<p class="m">tan α = '+F('sin α','cos α')+'</p><p>La cotangente è l\'inverso: <span class="m">cot α = '+F('cos α','sin α')+'</span>.</p>'),
   card('gia','C · I passi per i problemi',stepsHtml([
    '<b>Scrivi i dati</b>: il valore che conosci (per esempio cos α = '+fh(3,5)+') e il <b>quadrante</b>.',
-   'Usa la prima relazione: <b>sen²α = 1 − cos²α</b>. Calcola il quadrato, scrivi 1 come frazione con lo stesso denominatore e sottrai.',
-   '<b>Fai la radice</b> e metti ±. Poi scegli il <b>segno</b> con il quadrante (sen + nel 1° e 2°, − nel 3° e 4°; cos + nel 1° e 4°, − nel 2° e 3°).',
-   'Se serve la tangente: <b>tan α = sen α : cos α</b> (moltiplica per la frazione capovolta).'])),
+   'Usa la prima relazione: <b>sin²α = 1 − cos²α</b>. Calcola il quadrato, scrivi 1 come frazione con lo stesso denominatore e sottrai.',
+   '<b>Fai la radice</b> e metti ±. Poi scegli il <b>segno</b> con il quadrante (sin + nel 1° e 2°, − nel 3° e 4°; cos + nel 1° e 4°, − nel 2° e 3°).',
+   'Se serve la tangente: <b>tan α = sin α : cos α</b> (moltiplica per la frazione capovolta).'])),
  ],
- esempio:`<div class="box bia"><h3>Esempio completo</h3><p>Sapendo che cos α = ${fh(3,5)} e che α è nel 1° quadrante, calcola sen α e tan α.</p>
- <p><b>1.</b> sen²α = 1 − cos²α = 1 − (${fh(3,5)})² = ${F(25,25)} − ${F(9,25)} = ${F(16,25)}</p>
- <p><b>2.</b> sen α = ± √${F(16,25)} = ± ${fh(4,5)}. Nel 1° quadrante il seno è positivo: <b>sen α = ${fh(4,5)}</b></p>
- <p><b>3.</b> tan α = sen α : cos α = ${fh(4,5)} : ${fh(3,5)} = ${fh(4,5)} · ${fh(5,3)} = <b>${fh(4,3)}</b></p></div>
- <div class="box bia"><h3>Esempio · il segno conta</h3><p>Se cos α = ${fh(-3,5)} e α è nel 2° quadrante: sen²α = ${F(16,25)} come prima, ma nel 2° quadrante il seno è positivo, quindi sen α = ${fh(4,5)} e tan α = ${fh(4,5)} : ${fh(-3,5)} = <b>${fh(-4,3)}</b> (negativa nel 2° quadrante).</p></div>`,
+ esempio:`<div class="box bia"><h3>Esempio completo</h3><p>Sapendo che cos α = ${fh(3,5)} e che α è nel 1° quadrante, calcola sin α e tan α.</p>
+ <p><b>1.</b> sin²α = 1 − cos²α = 1 − (${fh(3,5)})² = ${F(25,25)} − ${F(9,25)} = ${F(16,25)}</p>
+ <p><b>2.</b> sin α = ± √${F(16,25)} = ± ${fh(4,5)}. Nel 1° quadrante il seno è positivo: <b>sin α = ${fh(4,5)}</b></p>
+ <p><b>3.</b> tan α = sin α : cos α = ${fh(4,5)} : ${fh(3,5)} = ${fh(4,5)} · ${fh(5,3)} = <b>${fh(4,3)}</b></p></div>
+ <div class="box bia"><h3>Esempio · il segno conta</h3><p>Se cos α = ${fh(-3,5)} e α è nel 2° quadrante: sin²α = ${F(16,25)} come prima, ma nel 2° quadrante il seno è positivo, quindi sin α = ${fh(4,5)} e tan α = ${fh(4,5)} : ${fh(-3,5)} = <b>${fh(-4,3)}</b> (negativa nel 2° quadrante).</p></div>`,
  errori:['Dimentichi il segno ±, oppure scegli il segno senza guardare il quadrante.','Calcoli (−3/5)² come −9/25: il quadrato è <b>sempre positivo</b> (9/25).','Sottrai male: 1 − 9/25 non è 8/25. Scrivi 1 = 25/25: 25/25 − 9/25 = 16/25.','Nella tangente scambi seno e coseno.'],
  orale:[
   ['Scrivi e spiega la prima relazione fondamentale.','Il punto B di coordinate coseno alfa e seno alfa sta sulla circonferenza goniometrica, quindi soddisfa x al quadrato più y al quadrato uguale a 1, cioè coseno al quadrato di alfa più seno al quadrato di alfa uguale a 1. Si dimostra con il teorema di Pitagora. Da qui, se conosco il coseno, trovo il seno come più o meno la radice di 1 meno coseno al quadrato.'],
   ['Scrivi la seconda relazione fondamentale.','La tangente di alfa è uguale al seno di alfa diviso il coseno di alfa, quando il coseno non è zero.'],
  ],
  quiz:[
-  ['La prima relazione fondamentale è...','cos²α + sen²α = 1',['cos α + sen α = 1','cos²α − sen²α = 1','cos α · sen α = 1'],'Deriva dal teorema di Pitagora sulla circonferenza goniometrica.'],
-  ['La seconda relazione fondamentale è...','tan α = sen α / cos α',['tan α = cos α / sen α','tan α = sen α · cos α','tan α = 1 − cos α'],'La tangente è y_B diviso x_B, cioè seno su coseno.'],
-  ['Se cos α = 3/5, allora sen²α vale...','16/25',['9/25','4/5','1/5'],'1 − 9/25 = 25/25 − 9/25 = 16/25.'],
-  ['Per scegliere il segno di sen α nella formula ± √(1 − cos²α) si guarda...','il quadrante',['il valore del coseno','il raggio','il segno di tan α'],'Il seno è positivo nel 1° e 2° quadrante, negativo nel 3° e 4°.'],
+  ['La prima relazione fondamentale è...','cos²α + sin²α = 1',['cos α + sin α = 1','cos²α − sin²α = 1','cos α · sin α = 1'],'Deriva dal teorema di Pitagora sulla circonferenza goniometrica.'],
+  ['La seconda relazione fondamentale è...','tan α = sin α / cos α',['tan α = cos α / sin α','tan α = sin α · cos α','tan α = 1 − cos α'],'La tangente è y_B diviso x_B, cioè seno su coseno.'],
+  ['Se cos α = 3/5, allora sin²α vale...','16/25',['9/25','4/5','1/5'],'1 − 9/25 = 25/25 − 9/25 = 16/25.'],
+  ['Per scegliere il segno di sin α nella formula ± √(1 − cos²α) si guarda...','il quadrante',['il valore del coseno','il raggio','il segno di tan α'],'Il seno è positivo nel 1° e 2° quadrante, negativo nel 3° e 4°.'],
   ['In quale quadrante il coseno è negativo e il seno positivo?','2° quadrante',['1° quadrante','3° quadrante','4° quadrante'],'x negativa e y positiva: 2° quadrante.'],
  ]
 }
@@ -572,21 +572,21 @@ const GLOSS=[
 ['Circonferenza goniometrica','Circonferenza con centro nell\'origine e raggio 1: x² + y² = 1.'],
 ['Origine degli archi','Il punto E(1 ; 0) da cui si misurano gli angoli sulla circonferenza goniometrica.'],
 ['Lato origine / lato termine','Il lato da cui parte la rotazione e il lato dove arriva (il punto B sulla circonferenza).'],
-['Seno','L\'ordinata del punto B: sen α = y_B.'],
+['Seno','L\'ordinata del punto B: sin α = y_B.'],
 ['Coseno','L\'ascissa del punto B: cos α = x_B.'],
-['Tangente','Il rapporto y_B / x_B = sen α / cos α, quando esiste.'],
+['Tangente','Il rapporto y_B / x_B = sin α / cos α, quando esiste.'],
 ['Cotangente','Il rapporto x_B / y_B = 1 / tan α, quando esiste.'],
 ['Ascissa e ordinata','La x e la y di un punto. L\'ascissa viene prima.'],
 ['Quadrante','Una delle 4 parti del piano cartesiano, numerate in senso antiorario.'],
-['Relazione fondamentale','Una formula sempre vera che collega seno, coseno e tangente: cos²α + sen²α = 1, tan α = sen α / cos α.'],
+['Relazione fondamentale','Una formula sempre vera che collega seno, coseno e tangente: cos²α + sin²α = 1, tan α = sin α / cos α.'],
 ];
 
 const FORMULARIO=`
 <div class="box blu"><h3>Gradi e radianti</h3><p class="m">α° = α<sub>rad</sub> · ${F('180°','π')} &nbsp;&nbsp; α<sub>rad</sub> = α° · ${F('π','180°')}</p><p class="m">360° = 2π &nbsp; 180° = π &nbsp; 90° = ${PI(1,2)} &nbsp; 60° = ${PI(1,3)} &nbsp; 45° = ${PI(1,4)} &nbsp; 30° = ${PI(1,6)}</p></div>
-<div class="box ver"><h3>Circonferenza goniometrica</h3><p class="m">x² + y² = 1 &nbsp;&nbsp; E(1 ; 0) &nbsp;&nbsp; B(cos α ; sen α)</p><p>Antiorario = + · Orario = − · α e α + 2kπ sono equivalenti.</p><p>Quadranti: 1° (+,+), 2° (−,+), 3° (−,−), 4° (+,−).</p></div>
-<div class="box gia"><h3>Seno e coseno</h3><p class="m">cos α = x<sub>B</sub> &nbsp;&nbsp; sen α = y<sub>B</sub> &nbsp;&nbsp; −1 ≤ sen α, cos α ≤ 1</p>${TAB(['α','0','π/2','π','3π/2','2π'],[['cos α','1','0','−1','0','1'],['sen α','0','1','0','−1','0']])}</div>
-<div class="box ros"><h3>Tangente e cotangente</h3><p class="m">tan α = ${F('y<sub>B</sub>','x<sub>B</sub>')} = ${F('sen α','cos α')} &nbsp;&nbsp; cot α = ${F('x<sub>B</sub>','y<sub>B</sub>')} = ${F(1,'tan α')}</p><p>tan non esiste per α = π/2 + kπ · cot non esiste per α = kπ</p></div>
-<div class="box blu"><h3>Relazioni fondamentali</h3><p class="m">cos²α + sen²α = 1</p><p class="m">sen α = ± √(1 − cos²α) &nbsp;&nbsp; cos α = ± √(1 − sen²α)</p><p>Il segno ± si sceglie con il quadrante.</p></div>`;
+<div class="box ver"><h3>Circonferenza goniometrica</h3><p class="m">x² + y² = 1 &nbsp;&nbsp; E(1 ; 0) &nbsp;&nbsp; B(cos α ; sin α)</p><p>Antiorario = + · Orario = − · α e α + 2kπ sono equivalenti.</p><p>Quadranti: 1° (+,+), 2° (−,+), 3° (−,−), 4° (+,−).</p></div>
+<div class="box gia"><h3>Seno e coseno</h3><p class="m">cos α = x<sub>B</sub> &nbsp;&nbsp; sin α = y<sub>B</sub> &nbsp;&nbsp; −1 ≤ sin α, cos α ≤ 1</p>${TAB(['α','0','π/2','π','3π/2','2π'],[['cos α','1','0','−1','0','1'],['sin α','0','1','0','−1','0']])}</div>
+<div class="box ros"><h3>Tangente e cotangente</h3><p class="m">tan α = ${F('y<sub>B</sub>','x<sub>B</sub>')} = ${F('sin α','cos α')} &nbsp;&nbsp; cot α = ${F('x<sub>B</sub>','y<sub>B</sub>')} = ${F(1,'tan α')}</p><p>tan non esiste per α = π/2 + kπ · cot non esiste per α = kπ</p></div>
+<div class="box blu"><h3>Relazioni fondamentali</h3><p class="m">cos²α + sin²α = 1</p><p class="m">sin α = ± √(1 − cos²α) &nbsp;&nbsp; cos α = ± √(1 − sin²α)</p><p>Il segno ± si sceglie con il quadrante.</p></div>`;
 
 /* ========== APP ========== */
 const $=(s,r)=>(r||document).querySelector(s);
@@ -746,7 +746,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 (function(){
   const UNITS=new Set(['N','J','kg','K','Pa','W','L','cal','min','mm','cm','km','cl','mL','Hz','V·s']);
   const PAIRS=new Set(['m/s','g/s','s/m','m/h']);
-  const OP="(?:(?:sen|cos|tan|cot)\\s?α|\\d+[A-Za-z]?π|[A-Za-z]?π|\\d+(?:[.,]\\d+)?|\\(−?\\d+\\)|[A-ZΔ][A-Za-zΔα⊥]?(?:_[A-Za-z0-9]+)?|[a-zα](?:_[A-Za-z0-9]+)?)";
+  const OP="(?:(?:sen|sin|cos|tan|cot)\\s?α|\\d+[A-Za-z]?π|[A-Za-z]?π|\\d+(?:[.,]\\d+)?|\\(−?\\d+\\)|[A-ZΔ][A-Za-zΔα⊥]?(?:_[A-Za-z0-9]+)?|[a-zα](?:_[A-Za-z0-9]+)?)";
   const RE=new RegExp("(?<![\\w.,/⁄])("+OP+")\\s?\\/\\s?("+OP+")(?![\\w²³⁻/·])","g");
   const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   const sub=s=>esc(s).replace(/_([A-Za-z0-9]+)/g,'<sub>$1</sub>');
@@ -806,7 +806,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 </script>
 <!--AGG--><script>
 (function(){
- var B="20261001132929",t0=Date.now(),touched=false,last=0;
+ var B="20261001135718",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;

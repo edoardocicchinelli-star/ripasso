@@ -730,7 +730,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 (function(){
   const UNITS=new Set(['N','J','kg','K','Pa','W','L','cal','min','mm','cm','km','cl','mL','Hz','V·s']);
   const PAIRS=new Set(['m/s','g/s','s/m','m/h']);
-  const OP="(?:(?:sen|cos|tan|cot)\\s?α|\\d+[A-Za-z]?π|[A-Za-z]?π|\\d+(?:[.,]\\d+)?|\\(−?\\d+\\)|[A-ZΔ][A-Za-zΔα⊥]?(?:_[A-Za-z0-9]+)?|[a-zα](?:_[A-Za-z0-9]+)?)";
+  const OP="(?:(?:sen|sin|cos|tan|cot)\\s?α|\\d+[A-Za-z]?π|[A-Za-z]?π|\\d+(?:[.,]\\d+)?|\\(−?\\d+\\)|[A-ZΔ][A-Za-zΔα⊥]?(?:_[A-Za-z0-9]+)?|[a-zα](?:_[A-Za-z0-9]+)?)";
   const RE=new RegExp("(?<![\\w.,/⁄])("+OP+")\\s?\\/\\s?("+OP+")(?![\\w²³⁻/·])","g");
   const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   const sub=s=>esc(s).replace(/_([A-Za-z0-9]+)/g,'<sub>$1</sub>');
@@ -790,7 +790,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 </script>
 <!--AGG--><script>
 (function(){
- var B="20261001132929",t0=Date.now(),touched=false,last=0;
+ var B="20261001135718",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;
