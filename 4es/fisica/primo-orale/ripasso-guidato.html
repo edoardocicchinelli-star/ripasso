@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fisica 4 ES: fluidi, temperatura e calore</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.sgf{display:block;width:100%;max-width:420px;height:auto;margin:8px 0}
+sub{font-size:.75em}
+ol{padding-left:22px;margin:.3em 0}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Fisica</a></p><h1>Fisica: primo orale</h1><p>Meccanica dei fluidi, temperatura e calore · un passo alla volta</p></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u0">0 Da sapere</button>
+<button data-t="u1">1 Pressione</button>
+<button data-t="u2">2 Stevino e atmosfera</button>
+<button data-t="u3">3 Archimede e portata</button>
+<button data-t="u4">4 Temperatura</button>
+<button data-t="u5">5 Calore specifico</button>
+<button data-t="u6">6 Calorimetro</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come ti prepari al primo orale</h2>
+<div class="box gia"><h3>Gli argomenti</h3><p><b>1. La meccanica dei fluidi</b>: pressione, legge di Pascal, torchio idraulico, legge di Stevino, vasi comunicanti, pressione atmosferica e Torricelli, legge di Archimede e galleggiamento, portata.</p><p><b>2. La temperatura e il calore</b>: calore ed equilibrio termico, scale Celsius e Kelvin, dilatazione lineare, calore e lavoro (Joule), capacità termica, calore specifico, calorimetro e temperatura di equilibrio.</p></div>
+<p>All'orale si deve saper <b>dire</b> la teoria con parole proprie e saper usare le <b>formule</b>. Per questo qui trovi, per ogni argomento, le <b>domande dell'orale con la risposta modello</b> e gli <b>esercizi di calcolo</b> con i passaggi.</p>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: definizioni, formule e unità di misura.</div></div>
+<div class="step"><b class="n">3</b><div><b>Esempi svolti</b>: ogni passaggio è spiegato.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni, quelli che si notano all'orale.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: esercizi sempre nuovi. Fai i calcoli <b>su un foglio</b>. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz di teoria</b>: poche domande sulle definizioni.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (7 giorni)</h3><ul><li><b>Giorno 1</b>: unità 0 e 1 (pressione e Pascal)</li><li><b>Giorno 2</b>: unità 2 (Stevino, vasi comunicanti, atmosfera)</li><li><b>Giorno 3</b>: unità 3 (Archimede e portata)</li><li><b>Giorno 4</b>: unità 4 (temperatura, scale, dilatazione)</li><li><b>Giorno 5</b>: unità 5 (capacità termica e calore specifico)</li><li><b>Giorno 6</b>: unità 6 (calorimetro)</li><li><b>Giorno 7</b>: Prova finale, <b>Orale</b> a voce alta e Formulario</li></ul></div>
+<div class="box gia"><h3>Come rispondere all'orale: la scaletta</h3><ol><li><b>Definizione</b>: che cos'è, con parole tue.</li><li><b>Formula</b>: scrivila e dì che cosa vuol dire ogni lettera.</li><li><b>Unità di misura</b> di ogni grandezza.</li><li><b>Un esempio</b> pratico o un piccolo calcolo.</li></ol></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti le risposte dell'<b>Orale</b> <b>a voce alta</b>, come se parlassi al professore.</li><li>Scrivi <b>sempre l'unità di misura</b> dopo il numero.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li><li>Prima dell'orale leggi il <b>Formulario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u0"></section><section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== UTILITÀ (fisica) ========== */
+const MIN='−';
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const SUPD={'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻'};
+const sup=n=>String(n).split('').map(c=>SUPD[c]).join('');
+const p10=n=>'10'+sup(n);
+const sh=(a,k)=>Number((a*Math.pow(10,k)).toFixed(9));
+/* numero in formato italiano: virgola decimale, punto per le migliaia (da 4 cifre) */
+function it(x){
+  let s=Number(x).toFixed(9).replace(/0+$/,'').replace(/\.$/,'');
+  let neg=s[0]==='-';if(neg)s=s.slice(1);
+  let [i,f]=s.split('.');
+  if(i.length>=4)i=i.replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  return (neg?MIN:'')+i+(f?','+f:'');
+}
+/* legge un numero scritto con it() (per i controlli) */
+function unit_(s){return parseFloat(String(s).replace(/\./g,'').replace(',','.').replace(MIN,'-'))}
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,ok,tag)=>({q,...mkOpts(correct,wrongs),steps,ok,tag});
+const near=(a,b)=>Math.abs(a-b)<=1e-9*Math.max(1,Math.abs(a),Math.abs(b));
+
+/* ========== ESERCIZI: FLUIDI, TEMPERATURA E CALORE ========== */
+const G=9.81,P0=101000;
+const U=(x,u)=>`${it(x)} ${u}`;
+const okW=v=>{if(!isFinite(v)||v<=0||v>2e7)return false;const t=Number(v).toFixed(9).replace(/0+$/,'');const f=t.split('.')[1]||'';return f.length<=7};
+const wd=(arr,u)=>arr.filter(okW).map(v=>U(v,u));
+
+/* ---------- Unità 0: da sapere prima ---------- */
+function exConv(){
+  const T=[
+   {f:'cm²',t:'m²',k:-4,why:'1 cm = 10⁻² m, quindi 1 cm² = (10⁻²)² m² = 10⁻⁴ m²: moltiplico per 10⁻⁴ (virgola a sinistra di 4 posti).'},
+   {f:'m²',t:'cm²',k:4,why:'1 m = 100 cm, quindi 1 m² = 100 · 100 cm² = 10⁴ cm²: moltiplico per 10⁴ (virgola a destra di 4 posti).'},
+   {f:'L',t:'m³',k:-3,why:'1 m³ = 1.000 L, quindi 1 L = 10⁻³ m³: moltiplico per 10⁻³.'},
+   {f:'cm³',t:'m³',k:-6,why:'1 cm = 10⁻² m, quindi 1 cm³ = (10⁻²)³ m³ = 10⁻⁶ m³: moltiplico per 10⁻⁶.'},
+   {f:'g',t:'kg',k:-3,why:'1 g = 10⁻³ kg: moltiplico per 10⁻³.'},
+   {f:'kg',t:'g',k:3,why:'1 kg = 1.000 g: moltiplico per 10³.'},
+   {f:'cm',t:'m',k:-2,why:'1 cm = 10⁻² m: moltiplico per 10⁻².'},
+   {f:'min',t:'s',m:60,why:'1 min = 60 s: moltiplico per 60.'},
+   {f:'h',t:'s',m:3600,why:'1 h = 60 min = 3.600 s: moltiplico per 3.600.'}
+  ];
+  const c=pick(T),a=pick([1,2,5,10,50,100,250,500,0.5,2.5,4,20]);
+  const res=c.m?a*c.m:sh(a,c.k);
+  const w=c.m?[a/c.m,a*c.m*10,a*c.m/10]:[sh(a,-c.k),sh(a,c.k+1),sh(a,c.k-1)];
+  return mkEx(`Converti <b>${it(a)} ${c.f}</b> in ${c.t}`,U(res,c.t),wd(w,c.t),`<p>${c.why}</p><p class="m">${it(a)} ${c.f} = <b>${U(res,c.t)}</b></p>`,()=>true,'Conversioni di unità');
+}
+function exPotDec(){
+  const a=pick([1.01,1.36,2.5,3,4.2,7.8,9.81,1.2]),n=pick([3,4,5,6,-1,-2,-3]),v=sh(a,n);
+  const un=pick(['Pa','m³','J','kg']);
+  return mkEx(`Scrivi come numero decimale: <b>${it(a)} × ${p10(n)} ${un}</b>`,U(v,un),wd([sh(a,-n),sh(a,n+1),sh(a,n-1),sh(a,n+2),sh(a,n-2)],un),
+   `<p>Esponente ${n>0?'positivo':'negativo'} (${n<0?MIN+(-n):n}): sposto la virgola a ${n>0?'destra':'sinistra'} di ${Math.abs(n)} ${Math.abs(n)===1?'posto':'posti'}.</p><p class="m">${it(a)} × ${p10(n)} ${un} = <b>${U(v,un)}</b></p>`,()=>true,'Potenze di 10');
+}
+function exProp(){
+  const C=[['la <b>forza raddoppia</b> (l\'area resta uguale)','raddoppia','F'],['l\'<b>area raddoppia</b> (la forza resta uguale)','si dimezza','S'],['la <b>forza triplica</b> (l\'area resta uguale)','triplica','F'],['l\'<b>area si dimezza</b> (la forza resta uguale)','raddoppia','S']];
+  const [t,corr]=pick(C);
+  return mkEx(`Nella formula p = F : S, se ${t}, la pressione...`,corr,['raddoppia','si dimezza','triplica','resta uguale'].filter(x=>x!==corr),
+   `<p>La pressione è <b>direttamente proporzionale alla forza</b> (se la forza cresce, cresce anche p) e <b>inversamente proporzionale all'area</b> (se l'area cresce, p diminuisce).</p><p class="m">p = ${F('F','S')}</p><p>Qui la pressione <b>${corr}</b>.</p>`,()=>true,'Proporzionalità');
+}
+
+/* ---------- Unità 1: pressione e Pascal ---------- */
+function exPressione(){
+  const S=pick([0.5,2,4,0.25,0.1,0.04,10,0.2]),p=pick([100,200,400,500,1000,2000,2500,5000,10000]),F0=p*S;
+  const t=pick(['p','p','F','S']);
+  const cm=(t!=='S'&&Math.random()<0.25)?true:false;
+  const Sq=cm?`${it(S*1e4)} cm²`:`${it(S)} m²`,conv=cm?`<p>Prima converto l'area in m²: ${it(S*1e4)} cm² = ${it(S)} m² (1 cm² = 10⁻⁴ m²).</p>`:'';
+  if(t==='p')return mkEx(`Una forza di <b>${it(F0)} N</b> agisce perpendicolarmente su una superficie di <b>${Sq}</b>. Calcola la pressione.`,U(p,'Pa'),wd([F0*S,p/10,p*10,p*100],'Pa'),
+   `${conv}<p>La pressione è forza perpendicolare diviso area:</p><p class="m">p = ${F('F','S')} = ${F(it(F0)+' N',it(S)+' m²')} = <b>${U(p,'Pa')}</b></p><p class="note">1 Pa = 1 N/m².</p>`,()=>near(F0/S,p),'Pressione');
+  if(t==='F')return mkEx(`Su una superficie di <b>${Sq}</b> agisce una pressione di <b>${it(p)} Pa</b>. Quanto vale la forza perpendicolare?`,U(F0,'N'),wd([p/S,p+S,F0*10,F0/10],'N'),
+   `${conv}<p>Dalla formula p = ${F('F','S')} si ricava la formula inversa: <b>F = p · S</b>.</p><p class="m">F = ${it(p)} Pa · ${it(S)} m² = <b>${U(F0,'N')}</b></p>`,()=>near(p*S,F0),'Pressione');
+  return mkEx(`Una forza di <b>${it(F0)} N</b>, perpendicolare a una superficie, produce una pressione di <b>${it(p)} Pa</b>. Quanto vale l'area?`,U(S,'m²'),wd([F0*p,p/F0,S*10,S/10],'m²'),
+   `<p>Dalla formula p = ${F('F','S')} si ricava <b>S = ${F('F','p')}</b>.</p><p class="m">S = ${F(it(F0)+' N',it(p)+' Pa')} = <b>${U(S,'m²')}</b></p>`,()=>near(F0/p,S),'Pressione');
+}
+function exTorchio(){
+  const r=pick([5,10,20,25,50]),SA=pick([0.01,0.02,0.05,0.1]),SB=sh(SA*r,0),FA=pick([20,50,100,200,400]);
+  const t=pick(['FB','FA']);
+  if(t==='FB'){
+    const FB=FA*r;
+    return mkEx(`In un torchio idraulico il pistone piccolo ha area <b>${it(SA)} m²</b> e quello grande <b>${it(SB)} m²</b>. Sul pistone piccolo si applica una forza di <b>${it(FA)} N</b>. Quale forza si ottiene sul pistone grande?`,U(FB,'N'),wd([FA/r,FA*SB,FA+r,FA*r*10,FA*r/10],'N'),
+     `<p>Per la <b>legge di Pascal</b> la pressione è la stessa sui due pistoni: p<sub>A</sub> = p<sub>B</sub>, cioè ${F('F<sub>A</sub>','S<sub>A</sub>')} = ${F('F<sub>B</sub>','S<sub>B</sub>')}.</p><p>Ricavo F<sub>B</sub>: <span class="m">F<sub>B</sub> = F<sub>A</sub> · ${F('S<sub>B</sub>','S<sub>A</sub>')} = ${it(FA)} N · ${F(it(SB),it(SA))} = ${it(FA)} N · ${r} = <b>${U(FB,'N')}</b></span></p><p class="note">L'area del pistone grande è ${r} volte quella del piccolo, quindi la forza è ${r} volte più grande.</p>`,()=>true,'Torchio idraulico');
+  }
+  const P=FA*r*10;
+  return mkEx(`Un torchio idraulico ha il pistone piccolo di area <b>${it(SA)} m²</b> e quello grande di area <b>${it(SB)} m²</b>. Per sollevare un'auto con forza-peso di <b>${it(P)} N</b>, che forza minima serve sul pistone piccolo?`,U(P/r,'N'),wd([P*r,P/SB,P-r,P/r*10,P/r/10],'N'),
+   `<p>Pascal: ${F('F<sub>A</sub>','S<sub>A</sub>')} = ${F('F<sub>B</sub>','S<sub>B</sub>')}. Qui F<sub>B</sub> = ${it(P)} N (la forza da ottenere sul pistone grande).</p><p class="m">F<sub>A</sub> = F<sub>B</sub> · ${F('S<sub>A</sub>','S<sub>B</sub>')} = ${it(P)} N · ${F(it(SA),it(SB))} = ${it(P)} N : ${r} = <b>${U(P/r,'N')}</b></p>`,()=>true,'Torchio idraulico');
+}
+
+/* ---------- Unità 2: Stevino, vasi comunicanti, atmosfera ---------- */
+const DL=[['acqua',1000],['olio',900],['mercurio',13600]];
+function exStevino(){
+  const [nm,d]=pick(DL),h=pick([1,2,3,4,5,10,0.5]),t=pick(['idro','tot','h']);
+  const ph=d*G*h;
+  if(t==='idro')return mkEx(`Calcola la <b>pressione idrostatica</b> a <b>${it(h)} m</b> di profondità in ${nm} (d = ${it(d)} kg/m³, g = 9,81 N/kg).`,U(ph,'Pa'),wd([d*h,ph+P0,d*G,ph*10],'Pa'),
+   `<p>La pressione idrostatica è dovuta solo al peso del liquido: <b>p<sub>h</sub> = d · g · h</b>.</p><p class="m">p<sub>h</sub> = ${it(d)} · 9,81 · ${it(h)} = <b>${U(ph,'Pa')}</b></p>`,()=>near(d*G*h,ph),'Legge di Stevino');
+  if(t==='tot')return mkEx(`Calcola la <b>pressione totale</b> a <b>${it(h)} m</b> di profondità in ${nm} (d = ${it(d)} kg/m³, g = 9,81 N/kg, p₀ = 1,01 × 10⁵ Pa = 101.000 Pa).`,U(P0+ph,'Pa'),wd([ph,P0-ph,P0*h,(P0+ph)/10,(P0+ph)*10],'Pa'),
+   `<p>Legge di Stevino: <b>p = p₀ + d · g · h</b>.</p><p class="m">d · g · h = ${it(d)} · 9,81 · ${it(h)} = ${it(ph)} Pa</p><p class="m">p = 101.000 Pa + ${it(ph)} Pa = <b>${U(P0+ph,'Pa')}</b></p>`,()=>true,'Legge di Stevino');
+  return mkEx(`In ${nm} (d = ${it(d)} kg/m³, g = 9,81 N/kg) la pressione idrostatica vale <b>${it(ph)} Pa</b>. A quale profondità siamo?`,U(h,'m'),wd([ph*d*G,ph/d,h*10,h/10],'m'),
+   `<p>Da p<sub>h</sub> = d · g · h si ricava <b>h = ${F('p<sub>h</sub>','d · g')}</b>.</p><p class="m">h = ${F(it(ph),it(d)+' · 9,81')} = ${F(it(ph),it(d*G))} = <b>${U(h,'m')}</b></p>`,()=>true,'Legge di Stevino');
+}
+function exQuota(){
+  const h=pick([200,500,800,1000,1500,2000]),dp=13*h;
+  const t=pick(['drop','abs']);
+  if(t==='drop')return mkEx(`La pressione atmosferica diminuisce di circa <b>1.300 Pa ogni 100 m</b> di quota. Di quanto diminuisce salendo di <b>${it(h)} m</b>?`,U(dp,'Pa'),wd([1300*h,dp/10,dp*10,dp*2],'Pa'),
+   `<p>${it(h)} m sono ${it(h/100)} gruppi da 100 m. Per ognuno la pressione scende di 1.300 Pa:</p><p class="m">${it(h/100)} · 1.300 Pa = <b>${U(dp,'Pa')}</b></p>`,()=>true,'Pressione atmosferica');
+  return mkEx(`Al livello del mare la pressione atmosferica vale <b>101.000 Pa</b> e diminuisce di circa 1.300 Pa ogni 100 m. Quanto vale circa a <b>${it(h)} m</b> di quota?`,U(P0-dp,'Pa'),wd([P0+dp,P0-1300*h,dp,P0-dp*10,P0-dp/2],'Pa'),
+   `<p>Calo di pressione: ${it(h/100)} · 1.300 Pa = ${it(dp)} Pa.</p><p>La pressione <b>diminuisce</b> con la quota:</p><p class="m">101.000 − ${it(dp)} = <b>${U(P0-dp,'Pa')}</b></p>`,()=>true,'Pressione atmosferica');
+}
+function exVasi(){
+  const hA=pick([10,12,15,20,25,30]),nm=pick(['acqua','olio','alcol']);
+  return mkEx(`Due vasi comunicanti sono riempiti con ${nm} e il liquido è in equilibrio. Nel vaso A il livello è <b>${hA} cm</b>. A che altezza si trova il livello nel vaso B?`,`${hA} cm`,[`${hA*2} cm`,`${Math.round(hA/2)} cm`],
+   `<p>In un sistema di <b>vasi comunicanti</b> un liquido raggiunge <b>ovunque lo stesso livello</b>, qualunque sia la forma dei vasi. Il fluido è in equilibrio solo se h<sub>A</sub> = h<sub>B</sub>.</p><p class="m">h<sub>B</sub> = h<sub>A</sub> = <b>${hA} cm</b></p>`,()=>true,'Vasi comunicanti');
+}
+
+/* ---------- Unità 3: Archimede, galleggiamento, portata ---------- */
+function exArchimede(){
+  const [nm,d]=pick(DL),V=pick([0.001,0.002,0.005,0.01,0.02,0.05,0.1,0.5]),FA=d*V*G;
+  return mkEx(`Un corpo di volume <b>${it(V)} m³</b> è immerso completamente in ${nm} (d = ${it(d)} kg/m³, g = 9,81 N/kg). Calcola la spinta di Archimede.`,U(FA,'N'),wd([d*V,d*G/V,FA*10,FA/10],'N'),
+   `<p>La spinta di Archimede è uguale al <b>peso del fluido spostato</b>: <b>F<sub>A</sub> = d · V · g</b> (d è la densità del <b>fluido</b>, V il volume del corpo immerso).</p><p>Prima la massa del fluido spostato: ${it(d)} · ${it(V)} = ${it(d*V)} kg. Poi il suo peso:</p><p class="m">F<sub>A</sub> = ${it(d*V)} kg · 9,81 N/kg = <b>${U(FA,'N')}</b></p>`,()=>near(d*V*G,FA),'Legge di Archimede');
+}
+function exGalleggia(){
+  const O=[['un cubetto di ghiaccio',920],['un pezzo di legno',600],['un sasso',2600],['una moneta di ferro',7800],['un pezzo di sughero',240],['una sfera di alluminio',2700],['una goccia d\'olio',900]];
+  const FL=[['acqua',1000],['olio',900],['mercurio',13600]];
+  const [on,dc]=pick(O),[fn,df]=pick(FL);
+  const res=dc<df?'sale a galla':dc>df?'affonda':'rimane in equilibrio';
+  const cmp=dc<df?'minore':dc>df?'maggiore':'uguale';
+  return mkEx(`${on.charAt(0).toUpperCase()+on.slice(1)} (densità <b>${it(dc)} kg/m³</b>) è immerso in ${fn} (densità <b>${it(df)} kg/m³</b>). Che cosa succede?`,res,['sale a galla','affonda','rimane in equilibrio'].filter(x=>x!==res),
+   `<p>Confronto le densità: la densità del corpo (${it(dc)}) è <b>${cmp}</b> di quella del fluido (${it(df)}).</p><p>Condizione di galleggiamento: il corpo <b>affonda</b> se d<sub>corpo</sub> &gt; d<sub>fluido</sub>, <b>rimane in equilibrio</b> se sono uguali, <b>sale a galla</b> se d<sub>corpo</sub> &lt; d<sub>fluido</sub>.</p><p class="m">Risultato: <b>${res}</b></p>`,()=>true,'Galleggiamento');
+}
+function exPortata(){
+  const q=pick([0.1,0.2,0.5,1,2,5]),dt=pick([2,5,10,20,30,60]),dV=q*dt,t=pick(['q','dV','dt','L']);
+  if(t==='q')return mkEx(`In un condotto passano <b>${it(dV)} m³</b> di acqua in <b>${it(dt)} s</b>. Calcola la portata.`,U(q,'m³/s'),wd([dV*dt,dt/dV,q*10,q/10],'m³/s'),
+   `<p>La portata è il volume che passa diviso il tempo impiegato: <b>q = ${F('ΔV','Δt')}</b>.</p><p class="m">q = ${F(it(dV)+' m³',it(dt)+' s')} = <b>${U(q,'m³/s')}</b></p>`,()=>near(dV/dt,q),'Portata');
+  if(t==='dV')return mkEx(`La portata di un condotto è <b>${it(q)} m³/s</b>. Quanta acqua passa in <b>${it(dt)} s</b>?`,U(dV,'m³'),wd([q/dt,dt/q,dV*10,dV/10],'m³'),
+   `<p>Da q = ${F('ΔV','Δt')} si ricava <b>ΔV = q · Δt</b>.</p><p class="m">ΔV = ${it(q)} m³/s · ${it(dt)} s = <b>${U(dV,'m³')}</b></p>`,()=>true,'Portata');
+  if(t==='dt')return mkEx(`La portata di un condotto è <b>${it(q)} m³/s</b>. Quanto tempo serve perché passino <b>${it(dV)} m³</b>?`,U(dt,'s'),wd([q*dV,q/dV,dt*10,dt/10],'s'),
+   `<p>Da q = ${F('ΔV','Δt')} si ricava <b>Δt = ${F('ΔV','q')}</b>.</p><p class="m">Δt = ${F(it(dV)+' m³',it(q)+' m³/s')} = <b>${U(dt,'s')}</b></p>`,()=>true,'Portata');
+  const Lit=dV*1000;
+  return mkEx(`In un tubo passano <b>${it(Lit)} litri</b> di acqua in <b>${it(dt)} s</b>. Calcola la portata in m³/s.`,U(q,'m³/s'),wd([Lit/dt,q*1000,q/10],'m³/s'),
+   `<p><b>1.</b> Converto i litri in m³: ${it(Lit)} L = ${it(dV)} m³ (1 L = 10⁻³ m³).</p><p><b>2.</b> q = ${F('ΔV','Δt')}:</p><p class="m">q = ${F(it(dV)+' m³',it(dt)+' s')} = <b>${U(q,'m³/s')}</b></p>`,()=>true,'Portata');
+}
+
+/* ---------- Unità 4: temperatura, dilatazione ---------- */
+function exTemp(){
+  const t=pick(['CK','CK','KC']);
+  if(t==='CK'){const c=pick([-40,-20,-10,0,10,20,25,37,50,80,100,150]),T=c+273;
+    return mkEx(`Converti in kelvin: <b>${c<0?MIN+(-c):c} °C</b>`,`${T} K`,[`${c-273<0?MIN+(273-c):c-273} K`,`${273-c<0?MIN+(c-273):273-c} K`,`${c+373} K`],
+     `<p>Formula: <span class="m">T = (t + 273) K</span>. Si somma 273.</p><p class="m">${c<0?MIN+(-c):c} + 273 = <b>${T}</b>, quindi ${T} K</p><p class="note">Una variazione di 1 °C è uguale a una variazione di 1 K, ma lo zero è diverso.</p>`,()=>T===c+273,'Scale termometriche');}
+  const T=pick([173,223,263,273,293,300,310,373,423]),c=T-273;
+  return mkEx(`Converti in gradi Celsius: <b>${T} K</b>`,`${c<0?MIN+(-c):c} °C`,[`${T+273} °C`,`${273-T<0?MIN+(T-273):273-T} °C`,`${c+10<0?MIN+(-(c+10)):c+10} °C`],
+   `<p>Formula: <span class="m">t = (T − 273) °C</span>. Si sottrae 273.</p><p class="m">${T} − 273 = <b>${c<0?MIN+(-c):c}</b>, quindi ${c<0?MIN+(-c):c} °C</p>`,()=>T-273===c,'Scale termometriche');
+}
+function exDilat(){
+  const M=[['ferro',1.2],['alluminio',2.4],['rame',1.7],['vetro',0.9]];
+  const [nm,a]=pick(M),L0=pick([10,20,50,100]),dT=pick([10,20,30,50]);
+  const dL=sh(a*L0*dT,-5);
+  return mkEx(`Una sbarra di ${nm} lunga <b>${it(L0)} m</b> (α = ${it(a)} × 10⁻⁵ K⁻¹) subisce una variazione di temperatura di <b>${it(dT)} K</b>. Di quanto si allunga?`,U(dL,'m'),wd([dL*10,dL/10,sh(a*dT,-5)],'m'),
+   `<p>Legge della dilatazione lineare: <b>ΔL = α · L<sub>0</sub> · ΔT</b>.</p><p class="m">ΔL = ${it(a)} × 10⁻⁵ K⁻¹ · ${it(L0)} m · ${it(dT)} K</p><p>Moltiplico i numeri: ${it(a)} · ${it(L0)} · ${it(dT)} = ${it(a*L0*dT)}, poi per 10⁻⁵ (virgola a sinistra di 5 posti):</p><p class="m">ΔL = <b>${U(dL,'m')}</b></p><p class="note">Il coefficiente α si misura in K⁻¹ (o °C⁻¹) ed è l'inverso di una temperatura.</p>`,()=>near(a*1e-5*L0*dT,dL),'Dilatazione lineare');
+}
+
+/* ---------- Unità 5: calore e calore specifico ---------- */
+const CM=[['acqua',4186],['ferro',450],['alluminio',900],['rame',390]];
+function exCalore(){
+  const [nm,c]=pick(CM),m=pick([0.1,0.2,0.5,1,2]),dT=pick([5,10,20,50]),t=pick(['Q','Q','dT','m','neg']);
+  const Q=c*m*dT;
+  if(t==='Q')return mkEx(`Quanto calore serve per scaldare <b>${it(m)} kg</b> di ${nm} (c = ${it(c)} J/(kg·K)) di <b>${it(dT)} K</b>?`,U(Q,'J'),wd([Q/dT,c*m,Q*10,Q/10],'J'),
+   `<p>Equazione fondamentale della termologia: <b>Q = c · m · ΔT</b>.</p><p class="m">Q = ${it(c)} J/(kg·K) · ${it(m)} kg · ${it(dT)} K = <b>${U(Q,'J')}</b></p>`,()=>near(c*m*dT,Q),'Q = c m ΔT');
+  if(t==='neg')return mkEx(`<b>${it(m)} kg</b> di ${nm} (c = ${it(c)} J/(kg·K)) si raffreddano di <b>${it(dT)} K</b> (ΔT = ${MIN}${it(dT)} K). Quanto vale il calore scambiato?`,`${MIN}${it(Q)} J`,[U(Q,'J'),`${MIN}${it(Q/10)} J`],
+   `<p><b>Q = c · m · ΔT</b>. Il corpo si raffredda: ΔT è <b>negativa</b>, quindi anche Q è negativo (il corpo <b>cede</b> calore).</p><p class="m">Q = ${it(c)} · ${it(m)} · (${MIN}${it(dT)}) = <b>${MIN}${it(Q)} J</b></p>`,()=>true,'Q = c m ΔT');
+  if(t==='dT')return mkEx(`A <b>${it(m)} kg</b> di ${nm} (c = ${it(c)} J/(kg·K)) vengono forniti <b>${it(Q)} J</b>. Di quanto aumenta la temperatura?`,U(dT,'K'),wd([Q*c*m,c*m/Q,dT*10,dT/10,dT*2],'K'),
+   `<p>Da Q = c · m · ΔT si ricava <b>ΔT = ${F('Q','c · m')}</b>.</p><p class="m">ΔT = ${F(it(Q)+' J',it(c)+' · '+it(m))} = ${F(it(Q),it(c*m))} = <b>${U(dT,'K')}</b></p>`,()=>true,'Q = c m ΔT');
+  return mkEx(`Per scaldare di <b>${it(dT)} K</b> una massa di ${nm} (c = ${it(c)} J/(kg·K)) servono <b>${it(Q)} J</b>. Quanto vale la massa?`,U(m,'kg'),wd([Q*c*dT,c*dT/Q,m*10,m/10,m*2],'kg'),
+   `<p>Da Q = c · m · ΔT si ricava <b>m = ${F('Q','c · ΔT')}</b>.</p><p class="m">m = ${F(it(Q)+' J',it(c)+' · '+it(dT))} = ${F(it(Q),it(c*dT))} = <b>${U(m,'kg')}</b></p>`,()=>true,'Q = c m ΔT');
+}
+function exCapacita(){
+  const C=pick([100,200,250,500,1000,2093]),dT=pick([5,10,20,40]),Q=C*dT,t=pick(['C','Q','cm']);
+  if(t==='C')return mkEx(`Un corpo assorbe <b>${it(Q)} J</b> e la sua temperatura aumenta di <b>${it(dT)} K</b>. Qual è la sua capacità termica?`,U(C,'J/K'),wd([Q*dT,dT/Q,C*10,C/10],'J/K'),
+   `<p>La capacità termica è il rapporto tra calore scambiato e variazione di temperatura: <b>C = ${F('Q','ΔT')}</b>.</p><p class="m">C = ${F(it(Q)+' J',it(dT)+' K')} = <b>${U(C,'J/K')}</b></p>`,()=>true,'Capacità termica');
+  if(t==='Q')return mkEx(`Un corpo ha capacità termica <b>${it(C)} J/K</b>. Quanto calore serve per aumentarne la temperatura di <b>${it(dT)} K</b>?`,U(Q,'J'),wd([C/dT,C+dT,Q*10,Q/10],'J'),
+   `<p>Da C = ${F('Q','ΔT')} si ricava <b>Q = C · ΔT</b>.</p><p class="m">Q = ${it(C)} J/K · ${it(dT)} K = <b>${U(Q,'J')}</b></p>`,()=>true,'Capacità termica');
+  const [nm,c]=pick(CM),m=pick([0.5,1,2,0.2]);
+  return mkEx(`Calcola la capacità termica di <b>${it(m)} kg</b> di ${nm} (c = ${it(c)} J/(kg·K)).`,U(c*m,'J/K'),wd([c/m,c+m,c*m*10,c*m/10],'J/K'),
+   `<p>La capacità termica è proporzionale alla massa: <b>C = c · m</b>.</p><p class="m">C = ${it(c)} J/(kg·K) · ${it(m)} kg = <b>${U(c*m,'J/K')}</b></p>`,()=>true,'Capacità termica');
+}
+function exCal(){
+  const a=pick([1,2,5,10,50,100,200,500,1000]),t=pick(['cJ','cJ','Jc']);
+  if(t==='cJ'){const J=a*4.186;
+    return mkEx(`Converti <b>${it(a)} cal</b> in joule (1 cal = 4,186 J).`,U(J,'J'),wd([a/4.186,a*4.18,J*10,J/10],'J'),`<p>1 cal = 4,186 J: moltiplico per 4,186.</p><p class="m">${it(a)} · 4,186 = <b>${U(J,'J')}</b></p>`,()=>true,'Caloria e joule');}
+  const J=a*4.186;
+  return mkEx(`Converti <b>${it(J)} J</b> in calorie (1 cal = 4,186 J).`,U(a,'cal'),wd([J*4.186,J/10,a*10,a/10],'cal'),`<p>1 cal = 4,186 J, quindi per passare da joule a calorie <b>divido</b> per 4,186.</p><p class="m">${it(J)} : 4,186 = <b>${U(a,'cal')}</b></p>`,()=>true,'Caloria e joule');
+}
+
+/* ---------- Unità 6: calorimetro ed equilibrio termico ---------- */
+function exTe(){
+  for(let i=0;i<400;i++){
+    const m1=pick([0.5,1,2,3,0.2,0.4]),m2=pick([0.5,1,2,3,0.2,0.4]),T1=pick([10,15,20,25,30]),T2=pick([50,60,70,80,90,100]);
+    const Te=(m1*T1+m2*T2)/(m1+m2);
+    if(Math.abs(Te*10-Math.round(Te*10))>1e-9)continue;
+    if(m1===m2&&false)continue;
+    const nm=`<b>${it(m1)} kg</b> di acqua a <b>${T1} °C</b> e <b>${it(m2)} kg</b> di acqua a <b>${T2} °C</b>`;
+    return mkEx(`Si mescolano ${nm}, senza scambi con l'ambiente. Qual è la temperatura di equilibrio?`,U(Te,'°C'),wd([(T1+T2)/2,Te+10,T2-Te+T1,Te-5,Te+5],'°C'),
+     `<p>È la stessa sostanza (stesso c), quindi nella formula c si semplifica:</p><p class="m">T<sub>e</sub> = ${F('c<sub>1</sub>m<sub>1</sub>T<sub>1</sub> + c<sub>2</sub>m<sub>2</sub>T<sub>2</sub>','c<sub>1</sub>m<sub>1</sub> + c<sub>2</sub>m<sub>2</sub>')} = ${F('m<sub>1</sub>T<sub>1</sub> + m<sub>2</sub>T<sub>2</sub>','m<sub>1</sub> + m<sub>2</sub>')}</p><p class="m">T<sub>e</sub> = ${F(it(m1)+' · '+T1+' + '+it(m2)+' · '+T2,it(m1)+' + '+it(m2))} = ${F(it(m1*T1+m2*T2),it(m1+m2))} = <b>${U(Te,'°C')}</b></p><p class="note">T<sub>e</sub> sta sempre tra T<sub>1</sub> e T<sub>2</sub>: più vicina alla temperatura dell'acqua che ha più massa.</p>`,()=>Te>T1&&Te<T2,'Temperatura di equilibrio');
+  }
+}
+function exQ12(){
+  const Q=pick([1000,2000,4186,5000,8372,10000,20930]),nm=pick(['un pezzo di ferro','una barretta di rame','un blocchetto di alluminio']);
+  return mkEx(`In un calorimetro ben isolato ${nm} caldo viene immerso nell'acqua. L'acqua assorbe <b>${it(Q)} J</b>. Quanto vale il calore Q₂ scambiato dal metallo?`,`${MIN}${it(Q)} J`,[U(Q,'J'),'0 J'],
+   `<p>Il calorimetro è isolato: non c'è scambio con l'ambiente e l'energia si conserva. Quindi <b>Q₁ + Q₂ = 0</b>.</p><p>L'acqua <b>assorbe</b> calore (Q₁ = ${it(Q)} J &gt; 0), il metallo lo <b>cede</b> (Q₂ &lt; 0):</p><p class="m">Q₂ = −Q₁ = <b>${MIN}${it(Q)} J</b></p>`,()=>true,'Calorimetro');
+}
+
+const GENS={
+  u0:[exConv,exConv,exPotDec,exProp],
+  u1:[exPressione,exPressione,exTorchio],
+  u2:[exStevino,exStevino,exQuota,exVasi],
+  u3:[exArchimede,exGalleggia,exPortata],
+  u4:[exTemp,exDilat],
+  u5:[exCalore,exCalore,exCapacita,exCal],
+  u6:[exTe,exQ12]
+};
+const UNITS={u0:'0 · Da sapere prima',u1:'1 · La pressione e la legge di Pascal',u2:'2 · Stevino, vasi comunicanti, pressione atmosferica',u3:'3 · Archimede, galleggiamento e portata',u4:'4 · Temperatura, calore e dilatazione',u5:'5 · Capacità termica e calore specifico',u6:'6 · Calorimetro ed equilibrio termico'};
+const PROVA_PLAN={u0:1,u1:3,u2:3,u3:3,u4:2,u5:2,u6:1};
+
+/* ========== CONTENUTI FISSI (Fisica 4 ES: fluidi, temperatura e calore) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const M=t=>`<span class="m">${t}</span>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const SC=`<div class="box gia"><h3>Come rispondere all'orale: la scaletta</h3><ol><li><b>Definizione</b>: che cos'è, con parole tue.</li><li><b>Formula</b>: scrivila e dì che cosa vuol dire ogni lettera.</li><li><b>Unità di misura</b> di ogni grandezza.</li><li><b>Un esempio</b> pratico o un piccolo calcolo.</li></ol></div>`;
+
+const CONT={
+u0:{
+ cose:`<div class="box bia"><p>In questa parte di fisica si fanno molti <b>calcoli con le formule</b>. Prima di cominciare ripassiamo quattro cose che servono sempre: le <b>conversioni di unità</b>, le <b>potenze di 10</b>, le <b>formule inverse</b> e la <b>proporzionalità</b> (diretta e inversa).</p></div>`,
+ ricette:[
+  card('blu','1 · Conversioni di unità',TAB(['Da','A','Come'],[['cm²','m²','× 10⁻⁴'],['cm³','m³','× 10⁻⁶'],['L','m³','× 10⁻³'],['g','kg','× 10⁻³'],['min','s','× 60'],['h','s','× 3.600']])+'<p class="note">Prima di usare una formula porta sempre le misure alle unità del SI (m, kg, s, K).</p>'),
+  card('ver','2 · Potenze di 10',stepsHtml(['Esponente <b>positivo</b>: la virgola si sposta a <b>destra</b>. 1,01 × 10⁵ = 101.000.','Esponente <b>negativo</b>: la virgola si sposta a <b>sinistra</b>. 4 × 10⁻² = 0,04.','Esempio della fisica: la pressione atmosferica è p₀ = 1,01 × 10⁵ Pa = <b>101.000 Pa</b>.'])),
+  card('gia','3 · Formule inverse',
+   '<p>Da una formula si ricavano le altre. Esempio: p = '+F('F','S')+'.</p><p class="m">F = p · S &nbsp;&nbsp; S = '+F('F','p')+'</p><p>Regola: <b>quello che moltiplica passa dividendo</b> dall\'altra parte, e viceversa.</p>'),
+  card('ros','4 · Proporzionalità',
+   '<p><b>Diretta</b>: se una grandezza raddoppia, anche l\'altra raddoppia (Q e ΔT; F e p).</p><p><b>Inversa</b>: se una raddoppia, l\'altra si dimezza (p e S, a F fissata).</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi</h3><p>Converti 5.000 cm² in m²: 5.000 × 10⁻⁴ = <b>0,5 m²</b>.</p><p>Converti 20 L in m³: 20 × 10⁻³ = <b>0,02 m³</b>.</p><p>Da Q = c · m · ΔT: ΔT = ${F('Q','c · m')}.</p><p>Se la forza raddoppia (S uguale), la pressione <b>raddoppia</b>.</p></div>`,
+ errori:['Dimentichi di convertire le unità prima di calcolare (cm² invece di m²).','Sposti la virgola dalla parte sbagliata con l\'esponente negativo.','Nella formula inversa scambi moltiplicazione e divisione.'],
+ orale:[],
+ quiz:[
+  ['1 cm² in m² vale...','10⁻⁴ m²',['10⁻² m²','10² m²','10⁴ m²'],'Una lunghezza si converte con 10⁻², l\'area con (10⁻²)² = 10⁻⁴.'],
+  ['1,01 × 10⁵ Pa è uguale a...','101.000 Pa',['10.100 Pa','1.010 Pa','1.010.000 Pa'],'Esponente 5: la virgola va a destra di 5 posti.'],
+  ['Da p = F/S si ricava...',`F = p · S`,[`F = ${F('p','S')}`,`F = ${F('S','p')}`,'F = p + S'],'Quello che divide passa moltiplicando.'],
+ ]
+},
+u1:{
+ cose:`<div class="box bia"><p>La <b>pressione</b> dice <b>quanto una forza è “concentrata”</b> su una superficie. Una spilla e un mattone possono avere lo stesso peso, ma la spilla “buca” perché la forza è concentrata su un'area piccolissima.</p>
+ <p>I <b>fluidi</b> sono i liquidi e i gas: hanno in comune la proprietà di <b>scorrere</b> (fluire).</p></div>`,
+ ricette:[
+  card('blu','A · La pressione',
+   '<p class="m">p = '+F('F<sub>⊥</sub>','S')+'</p><p><b>p</b> = pressione (Pa) · <b>F⊥</b> = modulo della forza <b>perpendicolare</b> alla superficie (N) · <b>S</b> = area della superficie (m²).</p><p>La pressione è una grandezza <b>scalare</b>. Nel SI si misura in <b>pascal</b>: '+M('1 Pa = '+F('1 N','1 m²')+' = 1 N/m²')+'</p><p>Fissata l\'area: più forza → più pressione. Fissata la forza: più area → <b>meno</b> pressione.</p>'),
+  card('ver','B · Solidi, liquidi e gas',
+   '<p><b>Solido</b>: forma fissa e volume proprio, non scorre.</p><p><b>Liquido</b>: scorre e prende la forma del recipiente, ha un volume proprio ed è difficile da comprimere.</p><p><b>Gas</b>: scorre, occupa tutto il volume del recipiente ed è facilmente comprimibile.</p>'),
+  card('gia','C · La legge di Pascal',
+   '<p>La pressione esercitata su una superficie di un liquido si <b>trasmette con lo stesso valore</b> a ogni altra superficie a contatto con il liquido.</p><p>Esempio: premi una bottiglia con il tappo sportivo e l\'acqua zampilla dal beccuccio.</p>'),
+  card('ros','D · Il torchio idraulico',
+   '<p>Serve a sollevare pesi grandi con forze piccole (ad esempio le auto nelle autofficine). Per Pascal p<sub>A</sub> = p<sub>B</sub>:</p><p class="m">'+F('F<sub>A</sub>','S<sub>A</sub>')+' = '+F('F<sub>B</sub>','S<sub>B</sub>')+'</p><p>Il pistone grande ha area maggiore, quindi la forza su di lui è <b>maggiore</b> di quella applicata al pistone piccolo, nello stesso rapporto delle aree.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · pressione</h3><p>Una forza di 250 N agisce su un'area di 0,5 m². </p><p class="m">p = ${F('250 N','0,5 m²')} = <b>500 Pa</b></p></div>
+ <div class="box bia"><h3>Esempio 2 · torchio idraulico</h3><p>Pistone piccolo S<sub>A</sub> = 0,02 m², grande S<sub>B</sub> = 0,5 m² (25 volte). Con F<sub>A</sub> = 200 N si ottiene:</p><p class="m">F<sub>B</sub> = F<sub>A</sub> · ${F('S<sub>B</sub>','S<sub>A</sub>')} = 200 N · 25 = <b>5.000 N</b></p></div>`,
+ errori:['Usi l\'area in cm² senza convertirla in m².','Scrivi che il pascal è N · m²: è <b>N diviso m²</b>.','Pensi che più area dia più pressione: è il contrario.','Nel torchio scambi i pistoni: la forza maggiore è sul pistone con l\'area maggiore.'],
+ orale:[
+  ['Che cos\'è la pressione? Scrivi la formula e l\'unità di misura.','La pressione su una superficie è una grandezza scalare, data dal rapporto tra il modulo della forza perpendicolare alla superficie e l\'area della superficie: p uguale F perpendicolare diviso S. Nel SI si misura in pascal: 1 pascal è la pressione di una forza di 1 newton su 1 metro quadro. A parità di area, se la forza aumenta aumenta la pressione; a parità di forza, se l\'area aumenta la pressione diminuisce.'],
+  ['Che differenza c\'è tra solidi, liquidi e gas? Perché liquidi e gas sono detti fluidi?','Un solido ha forma fissa e volume proprio e non può scorrere. Un liquido scorre e assume la forma del recipiente, ma ha un volume proprio ed è difficile da comprimere. Un gas scorre e occupa tutto il volume del recipiente ed è facilmente comprimibile. Liquidi e gas si chiamano fluidi perché hanno la proprietà di scorrere.'],
+  ['Enuncia la legge di Pascal.','La pressione esercitata su una superficie di un liquido si trasmette, con lo stesso valore, a ogni altra superficie a contatto con il liquido. Per esempio, se premo una bottiglia con il tappo sportivo, l\'acqua zampilla dal beccuccio.'],
+  ['Come funziona il torchio idraulico?','Sfrutta la legge di Pascal: la pressione è la stessa sui due pistoni, quindi F A diviso S A è uguale a F B diviso S B. Con una forza piccola sul pistone di area piccola si ottiene una forza grande sul pistone di area grande, e così si sollevano pesi molto grandi.'],
+ ],
+ quiz:[
+  ['La pressione è il rapporto tra...','forza perpendicolare e area',['forza e volume','area e forza','massa e volume'],'p = F⊥ / S.'],
+  ['Il pascal è uguale a...','1 N/m²',['1 N · m²','1 kg/m³','1 N/m'],'1 Pa = 1 N / 1 m².'],
+  ['Un gas, rispetto a un liquido, è...','facilmente comprimibile',['difficile da comprimere','di forma fissa','senza volume'],'Un gas occupa tutto il recipiente ed è comprimibile.'],
+  ['Secondo la legge di Pascal la pressione su un liquido si trasmette...','con lo stesso valore a ogni superficie a contatto',['solo verso il basso','dimezzata','solo ai pistoni'],'Si trasmette inalterata.'],
+  ['Nel torchio idraulico la forza maggiore si ha sul pistone con...','area maggiore',['area minore','massa minore','volume minore'],'F_B/S_B = F_A/S_A: più S, più F.'],
+ ]
+},
+u2:{
+ cose:`<div class="box bia"><p>Un fluido ha un <b>peso</b>: gli strati superiori premono su quelli inferiori. Perciò la pressione <b>aumenta con la profondità</b>. Anche l'aria dell'atmosfera ha un peso ed esercita una pressione, la <b>pressione atmosferica</b>.</p></div>`,
+ ricette:[
+  card('blu','A · La legge di Stevino',
+   '<p class="m">p = p<sub>0</sub> + d · g · h</p><p><b>p</b> = pressione alla profondità h (Pa) · <b>p₀</b> = pressione atmosferica = 1,01 × 10⁵ Pa · <b>d</b> = densità del liquido (kg/m³) · <b>g</b> = 9,81 N/kg · <b>h</b> = profondità (m).</p><p>La parte dovuta solo al liquido è la <b>pressione idrostatica</b>: '+M('p<sub>h</sub> = p − p<sub>0</sub> = d · g · h')+'</p><p>La pressione <b>non dipende</b> dal volume del liquido né dalla forma del recipiente: alla stessa profondità è la stessa.</p>'),
+  card('ver','B · I vasi comunicanti',
+   '<p>Sono due o più recipienti uniti da un tubo. Il liquido è in equilibrio solo se i livelli sono uguali (h<sub>A</sub> = h<sub>B</sub>): in un sistema di vasi comunicanti un liquido raggiunge <b>ovunque lo stesso livello</b>.</p>'),
+  card('gia','C · La pressione atmosferica',stepsHtml([
+   'È dovuta al <b>peso dell\'aria</b>. Al livello del mare vale circa <b>1,01 × 10⁵ Pa</b>.',
+   'Diminuisce con la quota: circa <b>1.300 Pa ogni 100 m</b> di salita.',
+   'Lo strumento di <b>Torricelli</b> (colonna di mercurio) la misura: <b>p₀ = d<sub>Hg</sub> · g · h</b>, con h = 76 cm = 0,760 m.',
+   '<b>Barometro</b>: misura la pressione atmosferica. <b>Manometro</b>: misura la pressione relativa (p − p₀). <b>Altimetro</b>: barometro tarato in metri di quota.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · Stevino</h3><p>Pressione a 2 m di profondità in acqua (d = 1.000 kg/m³):</p><p class="m">p<sub>h</sub> = 1.000 · 9,81 · 2 = 19.620 Pa</p><p class="m">p = 101.000 + 19.620 = <b>120.620 Pa</b></p></div>
+ <div class="box bia"><h3>Esempio 2 · Torricelli</h3><p class="m">p₀ = d<sub>Hg</sub> · g · h = 1,359 × 10⁴ · 9,81 · 0,760 ≈ <b>1,01 × 10⁵ Pa</b></p></div>
+ <div class="box bia"><h3>Esempio 3 · la quota</h3><p>A 500 m di altezza la pressione è diminuita di circa 5 · 1.300 = 6.500 Pa: vale circa <b>94.500 Pa</b>.</p></div>`,
+ errori:['Dimentichi p₀: la pressione totale è p₀ <b>più</b> d · g · h.','Pensi che la pressione dipenda dalla forma del recipiente: dipende solo dalla profondità.','Scrivi che la pressione atmosferica aumenta con la quota: <b>diminuisce</b>.','Confondi barometro (pressione atmosferica) e manometro (pressione relativa).'],
+ orale:[
+  ['Enuncia la legge di Stevino e spiega ogni lettera.','Il fluido ha un peso, quindi la pressione aumenta con la profondità: p uguale p zero più d g h, dove p zero è la pressione atmosferica, d la densità del liquido, g l\'accelerazione di gravità e h la profondità. La parte d g h è la pressione idrostatica, dovuta solo al peso del liquido. La pressione non dipende dal volume del liquido né dalla forma del recipiente.'],
+  ['Che cosa sono i vasi comunicanti?','Sono due o più recipienti uniti da un tubo. Il liquido è in equilibrio solo se ha lo stesso livello in tutti i recipienti: se h A fosse maggiore di h B anche la pressione sulla faccia sinistra sarebbe maggiore e il liquido si sposterebbe.'],
+  ['Che cos\'è la pressione atmosferica e come si misura? Che cosa fa l\'esperimento di Torricelli?','È la pressione dovuta al peso dell\'aria. Al livello del mare vale circa 1,01 per 10 alla quinta pascal e diminuisce di circa 1.300 pascal ogni 100 metri di quota. Torricelli capovolse un tubo pieno di mercurio in una vaschetta: la colonna si ferma a 76 centimetri perché la pressione atmosferica equilibra la pressione idrostatica del mercurio, quindi p zero uguale d mercurio g h. Lo strumento è il barometro.'],
+  ['Che differenza c\'è tra barometro, manometro e altimetro?','Il barometro misura la pressione atmosferica. Il manometro misura la pressione relativa, cioè la differenza tra la pressione del fluido e la pressione atmosferica. L\'altimetro è un barometro con una scala tarata in metri di quota.'],
+ ],
+ quiz:[
+  ['La legge di Stevino è...','p = p₀ + d·g·h',['p = d·g·h·p₀','p = F/S','p = d·V·g'],'La pressione totale è la pressione atmosferica più quella idrostatica.'],
+  ['La pressione idrostatica dipende da...','densità del liquido e profondità',['volume del recipiente','forma del recipiente','massa totale del liquido'],'p_h = d g h.'],
+  ['In vasi comunicanti un liquido raggiunge...','lo stesso livello',['livelli diversi','il livello del vaso più grande','altezza zero'],'In equilibrio i livelli sono uguali.'],
+  ['Salendo di quota la pressione atmosferica...','diminuisce',['aumenta','resta uguale','diventa zero subito'],'Cala il peso dell\'aria sopra di noi: circa 1.300 Pa ogni 100 m.'],
+  ['Il barometro misura...','la pressione atmosferica',['la pressione relativa','la temperatura','la portata'],'Il manometro misura la pressione relativa.'],
+ ]
+},
+u3:{
+ cose:`<div class="box bia"><p>Un corpo immerso in un fluido riceve una <b>spinta verso l'alto</b>: è la <b>spinta di Archimede</b>. Per questo possiamo galleggiare, e le navi di acciaio non affondano.</p>
+ <p>La <b>portata</b> misura invece quanto fluido <b>scorre</b> in un condotto in un certo tempo.</p></div>`,
+ ricette:[
+  card('blu','A · La legge di Archimede',
+   '<p>Qualunque corpo immerso in un fluido subisce una forza verticale <b>verso l\'alto</b>, di modulo uguale al <b>peso del fluido spostato</b>:</p><p class="m">F<sub>A</sub> = d · V · g</p><p><b>d</b> = densità del <b>fluido</b> (kg/m³) · <b>V</b> = volume del fluido spostato, cioè la parte di corpo immersa (m³) · <b>g</b> = 9,81 N/kg.</p><p>d · V è la <b>massa</b> del fluido spostato; moltiplicata per g ne dà il peso. F<sub>A</sub> è proporzionale a d e a V.</p>'),
+  card('ver','B · Galleggiamento',
+   '<p>Forza-peso del corpo: <b>F<sub>P</sub> = d<sub>corpo</sub> · V · g</b>. Spinta di Archimede: <b>F<sub>A</sub> = d<sub>fluido</sub> · V · g</b>. Si confrontano le densità:</p>'+TAB(['Se…','il corpo…'],[['d<sub>corpo</sub> &gt; d<sub>fluido</sub>','affonda (F<sub>P</sub> &gt; F<sub>A</sub>)'],['d<sub>corpo</sub> = d<sub>fluido</sub>','è in equilibrio (F<sub>P</sub> = F<sub>A</sub>)'],['d<sub>corpo</sub> &lt; d<sub>fluido</sub>','sale a galla (affiora)']])),
+  card('gia','C · La portata',
+   '<p>Una <b>corrente</b> è un movimento ordinato di un liquido o gas; il suo <b>condotto</b> è la sua sede. La <b>portata</b> è il volume di fluido che oltrepassa una sezione del condotto nell\'unità di tempo:</p><p class="m">q = '+F('ΔV','Δt')+'</p><p>Unità nel SI: <b>m³/s</b>. Formule inverse: ΔV = q · Δt e Δt = '+F('ΔV','q')+'.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · Archimede</h3><p>Corpo di volume 0,01 m³ immerso in acqua (d = 1.000 kg/m³):</p><p class="m">F<sub>A</sub> = 1.000 · 0,01 · 9,81 = <b>98,1 N</b></p></div>
+ <div class="box bia"><h3>Esempio 2 · galleggia?</h3><p>Il ghiaccio (920 kg/m³) in acqua (1.000 kg/m³): 920 &lt; 1.000, quindi <b>galleggia</b>. Una moneta di ferro (7.800 kg/m³) in acqua: 7.800 &gt; 1.000, <b>affonda</b>.</p></div>
+ <div class="box bia"><h3>Esempio 3 · portata</h3><p>In un tubo passano 12 m³ di acqua in 60 s:</p><p class="m">q = ${F('12 m³','60 s')} = <b>0,2 m³/s</b></p></div>`,
+ errori:['Usi la densità del <b>corpo</b> nella spinta di Archimede: serve la densità del <b>fluido</b>.','Confondi il volume del corpo con il volume del fluido (se il corpo è immerso solo in parte conta la parte immersa).','Nel galleggiamento confronti male le densità: affonda se il corpo è <b>più denso</b> del fluido.','Scrivi la portata in L/s senza convertire in m³/s.'],
+ orale:[
+  ['Enuncia la legge di Archimede e scrivi la formula.','Qualunque corpo immerso in un fluido subisce una forza orientata verticalmente verso l\'alto, di modulo uguale al peso del fluido spostato: F A uguale d V g, dove d è la densità del fluido, V il volume di fluido spostato e g l\'accelerazione di gravità. A parità di volume la spinta è maggiore in un fluido più denso, e in un dato fluido è proporzionale al volume.'],
+  ['Quando un corpo galleggia, affonda o resta in equilibrio?','Si confrontano la forza-peso, d corpo V g, e la spinta di Archimede, d fluido V g. Il corpo affonda se la sua densità è maggiore di quella del fluido, resta in equilibrio se sono uguali, sale a galla se è minore.'],
+  ['Che cos\'è la portata?','È il rapporto tra il volume di fluido che oltrepassa una sezione del condotto in un intervallo di tempo e l\'intervallo di tempo stesso: q uguale delta V diviso delta t. Nel SI si misura in metri cubi al secondo.'],
+ ],
+ quiz:[
+  ['La spinta di Archimede è uguale a...','il peso del fluido spostato',['il peso del corpo','la pressione del fluido','la densità del corpo'],'È l\'enunciato della legge di Archimede.'],
+  ['Nella formula F_A = d·V·g, d è la densità...','del fluido',['del corpo','dell\'acqua sempre','del mercurio'],'Conta il fluido che viene spostato.'],
+  ['Un corpo sale a galla se...','d_corpo < d_fluido',['d_corpo > d_fluido','d_corpo = d_fluido','V = 0'],'La spinta supera il peso.'],
+  ['La portata si misura in...','m³/s',['m²/s','kg/s','Pa'],'Volume diviso tempo.'],
+  ['Se la portata è 2 m³/s, in 10 s passano...','20 m³',['5 m³','0,2 m³','12 m³'],'ΔV = q · Δt = 2 · 10 = 20.'],
+ ]
+},
+u4:{
+ cose:`<div class="box bia"><p>Il <b>calore</b> è l'<b>energia trasferita tra due oggetti a causa della loro differenza di temperatura</b>. Se due oggetti in contatto hanno temperature diverse, il calore fluisce da quello più caldo a quello più freddo, finché raggiungono la <b>stessa temperatura</b>: sono in <b>equilibrio termico</b>.</p>
+ <p>La <b>temperatura</b> è la grandezza fisica che dice se due corpi sono in equilibrio termico. La <b>termologia</b> è il campo della fisica che studia calore e temperatura.</p></div>`,
+ ricette:[
+  card('blu','A · Le scale termometriche',
+   '<p>Si misura la temperatura con il <b>termometro</b> (sfrutta per esempio la dilatazione di un liquido in un tubo di vetro). Serve una <b>scala</b>.</p><p><b>Celsius</b>: 0 °C = ghiaccio fondente, 100 °C = acqua bollente (a 1 atm). La distanza è divisa in 100 parti: ogni parte è 1 °C.</p><p><b>Kelvin</b> (unità del SI): si basa sullo <b>zero assoluto</b>. 0 °C = 273 K, 100 °C = 373 K. Le temperature in kelvin sono sempre positive. Una variazione di 1 K è uguale a una di 1 °C.</p>'),
+  card('ver','B · Conversioni',
+   '<p class="m">T = (t + 273) K &nbsp;&nbsp;&nbsp; t = (T − 273) °C</p><p>t = temperatura in gradi Celsius, T = temperatura assoluta in kelvin. Esempio: 20 °C = 293 K.</p>'),
+  card('gia','C · La dilatazione lineare dei solidi',stepsHtml([
+   'Un solido <b>si dilata</b> se la temperatura aumenta e <b>si contrae</b> se diminuisce.',
+   'La variazione di lunghezza è proporzionale alla lunghezza iniziale e alla variazione di temperatura: <b>ΔL = α · L₀ · ΔT</b>.',
+   '<b>α</b> è il coefficiente di dilatazione lineare: dipende dal materiale e si misura in <b>K⁻¹</b> (o °C⁻¹).',
+   'Per questo ponti e binari hanno i <b>giunti</b>: possono cambiare lunghezza senza danni.'])),
+  card('ros','D · Calore, energia e temperatura',
+   '<p>La temperatura assoluta è una misura dell\'<b>energia cinetica media</b> delle molecole del corpo. Riscaldare vuol dire aumentare questa energia: una bottiglia tolta dal frigo riceve energia dall\'ambiente, una pizza calda la cede all\'aria.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · conversioni</h3><p class="m">37 °C → T = 37 + 273 = <b>310 K</b></p><p class="m">223 K → t = 223 − 273 = <b>−50 °C</b></p></div>
+ <div class="box bia"><h3>Esempio 2 · dilatazione</h3><p>Sbarra di ferro lunga 100 m, α = 1,2 × 10⁻⁵ K⁻¹, ΔT = 50 K:</p><p class="m">ΔL = 1,2 × 10⁻⁵ · 100 · 50 = 6.000 × 10⁻⁵ = <b>0,06 m</b> = 6 cm</p></div>`,
+ errori:['Sottrai 273 invece di sommarlo quando vai da °C a K (o viceversa).','Scrivi che il kelvin è un “grado Kelvin”: si dice solo <b>kelvin</b> (K).','Dimentichi che ΔT è uguale in K e in °C: nella dilatazione non serve convertire.','Confondi calore e temperatura: il calore è <b>energia</b>, la temperatura è una misura.'],
+ orale:[
+  ['Che cos\'è il calore? Che cos\'è l\'equilibrio termico?','Il calore è l\'energia trasferita tra due oggetti a causa della loro differenza di temperatura. Se due oggetti in contatto termico hanno temperature diverse, il calore fluisce da quello più caldo a quello più freddo finché raggiungono la stessa temperatura: allora sono in equilibrio termico.'],
+  ['Descrivi la scala Celsius e la scala Kelvin e come si passa dall\'una all\'altra.','La scala Celsius assegna 0 gradi al ghiaccio fondente e 100 gradi all\'acqua bollente, e divide la distanza in 100 parti uguali. La scala Kelvin, unità del Sistema Internazionale, si basa sullo zero assoluto: il ghiaccio fondente vale 273 kelvin e l\'acqua bollente 373. Una variazione di 1 kelvin è uguale a una di 1 grado Celsius. Per passare da Celsius a kelvin si somma 273, al contrario si sottrae 273.'],
+  ['Spiega la dilatazione lineare dei solidi.','Quando la temperatura aumenta un solido si dilata, quando diminuisce si contrae. La variazione di lunghezza è proporzionale alla lunghezza iniziale e alla variazione di temperatura: delta L uguale alfa L zero delta T. Alfa è il coefficiente di dilatazione lineare, dipende dal materiale e si misura in K alla meno uno. Per questo nei ponti ci sono i giunti.'],
+ ],
+ quiz:[
+  ['Il calore è...','energia trasferita per differenza di temperatura',['una temperatura molto alta','una forza','una pressione'],'Fluisce dal corpo più caldo a quello più freddo.'],
+  ['0 °C corrispondono a...','273 K',['0 K','373 K','−273 K'],'T = t + 273.'],
+  ['Lo zero assoluto è...','0 K',['0 °C','100 K','273 K'],'È lo zero della scala Kelvin: −273 °C.'],
+  ['Nella dilatazione ΔL = α·L₀·ΔT, α si misura in...','K⁻¹',['K','m','J'],'È l\'inverso di una temperatura.'],
+  ['Due corpi sono in equilibrio termico quando...','hanno la stessa temperatura',['hanno la stessa massa','hanno lo stesso volume','scambiano molto calore'],'Non c\'è più passaggio di calore.'],
+ ]
+},
+u5:{
+ cose:`<div class="box bia"><p>Il calore è <b>energia in transito</b>: si misura in <b>joule (J)</b>. Lo stesso aumento di temperatura si può ottenere con uno <b>scambio di calore</b> o con un <b>lavoro meccanico</b>: lo dimostrò <b>Joule</b> nel 1843. Non tutti i corpi si scaldano allo stesso modo con la stessa quantità di calore: dipende dalla <b>capacità termica</b> e dal <b>calore specifico</b>.</p></div>`,
+ ricette:[
+  card('blu','A · Caloria e joule',
+   '<p>Una <b>caloria</b> (cal) è il calore che serve per scaldare 1 g di acqua distillata di 1 °C (da 14,5 a 15,5 °C a 1 atm). Joule misurò che servono 4.186 J per 1 kg di acqua per 1 °C (4,186 J per grammo). Quindi:</p><p class="m">1 cal = 4,186 J</p>'),
+  card('ver','B · Capacità termica',
+   '<p class="m">C = '+F('Q','ΔT')+'</p><p><b>C</b> = capacità termica (J/K): quanto calore serve per variare di 1 K la temperatura <b>di quel corpo</b>. <b>Q</b> = calore scambiato (J), <b>ΔT</b> = variazione di temperatura (K).</p>'),
+  card('gia','C · Calore specifico',
+   '<p>La capacità termica è proporzionale alla massa: <span class="m">C = c · m</span></p><p><b>c</b> = calore specifico (J/(kg·K)): è una caratteristica della <b>sostanza</b>; dice quanto calore serve per variare di 1 K la temperatura di <b>1 kg</b> di quella sostanza. Per l\'acqua c = 4.186 J/(kg·K).</p>'),
+  card('ros','D · L\'equazione fondamentale della termologia',
+   '<p class="m">Q = c · m · ΔT</p><p>Se ΔT &gt; 0 (si scalda) allora Q &gt; 0: il corpo <b>assorbe</b> calore. Se ΔT &lt; 0 (si raffredda) allora Q &lt; 0: il corpo <b>cede</b> calore. Formule inverse: ΔT = '+F('Q','c · m')+', m = '+F('Q','c · ΔT')+'.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · Q = c m ΔT</h3><p>0,5 kg di ferro (c = 450 J/(kg·K)) scaldati di 10 K:</p><p class="m">Q = 450 · 0,5 · 10 = <b>2.250 J</b></p></div>
+ <div class="box bia"><h3>Esempio 2 · capacità termica</h3><p>Un corpo assorbe 5.000 J e si scalda di 10 K:</p><p class="m">C = ${F('5.000 J','10 K')} = <b>500 J/K</b></p></div>
+ <div class="box bia"><h3>Esempio 3 · calorie</h3><p class="m">100 cal = 100 · 4,186 = <b>418,6 J</b></p></div>`,
+ errori:['Confondi la capacità termica (del <b>corpo</b>, J/K) con il calore specifico (della <b>sostanza</b>, J/(kg·K)).','Dimentichi il segno: un corpo che si raffredda ha Q negativo.','Usi i grammi invece dei chilogrammi nella formula con c in J/(kg·K).','Scrivi 1 cal = 4,186 kJ: è 4,186 <b>J</b>.'],
+ orale:[
+  ['Che cos\'è la capacità termica? Scrivi la formula e l\'unità.','La capacità termica è il rapporto costante e positivo tra il calore Q assorbito o ceduto da un corpo e la variazione di temperatura: C uguale Q diviso delta T. Si misura in joule su kelvin e dice quanto calore serve per variare di 1 kelvin la temperatura del corpo.'],
+  ['Che cos\'è il calore specifico? Come si collega alla capacità termica?','La capacità termica è proporzionale alla massa del corpo: C uguale c per m. La costante c è il calore specifico, una caratteristica della sostanza: si misura in joule su chilogrammo per kelvin e dice quanto calore serve per variare di 1 kelvin la temperatura di 1 chilogrammo di quella sostanza.'],
+  ['Scrivi l\'equazione fondamentale della termologia e spiega i segni.','Q uguale c m delta T. Se la temperatura aumenta delta T è positivo e anche Q è positivo: il corpo assorbe calore. Se la temperatura diminuisce delta T è negativo e Q è negativo: il corpo cede calore.'],
+  ['Che cosa dimostrò Joule? Quanto vale la caloria?','Joule dimostrò nel 1843 che lo stesso aumento di temperatura si può ottenere con calore o con lavoro meccanico: sono due modi equivalenti di trasferire energia, energia in transito. Con il mulinello a palette trovò che servono 4.186 joule per innalzare di 1 grado la temperatura di 1 chilogrammo di acqua, quindi 1 caloria vale 4,186 joule.'],
+ ],
+ quiz:[
+  ['L\'unità del calore nel SI è...','il joule',['la caloria','il kelvin','il watt'],'La caloria è fuori dal SI.'],
+  ['1 cal vale...','4,186 J',['4.186 J','41,86 J','0,4186 J'],'1 cal = 4,186 J.'],
+  ['Il calore specifico si misura in...','J/(kg·K)',['J/K','J','kg/J'],'La capacità termica invece è in J/K.'],
+  ['L\'equazione fondamentale della termologia è...','Q = c·m·ΔT',[`Q = ${F('c','m')}·ΔT`,`Q = ${F('m','ΔT')}`,'Q = c + m + ΔT'],'Combina Q = CΔT e C = cm.'],
+  ['Se un corpo si raffredda il calore Q è...','negativo',['positivo','zero','uguale alla massa'],'Il corpo cede calore all\'ambiente.'],
+ ]
+},
+u6:{
+ cose:`<div class="box bia"><p>Il <b>calorimetro</b> è uno strumento che misura il calore scambiato tra corpi in contatto termico. È un recipiente con acqua che ha una <b>capacità termica piccola</b>, è <b>ben isolato</b> (nessuno scambio con l'ambiente) e ha un <b>termometro</b> e un <b>agitatore</b>. Quando si inserisce un corpo caldo, l'acqua assorbe <b>tutto</b> il calore ceduto dal corpo: l'energia si conserva.</p></div>`,
+ ricette:[
+  card('blu','A · Il principio: calore assorbito = calore ceduto',stepsHtml([
+   'Corpo 1 (acqua) assorbe: <b>Q₁ = c₁ m₁ (T<sub>e</sub> − T₁) &gt; 0</b>.',
+   'Corpo 2 (metallo caldo) cede: <b>Q₂ = c₂ m₂ (T<sub>e</sub> − T₂) &lt; 0</b>.',
+   'Senza scambi con l\'ambiente: <b>Q₁ + Q₂ = 0</b>, cioè c₁m₁(T<sub>e</sub> − T₁) + c₂m₂(T<sub>e</sub> − T₂) = 0.'])),
+  card('ver','B · La temperatura di equilibrio',
+   '<p>Risolvendo per T<sub>e</sub>:</p><p class="m">T<sub>e</sub> = '+F('c<sub>1</sub>m<sub>1</sub>T<sub>1</sub> + c<sub>2</sub>m<sub>2</sub>T<sub>2</sub>','c<sub>1</sub>m<sub>1</sub> + c<sub>2</sub>m<sub>2</sub>')+'</p><p>T<sub>e</sub> sta <b>tra</b> T₁ e T₂. Le temperature compaiono solo come <b>differenze</b>, quindi si possono usare anche i gradi Celsius.</p><p class="note">Se le due masse sono della stessa sostanza, c si semplifica: T<sub>e</sub> = '+F('m<sub>1</sub>T<sub>1</sub> + m<sub>2</sub>T<sub>2</sub>','m<sub>1</sub> + m<sub>2</sub>')+'.</p>'),
+  card('gia','C · Misurare il calore specifico di un metallo',
+   '<p>Si scalda una barretta (massa m₂, temperatura T₂), si immerge nel calorimetro (acqua m₁, T₁), si legge T<sub>e</sub>. Dalla conservazione dell\'energia:</p><p class="m">c₂ = '+F('c<sub>1</sub>m<sub>1</sub>(T<sub>e</sub> − T<sub>1</sub>)','m<sub>2</sub>(T<sub>2</sub> − T<sub>e</sub>)')+'</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio · mescolare acqua</h3><p>1 kg di acqua a 20 °C + 2 kg di acqua a 80 °C (stessa sostanza):</p><p class="m">T<sub>e</sub> = ${F('1 · 20 + 2 · 80','1 + 2')} = ${F('180','3')} = <b>60 °C</b></p><p>60 °C sta tra 20 °C e 80 °C, più vicina a 80 °C perché l'acqua calda ha più massa.</p></div>`,
+ errori:['Fai la media delle temperature: la T<sub>e</sub> dipende dalle <b>masse</b> (e dai calori specifici).','Dimentichi il segno di Q₂ (negativo: il corpo caldo cede calore).','Scegli una T<sub>e</sub> fuori dall\'intervallo tra T₁ e T₂.','Dimentichi che il calorimetro è isolato: Q₁ + Q₂ = 0.'],
+ orale:[
+  ['Che cos\'è un calorimetro e come funziona?','È uno strumento che misura il calore scambiato tra corpi in contatto termico. È un recipiente con acqua, con capacità termica piccola, ben isolato per non scambiare calore con l\'ambiente, con un termometro e un agitatore. Quando inserisco un corpo, l\'energia si conserva e l\'acqua assorbe tutto il calore ceduto dal corpo.'],
+  ['Come si calcola la temperatura di equilibrio di due corpi?','Il calore assorbito dal più freddo è uguale in valore al calore ceduto dal più caldo: c uno m uno per T e meno T uno più c due m due per T e meno T due uguale zero. Ne ricavo T e uguale c uno m uno T uno più c due m due T due, tutto diviso c uno m uno più c due m due. La temperatura di equilibrio sta tra le due temperature iniziali.'],
+ ],
+ quiz:[
+  ['In un calorimetro ben isolato vale...','Q₁ + Q₂ = 0',['Q₁ = Q₂ positivo','Q₁ · Q₂ = 1','Q₁ − Q₂ = 1'],'Il calore assorbito è uguale a quello ceduto, con segno opposto.'],
+  ['La temperatura di equilibrio sta...','tra T₁ e T₂',['sopra T₂','sotto T₁','sempre a 0 °C'],'Il corpo caldo si raffredda e il freddo si scalda.'],
+  ['Un calorimetro deve avere...','capacità termica piccola e buon isolamento',['capacità termica grande','pareti che scambiano calore','nessun termometro'],'Così scambia poco calore con l\'acqua e con l\'ambiente.'],
+ ]
+}
+};
+
+const GLOSS=[
+['Pressione','Il rapporto tra la forza perpendicolare e l\'area della superficie: p = F/S. Si misura in pascal.'],
+['Pascal (Pa)','L\'unità SI della pressione: 1 Pa = 1 N/m².'],
+['Fluido','Un liquido o un gas: sostanza che può scorrere.'],
+['Legge di Pascal','La pressione su un liquido si trasmette con lo stesso valore a ogni superficie a contatto.'],
+['Torchio idraulico','Macchina che sfrutta Pascal per sollevare pesi grandi con forze piccole.'],
+['Legge di Stevino','p = p₀ + d g h: la pressione cresce con la profondità.'],
+['Pressione idrostatica','La parte di pressione dovuta solo al peso del liquido: d g h.'],
+['Vasi comunicanti','Recipienti uniti da un tubo: il liquido raggiunge lo stesso livello in tutti.'],
+['Pressione atmosferica','Pressione dovuta al peso dell\'aria: circa 1,01 × 10⁵ Pa al livello del mare.'],
+['Barometro / manometro / altimetro','Strumenti per la pressione atmosferica / la pressione relativa / la quota.'],
+['Spinta di Archimede','Forza verso l\'alto su un corpo immerso, uguale al peso del fluido spostato.'],
+['Portata','Il volume di fluido che passa in un condotto nell\'unità di tempo: q = ΔV/Δt (m³/s).'],
+['Calore','Energia trasferita tra due corpi per la differenza di temperatura. Si misura in joule.'],
+['Equilibrio termico','Due corpi in contatto con la stessa temperatura.'],
+['Termologia','La parte della fisica che studia calore e temperatura.'],
+['Zero assoluto','Lo zero della scala Kelvin: 0 K = −273 °C.'],
+['Dilatazione termica','Variazione di dimensioni di un corpo al variare della temperatura.'],
+['Capacità termica','C = Q/ΔT: calore per variare di 1 K la temperatura di un corpo (J/K).'],
+['Calore specifico','c: calore per variare di 1 K la temperatura di 1 kg di una sostanza (J/(kg·K)).'],
+['Calorimetro','Recipiente isolato con acqua, termometro e agitatore per misurare scambi di calore.'],
+];
+
+const FORMULARIO=`
+<div class="box blu"><h3>Pressione e Pascal</h3><p class="m">p = ${F('F<sub>⊥</sub>','S')} &nbsp;&nbsp; 1 Pa = 1 N/m²</p><p class="m">${F('F<sub>A</sub>','S<sub>A</sub>')} = ${F('F<sub>B</sub>','S<sub>B</sub>')} &nbsp; (torchio idraulico)</p></div>
+<div class="box ver"><h3>Stevino e atmosfera</h3><p class="m">p = p₀ + d·g·h &nbsp;&nbsp; p<sub>h</sub> = d·g·h</p><p>p₀ = 1,01 × 10⁵ Pa · g = 9,81 N/kg · −1.300 Pa ogni 100 m</p><p class="m">Torricelli: p₀ = d<sub>Hg</sub>·g·h, h = 76 cm</p></div>
+<div class="box gia"><h3>Archimede e portata</h3><p class="m">F<sub>A</sub> = d<sub>fluido</sub>·V·g &nbsp;&nbsp; q = ${F('ΔV','Δt')}</p><p>d<sub>corpo</sub> &gt; d<sub>fluido</sub> affonda · = equilibrio · &lt; sale a galla</p></div>
+<div class="box ros"><h3>Temperatura</h3><p class="m">T = (t + 273) K &nbsp;&nbsp; t = (T − 273) °C</p><p class="m">ΔL = α·L₀·ΔT</p></div>
+<div class="box blu"><h3>Calore</h3><p class="m">Q = c·m·ΔT &nbsp; C = ${F('Q','ΔT')} &nbsp; C = c·m &nbsp; 1 cal = 4,186 J</p><p class="m">T<sub>e</sub> = ${F('c<sub>1</sub>m<sub>1</sub>T<sub>1</sub> + c<sub>2</sub>m<sub>2</sub>T<sub>2</sub>','c<sub>1</sub>m<sub>1</sub> + c<sub>2</sub>m<sub>2</sub>')}</p></div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('fluidi_prog_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('fluidi_prog_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h=(typeof SC!=='undefined'?SC:'')+'<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+/* ========== FRAZIONI IN VERTICALE: converte "a/b" in frazione verticale in tutto il testo ========== */
+(function(){
+  const UNITS=new Set(['N','J','kg','K','Pa','W','L','cal','min','mm','cm','km','cl','mL','Hz','V·s']);
+  const PAIRS=new Set(['m/s','g/s','s/m','m/h']);
+  const OP="(?:(?:sen|cos|tan|cot)\\s?α|\\d+[A-Za-z]?π|[A-Za-z]?π|\\d+(?:[.,]\\d+)?|\\(−?\\d+\\)|[A-ZΔ][A-Za-zΔα⊥]?(?:_[A-Za-z0-9]+)?|[a-zα](?:_[A-Za-z0-9]+)?)";
+  const RE=new RegExp("(?<![\\w.,/⁄])("+OP+")\\s?\\/\\s?("+OP+")(?![\\w²³⁻/·])","g");
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const sub=s=>esc(s).replace(/_([A-Za-z0-9]+)/g,'<sub>$1</sub>');
+  const isNum=t=>/^\d/.test(t);
+  function conv(m,a,b){
+    const A=a.trim(),B=b.trim();
+    if(PAIRS.has(A+'/'+B))return m;
+    if(UNITS.has(A)||UNITS.has(B))return m;
+    if(/^[a-z]$/.test(A)&&/^[a-z]$/.test(B)&&!(A==='x'&&B==='y')&&!(A==='y'&&B==='x')&&A!=='d'&&A!=='m'&&A!=='p'&&A!=='q'&&A!=='c')return m;
+    return '<span class="fr"><span class="fn">'+sub(A)+'</span><span class="fd">'+sub(B)+'</span></span>';
+  }
+  function fixText(node){
+    const t=node.nodeValue;
+    if(!t||t.indexOf('/')<0)return;
+    RE.lastIndex=0;
+    if(!RE.test(t))return;
+    RE.lastIndex=0;
+    let out='',last=0,mm;
+    while((mm=RE.exec(t))){
+      const rep=conv(mm[0],mm[1],mm[2]);
+      out+=esc(t.slice(last,mm.index))+(rep===mm[0]?esc(mm[0]):rep);
+      last=mm.index+mm[0].length;
+    }
+    out+=esc(t.slice(last));
+    if(out===esc(t))return;
+    const span=document.createElement('span');span.innerHTML=out;
+    const f=document.createDocumentFragment();while(span.firstChild)f.appendChild(span.firstChild);
+    node.parentNode.replaceChild(f,node);
+  }
+  const SKIP=new Set(['SCRIPT','STYLE','SVG','TEXTAREA','TITLE','OPTION','svg','text']);
+  function walk(root){
+    if(!root)return;
+    if(root.nodeType===3){const p=root.parentNode;if(p&&!SKIP.has(p.nodeName)&&!(p.classList&&p.classList.contains('fr')))fixText(root);return}
+    if(root.nodeType!==1||SKIP.has(root.nodeName)||(root.classList&&(root.classList.contains('fr')||root.classList.contains('sgf'))))return;
+    const kids=Array.from(root.childNodes);
+    kids.forEach(walk);
+  }
+  window.vfWalk=walk;
+  function start(){
+    walk(document.body);
+    new MutationObserver(ms=>{ms.forEach(m=>{m.addedNodes.forEach(n=>walk(n))})}).observe(document.body,{childList:true,subtree:true});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
+
+</script>
+</body></html>

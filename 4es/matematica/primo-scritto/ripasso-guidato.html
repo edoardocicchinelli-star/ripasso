@@ -508,7 +508,7 @@ u4:{
   card('ver','B · La cotangente',stepsHtml([
    'cot α = <b>x<sub>B</sub> : y<sub>B</sub></b>, cioè l\'<b>inverso</b> della tangente: cot α = '+F(1,'tan α')+'.',
    '<b>Non esiste</b> quando y<sub>B</sub> = 0, cioè quando B è sull\'<b>asse x</b>: per <b>α = kπ</b> (k intero).',
-   'Come ordinata/ascissa: cot α = <b>x<sub>Q</sub></b>, con Q il punto in cui il lato termine incontra la tangente in (0 ; 1).'])+'<p class="note">Attenzione: nella dispensa c\'è scritto “α ≠ kπ/2” per la cotangente. È un refuso: la cotangente non esiste quando y<sub>B</sub> = 0, cioè per α = kπ (0, π, 2π…).</p>'),
+   'In alternativa: cot α = <b>x<sub>Q</sub></b>, con Q il punto in cui il lato termine incontra la tangente in (0 ; 1).'])+'<p class="note">Attenzione: nella dispensa c\'è scritto “α ≠ kπ/2” per la cotangente. È un refuso: la cotangente non esiste quando y<sub>B</sub> = 0, cioè per α = kπ (0, π, 2π…).</p>'),
   card('gia','C · Valori agli assi e segni',TAB(['α','0','π/2','π','3π/2'],[['tan α','0','non esiste','0','non esiste'],['cot α','non esiste','0','non esiste','0']])+TAB(['Quadrante','1°','2°','3°','4°'],[['tan α','+','−','+','−'],['cot α','+','−','+','−']])),
   card('ros','D · Se conosci seno e coseno',stepsHtml(['Scrivi la formula: tan α = '+F('sen α','cos α')+' (oppure cot α = '+F('cos α','sen α')+').','Dividere per una frazione vuol dire <b>moltiplicare per la frazione capovolta</b>.','Semplifica e controlla il <b>segno</b> (segni uguali → +, diversi → −).'])),
  ],
@@ -740,6 +740,56 @@ $('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili
 renderProgress();
 if(location.hash==='#stampa')document.body.classList.add('print');
 {const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+/* ========== FRAZIONI IN VERTICALE: converte "a/b" in frazione verticale in tutto il testo ========== */
+(function(){
+  const UNITS=new Set(['N','J','kg','K','Pa','W','L','cal','min','mm','cm','km','cl','mL','Hz','V·s']);
+  const PAIRS=new Set(['m/s','g/s','s/m','m/h']);
+  const OP="(?:(?:sen|cos|tan|cot)\\s?α|\\d+[A-Za-z]?π|[A-Za-z]?π|\\d+(?:[.,]\\d+)?|\\(−?\\d+\\)|[A-ZΔ][A-Za-zΔα⊥]?(?:_[A-Za-z0-9]+)?|[a-zα](?:_[A-Za-z0-9]+)?)";
+  const RE=new RegExp("(?<![\\w.,/⁄])("+OP+")\\s?\\/\\s?("+OP+")(?![\\w²³⁻/·])","g");
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const sub=s=>esc(s).replace(/_([A-Za-z0-9]+)/g,'<sub>$1</sub>');
+  const isNum=t=>/^\d/.test(t);
+  function conv(m,a,b){
+    const A=a.trim(),B=b.trim();
+    if(PAIRS.has(A+'/'+B))return m;
+    if(UNITS.has(A)||UNITS.has(B))return m;
+    if(/^[a-z]$/.test(A)&&/^[a-z]$/.test(B)&&!(A==='x'&&B==='y')&&!(A==='y'&&B==='x')&&A!=='d'&&A!=='m'&&A!=='p'&&A!=='q'&&A!=='c')return m;
+    return '<span class="fr"><span class="fn">'+sub(A)+'</span><span class="fd">'+sub(B)+'</span></span>';
+  }
+  function fixText(node){
+    const t=node.nodeValue;
+    if(!t||t.indexOf('/')<0)return;
+    RE.lastIndex=0;
+    if(!RE.test(t))return;
+    RE.lastIndex=0;
+    let out='',last=0,mm;
+    while((mm=RE.exec(t))){
+      const rep=conv(mm[0],mm[1],mm[2]);
+      out+=esc(t.slice(last,mm.index))+(rep===mm[0]?esc(mm[0]):rep);
+      last=mm.index+mm[0].length;
+    }
+    out+=esc(t.slice(last));
+    if(out===esc(t))return;
+    const span=document.createElement('span');span.innerHTML=out;
+    const f=document.createDocumentFragment();while(span.firstChild)f.appendChild(span.firstChild);
+    node.parentNode.replaceChild(f,node);
+  }
+  const SKIP=new Set(['SCRIPT','STYLE','SVG','TEXTAREA','TITLE','OPTION','svg','text']);
+  function walk(root){
+    if(!root)return;
+    if(root.nodeType===3){const p=root.parentNode;if(p&&!SKIP.has(p.nodeName)&&!(p.classList&&p.classList.contains('fr')))fixText(root);return}
+    if(root.nodeType!==1||SKIP.has(root.nodeName)||(root.classList&&(root.classList.contains('fr')||root.classList.contains('sgf'))))return;
+    const kids=Array.from(root.childNodes);
+    kids.forEach(walk);
+  }
+  window.vfWalk=walk;
+  function start(){
+    walk(document.body);
+    new MutationObserver(ms=>{ms.forEach(m=>{m.addedNodes.forEach(n=>walk(n))})}).observe(document.body,{childList:true,subtree:true});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
 
 </script>
 </body></html>
