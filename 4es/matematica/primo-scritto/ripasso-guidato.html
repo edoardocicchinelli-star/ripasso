@@ -61,19 +61,20 @@ button.big.sec{background:#fff;color:var(--navy)}
 .sgf.circ.sm{display:inline-block;width:30%;min-width:105px;max-width:130px;margin:3px}
 .cl{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border:2px solid #222;border-radius:50%;font-weight:bold;font-size:.8em;background:#fff;margin-right:.3em}
 sub{font-size:.75em}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
 table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
 table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
 table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
 table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
 ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
 .mini{display:grid;grid-template-columns:1fr;gap:8px}
-body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
 body.print section.tab{display:block!important;break-before:page}
 body.print #u1{break-before:auto}
 @page{size:110mm 196mm;margin:7mm}
-@media print{nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
 </style></head><body>
-<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Matematica</a></p><h1>Goniometria: primo scritto</h1><p>Angoli, seno, coseno, tangente · un passo alla volta</p></header>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Matematica</a></p><h1>Goniometria: primo scritto</h1><p>Angoli, seno, coseno, tangente · un passo alla volta</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
 <nav>
 <button data-t="guida" class="on">Guida</button>
 <button data-t="u0">0 Da sapere</button>
@@ -154,18 +155,18 @@ const quadOf=t=>{const m=mod2(t);return m<0.5?0:m<1?1:m<1.5?2:3};
 let _gn=0;
 function circGon(t,o){
   o=o||{};
-  const W=290,H=262,cx=135,cy=131,R=92;
+  const W=300,H=268,cx=138,cy=134,R=92;
   const th=t*Math.PI;
   const bx=cx+R*Math.cos(th),by=cy-R*Math.sin(th);
   let s=`<svg viewBox="0 0 ${W} ${H}" class="sgf circ${o.small?' sm':''}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Circonferenza goniometrica"><defs><marker id="ah${++_gn}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L9 5L1 9z" fill="#c62828"/></marker></defs>`;
-  s+=`<line x1="12" y1="${cy}" x2="${W-8}" y2="${cy}" stroke="#222" stroke-width="1.3"/><line x1="${cx}" y1="${H-8}" x2="${cx}" y2="10" stroke="#222" stroke-width="1.3"/>`;
-  s+=`<text x="${W-14}" y="${cy+14}" font-family="Arial" font-size="12" fill="#222">x</text><text x="${cx+6}" y="16" font-family="Arial" font-size="12" fill="#222">y</text>`;
+  s+=`<line x1="12" y1="${cy}" x2="${W-8}" y2="${cy}" stroke="#222" stroke-width="1.8"/><line x1="${cx}" y1="${H-8}" x2="${cx}" y2="10" stroke="#222" stroke-width="1.8"/>`;
+  s+=`<text x="${W-14}" y="${cy+14}" font-family="Arial" font-size="16" fill="#111">x</text><text x="${cx+6}" y="16" font-family="Arial" font-size="16" fill="#111">y</text>`;
   s+=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="#222" stroke-width="2"/>`;
-  s+=`<text x="${cx-12}" y="${cy+14}" font-family="Arial" font-size="11" fill="#222">O</text>`;
-  s+=`<circle cx="${cx+R}" cy="${cy}" r="3.5" fill="#222"/><text x="${cx+R+4}" y="${cy+15}" font-family="Arial" font-size="11" fill="#222">E(1;0)</text>`;
+  s+=`<text x="${cx-20}" y="${cy+16}" font-family="Arial" font-size="15" fill="#111">O</text>`;
+  s+=`<circle cx="${cx+R}" cy="${cy}" r="3.5" fill="#111"/><text x="${cx+R+4}" y="${cy+15}" font-family="Arial" font-size="15" fill="#111">E(1;0)</text>`;
   [['1',cx+R,cy-5],['−1',cx-R-14,cy-5]].forEach(a=>{});
   if(o.axesVals){
-    s+=`<text x="${cx+4}" y="${cy-R-3}" font-family="Arial" font-size="10" fill="#444">1</text><text x="${cx+4}" y="${cy+R+11}" font-family="Arial" font-size="10" fill="#444">${MIN}1</text><text x="${cx-R-12}" y="${cy+12}" font-family="Arial" font-size="10" fill="#444">${MIN}1</text>`;
+    s+=`<text x="${cx+4}" y="${cy-R-3}" font-family="Arial" font-size="14" fill="#111">1</text><text x="${cx+4}" y="${cy+R+11}" font-family="Arial" font-size="14" fill="#111">${MIN}1</text><text x="${cx-R-12}" y="${cy+12}" font-family="Arial" font-size="14" fill="#111">${MIN}1</text>`;
   }
   const m=mod2(t),useNeg=t<0&&Math.abs(t)<2;
   const arcR=24;
@@ -174,17 +175,17 @@ function circGon(t,o){
     const ex=cx+arcR*Math.cos(span),ey=cy-arcR*Math.sin(span);
     const large=Math.abs(span)>Math.PI?1:0,sweep=span>0?0:1;
     s+=`<path d="M${cx+arcR},${cy} A${arcR},${arcR} 0 ${large} ${sweep} ${ex.toFixed(1)},${ey.toFixed(1)}" fill="none" stroke="#c62828" stroke-width="2" marker-end="url(#ah${_gn})"/>`;
-    const mid=span/2;s+=`<text x="${(cx+(arcR+11)*Math.cos(mid)-4).toFixed(1)}" y="${(cy-(arcR+11)*Math.sin(mid)+4).toFixed(1)}" font-family="Arial" font-size="13" font-style="italic" fill="#c62828">α</text>`;
+    const mid=span/2;s+=`<text x="${(cx+(arcR+11)*Math.cos(mid)-4).toFixed(1)}" y="${(cy-(arcR+11)*Math.sin(mid)+4).toFixed(1)}" font-family="Arial" font-size="18" font-style="italic" fill="#c62828">α</text>`;
   }
   s+=`<line x1="${cx}" y1="${cy}" x2="${bx.toFixed(1)}" y2="${by.toFixed(1)}" stroke="#c62828" stroke-width="2.4"/>`;
   if(o.proj){
     s+=`<line x1="${bx.toFixed(1)}" y1="${by.toFixed(1)}" x2="${bx.toFixed(1)}" y2="${cy}" stroke="#1a4a8a" stroke-width="1.6" stroke-dasharray="4 3"/><line x1="${bx.toFixed(1)}" y1="${by.toFixed(1)}" x2="${cx}" y2="${by.toFixed(1)}" stroke="#2e7d32" stroke-width="1.6" stroke-dasharray="4 3"/>`;
-    if(Math.abs(bx-cx)>16)s+=`<text x="${((bx+cx)/2).toFixed(1)}" y="${cy+(by<cy?14:-6)}" text-anchor="middle" font-family="Arial" font-size="11" font-weight="700" fill="#1a4a8a">cos α</text>`;
-    if(Math.abs(by-cy)>16)s+=`<text x="${cx+(bx>cx?-4:4)}" y="${(by+((cy-by)>0?-6:14)).toFixed(1)}" text-anchor="${bx>cx?'end':'start'}" font-family="Arial" font-size="11" font-weight="700" fill="#2e7d32">sin α</text>`;
+    if(Math.abs(bx-cx)>16)s+=`<text x="${((bx+cx)/2).toFixed(1)}" y="${cy+(by<cy?14:-6)}" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#0d3b7a" stroke="#fff" stroke-width="3" paint-order="stroke">cos α</text>`;
+    if(Math.abs(by-cy)>16)s+=`<text x="${cx+(bx>cx?-4:4)}" y="${(by+((cy-by)>0?-6:14)).toFixed(1)}" text-anchor="${bx>cx?'end':'start'}" font-family="Arial" font-size="15" font-weight="700" fill="#145214" stroke="#fff" stroke-width="3" paint-order="stroke">sin α</text>`;
   }
   s+=`<circle cx="${bx.toFixed(1)}" cy="${by.toFixed(1)}" r="4.5" fill="#c62828" stroke="#fff" stroke-width="1.2"/>`;
   const lx=bx+(bx>=cx?7:-15),ly=by+(by<=cy?-6:15);
-  s+=`<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" font-family="Arial" font-size="13" font-weight="700" fill="#8e1f1f">B</text>`;
+  s+=`<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" font-family="Arial" font-size="18" font-weight="700" fill="#8e1f1f">B</text>`;
   return s+'</svg>';
 }
 
@@ -789,6 +790,17 @@ if(location.hash==='#stampa')document.body.classList.add('print');
     new MutationObserver(ms=>{ms.forEach(m=>{m.addedNodes.forEach(n=>walk(n))})}).observe(document.body,{childList:true,subtree:true});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
 })();
 
 </script>

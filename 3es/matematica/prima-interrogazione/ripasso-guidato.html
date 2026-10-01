@@ -58,19 +58,20 @@ button.big.sec{background:#fff;color:var(--navy)}
 .tblwrap{overflow-x:auto;margin:8px 0}
 .sgf{display:block;width:100%;max-width:420px;height:auto;margin:8px 0;background:#fff;border:2px solid var(--line);border-radius:10px}
 .cl{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border:2px solid #222;border-radius:50%;font-weight:bold;font-size:.8em;background:#fff;margin-right:.3em}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
 table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
 table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
 table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
 table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
 ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
 .mini{display:grid;grid-template-columns:1fr;gap:8px}
-body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
 body.print section.tab{display:block!important;break-before:page}
 body.print #u1{break-before:auto}
 @page{size:110mm 196mm;margin:7mm}
-@media print{nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
 </style></head><body>
-<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Matematica</a></p><h1>Matematica: prima interrogazione</h1><p>Equazioni e disequazioni lineari, intere e fratte</p></header>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Matematica</a></p><h1>Matematica: prima interrogazione</h1><p>Equazioni e disequazioni lineari, intere e fratte</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
 <nav>
 <button data-t="guida" class="on">Guida</button>
 <button data-t="u0">0 Da sapere</button>
@@ -1471,6 +1472,17 @@ if(location.hash==='#stampa')document.body.classList.add('print');
     new MutationObserver(ms=>{ms.forEach(m=>{m.addedNodes.forEach(n=>walk(n))})}).observe(document.body,{childList:true,subtree:true});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
 })();
 
 </script>

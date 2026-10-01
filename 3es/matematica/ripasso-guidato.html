@@ -58,19 +58,20 @@ button.big.sec{background:#fff;color:var(--navy)}
 .tblwrap{overflow-x:auto;margin:8px 0}
 .sgf{display:block;width:100%;max-width:420px;height:auto;margin:8px 0;background:#fff;border:2px solid var(--line);border-radius:10px}
 .cl{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border:2px solid #222;border-radius:50%;font-weight:bold;font-size:.8em;background:#fff;margin-right:.3em}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
 table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
 table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
 table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
 table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
 ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
 .mini{display:grid;grid-template-columns:1fr;gap:8px}
-body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
 body.print section.tab{display:block!important;break-before:page}
 body.print #u1{break-before:auto}
 @page{size:110mm 196mm;margin:7mm}
-@media print{nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
 </style></head><body>
-<header><p style="margin:0 0 6px"><a href="./" style="color:#fff;font-size:.85rem">← Torna a Matematica</a></p><h1>Matematica: ripasso guidato</h1><p>Equazioni, scomposizioni, 2° grado · un passo alla volta</p></header>
+<header><p style="margin:0 0 6px"><a href="./" style="color:#fff;font-size:.85rem">← Torna a Matematica</a></p><h1>Matematica: ripasso guidato</h1><p>Equazioni, scomposizioni, 2° grado · un passo alla volta</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
 <nav>
 <button data-t="guida" class="on">Guida</button>
 <button data-t="u0">0 Da sapere</button>
@@ -286,34 +287,34 @@ function signGraph(fs,op){
   const info=pts.map(r=>({r,den:fs.some(f=>f.r===r&&f.den),m:fs.filter(f=>f.r===r).length}));
   const nums=info.filter(u=>!u.den),dens=info.filter(u=>u.den);
   const rows=[...nums.map((u,i)=>({u,lab:nums.length>1?'ABCDEF'[i]:'N'})),...dens.map((u,i)=>({u,lab:dens.length>1?'D'+(i+1):'D'}))];
-  const W=340,L=44,R=14,top=38,gap=30;
+  const W=340,L=54,R=14,top=46,gap=36;
   const xs=pts.map((_,i)=>L+(i+1)*(W-L-R)/(k+1));
   const bounds=[L-8,...xs,W-R+4];
-  const yRes=top+rows.length*gap+24,H=yRes+46,id='hz'+(++_sgN);
-  let s=`<svg viewBox="0 0 ${W} ${H}" class="sgf" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grafico dei segni"><defs><pattern id="${id}" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2e7d32" stroke-width="1.8"/></pattern></defs>`;
+  const yRes=top+rows.length*gap+28,H=yRes+52,id='hz'+(++_sgN);
+  let s=`<svg viewBox="0 0 ${W} ${H}" class="sgf" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grafico dei segni"><defs><pattern id="${id}" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#1b5e20" stroke-width="2.2"/></pattern></defs>`;
   for(let i=0;i<=k;i++)if(sol.cells[2*i])s+=`<rect x="${bounds[i]}" y="${top-8}" width="${bounds[i+1]-bounds[i]}" height="${yRes-top+18}" fill="url(#${id})"/>`;
-  xs.forEach((x,i)=>{s+=`<line x1="${x}" y1="${top-12}" x2="${x}" y2="${yRes+4}" stroke="#222" stroke-width="1.3"/><text x="${x}" y="${top-17}" text-anchor="middle" font-family="Arial" font-size="12" font-weight="700" fill="#222">${N(pts[i])}</text>`});
+  xs.forEach((x,i)=>{s+=`<line x1="${x}" y1="${top-12}" x2="${x}" y2="${yRes+4}" stroke="#222" stroke-width="1.8"/><text x="${x}" y="${top-19}" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#111" stroke="#fff" stroke-width="4" paint-order="stroke">${N(pts[i])}</text>`});
   rows.forEach((row,j)=>{
     const y=top+8+j*gap,xr=xs[pts.indexOf(row.u.r)];
-    s+=`<circle cx="15" cy="${y}" r="10" fill="#fff" stroke="#222" stroke-width="1.5"/><text x="15" y="${y+0.5}" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="${row.lab.length>1?9:12}" font-weight="700" fill="#222">${row.lab}</text>`;
-    if(row.u.m%2===0)s+=`<line x1="${L-8}" y1="${y}" x2="${W-R+4}" y2="${y}" stroke="#222" stroke-width="2.4"/>`;
-    else s+=`<line x1="${L-8}" y1="${y}" x2="${xr}" y2="${y}" stroke="#222" stroke-width="1.6" stroke-dasharray="5 4"/><line x1="${xr}" y1="${y}" x2="${W-R+4}" y2="${y}" stroke="#222" stroke-width="2.6"/>`;
+    s+=`<circle cx="17" cy="${y}" r="13" fill="#fff" stroke="#111" stroke-width="2"/><text x="17" y="${y+0.5}" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="${row.lab.length>1?12:16}" font-weight="700" fill="#111">${row.lab}</text>`;
+    if(row.u.m%2===0)s+=`<line x1="${L-8}" y1="${y}" x2="${W-R+4}" y2="${y}" stroke="#111" stroke-width="3.2"/>`;
+    else s+=`<line x1="${L-8}" y1="${y}" x2="${xr}" y2="${y}" stroke="#111" stroke-width="2.4" stroke-dasharray="6 5"/><line x1="${xr}" y1="${y}" x2="${W-R+4}" y2="${y}" stroke="#111" stroke-width="3.4"/>`;
   });
-  s+=`<text x="3" y="${yRes}" dominant-baseline="central" font-family="Arial" font-size="9" fill="#222">segno</text>`;
+  s+=`<text x="3" y="${yRes}" dominant-baseline="central" font-family="Arial" font-size="14" font-weight="700" fill="#111">segno</text>`;
   for(let i=0;i<=k;i++){
     const mid=i===0?(k?pts[0]-1:0):(i===k?pts[k-1]+1:(pts[i-1]+pts[i])/2);
     const sg=sgnAt(fs,mid)>0?'+':MIN,xm=(bounds[i]+bounds[i+1])/2+(i===0?4:0);
-    s+=`<text x="${xm}" y="${yRes+1}" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="17" font-weight="700" fill="#222">${sg}</text>`;
+    s+=`<text x="${xm}" y="${yRes+1}" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="26" font-weight="700" fill="#111" stroke="#fff" stroke-width="5" paint-order="stroke">${sg}</text>`;
   }
   let note=false;
   info.forEach(u=>{
     const x=xs[pts.indexOf(u.r)];
     if(u.den){
-      s+=`<path d="M${x-6},${yRes-6} L${x+6},${yRes+6} M${x+6},${yRes-6} L${x-6},${yRes+6}" stroke="#222" stroke-width="2.4" fill="none"/>`;
-      if(!note){note=true;const nx=Math.min(Math.max(x,L+10),W-48);s+=`<text x="${nx}" y="${yRes+24}" text-anchor="middle" font-family="Arial" font-size="10" fill="#222">perde di senso</text>`}
+      s+=`<path d="M${x-8},${yRes-8} L${x+8},${yRes+8} M${x+8},${yRes-8} L${x-8},${yRes+8}" stroke="#111" stroke-width="3.2" fill="none"/>`;
+      if(!note){note=true;const nx=Math.min(Math.max(x,L+40),W-50);s+=`<text x="${nx}" y="${yRes+28}" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#111" stroke="#fff" stroke-width="4" paint-order="stroke">perde di senso</text>`}
     }else{
       const incl=(op==='≥'||op==='≤');
-      s+=`<circle cx="${x}" cy="${yRes}" r="5.5" fill="${incl?'#222':'#fff'}" stroke="#222" stroke-width="2"/>`;
+      s+=`<circle cx="${x}" cy="${yRes}" r="7.5" fill="${incl?'#111':'#fff'}" stroke="#111" stroke-width="3"/>`;
     }
   });
   return s+'</svg>';
@@ -336,7 +337,7 @@ function stepsFrac(parts,op,pre){
 
 /* ========== DISEGNO DEI SISTEMI (parabola/circonferenza e retta) ========== */
 function plotSys(o,small){
-  const W=small?220:320,H=small?160:220,P=26;
+  const W=small?260:320,H=small?190:230,P=30;
   let xmin,xmax,ymin,ymax;
   const pts=o.pts||[];
   let f,g;
@@ -359,19 +360,19 @@ function plotSys(o,small){
   for(let y=Math.ceil(ymin);y<=ymax;y+=1)if(y!==0)s+=`<line x1="${P-6}" y1="${sy(y)}" x2="${W-P+6}" y2="${sy(y)}" stroke="#ccc" stroke-width="0.6"/>`;
   const ax=Math.min(Math.max(0,xmin),xmax),ay=Math.min(Math.max(0,ymin),ymax);
   s+=`<line x1="${P-8}" y1="${sy(ay)}" x2="${W-P+8}" y2="${sy(ay)}" stroke="#222" stroke-width="1.2"/><line x1="${sx(ax)}" y1="${P-10}" x2="${sx(ax)}" y2="${H-P+8}" stroke="#222" stroke-width="1.2"/>`;
-  s+=`<text x="${W-P+10}" y="${sy(ay)+4}" font-family="Arial" font-size="10" fill="#222">x</text><text x="${sx(ax)+4}" y="${P-12}" font-family="Arial" font-size="10" fill="#222">y</text>`;
-  for(let x=Math.ceil(xmin);x<=xmax;x+=step)if(x!==0)s+=`<text x="${sx(x)}" y="${sy(ay)+13}" text-anchor="middle" font-family="Arial" font-size="8" fill="#444">${N(x)}</text>`;
+  s+=`<text x="${W-P+10}" y="${sy(ay)+4}" font-family="Arial" font-size="15" font-weight="700" fill="#111">x</text><text x="${sx(ax)+5}" y="${P-12}" font-family="Arial" font-size="15" font-weight="700" fill="#111">y</text>`;
+  for(let x=Math.ceil(xmin);x<=xmax;x+=step)if(x!==0)s+=`<text x="${sx(x)}" y="${sy(ay)+13}" text-anchor="middle" font-family="Arial" font-size="12" fill="#111">${N(x)}</text>`;
   s+='<g clip-path="url(#'+id+')">';
   if(o.kind==='par'){
     let d='';for(let i=0;i<=80;i++){const x=xmin+(xmax-xmin)*i/80;d+=(i?'L':'M')+sx(x).toFixed(1)+','+sy(f(x)).toFixed(1)}
-    s+=`<path d="${d}" fill="none" stroke="#222" stroke-width="2.4"/>`;
+    s+=`<path d="${d}" fill="none" stroke="#111" stroke-width="3"/>`;
   }else{
     const rx=(sx(o.r)-sx(-o.r))/2;s+=`<ellipse cx="${sx(0)}" cy="${sy(0)}" rx="${rx}" ry="${(sy(-o.r)-sy(o.r))/2}" fill="none" stroke="#222" stroke-width="2.4"/>`;
   }
   s+=`<line x1="${sx(xmin)}" y1="${sy(g(xmin))}" x2="${sx(xmax)}" y2="${sy(g(xmax))}" stroke="#1a4a8a" stroke-width="2" stroke-dasharray="6 3"/></g>`;
   pts.forEach(p=>{
     const px=sx(p[0]),py=sy(p[1]);
-    s+=`<circle cx="${px}" cy="${py}" r="4.5" fill="#c62828" stroke="#fff" stroke-width="1.2"/><text x="${px+6}" y="${py-6}" font-family="Arial" font-size="${small?8:10}" font-weight="700" fill="#8e1f1f">(${N(p[0])} ; ${N(p[1])})</text>`;
+    s+=`<circle cx="${px}" cy="${py}" r="4.5" fill="#c62828" stroke="#fff" stroke-width="1.2"/><text x="${px+6}" y="${py-6}" font-family="Arial" font-size="${small?12:14}" font-weight="700" fill="#7a0000" stroke="#fff" stroke-width="3" paint-order="stroke">(${N(p[0])} ; ${N(p[1])})</text>`;
   });
   return s+'</svg>';
 }
@@ -1414,6 +1415,17 @@ if(location.hash==='#stampa')document.body.classList.add('print');
     new MutationObserver(ms=>{ms.forEach(m=>{m.addedNodes.forEach(n=>walk(n))})}).observe(document.body,{childList:true,subtree:true});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
 })();
 
 </script>
