@@ -56,6 +56,8 @@ button.big.sec{background:#fff;color:var(--navy)}
 .chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
 .chk input{width:22px;height:22px}
 .tblwrap{overflow-x:auto;margin:8px 0}
+.sgf{display:block;width:100%;max-width:420px;height:auto;margin:8px 0;background:#fff;border:2px solid var(--line);border-radius:10px}
+.cl{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border:2px solid #222;border-radius:50%;font-weight:bold;font-size:.8em;background:#fff;margin-right:.3em}
 table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
 table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
 table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
@@ -91,7 +93,7 @@ body.print #u1{break-before:auto}
 <ul><li><b>Equazioni di 2° grado</b>: basta saper applicare la <b>formula risolutiva</b>.</li>
 <li><b>Sistemi di 2° grado</b>: basta <b>conoscere il procedimento</b> (i passi). Non serve svolgerli.</li>
 <li><b>Fratte</b>: basta saper scrivere le <b>condizioni di esistenza</b>.</li>
-<li>Non serve approfondire scomposizioni difficili né la parabola.</li></ul></div>
+<li>Non serve approfondire scomposizioni difficili né la parabola.</li></ul><p class="note">Il <b>grafico dei segni</b> per le disequazioni fratte e i <b>disegni dei sistemi</b> (parabola e retta) sono in più: aiutano a capire e a svolgere gli esercizi come in classe.</p></div>
 <div class="box blu"><h3>I passi di ogni unità</h3>
 <div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
 <div class="step"><b class="n">2</b><div><b>Ricetta</b>: i passaggi da fare, sempre uguali, come una ricetta di cucina.</div></div>
@@ -273,6 +275,105 @@ function quadSteps(a,b,c){
 }
 function rootWrongs(r1,r2){
   return [[-r1,-r2],[r1,-r2],[-r1,r2],[r1+1,r2+1],[r1-1,r2-1]].map(fmtRoots);
+}
+
+/* ========== GRAFICO DEI SEGNI (stile quaderno) ========== */
+let _sgN=0;
+const sgnAt=(fs,x)=>{let s=1;for(const f of fs){if(x-f.r<0)s=-s}return s};
+/* fs: [{r,den}], op: > < ≥ ≤ . Disegna una riga per fattore (continua = positivo, tratteggiata = negativo) e la riga del segno. */
+function signGraph(fs,op){
+  const sol=solveSign(fs,1,op),pts=sol.pts,k=pts.length;
+  const info=pts.map(r=>({r,den:fs.some(f=>f.r===r&&f.den),m:fs.filter(f=>f.r===r).length}));
+  const nums=info.filter(u=>!u.den),dens=info.filter(u=>u.den);
+  const rows=[...nums.map((u,i)=>({u,lab:nums.length>1?'ABCDEF'[i]:'N'})),...dens.map((u,i)=>({u,lab:dens.length>1?'D'+(i+1):'D'}))];
+  const W=340,L=44,R=14,top=38,gap=30;
+  const xs=pts.map((_,i)=>L+(i+1)*(W-L-R)/(k+1));
+  const bounds=[L-8,...xs,W-R+4];
+  const yRes=top+rows.length*gap+24,H=yRes+46,id='hz'+(++_sgN);
+  let s=`<svg viewBox="0 0 ${W} ${H}" class="sgf" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grafico dei segni"><defs><pattern id="${id}" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2e7d32" stroke-width="1.8"/></pattern></defs>`;
+  for(let i=0;i<=k;i++)if(sol.cells[2*i])s+=`<rect x="${bounds[i]}" y="${top-8}" width="${bounds[i+1]-bounds[i]}" height="${yRes-top+18}" fill="url(#${id})"/>`;
+  xs.forEach((x,i)=>{s+=`<line x1="${x}" y1="${top-12}" x2="${x}" y2="${yRes+4}" stroke="#222" stroke-width="1.3"/><text x="${x}" y="${top-17}" text-anchor="middle" font-family="Arial" font-size="12" font-weight="700" fill="#222">${N(pts[i])}</text>`});
+  rows.forEach((row,j)=>{
+    const y=top+8+j*gap,xr=xs[pts.indexOf(row.u.r)];
+    s+=`<circle cx="15" cy="${y}" r="10" fill="#fff" stroke="#222" stroke-width="1.5"/><text x="15" y="${y+0.5}" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="${row.lab.length>1?9:12}" font-weight="700" fill="#222">${row.lab}</text>`;
+    if(row.u.m%2===0)s+=`<line x1="${L-8}" y1="${y}" x2="${W-R+4}" y2="${y}" stroke="#222" stroke-width="2.4"/>`;
+    else s+=`<line x1="${L-8}" y1="${y}" x2="${xr}" y2="${y}" stroke="#222" stroke-width="1.6" stroke-dasharray="5 4"/><line x1="${xr}" y1="${y}" x2="${W-R+4}" y2="${y}" stroke="#222" stroke-width="2.6"/>`;
+  });
+  s+=`<text x="3" y="${yRes}" dominant-baseline="central" font-family="Arial" font-size="9" fill="#222">segno</text>`;
+  for(let i=0;i<=k;i++){
+    const mid=i===0?(k?pts[0]-1:0):(i===k?pts[k-1]+1:(pts[i-1]+pts[i])/2);
+    const sg=sgnAt(fs,mid)>0?'+':MIN,xm=(bounds[i]+bounds[i+1])/2+(i===0?4:0);
+    s+=`<text x="${xm}" y="${yRes+1}" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="17" font-weight="700" fill="#222">${sg}</text>`;
+  }
+  let note=false;
+  info.forEach(u=>{
+    const x=xs[pts.indexOf(u.r)];
+    if(u.den){
+      s+=`<path d="M${x-6},${yRes-6} L${x+6},${yRes+6} M${x+6},${yRes-6} L${x-6},${yRes+6}" stroke="#222" stroke-width="2.4" fill="none"/>`;
+      if(!note){note=true;const nx=Math.min(Math.max(x,L+10),W-48);s+=`<text x="${nx}" y="${yRes+24}" text-anchor="middle" font-family="Arial" font-size="10" fill="#222">perde di senso</text>`}
+    }else{
+      const incl=(op==='≥'||op==='≤');
+      s+=`<circle cx="${x}" cy="${yRes}" r="5.5" fill="${incl?'#222':'#fff'}" stroke="#222" stroke-width="2"/>`;
+    }
+  });
+  return s+'</svg>';
+}
+const CL=l=>`<span class="cl">${l}</span>`;
+/* passaggi in stile quaderno per una disequazione fratta o a fattori: parts=[{r,den,lin}] */
+function stepsFrac(parts,op,pre){
+  const fs=parts.map(p=>({r:p.r,den:p.den}));
+  const nums=parts.filter(p=>!p.den),dens=parts.filter(p=>p.den);
+  const nl=i=>nums.length>1?'ABCDEF'[i]:'N',dl=i=>dens.length>1?'D'+(i+1):'D';
+  const sol=solveSign(fs,1,op);
+  let h=(pre||'');
+  if(dens.length)h+=`<p><b>1. Condizioni di esistenza (C.E.)</b>: il denominatore non può essere 0.</p><p class="m">${dens.map(p=>p.lin+' ≠ 0 → x ≠ '+N(p.r)).join('<br>')}</p>`;
+  h+=`<p><b>${dens.length?'2':'1'}. Studio ogni fattore</b>: lo metto “maggiore di 0” e lo risolvo.</p><p class="m">${nums.map((p,i)=>`${CL(nl(i))} ${p.lin} &gt; 0 → x &gt; ${N(p.r)}`).concat(dens.map((p,i)=>`${CL(dl(i))} ${p.lin} &gt; 0 → x &gt; ${N(p.r)}`)).join('<br>')}</p>`;
+  h+=`<p><b>${dens.length?'3':'2'}. Disegno il grafico dei segni.</b> Per ogni fattore: linea <b>continua</b> dove è positivo, <b>tratteggiata</b> dove è negativo. In basso moltiplico i segni.</p>${signGraph(fs,op)}`;
+  h+=`<p class="note">○ = il numeratore vale 0 (${(op==='≥'||op==='≤')?'incluso: pallino pieno':'escluso: pallino vuoto'}) · ✕ = il denominatore vale 0: la frazione <b>perde di senso</b>, sempre escluso.</p>`;
+  h+=`<p><b>${dens.length?'4':'3'}. Scelgo.</b> La disequazione chiede ${(op==='>'||op==='≥')?'un risultato <b>positivo (+)</b>':'un risultato <b>negativo (−)</b>'}: prendo le zone tratteggiate in verde.</p><p class="m"><b>${sol.text}</b></p>`;
+  return h;
+}
+
+/* ========== DISEGNO DEI SISTEMI (parabola/circonferenza e retta) ========== */
+function plotSys(o,small){
+  const W=small?220:320,H=small?160:220,P=26;
+  let xmin,xmax,ymin,ymax;
+  const pts=o.pts||[];
+  let f,g;
+  if(o.kind==='par'){
+    f=x=>x*x+o.b*x+o.c;g=x=>o.m*x+o.q;
+    const vx=-o.b/2,xsv=pts.map(p=>p[0]).concat([vx]);
+    xmin=Math.min(...xsv)-2.5;xmax=Math.max(...xsv)+2.5;
+    if(xmax-xmin<7){const c=(xmin+xmax)/2;xmin=c-3.5;xmax=c+3.5}
+    const ysv=[f(vx),g(xmin),g(xmax),...pts.map(p=>p[1])];
+    ymin=Math.min(...ysv,0)-1;ymax=Math.max(...ysv,0)+1.5;
+    if(ymax-ymin<5){ymax+=2;ymin-=1}
+  }else{
+    const r=o.r;xmin=-r-1.5;xmax=r+1.5;const ysp=(xmax-xmin)*(H-2*P)/(W-2*P);ymin=-ysp/2;ymax=ysp/2;g=x=>o.s-x;
+  }
+  const sx=x=>P+(x-xmin)/(xmax-xmin)*(W-2*P),sy=y=>H-P-(y-ymin)/(ymax-ymin)*(H-2*P);
+  const id='cp'+(++_sgN);
+  let s=`<svg viewBox="0 0 ${W} ${H}" class="sgf" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Disegno del sistema"><defs><clipPath id="${id}"><rect x="${P-4}" y="${P-8}" width="${W-2*P+8}" height="${H-2*P+16}"/></clipPath></defs>`;
+  const step=(xmax-xmin)>12?2:1;
+  for(let x=Math.ceil(xmin);x<=xmax;x+=1)if(x!==0)s+=`<line x1="${sx(x)}" y1="${P-6}" x2="${sx(x)}" y2="${H-P+6}" stroke="#ccc" stroke-width="0.6"/>`;
+  for(let y=Math.ceil(ymin);y<=ymax;y+=1)if(y!==0)s+=`<line x1="${P-6}" y1="${sy(y)}" x2="${W-P+6}" y2="${sy(y)}" stroke="#ccc" stroke-width="0.6"/>`;
+  const ax=Math.min(Math.max(0,xmin),xmax),ay=Math.min(Math.max(0,ymin),ymax);
+  s+=`<line x1="${P-8}" y1="${sy(ay)}" x2="${W-P+8}" y2="${sy(ay)}" stroke="#222" stroke-width="1.2"/><line x1="${sx(ax)}" y1="${P-10}" x2="${sx(ax)}" y2="${H-P+8}" stroke="#222" stroke-width="1.2"/>`;
+  s+=`<text x="${W-P+10}" y="${sy(ay)+4}" font-family="Arial" font-size="10" fill="#222">x</text><text x="${sx(ax)+4}" y="${P-12}" font-family="Arial" font-size="10" fill="#222">y</text>`;
+  for(let x=Math.ceil(xmin);x<=xmax;x+=step)if(x!==0)s+=`<text x="${sx(x)}" y="${sy(ay)+13}" text-anchor="middle" font-family="Arial" font-size="8" fill="#444">${N(x)}</text>`;
+  s+='<g clip-path="url(#'+id+')">';
+  if(o.kind==='par'){
+    let d='';for(let i=0;i<=80;i++){const x=xmin+(xmax-xmin)*i/80;d+=(i?'L':'M')+sx(x).toFixed(1)+','+sy(f(x)).toFixed(1)}
+    s+=`<path d="${d}" fill="none" stroke="#222" stroke-width="2.4"/>`;
+  }else{
+    const rx=(sx(o.r)-sx(-o.r))/2;s+=`<ellipse cx="${sx(0)}" cy="${sy(0)}" rx="${rx}" ry="${(sy(-o.r)-sy(o.r))/2}" fill="none" stroke="#222" stroke-width="2.4"/>`;
+  }
+  s+=`<line x1="${sx(xmin)}" y1="${sy(g(xmin))}" x2="${sx(xmax)}" y2="${sy(g(xmax))}" stroke="#1a4a8a" stroke-width="2" stroke-dasharray="6 3"/></g>`;
+  pts.forEach(p=>{
+    const px=sx(p[0]),py=sy(p[1]);
+    s+=`<circle cx="${px}" cy="${py}" r="4.5" fill="#c62828" stroke="#fff" stroke-width="1.2"/><text x="${px+6}" y="${py-6}" font-family="Arial" font-size="${small?8:10}" font-weight="700" fill="#8e1f1f">(${N(p[0])} ; ${N(p[1])})</text>`;
+  });
+  return s+'</svg>';
 }
 
 const dv=(B,A,x0)=>Math.abs(A)===1?`<b>${N(x0)}</b>`+(A===-1?' (dividere per −1 vuol dire cambiare segno)':''):`${F(N(B),N(A))} = <b>${N(x0)}</b>`;
@@ -751,6 +852,12 @@ function exSysSub(){
 function ruleTable(r1,r2,op){
   return `<div class="tblwrap"><table class="sg"><tr><th>se x è…</th><th>x &lt; ${N(r1)}<br>(a sinistra)</th><th>${N(r1)} &lt; x &lt; ${N(r2)}<br>(in mezzo)</th><th>x &gt; ${N(r2)}<br>(a destra)</th></tr><tr><td class="lab">il segno di x² … è</td><td>+</td><td>−</td><td>+</td></tr></table></div>`;
 }
+function ineqEx2(q,parts,op,g,tag,pre){
+  const fs=parts.map(p=>({r:p.r,den:p.den}));
+  const ex=ineqEx(q,fs,op,g,'',tag);
+  ex.steps=stepsFrac(parts,op,pre);
+  return ex;
+}
 function exDisQ2(){
   const kind=pick(['2r','2r','2r','pure']);
   const op=pick(['>','<','≥','≤']);
@@ -759,24 +866,54 @@ function exDisQ2(){
   else{r1=rnd(-6,6);r2=rnd(-6,6);if(r1===r2)r2=r1+rnd(1,4);if(r1>r2)[r1,r2]=[r2,r1];cs=[1,-(r1+r2),r1*r2]}
   const fs=[{r:r1},{r:r2}];
   const sol=solveSign(fs,1,op);
-  const out=(op==='>'||op==='≥');
   const q=`Risolvi: <b>${quad(cs[0],cs[1],cs[2])} ${op} 0</b>`;
-  const steps=`<p><b>Parte A · Trovo le radici</b>: risolvo l'equazione ${quad(cs[0],cs[1],cs[2])} = 0 con la formula.</p>${quadSteps(cs[0],cs[1],cs[2])}
-<p><b>Parte B · Guardo il verso</b>. Il numero davanti a x² è positivo: la parabola “sorride”. Il segno di ${quad(cs[0],cs[1],cs[2])} è:</p>${ruleTable(r1,r2,op)}
-<p><b>Parte C · Scelgo</b>. La disequazione chiede ${op==='>'||op==='≥'?'un risultato <b>positivo</b> (+): prendo le parti <b>fuori</b> dalle radici':'un risultato <b>negativo</b> (−): prendo la parte <b>in mezzo</b> alle radici'}.</p>
-<p>${(op==='≥'||op==='≤')?'C\'è anche “uguale”: le radici sono <b>incluse</b>.':'Non c\'è “uguale”: le radici sono <b>escluse</b>.'}</p><p class="m"><b>${sol.text}</b></p>`;
+  const parts=[{r:r1,den:false,lin:lin(1,-r1)},{r:r2,den:false,lin:lin(1,-r2)}];
+  const pre=`<p><b>Prima: trovo le radici.</b> Metto = al posto del segno e uso la formula risolutiva.</p>${quadSteps(cs[0],cs[1],cs[2])}<p><b>Poi: scrivo il polinomio come prodotto</b> usando le radici: ${quad(cs[0],cs[1],cs[2])} = (${lin(1,-r1)})(${lin(1,-r2)}). La disequazione diventa:</p><p class="m">(${lin(1,-r1)})(${lin(1,-r2)}) ${op} 0</p><p><b>Infine uso il grafico dei segni:</b></p>`;
+  const steps=stepsFrac(parts,op,pre)+`<p class="note">Controllo con la regola: ${op==='>'||op==='≥'?'“> 0” → parti <b>fuori</b> dalle radici':'“< 0” → parte <b>in mezzo</b> alle radici'}.</p>`;
   const wrongs=[solveSign(fs,1,compOp(op)).text,solveSign(fs,1,inclOp(op)).text,solveSign(fs.map(f=>({r:-f.r})),1,op).text];
   const ok=()=>{for(let x=-14;x<=14;x+=0.5){if(holds(evalP(cs,x),op)!==inInts(x,sol.ints))return false}return true};
   return mkEx(q,sol.text,wrongs,steps,ok,'Disequazione di 2° grado');
+}
+/* --- disequazione fratta (stile quaderno) --- */
+function exDisFrN(){
+  const a=rnd(-5,5);let b=rnd(-5,5);if(b===a)b=a+1;
+  const n=pick([1,1,2,3]),d=pick([1,1,2]),op=pick(['>','<','≥','≤']);
+  const q=`Risolvi: <b>${F(lin(n,-n*a),lin(d,-d*b))} ${op} 0</b>`;
+  const parts=[{r:a,den:false,lin:lin(n,-n*a)},{r:b,den:true,lin:lin(d,-d*b)}];
+  return ineqEx2(q,parts,op,x=>(n*(x-a))/(d*(x-b)),'Disequazione fratta');
+}
+function exDisFr2(){
+  const pool=shuffle([-5,-4,-3,-2,-1,0,1,2,3,4,5]),[a,b,c]=pool;
+  const op=pick(['>','<','≥','≤']);
+  const q=`Risolvi: <b>${F('('+lin(1,-a)+')('+lin(1,-b)+')',lin(1,-c))} ${op} 0</b>`;
+  const parts=[{r:a,den:false,lin:lin(1,-a)},{r:b,den:false,lin:lin(1,-b)},{r:c,den:true,lin:lin(1,-c)}];
+  return ineqEx2(q,parts,op,x=>((x-a)*(x-b))/(x-c),'Disequazione fratta (3 fattori)');
+}
+/* --- sistemi: quante soluzioni dal disegno --- */
+function exSysDraw(){
+  const kind=pick(['two','two','one','none']);
+  let x1=rnd(-2,2),x2=rnd(-2,2);
+  if(kind==='one')x2=x1;else if(kind==='two'&&x1===x2)x2=x1+rnd(1,2);
+  const b=rnd(-2,2),q0=rnd(-3,3);let m,c;
+  if(kind==='none'){m=rnd(-1,1);const E0=b-m;c=q0+Math.floor(E0*E0/4)+rnd(1,3)}
+  else{m=b+(x1+x2);c=q0+x1*x2}
+  const E=b-m,G=c-q0;
+  const pts=[...new Set(quadRoots(1,E,G))].map(x=>[x,m*x+q0]);
+  const n=pts.length;
+  const svg=plotSys({kind:'par',b,c,m,q:q0,pts});
+  const corr=n===2?'due soluzioni (due coppie)':n===1?'una sola soluzione (una coppia)':'nessuna soluzione';
+  const q=`Il disegno mostra una <b>parabola</b> (linea continua) e una <b>retta</b> (tratteggiata): sono le due equazioni di un sistema.<br>Quante soluzioni ha il sistema?${svg}`;
+  const steps=`<p>Le soluzioni di un sistema sono i <b>punti in cui le due linee si incontrano</b>. Si contano i punti in comune:</p><p class="m">${n===2?'due punti → <b>due coppie (x ; y)</b>':n===1?'un solo punto (la retta tocca la parabola: è <b>tangente</b>) → <b>una coppia</b>':'nessun punto → <b>nessuna soluzione</b>'}</p>${n?'<p>I punti in comune sono: '+pts.map(p=>'('+N(p[0])+' ; '+N(p[1])+')').join(' e ')+'.</p>':''}<p class="note">Con i calcoli: dopo la sostituzione ${n===2?'Δ &gt; 0':n===1?'Δ = 0':'Δ &lt; 0'}.</p>`;
+  return mkEx(q,corr,['due soluzioni (due coppie)','una sola soluzione (una coppia)','nessuna soluzione'].filter(x=>x!==corr),steps,()=>true,'Sistemi: disegno');
 }
 
 /* --- elenchi finali --- */
 const GENS={
   u0:[exSegni,exSegni,exMcm,exRadice],
-  u1:[exEq1,exEq2,exEq3,exEqFr,exCE,exDisLin],
+  u1:[exEq1,exEq2,exEq3,exEqFr,exCE,exDisLin,exDisFrN,exDisFr2],
   u2:[exMetodo,exFacRacc,exFacDiff,exFacQuadBin,exFacTrin,exFacParz],
   u3:[exABC,exDelta,exQuad,exQuad,exQuad,exCE],
-  u4:[exSysStep,exSysStep,exSysSub],
+  u4:[exSysStep,exSysStep,exSysSub,exSysDraw],
   u5:[exDisQ2]
 };
 const UNITS={u0:'0 · Da sapere prima',u1:'1 · Equazioni e disequazioni lineari',u2:'2 · Scomposizioni',u3:'3 · Equazioni di 2° grado',u4:'4 · Sistemi di 2° grado',u5:'5 · Disequazioni di 2° grado'};
@@ -844,11 +981,13 @@ u1:{
    'Si risolve <b>esattamente come l\'equazione</b>: parentesi, x a sinistra, riduci.',
    'Regola d\'oro: se dividi (o moltiplichi) per un numero <b>NEGATIVO</b>, il segno di confronto si <b>gira</b>: &gt; diventa &lt;, ≥ diventa ≤, e viceversa.',
    'La risposta è una semiretta. <b>x &gt; 3</b> vuol dire “tutti i numeri più grandi di 3”.'])),
-  card('blu','E · Disequazione fratta (solo da sapere)',
-   '<p>Non ti verrà chiesto di svolgerla, ma devi sapere che cosa si fa:</p>'+stepsHtml([
-   'Scrivi le <b>condizioni di esistenza</b> (denominatore diverso da 0).',
-   'Porta tutto a sinistra e lascia 0 a destra, con una sola frazione.',
-   'Studia il segno del numeratore e del denominatore con la <b>tabella dei segni</b> e scegli gli intervalli giusti.'])),
+  card('blu','E · Disequazione fratta: il grafico dei segni',
+   '<p class="note">Per l\'interrogazione, per le fratte basta saper scrivere le C.E. Questo metodo (quello usato in classe) è un <b>in più</b> per chi vuole svolgerle.</p>'+stepsHtml([
+   '<b>Porta tutto a sinistra</b>, lascia 0 a destra, con una sola frazione. <b>N</b> è il numeratore, <b>D</b> il denominatore.',
+   '<b>Scrivi le C.E.</b>: il denominatore deve essere diverso da 0. Esempio: x − 4 ≠ 0 → <b>x ≠ 4</b>.',
+   '<b>Studia ogni fattore</b>: mettilo “maggiore di 0” e risolvilo. Esempio: x + 1 &gt; 0 → x &gt; −1.',
+   '<b>Disegna il grafico dei segni</b>: una riga per fattore. Linea <b>continua</b> dove il fattore è positivo, <b>tratteggiata</b> dove è negativo. Nella riga in basso moltiplica i segni.',
+   '<b>Scegli le zone</b> che chiede la disequazione (+ per &gt; 0, − per &lt; 0). Pallino ○ vuoto = escluso, pallino pieno = incluso (solo con ≥ ≤). Dove il denominatore vale 0 metti una <b>✕</b>: la frazione <b>perde di senso</b>, sempre escluso.'])),
  ],
  esempio:`<div class="box bia"><h3>Esempio 1 · equazione</h3><p class="m">3x + 5 = x − 7</p>
   <p><b>1.</b> Porto le x a sinistra (la x di destra passa di là e diventa −x) e i numeri a destra (il +5 passa e diventa −5):</p><p class="m">3x − x = −7 − 5</p>
@@ -864,9 +1003,12 @@ u1:{
   <p><b>2.</b> Moltiplico in croce (numeratore di una per il denominatore dell'altra):</p><p class="m">4·x = 2·(x − 1)</p>
   <p><b>3.</b> Tolgo la parentesi: 4x = 2x − 2. Porto 2x a sinistra: 4x − 2x = −2, quindi 2x = −2.</p>
   <p><b>4.</b> Divido per 2: <span class="m">x = −1</span></p>
-  <p><b>5. Controllo con le C.E.</b>: −1 non è né 1 né 0, quindi <b>va bene</b> ✔</p></div>`,
+  <p><b>5. Controllo con le C.E.</b>: −1 non è né 1 né 0, quindi <b>va bene</b> ✔</p></div>
+  <div class="box bia"><h3>Esempio 4 · disequazione fratta (stile quaderno)</h3><p class="m">${F('x + 1','x − 4')} &lt; 0</p>${stepsFrac([{r:-1,den:false,lin:'x + 1'},{r:4,den:true,lin:'x − 4'}],'<','')}</div>
+  <div class="box bia"><h3>Esempio 5 · con tre fattori</h3><p class="m">${F('(x + 1)(x − 3)','x + 2')} &gt; 0</p>${stepsFrac([{r:-1,den:false,lin:'x + 1'},{r:3,den:false,lin:'x − 3'},{r:-2,den:true,lin:'x + 2'}],'>','')}</div>`,
  errori:['Passi un numero dall\'altra parte e <b>ti dimentichi di cambiare il segno</b>.','Dividi per un numero negativo e <b>non giri il segno</b> della disequazione.','Con le frazioni moltiplichi per il m.c.m. solo <b>alcuni</b> termini invece di tutti.','Nelle equazioni fratte <b>non scrivi le C.E.</b> e non controlli la soluzione.','Ti dimentichi di togliere bene la parentesi: 2(x − 3) = 2x − 6, non 2x − 3.'],
  orale:[
+  ['Come si risolve una disequazione fratta?','Porto tutto a sinistra e lascio zero a destra. Scrivo le condizioni di esistenza: il denominatore deve essere diverso da zero. Poi studio ogni fattore, numeratore e denominatore, mettendolo maggiore di zero. Disegno il grafico dei segni: linea continua dove il fattore è positivo, tratteggiata dove è negativo, e moltiplico i segni. Scelgo le zone giuste. Dove il denominatore vale zero metto una croce: la frazione perde di senso.'],
   ['Che cos\'è un\'equazione e come si risolve una equazione di primo grado?','Un\'equazione è un\'uguaglianza con un valore sconosciuto, la x, che devo trovare. Per risolverla tolgo le parentesi, porto le x a sinistra e i numeri a destra cambiando segno, riduco e divido per il numero davanti alla x. Esempio: 3x + 5 = x − 7 diventa 2x = −12 e quindi x = −6.'],
   ['Che cosa sono le condizioni di esistenza?','Sono le condizioni che dicono quali valori la x non può assumere. In una equazione fratta il denominatore non può essere zero, quindi scrivo che è diverso da zero. Alla fine controllo che la soluzione trovata non sia un valore vietato.'],
   ['Che differenza c\'è tra equazione e disequazione?','L\'equazione ha il segno uguale e ha come soluzione uno o pochi numeri. La disequazione ha un segno di confronto, maggiore o minore, e ha come soluzione tanti numeri. Si risolve allo stesso modo, ma se divido per un numero negativo devo girare il segno.'],
@@ -877,6 +1019,8 @@ u1:{
   [`Nell'equazione ${F(5,'x − 3')} = 2, quale valore la x NON può assumere?`,'3',['5','2','−3'],'Con x = 3 il denominatore x − 3 fa zero, e non si può dividere per zero.'],
   ['L\'equazione 0·x = 7 è...','impossibile',['indeterminata','x = 7','x = 0'],'Nessun numero moltiplicato per 0 dà 7: nessuna soluzione.'],
   ['Per togliere le frazioni da un\'equazione si moltiplica tutto per...','il m.c.m. dei denominatori',['il numero più grande','zero','il numeratore più piccolo'],'Il m.c.m. è il numero in cui entrano tutti i denominatori: le frazioni spariscono.'],
+  ['Nel grafico dei segni la croce ✕ sul denominatore significa...','la frazione perde di senso: quel valore è sempre escluso',['il valore è incluso','il numeratore vale 0','la soluzione è sempre positiva'],'Con il denominatore uguale a zero la frazione non esiste.'],
+  ['La linea tratteggiata di un fattore indica che il fattore è...','negativo',['positivo','uguale a zero','escluso'],'Continua = positivo, tratteggiata = negativo.'],
   ['Le C.E. di un\'equazione fratta servono per...','escludere i valori che rendono zero il denominatore',['trovare la soluzione','moltiplicare per il m.c.m.','cambiare il segno'],'Non si può dividere per zero.'],
  ]
 },
@@ -978,7 +1122,7 @@ u4:{
    'Per <b>ogni x</b> trovata, calcola la <b>y</b> usando la retta.',
    '<b>Scrivi le soluzioni come coppie (x ; y).</b>'])),
   card('gia','Quante soluzioni ci sono?',
-   '<p>Guarda il Δ dell\'equazione che ottieni dopo la sostituzione:</p><p><b>Δ &gt; 0</b> → due coppie di soluzioni.</p><p><b>Δ = 0</b> → una sola coppia.</p><p><b>Δ &lt; 0</b> → nessuna soluzione: il sistema è <b>impossibile</b>.</p>'),
+   '<p>Guarda il Δ dell\'equazione che ottieni dopo la sostituzione:</p><p><b>Δ &gt; 0</b> → due coppie di soluzioni.</p><p><b>Δ = 0</b> → una sola coppia.</p><p><b>Δ &lt; 0</b> → nessuna soluzione: il sistema è <b>impossibile</b>.</p><p>In disegno (parabola continua, retta tratteggiata) le soluzioni sono i <b>punti in cui le due linee si incontrano</b>:</p><p><b>Due punti</b> → Δ &gt; 0</p>'+plotSys({kind:'par',b:0,c:0,m:1,q:2,pts:[[-1,1],[2,4]]},true)+'<p><b>Un punto</b> (la retta tocca la parabola: è <b>tangente</b>) → Δ = 0</p>'+plotSys({kind:'par',b:0,c:0,m:2,q:-1,pts:[[1,1]]},true)+'<p><b>Nessun punto</b> → Δ &lt; 0</p>'+plotSys({kind:'par',b:0,c:0,m:0,q:-1,pts:[]},true)),
  ],
  esempio:`<div class="box bia"><h3>Esempio con tutti i passi (da leggere per capire il procedimento)</h3><div class="sys"><div>y = x² − 2x − 3</div><div>y = 2x − 3</div></div>
   <p><b>1.</b> La seconda è la retta (primo grado), la prima ha il quadrato.</p>
@@ -988,7 +1132,10 @@ u4:{
   <p>a = 1, b = −4, c = 0. Δ = (−4)² − 4·1·0 = 16. √16 = 4.</p>
   <p class="m">x₁ = ${F('4 − 4','2')} = 0 &nbsp;&nbsp; x₂ = ${F('4 + 4','2')} = 4</p>
   <p><b>5. Calcolo le y</b> con la retta y = 2x − 3: se x = 0 → y = −3. Se x = 4 → y = 2·4 − 3 = 5.</p>
-  <p><b>6. Soluzioni</b> (coppie): <span class="m">(0 ; −3) e (4 ; 5)</span></p></div>`,
+  <p><b>6. Soluzioni</b> (coppie): <span class="m">(0 ; −3) e (4 ; 5)</span></p>
+  <p>Nel disegno sono i due punti in cui la retta (tratteggiata) incontra la parabola:</p>${plotSys({kind:'par',b:-2,c:-3,m:2,q:-3,pts:[[0,-3],[4,5]]})}</div>
+  <div class="box bia"><h3>Esempio con la circonferenza (da guardare)</h3><div class="sys"><div>x² + y² = 25</div><div>x + y = 7</div></div>
+  <p>Dalla retta: y = 7 − x. Sostituisco: x² + (7 − x)² = 25 → x² − 7x + 12 = 0 → x = 3 oppure x = 4. Le y: 4 e 3.</p><p class="m">(3 ; 4) e (4 ; 3)</p>${plotSys({kind:'circ',r:5,s:7,pts:[[3,4],[4,3]]})}</div>`,
  errori:['Trovi le x e <b>ti dimentichi di calcolare le y</b>.','Sostituisci male: dopo la sostituzione non deve più esserci la y.','Scrivi le soluzioni separate (x = 0, x = 4, y = −3, y = 5) invece che <b>coppie</b> (x ; y).','Nella forma normale dimentichi di cambiare i segni dei termini che passano dall\'altra parte.'],
  orale:[
   ['Che cos\'è un sistema di secondo grado?','È un sistema di due equazioni con due incognite, x e y, in cui una equazione è di primo grado e l\'altra di secondo grado.'],
@@ -1011,6 +1158,7 @@ u5:{
    '<b>Risolvila con la formula</b> (a, b, c → Δ → x). Trovi due numeri, le <b>radici</b>: chiamiamoli x₁ e x₂, con x₁ il più piccolo.',
    '<b>Guarda il segno di confronto</b> della disequazione di partenza: <b>&gt; 0</b> (o ≥) → prendi le parti <b>fuori</b> dalle radici. <b>&lt; 0</b> (o ≤) → prendi la parte <b>in mezzo</b>.',
    '<b>Scrivi la risposta</b>. Se c\'è anche l\'uguale (≥ o ≤) le radici sono incluse, altrimenti no.'])),
+  card('gia','In più: con il grafico dei segni (come in classe)',stepsHtml(['Trovate le radici x₁ e x₂, scrivi il polinomio come <b>prodotto</b>: (x − x₁)(x − x₂).','Studia i due fattori “maggiore di 0” e disegna il <b>grafico dei segni</b> (continua = positivo, tratteggiata = negativo).','Moltiplica i segni nella riga in basso e scegli le zone giuste.'])+'<p>Esempio: x² − x − 6 &gt; 0 → (x + 2)(x − 3) &gt; 0</p>'+signGraph([{r:-2},{r:3}],'>')),
   card('ver','Lo schema da ricordare',
    '<p class="m">fuori &nbsp; x₁ &nbsp; in mezzo &nbsp; x₂ &nbsp; fuori</p><p>Con &gt; 0: <b>x &lt; x₁ oppure x &gt; x₂</b> (le due parti fuori, con “oppure”)</p><p>Con &lt; 0: <b>x₁ &lt; x &lt; x₂</b> (la parte in mezzo)</p><p class="note">Perché? La parabola “sorride” (il numero davanti a x² è positivo): è positiva fuori dalle radici e negativa in mezzo.</p>'),
  ],
