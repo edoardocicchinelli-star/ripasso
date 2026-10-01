@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matematica 4 ES: goniometria</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.sgf{display:block;width:100%;max-width:420px;height:auto;margin:8px 0;background:#fff;border:2px solid var(--line);border-radius:10px}
+.sgf.circ{max-width:300px}
+.sgf.circ.sm{display:inline-block;width:30%;min-width:105px;max-width:130px;margin:3px}
+.cl{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border:2px solid #222;border-radius:50%;font-weight:bold;font-size:.8em;background:#fff;margin-right:.3em}
+sub{font-size:.75em}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Matematica</a></p><h1>Goniometria: primo scritto</h1><p>Angoli, seno, coseno, tangente · un passo alla volta</p></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u0">0 Da sapere</button>
+<button data-t="u1">1 Gradi e radianti</button>
+<button data-t="u2">2 Angoli e circonferenza</button>
+<button data-t="u3">3 Seno e coseno</button>
+<button data-t="u4">4 Tangente</button>
+<button data-t="u5">5 Relazioni</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come ti prepari al primo scritto</h2>
+<div class="box gia"><h3>L'argomento</h3><p><b>Prima parte di goniometria</b>: misura degli angoli (gradi e radianti), angoli orientati, circonferenza goniometrica, seno e coseno, tangente e cotangente, relazioni fondamentali.</p></div>
+<p>Un compito scritto si prepara <b>facendo esercizi a mano</b>. Qui ne trovi di sempre nuovi, con i passaggi spiegati. Fai i calcoli <b>su un foglio</b> come nel compito, poi scegli la risposta.</p>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: i passaggi da fare, sempre uguali.</div></div>
+<div class="step"><b class="n">3</b><div><b>Esempi svolti</b>: rifalli a penna su un foglio senza guardare.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni, quelli che fanno perdere punti.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: esercizi sempre nuovi. Se sbagli leggi i passaggi. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz di teoria</b>: poche domande sulle definizioni.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (6 giorni)</h3><ul><li><b>Giorno 1</b>: unità 0 (da sapere prima) e unità 1 (gradi e radianti)</li><li><b>Giorno 2</b>: unità 2 (angoli orientati e circonferenza goniometrica)</li><li><b>Giorno 3</b>: unità 3 (seno e coseno)</li><li><b>Giorno 4</b>: unità 4 (tangente e cotangente)</li><li><b>Giorno 5</b>: unità 5 (relazioni fondamentali)</li><li><b>Giorno 6</b>: Prova finale, Orale e Formulario</li></ul><p class="note">Le unità 1 e 5 sono quelle che più spesso escono nello scritto: dedicaci tempo.</p></div>
+<div class="box bia"><h3>Livello base e “in più”</h3><p>Il livello base è quello della dispensa. Segnato <b>“in più”</b> c'è quello che nella dispensa non c'è: la tabella degli angoli oltre i 180° e i valori di seno e coseno di 30°, 45° e 60°.</p></div>
+<div class="box ros"><h3>Due refusi nella dispensa</h3><ul><li>Nella <b>seconda relazione fondamentale</b> è scritto y<sub>B</sub> = cos α e x<sub>B</sub> = sen α: è il contrario. Giusto: <b>x<sub>B</sub> = cos α</b>, <b>y<sub>B</sub> = sen α</b>.</li><li>Per la <b>cotangente</b> è scritto “α ≠ kπ/2”: giusto è <b>α ≠ kπ</b> (non esiste quando y<sub>B</sub> = 0).</li></ul></div>
+<div class="box bia"><h3>Consigli per lo scritto</h3><ul><li>Scrivi <b>tutti i passaggi</b> e semplifica sempre le frazioni.</li><li>Prima di scegliere il segno di seno e coseno, trova il <b>quadrante</b> (porta l'angolo tra 0 e 2π).</li><li>Ricorda: <b>coseno = x</b>, <b>seno = y</b>.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u0"></section><section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== UTILITÀ (goniometria) ========== */
+const MIN='−';
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+const gcd=(a,b)=>b?gcd(b,a%b):Math.abs(a);
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,ok,tag)=>({q,...mkOpts(correct,wrongs),steps,ok,tag});
+const near=(a,b)=>Math.abs(a-b)<1e-9;
+const mod2=t=>((t%2)+2)%2;                         // t in unità di π, ridotto in [0,2)
+function rat(n,d){if(d<0){n=-n;d=-d}const g=gcd(n,d)||1;return [n/g,d/g]}
+/* frazione verticale (n/d) · sym, con segno meno davanti */
+function fh(n,d,sym=''){
+  [n,d]=rat(n,d);
+  if(n===0)return '0';
+  const neg=n<0,a=Math.abs(n);
+  const top=(a===1&&sym?'':String(a))+sym;
+  return (neg?MIN:'')+(d===1?top:F(top,String(d)));
+}
+const ang=(n,d)=>fh(n,d,'π');                      // angolo in radianti: (n/d)π
+const QL=['1° quadrante','2° quadrante','3° quadrante','4° quadrante'];
+const AXL=['asse x positivo','asse y positivo','asse x negativo','asse y negativo'];
+/* posizione di un angolo t (unità di π): ritorna etichetta */
+function posLabel(t){
+  const m=mod2(t);
+  const eq=(a,b)=>Math.abs(a-b)<1e-9;
+  if(eq(m,0))return AXL[0];if(eq(m,0.5))return AXL[1];if(eq(m,1))return AXL[2];if(eq(m,1.5))return AXL[3];
+  return QL[m<0.5?0:m<1?1:m<1.5?2:3];
+}
+const quadOf=t=>{const m=mod2(t);return m<0.5?0:m<1?1:m<1.5?2:3};
+
+/* ========== CIRCONFERENZA GONIOMETRICA (disegno) ========== */
+let _gn=0;
+function circGon(t,o){
+  o=o||{};
+  const W=290,H=262,cx=135,cy=131,R=92;
+  const th=t*Math.PI;
+  const bx=cx+R*Math.cos(th),by=cy-R*Math.sin(th);
+  let s=`<svg viewBox="0 0 ${W} ${H}" class="sgf circ${o.small?' sm':''}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Circonferenza goniometrica"><defs><marker id="ah${++_gn}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L9 5L1 9z" fill="#c62828"/></marker></defs>`;
+  s+=`<line x1="12" y1="${cy}" x2="${W-8}" y2="${cy}" stroke="#222" stroke-width="1.3"/><line x1="${cx}" y1="${H-8}" x2="${cx}" y2="10" stroke="#222" stroke-width="1.3"/>`;
+  s+=`<text x="${W-14}" y="${cy+14}" font-family="Arial" font-size="12" fill="#222">x</text><text x="${cx+6}" y="16" font-family="Arial" font-size="12" fill="#222">y</text>`;
+  s+=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="#222" stroke-width="2"/>`;
+  s+=`<text x="${cx-12}" y="${cy+14}" font-family="Arial" font-size="11" fill="#222">O</text>`;
+  s+=`<circle cx="${cx+R}" cy="${cy}" r="3.5" fill="#222"/><text x="${cx+R+4}" y="${cy+15}" font-family="Arial" font-size="11" fill="#222">E(1;0)</text>`;
+  [['1',cx+R,cy-5],['−1',cx-R-14,cy-5]].forEach(a=>{});
+  if(o.axesVals){
+    s+=`<text x="${cx+4}" y="${cy-R-3}" font-family="Arial" font-size="10" fill="#444">1</text><text x="${cx+4}" y="${cy+R+11}" font-family="Arial" font-size="10" fill="#444">${MIN}1</text><text x="${cx-R-12}" y="${cy+12}" font-family="Arial" font-size="10" fill="#444">${MIN}1</text>`;
+  }
+  const m=mod2(t),useNeg=t<0&&Math.abs(t)<2;
+  const arcR=24;
+  if(!o.noArc&&Math.abs(m)>1e-9){
+    const a1=useNeg?0:0,span=useNeg?-(mod2(-t))*Math.PI:m*Math.PI;
+    const ex=cx+arcR*Math.cos(span),ey=cy-arcR*Math.sin(span);
+    const large=Math.abs(span)>Math.PI?1:0,sweep=span>0?0:1;
+    s+=`<path d="M${cx+arcR},${cy} A${arcR},${arcR} 0 ${large} ${sweep} ${ex.toFixed(1)},${ey.toFixed(1)}" fill="none" stroke="#c62828" stroke-width="2" marker-end="url(#ah${_gn})"/>`;
+    const mid=span/2;s+=`<text x="${(cx+(arcR+11)*Math.cos(mid)-4).toFixed(1)}" y="${(cy-(arcR+11)*Math.sin(mid)+4).toFixed(1)}" font-family="Arial" font-size="13" font-style="italic" fill="#c62828">α</text>`;
+  }
+  s+=`<line x1="${cx}" y1="${cy}" x2="${bx.toFixed(1)}" y2="${by.toFixed(1)}" stroke="#c62828" stroke-width="2.4"/>`;
+  if(o.proj){
+    s+=`<line x1="${bx.toFixed(1)}" y1="${by.toFixed(1)}" x2="${bx.toFixed(1)}" y2="${cy}" stroke="#1a4a8a" stroke-width="1.6" stroke-dasharray="4 3"/><line x1="${bx.toFixed(1)}" y1="${by.toFixed(1)}" x2="${cx}" y2="${by.toFixed(1)}" stroke="#2e7d32" stroke-width="1.6" stroke-dasharray="4 3"/>`;
+    if(Math.abs(bx-cx)>16)s+=`<text x="${((bx+cx)/2).toFixed(1)}" y="${cy+(by<cy?14:-6)}" text-anchor="middle" font-family="Arial" font-size="11" font-weight="700" fill="#1a4a8a">cos α</text>`;
+    if(Math.abs(by-cy)>16)s+=`<text x="${cx+(bx>cx?-4:4)}" y="${(by+((cy-by)>0?-6:14)).toFixed(1)}" text-anchor="${bx>cx?'end':'start'}" font-family="Arial" font-size="11" font-weight="700" fill="#2e7d32">sin α</text>`;
+  }
+  s+=`<circle cx="${bx.toFixed(1)}" cy="${by.toFixed(1)}" r="4.5" fill="#c62828" stroke="#fff" stroke-width="1.2"/>`;
+  const lx=bx+(bx>=cx?7:-15),ly=by+(by<=cy?-6:15);
+  s+=`<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" font-family="Arial" font-size="13" font-weight="700" fill="#8e1f1f">B</text>`;
+  return s+'</svg>';
+}
+
+/* ========== ESERCIZI DI GONIOMETRIA ========== */
+const TRIP=[[3,4,5],[5,12,13],[8,15,17],[7,24,25],[20,21,29]];
+const SSIGN=[1,1,-1,-1],CSIGN=[1,-1,-1,1];            // segno di seno e coseno nei 4 quadranti
+const lcm=(a,b)=>a*b/gcd(a,b);
+
+/* riduzione di un angolo (n/d)π all'intervallo [0, 2π) */
+function reduceStep(n,d){
+  const t=n/d,k=Math.floor(t/2);
+  const [bn,bd]=rat(n-2*k*d,d);
+  let h;
+  if(k===0)h=`<p>L'angolo ${ang(n,d)} è già tra 0 e 2π: non devo togliere nessun giro.</p>`;
+  else h=`<p>L'angolo ${k>0?'è più grande di un angolo giro (2π)':'è negativo'}. ${k>0?'Tolgo':'Aggiungo'} ${Math.abs(k)===1?'un giro intero':Math.abs(k)+' giri interi'} (2π per ogni giro) fino a stare tra 0 e 2π:</p><p class="m">${ang(n,d)} ${k>0?MIN:'+'} ${Math.abs(2*k)===2?'2π':Math.abs(2*k)+'π'} = ${ang(bn,bd)}</p>`;
+  return {html:h,bn,bd,k,base:bn/bd};
+}
+
+/* ---------- Unità 0: da sapere prima ---------- */
+function exFrazSum(){
+  const dn=[2,3,4,6],b=pick(dn);let d=pick(dn);if(d===b)d=pick(dn.filter(x=>x!==b));
+  const a=rnd(1,5),c=rnd(1,5),L=lcm(b,d);
+  const sn=a*(L/b)+c*(L/d),[rn,rd]=rat(sn,L);
+  const q=`Calcola: <b>${ang(a,b)} + ${ang(c,d)}</b>`;
+  const steps=`<p>Per sommare frazioni servono lo <b>stesso denominatore</b>. Il m.c.m. di ${b} e ${d} è <b>${L}</b>.</p><p class="m">${ang(a,b)} + ${ang(c,d)} = ${F(a*(L/b)+'π',L)} + ${F(c*(L/d)+'π',L)} = ${F(sn+'π',L)}</p>${gcd(sn,L)>1?'<p>Semplifico: divido numeratore e denominatore per '+gcd(sn,L)+':</p><p class="m">= '+ang(rn,rd)+'</p>':''}`;
+  return mkEx(q,ang(rn,rd),[ang(a+c,b+d),ang(sn,L*2),ang(a*c,b*d),ang(sn+1,L),ang(sn+L,L),ang(sn-1,L)],steps,()=>near(a/b+c/d,rn/rd),'Frazioni con π');
+}
+function exSqrtFrac(){
+  const [a,b]=pick([[3,5],[4,5],[5,13],[12,13],[2,3],[3,4],[1,2],[7,10],[2,5],[5,6]]);
+  const q=`Calcola: <b>√${F(a*a,b*b)}</b>`;
+  const steps=`<p>La radice di una frazione è la radice del numeratore diviso la radice del denominatore.</p><p class="m">√${F(a*a,b*b)} = ${F('√'+a*a,'√'+b*b)} = ${F(a,b)}</p><p class="note">Perché ${a}·${a} = ${a*a} e ${b}·${b} = ${b*b}.</p>`;
+  return mkEx(q,fh(a,b),[fh(a*a,b*b),fh(a,b*b),fh(a*a,b),fh(b,a),fh(a+1,b),fh(a,b+1)],steps,()=>true,'Radice di una frazione');
+}
+function exPunto(){
+  const x=pick([-5,-4,-3,-2,-1,1,2,3,4,5]),y=pick([-5,-4,-3,-2,-1,1,2,3,4,5]);
+  const qd=x>0&&y>0?0:x<0&&y>0?1:x<0&&y<0?2:3;
+  const q=`In quale quadrante si trova il punto <b>P(${x<0?MIN+(-x):x} ; ${y<0?MIN+(-y):y})</b>?`;
+  const steps=`<p>I quadranti si contano in senso <b>antiorario</b>, partendo da quello in alto a destra: 1° (+;+), 2° (−;+), 3° (−;−), 4° (+;−).</p><p>Il primo numero è l'<b>ascissa x</b>, il secondo l'<b>ordinata y</b>. Qui x è ${x<0?'negativa':'positiva'} e y è ${y<0?'negativa':'positiva'}: ${QL[qd]}.</p>`;
+  return mkEx(q,QL[qd],shuffle(QL.filter((_,i)=>i!==qd)),steps,()=>true,'Piano cartesiano');
+}
+
+/* ---------- Unità 1: gradi e radianti ---------- */
+const DEGS=[15,18,20,24,30,36,40,45,50,60,72,75,80,90,100,105,108,120,135,140,144,150,160,180,210,225,240,270,300,315,330,360];
+const RADS=[[1,6],[1,4],[1,3],[1,2],[2,3],[3,4],[5,6],[1,1],[7,6],[5,4],[4,3],[3,2],[5,3],[7,4],[11,6],[2,1],[1,5],[2,5],[1,10],[3,10],[5,9],[4,9],[7,9],[1,12],[5,12],[3,5],[1,9],[2,9]];
+function exRadDeg(){
+  const t=pick(['d2r','d2r','r2d','r2d','r2d']);
+  if(t==='d2r'){
+    const deg=pick(DEGS),[n,d]=rat(deg,180),g=gcd(deg,180);
+    const steps=`<p>Formula: <span class="m">α<sub>rad</sub> = α° · ${F('π','180°')}</span></p><p class="m">${deg}° · ${F('π','180°')} = ${F(deg+'π','180')}</p>${g>1?'<p>Semplifico: divido numeratore e denominatore per '+g+':</p>':''}<p class="m">${g>1?'= ':''}<b>${ang(n,d)}</b></p>`;
+    return mkEx(`Converti in radianti: <b>${deg}°</b>`,ang(n,d),[ang(...rat(deg,360)),ang(...rat(2*deg,180)),ang(...rat(180,deg))],steps,()=>near(deg*Math.PI/180,n/d*Math.PI),'Gradi e radianti');
+  }
+  const [n,d]=pick(RADS),deg=180*n/d;
+  const steps=`<p>Formula: <span class="m">α° = α<sub>rad</sub> · ${F('180°','π')}</span></p><p class="m">${ang(n,d)} · ${F('180°','π')}</p><p>Il π sopra e il π sotto si <b>semplificano</b>. Resta ${fh(n,d)} di 180°:</p>${d>1?'<p class="m">180° : '+d+' = '+180/d+'° &nbsp; e poi &nbsp; '+180/d+'° · '+n+' = <b>'+deg+'°</b></p>':'<p class="m">'+n+' · 180° = <b>'+deg+'°</b></p>'}`;
+  return mkEx(`Converti in gradi: <b>${ang(n,d)}</b>`,`${deg}°`,[`${2*deg}°`,`${deg%2===0?deg/2:deg*3}°`,`${360-deg===deg?deg+30:360-deg}°`],steps,()=>near(n/d*180,deg),'Gradi e radianti');
+}
+function exAngoliNot(){
+  const L=[['l\'angolo giro',2,1,360],['l\'angolo piatto',1,1,180],['l\'angolo retto',1,2,90],['la metà dell\'angolo retto',1,4,45],['un terzo dell\'angolo piatto',1,3,60],['un sesto dell\'angolo piatto',1,6,30]];
+  const [nm,n,d,deg]=pick(L);
+  const wr=shuffle(L.filter(x=>x[0]!==nm)).slice(0,2).map(x=>ang(x[1],x[2]));
+  return mkEx(`Quanto misura in radianti <b>${nm}</b>?`,ang(n,d),wr,`<p>${nm.charAt(0).toUpperCase()+nm.slice(1)} misura ${deg}°. Ricorda: l'angolo piatto è 180° = π, quindi 360° = 2π.</p><p class="m">${deg}° = <b>${ang(n,d)}</b></p>`,()=>true,'Angoli notevoli');
+}
+
+/* ---------- Unità 2: angoli orientati e circonferenza ---------- */
+function randAngle(allowAxes){
+  for(let i=0;i<60;i++){
+    const d=pick([2,3,4,6]),n=rnd(-3*d,5*d),t=n/d;
+    const axis=[0,0.5,1,1.5].some(v=>Math.abs(mod2(t)-v)<1e-9);
+    if(axis&&!(allowAxes&&Math.random()<0.5))continue;
+    return [n,d,t];
+  }
+  return [13,6,13/6];
+}
+function exQuadrante(){
+  const [n,d,t]=randAngle(true),R=reduceStep(n,d),lab=posLabel(t);
+  const all=shuffle(QL.concat(AXL).filter(x=>x!==lab));
+  const q=`In quale posizione sulla circonferenza goniometrica cade l'angolo <b>α = ${ang(n,d)}</b>?`;
+  const b=R.base;
+  const cmp=b<0.5?'tra 0 e π/2':b<1?'tra π/2 e π':b<1.5?'tra π e 3π/2':'tra 3π/2 e 2π';
+  const steps=`<p><b>1.</b> Porto l'angolo tra 0 e 2π (tolgo o aggiungo giri interi).</p>${R.html}<p><b>2.</b> Confronto con i punti importanti: 0, π/2, π, 3π/2.</p><p class="m">${Math.abs(b*2-Math.round(b*2))<1e-9?'L\'angolo '+ang(R.bn,R.bd)+' cade sull\'<b>'+lab+'</b>.':ang(R.bn,R.bd)+' è '+cmp+': <b>'+lab+'</b>.'}</p>${circGon(t)}`;
+  return mkEx(q,lab,all,steps,()=>true,'Quadranti');
+}
+function exEquiv(){
+  let n,d,t;
+  for(let i=0;i<80;i++){d=pick([2,3,4,6]);n=rnd(-4*d,6*d);t=n/d;if((t<0||t>=2)&&Math.abs(mod2(t))>1e-9)break}
+  const R=reduceStep(n,d);
+  const q=`Scrivi l'angolo equivalente a <b>${ang(n,d)}</b> compreso tra 0 e 2π.`;
+  const b=R.base;
+  return mkEx(q,ang(R.bn,R.bd),[b+1,2-b,b+0.5,b-0.5,b+1/3,b-1/3].map(v=>ang(...rat(Math.round(mod2(v)*12),12))),`${R.html}<p>Gli angoli ${ang(n,d)} e ${ang(R.bn,R.bd)} sono <b>equivalenti</b>: corrispondono allo stesso punto della circonferenza (si scrive α + 2kπ, con k intero).</p>${circGon(t)}`,()=>near(mod2(t),b),'Angoli equivalenti');
+}
+function exSegniQ(){
+  const [n,d,t]=randAngle(false),qd=quadOf(t),R=reduceStep(n,d);
+  const C=['sen α &gt; 0 e cos α &gt; 0','sen α &gt; 0 e cos α &lt; 0','sen α &lt; 0 e cos α &lt; 0','sen α &lt; 0 e cos α &gt; 0'];
+  const q=`Per l'angolo <b>α = ${ang(n,d)}</b>, qual è il segno di seno e coseno?`;
+  const steps=`<p><b>1.</b> Trovo il quadrante.</p>${R.html}<p>${ang(R.bn,R.bd)} cade nel <b>${QL[qd]}</b>.</p><p><b>2.</b> In ogni quadrante il punto B ha una x (cos) e una y (sin) con segni precisi:</p><p class="m">1° quadrante: cos + , sen +<br>2° quadrante: cos − , sen +<br>3° quadrante: cos − , sen −<br>4° quadrante: cos + , sen −</p><p>Nel ${QL[qd]}: <b>${C[qd]}</b>.</p>${circGon(t,{proj:true})}`;
+  return mkEx(q,C[qd],shuffle(C.filter((_,i)=>i!==qd)),steps,()=>true,'Segni di seno e coseno');
+}
+
+/* ---------- Unità 3: seno e coseno sugli assi ---------- */
+function exAssi(){
+  const m=rnd(-6,8),t=m/2,fn=pick(['sen','cos']),k=((m%4)+4)%4;
+  const val=fn==='sen'?[0,1,0,-1][k]:[1,0,-1,0][k];
+  const [n,d]=rat(m,2),R=reduceStep(n,d);
+  const vs=v=>v<0?MIN+(-v):String(v);
+  const px=[1,0,-1,0][k],py=[0,1,0,-1][k];
+  const q=`Calcola: <b>${fn} ${m===0?'0':ang(n,d)}</b>`;
+  const steps=`${m===0?'':'<p><b>1.</b> Porto l\'angolo tra 0 e 2π.</p>'+R.html}<p><b>${m===0?'1':'2'}.</b> Trovo il punto B sulla circonferenza: è ${['E(1 ; 0), sull\'asse x positivo','sull\'asse y positivo: B(0 ; 1)','sull\'asse x negativo: B(−1 ; 0)','sull\'asse y negativo: B(0 ; −1)'][k]}.</p><p><b>${m===0?'2':'3'}.</b> Ricorda: <b>cos α = x</b> del punto B e <b>sen α = y</b> del punto B. Qui B(${vs(px)} ; ${vs(py)}), quindi:</p><p class="m">${fn} ${m===0?'0':ang(n,d)} = <b>${vs(val)}</b></p>${circGon(t,{proj:true,axesVals:true})}`;
+  const pool=['−1','0','1'].filter(x=>x!==vs(val));
+  return mkEx(q,vs(val),pool,steps,()=>true,'Seno e coseno sugli assi');
+}
+
+/* ---------- Unità 4: tangente e cotangente ---------- */
+function exTan(){
+  const t0=pick(['axes','axes','esiste','rapporto','rapporto','rapporto','cot']);
+  if(t0==='axes'){
+    const m=rnd(-5,7),fn=pick(['tan','cot']),odd=((m%2)+2)%2===1;
+    const [n,d]=rat(m,2);
+    const ex=fn==='tan'?(odd?'non esiste':'0'):(odd?'0':'non esiste');
+    const R=reduceStep(n,d),k=((m%4)+4)%4;
+    const why=fn==='tan'?(odd?'B è sull\'asse y: x<sub>B</sub> = 0 e non si può dividere per 0: la tangente <b>non esiste</b>.':'B è sull\'asse x: y<sub>B</sub> = 0, quindi tan = 0 : x<sub>B</sub> = <b>0</b>.'):(odd?'B è sull\'asse y: x<sub>B</sub> = 0, quindi cot = 0 : y<sub>B</sub> = <b>0</b>.':'B è sull\'asse x: y<sub>B</sub> = 0 e non si può dividere per 0: la cotangente <b>non esiste</b>.');
+    return mkEx(`Calcola: <b>${fn} ${m===0?'0':ang(n,d)}</b>`,ex,['0','non esiste','1'].filter(x=>x!==ex).concat(['−1']),
+     `${m===0?'':'<p><b>1.</b> Porto l\'angolo tra 0 e 2π.</p>'+R.html}<p>Ricorda: <b>tan α = ${F('y<sub>B</sub>','x<sub>B</sub>')}</b> e <b>cot α = ${F('x<sub>B</sub>','y<sub>B</sub>')}</b>.</p><p>${why}</p>${circGon(m/2,{proj:true})}`,()=>true,'Tangente e cotangente');
+  }
+  if(t0==='esiste'){
+    const odd=pick([[1,2],[3,2],[5,2],[-1,2],[7,2],[-3,2]]);
+    const others=shuffle([[0,1],[1,1],[2,1],[1,3],[1,4],[1,6],[2,3]]).slice(0,2);
+    const [n,d]=odd;
+    return mkEx(`Per quale di questi angoli la <b>tangente non esiste</b>?`,ang(n,d),others.map(x=>x[0]===0?'0':ang(x[0],x[1])),
+     `<p>tan α = ${F('y<sub>B</sub>','x<sub>B</sub>')} non esiste quando <b>x<sub>B</sub> = 0</b>, cioè quando B è sull'asse y: per <b>α = π/2 + kπ</b> (k intero).</p><p>${ang(n,d)} = π/2 + (${(n-1)/2<0?MIN+Math.abs((n-1)/2):(n-1)/2})·π: è proprio di questa forma. Gli altri angoli hanno B fuori dall'asse y, quindi x<sub>B</sub> ≠ 0.</p>`,()=>true,'Esistenza della tangente');
+  }
+  if(t0==='cot'){
+    const [a,b]=pick([[3,4],[1,2],[2,5],[5,3],[4,7],[7,2],[1,3],[3,2]]),s=pick([1,-1]);
+    return mkEx(`Se <b>tan α = ${fh(s*a,b)}</b>, quanto vale cot α?`,fh(b,s*a),[fh(s*a,b),fh(-b,s*a)],
+     `<p>La cotangente è l'<b>inverso</b> della tangente: <span class="m">cot α = ${F(1,'tan α')}</span></p><p>L'inverso di una frazione si ottiene <b>capovolgendola</b> (il segno resta uguale):</p><p class="m">cot α = ${F(1,fh(s*a,b))} = <b>${fh(b,s*a)}</b></p>`,()=>true,'Tangente e cotangente');
+  }
+  const [a,b,c]=pick(TRIP),[x1,y1]=Math.random()<0.5?[a,b]:[b,a],q=rnd(0,3);
+  const sn=SSIGN[q]*y1,cn=CSIGN[q]*x1;
+  const wantCot=Math.random()<0.3,tn=fh(sn,cn),ct=fh(cn,sn);
+  const num=wantCot?cn:sn,den=wantCot?sn:cn,neg=(num<0)!==(den<0);
+  const stepsT=`<p>Uso la definizione: <span class="m">tan α = ${F('sen α','cos α')}</span> e <span class="m">cot α = ${F('cos α','sen α')}</span>.</p><p>Dividere per una frazione vuol dire <b>moltiplicare per la frazione capovolta</b>:</p><p class="m">${wantCot?'cot':'tan'} α = ${fh(num,c)} : ${fh(den,c)} = ${fh(num,c)} · ${fh(c,den)}</p><p>I denominatori ${c} si semplificano tra loro. Resta ${F(Math.abs(num),Math.abs(den))}. Regola dei segni: ${neg?'segni diversi → meno':'segni uguali → più'}.</p><p class="m">${wantCot?'cot':'tan'} α = <b>${wantCot?ct:tn}</b></p>`;
+  const corr=wantCot?ct:tn;
+  return mkEx(`Se <b>sen α = ${fh(sn,c)}</b> e <b>cos α = ${fh(cn,c)}</b>, quanto vale ${wantCot?'cot':'tan'} α?`,corr,wantCot?[tn,fh(-cn,sn)]:[ct,fh(-sn,cn)],stepsT,()=>near(sn/cn,rat(sn,cn)[0]/rat(sn,cn)[1]),'Tangente e cotangente');
+}
+
+/* ---------- Unità 5: relazioni fondamentali ---------- */
+function exRel(){
+  const [a,b,c]=pick(TRIP),sw=Math.random()<0.5,[x1,y1]=sw?[a,b]:[b,a],q=rnd(0,3);
+  const sinV=SSIGN[q]*y1,cosV=CSIGN[q]*x1,t0=pick(['sin','cos','tan']);
+  const ql=QL[q],ssn=SSIGN[q]>0?'positivo':'negativo',csn=CSIGN[q]>0?'positivo':'negativo';
+  if(t0==='sin'){
+    return mkEx(`Sapendo che <b>cos α = ${fh(cosV,c)}</b> e che α è nel <b>${ql}</b>, calcola sen α.`,fh(sinV,c),[fh(-sinV,c),fh(sinV<0?-x1:x1,c)],
+     `<p><b>1.</b> Prima relazione fondamentale: <span class="m">cos²α + sen²α = 1</span>, quindi <span class="m">sen²α = 1 − cos²α</span>.</p><p><b>2.</b> Calcolo cos²α (un quadrato è sempre positivo):</p><p class="m">cos²α = (${fh(cosV,c)})² = ${F(x1*x1,c*c)}</p><p><b>3.</b> Sottraggo da 1 (scrivo 1 = ${F(c*c,c*c)}):</p><p class="m">sen²α = ${F(c*c,c*c)} − ${F(x1*x1,c*c)} = ${F(y1*y1,c*c)}</p><p><b>4.</b> Faccio la radice (due segni possibili):</p><p class="m">sen α = ± √${F(y1*y1,c*c)} = ± ${fh(y1,c)}</p><p><b>5.</b> Scelgo il segno: nel ${ql} il seno è <b>${ssn}</b>.</p><p class="m">sen α = <b>${fh(sinV,c)}</b></p>`,()=>near(sinV*sinV+cosV*cosV,c*c),'Relazioni fondamentali');
+  }
+  if(t0==='cos'){
+    return mkEx(`Sapendo che <b>sen α = ${fh(sinV,c)}</b> e che α è nel <b>${ql}</b>, calcola cos α.`,fh(cosV,c),[fh(-cosV,c),fh(cosV<0?-y1:y1,c)],
+     `<p><b>1.</b> Prima relazione fondamentale: <span class="m">cos²α + sen²α = 1</span>, quindi <span class="m">cos²α = 1 − sen²α</span>.</p><p><b>2.</b> Calcolo sen²α:</p><p class="m">sen²α = (${fh(sinV,c)})² = ${F(y1*y1,c*c)}</p><p><b>3.</b> Sottraggo da 1:</p><p class="m">cos²α = ${F(c*c,c*c)} − ${F(y1*y1,c*c)} = ${F(x1*x1,c*c)}</p><p><b>4.</b> Radice:</p><p class="m">cos α = ± ${fh(x1,c)}</p><p><b>5.</b> Nel ${ql} il coseno è <b>${csn}</b>.</p><p class="m">cos α = <b>${fh(cosV,c)}</b></p>`,()=>true,'Relazioni fondamentali');
+  }
+  const tn=fh(sinV,cosV);
+  return mkEx(`Sapendo che <b>cos α = ${fh(cosV,c)}</b> e che α è nel <b>${ql}</b>, calcola tan α.`,tn,[fh(-sinV,cosV),fh(cosV,sinV)],
+   `<p><b>1.</b> Trovo prima sen α con la prima relazione: sen²α = 1 − cos²α = ${F(c*c,c*c)} − ${F(x1*x1,c*c)} = ${F(y1*y1,c*c)}. Quindi sen α = ± ${fh(y1,c)}.</p><p><b>2.</b> Nel ${ql} il seno è <b>${ssn}</b>: sen α = ${fh(sinV,c)}.</p><p><b>3.</b> Seconda relazione: <span class="m">tan α = ${F('sen α','cos α')}</span>. Divido per una frazione = moltiplico per la frazione capovolta:</p><p class="m">${fh(sinV,c)} : ${fh(cosV,c)} = ${fh(sinV,c)} · ${fh(c,cosV)} = <b>${tn}</b></p>`,()=>true,'Relazioni fondamentali');
+}
+
+const GENS={
+  u0:[exFrazSum,exSqrtFrac,exPunto],
+  u1:[exRadDeg,exRadDeg,exRadDeg,exAngoliNot],
+  u2:[exQuadrante,exEquiv,exSegniQ],
+  u3:[exAssi,exAssi,exSegniQ],
+  u4:[exTan],
+  u5:[exRel]
+};
+const UNITS={u0:'0 · Da sapere prima',u1:'1 · Gradi e radianti',u2:'2 · Angoli orientati e circonferenza goniometrica',u3:'3 · Seno e coseno',u4:'4 · Tangente e cotangente',u5:'5 · Le relazioni fondamentali'};
+const PROVA_PLAN={u0:1,u1:4,u2:3,u3:2,u4:2,u5:3};
+
+/* ========== CONTENUTI FISSI (Goniometria 4 ES: prima parte) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const M=t=>`<span class="m">${t}</span>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const PI=(n,d)=>ang(n,d);
+
+const CONT={
+u0:{
+ cose:`<div class="box bia"><p>Prima di cominciare con la goniometria ripassiamo <b>quattro cose</b> che userai in quasi tutti gli esercizi: le frazioni con il π, le radici di frazioni, il piano cartesiano e i quadranti. Sono cose che hai già visto, ma è qui che si sbaglia di più.</p></div>`,
+ ricette:[
+  card('blu','1 · Somma di frazioni con π',stepsHtml([
+   'Le frazioni devono avere lo <b>stesso denominatore</b>: trova il <b>m.c.m.</b> dei denominatori.',
+   'Trasforma ogni frazione (moltiplica sopra e sotto per lo stesso numero) e <b>somma i numeratori</b>, il denominatore resta uguale.',
+   '<b>Semplifica</b> se puoi (dividi sopra e sotto per lo stesso numero).'])+'<p class="m">'+PI(2,3)+' + '+PI(1,6)+' = '+F('4π','6')+' + '+F('π','6')+' = '+F('5π','6')+'</p><p class="note">Il π si tratta come una lettera: 4π + π = 5π. Non si fa mai “sopra + sopra e sotto + sotto”.</p>'),
+  card('ver','2 · Radice di una frazione',
+   '<p>La radice di una frazione è la radice del numeratore diviso la radice del denominatore.</p><p class="m">√'+F(9,25)+' = '+F('√9','√25')+' = '+F(3,5)+'</p><p>Ti serve per la prima relazione fondamentale: sen α = ± √(1 − cos²α).</p>'),
+  card('gia','3 · Piano cartesiano e quadranti',
+   '<p>Un punto si scrive <b>P(x ; y)</b>: il primo numero è l\'<b>ascissa</b> (asse orizzontale x), il secondo l\'<b>ordinata</b> (asse verticale y).</p><p>I <b>quadranti</b> si contano in senso <b>antiorario</b> partendo da quello in alto a destra:</p>'+TAB(['Quadrante','x','y'],[['1°','+','+'],['2°','−','+'],['3°','−','−'],['4°','+','−']])),
+  card('ros','4 · Regola dei segni e proporzioni',
+   '<p><b>Moltiplicazione e divisione</b>: segni uguali → più, segni diversi → meno.</p><p><b>Frazione con segno</b>: −'+F(3,5)+' = '+F('−3',5)+' = '+F(3,'−5')+'. Il segno meno si può mettere davanti alla frazione.</p><p><b>Proporzione</b> a : b = c : d → il prodotto dei termini <b>medi</b> è uguale al prodotto dei termini <b>estremi</b>: b·c = a·d.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi</h3>
+ <p>${PI(1,3)} + ${PI(1,6)} = ${F('2π','6')} + ${F('π','6')} = ${F('3π','6')} = <b>${PI(1,2)}</b></p>
+ <p>√${F(16,25)} = ${F('√16','√25')} = <b>${F(4,5)}</b></p>
+ <p>P(−2 ; 3): x negativa e y positiva → <b>2° quadrante</b>.</p>
+ <p>${F('−3','5')} · ${F('5','4')} = ${F('−15','20')} = <b>${fh(-3,4)}</b></p></div>`,
+ errori:['Sommi le frazioni “sopra con sopra e sotto con sotto”: π/3 + π/6 non fa 2π/9.','Dimentichi di semplificare il risultato.','Confondi x e y: l\'ascissa viene <b>prima</b>.','Conti i quadranti in senso orario: è <b>antiorario</b>.'],
+ orale:[],
+ quiz:[
+  ['Per sommare π/3 + π/6 il denominatore comune è...','6',['9','3','18'],'Il m.c.m. di 3 e 6 è 6: 2π/6 + π/6 = 3π/6 = π/2.'],
+  ['La radice di 9/25 è...','3/5',['9/5','3/25','81/625'],'Radice del numeratore su radice del denominatore: 3/5.'],
+  ['Il punto P(−2 ; −5) si trova nel...','3° quadrante',['1° quadrante','2° quadrante','4° quadrante'],'x e y sono entrambe negative: 3° quadrante.'],
+  ['Il primo numero di un punto P(x ; y) si chiama...','ascissa',['ordinata','quadrante','origine'],'L\'ascissa è x, l\'ordinata è y.'],
+ ]
+},
+u1:{
+ cose:`<div class="box bia"><p>Un <b>angolo</b> si può misurare in due modi. Nei <b>gradi sessagesimali</b> l'unità è il <b>grado</b> (°), cioè la 360ª parte dell'angolo giro. Nei <b>radianti</b> (rad) l'unità è il <b>radiante</b>: l'angolo al centro di una circonferenza che sottende un arco lungo <b>quanto il raggio</b>.</p>
+ <p>Per la goniometria si usano soprattutto i radianti. Devi saper passare da un'unità all'altra.</p></div>`,
+ ricette:[
+  card('blu','A · Gli angoli da conoscere',
+   '<p>L\'<b>angolo giro</b> misura 360° e in radianti è <b>2π</b> (perché la circonferenza è lunga 2πr, cioè 2π raggi).</p><p>L\'<b>angolo piatto</b> misura 180° e in radianti è <b>π</b>. L\'<b>angolo retto</b> misura 90° e in radianti è <b>'+PI(1,2)+'</b>.</p><p class="note">Un radiante vale circa 57° (57,3°).</p>'),
+  card('ver','B · Le formule di conversione',
+   '<p>Gradi e radianti sono proporzionali: '+M('α° : α<sub>rad</sub> = 360° : 2π')+'</p>'+
+   '<p>Da cui si ricavano le due formule:</p><p class="m">α° = α<sub>rad</sub> · '+F('180°','π')+'</p><p class="m">α<sub>rad</sub> = α° · '+F('π','180°')+'</p>'),
+  card('gia','C · I passi',stepsHtml([
+   '<b>Gradi → radianti</b>: moltiplica i gradi per '+F('π','180')+'. Poi <b>semplifica</b> la frazione. Esempio: 60° · '+F('π','180')+' = '+F('60π','180')+' = '+PI(1,3)+'.',
+   '<b>Radianti → gradi</b>: moltiplica i radianti per '+F('180°','π')+'. Il π si <b>semplifica</b>. Esempio: '+PI(3,4)+' → 180° : 4 = 45°, poi 45° · 3 = 135°.',
+   '<b>Controllo</b>: π vale 180°. Se hai ottenuto più di 2π (360°) o meno di 0, riguarda.'])),
+  card('ros','D · Tabella degli angoli',TAB(['Gradi','0°','30°','45°','60°','90°','120°','135°','150°','180°'],[['Radianti','0',PI(1,6),PI(1,4),PI(1,3),PI(1,2),PI(2,3),PI(3,4),PI(5,6),'π']])+TAB(['Gradi','210°','225°','240°','270°','300°','315°','330°','360°'],[['Radianti',PI(7,6),PI(5,4),PI(4,3),PI(3,2),PI(5,3),PI(7,4),PI(11,6),'2π']])+'<p class="note">La seconda riga continua la tabella oltre l\'angolo piatto: sono multipli degli stessi angoli (in più rispetto alla dispensa).</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · a quanti gradi corrisponde 1 radiante?</h3>
+ <p>Uso la prima formula con α<sub>rad</sub> = 1:</p><p class="m">α° = 1 · ${F('180°','π')} ≈ 57°</p></div>
+ <div class="box bia"><h3>Esempio 2 · 60° in radianti</h3>
+ <p><b>1.</b> Moltiplico per ${F('π','180')}: <span class="m">60° · ${F('π','180')} = ${F('60π','180')}</span></p>
+ <p><b>2.</b> Semplifico dividendo sopra e sotto per 60:</p><p class="m">${F('60π','180')} = <b>${PI(1,3)}</b></p></div>
+ <div class="box bia"><h3>Esempio 3 · ${PI(5,6)} in gradi</h3>
+ <p><b>1.</b> Moltiplico per ${F('180°','π')}: il π sopra e il π sotto si semplificano.</p>
+ <p><b>2.</b> 180° : 6 = 30°, poi 30° · 5 = <b>150°</b>.</p></div>
+ <div class="box bia"><h3>Esempio 4 · un angolo meno comune</h3>
+ <p>Converti 72° in radianti: <span class="m">72° · ${F('π','180')} = ${F('72π','180')}</span>. Divido sopra e sotto per 36: <span class="m">= <b>${PI(2,5)}</b></span></p></div>`,
+ errori:['Moltiplichi per la frazione sbagliata: per andare a <b>radianti</b> serve π/180, per andare a <b>gradi</b> serve 180/π.','Non semplifichi: 60π/180 va semplificato in π/3.','Dimentichi che π = 180°: nelle frazioni con π ricordati che “π” sono 180°.','Scrivi i radianti senza π quando serve (60° non è “1/3”, ma π/3).'],
+ orale:[
+  ['Che cos\'è un radiante? Quanto misurano l\'angolo giro e l\'angolo piatto?','Il radiante è l\'angolo al centro di una circonferenza che sottende un arco lungo quanto il raggio. L\'angolo giro misura 2π radianti e l\'angolo piatto misura π radianti.'],
+  ['Come si passa dai gradi ai radianti e viceversa?','I gradi e i radianti sono proporzionali: alfa in gradi sta ad alfa in radianti come 360 sta a 2π. Dai gradi ai radianti moltiplico per π diviso 180. Dai radianti ai gradi moltiplico per 180 diviso π. Per esempio 60 gradi sono π terzi radianti.'],
+ ],
+ quiz:[
+  ['L\'angolo piatto misura in radianti...','π',['2π','π/2','π/4'],'180° corrispondono a π radianti.'],
+  ['Un radiante è l\'angolo al centro che sottende un arco lungo...','quanto il raggio',['quanto il diametro','quanto la circonferenza','π volte il raggio'],'Questa è la definizione di radiante.'],
+  ['Per passare da gradi a radianti si moltiplica per...','π/180',['180/π','π/360','2π'],'α_rad = α° · π/180°.'],
+  ['90° in radianti sono...','π/2',['π','π/4','2π'],'90° · π/180 = π/2.'],
+  ['L\'angolo giro misura...','2π rad',['π rad','π/2 rad','4π rad'],'360° = 2π rad.'],
+ ]
+},
+u2:{
+ cose:`<div class="box bia"><p>Un angolo è <b>orientato</b> quando si scelgono un <b>lato origine</b> e un <b>senso di rotazione</b>. Se la rotazione va in senso <b>antiorario</b> (contrario alle lancette) l'angolo è <b>positivo</b>; se va in senso <b>orario</b> è <b>negativo</b>.</p>
+ <p>La <b>circonferenza goniometrica</b> è la circonferenza con centro nell'origine O e raggio 1, di equazione <b>x² + y² = 1</b>. Il punto <b>E(1 ; 0)</b> si chiama <b>origine degli archi</b>: da lì si misurano gli angoli.</p></div>`,
+ ricette:[
+  card('blu','A · Angoli positivi, negativi e più di un giro',stepsHtml([
+   'Parti dal lato origine (l\'asse x positivo) e ruota: <b>antiorario = +</b>, <b>orario = −</b>.',
+   'Un angolo può essere <b>più grande di un giro</b> (più di 2π) o più piccolo di −2π.',
+   'Gli angoli <b>α + 2kπ</b> (con k intero: …, −2, −1, 0, 1, 2, …) sono <b>equivalenti</b> ad α: arrivano nello <b>stesso punto</b> della circonferenza.'])),
+  card('ver','B · Dove cade un angolo (i 3 passi)',stepsHtml([
+   '<b>Porta l\'angolo tra 0 e 2π</b>: se è maggiore di 2π <b>togli</b> giri interi (2π, 4π…); se è negativo <b>aggiungi</b> giri interi. Esempio: '+PI(13,6)+' − 2π = '+PI(1,6)+'.',
+   '<b>Confronta</b> con i punti importanti: 0, '+PI(1,2)+', π, '+PI(3,2)+', 2π.',
+   '<b>Scrivi la posizione</b>: tra 0 e '+PI(1,2)+' → 1° quadrante · tra '+PI(1,2)+' e π → 2° · tra π e '+PI(3,2)+' → 3° · tra '+PI(3,2)+' e 2π → 4°.'])),
+  card('gia','C · Gli assi sulla circonferenza',TAB(['Angolo','0','π/2','π','3π/2','2π'],[['Punto B','E(1 ; 0)','(0 ; 1)','(−1 ; 0)','(0 ; −1)','E(1 ; 0)'],['Posizione','asse x +','asse y +','asse x −','asse y −','asse x +']])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · gli angoli della dispensa</h3><p>Sulla circonferenza goniometrica: ${PI(1,6)} è nel 1° quadrante; ${PI(5,4)} è nel 3° quadrante (tra π e 3π/2); −${PI(1,3)} è un angolo negativo, che cade nel 4° quadrante.</p>${circGon(1/6,{small:true})}${circGon(5/4,{small:true})}${circGon(-1/3,{small:true})}</div>
+ <div class="box bia"><h3>Esempio 2 · angolo maggiore di un giro</h3><p>In quale quadrante cade ${PI(13,6)}?</p>
+ <p><b>1.</b> Tolgo un giro: ${PI(13,6)} − 2π = ${F('13π','6')} − ${F('12π','6')} = ${PI(1,6)}</p>
+ <p><b>2.</b> ${PI(1,6)} è tra 0 e ${PI(1,2)}: <b>1° quadrante</b>.</p></div>
+ <div class="box bia"><h3>Esempio 3 · angolo negativo</h3><p>Angolo equivalente a −${PI(1,3)} tra 0 e 2π:</p><p class="m">−${PI(1,3)} + 2π = −${F('π','3')} + ${F('6π','3')} = ${PI(5,3)}</p></div>`,
+ errori:['Con un angolo negativo ruoti in senso <b>antiorario</b>: è <b>orario</b>.','Togli π invece di 2π: un giro intero è <b>2π</b>.','Sbagli quadrante perché non confronti con π/2, π e 3π/2.','Dimentichi di portare l\'angolo tra 0 e 2π prima di decidere.'],
+ orale:[
+  ['Che cos\'è un angolo orientato?','È un angolo in cui sono stati scelti un lato origine e un senso di rotazione. È positivo se la rotazione è in senso antiorario, negativo se è in senso orario. Può essere anche maggiore di un angolo giro.'],
+  ['Che cos\'è la circonferenza goniometrica?','È la circonferenza con centro nell\'origine e raggio 1, di equazione x al quadrato più y al quadrato uguale a 1. Il punto E di coordinate 1 e 0 si chiama origine degli archi, e da lì si misurano gli angoli.'],
+  ['Che cosa significa che due angoli sono equivalenti?','Che differiscono per un numero intero di angoli giro: alfa più 2 k pi greco. Arrivano nello stesso punto della circonferenza.'],
+ ],
+ quiz:[
+  ['Un angolo orientato è negativo quando la rotazione è in senso...','orario',['antiorario','verticale','casuale'],'Antiorario = positivo, orario = negativo.'],
+  ['L\'equazione della circonferenza goniometrica è...','x² + y² = 1',['x² + y² = 2','x + y = 1','x² − y² = 1'],'Centro nell\'origine, raggio 1.'],
+  ['Il punto E, origine degli archi, ha coordinate...','(1 ; 0)',['(0 ; 1)','(−1 ; 0)','(0 ; 0)'],'E si trova sull\'asse x, a distanza 1 dall\'origine.'],
+  ['13π/6 è equivalente a...','π/6',['π/3','7π/6','5π/6'],'13π/6 − 2π = π/6.'],
+  ['Gli angoli α + 2kπ, con k intero, sono...','equivalenti ad α',['opposti ad α','sempre negativi','uguali a π'],'Differiscono per giri interi: stesso punto.'],
+ ]
+},
+u3:{
+ cose:`<div class="box bia"><p>Prendi la circonferenza goniometrica e un angolo orientato α. Il lato termine dell'angolo incontra la circonferenza in un punto <b>B</b>. Le coordinate di B danno <b>seno e coseno</b>:</p>
+ <p class="m">cos α = x<sub>B</sub> (l'<b>ascissa</b> di B) &nbsp;&nbsp; sen α = y<sub>B</sub> (l'<b>ordinata</b> di B)</p>
+ <p>Cioè B = (cos α ; sen α). Il coseno si legge sull'asse orizzontale, il seno su quello verticale.</p>${circGon(1/3,{proj:true})}</div>`,
+ ricette:[
+  card('blu','A · Leggere seno e coseno sulla circonferenza',stepsHtml([
+   'Disegna (o immagina) l\'angolo sulla circonferenza e trova il punto <b>B</b>.',
+   'Il <b>coseno</b> è la x di B: guarda quanto B è a destra (+) o a sinistra (−) dell\'asse y.',
+   'Il <b>seno</b> è la y di B: guarda quanto B è in alto (+) o in basso (−) rispetto all\'asse x.'])),
+  card('ver','B · Il seno e il coseno stanno sempre tra −1 e 1',
+   '<p>Il raggio è 1, quindi B non può uscire dal quadrato tra −1 e 1:</p><p class="m">−1 ≤ sen α ≤ 1 &nbsp;&nbsp; −1 ≤ cos α ≤ 1</p><p>Quindi sen α = 2 oppure cos α = −1,5 sono <b>impossibili</b>.</p>'),
+  card('gia','C · Segni nei quadranti',TAB(['Quadrante','cos α (x)','sen α (y)'],[['1°','+','+'],['2°','−','+'],['3°','−','−'],['4°','+','−']])),
+  card('ros','D · Valori agli assi (da sapere a memoria)',TAB(['α','0','π/2','π','3π/2','2π'],[['cos α','1','0','−1','0','1'],['sen α','0','1','0','−1','0']])+'<p class="note">In più (non è nella dispensa): per 30°, 45°, 60° si usano '+F(1,2)+', '+F('√2','2')+', '+F('√3','2')+'. Sen 30° = '+F(1,2)+', sen 45° = '+F('√2','2')+', sen 60° = '+F('√3','2')+'; il coseno è al contrario.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · valori agli assi</h3><p>Calcola sen ${PI(5,2)}.</p>
+ <p><b>1.</b> Tolgo un giro: ${PI(5,2)} − 2π = ${PI(1,2)}.</p>
+ <p><b>2.</b> ${PI(1,2)} è l'asse y positivo: B(0 ; 1).</p>
+ <p><b>3.</b> Il seno è la y: <span class="m">sen ${PI(5,2)} = <b>1</b></span></p>${circGon(1/2,{proj:true,axesVals:true})}</div>
+ <div class="box bia"><h3>Esempio 2 · segno di seno e coseno</h3><p>α = ${PI(5,4)}: è nel 3° quadrante (tra π e 3π/2). Lì x e y sono negative: <b>cos α &lt; 0 e sen α &lt; 0</b>.</p>${circGon(5/4,{proj:true})}</div>`,
+ errori:['Scambi seno e coseno: <b>coseno = x</b> (ascissa), <b>seno = y</b> (ordinata). Il coseno viene prima, come la x.','Dimentichi di ridurre l\'angolo: sen 5π/2 non è 5π/2, è sen π/2 = 1.','Scrivi valori fuori dall\'intervallo [−1 ; 1].','Sbagli il segno nel 2° e 4° quadrante.'],
+ orale:[
+  ['Come si definiscono seno e coseno di un angolo?','Si prende la circonferenza goniometrica e il punto B in cui il lato termine dell\'angolo incontra la circonferenza. Il coseno di alfa è l\'ascissa di B e il seno di alfa è l\'ordinata di B.'],
+  ['Tra quali valori variano seno e coseno?','Tra meno 1 e 1, perché il raggio della circonferenza è 1 e quindi ascissa e ordinata di B non possono superare 1 in valore assoluto.'],
+ ],
+ quiz:[
+  ['Il coseno di un angolo è...','l\'ascissa del punto B',['l\'ordinata del punto B','il raggio','il rapporto y/x'],'cos α = x_B.'],
+  ['Il seno di un angolo è...','l\'ordinata del punto B',['l\'ascissa del punto B','sempre positivo','sempre 1'],'sen α = y_B.'],
+  ['Quale valore NON può avere il seno?','1,5',['−1','0','0,5'],'Il seno sta tra −1 e 1.'],
+  ['Quanto vale cos π?','−1',['0','1','π'],'B(−1 ; 0): la x vale −1.'],
+  ['Quanto vale sen 3π/2?','−1',['0','1','3π/2'],'B(0 ; −1): la y vale −1.'],
+ ]
+},
+u4:{
+ cose:`<div class="box bia"><p>La <b>tangente</b> e la <b>cotangente</b> sono due rapporti tra le coordinate del punto B:</p>
+ <p class="m">tan α = ${F('y<sub>B</sub>','x<sub>B</sub>')} &nbsp;&nbsp; cot α = ${F('x<sub>B</sub>','y<sub>B</sub>')}</p>
+ <p>Esistono solo quando il denominatore <b>non è zero</b> (non si può dividere per 0). La cotangente è l'<b>inverso</b> della tangente: cot α = ${F(1,'tan α')}.</p></div>`,
+ ricette:[
+  card('blu','A · La tangente',stepsHtml([
+   'La tangente è il <b>rapporto</b> tra l\'<b>ordinata</b> e l\'<b>ascissa</b> di B: <b>tan α = y<sub>B</sub> : x<sub>B</sub></b>.',
+   '<b>Non esiste</b> quando x<sub>B</sub> = 0, cioè quando B è sull\'<b>asse y</b>: per <b>α = π/2 + kπ</b> (k intero).',
+   'Si può leggere anche come <b>y<sub>T</sub></b>: T è il punto in cui il lato termine (prolungato) incontra la retta tangente alla circonferenza in E.'])),
+  card('ver','B · La cotangente',stepsHtml([
+   'cot α = <b>x<sub>B</sub> : y<sub>B</sub></b>, cioè l\'<b>inverso</b> della tangente: cot α = '+F(1,'tan α')+'.',
+   '<b>Non esiste</b> quando y<sub>B</sub> = 0, cioè quando B è sull\'<b>asse x</b>: per <b>α = kπ</b> (k intero).',
+   'Come ordinata/ascissa: cot α = <b>x<sub>Q</sub></b>, con Q il punto in cui il lato termine incontra la tangente in (0 ; 1).'])+'<p class="note">Attenzione: nella dispensa c\'è scritto “α ≠ kπ/2” per la cotangente. È un refuso: la cotangente non esiste quando y<sub>B</sub> = 0, cioè per α = kπ (0, π, 2π…).</p>'),
+  card('gia','C · Valori agli assi e segni',TAB(['α','0','π/2','π','3π/2'],[['tan α','0','non esiste','0','non esiste'],['cot α','non esiste','0','non esiste','0']])+TAB(['Quadrante','1°','2°','3°','4°'],[['tan α','+','−','+','−'],['cot α','+','−','+','−']])),
+  card('ros','D · Se conosci seno e coseno',stepsHtml(['Scrivi la formula: tan α = '+F('sen α','cos α')+' (oppure cot α = '+F('cos α','sen α')+').','Dividere per una frazione vuol dire <b>moltiplicare per la frazione capovolta</b>.','Semplifica e controlla il <b>segno</b> (segni uguali → +, diversi → −).'])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · seno e coseno noti</h3><p>Se sen α = ${fh(3,5)} e cos α = ${fh(4,5)}, quanto vale tan α?</p>
+ <p class="m">tan α = ${fh(3,5)} : ${fh(4,5)} = ${fh(3,5)} · ${fh(5,4)} = <b>${fh(3,4)}</b></p><p>I denominatori 5 si semplificano. E la cotangente è l'inverso: cot α = <b>${fh(4,3)}</b>.</p></div>
+ <div class="box bia"><h3>Esempio 2 · angoli sugli assi</h3><p>tan π = ? B(−1 ; 0): tan = ${F('0','−1')} = <b>0</b>.</p><p>tan ${PI(1,2)} = ? B(0 ; 1): x<sub>B</sub> = 0, quindi la tangente <b>non esiste</b>.</p></div>
+ <div class="box bia"><h3>Esempio 3 · il disegno</h3>${circGon(1/6,{proj:true})}<p>Il rapporto tra y<sub>B</sub> (il segmento verde) e x<sub>B</sub> (il segmento blu) è la tangente.</p></div>`,
+ errori:['Scrivi tan = x/y (al contrario): la tangente è <b>y diviso x</b>.','Scrivi che tan(π/2) = 0: <b>non esiste</b>.','Dimentichi di capovolgere la frazione quando dividi.','Sbagli il segno: tan e cot sono positive nel 1° e 3° quadrante.'],
+ orale:[
+  ['Come si definiscono tangente e cotangente? Quando esistono?','La tangente di alfa è il rapporto tra l\'ordinata e l\'ascissa del punto B, quando esiste. Non esiste quando l\'ascissa è zero, cioè per alfa uguale a pi greco mezzi più k pi greco. La cotangente è il rapporto tra l\'ascissa e l\'ordinata, cioè l\'inverso della tangente, e non esiste quando l\'ordinata è zero, cioè per alfa uguale a k pi greco.'],
+ ],
+ quiz:[
+  ['La tangente è il rapporto tra...','ordinata e ascissa di B',['ascissa e ordinata di B','seno e seno','raggio e ascissa'],'tan α = y_B / x_B.'],
+  ['La tangente NON esiste per α =...','π/2',['0','π','2π'],'In π/2 B è sull\'asse y: x_B = 0.'],
+  ['Quanto vale tan π?','0',['1','non esiste','−1'],'B(−1 ; 0): tan = 0 / (−1) = 0.'],
+  ['La cotangente è...','l\'inverso della tangente',['uguale alla tangente','l\'opposto del seno','sempre 1'],'cot α = 1 / tan α.'],
+  ['Se tan α = 3/4, quanto vale cot α?','4/3',['−3/4','3/4','−4/3'],'Si capovolge la frazione.'],
+ ]
+},
+u5:{
+ cose:`<div class="box bia"><p>Le <b>relazioni fondamentali</b> collegano seno, coseno e tangente. Sono la parte più importante da usare nei problemi: se conosci un valore (e il quadrante) puoi trovare gli altri.</p>
+ <p class="m">cos²α + sen²α = 1 &nbsp;&nbsp;&nbsp; tan α = ${F('sen α','cos α')}</p>
+ <p class="note">Nella dispensa, nella seconda relazione c'è un refuso: c'è scritto y<sub>B</sub> = cos α e x<sub>B</sub> = sen α. È il contrario: <b>x<sub>B</sub> = cos α</b> e <b>y<sub>B</sub> = sen α</b>.</p></div>`,
+ ricette:[
+  card('blu','A · Prima relazione fondamentale',
+   '<p>B(cos α ; sen α) sta sulla circonferenza x² + y² = 1, quindi (teorema di Pitagora):</p><p class="m">cos²α + sen²α = 1</p><p>Da qui:</p><p class="m">sen α = ± √(1 − cos²α) &nbsp;&nbsp; cos α = ± √(1 − sen²α)</p><p>Il segno ± si sceglie guardando il <b>quadrante</b>.</p>'),
+  card('ver','B · Seconda relazione fondamentale',
+   '<p class="m">tan α = '+F('sen α','cos α')+'</p><p>La cotangente è l\'inverso: <span class="m">cot α = '+F('cos α','sen α')+'</span>.</p>'),
+  card('gia','C · I passi per i problemi',stepsHtml([
+   '<b>Scrivi i dati</b>: il valore che conosci (per esempio cos α = '+fh(3,5)+') e il <b>quadrante</b>.',
+   'Usa la prima relazione: <b>sen²α = 1 − cos²α</b>. Calcola il quadrato, scrivi 1 come frazione con lo stesso denominatore e sottrai.',
+   '<b>Fai la radice</b> e metti ±. Poi scegli il <b>segno</b> con il quadrante (sen + nel 1° e 2°, − nel 3° e 4°; cos + nel 1° e 4°, − nel 2° e 3°).',
+   'Se serve la tangente: <b>tan α = sen α : cos α</b> (moltiplica per la frazione capovolta).'])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempio completo</h3><p>Sapendo che cos α = ${fh(3,5)} e che α è nel 1° quadrante, calcola sen α e tan α.</p>
+ <p><b>1.</b> sen²α = 1 − cos²α = 1 − (${fh(3,5)})² = ${F(25,25)} − ${F(9,25)} = ${F(16,25)}</p>
+ <p><b>2.</b> sen α = ± √${F(16,25)} = ± ${fh(4,5)}. Nel 1° quadrante il seno è positivo: <b>sen α = ${fh(4,5)}</b></p>
+ <p><b>3.</b> tan α = sen α : cos α = ${fh(4,5)} : ${fh(3,5)} = ${fh(4,5)} · ${fh(5,3)} = <b>${fh(4,3)}</b></p></div>
+ <div class="box bia"><h3>Esempio · il segno conta</h3><p>Se cos α = ${fh(-3,5)} e α è nel 2° quadrante: sen²α = ${F(16,25)} come prima, ma nel 2° quadrante il seno è positivo, quindi sen α = ${fh(4,5)} e tan α = ${fh(4,5)} : ${fh(-3,5)} = <b>${fh(-4,3)}</b> (negativa nel 2° quadrante).</p></div>`,
+ errori:['Dimentichi il segno ±, oppure scegli il segno senza guardare il quadrante.','Calcoli (−3/5)² come −9/25: il quadrato è <b>sempre positivo</b> (9/25).','Sottrai male: 1 − 9/25 non è 8/25. Scrivi 1 = 25/25: 25/25 − 9/25 = 16/25.','Nella tangente scambi seno e coseno.'],
+ orale:[
+  ['Scrivi e spiega la prima relazione fondamentale.','Il punto B di coordinate coseno alfa e seno alfa sta sulla circonferenza goniometrica, quindi soddisfa x al quadrato più y al quadrato uguale a 1, cioè coseno al quadrato di alfa più seno al quadrato di alfa uguale a 1. Si dimostra con il teorema di Pitagora. Da qui, se conosco il coseno, trovo il seno come più o meno la radice di 1 meno coseno al quadrato.'],
+  ['Scrivi la seconda relazione fondamentale.','La tangente di alfa è uguale al seno di alfa diviso il coseno di alfa, quando il coseno non è zero.'],
+ ],
+ quiz:[
+  ['La prima relazione fondamentale è...','cos²α + sen²α = 1',['cos α + sen α = 1','cos²α − sen²α = 1','cos α · sen α = 1'],'Deriva dal teorema di Pitagora sulla circonferenza goniometrica.'],
+  ['La seconda relazione fondamentale è...','tan α = sen α / cos α',['tan α = cos α / sen α','tan α = sen α · cos α','tan α = 1 − cos α'],'La tangente è y_B diviso x_B, cioè seno su coseno.'],
+  ['Se cos α = 3/5, allora sen²α vale...','16/25',['9/25','4/5','1/5'],'1 − 9/25 = 25/25 − 9/25 = 16/25.'],
+  ['Per scegliere il segno di sen α nella formula ± √(1 − cos²α) si guarda...','il quadrante',['il valore del coseno','il raggio','il segno di tan α'],'Il seno è positivo nel 1° e 2° quadrante, negativo nel 3° e 4°.'],
+  ['In quale quadrante il coseno è negativo e il seno positivo?','2° quadrante',['1° quadrante','3° quadrante','4° quadrante'],'x negativa e y positiva: 2° quadrante.'],
+ ]
+}
+};
+
+const GLOSS=[
+['Angolo orientato','Un angolo con un lato origine e un senso di rotazione: positivo se antiorario, negativo se orario.'],
+['Grado sessagesimale','L\'unità di misura degli angoli pari alla 360ª parte dell\'angolo giro.'],
+['Radiante','L\'angolo al centro di una circonferenza che sottende un arco lungo quanto il raggio. Angolo giro = 2π rad.'],
+['Angoli equivalenti','Angoli che differiscono per un numero intero di giri (α + 2kπ): arrivano nello stesso punto.'],
+['Circonferenza goniometrica','Circonferenza con centro nell\'origine e raggio 1: x² + y² = 1.'],
+['Origine degli archi','Il punto E(1 ; 0) da cui si misurano gli angoli sulla circonferenza goniometrica.'],
+['Lato origine / lato termine','Il lato da cui parte la rotazione e il lato dove arriva (il punto B sulla circonferenza).'],
+['Seno','L\'ordinata del punto B: sen α = y_B.'],
+['Coseno','L\'ascissa del punto B: cos α = x_B.'],
+['Tangente','Il rapporto y_B / x_B = sen α / cos α, quando esiste.'],
+['Cotangente','Il rapporto x_B / y_B = 1 / tan α, quando esiste.'],
+['Ascissa e ordinata','La x e la y di un punto. L\'ascissa viene prima.'],
+['Quadrante','Una delle 4 parti del piano cartesiano, numerate in senso antiorario.'],
+['Relazione fondamentale','Una formula sempre vera che collega seno, coseno e tangente: cos²α + sen²α = 1, tan α = sen α / cos α.'],
+];
+
+const FORMULARIO=`
+<div class="box blu"><h3>Gradi e radianti</h3><p class="m">α° = α<sub>rad</sub> · ${F('180°','π')} &nbsp;&nbsp; α<sub>rad</sub> = α° · ${F('π','180°')}</p><p class="m">360° = 2π &nbsp; 180° = π &nbsp; 90° = ${PI(1,2)} &nbsp; 60° = ${PI(1,3)} &nbsp; 45° = ${PI(1,4)} &nbsp; 30° = ${PI(1,6)}</p></div>
+<div class="box ver"><h3>Circonferenza goniometrica</h3><p class="m">x² + y² = 1 &nbsp;&nbsp; E(1 ; 0) &nbsp;&nbsp; B(cos α ; sen α)</p><p>Antiorario = + · Orario = − · α e α + 2kπ sono equivalenti.</p><p>Quadranti: 1° (+,+), 2° (−,+), 3° (−,−), 4° (+,−).</p></div>
+<div class="box gia"><h3>Seno e coseno</h3><p class="m">cos α = x<sub>B</sub> &nbsp;&nbsp; sen α = y<sub>B</sub> &nbsp;&nbsp; −1 ≤ sen α, cos α ≤ 1</p>${TAB(['α','0','π/2','π','3π/2','2π'],[['cos α','1','0','−1','0','1'],['sen α','0','1','0','−1','0']])}</div>
+<div class="box ros"><h3>Tangente e cotangente</h3><p class="m">tan α = ${F('y<sub>B</sub>','x<sub>B</sub>')} = ${F('sen α','cos α')} &nbsp;&nbsp; cot α = ${F('x<sub>B</sub>','y<sub>B</sub>')} = ${F(1,'tan α')}</p><p>tan non esiste per α = π/2 + kπ · cot non esiste per α = kπ</p></div>
+<div class="box blu"><h3>Relazioni fondamentali</h3><p class="m">cos²α + sen²α = 1</p><p class="m">sen α = ± √(1 − cos²α) &nbsp;&nbsp; cos α = ± √(1 − sen²α)</p><p>Il segno ± si sceglie con il quadrante.</p></div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('gon_prog_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('gon_prog_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+</script>
+</body></html>
