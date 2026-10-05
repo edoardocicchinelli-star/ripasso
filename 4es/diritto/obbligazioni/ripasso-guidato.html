@@ -160,12 +160,12 @@ const exRequisiti=fromCases('Requisiti della prestazione',[
  ()=>{const[a,b]=names(2),s=pick([300,500,1000]);return{q:`${a} si obbliga a pagare ${eur(s)} a ${b} entro il 30 giugno. Quali requisiti ha la prestazione?`,a:'È possibile, determinata e lecita',w:['Non è determinata','È illecita'],t:`Pagare una somma precisa è possibile, la somma è determinata e il pagamento è lecito: la prestazione è valida.`}},
 ]);
 const exNaturale=fromCases('Obbligazione naturale',[
- ()=>{const[a,b]=names(2);return{q:`${a} ha pagato spontaneamente a ${b} un debito di gioco non autorizzato. Può ora chiedere i soldi indietro?`,a:'No, perché il pagamento spontaneo di un’obbligazione naturale non si può ripetere',w:['Sì, sempre, davanti a un giudice','Sì, ma solo entro un mese'],t:`Il debito di gioco è un’<b>obbligazione naturale</b>: se è pagato spontaneamente, non si può chiedere indietro.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} ha pagato spontaneamente a ${b} un debito di gioco o di scommessa (senza frode, essendo capace di intendere e di volere). Può ora chiedere i soldi indietro?`,a:'No, perché il pagamento spontaneo di un’obbligazione naturale non si può ripetere',w:['Sì, sempre, davanti a un giudice','Sì, ma solo entro un mese'],t:`Il debito di gioco è un’<b>obbligazione naturale</b>: se è pagato spontaneamente, non si può chiedere indietro.`}},
  ()=>{const[a,b]=names(2);return{q:`${b} non ha pagato a ${a} un debito di gioco (obbligazione naturale). ${a} può rivolgersi a un giudice?`,a:'No, l’obbligazione naturale non è giuridicamente esigibile',w:['Sì, il giudice obbliga a pagare','Sì, ma solo con un avvocato'],t:`Nell’obbligazione naturale il creditore <b>non può</b> rivolgersi a un giudice.`}},
  ()=>{const[a,b]=names(2),s=pick([200,500,1000]);return{q:`${a} ha prestato ${eur(s)} a ${b} (contratto di prestito). ${b} non restituisce. ${a} può rivolgersi a un giudice?`,a:'Sì, è un’obbligazione giuridica',w:['No, è un’obbligazione naturale','No, deve solo aspettare'],t:`Il prestito è un’obbligazione <b>giuridica</b>: il creditore può agire in giudizio.`}},
  ()=>{const[a]=names(1);return{q:`Un dovere morale o sociale (per esempio un aiuto a un parente) che la legge non rende esigibile è…`,a:'un’obbligazione naturale',w:['un’obbligazione solidale','un’obbligazione pecuniaria'],t:`I doveri morali e sociali spontaneamente adempiuti sono tipiche obbligazioni naturali.`}},
 ]);
-const FONTE=['Contratto','Fatto illecito','Altro atto o fatto (indebito, legge, ecc.)'];
+const FONTE=['Contratto','Fatto illecito','Altro atto o fatto (indebito, arricchimento, ecc.)'];
 const exFonti=fromCases('Fonti delle obbligazioni',[
  ()=>{const[a,b]=names(2),o=pick(['un motorino','un divano','una moto','un computer']);return{q:`${a} compra ${o} da ${b} e lo paga. Da quale fonte nasce l’obbligo di pagare?`,a:FONTE[0],w:[FONTE[1],FONTE[2]],t:`Compravendita: nasce da un <b>accordo</b> tra due persone, cioè da un contratto.`}},
  ()=>{const[a,b]=names(2),o=pick(['un appartamento','una stanza','un garage']);return{q:`${a} prende in affitto ${o} da ${b} e si impegna a pagare il canone. Fonte dell’obbligazione?`,a:FONTE[0],w:[FONTE[1],FONTE[2]],t:`La locazione è un contratto.`}},
@@ -173,7 +173,6 @@ const exFonti=fromCases('Fonti delle obbligazioni',[
  ()=>{const[a,b]=names(2);return{q:`${a} urta con il motorino ${b} e gli causa una ferita. Fonte dell’obbligo di risarcire il danno?`,a:FONTE[1],w:[FONTE[0],FONTE[2]],t:`Un comportamento che causa un danno ingiusto è un fatto illecito.`}},
  ()=>{const[a,b]=names(2),s=pick([300,500,900]);return{q:`${a} riceve per errore ${eur(s)} che spettavano a ${b}. Deve restituirli. Fonte dell’obbligo?`,a:FONTE[2],w:[FONTE[0],FONTE[1]],t:`È il <b>pagamento dell’indebito</b>: un altro atto o fatto idoneo a produrre obbligazioni (art. 1173).`}},
  ()=>{const[a,b]=names(2);return{q:`${b} è in vacanza. ${a} paga una riparazione urgente al tetto di ${b} per evitare un danno. ${b} deve rimborsarlo. Fonte dell’obbligo di ${b}?`,a:FONTE[2],w:[FONTE[0],FONTE[1]],t:`È la <b>gestione di affari altrui</b>: nessun contratto e nessun illecito, ma un fatto che crea un’obbligazione.`}},
- ()=>{const[a]=names(1);return{q:`Un obbligo di legge, per esempio di mantenere i figli, da quale fonte nasce?`,a:FONTE[2],w:[FONTE[0],FONTE[1]],t:`Quando l’obbligo nasce direttamente dalla legge rientra negli “altri atti o fatti” idonei a produrre obbligazioni.`}},
 ]);
 const TCR=['Titolo di credito','Contratto','Obbligazione naturale'];
 const exTitoli=fromCases('Titoli di credito',[
@@ -266,7 +265,6 @@ const exPecuniaria=fromCases('Obbligazioni pecuniarie',[
  ()=>{const[a,b]=names(2);return{q:`${a} deve pagare 300 € a ${b}. Come si chiama questa obbligazione?`,a:'Pecuniaria',w:['Specifica','Alternativa'],t:`L’oggetto è una somma di denaro: obbligazione pecuniaria.`}},
  ()=>{const[a]=names(1);return{q:`Con quale moneta si estingue un’obbligazione pecuniaria?`,a:'Con moneta a corso legale',w:['Solo con oro','Con qualunque bene di valore uguale'],t:`Il debito di denaro si paga con la moneta che per legge deve essere accettata: oggi l’euro.`}},
  ()=>{const[a]=names(1);return{q:`Gli interessi sono rispetto al capitale un’obbligazione…`,a:'accessoria',w:['principale','naturale'],t:`Gli interessi dipendono dal debito principale: sono accessori.`}},
- ()=>{const[a]=names(1);return{q:`In quale caso la somma da restituire cambia in base all’inflazione?`,a:'Solo se le parti lo hanno pattuito (clausola di indicizzazione)',w:['Sempre, automaticamente','Mai, nemmeno se lo hanno pattuito'],t:`Il principio nominalistico è la regola; si può derogare solo con un accordo.`}},
 ]);
 const exDef=u=>()=>{
   const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
@@ -280,7 +278,7 @@ const exInadempimento=fromCases('Inadempimento',[
  ()=>{const[a,b]=names(2),s=pick([400,600,900]);return{q:`${a} consegna in ritardo la merce a ${b}, che per questo non ha potuto vendere e ha perso un guadagno di ${eur(s)}. Questo mancato guadagno è…`,a:DANNO[1],w:[DANNO[0],DANNO[2]],t:`È un guadagno che il creditore non ha potuto ottenere: <b>lucro cessante</b>.`}},
  ()=>{const[a,b]=names(2);return{q:`${a} non esegue la prestazione perché è diventata impossibile per una causa che non dipende da lui. Deve risarcire ${b}?`,a:'No, perché l’impossibilità non gli è imputabile',w:['Sì, sempre','Sì, ma solo la metà'],t:`Art. 1218: il debitore non risponde se prova che l’inadempimento è stato determinato da impossibilità derivante da causa a lui <b>non imputabile</b>.`}},
  ()=>{const[a,b]=names(2);return{q:`${a} rifiuta senza un buon motivo di ricevere la merce che ${b} gli offre nel modo corretto. Che situazione è?`,a:'Mora del creditore',w:['Mora del debitore','Adempimento esatto'],t:`Il creditore rifiuta ingiustificatamente la prestazione offerta: <b>mora del creditore</b>.`}},
- ()=>{const[a,b]=names(2);return{q:`${a}, che doveva pagare entro il 1° marzo, paga solo il 20 marzo senza una ragione valida. Si parla di…`,a:'Mora del debitore',w:['Mora del creditore','Remissione del debito'],t:`Ritardo colpevole del debitore: <b>mora del debitore</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} doveva pagare entro il 1° marzo e non ha pagato per colpa sua. ${b} lo ha diffidato per iscritto a pagare, ma ${a} paga solo il 20 marzo. Si parla di…`,a:'Mora del debitore',w:['Mora del creditore','Remissione del debito'],t:`Ritardo colpevole del debitore: <b>mora del debitore</b>.`}},
 ]);
 const CAUSE=['Compensazione','Confusione','Remissione','Novazione','Prescrizione'];
 const exEstinzione=fromCases('Estinzione',[
@@ -331,13 +329,13 @@ u2:[
  ['Fatto illecito','Comportamento che causa a qualcuno un danno ingiusto: obbliga a risarcirlo.'],
  ['Pagamento dell’indebito','Chi riceve per errore un pagamento che non gli era dovuto deve restituirlo.'],
  ['Arricchimento senza causa','Chi si arricchisce a danno di un altro senza una giustificazione deve indennizzarlo.'],
- ['Gestione di affari altrui','Chi si occupa spontaneamente di affari altrui senza esserne incaricato ha diritto al rimborso delle spese utili.'],
+ ['Gestione di affari altrui','Chi si occupa spontaneamente di affari altrui senza esserne incaricato ha diritto al rimborso delle spese necessarie o utili (se la gestione era utile).'],
  ['Titolo di credito','Documento che contiene il diritto a ottenere una prestazione: per esigerla bisogna presentarlo.']],
 u3:[
  ['Obbligazione parziaria','Ogni creditore può pretendere, o ogni debitore deve eseguire, solo la propria parte di prestazione.'],
  ['Obbligazione solidale','Ogni creditore può pretendere, o ogni debitore deve eseguire, l’intera prestazione.'],
  ['Obbligazione divisibile','La prestazione si può dividere giuridicamente in più parti.'],
- ['Obbligazione indivisibile','La prestazione non si può dividere giuridicamente.'],
+ ['Obbligazione indivisibile','La prestazione non si può dividere, per sua natura o per come l’hanno considerata le parti (art. 1316).'],
  ['Regresso','Diritto del debitore solidale che ha pagato tutto di farsi rimborsare dagli altri la loro parte.']],
 u4:[
  ['Obbligazione semplice','Ha per oggetto una sola prestazione.'],
@@ -356,7 +354,7 @@ u5:[
 u6:[
  ['Adempimento','Esatta esecuzione della prestazione dovuta: estingue l’obbligazione.'],
  ['Inadempimento','Il debitore non esegue la prestazione, o la esegue male o in ritardo.'],
- ['Mora del debitore','Ritardo colpevole del debitore nell’adempimento.'],
+ ['Mora del debitore','Ritardo imputabile al debitore nell’adempimento, di regola dopo l’intimazione scritta del creditore (art. 1219).'],
  ['Mora del creditore','Il creditore rifiuta senza motivo la prestazione offerta in modo corretto.'],
  ['Risarcimento del danno','Somma che il debitore inadempiente deve pagare per riparare il danno al creditore.'],
  ['Danno emergente','La perdita effettivamente subita dal creditore.'],
@@ -390,7 +388,7 @@ u1:{
    '<b>Lecita?</b> La legge permette di farlo? (Non una prestazione vietata).',
    'Se manca anche uno solo dei tre requisiti, la prestazione non è valida.'])),
   card('ros','4 · L’obbligazione naturale',
-   '<p>È un <b>dovere morale o sociale</b>, non giuridico. Esempio: un debito di gioco non autorizzato.</p>'+TAB(['','Che cosa succede'],[['Il creditore','non può rivolgersi a un giudice'],['Il debitore paga spontaneamente','non può chiedere indietro quanto ha pagato']])+'<p class="note">Se invece non paga, nessuno può obbligarlo.</p>'),
+   '<p>È un <b>dovere morale o sociale</b>, non giuridico. Esempio: un debito di gioco o di scommessa (art. 1933).</p>'+TAB(['','Che cosa succede'],[['Il creditore','non può rivolgersi a un giudice'],['Il debitore paga spontaneamente','non può chiedere indietro quanto ha pagato']])+'<p class="note">Se invece non paga, nessuno può obbligarlo. <b>Eccezione</b> (art. 2034 e 1933): se a pagare è un <b>incapace</b> (o nel gioco c’è stata frode) il pagamento si può chiedere indietro.</p>'),
   card('blu','5 · In più (se lo chiede l’insegnante)',
    '<p>La prestazione deve essere anche di <b>carattere patrimoniale</b>, cioè valutabile in denaro (art. 1174 del Codice civile). L’interesse del creditore può essere anche non economico.</p>'),
  ],
@@ -398,7 +396,7 @@ u1:{
  <p><b>Marco presta 200 € a Giulia.</b> Marco: <b>creditore</b>. Giulia: <b>debitore</b>. Prestazione: restituire 200 €. Diritto di <b>credito</b>: Marco dipende da Giulia.</p>
  <p><b>Luca possiede un motorino.</b> Può usarlo senza chiedere a nessuno: diritto <b>reale</b>.</p>
  <p><b>Sara promette a Paolo “qualcosa”.</b> Non si capisce cosa: manca la <b>determinatezza</b>.</p>
- <p><b>Elena paga spontaneamente un debito di gioco non autorizzato.</b> È un’obbligazione <b>naturale</b>: non può riavere i soldi.</p></div>`,
+ <p><b>Elena paga spontaneamente un debito di gioco.</b> È un’obbligazione <b>naturale</b>: non può riavere i soldi.</p></div>`,
  errori:['Confondere debitore e creditore: il debitore è chi <b>deve</b>, il creditore è chi <b>riceve</b>.','Pensare che un diritto di credito si possa far valere contro tutti: vale <b>solo contro il debitore</b>.','Dimenticare i tre requisiti della prestazione: possibile, determinata o determinabile, lecita.','Credere che nell’obbligazione naturale il creditore possa andare dal giudice: <b>non può</b>.','Dire che chi ha pagato spontaneamente un’obbligazione naturale può chiedere indietro i soldi: <b>non può</b>.'],
  orale:[
   ['Che cos’è un’obbligazione?','È un rapporto giuridico tra un debitore e un creditore: il debitore deve eseguire una prestazione e il creditore ha il diritto di pretenderla. Da un’obbligazione deriva un diritto di credito.'],
@@ -426,7 +424,7 @@ u2:{
    'Qualcuno ha causato un <b>danno ingiusto</b>? → <b>fatto illecito</b> (obbligo di risarcire).',
    'Altrimenti guarda se c’è un <b>pagamento per errore</b> (indebito), un <b>arricchimento senza giustificazione</b> o <b>qualcuno che cura spontaneamente affari altrui</b> → altri atti o fatti.'])),
   card('gia','3 · I tre “altri fatti” più importanti',
-   TAB(['Fatto','Che cosa succede'],[['Pagamento dell’indebito','chi riceve per errore un pagamento non dovuto deve restituirlo'],['Arricchimento senza causa','chi si arricchisce a danno di un altro senza giustificazione deve indennizzarlo'],['Gestione di affari altrui','chi cura spontaneamente affari altrui ha diritto al rimborso delle spese utili']])),
+   TAB(['Fatto','Che cosa succede'],[['Pagamento dell’indebito','chi riceve per errore un pagamento non dovuto deve restituirlo'],['Arricchimento senza causa','chi si arricchisce a danno di un altro senza giustificazione deve indennizzarlo nei limiti dell’arricchimento'],['Gestione di affari altrui','chi cura spontaneamente affari altrui ha diritto al rimborso delle spese necessarie o utili']])),
   card('ros','4 · I titoli di credito',stepsHtml([
    'Sono <b>documenti</b> che contengono il <b>diritto</b> a ottenere una prestazione (di solito una somma).',
    'Per esercitare il diritto bisogna <b>presentare il documento</b>.',
@@ -464,7 +462,9 @@ u3:{
    'In più, nella solidale: chi paga tutto ha il <b>regresso</b> verso gli altri per la loro parte.'])),
   card('gia','3 · Divisibile o indivisibile?',
    TAB(['Obbligazione','Caratteristica','Esempio'],[['<b>Divisibile</b>','si può dividere in più parti senza perdere valore','una somma di denaro, 100 kg di farina'],['<b>Indivisibile</b>','non si può dividere giuridicamente','un cavallo, un’auto, un appartamento']])),
-  card('ros','4 · Come non confondere',
+  card('ros','4 · In più: quale è la regola del Codice?',
+   '<p>Se più sono i debitori di una prestazione <b>divisibile</b> e l’obbligazione <b>non è solidale</b>, ciascuno risponde solo per la sua parte (art. 1314: parziaria).</p><p>Ma attenzione: se la legge o il titolo non dicono altro, i condebitori sono tenuti <b>in solido</b> (art. 1294). Nei casi dell’esercizio il testo ti dice sempre quale tipo è.</p>'),
+  card('ver','5 · Come non confondere',
    '<p><b>Parziaria / solidale</b> riguardano i <b>soggetti</b> (quante persone e chi deve cosa).</p><p><b>Divisibile / indivisibile</b> riguardano l’<b>oggetto</b> (si può spezzare o no).</p>'),
  ],
  esempio:`<div class="box bia"><h3>Esempi svolti</h3>
@@ -537,7 +537,7 @@ u5:{
    'Interessi: '+M('I = '+F('2.000 × 3 × 2','100')+' = '+F('12.000','100')+' = 120 €'),
    'Totale da restituire: 2.000 € + 120 € = <b>2.120 €</b>.'])),
   card('ros','4 · In più',
-   '<p>Gli interessi possono essere <b>corrispettivi</b> (per il godimento del denaro), <b>compensativi</b> (a compensare un mancato godimento) o <b>moratori</b> (per il ritardo). Gli interessi “sugli interessi” (<b>anatocismo</b>) sono ammessi solo a precise condizioni.</p>'),
+   '<p>Gli interessi possono essere <b>corrispettivi</b> (per il godimento del denaro), <b>compensativi</b> (compensano il godimento di un bene prima del pagamento, per esempio nella compravendita) o <b>moratori</b> (per il ritardo nel pagamento). Gli interessi “sugli interessi” (<b>anatocismo</b>) sono ammessi solo a precise condizioni.</p>'),
  ],
  esempio:`<div class="box bia"><h3>Esempi svolti</h3>
  <p><b>Luca prende 5.000 € in prestito. Dopo 5 anni i prezzi sono saliti del 20%.</b> Per il principio nominalistico restituisce <b>5.000 €</b>.</p>
@@ -568,7 +568,7 @@ u6:{
   card('ver','2 · Inadempimento e risarcimento',
    '<p>Chi non esegue esattamente la prestazione deve <b>risarcire il danno</b>, a meno che provi che l’inadempimento dipende da un’<b>impossibilità non a lui imputabile</b> (art. 1218).</p>'+TAB(['Danno','Che cos’è'],[['<b>Danno emergente</b>','la perdita subita (spese, valore perso)'],['<b>Lucro cessante</b>','il mancato guadagno']])),
   card('gia','3 · Mora',
-   TAB(['','Che cos’è'],[['Mora del debitore','ritardo colpevole nell’adempiere'],['Mora del creditore','il creditore rifiuta senza motivo la prestazione offerta correttamente']])),
+   TAB(['','Che cos’è'],[['Mora del debitore','ritardo imputabile al debitore, di regola dopo l’intimazione scritta del creditore (art. 1219)'],['Mora del creditore','il creditore rifiuta senza motivo la prestazione offerta correttamente']])),
  ],
  esempio:`<div class="box bia"><h3>Esempi svolti</h3>
  <p><b>Anna non consegna la merce e Paolo spende 500 € per comprarla altrove.</b> Quei 500 € sono <b>danno emergente</b>.</p>
@@ -620,7 +620,7 @@ const GLOSS=Object.values(DEFS).flat();
 
 const FORMULARIO=`
 <div class="box blu"><h3>Obbligazione</h3><p>Rapporto giuridico tra <b>debitore</b> (deve) e <b>creditore</b> (pretende). Oggetto: la <b>prestazione</b> (possibile, determinata o determinabile, lecita).</p><p>Diritto di credito: serve la cooperazione del debitore, difesa <b>relativa</b>.</p><p><b>Obbligazione naturale</b>: dovere morale; niente giudice, ma il pagamento spontaneo non si ripete.</p></div>
-<div class="box ver"><h3>Fonti</h3><p>Contratto · fatto illecito · altri atti o fatti (indebito, arricchimento senza causa, gestione di affari altrui, legge).</p><p>Titoli di credito: documenti che contengono il diritto (assegno, cambiale).</p></div>
+<div class="box ver"><h3>Fonti</h3><p>Contratto · fatto illecito · altri atti o fatti (indebito, arricchimento senza causa, gestione di affari altrui).</p><p>Titoli di credito: documenti che contengono il diritto (assegno, cambiale).</p></div>
 <div class="box gia"><h3>Classificazioni</h3>${TAB(['Criterio','Tipi'],[['Soggetti','<b>parziaria</b> (la propria parte) · <b>solidale</b> (l’intero)'],['Oggetto','<b>divisibile</b> · <b>indivisibile</b>'],['Prestazioni','<b>semplice</b> · <b>facoltativa</b>'],['Più prestazioni','<b>cumulativa</b> (tutte) · <b>alternativa</b> (una)'],['Beni','<b>specifica</b> (non sostituibile) · <b>generica</b> (sostituibile)']])}</div>
 <div class="box ros"><h3>Obbligazioni pecuniarie</h3><p>Moneta a corso legale · principio nominalistico (valore nominale).</p><p class="m">Interessi semplici: I = ${F('C × r × t','100')}</p><p>Gli interessi sono un’obbligazione <b>accessoria</b>.</p></div>
 <div class="box blu"><h3>In più</h3><p>Adempimento · inadempimento · risarcimento (danno emergente + lucro cessante) · mora.</p><p>Estinzione: compensazione, confusione, remissione, novazione, prescrizione (10 anni).</p><p>Garanzie: pegno (mobile), ipoteca (immobile), fideiussione (personale).</p></div>`;
@@ -794,7 +794,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 </script>
 <!--AGG--><script>
 (function(){
- var B="20261005110323",t0=Date.now(),touched=false,last=0;
+ var B="20261005110929",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;

@@ -341,12 +341,12 @@ const FR={
   ['Te pido que','richiesta (influenza) → subjuntivo'],['Me alegro de que','emozione → subjuntivo'],['Me gusta que','emozione/gusto → subjuntivo'],
   ['Tengo miedo de que','emozione → subjuntivo'],['Dudo que','dubbio → subjuntivo'],['No creo que','negazione di opinione → subjuntivo'],
   ['No pienso que','negazione di opinione → subjuntivo'],['Es importante que','giudizio impersonale → subjuntivo'],['Es necesario que','giudizio impersonale → subjuntivo'],
-  ['Es posible que','possibilità → subjuntivo'],['Es mejor que','giudizio impersonale → subjuntivo'],['Ojalá','augurio (ojalá) → subjuntivo'],
+  ['Es posible que','possibilità → subjuntivo'],['Es mejor que','giudizio impersonale → subjuntivo'],
   ['Te llamo para que','finalità (para que) → sempre subjuntivo'],['Voy a salir antes de que','antes de que → sempre subjuntivo'],
   ['No salgo a menos que','a menos que → sempre subjuntivo'],['Te lo digo con tal de que','con tal de que → sempre subjuntivo'],
   ['Es probable que','probabilità → subjuntivo'],['Mis padres no permiten que','permesso/divieto → subjuntivo'],['El profesor nos aconseja que','consiglio → subjuntivo'],
  ],
- fut:[['Cuando','cuando + azione futura → subjuntivo'],['En cuanto','en cuanto + azione futura → subjuntivo'],['Hasta que','hasta que + azione futura → subjuntivo'],['Después de que','después de que + azione futura → subjuntivo'],['Aunque','aunque + ipotesi/incerto → subjuntivo']],
+ fut:[['Cuando','cuando + azione futura → subjuntivo'],['En cuanto','en cuanto + azione futura → subjuntivo'],['Hasta que','hasta que + azione futura → subjuntivo'],['Después de que','después de que + azione futura → subjuntivo']],
  ind:[
   ['Creo que','creer (affermativo) → indicativo'],['Pienso que','pensar (affermativo) → indicativo'],['Es verdad que','certezza → indicativo'],
   ['Está claro que','certezza → indicativo'],['Sé que','sapere → indicativo'],['Estoy seguro de que','certezza → indicativo'],['Es cierto que','certezza → indicativo'],
@@ -359,7 +359,7 @@ const FR={
   ['No creía que','negazione al passato → imperfecto de subjuntivo'],['Era importante que','giudizio al passato → imperfecto de subjuntivo'],
   ['Mi madre me pidió que','richiesta al passato (indefinido) → imperfecto de subjuntivo'],['Fue necesario que','giudizio al passato → imperfecto de subjuntivo'],
   ['El profesor prohibió que','divieto al passato → imperfecto de subjuntivo'],['Me gustaría que','condizionale + que → imperfecto de subjuntivo'],
-  ['Querría que','condizionale + que → imperfecto de subjuntivo'],['Ojalá','augurio irreale (non si realizza ora) → imperfecto de subjuntivo'],
+  ['Querría que','condizionale + que → imperfecto de subjuntivo'],
   ['Le dije que se callara para que','finalità al passato → imperfecto de subjuntivo'],['Salimos antes de que','antes de que al passato → imperfecto de subjuntivo'],
   ['Teníamos miedo de que','emozione al passato → imperfecto de subjuntivo'],['Mis amigos esperaban que','speranza al passato → imperfecto de subjuntivo'],
  ],
@@ -368,14 +368,14 @@ const FR={
   ['Espero que ya','speranza + azione già finita → perfecto de subjuntivo'],['Me alegro de que','emozione + azione già finita → perfecto de subjuntivo'],
   ['No creo que','opinione negata + azione già finita → perfecto de subjuntivo'],['Dudo que','dubbio + azione già finita → perfecto de subjuntivo'],
   ['Es posible que','possibilità + azione già finita → perfecto de subjuntivo'],['Es una lástima que','giudizio + azione già finita → perfecto de subjuntivo'],
-  ['Siento mucho que','dispiacere + azione già finita → perfecto de subjuntivo'],['Ojalá','augurio su un fatto appena accaduto → perfecto de subjuntivo'],
+  ['Siento mucho que','dispiacere + azione già finita → perfecto de subjuntivo'],
   ['Es probable que','probabilità + azione già finita → perfecto de subjuntivo'],
  ],
  // pluscuamperfecto: azione anteriore a un passato / irreale
  plus:[
   ['Me alegré de que ya','azione precedente a un passato → pluscuamperfecto de subjuntivo'],['No creía que','azione precedente a un passato → pluscuamperfecto de subjuntivo'],
   ['Dudaba que','azione precedente a un passato → pluscuamperfecto de subjuntivo'],['Esperaba que ya','azione precedente a un passato → pluscuamperfecto de subjuntivo'],
-  ['Ojalá','rimpianto (irreale del passato) → pluscuamperfecto de subjuntivo'],['Sentí que','dispiacere + azione precedente → pluscuamperfecto de subjuntivo'],
+  ['Sentí que','dispiacere + azione precedente → pluscuamperfecto de subjuntivo'],
   ['Era una lástima que','giudizio + azione precedente → pluscuamperfecto de subjuntivo'],['Me habría gustado que','condizionale composto + que → pluscuamperfecto de subjuntivo'],
  ]
 };
@@ -401,6 +401,7 @@ function exUso(){            // indicativo o subjuntivo?
 function exSeq(){            // quale tempo del subjuntivo? (concordancia de tiempos)
   const g=pick(['pres','imp','imp','perf','plus']);
   const f=frame(g,false);
+  const cue=(g==='perf'||g==='plus')?'(l’azione è già finita)':'(l’azione è contemporanea o futura)';
   const c=FORM[f.t](f.v,f.p);
   const wr=[0,1,2,3].filter(x=>x!==f.t).map(x=>FORM[x](f.v,f.p));
   const hint={pres:'Il verbo principale è al presente o al futuro e l’azione non è ancora finita: <b>presente de subjuntivo</b>.',
@@ -408,7 +409,7 @@ function exSeq(){            // quale tempo del subjuntivo? (concordancia de tie
     imp:'Il verbo principale è al passato (o condizionale): nella subordinata serve l’<b>imperfecto de subjuntivo</b>.',
     perf:'Verbo principale al presente e azione già conclusa: <b>pretérito perfecto de subjuntivo</b>.',
     plus:'L’azione è <b>anteriore</b> a un momento del passato (o è un rimpianto): <b>pluscuamperfecto de subjuntivo</b>.'}[g];
-  return mkEx(`Completa: «${f.pre} ${PS[f.p]} ___ (${f.v.inf}).»`,c,wr,`<p>${f.why}.</p><p>${hint}</p><p>Risposta: <b>${f.pre} ${PS[f.p]} ${c}</b>.</p>`,()=>true,'Concordancia de tiempos');
+  return mkEx(`Completa: «${f.pre} ${PS[f.p]} ___ (${f.v.inf}).» <i>${cue}</i>`,c,wr,`<p>${f.why}.</p><p>${hint}</p><p>Risposta: <b>${f.pre} ${PS[f.p]} ${c}</b>.</p>`,()=>true,'Concordancia de tiempos');
 }
 /* usi: gruppi separati per le unità */
 const exUsoPres=function(){
@@ -597,9 +598,9 @@ u2:{
   card('blu','5 · Congiunzioni',stepsHtml([
    '<b>Sempre subjuntivo</b>: <b>para que</b> (affinché), <b>a menos que</b> (a meno che), <b>sin que</b> (senza che), <b>antes de que</b> (prima che), <b>con tal de que</b>, <b>en caso de que</b>. '+M('Te llamo para que vengas.'),
    '<b>Cuando, en cuanto, hasta que, después de que, mientras</b>: subjuntivo se l’azione è <b>futura</b>, indicativo se è <b>abituale o passata</b>. '+M('Cuando llegues, llámame. · Cuando llego, saludo.'),
-   '<b>Aunque</b>: subjuntivo se è un’ipotesi (anche se piovesse), indicativo se è un fatto (benché piova). '+M('Aunque llueva, saldré. · Aunque llueve, salgo.')])),
+   '<b>Aunque</b>: con il <b>subjuntivo</b> introduce un’ipotesi o un’azione futura (“anche se piovesse / dovesse piovere”); con un <b>fatto reale</b> si usa di regola l’indicativo (nei fatti già noti è possibile anche il subjuntivo). '+M('Aunque llueva, saldré. · Aunque llueve, salgo.')])),
   card('ver','6 · Altre espressioni',
-   '<p><b>Ojalá (que)</b> + subjuntivo = “magari, speriamo che”. <b>Quizás / tal vez</b> + subjuntivo se c’è dubbio. <b>A lo mejor</b> (forse) vuole sempre l’<b>indicativo</b>.</p>'+M('Ojalá llueva. · Quizás venga. · A lo mejor viene.')),
+   '<p><b>Ojalá (que)</b> + subjuntivo = “magari, speriamo che”. <b>Quizás / tal vez</b> (forse) di solito vogliono il <b>subjuntivo</b>, ma ammettono anche l’indicativo. <b>A lo mejor</b> (forse) si usa quasi sempre con l’<b>indicativo</b>.</p>'+M('Ojalá llueva. · Quizás venga. · A lo mejor viene.')),
   card('gia','7 · Stesso soggetto: infinito',
    TAB(['soggetti','costruzione','esempio'],[['diversi','que + subjuntivo','Quiero que vengas.'],['uguale','infinito','Quiero venir.']])+'<p class="note">Non si dice “Quiero que yo venga”: se il soggetto è lo stesso si usa l’infinito.</p>'),
  ],
@@ -609,7 +610,7 @@ u2:{
  <p>«<i>No creo que (él) ___ (tener) razón</i>» → negazione dell’opinione → subjuntivo → <b>tenga</b>.</p>
  <p>«<i>Cuando (yo) ___ (llegar), te llamaré</i>» → azione futura dopo cuando → subjuntivo → <b>llegue</b>.</p>
  <p>«<i>Quiero (yo) ir al cine</i>» → stesso soggetto → infinito, niente <i>que</i>.</p></div>`,
- errori:['Usare il subjuntivo dopo “creo que” (affermativo): <b>creo que viene</b>, non “creo que venga”.','Usare l’indicativo dopo “no creo que”: <b>no creo que venga</b>.','Dimenticare che <b>para que, sin que, antes de que, a menos que</b> vogliono <b>sempre</b> il subjuntivo.','Mettere il subjuntivo dopo “cuando” anche quando l’azione è abituale (“Cuando llego” va bene).','“A lo mejor” + subjuntivo: sbagliato, vuole l’indicativo.','Usare que + subjuntivo con lo stesso soggetto: “Quiero que yo vaya” ✗ → <b>Quiero ir</b>.'],
+ errori:['Usare il subjuntivo dopo “creo que” (affermativo): <b>creo que viene</b>, non “creo que venga”.','Usare l’indicativo dopo “no creo que”: <b>no creo que venga</b>.','Dimenticare che <b>para que, sin que, antes de que, a menos que</b> vogliono <b>sempre</b> il subjuntivo.','Mettere il subjuntivo dopo “cuando” anche quando l’azione è abituale (“Cuando llego” va bene).','Con “a lo mejor” scegli l’<b>indicativo</b> (<b>a lo mejor viene</b>): il subjuntivo è raro.','Usare que + subjuntivo con lo stesso soggetto: “Quiero que yo vaya” ✗ → <b>Quiero ir</b>.'],
  orale:[
   ['Quando si usa il subjuntivo?','Nelle subordinate con que quando la frase principale esprime volontà o richiesta (quiero que), emozione (me alegro de que), dubbio o negazione (dudo que, no creo que), giudizio impersonale (es importante que), e dopo alcune congiunzioni (para que, antes de que, sin que, a menos que). Con la certezza (creo que, es verdad que) si usa l’indicativo.'],
   ['Che differenza c’è tra “creo que” e “no creo que”?','Creo que vuole l’indicativo (opinione sicura): creo que viene. No creo que vuole il subjuntivo (dubbio): no creo que venga.'],
@@ -623,7 +624,7 @@ u2:{
   ['Quale espressione vuole sempre il subjuntivo?','para que',['porque','creo que','es verdad que'],'Para que (affinché) → sempre subjuntivo.'],
   ['«Cuando ___ (yo, llegar) a casa, te llamo.» (abitudine)','llego',['llegue','llegara','llegaré'],'Azione abituale → indicativo.'],
   ['«Cuando ___ (yo, llegar) a casa, te llamaré.» (futuro)','llegue',['llego','llegué','llegaba'],'Azione futura → subjuntivo.'],
-  ['<i>A lo mejor</i> vuole…','l’indicativo',['il subjuntivo','l’infinito','il condicional'],'A lo mejor + indicativo (differente da quizás).'],
+  ['Dopo <i>a lo mejor</i> si usa di regola…','l’indicativo',['il subjuntivo','l’infinito','il condicional'],'A lo mejor + indicativo (quizás, invece, di solito vuole il subjuntivo).'],
   ['“Voglio andare al cinema” (io lo voglio) si dice…','Quiero ir al cine.',['Quiero que voy al cine.','Quiero que vaya al cine.','Quiero que yo ir al cine.'],'Stesso soggetto → infinito.'],
  ]
 },
@@ -818,7 +819,7 @@ const FORMULARIO=`
 <div class="box ver"><h3>Pretérito perfecto de subjuntivo</h3><p class="m"><b>haya, hayas, haya, hayamos, hayáis, hayan</b> + participio</p><p class="m">hablado · comido · vivido · hecho · dicho · escrito · puesto · visto · vuelto · abierto</p></div>
 <div class="box gia"><h3>Pretérito imperfecto de subjuntivo</h3><p>ellos del indefinido − <b>ron</b> + <b>ra, ras, ra, ramos, rais, ran</b> (o se, ses, se, semos, seis, sen)</p><p class="m">hablaron → hablara · tuvieron → tuviera · fueron → fuera</p><p>Con nosotros: accento (hablÁramos).</p></div>
 <div class="box ros"><h3>Pretérito pluscuamperfecto de subjuntivo</h3><p class="m"><b>hubiera, hubieras, hubiera, hubiéramos, hubierais, hubieran</b> + participio</p><p>(o hubiese, hubieses, hubiese, hubiésemos, hubieseis, hubiesen)</p></div>
-<div class="box blu"><h3>Quando si usa il subjuntivo</h3><p>Volontà (quiero que) · emozione (me alegro de que) · dubbio / negazione (dudo que, no creo que) · giudizio (es importante que) · ojalá · para que, sin que, antes de que, a menos que · cuando + futuro</p><p><b>Indicativo</b>: creo que · es verdad que · está claro que · estoy seguro de que · a lo mejor</p><p>Stesso soggetto → <b>infinito</b>.</p></div>
+<div class="box blu"><h3>Quando si usa il subjuntivo</h3><p>Volontà (quiero que) · emozione (me alegro de que) · dubbio / negazione (dudo que, no creo que) · giudizio (es importante que) · ojalá · para que, sin que, antes de que, a menos que · cuando + futuro</p><p><b>Indicativo</b>: creo que · es verdad que · está claro que · estoy seguro de que · a lo mejor (di regola)</p><p>Stesso soggetto → <b>infinito</b>.</p></div>
 <div class="box ver"><h3>Concordancia de tiempos</h3>${TAB(['principale','contemporanea','già finita'],[['presente · futuro','presente','perfecto'],['passato · condizionale','imperfecto','pluscuamperfecto']])}</div>
 <div class="box gia"><h3>Frasi con si</h3>${TAB(['tipo','si + …','principale'],[['possibile','presente indicativo','futuro'],['irreale presente','imperfecto de subj.','condicional'],['irreale passato','pluscuamperfecto de subj.','condicional compuesto']])}</div>`;
 
@@ -980,7 +981,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 </script>
 <!--AGG--><script>
 (function(){
- var B="20261005110323",t0=Date.now(),touched=false,last=0;
+ var B="20261005110929",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;
