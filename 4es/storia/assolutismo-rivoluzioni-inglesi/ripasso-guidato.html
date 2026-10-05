@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storia: assolutismo e rivoluzioni inglesi</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Storia</a></p><h1>Storia: assolutismo e rivoluzioni inglesi</h1><p>Interrogazione · un passo alla volta</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Assolutismo</button>
+<button data-t="u2">2 Luigi XIV</button>
+<button data-t="u3">3 Modello e limite</button>
+<button data-t="u4">4 Prima rivoluzione</button>
+<button data-t="u5">5 Gloriosa Rivoluzione</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo all'interrogazione di <b>storia</b>. Il kit segue le <b>mappe del libro</b> date dal professore. Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti. Ogni argomento ha sempre lo stesso ordine.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>L'assolutismo in Europa</b> (unità 1)</li><li><b>Luigi XIV</b>: strumenti, obiettivi, modernità, limite e modello in Europa (unità 2-3)</li><li><b>Le due rivoluzioni inglesi</b>: la prima rivoluzione (1649) e la Gloriosa Rivoluzione (1689) (unità 4-5)</li></ul>
+<p class="note">Le parti segnate <b>“in più”</b> vanno oltre le mappe del libro: studiale solo se le chiede l'insegnante.</p></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema della mappa, passo per passo.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi di risposta da ripetere a voce.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (5 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 (assolutismo) e unità 2 (Luigi XIV: strumenti e obiettivi)</li><li><b>Giorno 2</b>: unità 3 (modernità, limite, modello in Europa)</li><li><b>Giorno 3</b>: unità 4 (prima rivoluzione inglese)</li><li><b>Giorno 4</b>: unità 5 (dalla restaurazione alla Gloriosa Rivoluzione)</li><li><b>Giorno 5</b>: Prova finale, Orale e Formulario (con le date)</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c'è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti <b>a voce alta</b> le risposte dell'Orale: l'interrogazione è parlata.</li><li>Impara la <b>catena degli eventi</b> in ordine: ogni evento causa il successivo.</li><li>Impara le <b>date</b> del Formulario: 1628, 1629, 1649, 1653, 1658, 1689.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un'altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const NAMES=['Marco','Giulia','Luca','Sara','Paolo','Elena','Davide','Chiara','Andrea','Francesca','Matteo','Anna'];
+const names=n=>shuffle(NAMES).slice(0,n);
+const eur=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
+
+/* ========== STORIA: GENERATORI DI ESERCIZI ========== */
+const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+function mapGroup(tag,askL,askR,pairs,both=false){
+  return ()=>{
+    const i=rnd(0,pairs.length-1),p=pairs[i];
+    const others=shuffle(pairs.filter((_,k)=>k!==i));
+    if(!both||Math.random()<0.5)
+      return mkEx(askL(p[0]),p[1],p[3]?p[3]:others.map(x=>x[1]),wy(p[2]||`${p[0]} → ${p[1]}`,p[1]),tag);
+    return mkEx(askR(p[1]),p[0],others.map(x=>x[0]),wy(p[2]||`${p[0]} → ${p[1]}`,p[0]),tag);
+  };
+}
+const A_ASS=mapGroup('Che cos’è l’assolutismo',
+ l=>`<b>${l}</b>`,l=>l,
+ [['Un re assoluto è…','sciolto (ab-solutus) da ogni vincolo di leggi, istituzioni e organi','L’assolutismo viene da <i>ab-solutus</i>: “sciolto” da ogni vincolo.',['vincolato dalle leggi e dal Parlamento','scelto dal popolo']],
+  ['Per la teoria del diritto divino dei re, il potere del sovrano viene…','direttamente da Dio','Il re riceve il potere da Dio, non dal popolo.',['dal popolo','dal Parlamento']],
+  ['Per la teoria del diritto divino dei re, il sovrano risponde delle sue azioni…','solo a Dio','Il re è responsabile solo verso Dio.',['al Parlamento','al popolo']],
+  ['In Europa la monarchia assoluta ebbe la sua realizzazione più completa…','in Francia, con Luigi XIV','Il modello più compiuto è la Francia di Luigi XIV.',['in Inghilterra, con Cromwell','nell’Impero asburgico']],
+  ['In Inghilterra, a differenza della Francia, il potere del re è…','limitato dal Parlamento','In Inghilterra il Parlamento limita il re: non si afferma l’assolutismo.',['illimitato e di origine divina','affidato a un primo ministro']]]);
+const A_LUI=mapGroup('Gli strumenti e gli obiettivi di Luigi XIV',
+ l=>`L’assolutismo di Luigi XIV… <b>${l}</b>`,l=>l,
+ [['si basa su tre strumenti principali:','l’esercito, la burocrazia e le tasse','I tre strumenti sono <b>esercito, burocrazia, tasse</b>.'],
+  ['in politica interna ha come obiettivo…','l’accentramento del potere','Politica interna → <b>accentramento del potere</b>.'],
+  ['in politica economica ha come obiettivo…','l’arricchimento della Francia','Politica economica → <b>arricchimento della Francia</b>.'],
+  ['in politica religiosa ha come obiettivo…','il completo controllo sulle coscienze','Politica religiosa → <b>controllo sulle coscienze</b>.']]);
+const A_INT=mapGroup('Come accentra il potere',
+ l=>`Per accentrare il potere, Luigi XIV promuove… <b>${l}</b>`,l=>l,
+ [['i nobili:','il loro controllo, perché sono indotti a vivere a corte','Controlla i nobili <b>facendoli vivere a corte</b>.'],
+  ['i parlamenti:','il loro indebolimento','Indebolisce i parlamenti.'],
+  ['il primo ministro:','la sua eliminazione e l’assunzione diretta del potere da parte del re','Elimina il primo ministro e assume direttamente il potere.'],
+  ['il collegamento tra centro e periferie:','si realizza attraverso gli intendenti','Il collegamento centro-periferie passa dagli <b>intendenti</b>.'],
+  ['l’immagine del re:','il culto del re Sole','Promuove il <b>culto del re Sole</b>.']]);
+const A_ECO=mapGroup('La politica economica e religiosa',
+ l=>`<b>${l}</b>`,l=>l,
+ [['Per arricchire la Francia Luigi XIV attua il mercantilismo, cioè…','dazi doganali elevati e sostegno statale a manifatture e commerci','Mercantilismo = <b>dazi alti e sostegno a manifatture e commerci</b>.'],
+  ['Per arricchire la Francia costruisce anche…','nuove infrastrutture','Costruisce <b>nuove infrastrutture</b>.'],
+  ['Per arricchire la Francia migliora i collegamenti con…','le colonie','Migliora i collegamenti con <b>le colonie</b>.'],
+  ['In politica religiosa riafferma…','il gallicanesimo, in conflitto con la Chiesa di Roma','Riafferma il <b>gallicanesimo</b>.'],
+  ['In politica religiosa lotta contro…','le altre fedi religiose: ugonotti e giansenisti','Combatte <b>ugonotti e giansenisti</b>.']]);
+const MOD=['la propaganda politica','la politica mercantilistica','la legislazione unitaria'];
+const LIM='l’esiguità della burocrazia per il controllo del territorio';
+const exModLim=()=>{
+  if(Math.random()<0.6){
+    const c=pick(MOD);
+    return mkEx('Quale è un <b>elemento di modernità</b> dell’assolutismo di Luigi XIV?',c,[LIM,'la lotta agli ugonotti e ai giansenisti'],wy('Gli elementi di modernità sono propaganda politica, politica mercantilistica e legislazione unitaria.',c),'Modernità e limite');
+  }
+  return mkEx('Quale è l’<b>importante limite</b> dell’assolutismo di Luigi XIV?',LIM,shuffle(MOD),wy('Il limite è la <b>poca burocrazia</b> rispetto al territorio da controllare.',LIM),'Modernità e limite');
+};
+const PAESI=['la Svezia','la Danimarca','la Prussia','la Russia'];
+const exModello=()=>{
+  if(Math.random()<0.7){
+    const c=pick(PAESI);
+    return mkEx('Quale paese ha <b>imitato con successo</b> il modello assolutista di Luigi XIV?',c,['l’Impero asburgico','l’Inghilterra'],wy('Il modello è imitato con successo in Svezia, Danimarca, Prussia e Russia.',c),'Il modello in Europa');
+  }
+  return mkEx('In quale Stato il modello assolutista di Luigi XIV rimase <b>incompiuto</b>?','l’Impero asburgico',shuffle(PAESI).slice(0,2),wy('Nell’Impero asburgico il modello rimase incompiuto.','l’Impero asburgico'),'Il modello in Europa');
+};
+const A_I1=mapGroup('Da Giacomo I a Cromwell',
+ l=>`<b>${l}</b>`,l=>l,
+ [['Il regno di Giacomo I Stuart (1603-1625) è caratterizzato da…','l’unificazione di Inghilterra, Irlanda e Scozia sotto la Corona inglese e da contrasti religiosi','Giacomo I: unificazione sotto la Corona inglese e contrasti religiosi.'],
+  ['Il regno di Carlo I Stuart (1625-1649) conosce…','l’inasprirsi degli scontri della Corona con il Parlamento','Con Carlo I si aggravano gli scontri con il Parlamento.'],
+  ['Nello scontro con la Corona il Parlamento impone…','la Petizione di diritto (1628)','Il Parlamento impone la <b>Petizione di diritto (1628)</b>.'],
+  ['La Petizione di diritto causa…','la decisione del re di sciogliere il Parlamento','Il re scioglie il Parlamento.'],
+  ['La prima rivoluzione inglese culmina con…','la guerra civile','La prima rivoluzione culmina con la <b>guerra civile</b>.'],
+  ['La guerra civile si conclude con…','la vittoria delle teste rotonde del New Model Army, guidate da Oliver Cromwell','Vincono le teste rotonde di <b>Cromwell</b>.'],
+  ['La guerra civile sfocia nella…','l’esecuzione di Carlo I e la proclamazione della Repubblica (1649)','1649: <b>esecuzione di Carlo I</b> e Repubblica.'],
+  ['Alla Repubblica segue…','la dittatura di Cromwell, Lord protettore del Commonwealth (1653)','Segue la <b>dittatura di Cromwell</b> (1653).']]);
+const A_I2=mapGroup('Dalla restaurazione alla Gloriosa Rivoluzione',
+ l=>`<b>${l}</b>`,l=>l,
+ [['La morte di Cromwell (1658) provoca…','la restaurazione della monarchia degli Stuart','La morte di Cromwell porta alla <b>restaurazione</b>.'],
+  ['La restaurazione degli Stuart manifesta…','tendenze autoritarie','Gli Stuart mostrano <b>tendenze autoritarie</b>.'],
+  ['Le tendenze autoritarie causano…','la cacciata di Giacomo II Stuart per volontà del Parlamento','Il Parlamento <b>caccia Giacomo II</b>.'],
+  ['Giacomo II è sostituito con…','Guglielmo III d’Orange','Gli succede <b>Guglielmo III d’Orange</b>.'],
+  ['Guglielmo III firma…','il Bill of Rights','Guglielmo III firma il <b>Bill of Rights</b>.'],
+  ['La cacciata di Giacomo II e il Bill of Rights danno luogo alla…','Gloriosa Rivoluzione (1689)','Si ha la <b>Gloriosa Rivoluzione</b> (1689).']]);
+/* date */
+const TL=[['il regno di Giacomo I Stuart ebbe inizio',1603],['iniziò il regno di Carlo I Stuart',1625],['il Parlamento impose a Carlo I la Petizione di diritto',1628],['Carlo I sciolse il Parlamento',1629],['vinsero le teste rotonde del New Model Army',1648],['Carlo I fu giustiziato e fu proclamata la Repubblica',1649],['Cromwell divenne Lord protettore del Commonwealth',1653],['morì Oliver Cromwell',1658],['Guglielmo III firmò il Bill of Rights',1689]];
+const exAnno=()=>{
+  const e=pick(TL);const w=shuffle(TL.filter(x=>x[1]!==e[1])).slice(0,2);
+  return mkEx(`In che anno ${e[0]}?`,String(e[1]),w.map(x=>String(x[1])),wy(`Nello schema: ${e[0]} nel ${e[1]}.`,String(e[1])),'Date');
+};
+const exPrima=()=>{
+  const s=shuffle(TL).slice(0,3);const first=s.slice().sort((a,b)=>a[1]-b[1])[0];
+  const lab=x=>x[0].charAt(0).toUpperCase()+x[0].slice(1);
+  const sorted=s.slice().sort((a,b)=>a[1]-b[1]);
+  return mkEx('Quale di questi eventi è avvenuto <b>per primo</b>?',lab(first),s.filter(x=>x!==first).map(lab),`<p>Le date: ${sorted.map(x=>x[0]+' ('+x[1]+')').join('; ')}.</p><p>Per primo: ${B(lab(first))}.</p>`,'Prima o dopo?');
+};
+const PER=[['Oliver Cromwell','guida le teste rotonde del New Model Army e diventa Lord protettore (1653)'],
+ ['Carlo I Stuart','è il re giustiziato nel 1649'],
+ ['Giacomo II Stuart','è il re cacciato per volontà del Parlamento'],
+ ['Guglielmo III d’Orange','sostituisce Giacomo II e firma il Bill of Rights'],
+ ['Giacomo I Stuart','è il re del periodo 1603-1625'],
+ ['Luigi XIV','fa dell’assolutismo francese un modello per l’Europa']];
+const exChi=()=>{
+  const i=rnd(0,PER.length-1),others=shuffle(PER.filter((_,k)=>k!==i));
+  if(Math.random()<0.5)return mkEx(`Chi è <b>${PER[i][0]}</b>?`,PER[i][1],others.slice(0,2).map(x=>x[1]),wy(`${PER[i][0]}: ${PER[i][1]}.`,PER[i][1]),'Chi è?');
+  return mkEx(`Di chi si parla? <i>${PER[i][1][0].toUpperCase()+PER[i][1].slice(1)}.</i>`,PER[i][0],others.slice(0,2).map(x=>x[0]),wy(`${PER[i][0]}: ${PER[i][1]}.`,PER[i][0]),'Chi è?');
+};
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const GENS={
+ u1:[A_ASS,A_ASS,exDef('u1')],
+ u2:[A_LUI,A_INT,A_INT,A_ECO,A_ECO,exDef('u2')],
+ u3:[exModLim,exModello,exModello,exDef('u3')],
+ u4:[A_I1,A_I1,A_I1,exAnno,exPrima,exChi,exDef('u4')],
+ u5:[A_I2,A_I2,exAnno,exPrima,exChi,exDef('u5')]
+};
+const UNITS={u1:'1 · L’assolutismo in Europa',u2:'2 · Luigi XIV: strumenti e obiettivi',u3:'3 · Luigi XIV: modernità, limite e modello',u4:'4 · La prima rivoluzione inglese',u5:'5 · Dalla restaurazione alla Gloriosa Rivoluzione'};
+const PROVA_PLAN={u1:2,u2:4,u3:2,u4:4,u5:3};
+
+/* ========== CONTENUTI FISSI (Storia 4 ES: assolutismo, Luigi XIV, rivoluzioni inglesi) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const M=t=>`<span class="m">${t}</span>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const INP=t=>`<div class="box gia"><h3>In più (se lo chiede l’insegnante)</h3>${t}</div>`;
+const LI=l=>'<ul>'+l.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+
+const DEFS={
+u1:[
+ ['Assolutismo','Forma di monarchia in cui il re è “sciolto” (ab-solutus) da ogni vincolo di leggi, istituzioni e organi e concentra su di sé il potere.'],
+ ['Monarchia assoluta','Il potere è tutto nelle mani del re, che non deve rendere conto a Parlamenti o altri organi.'],
+ ['Diritto divino dei re','Teoria secondo cui il potere del sovrano viene direttamente da Dio e non dal popolo.'],
+ ['Accentramento del potere','Concentrare il potere nelle mani del re, togliendolo a nobili, parlamenti e altri poteri.']],
+u2:[
+ ['Burocrazia','L’insieme dei funzionari che amministrano lo Stato per conto del re.'],
+ ['Intendenti','Funzionari che collegano il centro alle periferie: dipendono dal re e controllano il territorio.'],
+ ['Mercantilismo','Politica economica con dazi doganali elevati e sostegno statale a manifatture e commerci.'],
+ ['Gallicanesimo','Tendenza all’autonomia della Chiesa francese da Roma, con il clero legato al re.'],
+ ['Ugonotti','I protestanti calvinisti francesi, perseguitati da Luigi XIV.'],
+ ['Giansenisti','Seguaci di Giansenio: un movimento cattolico rigoroso, osteggiato da Luigi XIV.'],
+ ['Re Sole','Soprannome di Luigi XIV: attorno a lui si costruì un vero culto.']],
+u3:[
+ ['Elementi di modernità','Propaganda politica, politica mercantilistica e legislazione unitaria.'],
+ ['Limite dell’assolutismo di Luigi XIV','L’esiguità della burocrazia rispetto al territorio da controllare.'],
+ ['Modello in Europa','L’assolutismo francese è imitato con successo in Svezia, Danimarca, Prussia e Russia; incompiuto nell’Impero asburgico.'],
+ ['Legislazione unitaria','Leggi uguali per tutto il regno.']],
+u4:[
+ ['Petizione di diritto (1628)','Documento con cui il Parlamento limita il re: niente nuove tasse senza il suo consenso.'],
+ ['Teste rotonde','I sostenitori del Parlamento nella guerra civile, vincitori con il New Model Army.'],
+ ['New Model Army','L’esercito del Parlamento guidato da Oliver Cromwell.'],
+ ['Commonwealth','Il nome della Repubblica inglese dopo l’esecuzione di Carlo I.'],
+ ['Lord protettore','Il titolo con cui Cromwell guidò il Commonwealth dal 1653.'],
+ ['Guerra civile','Lo scontro armato tra il re Carlo I e il Parlamento.']],
+u5:[
+ ['Restaurazione','Il ritorno al trono della monarchia degli Stuart dopo la morte di Cromwell.'],
+ ['Gloriosa Rivoluzione','Il passaggio del trono da Giacomo II a Guglielmo III d’Orange, per volontà del Parlamento e quasi senza violenza.'],
+ ['Bill of Rights','La dichiarazione dei diritti del 1689 che limita i poteri del re e dà forza al Parlamento.'],
+ ['Guglielmo III d’Orange','Il sovrano che prende il posto di Giacomo II e firma il Bill of Rights.']]
+};
+
+const CONT={
+u1:{
+ cose:`<div class="box bia"><p>Nel Seicento in molti Stati europei i re cercano di avere il <b>potere assoluto</b>. Questa forma di governo si chiama <b>assolutismo</b>. Il suo modello più compiuto è la <b>Francia di Luigi XIV</b>. In Inghilterra, invece, il re deve fare i conti con il <b>Parlamento</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Che cos’è l’assolutismo',stepsHtml([
+   'Il re è “<b>sciolto</b>” (<i>ab-solutus</i>) da ogni vincolo: leggi, istituzioni, organi.',
+   'Il potere è <b>concentrato</b> nelle sue mani (<b>accentramento</b>).',
+   'Si regge su <b>esercito, burocrazia e tasse</b> (schema di Luigi XIV).'])),
+  card('ver','2 · Il diritto divino dei re',
+   '<p>Per la teoria del <b>diritto divino</b> il potere del sovrano viene <b>direttamente da Dio</b>, non dal popolo. Il re risponde <b>solo a Dio</b>.</p>'),
+  card('gia','3 · Francia e Inghilterra a confronto',
+   TAB(['','Francia','Inghilterra'],[['Potere del re','assoluto','limitato dal Parlamento'],['Esempio','Luigi XIV','Bill of Rights (1689)']])+INP('<p>La teoria del diritto divino fu sostenuta dal vescovo Bossuet. La monarchia assoluta si affermò in Europa tra Seicento e Settecento.</p>')),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’assolutismo?»</b> È una monarchia in cui il re ha un potere senza limiti: non è vincolato da leggi, istituzioni o organi.</p>
+ <p><b>«Che cos’è il diritto divino dei re?»</b> La teoria per cui il potere del re viene direttamente da Dio.</p>
+ <p><b>«Qual è il modello di assolutismo?»</b> La Francia di Luigi XIV, imitata anche in altri Stati europei.</p></div>`,
+ errori:['Dire che il re assoluto risponde al <b>Parlamento</b>: risponde <b>solo a Dio</b> (diritto divino).','Pensare che l’Inghilterra sia un modello di assolutismo: lì il Parlamento <b>limita</b> il re.','Dimenticare che il modello più compiuto è la <b>Francia</b>.'],
+ orale:[
+  ['Che cos’è l’assolutismo?','È una forma di monarchia in cui il re è sciolto da ogni vincolo di leggi, istituzioni e organi e concentra su di sé il potere.'],
+  ['Che cos’è il diritto divino dei re?','È la teoria per cui il potere del sovrano viene direttamente da Dio e non dal popolo; il re risponde solo a Dio.'],
+  ['Dove l’assolutismo ebbe la realizzazione più completa?','In Francia, con Luigi XIV; in Inghilterra invece il re fu limitato dal Parlamento.'],
+ ],
+ quiz:[
+  ['L’assolutismo è una monarchia in cui il re è…','sciolto da ogni vincolo',['eletto dal popolo','controllato dal Parlamento','senza poteri'],'Ab-solutus.'],
+  ['Per il diritto divino dei re il potere viene…','direttamente da Dio',['dal popolo','dal Parlamento','dai nobili'],'Dio, non popolo.'],
+  ['Il paese del modello più compiuto di assolutismo è…','la Francia',['l’Inghilterra','la Spagna','la Svezia'],'Francia di Luigi XIV.'],
+  ['In Inghilterra, a differenza della Francia, il potere del re è…','limitato dal Parlamento',['assoluto','di origine divina','senza limiti'],'Parlamento.'],
+ ]
+},
+u2:{
+ cose:`<div class="box bia"><p>L’assolutismo di <b>Luigi XIV</b> si basa su <b>tre strumenti</b> (esercito, burocrazia, tasse) e ha <b>tre obiettivi</b>: in politica <b>interna</b> l’accentramento del potere, in politica <b>economica</b> l’arricchimento della Francia, in politica <b>religiosa</b> il controllo sulle coscienze.</p></div>`,
+ ricette:[
+  card('blu','1 · Gli strumenti',LI(['<b>l’esercito</b>','<b>la burocrazia</b>','<b>le tasse</b>'])),
+  card('ver','2 · Politica interna: accentramento del potere',
+   '<p>Per accentrare il potere il re promuove:</p>'+LI(['il <b>controllo sui nobili</b>, indotti a vivere a corte','l’<b>indebolimento dei parlamenti</b>','l’<b>eliminazione del primo ministro</b> e l’assunzione diretta del potere','il <b>collegamento tra centro e periferie</b> attraverso gli <b>intendenti</b>','il <b>culto del re Sole</b>'])),
+  card('gia','3 · Politica economica: arricchimento della Francia',
+   LI(['il <b>mercantilismo</b> (dazi doganali elevati e sostegno statale a manifatture e commerci)','la costruzione di <b>nuove infrastrutture</b>','il miglioramento dei <b>collegamenti con le colonie</b>'])),
+  card('ros','4 · Politica religiosa: controllo sulle coscienze',
+   LI(['la riaffermazione del <b>gallicanesimo</b>, in conflitto con la Chiesa di Roma','la <b>lotta alle altre fedi religiose</b>: <b>ugonotti</b> e <b>giansenisti</b>'])+INP('<p>Luigi XIV (re dal 1643 al 1715) governa da solo dal <b>1661</b>, dopo la morte del cardinale Mazzarino, senza nominare un primo ministro. Il suo controllore delle finanze, <b>Colbert</b>, è il simbolo del mercantilismo francese. Nel <b>1682</b> il re fa approvare i quattro articoli gallicani; nel <b>1685</b> revoca l’editto di Nantes, che garantiva la convivenza con gli ugonotti.</p>')),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Su che cosa si basa l’assolutismo di Luigi XIV?»</b> Su tre strumenti: l’esercito, la burocrazia e le tasse.</p>
+ <p><b>«Come accentra il potere?»</b> Controlla i nobili facendoli vivere a corte, indebolisce i parlamenti, elimina il primo ministro e governa direttamente, collega centro e periferie con gli intendenti e promuove il culto del re Sole.</p>
+ <p><b>«Che cos’è il mercantilismo?»</b> Dazi doganali elevati e sostegno dello Stato a manifatture e commerci.</p></div>`,
+ errori:['Dimenticare uno dei <b>tre strumenti</b>: esercito, burocrazia, tasse.','Confondere gli <b>obiettivi</b>: interno = accentramento; economico = arricchimento; religioso = controllo sulle coscienze.','Dire che Luigi XIV <b>mantiene</b> il primo ministro: lo <b>elimina</b>.','Confondere <b>ugonotti</b> (protestanti) e <b>giansenisti</b> (cattolici rigoristi).'],
+ orale:[
+  ['Su che cosa si basa l’assolutismo di Luigi XIV?','Su tre strumenti: l’esercito, la burocrazia e le tasse.'],
+  ['Quali sono gli obiettivi di Luigi XIV in politica interna?','L’accentramento del potere: controllo sui nobili indotti a vivere a corte, indebolimento dei parlamenti, eliminazione del primo ministro con assunzione diretta del potere, collegamento tra centro e periferie attraverso gli intendenti, culto del re Sole.'],
+  ['E in politica economica?','L’arricchimento della Francia: mercantilismo con dazi elevati e sostegno a manifatture e commerci, nuove infrastrutture, migliori collegamenti con le colonie.'],
+  ['E in politica religiosa?','Il completo controllo sulle coscienze: riafferma il gallicanesimo in conflitto con Roma e combatte le altre fedi, ugonotti e giansenisti.'],
+ ],
+ quiz:[
+  ['Gli strumenti dell’assolutismo di Luigi XIV sono…','esercito, burocrazia, tasse',['esercito, Parlamento, Chiesa','tasse, nobili, parlamenti','burocrazia, colonie, Chiesa'],'Tre strumenti.'],
+  ['In politica interna l’obiettivo è…','l’accentramento del potere',['l’arricchimento della Francia','il controllo sulle coscienze','la tolleranza'],'Accentramento.'],
+  ['In politica economica l’obiettivo è…','l’arricchimento della Francia',['l’accentramento del potere','il controllo sulle coscienze','la guerra'],'Arricchimento.'],
+  ['In politica religiosa l’obiettivo è…','il controllo sulle coscienze',['l’arricchimento della Francia','l’accentramento del potere','l’unità con Roma'],'Coscienze.'],
+  ['I nobili sono controllati…','facendoli vivere a corte',['mandandoli in esilio','dando loro più potere','con i parlamenti'],'Vivono a corte.'],
+  ['Il collegamento centro-periferie avviene tramite…','gli intendenti',['i nobili','i parlamenti','il primo ministro'],'Intendenti.'],
+  ['Il mercantilismo prevede…','dazi elevati e sostegno a manifatture e commerci',['libero scambio','niente tasse','chiusura delle colonie'],'Mercantilismo.'],
+  ['Luigi XIV lotta contro…','ugonotti e giansenisti',['luterani e anglicani','ebrei e musulmani','cattolici e ortodossi'],'Ugonotti e giansenisti.'],
+ ]
+},
+u3:{
+ cose:`<div class="box bia"><p>L’assolutismo di Luigi XIV ha <b>elementi di modernità</b>, un <b>limite</b>, e diventa un <b>modello in Europa</b>: viene imitato con successo in alcuni paesi, ma resta incompiuto nell’Impero asburgico.</p></div>`,
+ ricette:[
+  card('blu','1 · Gli elementi di modernità',LI(['la <b>propaganda politica</b>','la <b>politica mercantilistica</b>','la <b>legislazione unitaria</b>'])),
+  card('ver','2 · Il limite',
+   '<p>L’<b>esiguità della burocrazia</b> per il controllo del territorio: i funzionari sono pochi rispetto al territorio da controllare.</p>'),
+  card('gia','3 · Un modello in Europa',
+   TAB(['Esito','Dove'],[['<b>imitato con successo</b>','Svezia e Danimarca · Prussia e Russia'],['<b>incompiuto</b>','Impero asburgico']])+'<p class="note">Lo schema del libro prosegue sotto: la parte in fondo alla pagina non è inclusa qui. Aggiungi quello che trovi nel tuo libro.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Quali sono gli elementi di modernità?»</b> La propaganda politica, la politica mercantilistica e la legislazione unitaria.</p>
+ <p><b>«Qual è il limite?»</b> La burocrazia è troppo piccola per controllare tutto il territorio.</p>
+ <p><b>«Il modello è stato imitato?»</b> Con successo in Svezia, Danimarca, Prussia e Russia; in modo incompiuto nell’Impero asburgico.</p></div>`,
+ errori:['Scambiare <b>modernità</b> e <b>limite</b>: la burocrazia piccola è un <b>limite</b>.','Dire che il modello è riuscito anche nell’Impero asburgico: lì è <b>incompiuto</b>.','Dimenticare i quattro paesi di successo: <b>Svezia, Danimarca, Prussia, Russia</b>.'],
+ orale:[
+  ['Quali elementi di modernità ha l’assolutismo di Luigi XIV?','La propaganda politica, la politica mercantilistica e la legislazione unitaria.'],
+  ['Qual è il suo limite?','L’esiguità della burocrazia per il controllo del territorio.'],
+  ['Come diventa un modello in Europa?','È imitato con successo in Svezia e Danimarca, in Prussia e Russia; resta incompiuto nell’Impero asburgico.'],
+ ],
+ quiz:[
+  ['Quale è un elemento di modernità?','La legislazione unitaria',['L’esiguità della burocrazia','Il potere dei nobili','La libertà di culto'],'Legislazione unitaria.'],
+  ['Il limite dell’assolutismo di Luigi XIV è…','l’esiguità della burocrazia',['la propaganda','le tasse','la legislazione unitaria'],'Poca burocrazia.'],
+  ['Imitato con successo in…','Prussia e Russia',['Impero asburgico','Inghilterra','Spagna'],'Prussia e Russia.'],
+  ['Incompiuto in…','Impero asburgico',['Svezia','Danimarca','Russia'],'Impero asburgico.'],
+ ]
+},
+u4:{
+ cose:`<div class="box bia"><p>Nel Seicento in <b>Inghilterra</b> il Parlamento si scontra con i re della dinastia <b>Stuart</b>. Dallo scontro nasce la <b>prima rivoluzione inglese (1649)</b>: guerra civile, esecuzione di Carlo I, Repubblica e dittatura di <b>Cromwell</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · I due re Stuart',
+   TAB(['Re','Caratteristiche'],[['<b>Giacomo I Stuart</b> (1603-1625)','unificazione di Inghilterra, Irlanda e Scozia sotto la Corona inglese · contrasti religiosi tra anglicani, presbiteriani, puritani e cattolici'],['<b>Carlo I Stuart</b> (1625-1649)','scontri della Corona con il Parlamento sempre più duri']])),
+  card('ver','2 · Dallo scontro alla guerra civile',stepsHtml([
+   'Gli scontri tra Corona e Parlamento si inaspriscono.',
+   'Il Parlamento impone la <b>Petizione di diritto (1628)</b>.',
+   'Il re decide di <b>sciogliere il Parlamento</b> (1629).',
+   'Si arriva alla <b>guerra civile</b>: la <b>prima rivoluzione inglese</b>.'])+INP('<p>Molte fonti indicano che Carlo I governò senza Parlamento per undici anni, fino al 1640; nello schema del libro la data è 1629-1638. Fai riferimento al tuo libro.</p>')),
+  card('gia','3 · La guerra civile e la Repubblica',stepsHtml([
+   'La guerra civile finisce con la <b>vittoria delle teste rotonde</b> del <b>New Model Army</b> (1648), sotto la guida di <b>Oliver Cromwell</b>.',
+   'Si arriva all’<b>esecuzione di Carlo I</b> e alla <b>proclamazione della Repubblica</b> (1649).',
+   'Segue la <b>dittatura di Cromwell</b>, <b>Lord protettore</b> del Commonwealth (1653).'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Com’è andata la prima rivoluzione inglese?»</b> Scontri tra Carlo I e Parlamento, Petizione di diritto (1628), scioglimento del Parlamento, guerra civile vinta dalle teste rotonde di Cromwell, esecuzione del re e Repubblica (1649), poi dittatura di Cromwell (1653).</p>
+ <p><b>«Che cos’è la Petizione di diritto?»</b> Il documento che il Parlamento impone al re nel 1628, dopo gli scontri con la Corona.</p></div>`,
+ errori:['Confondere <b>Giacomo I</b> (1603-1625) e <b>Carlo I</b> (1625-1649).','Mettere in ordine sbagliato <b>Petizione di diritto (1628)</b> e scioglimento del Parlamento (1629).','Dimenticare che l’esecuzione di Carlo I è del <b>1649</b>.','Confondere <b>Repubblica</b> (1649) e <b>dittatura di Cromwell</b> (1653).'],
+ orale:[
+  ['Come si arriva alla prima rivoluzione inglese?','Con Giacomo I si hanno unificazione di Inghilterra, Irlanda e Scozia e contrasti religiosi. Con Carlo I si inaspriscono gli scontri con il Parlamento, che impone la Petizione di diritto (1628); il re scioglie il Parlamento e si arriva alla guerra civile.'],
+  ['Come finisce la guerra civile?','Con la vittoria delle teste rotonde del New Model Army guidate da Cromwell (1648), l’esecuzione di Carlo I e la proclamazione della Repubblica (1649).'],
+  ['Che cosa succede dopo la Repubblica?','La dittatura di Cromwell, Lord protettore del Commonwealth (1653).'],
+ ],
+ quiz:[
+  ['Giacomo I Stuart regna…','1603-1625',['1625-1649','1649-1653','1628-1629'],'Giacomo I.'],
+  ['Carlo I Stuart regna…','1625-1649',['1603-1625','1653-1658','1658-1689'],'Carlo I.'],
+  ['La Petizione di diritto è del…','1628',['1603','1649','1689'],'1628.'],
+  ['Il re scioglie il Parlamento nel…','1629',['1628','1649','1658'],'1629.'],
+  ['Le teste rotonde sono guidate da…','Oliver Cromwell',['Carlo I','Giacomo II','Guglielmo III'],'Cromwell.'],
+  ['L’esecuzione di Carlo I e la Repubblica sono del…','1649',['1628','1653','1689'],'1649.'],
+  ['Nel 1653 Cromwell diventa…','Lord protettore del Commonwealth',['re d’Inghilterra','capo del Parlamento','esule'],'Lord protettore.'],
+ ]
+},
+u5:{
+ cose:`<div class="box bia"><p>Dopo la morte di Cromwell (1658) tornano gli Stuart, ma mostrano <b>tendenze autoritarie</b>. Il Parlamento caccia Giacomo II, sostituito da <b>Guglielmo III d’Orange</b>, che firma il <b>Bill of Rights</b>: è la <b>Gloriosa Rivoluzione (1689)</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · La catena degli eventi',stepsHtml([
+   'La <b>morte di Cromwell</b> (1658) provoca la <b>restaurazione della monarchia degli Stuart</b>.',
+   'Ma si manifestano <b>tendenze autoritarie</b>.',
+   'Queste causano la <b>cacciata di Giacomo II Stuart</b> per volontà del Parlamento.',
+   'Giacomo II è sostituito con <b>Guglielmo III d’Orange</b>, che firma il <b>Bill of Rights</b>.',
+   'Si ha così la <b>Gloriosa Rivoluzione (1689)</b>.'])),
+  card('ver','2 · I due eventi in sintesi',
+   TAB(['','Prima rivoluzione','Gloriosa Rivoluzione'],[['Data','1649','1689'],['Fine','esecuzione del re, Repubblica, Cromwell','cacciata di Giacomo II, Bill of Rights'],['Protagonista','Oliver Cromwell','Guglielmo III d’Orange']])+INP('<p>La restaurazione avviene nel <b>1660</b> con Carlo II, figlio di Carlo I. La Gloriosa Rivoluzione si svolge tra il <b>1688</b> e il <b>1689</b> (il re Giacomo II fugge in Francia) e quasi senza spargimento di sangue. Il Bill of Rights limita i poteri del re: le nuove tasse e le nuove leggi devono essere approvate dal Parlamento.</p>')),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Come si arriva alla Gloriosa Rivoluzione?»</b> Dopo la morte di Cromwell (1658) c’è la restaurazione degli Stuart, ma emergono tendenze autoritarie; il Parlamento caccia Giacomo II e lo sostituisce con Guglielmo III d’Orange, che firma il Bill of Rights.</p>
+ <p><b>«Che cosa significa Gloriosa Rivoluzione?»</b> Il passaggio del trono da Giacomo II a Guglielmo III per volontà del Parlamento, che dà luogo a una monarchia limitata.</p></div>`,
+ errori:['Confondere la <b>prima rivoluzione</b> (1649, guerra civile) con la <b>Gloriosa Rivoluzione</b> (1689).','Dire che il Bill of Rights lo firma <b>Giacomo II</b>: lo firma <b>Guglielmo III</b>.','Dimenticare che Giacomo II è cacciato <b>per volontà del Parlamento</b>.','Mettere la morte di Cromwell (1658) dopo la restaurazione: viene <b>prima</b>.'],
+ orale:[
+  ['Che cosa succede dopo la morte di Cromwell?','Nel 1658 la sua morte provoca la restaurazione della monarchia degli Stuart, ma emergono tendenze autoritarie.'],
+  ['Come si arriva alla Gloriosa Rivoluzione?','Le tendenze autoritarie causano la cacciata di Giacomo II Stuart per volontà del Parlamento; è sostituito con Guglielmo III d’Orange, che firma il Bill of Rights.'],
+  ['Che cos’è il Bill of Rights?','La dichiarazione dei diritti firmata da Guglielmo III, che dà luogo alla Gloriosa Rivoluzione (1689).'],
+ ],
+ quiz:[
+  ['La morte di Cromwell è del…','1658',['1649','1653','1689'],'1658.'],
+  ['La morte di Cromwell provoca…','la restaurazione della monarchia degli Stuart',['la Repubblica','la guerra civile','la Gloriosa Rivoluzione'],'Restaurazione.'],
+  ['Le tendenze autoritarie causano…','la cacciata di Giacomo II',['l’esecuzione di Carlo I','la Petizione di diritto','la dittatura di Cromwell'],'Cacciata.'],
+  ['Giacomo II è sostituito con…','Guglielmo III d’Orange',['Carlo I','Oliver Cromwell','Giacomo I'],'Guglielmo III.'],
+  ['Il Bill of Rights è firmato da…','Guglielmo III d’Orange',['Giacomo II','Carlo I','Cromwell'],'Guglielmo III.'],
+  ['La Gloriosa Rivoluzione è del…','1689',['1649','1653','1628'],'1689 (secondo lo schema).'],
+ ]
+}
+};
+const GLOSS=Object.values(DEFS).flat();
+const FORMULARIO=`
+<div class="box blu"><h3>Assolutismo</h3><p>Re <b>sciolto da ogni vincolo</b> · diritto divino (potere da Dio) · modello più compiuto: <b>Francia di Luigi XIV</b> · in Inghilterra il re è limitato dal Parlamento.</p></div>
+<div class="box ver"><h3>Luigi XIV</h3><p><b>3 strumenti</b>: esercito, burocrazia, tasse.</p>${TAB(['Politica','Obiettivo','Azioni'],[['interna','accentramento del potere','nobili a corte · parlamenti indeboliti · primo ministro eliminato · intendenti · culto del re Sole'],['economica','arricchimento della Francia','mercantilismo · infrastrutture · colonie'],['religiosa','controllo sulle coscienze','gallicanesimo · lotta a ugonotti e giansenisti']])}<p><b>Modernità</b>: propaganda, mercantilismo, legislazione unitaria. <b>Limite</b>: poca burocrazia.</p><p><b>Modello</b>: Svezia, Danimarca, Prussia, Russia (successo) · Impero asburgico (incompiuto).</p></div>
+<div class="box gia"><h3>Date della rivoluzione inglese</h3>${TAB(['Anno','Evento'],[['1603-1625','Giacomo I Stuart'],['1625-1649','Carlo I Stuart'],['1628','Petizione di diritto'],['1629','scioglimento del Parlamento'],['1648','vittoria delle teste rotonde (New Model Army)'],['1649','esecuzione di Carlo I · Repubblica'],['1653','Cromwell Lord protettore'],['1658','morte di Cromwell'],['1689','Gloriosa Rivoluzione · Bill of Rights']])}</div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('sto_abs_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('sto_abs_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+</script>
+<!--AGG--><script>
+(function(){
+ var B="20261005130909",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
