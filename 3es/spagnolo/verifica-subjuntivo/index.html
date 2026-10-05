@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>3 ES</title>
+<title>El subjuntivo · Spagnolo 3 ES</title>
 <style>
 body{margin:0;background:#fbf7ec;color:#1d1d1d;font-family:Verdana,Tahoma,Arial,sans-serif;font-size:18px;line-height:1.6}
 header{background:#22314d;color:#fff;padding:18px 16px}header h1{margin:0;font-size:1.35rem}header p{margin:4px 0 0;font-size:.9rem;opacity:.85}
@@ -7,7 +7,7 @@ main{max-width:640px;margin:0 auto;padding:16px}
 .it{display:block;background:#fff;border:2px solid #d9d2bf;border-radius:14px;padding:16px;margin:12px 0;text-decoration:none;color:inherit;min-height:56px}
 .it b{display:block;font-size:1.1rem;color:#22314d}.it span{font-size:.9rem;color:#555}
 .back{color:#22314d;font-size:.9rem}.vuoto{color:#555}
-</style></head><body><header><h1>3 ES</h1><p>Scegli la materia</p></header><main><p><a class="back" href="../">← Indietro</a></p><a class="it" href="scienze-umane/"><b>Scienze Umane</b><span>Schemi, flashcard, quiz e giochi di ripasso</span></a><a class="it" href="matematica/"><b>Matematica</b><span>Equazioni, scomposizioni, 2° grado: ripasso guidato</span></a><a class="it" href="fisica/"><b>Fisica</b><span>Le grandezze fisiche: misure, unità, densità</span></a><a class="it" href="spagnolo/"><b>Spagnolo</b><span>El subjuntivo: verifica sui quattro tempi</span></a></main><!--AGG--><script>
+</style></head><body><header><h1>El subjuntivo</h1><p>Verifica di spagnolo · 3 ES</p></header><main><p><a class="back" href="../">← Indietro</a></p><a class="it" href="ripasso-guidato.html?v=20261005094957"><b>Ripasso guidato (interattivo)</b><span>Presente, perfecto, imperfecto e pluscuamperfecto de subjuntivo: ricette, esercizi con soluzioni, quiz, orale, prova finale</span></a><a class="it" href="schede-ricette.pdf?v=20261005094957"><b>Schede da stampare (PDF)</b><span>Ricette, esempi, errori e formulario in formato telefono</span></a><a class="it" href="materiale-cartaceo/mappe.pdf?v=20261005094957"><b>Mappe concettuali (PDF)</b><span>7 mappe per la verifica: una per argomento e la panoramica</span></a><a class="it" href="materiale-cartaceo/dispensa.pdf?v=20261005094957"><b>Dispensa da stampare (PDF)</b><span>Teoria ed esercizi da svolgere a matita</span></a><a class="it" href="materiale-cartaceo/soluzioni.pdf?v=20261005094957"><b>Soluzioni svolte (PDF)</b><span>Per controllare gli esercizi della dispensa</span></a></main><!--AGG--><script>
 (function(){
  var B="20261005094957",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
@@ -23,7 +23,7 @@ main{max-width:640px;margin:0 auto;padding:16px}
  }
  function check(){
   if(Date.now()-last<30000)return;last=Date.now();
-  fetch("../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
    if(!v||!v.build||v.build===B)return;
    var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
    if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}

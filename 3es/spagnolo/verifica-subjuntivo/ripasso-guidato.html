@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spagnolo: el subjuntivo</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Spagnolo</a></p><h1>Spagnolo: el subjuntivo</h1><p>Presente, perfecto, imperfecto, pluscuamperfecto · un passo alla volta</p></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Presente</button>
+<button data-t="u2">2 Cuándo se usa</button>
+<button data-t="u3">3 Perfecto</button>
+<button data-t="u4">4 Imperfecto</button>
+<button data-t="u5">5 Pluscuamperfecto</button>
+<button data-t="u6">6 Concordancia y si</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo alla <b>verifica di spagnolo</b> sul <b>subjuntivo</b>. Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti, con carta e penna vicino. Ogni argomento ha sempre lo stesso ordine, così ti abitui.</p>
+<div class="box gia"><h3>Che cosa c’è nella verifica</h3>
+<ul><li><b>Presente de subjuntivo</b> (que yo hable)</li><li><b>Pretérito perfecto de subjuntivo</b> (que yo haya hablado)</li><li><b>Pretérito imperfecto de subjuntivo</b> (que yo hablara)</li><li><b>Pretérito pluscuamperfecto de subjuntivo</b> (que yo hubiera hablado)</li></ul>
+<p class="note">Il kit aggiunge due unità di supporto: <b>quando si usa</b> il subjuntivo e la <b>concordancia de tiempos</b> con le frasi con <i>si</i>.</p></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: i passaggi da fare, sempre uguali.</div></div>
+<div class="step"><b class="n">3</b><div><b>Esempi svolti</b>: ogni passaggio è spiegato. Rifalli a penna su un foglio senza guardare.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni, quelli che fanno perdere punti.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: esercizi sempre nuovi. Scrivi la forma <b>su un foglio</b>, poi scegli la risposta. Se sbagli leggi i passaggi. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz di teoria</b>: poche domande sulle regole.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (6 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 (presente de subjuntivo)</li><li><b>Giorno 2</b>: unità 2 (quando si usa il subjuntivo)</li><li><b>Giorno 3</b>: unità 3 (pretérito perfecto)</li><li><b>Giorno 4</b>: unità 4 (pretérito imperfecto)</li><li><b>Giorno 5</b>: unità 5 (pretérito pluscuamperfecto)</li><li><b>Giorno 6</b>: unità 6 (concordancia e frasi con si), Prova finale, Orale e Formulario</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c'è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Carta e penna sempre pronte: scrivi le forme a mano.</li><li>Impara <b>bene</b> i sei irregolari del presente: ser, estar, ir, dar, saber, haber.</li><li>Gli irregolari dell’imperfecto vengono dall’<b>indefinido</b>: se lo sai, li sai.</li><li>Se sbagli non è un problema: leggi i passaggi e prova con un altro esercizio.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li><li>Prima della verifica: leggi il <b>Formulario</b> e ripeti a voce le risposte dell'<b>Orale</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== SPAGNOLO: UTILITÀ E CONIUGAZIONE ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,ok,tag)=>({q,...mkOpts(correct,wrongs),steps,ok,tag});
+const B=s=>`<b>${s}</b>`;
+const em=s=>`<i>${s}</i>`;
+
+const PERS=['yo','tú','él / ella / usted','nosotros','vosotros','ellos / ustedes'];
+const PS=['yo','tú','él','nosotros','vosotros','ellos'];             // forme brevi nelle frasi
+const accent=w=>{const m={a:'á',e:'é',i:'í',o:'ó',u:'ú'};return w.slice(0,-1)+(m[w.slice(-1)]||w.slice(-1))};
+
+/* lessico: inf, it (italiano), t (-ar/-er/-ir), s (radice del subj. presente: yo, tú, él, ellos), s1 (nosotros, vosotros), p3 (3ª plurale del pretérito indefinido), pp (participio) */
+const V=[
+ // regolari -ar
+ {inf:'hablar',it:'parlare',t:'ar',s:'habl',p3:'hablaron',pp:'hablado'},
+ {inf:'cantar',it:'cantare',t:'ar',s:'cant',p3:'cantaron',pp:'cantado'},
+ {inf:'trabajar',it:'lavorare',t:'ar',s:'trabaj',p3:'trabajaron',pp:'trabajado'},
+ {inf:'estudiar',it:'studiare',t:'ar',s:'estudi',p3:'estudiaron',pp:'estudiado'},
+ {inf:'comprar',it:'comprare',t:'ar',s:'compr',p3:'compraron',pp:'comprado'},
+ {inf:'escuchar',it:'ascoltare',t:'ar',s:'escuch',p3:'escucharon',pp:'escuchado'},
+ {inf:'bailar',it:'ballare',t:'ar',s:'bail',p3:'bailaron',pp:'bailado'},
+ {inf:'viajar',it:'viaggiare',t:'ar',s:'viaj',p3:'viajaron',pp:'viajado'},
+ {inf:'ayudar',it:'aiutare',t:'ar',s:'ayud',p3:'ayudaron',pp:'ayudado'},
+ {inf:'llamar',it:'chiamare',t:'ar',s:'llam',p3:'llamaron',pp:'llamado'},
+ {inf:'terminar',it:'finire',t:'ar',s:'termin',p3:'terminaron',pp:'terminado'},
+ // regolari -er / -ir
+ {inf:'comer',it:'mangiare',t:'er',s:'com',p3:'comieron',pp:'comido'},
+ {inf:'beber',it:'bere',t:'er',s:'beb',p3:'bebieron',pp:'bebido'},
+ {inf:'aprender',it:'imparare',t:'er',s:'aprend',p3:'aprendieron',pp:'aprendido'},
+ {inf:'correr',it:'correre',t:'er',s:'corr',p3:'corrieron',pp:'corrido'},
+ {inf:'vender',it:'vendere',t:'er',s:'vend',p3:'vendieron',pp:'vendido'},
+ {inf:'leer',it:'leggere',t:'er',s:'le',p3:'leyeron',pp:'leído'},
+ {inf:'vivir',it:'vivere',t:'ir',s:'viv',p3:'vivieron',pp:'vivido'},
+ {inf:'escribir',it:'scrivere',t:'ir',s:'escrib',p3:'escribieron',pp:'escrito'},
+ {inf:'abrir',it:'aprire',t:'ir',s:'abr',p3:'abrieron',pp:'abierto'},
+ {inf:'compartir',it:'condividere',t:'ir',s:'compart',p3:'compartieron',pp:'compartido'},
+ {inf:'recibir',it:'ricevere',t:'ir',s:'recib',p3:'recibieron',pp:'recibido'},
+ {inf:'decidir',it:'decidere',t:'ir',s:'decid',p3:'decidieron',pp:'decidido'},
+ // yo irregular
+ {inf:'tener',it:'avere',t:'er',s:'teng',p3:'tuvieron',pp:'tenido'},
+ {inf:'hacer',it:'fare',t:'er',s:'hag',p3:'hicieron',pp:'hecho'},
+ {inf:'decir',it:'dire',t:'ir',s:'dig',p3:'dijeron',pp:'dicho'},
+ {inf:'poner',it:'mettere',t:'er',s:'pong',p3:'pusieron',pp:'puesto'},
+ {inf:'salir',it:'uscire',t:'ir',s:'salg',p3:'salieron',pp:'salido'},
+ {inf:'venir',it:'venire',t:'ir',s:'veng',p3:'vinieron',pp:'venido'},
+ {inf:'conocer',it:'conoscere',t:'er',s:'conozc',p3:'conocieron',pp:'conocido'},
+ {inf:'traer',it:'portare',t:'er',s:'traig',p3:'trajeron',pp:'traído'},
+ {inf:'oír',it:'sentire (udire)',t:'ir',s:'oig',p3:'oyeron',pp:'oído'},
+ {inf:'caer',it:'cadere',t:'er',s:'caig',p3:'cayeron',pp:'caído'},
+ {inf:'construir',it:'costruire',t:'ir',s:'construy',p3:'construyeron',pp:'construido'},
+ {inf:'ver',it:'vedere',t:'er',s:'ve',p3:'vieron',pp:'visto'},
+ // cambio vocalico
+ {inf:'pensar',it:'pensare',t:'ar',s:'piens',s1:'pens',p3:'pensaron',pp:'pensado'},
+ {inf:'cerrar',it:'chiudere',t:'ar',s:'cierr',s1:'cerr',p3:'cerraron',pp:'cerrado'},
+ {inf:'encontrar',it:'trovare',t:'ar',s:'encuentr',s1:'encontr',p3:'encontraron',pp:'encontrado'},
+ {inf:'empezar',it:'cominciare',t:'ar',s:'empiec',s1:'empec',p3:'empezaron',pp:'empezado'},
+ {inf:'jugar',it:'giocare',t:'ar',s:'juegu',s1:'jugu',p3:'jugaron',pp:'jugado'},
+ {inf:'querer',it:'volere',t:'er',s:'quier',s1:'quer',p3:'quisieron',pp:'querido'},
+ {inf:'poder',it:'potere',t:'er',s:'pued',s1:'pod',p3:'pudieron',pp:'podido'},
+ {inf:'volver',it:'tornare',t:'er',s:'vuelv',s1:'volv',p3:'volvieron',pp:'vuelto'},
+ {inf:'dormir',it:'dormire',t:'ir',s:'duerm',s1:'durm',p3:'durmieron',pp:'dormido'},
+ {inf:'sentir',it:'sentire (provare)',t:'ir',s:'sient',s1:'sint',p3:'sintieron',pp:'sentido'},
+ {inf:'preferir',it:'preferire',t:'ir',s:'prefier',s1:'prefir',p3:'prefirieron',pp:'preferido'},
+ {inf:'morir',it:'morire',t:'ir',s:'muer',s1:'mur',p3:'murieron',pp:'muerto'},
+ {inf:'pedir',it:'chiedere',t:'ir',s:'pid',p3:'pidieron',pp:'pedido'},
+ {inf:'repetir',it:'ripetere',t:'ir',s:'repit',p3:'repitieron',pp:'repetido'},
+ {inf:'seguir',it:'seguire',t:'ir',s:'sig',p3:'siguieron',pp:'seguido'},
+ {inf:'elegir',it:'scegliere',t:'ir',s:'elij',p3:'eligieron',pp:'elegido'},
+ // ortografia
+ {inf:'buscar',it:'cercare',t:'ar',s:'busqu',p3:'buscaron',pp:'buscado'},
+ {inf:'llegar',it:'arrivare',t:'ar',s:'llegu',p3:'llegaron',pp:'llegado'},
+ {inf:'sacar',it:'tirare fuori',t:'ar',s:'saqu',p3:'sacaron',pp:'sacado'},
+ {inf:'pagar',it:'pagare',t:'ar',s:'pagu',p3:'pagaron',pp:'pagado'},
+ {inf:'tocar',it:'toccare',t:'ar',s:'toqu',p3:'tocaron',pp:'tocado'},
+ {inf:'coger',it:'prendere',t:'er',s:'coj',p3:'cogieron',pp:'cogido'},
+ // del tutto irregolari
+ {inf:'ser',it:'essere',t:'er',sp:['sea','seas','sea','seamos','seáis','sean'],p3:'fueron',pp:'sido'},
+ {inf:'estar',it:'stare',t:'ar',sp:['esté','estés','esté','estemos','estéis','estén'],p3:'estuvieron',pp:'estado'},
+ {inf:'ir',it:'andare',t:'ir',sp:['vaya','vayas','vaya','vayamos','vayáis','vayan'],p3:'fueron',pp:'ido'},
+ {inf:'dar',it:'dare',t:'ar',sp:['dé','des','dé','demos','deis','den'],p3:'dieron',pp:'dado'},
+ {inf:'saber',it:'sapere',t:'er',sp:['sepa','sepas','sepa','sepamos','sepáis','sepan'],p3:'supieron',pp:'sabido'},
+];
+const byInf=i=>V.find(v=>v.inf===i);
+const END={ar:['e','es','e','emos','éis','en'],er:['a','as','a','amos','áis','an'],ir:['a','as','a','amos','áis','an']};
+
+/* presente de subjuntivo */
+function sPres(v,p){
+  if(v.sp)return v.sp[p];
+  const st=(p===3||p===4)&&v.s1?v.s1:v.s;
+  return st+END[v.t][p];
+}
+/* radice "regolare" (infinito senza -ar/-er/-ir) con la desinenza giusta: serve per gli errori tipici */
+function sPresReg(v,p){const st=v.inf.slice(0,-2);return st+END[v.t][p]}
+/* pretérito perfecto de subjuntivo */
+const HAYA=['haya','hayas','haya','hayamos','hayáis','hayan'];
+const sPerf=(v,p)=>HAYA[p]+' '+v.pp;
+/* pretérito imperfecto de subjuntivo (forma -ra) e (forma -se) */
+function sImp(v,p){
+  const st=v.p3.slice(0,-3);                      // hablaron -> habla
+  return (p===3?accent(st):st)+['ra','ras','ra','ramos','rais','ran'][p];
+}
+function sImpSe(v,p){
+  const st=v.p3.slice(0,-3);
+  return (p===3?accent(st):st)+['se','ses','se','semos','seis','sen'][p];
+}
+/* pretérito pluscuamperfecto de subjuntivo */
+const HUBIERA=['hubiera','hubieras','hubiera','hubiéramos','hubierais','hubieran'];
+const sPlus=(v,p)=>HUBIERA[p]+' '+v.pp;
+/* condizionale (regolare e irregolare), condizionale composto, indicativo presente */
+const CSTEM={tener:'tendr',hacer:'har',decir:'dir',poner:'pondr',salir:'saldr',venir:'vendr',poder:'podr',querer:'querr',saber:'sabr',haber:'habr'};
+const CEND=['ía','ías','ía','íamos','íais','ían'];
+const cond=(v,p)=>(CSTEM[v.inf]||v.inf)+CEND[p];
+const HABRIA=['habría','habrías','habría','habríamos','habríais','habrían'];
+const condC=(v,p)=>HABRIA[p]+' '+v.pp;
+const IND={
+ tener:['tengo','tienes','tiene','tenemos','tenéis','tienen'],ser:['soy','eres','es','somos','sois','son'],
+ estar:['estoy','estás','está','estamos','estáis','están'],ir:['voy','vas','va','vamos','vais','van'],
+ hacer:['hago','haces','hace','hacemos','hacéis','hacen'],venir:['vengo','vienes','viene','venimos','venís','vienen'],
+ poder:['puedo','puedes','puede','podemos','podéis','pueden'],querer:['quiero','quieres','quiere','queremos','queréis','quieren'],
+ saber:['sé','sabes','sabe','sabemos','sabéis','saben'],vivir:['vivo','vives','vive','vivimos','vivís','viven'],
+ hablar:['hablo','hablas','habla','hablamos','habláis','hablan'],comer:['como','comes','come','comemos','coméis','comen'],
+ trabajar:['trabajo','trabajas','trabaja','trabajamos','trabajáis','trabajan'],estudiar:['estudio','estudias','estudia','estudiamos','estudiáis','estudian'],
+ salir:['salgo','sales','sale','salimos','salís','salen'],decir:['digo','dices','dice','decimos','decís','dicen']
+};
+const iPres=(v,p)=>IND[v.inf]?IND[v.inf][p]:null;
+const hasInd=v=>!!IND[v.inf];
+const NOM=['presente de subjuntivo','pretérito perfecto de subjuntivo','pretérito imperfecto de subjuntivo','pretérito pluscuamperfecto de subjuntivo'];
+const FORM=[sPres,sPerf,sImp,sPlus];
+
+/* ========== SPAGNOLO: GENERATORI DI ESERCIZI ========== */
+const L1=p=>`${PERS[p]}`;
+const pickV=(filter)=>{const pool=V.filter(filter||(()=>true));return pick(pool)};
+const ESC=s=>s; // le frasi spagnole sono già in HTML-safe
+
+/* --- spiegazioni passo-passo --- */
+function stepsPres(v,p){
+  const f=sPres(v,p);
+  if(v.sp)return `<p>${B(v.inf)} è <b>irregolare</b> al presente de subjuntivo: va imparato a memoria.</p><p class="m">${v.sp.map((x,i)=>PS[i]+' '+x).join(' · ')}</p><p>Per ${B(PERS[p])}: ${B(f)}.</p>`;
+  const ind=hasInd(v)?iPres(v,0):null;
+  const yo=v.s1||v.s?'':'';
+  let h=`<p>1) Parto dalla <b>1ª persona del presente indicativo</b> (yo) di ${B(v.inf)} e tolgo la <b>-o</b>.</p>`;
+  h+=`<p>2) Aggiungo la desinenza <b>“opposta”</b>: i verbi in <b>-ar</b> prendono <b>-e, -es, -e, -emos, -éis, -en</b>; i verbi in <b>-er / -ir</b> prendono <b>-a, -as, -a, -amos, -áis, -an</b>.</p>`;
+  h+=`<p>3) ${B(v.inf)} è in <b>-${v.t}</b>: radice ${B(v.s)}${(p===3||p===4)&&v.s1?` (con <i>nosotros/vosotros</i> la radice torna ${B(v.s1)})`:''} + <b>${END[v.t][p]}</b> = ${B(f)}.</p>`;
+  return h;
+}
+function stepsPerf(v,p){
+  return `<p>Il <b>pretérito perfecto de subjuntivo</b> si fa con <b>haya, hayas, haya, hayamos, hayáis, hayan</b> (presente de subjuntivo di <i>haber</i>) + <b>participio</b>.</p><p>1) Persona ${B(PERS[p])} → ${B(HAYA[p])}.</p><p>2) Participio di ${B(v.inf)}: ${B(v.pp)}${v.inf.endsWith('ar')?'':v.pp.endsWith('o')&&!v.pp.endsWith('ido')?' (irregolare)':''}.</p><p>3) Risultato: ${B(sPerf(v,p))}.</p>`;
+}
+function stepsImp(v,p){
+  return `<p>1) Prendo la <b>3ª persona plurale del pretérito indefinido</b> di ${B(v.inf)}: ${B(v.p3)}.</p><p>2) Tolgo la <b>-ron</b>: resta ${B(v.p3.slice(0,-3))}.</p><p>3) Aggiungo la desinenza per ${B(PERS[p])}: <b>${['-ra','-ras','-ra','-ramos','-rais','-ran'][p]}</b> (oppure ${['-se','-ses','-se','-semos','-seis','-sen'][p]}).</p><p>Risultato: ${B(sImp(v,p))} (o ${B(sImpSe(v,p))}).</p>${p===3?'<p class="note">Con <i>nosotros</i> la vocale prima di -ramos/-semos prende l’<b>accento</b>.</p>':''}`;
+}
+function stepsPlus(v,p){
+  return `<p>Il <b>pretérito pluscuamperfecto de subjuntivo</b> si fa con <b>hubiera, hubieras, hubiera, hubiéramos, hubierais, hubieran</b> (imperfecto di subjuntivo di <i>haber</i>; anche <i>hubiese…</i>) + <b>participio</b>.</p><p>1) ${B(PERS[p])} → ${B(HUBIERA[p])}.</p><p>2) Participio di ${B(v.inf)}: ${B(v.pp)}.</p><p>3) Risultato: ${B(sPlus(v,p))}.</p>`;
+}
+
+/* --- 1. coniuga un tempo del subjuntivo (scelta tra 3 forme) --- */
+function wrongsFor(t,v,p){
+  const w=[];
+  const others=[0,1,2,3].filter(x=>x!==t);
+  // stessa persona, altro tempo del congiuntivo
+  w.push(FORM[pick(others)](v,p));
+  // stesso tempo, altra persona
+  w.push(FORM[t](v,(p+rnd(1,5))%6));
+  if(t===0){
+    w.push(sPresReg(v,p));                       // radice dell'infinito
+    const t2=v.t==='ar'?'er':'ar';w.push(v.inf.slice(0,-2)+END[t2][p]); // desinenza non opposta
+    if(hasInd(v))w.push(iPres(v,p));             // indicativo
+    if(v.s&&!v.sp&&v.s1&&(p===3||p===4))w.push(v.s+END[v.t][p]); // dittongo anche in nosotros/vosotros
+  }
+  if(t===1){
+    w.push('hubiera '+v.pp);
+    w.push(['he','has','ha','hemos','habéis','han'][p]+' '+v.pp);
+    w.push(HAYA[p]+' '+v.inf.slice(0,-2)+(v.t==='ar'?'ado':'ido'));
+  }
+  if(t===2){
+    w.push(v.inf.slice(0,-2)+{ar:'a',er:'ie',ir:'ie'}[v.t]+['ra','ras','ra','ramos','rais','ran'][p]);
+    w.push(cond(v,p));
+    w.push(sPres(v,p));
+    if(p===3)w.push(sImp(v,p).replace(/[áéíó]/,c=>({á:'a',é:'e',í:'i',ó:'o'}[c])));
+  }
+  if(t===3){
+    w.push(HABRIA[p]+' '+v.pp);
+    w.push(HAYA[p]+' '+v.pp);
+    w.push(HUBIERA[p]+' '+v.inf.slice(0,-2)+(v.t==='ar'?'ado':'ido'));
+    w.push(['había','habías','había','habíamos','habíais','habían'][p]+' '+v.pp);
+  }
+  return shuffle(w).filter(x=>x&&x!==FORM[t](v,p));
+}
+function mkConj(t,steps,notIn){
+  return function(){
+    const v=pickV(notIn);
+    const p=rnd(0,5);
+    const c=FORM[t](v,p);
+    const person=p===2?'él / ella / usted':p===5?'ellos / ustedes':PS[p];
+    const wr=wrongsFor(t,v,p);
+    return mkEx(`Coniuga <b>${v.inf}</b> (${v.it}) al <b>${NOM[t]}</b> con <b>${person}</b>.`,c,wr,steps(v,p),
+      ()=>true,'Coniugazione · '+NOM[t]);
+  }
+}
+const exCP=mkConj(0,stepsPres);
+const exCPerf=mkConj(1,stepsPerf);
+const exCImp=mkConj(2,stepsImp);
+const exCPlus=mkConj(3,stepsPlus);
+
+/* --- 2. riconoscere il tempo e la persona di una forma --- */
+function exRiconosci(){
+  const t=rnd(0,3);const v=pickV();const p=pick([1,3,4,5]);
+  const f=FORM[t](v,p);
+  const person=p===2?'él / ella / usted':p===5?'ellos / ustedes':PS[p];
+  const lab=(tt,pp)=>`${(pp===2?'él / ella / usted':pp===5?'ellos / ustedes':PS[pp])} · ${NOM[tt]}`;
+  const c=lab(t,p);
+  const wr=[lab((t+rnd(1,3))%4,p),lab(t,(p+rnd(1,5))%6),lab((t+rnd(1,3))%4,(p+rnd(1,5))%6)];
+  return mkEx(`Che forma è <b>${f}</b>? (verbo <i>${v.inf}</i>)`,c,wr,
+    `<p>${t===0?'Una sola parola con desinenza “opposta” (-e per -ar, -a per -er/-ir): presente de subjuntivo.':t===1?'<b>haya…</b> + participio: pretérito perfecto de subjuntivo.':t===2?'Una sola parola che finisce in <b>-ra / -se</b>: imperfecto de subjuntivo.':'<b>hubiera / hubiese…</b> + participio: pluscuamperfecto de subjuntivo.'}</p><p>La persona si vede dalla desinenza: <b>${f}</b> = ${B(person)}.</p>`,()=>true,'Riconosci il tempo');
+}
+
+/* --- 3. frasi con "que": indicativo o subjuntivo, e quale tempo --- */
+/* kind: 's' = subjuntivo, 'i' = indicativo. t = tempo del subj. richiesto */
+const FR={
+ // volontà, emozione, dubbio, giudizio: presente
+ pres:[
+  ['Quiero que','volontà: querer + que → subjuntivo'],['Espero que','speranza → subjuntivo'],['Prefiero que','volontà → subjuntivo'],
+  ['Te pido que','richiesta (influenza) → subjuntivo'],['Me alegro de que','emozione → subjuntivo'],['Me gusta que','emozione/gusto → subjuntivo'],
+  ['Tengo miedo de que','emozione → subjuntivo'],['Dudo que','dubbio → subjuntivo'],['No creo que','negazione di opinione → subjuntivo'],
+  ['No pienso que','negazione di opinione → subjuntivo'],['Es importante que','giudizio impersonale → subjuntivo'],['Es necesario que','giudizio impersonale → subjuntivo'],
+  ['Es posible que','possibilità → subjuntivo'],['Es mejor que','giudizio impersonale → subjuntivo'],['Ojalá','augurio (ojalá) → subjuntivo'],
+  ['Te llamo para que','finalità (para que) → sempre subjuntivo'],['Voy a salir antes de que','antes de que → sempre subjuntivo'],
+  ['No salgo a menos que','a menos que → sempre subjuntivo'],['Te lo digo con tal de que','con tal de que → sempre subjuntivo'],
+  ['Es probable que','probabilità → subjuntivo'],['Mis padres no permiten que','permesso/divieto → subjuntivo'],['El profesor nos aconseja que','consiglio → subjuntivo'],
+ ],
+ fut:[['Cuando','cuando + azione futura → subjuntivo'],['En cuanto','en cuanto + azione futura → subjuntivo'],['Hasta que','hasta que + azione futura → subjuntivo'],['Después de que','después de que + azione futura → subjuntivo'],['Aunque','aunque + ipotesi/incerto → subjuntivo']],
+ ind:[
+  ['Creo que','creer (affermativo) → indicativo'],['Pienso que','pensar (affermativo) → indicativo'],['Es verdad que','certezza → indicativo'],
+  ['Está claro que','certezza → indicativo'],['Sé que','sapere → indicativo'],['Estoy seguro de que','certezza → indicativo'],['Es cierto que','certezza → indicativo'],
+  ['No dudo que','non dubitare = certezza → indicativo'],['Veo que','percezione → indicativo'],['Digo que','dire (informare) → indicativo']
+ ],
+ // passato: imperfecto
+ imp:[
+  ['Quería que','volontà al passato → imperfecto de subjuntivo'],['Esperaba que','speranza al passato → imperfecto de subjuntivo'],
+  ['Me alegré de que','emozione al passato (indefinido) → imperfecto de subjuntivo'],['Dudaba que','dubbio al passato → imperfecto de subjuntivo'],
+  ['No creía que','negazione al passato → imperfecto de subjuntivo'],['Era importante que','giudizio al passato → imperfecto de subjuntivo'],
+  ['Mi madre me pidió que','richiesta al passato (indefinido) → imperfecto de subjuntivo'],['Fue necesario que','giudizio al passato → imperfecto de subjuntivo'],
+  ['El profesor prohibió que','divieto al passato → imperfecto de subjuntivo'],['Me gustaría que','condizionale + que → imperfecto de subjuntivo'],
+  ['Querría que','condizionale + que → imperfecto de subjuntivo'],['Ojalá','augurio irreale (non si realizza ora) → imperfecto de subjuntivo'],
+  ['Le dije que se callara para que','finalità al passato → imperfecto de subjuntivo'],['Salimos antes de que','antes de que al passato → imperfecto de subjuntivo'],
+  ['Teníamos miedo de que','emozione al passato → imperfecto de subjuntivo'],['Mis amigos esperaban que','speranza al passato → imperfecto de subjuntivo'],
+ ],
+ // perfecto: azione già finita
+ perf:[
+  ['Espero que ya','speranza + azione già finita → perfecto de subjuntivo'],['Me alegro de que','emozione + azione già finita → perfecto de subjuntivo'],
+  ['No creo que','opinione negata + azione già finita → perfecto de subjuntivo'],['Dudo que','dubbio + azione già finita → perfecto de subjuntivo'],
+  ['Es posible que','possibilità + azione già finita → perfecto de subjuntivo'],['Es una lástima que','giudizio + azione già finita → perfecto de subjuntivo'],
+  ['Siento mucho que','dispiacere + azione già finita → perfecto de subjuntivo'],['Ojalá','augurio su un fatto appena accaduto → perfecto de subjuntivo'],
+  ['Es probable que','probabilità + azione già finita → perfecto de subjuntivo'],
+ ],
+ // pluscuamperfecto: azione anteriore a un passato / irreale
+ plus:[
+  ['Me alegré de que ya','azione precedente a un passato → pluscuamperfecto de subjuntivo'],['No creía que','azione precedente a un passato → pluscuamperfecto de subjuntivo'],
+  ['Dudaba que','azione precedente a un passato → pluscuamperfecto de subjuntivo'],['Esperaba que ya','azione precedente a un passato → pluscuamperfecto de subjuntivo'],
+  ['Ojalá','rimpianto (irreale del passato) → pluscuamperfecto de subjuntivo'],['Sentí que','dispiacere + azione precedente → pluscuamperfecto de subjuntivo'],
+  ['Era una lástima que','giudizio + azione precedente → pluscuamperfecto de subjuntivo'],['Me habría gustado que','condizionale composto + que → pluscuamperfecto de subjuntivo'],
+ ]
+};
+const TIDX={pres:0,fut:0,imp:2,perf:1,plus:3};
+function frame(group,withInd){
+  const f=pick(FR[group]);const v=pickV(withInd?hasInd:null);const p=rnd(0,5);
+  const kind=group==='ind'?'i':'s';
+  const c=group==='ind'?iPres(v,p):FORM[TIDX[group]](v,p);
+  return {pre:f[0],why:f[1],v,p,kind,t:TIDX[group],c,group};
+}
+function sentence(f){return `${f.pre} <b>(${PS[f.p]}) ___</b> (${f.v.inf})`}
+const lastWord=s=>s;
+function exUso(){            // indicativo o subjuntivo?
+  const useInd=Math.random()<0.45;
+  const f=frame(useInd?'ind':pick(['pres','pres','fut','perf']),true);
+  let c,w=[];
+  if(f.kind==='i'){c=iPres(f.v,f.p);w=[sPres(f.v,f.p),sPerf(f.v,f.p),sImp(f.v,f.p)]}
+  else{c=FORM[f.t](f.v,f.p);w=[hasInd(f.v)?iPres(f.v,f.p):sImp(f.v,f.p),FORM[(f.t+1)%4](f.v,f.p),sImp(f.v,f.p)]}
+  const tail=f.group==='fut'?', iremos juntos.':'.';
+  const why=f.kind==='i'?`<p>«${f.pre}» esprime <b>certezza / opinione positiva</b>: vuole l’<b>indicativo</b>.</p><p>${f.why}.</p>`:`<p>${f.why}.</p><p>${f.t===1?'L’azione è già finita: <b>haya + participio</b>.':'Uso il <b>presente de subjuntivo</b>.'}</p>`;
+  return mkEx(`Completa: «${f.pre} ${PS[f.p]} ___ (${f.v.inf})${tail}»`,c,w,why+`<p>Risposta: <b>${f.pre} ${PS[f.p]} ${c}</b>.</p>`,()=>true,'Indicativo o subjuntivo');
+}
+function exSeq(){            // quale tempo del subjuntivo? (concordancia de tiempos)
+  const g=pick(['pres','imp','imp','perf','plus']);
+  const f=frame(g,false);
+  const c=FORM[f.t](f.v,f.p);
+  const wr=[0,1,2,3].filter(x=>x!==f.t).map(x=>FORM[x](f.v,f.p));
+  const hint={pres:'Il verbo principale è al presente o al futuro e l’azione non è ancora finita: <b>presente de subjuntivo</b>.',
+    fut:'Azione futura dopo una congiunzione di tempo: <b>presente de subjuntivo</b>.',
+    imp:'Il verbo principale è al passato (o condizionale): nella subordinata serve l’<b>imperfecto de subjuntivo</b>.',
+    perf:'Verbo principale al presente e azione già conclusa: <b>pretérito perfecto de subjuntivo</b>.',
+    plus:'L’azione è <b>anteriore</b> a un momento del passato (o è un rimpianto): <b>pluscuamperfecto de subjuntivo</b>.'}[g];
+  return mkEx(`Completa: «${f.pre} ${PS[f.p]} ___ (${f.v.inf}).»`,c,wr,`<p>${f.why}.</p><p>${hint}</p><p>Risposta: <b>${f.pre} ${PS[f.p]} ${c}</b>.</p>`,()=>true,'Concordancia de tiempos');
+}
+/* usi: gruppi separati per le unità */
+const exUsoPres=function(){
+  const useInd=Math.random()<0.4;
+  const f=frame(useInd?'ind':pick(['pres','pres','fut']),true);
+  return exUsoFrom(f);
+};
+function exUsoFrom(f){
+  let c,w;
+  if(f.kind==='i'){c=iPres(f.v,f.p);w=[sPres(f.v,f.p),sImp(f.v,f.p),sPerf(f.v,f.p)]}
+  else{c=sPres(f.v,f.p);w=[iPres(f.v,f.p),sImp(f.v,f.p),sPerf(f.v,f.p)]}
+  const tail=f.group==='fut'?', hablaremos.':'.';
+  const why=f.kind==='i'?`<p>«${f.pre}»: ${f.why}.</p><p>Con certezza e opinione positiva si usa l’<b>indicativo</b>, non il subjuntivo.</p>`:`<p>«${f.pre}»: ${f.why}.</p>`;
+  return mkEx(`Completa: «${f.pre} ${PS[f.p]} ___ (${f.v.inf})${tail}»`,c,w,why+`<p>Risposta: <b>${f.pre} ${PS[f.p]} ${c}</b>.</p>`,()=>true,'Indicativo o subjuntivo');
+}
+
+/* --- 4. lo stesso soggetto → infinito --- */
+const SAME=[
+ ['Marta quiere','venir','vaya','Marta vuole venire (lo vuole lei stessa)'],
+ ['Quiero','comer','coma','Voglio mangiare'],
+ ['Esperamos','viajar','viajemos','Speriamo di viaggiare'],
+ ['Prefiero','quedarme','me quede','Preferisco restare'],
+ ['Mis padres desean','descansar','descansen','I miei genitori desiderano riposare'],
+ ['Necesito','estudiar','estudie','Ho bisogno di studiare'],
+ ['Me alegro de','verte','te vea','Sono contento di vederti'],
+ ['Tengo miedo de','suspender','suspenda','Ho paura di essere bocciato'],
+];
+function exMismo(){
+  const s=pick(SAME);
+  const q=Math.random()<0.5;
+  if(q){ // stesso soggetto: infinito
+    const c=`${s[0]} ${s[1]}`;
+    const w=[`${s[0]} que ${s[2]}`,`${s[0]} que ${s[1]}`];
+    return mkEx(`Il soggetto è <b>lo stesso</b> nelle due azioni: ${s[3]}. Quale frase è giusta?`,c+'.',w.map(x=>x+'.'),
+     `<p>Se il soggetto è <b>lo stesso</b>, in spagnolo si usa l’<b>infinito</b>: «${c}».</p><p>Se i soggetti sono <b>diversi</b> si usa <b>que + subjuntivo</b> («${s[0]} que ${s[2]}»).</p>`,()=>true,'Infinito o que + subjuntivo');
+  }
+  const c=`${s[0]} que ${s[2]}`;
+  const subj2=s[2];
+  return mkEx(`Il soggetto è <b>diverso</b> nelle due azioni (due persone diverse). Quale frase è giusta con <i>${s[0]}</i> … ?`,c+'.',[`${s[0]} ${s[1]}.`,`${s[0]} que ${s[1]}.`],
+   `<p>Soggetti <b>diversi</b> → <b>que + subjuntivo</b>: «${c}».</p><p>Con lo stesso soggetto si usa l’infinito: «${s[0]} ${s[1]}».</p>`,()=>true,'Infinito o que + subjuntivo');
+}
+
+/* --- 5. frasi con SI (ipotesi) --- */
+function exSi(){
+  const ty=rnd(1,3);
+  const v=pickV(x=>x.inf!=='oír'&&hasInd(x));const w=pickV(x=>x.inf!=='oír'&&x.inf!==v.inf);const p=rnd(0,5);
+  const q=pick([0,1,2,3,4,5].filter(x=>x!==p));
+  const S=PS[p];const main=PS[q];
+  if(ty===1){
+    const c=iPres(v,p);
+    const futW=(CSTEM[w.inf]||w.inf)+['é','ás','á','emos','éis','án'][q];
+    return mkEx(`Ipotesi <b>possibile</b>: «Si ${S} ___ (${v.inf}), ${main} ${futW} …» Scegli la forma dopo <b>si</b>.`,c,[sPres(v,p),sImp(v,p),cond(v,p)],
+     `<p>Ipotesi <b>possibile / reale</b> (tipo 1): <b>si + indicativo presente</b> → futuro.</p><p>Dopo <b>si</b> non si usa mai il subjuntivo presente. Risposta: ${B('si '+S+' '+c)}.</p>`,()=>true,'Frasi con si');
+  }
+  if(ty===2){
+    const c=sImp(v,p);
+    return mkEx(`Ipotesi <b>poco probabile / irreale del presente</b>: «Si ${S} ___ (${v.inf}), ${main} ${cond(w,q)} …» Scegli la forma dopo <b>si</b>.`,c,[iPres(v,p),sPres(v,p),cond(v,p)],
+     `<p>Ipotesi <b>irreale del presente</b> (tipo 2): <b>si + imperfecto de subjuntivo</b> → <b>condicional</b>.</p><p>Il condizionale (${B(cond(w,q))}) sta nella frase principale, <b>mai</b> dopo si. Risposta: ${B('si '+S+' '+c)}.</p>`,()=>true,'Frasi con si');
+  }
+  const c=sPlus(v,p);
+  return mkEx(`Ipotesi <b>irreale del passato</b>: «Si ${S} ___ (${v.inf}), ${main} ${condC(w,q)} …» Scegli la forma dopo <b>si</b>.`,c,[sPerf(v,p),condC(v,p),sImp(v,p)],
+   `<p>Ipotesi <b>irreale del passato</b> (tipo 3): <b>si + pluscuamperfecto de subjuntivo</b> → <b>condicional compuesto</b> (habría + participio).</p><p>Risposta: ${B('si '+S+' '+c)}.</p>`,()=>true,'Frasi con si');
+}
+/* quale tipo di ipotesi richiede... (struttura) */
+function exSiStr(){
+  const T=[
+   ['Si + <b>presente</b> de indicativo','futuro / presente / imperativo','possibile (reale)'],
+   ['Si + <b>imperfecto</b> de subjuntivo','condicional simple','irreale del presente'],
+   ['Si + <b>pluscuamperfecto</b> de subjuntivo','condicional compuesto','irreale del passato']];
+  const i=rnd(0,2);
+  const c=T[i][1];
+  const wr=T.filter((x,k)=>k!==i).map(x=>x[1]);
+  return mkEx(`Nelle frasi con <i>si</i>, la frase principale che si abbina a: ${T[i][0]} è…`,c,wr,
+   `<p>${T[0][0]} → ${T[0][1]} (${T[0][2]})</p><p>${T[1][0]} → ${T[1][1]} (${T[1][2]})</p><p>${T[2][0]} → ${T[2][1]} (${T[2][2]})</p>`,()=>true,'Struttura del periodo ipotetico');
+}
+
+/* --- 6. correggi l'errore (forma regolare sbagliata) --- */
+function exErrore(t){
+  return function(){
+    const irr=V.filter(v=>{
+      if(t===0)return v.sp||v.s1||v.inf.endsWith('car')||v.inf.endsWith('gar')||v.inf.endsWith('zar')||/(go|zc|y|ig|j)$/.test(v.s||'')||v.inf==='pedir'||v.inf==='seguir';
+      if(t===1||t===3)return /o$/.test(v.pp)&&!/ado$|ido$/.test(v.pp);
+      return v.p3.slice(0,-3)!==v.inf.slice(0,-2)+(v.t==='ar'?'a':'ie');
+    });
+    const v=pick(irr);const p=rnd(0,5);
+    const right=FORM[t](v,p);
+    let bad;
+    if(t===0)bad=sPresReg(v,p);
+    else if(t===1)bad=HAYA[p]+' '+v.inf.slice(0,-2)+(v.t==='ar'?'ado':'ido');
+    else if(t===2)bad=v.inf.slice(0,-2)+(v.t==='ar'?'a':'ie')+['ra','ras','ra','ramos','rais','ran'][p];
+    else bad=HUBIERA[p]+' '+v.inf.slice(0,-2)+(v.t==='ar'?'ado':'ido');
+    if(bad===right)return exErrore(t)();
+    const why=t===0?`<p>${B(v.inf)} ha un presente irregolare (${v.sp?'forma da imparare a memoria':v.s1&&v.s!==v.s1?'cambio di vocale nella radice':'cambio ortografico o radice del “yo”'}). Non basta togliere -${v.t}.</p>`
+      :t===1||t===3?`<p>Il participio di ${B(v.inf)} è <b>irregolare</b>: ${B(v.pp)}, non “${v.inf.slice(0,-2)+(v.t==='ar'?'ado':'ido')}”.</p>`
+      :`<p>${B(v.inf)} ha un pretérito indefinido irregolare (${B(v.p3)}): l’imperfecto de subjuntivo parte da lì.</p>`;
+    const wr=[FORM[t](v,(p+1)%6),FORM[(t+1)%4](v,p)];
+    return mkEx(`<b>${PS[p]}</b> – ${NOM[t]} di <i>${v.inf}</i>. Una sola di queste forme è corretta: quale?`,right,[bad,...wr].filter(x=>x!==right),
+      why+`<p>Forma giusta: ${B(right)}.</p>`,()=>true,'Verbi irregolari');
+  }
+}
+
+/* --- GENS --- */
+const GENS={
+ u1:[exCP,exCP,exErrore(0),exRiconosci],
+ u2:[exUsoPres,exUsoPres,exMismo,exUsoPres],
+ u3:[exCPerf,exCPerf,exErrore(1),exSeq],
+ u4:[exCImp,exCImp,exErrore(2),exRiconosci],
+ u5:[exCPlus,exCPlus,exErrore(3),exSeq],
+ u6:[exSeq,exSeq,exSi,exSi,exSiStr,exUso]
+};
+const UNITS={u1:'1 · Presente de subjuntivo (formas)',u2:'2 · Cuándo se usa el subjuntivo',u3:'3 · Pretérito perfecto de subjuntivo',u4:'4 · Pretérito imperfecto de subjuntivo',u5:'5 · Pretérito pluscuamperfecto de subjuntivo',u6:'6 · Concordancia de tiempos y frases con si'};
+const PROVA_PLAN={u1:3,u2:3,u3:2,u4:3,u5:2,u6:2};
+
+/* ========== CONTENUTI FISSI (Spagnolo 3 ES: el subjuntivo) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const M=t=>`<span class="m">${t}</span>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const P6=['yo','tú','él / ella / usted','nosotros','vosotros','ellos / ustedes'];
+const conjTab=(verbs,fn)=>TAB(['persona',...verbs.map(v=>v)],P6.map((p,i)=>[p,...verbs.map(v=>fn(byInf(v),i))]));
+const HDR=['persona'];
+const ES=t=>`<i>${t}</i>`;
+
+const CONT={
+u1:{
+ cose:`<div class="box bia"><p>Il <b>subjuntivo</b> è il “modo” che in italiano si chiama <b>congiuntivo</b>. Si usa per <b>desideri, dubbi, emozioni, possibilità</b>: cose che non sono dei fatti sicuri. Esempio: ${ES('Quiero que vengas')} = “Voglio che tu venga”.</p>
+ <p>In questa unità impariamo a <b>costruire</b> il <b>presente de subjuntivo</b> (in italiano: congiuntivo presente: <i>che io parli</i>). Nell’unità 2 vediamo <b>quando</b> si usa.</p>
+ <div class="box gia"><p><b>Trucco:</b> i verbi in <b>-ar</b> prendono la vocale <b>E</b>, i verbi in <b>-er / -ir</b> prendono la vocale <b>A</b>. È l’“opposto” dell’indicativo!</p></div></div>`,
+ ricette:[
+  card('blu','1 · Verbi regolari',
+   '<p>Togli la <b>-ar / -er / -ir</b> e aggiungi la desinenza:</p>'+TAB(['persona','-AR','-ER / -IR'],[['yo','-e','-a'],['tú','-es','-as'],['él / ella / usted','-e','-a'],['nosotros','-emos','-amos'],['vosotros','-éis','-áis'],['ellos / ustedes','-en','-an']])+
+   TAB(['persona','hablar','comer','vivir'],P6.map((p,i)=>[p,sPres(byInf('hablar'),i),sPres(byInf('comer'),i),sPres(byInf('vivir'),i)]))+'<p class="note">Attenzione: nel subjuntivo <b>yo</b> e <b>él</b> hanno la stessa forma (hable, coma, viva).</p>'),
+  card('ver','2 · Il metodo della 1ª persona (yo)',stepsHtml([
+   'Scrivi la forma <b>yo</b> del presente indicativo. '+M('tener → tengo · hacer → hago · conocer → conozco'),
+   'Togli la <b>-o</b>. '+M('teng- · hag- · conozc-'),
+   'Aggiungi la desinenza “opposta”: <b>-e</b> per i verbi in -ar, <b>-a</b> per -er / -ir. '+M('tenga, tengas, tenga… · haga, hagas, haga…')])+
+   '<p>Così si fanno quasi tutti gli <b>irregolari</b>:</p>'+TAB(['infinito','yo (indicativo)','subjuntivo (yo)'],[['tener','tengo','tenga'],['hacer','hago','haga'],['decir','digo','diga'],['poner','pongo','ponga'],['salir','salgo','salga'],['venir','vengo','venga'],['conocer','conozco','conozca'],['traer','traigo','traiga'],['oír','oigo','oiga'],['caer','caigo','caiga'],['construir','construyo','construya'],['ver','veo','vea']])),
+  card('gia','3 · Verbi con cambio di vocale',
+   '<p>Alcuni verbi cambiano la vocale della radice (<b>e → ie</b>, <b>o → ue</b>) in <b>yo, tú, él, ellos</b>, ma <b>non</b> in <b>nosotros e vosotros</b>.</p>'+TAB(['persona','pensar','volver'],P6.map((p,i)=>[p,sPres(byInf('pensar'),i),sPres(byInf('volver'),i)]))+
+   '<p>I verbi in <b>-ir</b> con cambio di vocale lo fanno anche in nosotros / vosotros, ma in modo diverso (e → <b>i</b>, o → <b>u</b>):</p>'+TAB(['persona','dormir','sentir','pedir'],P6.map((p,i)=>[p,sPres(byInf('dormir'),i),sPres(byInf('sentir'),i),sPres(byInf('pedir'),i)]))+
+   '<p class="note">Nota: <b>pedir</b>, <b>repetir</b>, <b>seguir</b>, <b>elegir</b> cambiano e → i in <b>tutte</b> le persone: pida, pidas, pida, pidamos, pidáis, pidan.</p>'),
+  card('ros','4 · Cambi di ortografia (per mantenere il suono)',
+   TAB(['finisce in…','diventa','esempio'],[['-car','-que','buscar → busque'],['-gar','-gue','llegar → llegue'],['-zar','-ce','empezar → empiece'],['-ger / -gir','-ja','coger → coja · elegir → elija'],['-guar','-güe','averiguar → averigüe']])+'<p class="note">Lo stesso cambio c’è in <b>tutte</b> le persone: busque, busques, busque, busquemos, busquéis, busquen.</p>'),
+  card('blu','5 · I verbi del tutto irregolari (da imparare a memoria)',
+   TAB(['persona','ser','estar','ir','dar','saber','haber'],P6.map((p,i)=>[p,...['ser','estar','ir','dar','saber'].map(x=>sPres(byInf(x),i)),HAYA[i]]))+
+   '<p class="note"><b>dé</b> (yo, él) ha l’accento per distinguerlo dalla preposizione <i>de</i>. <b>des, demos, deis, den</b> non lo hanno.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p>${ES('hablar')}, <b>tú</b>: yo hablo → habl- → verbo in <b>-ar</b> quindi <b>-es</b> → <b>hables</b>.</p>
+ <p>${ES('comer')}, <b>nosotros</b>: como → com- → verbo in <b>-er</b> quindi <b>-amos</b> → <b>comamos</b>.</p>
+ <p>${ES('tener')}, <b>ellos</b>: tengo → teng- → <b>-an</b> → <b>tengan</b>.</p>
+ <p>${ES('dormir')}, <b>nosotros</b>: nei verbi in -ir la o diventa <b>u</b> → <b>durmamos</b>. Con <b>tú</b>: <b>duermas</b>.</p>
+ <p>${ES('buscar')}, <b>yo</b>: per mantenere il suono “k” la c diventa <b>qu</b> → <b>busque</b>.</p>
+ <p>${ES('ir')}, <b>vosotros</b>: irregolare, si impara a memoria → <b>vayáis</b>.</p></div>`,
+ errori:['Usare la desinenza dell’indicativo: “que tú hablas” è sbagliato → <b>que tú hables</b>.','Dimenticare l’“opposto”: -ar vuole <b>E</b>, -er/-ir vuole <b>A</b> (“que yo coma”, non “que yo come”).','Partire dall’infinito invece che da <b>yo</b>: tener → “tene-” ✗ → <b>tenga</b> ✓.','Cambiare la vocale anche in nosotros / vosotros di pensar o volver: <b>pensemos</b>, non “piensemos”.','Dimenticare i cambi di ortografia: <b>busque</b> (non “busce”), <b>llegue</b>, <b>empiece</b>.','Dimenticare l’accento: <b>dé</b>, <b>esté</b>, <b>estés</b>, <b>estéis</b>, <b>hablemos</b> (nessun accento), <b>habléis</b>.'],
+ orale:[
+  ['Come si forma il presente de subjuntivo dei verbi regolari?','Si parte dalla 1ª persona del presente indicativo (yo), si toglie la -o e si aggiunge la desinenza “opposta”: -e, -es, -e, -emos, -éis, -en per i verbi in -ar; -a, -as, -a, -amos, -áis, -an per i verbi in -er e -ir. Esempio: hablo → hable; como → coma.'],
+  ['Quali sono i verbi irregolari del presente de subjuntivo che non seguono la regola?','Sei verbi: ser (sea), estar (esté), ir (vaya), dar (dé), saber (sepa), haber (haya). Vanno imparati a memoria.'],
+  ['Che cosa succede ai verbi con cambio di vocale?','Pensar, volver e simili cambiano e → ie, o → ue in yo, tú, él, ellos (piense, vuelva) ma non in nosotros e vosotros (pensemos, volvamos). I verbi in -ir cambiano anche in nosotros/vosotros, e → i e o → u (sintamos, durmamos).'],
+ ],
+ quiz:[
+  ['Il presente de subjuntivo di <i>hablar</i> con <b>tú</b> è…','hables',['hablas','hablés','hablaras'],'Verbo in -ar → vocale E: habl + es.'],
+  ['Il presente de subjuntivo di <i>comer</i> con <b>yo</b> è…','coma',['come','como','comiera'],'Verbo in -er → vocale A.'],
+  ['<i>Tener</i>, <b>nosotros</b>, presente de subjuntivo:','tengamos',['tenemos','tengemos','tuviéramos'],'tengo → teng- + amos.'],
+  ['<i>Ser</i>, <b>yo</b>, presente de subjuntivo:','sea',['soy','sepa','ser'],'Ser è irregolare: sea, seas, sea…'],
+  ['<i>Buscar</i>, <b>yo</b>:','busque',['busce','busco','busqué'],'-car → -que.'],
+  ['<i>Volver</i>, <b>nosotros</b>:','volvamos',['vuelvamos','volvemos','volviéramos'],'Nosotros non cambia la vocale.'],
+  ['Il presente de subjuntivo di <i>ir</i> con <b>él</b> è…','vaya',['va','vaye','vea'],'Ir è irregolare: vaya, vayas, vaya…'],
+  ['Il trucco dei verbi regolari è che il subjuntivo usa la vocale…','opposta (a per -er/-ir, e per -ar)',['uguale a quella dell’indicativo','sempre la i','sempre la o'],'-ar → E; -er/-ir → A.'],
+ ]
+},
+u2:{
+ cose:`<div class="box bia"><p>Il subjuntivo si usa in una frase <b>subordinata con “que”</b> quando la frase principale esprime <b>volontà, emozione, dubbio, giudizio</b>. Se invece c’è <b>certezza</b>, si usa l’<b>indicativo</b>.</p>
+ <p class="m">Quiero que ${ES('vengas')} · Dudo que ${ES('venga')} · Creo que ${ES('viene')}</p>
+ <div class="box gia"><p><b>Regola d’oro:</b> due soggetti diversi + sentimento/dubbio/volontà → <b>que + subjuntivo</b>. Lo stesso soggetto → <b>infinito</b>.</p></div></div>`,
+ ricette:[
+  card('blu','1 · Volontà, richiesta, consiglio, divieto',
+   '<p>querer, desear, preferir, necesitar, pedir, aconsejar, recomendar, permitir, prohibir, esperar + <b>que</b> + subjuntivo.</p>'+M('Quiero que vengas. (Voglio che tu venga.)')+M('Mi madre prohíbe que salga. (Mia madre vieta che io esca.)')),
+  card('ver','2 · Emozioni e sentimenti',
+   '<p>me alegro de que · me gusta que · me molesta que · tengo miedo de que · siento que · es una lástima que + subjuntivo.</p>'+M('Me alegro de que estés aquí. (Sono contento che tu sia qui.)')),
+  card('gia','3 · Dubbio e negazione dell’opinione',
+   '<p><b>Dudo que</b> · <b>no creo que</b> · <b>no pienso que</b> · <b>no es verdad que</b> · <b>no es cierto que</b> · es posible / probable que → <b>subjuntivo</b>.</p>'+M('No creo que tenga razón. (Non credo che abbia ragione.)')+
+   '<p>Al contrario, con <b>certezza</b> si usa l’<b>indicativo</b>: creo que · pienso que · es verdad que · está claro que · estoy seguro de que · no dudo que.</p>'+M('Creo que tiene razón. (Credo che abbia ragione.)')),
+  card('ros','4 · Giudizi impersonali',
+   '<p>es importante · es necesario · es mejor · es bueno · es malo · es increíble · es una lástima + <b>que</b> + subjuntivo.</p>'+M('Es necesario que estudies. (È necessario che tu studi.)')),
+  card('blu','5 · Congiunzioni',stepsHtml([
+   '<b>Sempre subjuntivo</b>: <b>para que</b> (affinché), <b>a menos que</b> (a meno che), <b>sin que</b> (senza che), <b>antes de que</b> (prima che), <b>con tal de que</b>, <b>en caso de que</b>. '+M('Te llamo para que vengas.'),
+   '<b>Cuando, en cuanto, hasta que, después de que, mientras</b>: subjuntivo se l’azione è <b>futura</b>, indicativo se è <b>abituale o passata</b>. '+M('Cuando llegues, llámame. · Cuando llego, saludo.'),
+   '<b>Aunque</b>: subjuntivo se è un’ipotesi (anche se piovesse), indicativo se è un fatto (benché piova). '+M('Aunque llueva, saldré. · Aunque llueve, salgo.')])),
+  card('ver','6 · Altre espressioni',
+   '<p><b>Ojalá (que)</b> + subjuntivo = “magari, speriamo che”. <b>Quizás / tal vez</b> + subjuntivo se c’è dubbio. <b>A lo mejor</b> (forse) vuole sempre l’<b>indicativo</b>.</p>'+M('Ojalá llueva. · Quizás venga. · A lo mejor viene.')),
+  card('gia','7 · Stesso soggetto: infinito',
+   TAB(['soggetti','costruzione','esempio'],[['diversi','que + subjuntivo','Quiero que vengas.'],['uguale','infinito','Quiero venir.']])+'<p class="note">Non si dice “Quiero que yo venga”: se il soggetto è lo stesso si usa l’infinito.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p>«<i>Espero que (tú) ___ (venir)</i>» → esperar = desiderio → subjuntivo → <b>vengas</b>.</p>
+ <p>«<i>Creo que (él) ___ (tener) razón</i>» → creer affermativo = opinione sicura → indicativo → <b>tiene</b>.</p>
+ <p>«<i>No creo que (él) ___ (tener) razón</i>» → negazione dell’opinione → subjuntivo → <b>tenga</b>.</p>
+ <p>«<i>Cuando (yo) ___ (llegar), te llamaré</i>» → azione futura dopo cuando → subjuntivo → <b>llegue</b>.</p>
+ <p>«<i>Quiero (yo) ir al cine</i>» → stesso soggetto → infinito, niente <i>que</i>.</p></div>`,
+ errori:['Usare il subjuntivo dopo “creo que” (affermativo): <b>creo que viene</b>, non “creo que venga”.','Usare l’indicativo dopo “no creo que”: <b>no creo que venga</b>.','Dimenticare che <b>para que, sin que, antes de que, a menos que</b> vogliono <b>sempre</b> il subjuntivo.','Mettere il subjuntivo dopo “cuando” anche quando l’azione è abituale (“Cuando llego” va bene).','“A lo mejor” + subjuntivo: sbagliato, vuole l’indicativo.','Usare que + subjuntivo con lo stesso soggetto: “Quiero que yo vaya” ✗ → <b>Quiero ir</b>.'],
+ orale:[
+  ['Quando si usa il subjuntivo?','Nelle subordinate con que quando la frase principale esprime volontà o richiesta (quiero que), emozione (me alegro de que), dubbio o negazione (dudo que, no creo que), giudizio impersonale (es importante que), e dopo alcune congiunzioni (para que, antes de que, sin que, a menos que). Con la certezza (creo que, es verdad que) si usa l’indicativo.'],
+  ['Che differenza c’è tra “creo que” e “no creo que”?','Creo que vuole l’indicativo (opinione sicura): creo que viene. No creo que vuole il subjuntivo (dubbio): no creo que venga.'],
+  ['Quando si usa l’infinito invece di que + subjuntivo?','Quando il soggetto delle due azioni è lo stesso: Quiero venir. Se i soggetti sono diversi si usa que + subjuntivo: Quiero que vengas.'],
+  ['Come si usa cuando?','Se l’azione è futura vuole il subjuntivo (Cuando llegues, llámame), se è abituale o passata vuole l’indicativo (Cuando llego, saludo).'],
+ ],
+ quiz:[
+  ['«Quiero que tú ___ (venir).» Scegli.','vengas',['vienes','vendrás','vienas'],'Querer + que → subjuntivo.'],
+  ['«Creo que ella ___ (tener) razón.» Scegli.','tiene',['tenga','tuviera','tengan'],'Creer (affermativo) → indicativo.'],
+  ['«No creo que ella ___ (tener) razón.» Scegli.','tenga',['tiene','tendrá','tenía'],'No creer que → subjuntivo.'],
+  ['Quale espressione vuole sempre il subjuntivo?','para que',['porque','creo que','es verdad que'],'Para que (affinché) → sempre subjuntivo.'],
+  ['«Cuando ___ (yo, llegar) a casa, te llamo.» (abitudine)','llego',['llegue','llegara','llegaré'],'Azione abituale → indicativo.'],
+  ['«Cuando ___ (yo, llegar) a casa, te llamaré.» (futuro)','llegue',['llego','llegué','llegaba'],'Azione futura → subjuntivo.'],
+  ['<i>A lo mejor</i> vuole…','l’indicativo',['il subjuntivo','l’infinito','il condicional'],'A lo mejor + indicativo (differente da quizás).'],
+  ['“Voglio andare al cinema” (io lo voglio) si dice…','Quiero ir al cine.',['Quiero que voy al cine.','Quiero que vaya al cine.','Quiero que yo ir al cine.'],'Stesso soggetto → infinito.'],
+ ]
+},
+u3:{
+ cose:`<div class="box bia"><p>Il <b>pretérito perfecto de subjuntivo</b> corrisponde al <b>congiuntivo passato</b> italiano (<i>che io abbia parlato</i>). Si usa quando l’azione del subjuntivo è <b>già finita</b> rispetto al momento in cui parli.</p>
+ <p class="m">Espero que ${ES('hayas llegado')} bien. (Spero che tu sia arrivato bene.)</p></div>`,
+ ricette:[
+  card('blu','1 · Come si forma',stepsHtml([
+   'Prendi il <b>presente de subjuntivo di haber</b>: <b>haya, hayas, haya, hayamos, hayáis, hayan</b>.',
+   'Aggiungi il <b>participio</b> del verbo. Il participio <b>non cambia mai</b> (non si accorda). '+M('haya hablado · hayas comido · hayan vivido')])+
+   TAB(['persona','hablar','comer','vivir'],P6.map((p,i)=>[p,sPerf(byInf('hablar'),i),sPerf(byInf('comer'),i),sPerf(byInf('vivir'),i)]))),
+  card('ver','2 · Il participio',
+   '<p>Regolare: <b>-ar → -ado</b> · <b>-er / -ir → -ido</b>. Questi <b>irregolari</b> vanno imparati:</p>'+TAB(['infinito','participio','infinito','participio'],[['abrir','abierto','poner','puesto'],['decir','dicho','romper','roto'],['escribir','escrito','ver','visto'],['hacer','hecho','volver','vuelto'],['morir','muerto','resolver','resuelto'],['cubrir','cubierto','descubrir','descubierto']])+'<p class="note">Con -er / -ir che hanno una vocale prima, il participio ha l’accento: <b>leído, oído, traído, caído, creído</b>.</p>'),
+  card('gia','3 · Quando si usa',stepsHtml([
+   'Il verbo principale è al <b>presente</b> (o al futuro o all’imperativo).',
+   'L’azione del subjuntivo è <b>già conclusa</b> prima di adesso. '+M('Me alegro de que hayas aprobado. (Sono contento che tu sia stato promosso.)'),
+   'Con <b>cuando, en cuanto, después de que, hasta que</b> e un’azione futura <b>che sarà già finita</b>. '+M('Cuando hayas terminado, llámame. (Quando avrai finito…)')])),
+  card('ros','4 · Dove vanno i pronomi',
+   '<p>Prima di <b>haya</b>, mai tra haya e il participio.</p>'+M('No creo que se lo hayas dicho. ✓')+M('No creo que hayas se lo dicho. ✗')),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p>«<i>Espero que (tú) ___ (llegar) bien.</i>» → verbo principale al presente e arrivo già avvenuto → haya + participio → <b>hayas llegado</b>.</p>
+ <p>«<i>No creo que (ellos) ___ (hacer) los deberes.</i>» → participio irregolare di hacer = hecho → <b>hayan hecho</b>.</p>
+ <p>«<i>Es posible que (él) ___ (escribir) ya la carta.</i>» → <b>haya escrito</b>.</p>
+ <p>«<i>Me alegro de que (vosotros) ___ (ver) esa película.</i>» → <b>hayáis visto</b>.</p></div>`,
+ errori:['Usare <b>he / has / ha</b> (indicativo) invece di <b>haya / hayas / haya</b>: “no creo que has venido” ✗.','Participi irregolari sbagliati: “hacido”, “escribido”, “ponido” ✗ → <b>hecho, escrito, puesto</b>.','Accordare il participio: “hayas hablada” ✗ — resta <b>hablado</b>.','Usare <b>hubiera</b> (che è un altro tempo) quando basta <b>haya</b>.','Mettere il pronome nel posto sbagliato: <b>se lo haya dicho</b>, non “haya se lo dicho”.','Dimenticare l’accento nei participi come <b>leído</b>.'],
+ orale:[
+  ['Come si forma il pretérito perfecto de subjuntivo?','Con il presente de subjuntivo di haber (haya, hayas, haya, hayamos, hayáis, hayan) più il participio del verbo. Esempio: haya hablado, hayas comido.'],
+  ['Quando si usa il pretérito perfecto de subjuntivo?','Quando il verbo principale è al presente (o futuro) e l’azione del subjuntivo è già finita. Esempio: Espero que hayas llegado bien. Corrisponde al congiuntivo passato italiano.'],
+  ['Dimmi alcuni participi irregolari.','abrir → abierto, decir → dicho, escribir → escrito, hacer → hecho, poner → puesto, ver → visto, volver → vuelto, romper → roto, morir → muerto.'],
+ ],
+ quiz:[
+  ['Il pretérito perfecto de subjuntivo si forma con…','haya + participio',['he + participio','hubiera + participio','habría + participio'],'Haya = presente de subjuntivo di haber.'],
+  ['<i>Hablar</i>, <b>tú</b>, perfecto de subjuntivo:','hayas hablado',['has hablado','hubieras hablado','hables hablado'],'hayas + hablado.'],
+  ['Participio di <i>escribir</i>:','escrito',['escribido','escribo','escribiendo'],'Irregolare.'],
+  ['Participio di <i>hacer</i>:','hecho',['hacido','hacho','haciendo'],'Irregolare.'],
+  ['«Espero que (tú) ___ (llegar) bien.»','hayas llegado',['has llegado','llegues llegado','habrías llegado'],'Azione già finita, verbo principale al presente.'],
+  ['«No creo que ella ___ (decir) eso.»','haya dicho',['ha dicho','haya decido','hubiera decido'],'dicho è irregolare.'],
+  ['Il participio dopo <i>haya</i>…','non cambia mai',['si accorda col soggetto','si accorda solo al plurale','finisce sempre in -ando'],'Hayas hablado, hayan hablado: sempre -ado / -ido.'],
+ ]
+},
+u4:{
+ cose:`<div class="box bia"><p>L’<b>imperfecto de subjuntivo</b> corrisponde al <b>congiuntivo imperfetto</b> italiano (<i>che io parlassi</i>). Si usa quando il verbo principale è al <b>passato</b> (o al condizionale), e per le <b>ipotesi irreali</b> con “si”.</p>
+ <p class="m">Quería que ${ES('vinieras')}. (Volevo che tu venissi.)</p>
+ <div class="box gia"><p><b>Due forme equivalenti:</b> -<b>ra</b> (hablara) e -<b>se</b> (hablase). Significano la stessa cosa; la forma in -ra è più usata.</p></div></div>`,
+ ricette:[
+  card('blu','1 · Come si forma (per tutti i verbi)',stepsHtml([
+   'Parti dalla <b>3ª persona plurale del pretérito indefinido</b> (ellos). '+M('hablar → hablaron · comer → comieron · tener → tuvieron'),
+   'Togli la <b>-ron</b>. '+M('habla- · comie- · tuvie-'),
+   'Aggiungi <b>-ra, -ras, -ra, -ramos, -rais, -ran</b> (oppure -se, -ses, -se, -semos, -seis, -sen).'])+
+   TAB(['persona','hablar','comer','vivir'],P6.map((p,i)=>[p,sImp(byInf('hablar'),i)+' / '+sImpSe(byInf('hablar'),i),sImp(byInf('comer'),i),sImp(byInf('vivir'),i)]))+'<p class="note">Con <b>nosotros</b> c’è sempre l’<b>accento</b> sulla vocale prima di -ramos: <b>habláramos, comiéramos</b>.</p>'),
+  card('ver','2 · Irregolari: guarda l’indefinido!',
+   '<p>Gli irregolari vengono da <b>ellos del pretérito indefinido</b> (non c’è nulla di nuovo da imparare):</p>'+TAB(['infinito','indefinido (ellos)','imperfecto de subjuntivo (yo)'],[['ser / ir','fueron','fuera'],['tener','tuvieron','tuviera'],['hacer','hicieron','hiciera'],['decir','dijeron','dijera'],['poder','pudieron','pudiera'],['querer','quisieron','quisiera'],['venir','vinieron','viniera'],['poner','pusieron','pusiera'],['saber','supieron','supiera'],['estar','estuvieron','estuviera'],['dar','dieron','diera'],['traer','trajeron','trajera']])),
+  card('gia','3 · Verbi con cambio e → i / o → u e con y',
+   TAB(['infinito','indefinido (ellos)','imperfecto de subjuntivo (yo)'],[['dormir','durmieron','durmiera'],['pedir','pidieron','pidiera'],['sentir','sintieron','sintiera'],['seguir','siguieron','siguiera'],['leer','leyeron','leyera'],['oír','oyeron','oyera'],['construir','construyeron','construyera']])),
+  card('ros','4 · Quando si usa',stepsHtml([
+   'Il verbo principale è al <b>passato</b>: indefinido, imperfecto, condicional. '+M('Quería que vinieras. · Me alegré de que vinieras. · Me gustaría que vinieras.'),
+   '<b>Ipotesi irreale del presente</b>: <b>si + imperfecto de subjuntivo + condicional</b>. '+M('Si tuviera dinero, viajaría. (Se avessi soldi, viaggerei.)'),
+   '<b>Ojalá</b> + imperfecto = desiderio difficile da realizzare. '+M('Ojalá tuviera más tiempo.'),
+   '<b>Cortesia</b>: <b>quisiera</b> = “vorrei”. '+M('Quisiera un café, por favor.'),
+   '<b>Como si</b> (come se). '+M('Habla como si lo supiera todo.')])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p><b>hablar, yo</b>: hablaron → habla- → <b>hablara</b> (o hablase).</p>
+ <p><b>tener, tú</b>: tuvieron → tuvie- → <b>tuvieras</b>.</p>
+ <p><b>hacer, nosotros</b>: hicieron → hicie- → <b>hiciéramos</b> (con accento).</p>
+ <p><b>ir, ellos</b>: fueron → fue- → <b>fueran</b>.</p>
+ <p>«<i>Mi madre quería que (yo) ___ (estudiar) más.</i>» → principale al passato → <b>estudiara</b>.</p>
+ <p>«<i>Si (yo) ___ (poder), iría contigo.</i>» → ipotesi irreale → <b>pudiera</b>.</p></div>`,
+ errori:['Partire dall’infinito invece che dall’indefinido: tener → “tenera” ✗ → <b>tuviera</b> ✓.','Dimenticare l’accento in nosotros: <b>tuviéramos</b>, <b>habláramos</b>.','Confondere le due desinenze: -ar → <b>-ara</b> (hablara), -er / -ir → <b>-iera</b> (comiera, viviera).','Usare il condizionale dopo <b>si</b>: “si tendría dinero” ✗ → <b>si tuviera</b>.','Usare il presente de subjuntivo con un verbo principale al passato: “quería que vengas” ✗ → <b>quería que vinieras</b>.','Scrivere ser/ir con forme diverse: tutti e due fanno <b>fuera</b> (fueras, fuera, fuéramos…).'],
+ orale:[
+  ['Come si forma l’imperfecto de subjuntivo?','Si parte dalla terza persona plurale del pretérito indefinido (hablaron), si toglie -ron (habla-) e si aggiunge -ra, -ras, -ra, -ramos, -rais, -ran (oppure -se, -ses…). Con nosotros c’è l’accento: habláramos.'],
+  ['Quando si usa l’imperfecto de subjuntivo?','Quando il verbo principale è al passato o al condizionale (quería que vinieras), nelle ipotesi irreali del presente (si tuviera dinero, viajaría), dopo ojalá per un desiderio difficile, dopo como si, e in quisiera (vorrei).'],
+  ['Qual è la differenza tra le forme in -ra e -se?','Nessuna di significato: hablara e hablase sono equivalenti. La forma in -ra è più comune.'],
+ ],
+ quiz:[
+  ['L’imperfecto de subjuntivo si forma partendo da…','ellos del pretérito indefinido',['yo del presente','l’infinito','il participio'],'hablaron → habla- → hablara.'],
+  ['<i>Hablar</i>, <b>yo</b>, imperfecto de subjuntivo:','hablara',['hable','hablaría','hablé'],'hablaron → habla + ra.'],
+  ['<i>Tener</i>, <b>tú</b>:','tuvieras',['tengas','tendrías','tenieras'],'tuvieron → tuvie + ras.'],
+  ['<i>Hacer</i>, <b>nosotros</b>:','hiciéramos',['haciéramos','hicieramos','hagamos'],'Con nosotros c’è l’accento.'],
+  ['<i>Ser</i> e <i>ir</i> all’imperfecto de subjuntivo (yo):','fuera (uguali)',['sea e vaya','fuera e ira','sería e iría'],'Tutti e due hanno fueron nell’indefinido.'],
+  ['«Si ___ (yo, tener) dinero, viajaría.»','tuviera',['tendría','tengo','tenga'],'Si + imperfecto de subjuntivo + condicional.'],
+  ['«Quería que tú ___ (venir).»','vinieras',['vengas','vendrías','vienes'],'Principale al passato → imperfecto.'],
+  ['<i>Quisiera un café</i> significa…','Vorrei un caffè (cortesia)',['Voglio un caffè','Volevo un caffè','Avrei voluto un caffè'],'Quisiera = forma di cortesia.'],
+ ]
+},
+u5:{
+ cose:`<div class="box bia"><p>Il <b>pretérito pluscuamperfecto de subjuntivo</b> corrisponde al <b>congiuntivo trapassato</b> italiano (<i>che io avessi parlato</i>). Si usa per un’azione <b>anteriore a un momento del passato</b> e per le <b>ipotesi irreali del passato</b>: ciò che non è successo.</p>
+ <p class="m">Si ${ES('hubiera estudiado')}, habría aprobado. (Se avessi studiato, sarei stato promosso.)</p></div>`,
+ ricette:[
+  card('blu','1 · Come si forma',stepsHtml([
+   'Prendi l’<b>imperfecto de subjuntivo di haber</b>: <b>hubiera, hubieras, hubiera, hubiéramos, hubierais, hubieran</b> (o hubiese, hubieses…).',
+   'Aggiungi il <b>participio</b> (invariabile). '+M('hubiera hablado · hubieras comido · hubieran vivido')])+
+   TAB(['persona','hablar','comer','vivir'],P6.map((p,i)=>[p,sPlus(byInf('hablar'),i),sPlus(byInf('comer'),i),sPlus(byInf('vivir'),i)]))+'<p class="note">Con <b>nosotros</b> l’accento è su <b>hubiéramos</b>. Forma alternativa: hubiese hablado, hubieses hablado…</p>'),
+  card('ver','2 · Frasi con SI: ipotesi irreale del passato',
+   '<p><b>si + pluscuamperfecto de subjuntivo</b> → <b>condicional compuesto</b> (<b>habría + participio</b>).</p>'+M('Si hubiera estudiado, habría aprobado.')+M('Si lo hubiera sabido, te lo habría dicho.')+'<p class="note">In italiano: se avessi studiato, sarei stato promosso. Non si usa mai habría dopo si.</p>'),
+  card('gia','3 · Altri usi',stepsHtml([
+   '<b>Rimpianto</b> con ojalá: <b>Ojalá hubiera estudiado más.</b> (Magari avessi studiato di più.)',
+   '<b>Verbo principale al passato</b> e azione <b>precedente</b>: <b>No creía que hubieras terminado ya.</b> (Non credevo che tu avessi già finito.)',
+   '<b>Me habría gustado que</b> + pluscuamperfecto: <b>Me habría gustado que hubieras venido.</b>'])),
+  card('ros','4 · Confronto tra i quattro tempi',
+   TAB(['italiano','spagnolo'],[['che io parli','que yo <b>hable</b> (presente)'],['che io abbia parlato','que yo <b>haya hablado</b> (perfecto)'],['che io parlassi','que yo <b>hablara</b> (imperfecto)'],['che io avessi parlato','que yo <b>hubiera hablado</b> (pluscuamperfecto)']])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p><b>hablar, yo</b>: hubiera + hablado → <b>hubiera hablado</b>.</p>
+ <p><b>hacer, nosotros</b>: hubiéramos + hecho → <b>hubiéramos hecho</b>.</p>
+ <p><b>escribir, ellos</b>: hubieran + escrito → <b>hubieran escrito</b>.</p>
+ <p>«<i>Si (tú) ___ (venir) antes, habríamos visto la película.</i>» → ipotesi irreale del passato → <b>hubieras venido</b>.</p>
+ <p>«<i>Ojalá (yo) ___ (estudiar) más.</i>» → rimpianto → <b>hubiera estudiado</b>.</p></div>`,
+ errori:['Usare <b>habría</b> dopo <b>si</b>: “si habría sabido” ✗ → <b>si hubiera sabido</b>.','Confondere <b>haya</b> (perfecto) con <b>hubiera</b> (pluscuamperfecto).','Usare <b>había</b> (indicativo) invece di <b>hubiera</b>: “si había sabido” ✗.','Participio sbagliato: <b>hubiera hecho</b>, non “hubiera hacido”.','Dimenticare l’accento: <b>hubiéramos</b>.','Mettere il pronome tra hubiera e participio: <b>se lo hubiera dicho</b>.'],
+ orale:[
+  ['Come si forma il pluscuamperfecto de subjuntivo?','Con l’imperfecto de subjuntivo di haber (hubiera, hubieras, hubiera, hubiéramos, hubierais, hubieran; oppure hubiese…) più il participio. Esempio: hubiera hablado.'],
+  ['Quando si usa il pluscuamperfecto de subjuntivo?','Per un’azione anteriore a un momento passato (No creía que hubieras terminado), per il rimpianto con ojalá (Ojalá hubiera estudiado) e nelle ipotesi irreali del passato (Si hubiera estudiado, habría aprobado).'],
+  ['Com’è fatta la frase ipotetica del terzo tipo?','Si + pluscuamperfecto de subjuntivo nella condizione, condicional compuesto (habría + participio) nella conseguenza. Esempio: Si hubiera sabido, habría venido.'],
+ ],
+ quiz:[
+  ['Il pluscuamperfecto de subjuntivo si forma con…','hubiera + participio',['haya + participio','había + participio','habría + participio'],'Hubiera = imperfecto de subjuntivo di haber.'],
+  ['<i>Hablar</i>, <b>yo</b>:','hubiera hablado',['haya hablado','hablara','habría hablado'],'hubiera + hablado.'],
+  ['<i>Hacer</i>, <b>nosotros</b>:','hubiéramos hecho',['hubimos hecho','hayamos hecho','hubiéramos hacido'],'Con accento e participio irregolare.'],
+  ['«Si (yo) ___ (saber), te lo habría dicho.»','hubiera sabido',['habría sabido','había sabido','hubiera sepa'],'Si + pluscuamperfecto de subjuntivo.'],
+  ['«Si hubiera estudiado, ___ (aprobar).»','habría aprobado',['hubiera aprobar','habré aprobado','aprobaré'],'Condicional compuesto nella principale.'],
+  ['<i>Ojalá hubiera estudiado más</i> esprime…','un rimpianto sul passato',['un desiderio per il futuro','una certezza','un ordine'],'Rimpianto: non l’ho fatto.'],
+  ['Nelle ipotesi irreali, dopo <i>si</i> NON si può mettere…','il condizionale (habría / sería)',['il pluscuamperfecto de subjuntivo','l’imperfecto de subjuntivo'],'Dopo si mai il condizionale: sta nella principale.'],
+ ]
+},
+u6:{
+ cose:`<div class="box bia"><p>La <b>concordancia de tiempos</b> dice <b>quale tempo del subjuntivo</b> scegliere in base al verbo della frase principale. È come la “consecutio temporum” italiana.</p>
+ <div class="box gia"><p><b>Regola breve:</b> principale al <b>presente/futuro</b> → subjuntivo <b>presente o perfecto</b>. Principale al <b>passato / condizionale</b> → subjuntivo <b>imperfecto o pluscuamperfecto</b>.</p></div></div>`,
+ ricette:[
+  card('blu','1 · La tabella della concordancia',
+   TAB(['verbo principale','azione contemporanea / futura','azione già finita'],[['presente · futuro · imperativo','<b>presente</b> de subjuntivo','<b>perfecto</b> de subjuntivo'],['indefinido · imperfecto · condicional','<b>imperfecto</b> de subjuntivo','<b>pluscuamperfecto</b> de subjuntivo']])+
+   M('Quiero que vengas. → Quería que vinieras.')+M('Espero que hayas venido. → Esperaba que hubieras venido.')),
+  card('ver','2 · Come ragionare',stepsHtml([
+   'Guarda il <b>verbo della frase principale</b>: è al presente (o futuro) oppure al passato (o condizionale)?',
+   'L’azione del subjuntivo è <b>contemporanea / futura</b> o <b>già finita</b> prima?',
+   'Scegli il tempo con la tabella e <b>costruiscilo</b> (unità 1, 3, 4, 5).'])),
+  card('gia','3 · Le frasi con SI (periodo ipotetico)',
+   TAB(['tipo','si + …','principale','esempio'],[
+    ['1 · possibile','<b>presente</b> de indicativo','futuro','Si tengo tiempo, iré.'],
+    ['2 · irreale presente','<b>imperfecto</b> de subjuntivo','condicional simple','Si tuviera tiempo, iría.'],
+    ['3 · irreale passato','<b>pluscuamperfecto</b> de subjuntivo','condicional compuesto','Si hubiera tenido tiempo, habría ido.']])+
+   '<p class="note">Dopo <b>si</b> non si usa <b>mai</b> il condizionale né il presente de subjuntivo.</p>'),
+  card('ros','4 · Condicional (serve per le frasi con si)',
+   '<p>Condicional simple: <b>infinito + -ía, -ías, -ía, -íamos, -íais, -ían</b>. Condicional compuesto: <b>habría + participio</b>.</p>'+TAB(['persona','hablar','tener','habría + hablado'],P6.map((p,i)=>[p,cond(byInf('hablar'),i),cond(byInf('tener'),i),condC(byInf('hablar'),i)]))+'<p class="note">Irregolari: tener → <b>tendr-</b> · hacer → <b>har-</b> · decir → <b>dir-</b> · poder → <b>podr-</b> · querer → <b>querr-</b> · saber → <b>sabr-</b> · salir → <b>saldr-</b> · venir → <b>vendr-</b> · poner → <b>pondr-</b>.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p>«<i>Mi madre quiere que (yo) ___ (estudiar).</i>» → principale al presente, azione contemporanea → <b>estudie</b>.</p>
+ <p>«<i>Mi madre quería que (yo) ___ (estudiar).</i>» → principale all’imperfecto → <b>estudiara</b>.</p>
+ <p>«<i>Dudo que (ellos) ___ (terminar) el trabajo.</i>» (già finito) → <b>hayan terminado</b>.</p>
+ <p>«<i>Dudaba que (ellos) ___ (terminar) el trabajo.</i>» (già finito, passato) → <b>hubieran terminado</b>.</p>
+ <p>«<i>Si (yo) ___ (tener) tiempo, iría.</i>» → tipo 2 → <b>tuviera</b>.</p></div>`,
+ errori:['Non cambiare il tempo del subjuntivo quando il principale va al passato: “quería que vengas” ✗ → <b>vinieras</b>.','Usare il condizionale dopo si: “si tendría” ✗ → <b>si tuviera</b>.','Confondere pluscuamperfecto e perfecto: <b>hayas</b> (principale al presente) ≠ <b>hubieras</b> (principale al passato).','Scegliere il presente invece del futuro con cuando: <b>cuando llegues</b>, non “cuando llegarás”.','Dopo si (tipo 1) usare il subjuntivo: “si tenga” ✗ → <b>si tengo</b>.','Confondere il condizionale con il futuro: <b>iría</b> (ipotesi) ≠ <b>iré</b> (possibile).'],
+ orale:[
+  ['Come si sceglie il tempo del subjuntivo?','Si guarda il verbo principale. Se è al presente o al futuro: presente de subjuntivo (azione contemporanea o futura) o perfecto (già finita). Se è al passato o al condizionale: imperfecto (contemporanea) o pluscuamperfecto (già finita).'],
+  ['Spiega i tre tipi di frasi con si.','Tipo 1 (possibile): si + presente indicativo, futuro. Tipo 2 (irreale presente): si + imperfecto de subjuntivo, condicional simple. Tipo 3 (irreale passato): si + pluscuamperfecto de subjuntivo, condicional compuesto.'],
+  ['Qual è l’equivalente spagnolo dei tempi del congiuntivo italiano?','Presente = presente; passato = pretérito perfecto; imperfetto = imperfecto; trapassato = pluscuamperfecto.'],
+ ],
+ quiz:[
+  ['«Quiero que vengas» → al passato diventa…','Quería que vinieras.',['Quería que vengas.','Quería que vendrías.','Quería que hayas venido.'],'Principale al passato → imperfecto.'],
+  ['«Espero que hayas venido.» Il verbo principale è al…','presente',['passato','condizionale','futuro anteriore'],'Esperar è presente: quindi presente o perfecto.'],
+  ['Il periodo ipotetico del <b>tipo 2</b> è…','si + imperfecto de subjuntivo → condicional',['si + presente → futuro','si + pluscuamperfecto → condicional compuesto','si + condicional → condicional'],'Irreale del presente.'],
+  ['Il periodo ipotetico del <b>tipo 3</b> è…','si + pluscuamperfecto de subjuntivo → condicional compuesto',['si + imperfecto → condicional simple','si + perfecto → futuro','si + presente → futuro'],'Irreale del passato.'],
+  ['«Si ___ (yo, tener) tiempo, iría.»','tuviera',['tengo','tendría','tenga'],'Tipo 2.'],
+  ['«Si ___ (yo, tener) tiempo, iré.»','tengo',['tuviera','tenga','tendría'],'Tipo 1: indicativo presente.'],
+  ['Dopo <i>si</i> si può usare il condizionale?','No, mai',['Sì, sempre','Solo al plurale','Solo nel tipo 3'],'Il condizionale sta nella principale.'],
+  ['Il condicional simple di <i>tener</i> con yo:','tendría',['tenería','tuviera','tendré'],'Radice irregolare tendr-.'],
+ ]
+}
+};
+
+const GLOSS=[
+['Subjuntivo','Il modo verbale che esprime desiderio, dubbio, emozione, possibilità (in italiano: congiuntivo).'],
+['Indicativo','Il modo dei fatti sicuri e reali.'],
+['Presente de subjuntivo','Congiuntivo presente: que yo hable.'],
+['Pretérito perfecto de subjuntivo','Congiuntivo passato: que yo haya hablado (haya + participio).'],
+['Pretérito imperfecto de subjuntivo','Congiuntivo imperfetto: que yo hablara / hablase.'],
+['Pretérito pluscuamperfecto de subjuntivo','Congiuntivo trapassato: que yo hubiera hablado / hubiese hablado.'],
+['Participio','La forma del verbo che finisce in -ado / -ido (hablado, comido) o è irregolare (hecho, dicho).'],
+['Pretérito indefinido','Il passato remoto/prossimo spagnolo (hablé, comí): serve per costruire l’imperfecto de subjuntivo.'],
+['Condicional','Il condizionale: hablaría. Compuesto: habría hablado.'],
+['Desinenza','La parte finale del verbo che cambia con la persona.'],
+['Radice','La parte del verbo che resta uguale (habl- in hablar).'],
+['Que','Il “che” che introduce la frase subordinata.'],
+['Ojalá','Esclamazione: “magari, speriamo che”. Vuole il subjuntivo.'],
+['Concordancia de tiempos','La regola che dice quale tempo usare nella subordinata (consecutio temporum).'],
+['Periodo ipotetico','La frase con “si”: ipotesi e conseguenza.'],
+['Irregolare','Verbo che non segue la regola normale e va imparato a memoria.'],
+];
+
+const FORMULARIO=`
+<div class="box blu"><h3>Presente de subjuntivo</h3><p class="m">-AR: <b>e, es, e, emos, éis, en</b></p><p class="m">-ER / -IR: <b>a, as, a, amos, áis, an</b></p><p>Radice: dalla forma <b>yo</b> del presente (tener → tengo → teng-).</p><p class="m">Irregolari: ser <b>sea</b> · estar <b>esté</b> · ir <b>vaya</b> · dar <b>dé</b> · saber <b>sepa</b> · haber <b>haya</b></p></div>
+<div class="box ver"><h3>Pretérito perfecto de subjuntivo</h3><p class="m"><b>haya, hayas, haya, hayamos, hayáis, hayan</b> + participio</p><p class="m">hablado · comido · vivido · hecho · dicho · escrito · puesto · visto · vuelto · abierto</p></div>
+<div class="box gia"><h3>Pretérito imperfecto de subjuntivo</h3><p>ellos del indefinido − <b>ron</b> + <b>ra, ras, ra, ramos, rais, ran</b> (o se, ses, se, semos, seis, sen)</p><p class="m">hablaron → hablara · tuvieron → tuviera · fueron → fuera</p><p>Con nosotros: accento (hablÁramos).</p></div>
+<div class="box ros"><h3>Pretérito pluscuamperfecto de subjuntivo</h3><p class="m"><b>hubiera, hubieras, hubiera, hubiéramos, hubierais, hubieran</b> + participio</p><p>(o hubiese, hubieses, hubiese, hubiésemos, hubieseis, hubiesen)</p></div>
+<div class="box blu"><h3>Quando si usa il subjuntivo</h3><p>Volontà (quiero que) · emozione (me alegro de que) · dubbio / negazione (dudo que, no creo que) · giudizio (es importante que) · ojalá · para que, sin que, antes de que, a menos que · cuando + futuro</p><p><b>Indicativo</b>: creo que · es verdad que · está claro que · estoy seguro de que · a lo mejor</p><p>Stesso soggetto → <b>infinito</b>.</p></div>
+<div class="box ver"><h3>Concordancia de tiempos</h3>${TAB(['principale','contemporanea','già finita'],[['presente · futuro','presente','perfecto'],['passato · condizionale','imperfecto','pluscuamperfecto']])}</div>
+<div class="box gia"><h3>Frasi con si</h3>${TAB(['tipo','si + …','principale'],[['possibile','presente indicativo','futuro'],['irreale presente','imperfecto de subj.','condicional'],['irreale passato','pluscuamperfecto de subj.','condicional compuesto']])}</div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('esp_prog_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('esp_prog_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+</script>
+<!--AGG--><script>
+(function(){
+ var B="20261005094957",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
