@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diritto: le obbligazioni</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Diritto</a></p><h1>Diritto: le obbligazioni</h1><p>Il rapporto giuridico obbligatorio · un passo alla volta</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Rapporto obbligatorio</button>
+<button data-t="u2">2 Fonti e titoli</button>
+<button data-t="u3">3 Soggetti e oggetto</button>
+<button data-t="u4">4 Tipi di prestazione</button>
+<button data-t="u5">5 Pecuniarie e interessi</button>
+<button data-t="u6">6 Inadempimento (in più)</button>
+<button data-t="u7">7 Estinzione e garanzie (in più)</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo all'interrogazione di <b>diritto</b> sulle <b>obbligazioni</b>. Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti, con carta e penna vicino. Ogni argomento ha sempre lo stesso ordine, così ti abitui.</p>
+<div class="box gia"><h3>Che cosa è base e che cosa è “in più”</h3>
+<ul><li><b>Base</b> (unità 1-5): obbligazione, debitore e creditore, prestazione · obbligazione naturale · fonti e titoli di credito · parziaria e solidale · divisibile e indivisibile · semplice, facoltativa, cumulativa, alternativa · specifica e generica · obbligazioni pecuniarie e interessi.</li>
+<li><b>In più</b> (unità 6-7): adempimento, inadempimento e risarcimento · estinzione e garanzie.</li></ul>
+<p class="note">Parti dal base. Passa all'“in più” solo se il tuo insegnante lo richiede.</p></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: i passaggi da fare, sempre uguali.</div></div>
+<div class="step"><b class="n">3</b><div><b>Esempi svolti</b>: ogni passaggio è spiegato. Rifalli a voce senza guardare.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni, quelli che fanno perdere punti.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: casi sempre nuovi. Leggi, pensa alla risposta, poi scegli. Se sbagli leggi i passaggi. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz di teoria</b>: poche domande sulle regole.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (6 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 (rapporto obbligatorio)</li><li><b>Giorno 2</b>: unità 2 (fonti e titoli di credito)</li><li><b>Giorno 3</b>: unità 3 (parziaria, solidale, divisibile)</li><li><b>Giorno 4</b>: unità 4 (tipi di obbligazione)</li><li><b>Giorno 5</b>: unità 5 (pecuniarie e interessi)</li><li><b>Giorno 6</b>: Prova finale, Orale e Formulario (e unità 6-7 se servono)</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c'è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Per ogni caso chiediti: <b>chi è il debitore? chi il creditore? qual è la prestazione?</b></li><li>Impara le coppie: <b>parziaria / solidale</b>, <b>cumulativa / alternativa</b>, <b>specifica / generica</b>.</li><li>Se sbagli non è un problema: leggi i passaggi e prova con un altro caso.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li><li>Prima dell'interrogazione: leggi il <b>Formulario</b> e ripeti a voce le risposte dell'<b>Orale</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section><section class="tab" id="u7"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const NAMES=['Marco','Giulia','Luca','Sara','Paolo','Elena','Davide','Chiara','Andrea','Francesca','Matteo','Anna'];
+const names=n=>shuffle(NAMES).slice(0,n);
+const eur=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
+
+/* ========== DIRITTO: GENERATORI DI ESERCIZI ========== */
+const why=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+
+/* generatore a casi: ogni caso è una funzione che restituisce {q,a,w,t} (w = risposte sbagliate) */
+function fromCases(tag,cases){
+  return ()=>{const c=pick(cases)();return mkEx(c.q,c.a,c.w,why(c.t,c.a),tag)};
+}
+const DR='Diritto reale',DC='Diritto di credito';
+const exTipoDiritto=fromCases('Diritto reale o di credito',[
+ ()=>{const[a,b]=names(2),o=pick(['della sua bicicletta','del suo motorino','del suo telefono','del suo orologio']);return{q:`${a} ha la proprietà ${o}. Può farne ciò che vuole, senza chiedere nulla a nessuno. Che diritto è?`,a:DR,w:[DC,'Obbligazione naturale'],t:`${a} esercita il suo potere <b>direttamente sulla cosa</b> e può farlo valere contro tutti: è un diritto reale (la proprietà).`}},
+ ()=>{const[a,b]=names(2),s=pick([50,100,200,300]);return{q:`${a} ha prestato ${eur(s)} a ${b}. ${a} può chiedere a ${b} di restituirli. Che diritto ha ${a}?`,a:DC,w:[DR,'Obbligazione naturale'],t:`${a} ha bisogno della <b>cooperazione di ${b}</b> (che deve pagare) e può far valere il diritto solo contro ${b}: è un diritto di credito.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} ha ordinato un lavoro a ${b}, che deve consegnarlo entro un mese. Il diritto di ${a} è…`,a:DC,w:[DR,'Obbligazione naturale'],t:`Per ottenere il lavoro ${a} dipende dall’azione di ${b}: è un diritto di credito.`}},
+ ()=>{const[a]=names(1);return{q:`La casa di ${a} è di sua proprietà. Il diritto di ${a} sulla casa è un diritto…`,a:DR,w:[DC,'di credito verso un debitore'],t:`La proprietà è il tipico diritto reale: si esercita sulla cosa, senza bisogno di un’altra persona.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} deve ricevere lo stipendio da ${b}. Lo stipendio è…`,a:DC,w:[DR,'un diritto sulla cosa'],t:`Lo stipendio è una prestazione che spetta a ${a} e che deve eseguire ${b}: diritto di credito.`}},
+]);
+const exRuolo=fromCases('Debitore e creditore',[
+ ()=>{const[a,b]=names(2),o=pick(['un libro','una chitarra','un computer','una bicicletta']);return{q:`${a} deve consegnare ${o} a ${b}. Chi è il <b>debitore</b>?`,a:a,w:[b,'Nessuno dei due'],t:`Il debitore è chi deve eseguire la prestazione: qui ${a} deve consegnare.`}},
+ ()=>{const[a,b]=names(2),o=pick(['un libro','una chitarra','un computer','una bicicletta']);return{q:`${a} deve consegnare ${o} a ${b}. Chi è il <b>creditore</b>?`,a:b,w:[a,'Nessuno dei due'],t:`Il creditore è chi ha il diritto di pretendere la prestazione: qui ${b} riceve.`}},
+ ()=>{const[a,b]=names(2),s=pick([120,250,400,800]);return{q:`${a} ha prestato ${eur(s)} a ${b}. Chi è il <b>debitore</b>?`,a:b,w:[a,'Nessuno dei due'],t:`Il debitore è chi deve restituire: ${b}. ${a} è il creditore.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} si è impegnato a dipingere la casa di ${b}. Cosa deve fare il debitore?`,a:`${a} deve dipingere la casa`,w:[`${b} deve dipingere la casa`,`${a} deve pagare ${b}`],t:`La prestazione è ciò che deve fare il debitore: ${a} deve dipingere, ${b} è il creditore.`}},
+]);
+const REQ=['Possibile','Determinata o determinabile','Lecita'];
+const exRequisiti=fromCases('Requisiti della prestazione',[
+ ()=>{const[a,b]=names(2);return{q:`${a} si obbliga a portare a ${b} un pezzo di Sole. Quale requisito della prestazione manca?`,a:REQ[0],w:[REQ[1],REQ[2]],t:`Nessuno può portare un pezzo di Sole: la prestazione è <b>impossibile</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} si obbliga a far tornare indietro il tempo di un anno per ${b}. Quale requisito manca?`,a:REQ[0],w:[REQ[1],REQ[2]],t:`È fisicamente impossibile: manca il requisito della <b>possibilità</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} promette a ${b}: «ti darò qualcosa». Non dice cosa né quanto e non si può capirlo. Quale requisito manca?`,a:REQ[1],w:[REQ[0],REQ[2]],t:`La prestazione non è né determinata né determinabile: non si sa che cosa si deve dare.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} promette a ${b} «un po’ di soldi, forse». Quale requisito manca?`,a:REQ[1],w:[REQ[0],REQ[2]],t:`Non è indicata (né si può ricavare) la somma: la prestazione è <b>indeterminata</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} si obbliga a procurare a ${b} droghe vietate dalla legge. Quale requisito manca?`,a:REQ[2],w:[REQ[0],REQ[1]],t:`La prestazione è vietata dalla legge: è <b>illecita</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} si obbliga a falsificare un documento per ${b}. Quale requisito manca?`,a:REQ[2],w:[REQ[0],REQ[1]],t:`Falsificare un documento è vietato: la prestazione è <b>illecita</b>.`}},
+ ()=>{const[a,b]=names(2),s=pick([300,500,1000]);return{q:`${a} si obbliga a pagare ${eur(s)} a ${b} entro il 30 giugno. Quali requisiti ha la prestazione?`,a:'È possibile, determinata e lecita',w:['Non è determinata','È illecita'],t:`Pagare una somma precisa è possibile, la somma è determinata e il pagamento è lecito: la prestazione è valida.`}},
+]);
+const exNaturale=fromCases('Obbligazione naturale',[
+ ()=>{const[a,b]=names(2);return{q:`${a} ha pagato spontaneamente a ${b} un debito di gioco non autorizzato. Può ora chiedere i soldi indietro?`,a:'No, perché il pagamento spontaneo di un’obbligazione naturale non si può ripetere',w:['Sì, sempre, davanti a un giudice','Sì, ma solo entro un mese'],t:`Il debito di gioco è un’<b>obbligazione naturale</b>: se è pagato spontaneamente, non si può chiedere indietro.`}},
+ ()=>{const[a,b]=names(2);return{q:`${b} non ha pagato a ${a} un debito di gioco (obbligazione naturale). ${a} può rivolgersi a un giudice?`,a:'No, l’obbligazione naturale non è giuridicamente esigibile',w:['Sì, il giudice obbliga a pagare','Sì, ma solo con un avvocato'],t:`Nell’obbligazione naturale il creditore <b>non può</b> rivolgersi a un giudice.`}},
+ ()=>{const[a,b]=names(2),s=pick([200,500,1000]);return{q:`${a} ha prestato ${eur(s)} a ${b} (contratto di prestito). ${b} non restituisce. ${a} può rivolgersi a un giudice?`,a:'Sì, è un’obbligazione giuridica',w:['No, è un’obbligazione naturale','No, deve solo aspettare'],t:`Il prestito è un’obbligazione <b>giuridica</b>: il creditore può agire in giudizio.`}},
+ ()=>{const[a]=names(1);return{q:`Un dovere morale o sociale (per esempio un aiuto a un parente) che la legge non rende esigibile è…`,a:'un’obbligazione naturale',w:['un’obbligazione solidale','un’obbligazione pecuniaria'],t:`I doveri morali e sociali spontaneamente adempiuti sono tipiche obbligazioni naturali.`}},
+]);
+const FONTE=['Contratto','Fatto illecito','Altro atto o fatto (indebito, legge, ecc.)'];
+const exFonti=fromCases('Fonti delle obbligazioni',[
+ ()=>{const[a,b]=names(2),o=pick(['un motorino','un divano','una moto','un computer']);return{q:`${a} compra ${o} da ${b} e lo paga. Da quale fonte nasce l’obbligo di pagare?`,a:FONTE[0],w:[FONTE[1],FONTE[2]],t:`Compravendita: nasce da un <b>accordo</b> tra due persone, cioè da un contratto.`}},
+ ()=>{const[a,b]=names(2),o=pick(['un appartamento','una stanza','un garage']);return{q:`${a} prende in affitto ${o} da ${b} e si impegna a pagare il canone. Fonte dell’obbligazione?`,a:FONTE[0],w:[FONTE[1],FONTE[2]],t:`La locazione è un contratto.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a}, con il pallone, rompe per distrazione il vetro dell’auto di ${b}. Fonte dell’obbligo di risarcire?`,a:FONTE[1],w:[FONTE[0],FONTE[2]],t:`${a} ha causato un <b>danno ingiusto</b>: l’obbligo di risarcire nasce da un fatto illecito.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} urta con il motorino ${b} e gli causa una ferita. Fonte dell’obbligo di risarcire il danno?`,a:FONTE[1],w:[FONTE[0],FONTE[2]],t:`Un comportamento che causa un danno ingiusto è un fatto illecito.`}},
+ ()=>{const[a,b]=names(2),s=pick([300,500,900]);return{q:`${a} riceve per errore ${eur(s)} che spettavano a ${b}. Deve restituirli. Fonte dell’obbligo?`,a:FONTE[2],w:[FONTE[0],FONTE[1]],t:`È il <b>pagamento dell’indebito</b>: un altro atto o fatto idoneo a produrre obbligazioni (art. 1173).`}},
+ ()=>{const[a,b]=names(2);return{q:`${b} è in vacanza. ${a} paga una riparazione urgente al tetto di ${b} per evitare un danno. ${b} deve rimborsarlo. Fonte dell’obbligo di ${b}?`,a:FONTE[2],w:[FONTE[0],FONTE[1]],t:`È la <b>gestione di affari altrui</b>: nessun contratto e nessun illecito, ma un fatto che crea un’obbligazione.`}},
+ ()=>{const[a]=names(1);return{q:`Un obbligo di legge, per esempio di mantenere i figli, da quale fonte nasce?`,a:FONTE[2],w:[FONTE[0],FONTE[1]],t:`Quando l’obbligo nasce direttamente dalla legge rientra negli “altri atti o fatti” idonei a produrre obbligazioni.`}},
+]);
+const TCR=['Titolo di credito','Contratto','Obbligazione naturale'];
+const exTitoli=fromCases('Titoli di credito',[
+ ()=>{const[a]=names(1);return{q:`${a} per ottenere la somma indicata deve presentare alla banca un assegno. L’assegno è un…`,a:TCR[0],w:[TCR[1],TCR[2]],t:`L’assegno contiene il diritto a ottenere una somma: per esigerla bisogna presentare il documento. È un titolo di credito.`}},
+ ()=>{const[a]=names(1);return{q:`Una cambiale è un documento che contiene il diritto a ricevere una somma. È un…`,a:TCR[0],w:[TCR[1],TCR[2]],t:`La cambiale è un titolo di credito.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} dice a ${b} «ti devo 50 €» a voce, senza documento. È un titolo di credito?`,a:'No, manca un documento che contiene il diritto',w:['Sì, sempre','Sì, se ${b} è d’accordo'.replace('${b}',b)],t:`Il titolo di credito è un <b>documento</b>: una promessa solo a voce non lo è.`}},
+ ()=>{const[a]=names(1);return{q:`Che cosa deve fare chi vuole esercitare il diritto contenuto in un titolo di credito?`,a:'Presentare il documento',w:['Rivolgersi sempre a un giudice','Aspettare 10 anni'],t:`Il diritto è “incorporato” nel documento: per ottenere la prestazione bisogna esibirlo.`}},
+]);
+const exQuota=()=>{
+  const n=rnd(2,4),pp=names(n+1),cr=pp[0],ds=pp.slice(1),tot=n*pick([100,200,300,400,500]);
+  const q=tot/n,solid=Math.random()<0.5;
+  const who=ds[0];
+  const list=ds.join(', ').replace(/, ([^,]*)$/,' e $1');
+  const c=solid?tot:q;
+  const wr=solid?[q,tot*2]:[tot,n===2?q/2:q*2];
+  const reg=solid?`<p>Se ${who} paga tutto, può poi chiedere agli altri la loro parte (<b>regresso</b>): ${eur(q)} a ciascuno.</p>`:'';
+  return mkEx(`${list} devono insieme ${eur(tot)} a ${cr}. L’obbligazione è <b>${solid?'solidale':'parziaria'}</b> e le parti sono uguali. Quanto può chiedere ${cr} a ${who}?`,eur(c),wr.map(eur),
+   `<p>${solid?'Solidale: ogni debitore deve l’<b>intera</b> prestazione, quindi '+cr+' può chiedere tutto a '+who+': '+eur(tot)+'.':'Parziaria: ogni debitore deve solo la sua parte. '+eur(tot)+' diviso '+n+' = '+eur(q)+'.'}</p>${reg}<p>Risposta: ${B(eur(c))}.</p>`,'Parziaria o solidale');
+};
+const SOG=['Obbligazione parziaria','Obbligazione solidale','Obbligazione indivisibile'];
+const exSoggetti=fromCases('Parziaria o solidale',[
+ ()=>{const[a,b,c]=names(3),s=pick([600,900,1200]);return{q:`${a} e ${b} devono ${eur(s)} a ${c}. Ciascuno deve pagare solo metà (${eur(s/2)}). Che obbligazione è?`,a:SOG[0],w:[SOG[1],SOG[2]],t:`Ogni debitore deve solo la <b>sua parte</b>: è parziaria.`}},
+ ()=>{const[a,b,c]=names(3),s=pick([600,900,1200]);return{q:`${a} e ${b} devono ${eur(s)} a ${c}, che può chiedere l’intera somma a uno solo dei due. Che obbligazione è?`,a:SOG[1],w:[SOG[0],SOG[2]],t:`Ogni debitore deve l’<b>intera</b> prestazione: è solidale.`}},
+ ()=>{const[a,b,c]=names(3);return{q:`${a} e ${b} sono creditori di ${c}. Ciascuno può pretendere da ${c} l’intera prestazione. Che obbligazione è?`,a:SOG[1],w:[SOG[0],SOG[2]],t:`Ogni creditore può pretendere l’<b>intero</b>: solidarietà attiva.`}},
+ ()=>{const[a,b,c]=names(3);return{q:`${a} e ${b} sono creditori di ${c}. Ciascuno può pretendere solo la sua metà. Che obbligazione è?`,a:SOG[0],w:[SOG[1],SOG[2]],t:`Ogni creditore può pretendere solo la <b>sua parte</b>: è parziaria.`}},
+]);
+const OGG=['Divisibile','Indivisibile'];
+const exDivisibile=()=>{
+  const items=[['una somma di denaro',0],['100 kg di farina',0],['un appartamento',1],['un cavallo da corsa',1],['un quadro di un pittore',1],['mille euro',0],['una macchina',1],['50 litri di olio',0]];
+  const[o,ind]=pick(items);const[a,b]=names(2);
+  const a1=OGG[ind];
+  return mkEx(`${a} deve consegnare a ${b} <b>${o}</b>. La prestazione è…`,a1,[OGG[1-ind],'Cumulativa'],
+   `<p>${ind?'Un bene che non si può dividere senza distruggerlo o ridurne il valore è <b>indivisibile</b>.':'Si può dividere in parti senza perdere valore: è <b>divisibile</b>.'}</p><p>Risposta: ${B(a1)}.</p>`,'Divisibile o indivisibile');
+};
+const TIP=['Semplice','Facoltativa','Cumulativa','Alternativa','Specifica','Generica'];
+function exTipo(group){return()=>{
+  const c=pick(group)();
+  const idx=TIP.indexOf(c.a);const sub=Math.floor(idx/2);
+  const sib=TIP[sub*2+(1-idx%2)];
+  const other=TIP[(sub+rnd(1,2))%3*2+rnd(0,1)];
+  return mkEx(c.q,c.a,[sib,other],why(c.t,c.a),'Tipi di obbligazione');
+}}
+const C4a=[
+ ()=>{const[a,b]=names(2);return{q:`${a} deve consegnare a ${b} una bicicletta. Se vuole, può invece dare ${b} una somma di denaro (e il creditore non può pretenderla). L’obbligazione è…`,a:TIP[1],w:[],t:`Prestazione unica dovuta, ma il debitore ha la <b>facoltà</b> di liberarsi con un’altra: facoltativa.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} deve soltanto consegnare un libro a ${b}, nient’altro. L’obbligazione è…`,a:TIP[0],w:[],t:`Una sola prestazione, senza alternative: semplice.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} deve pagare ${b} e basta. Non ci sono altre prestazioni possibili. L’obbligazione è…`,a:TIP[0],w:[],t:`Un’unica prestazione: obbligazione semplice.`}},
+];
+const C4b=[
+ ()=>{const[a,b]=names(2);return{q:`${a} deve consegnare a ${b} un tavolo <b>e</b> quattro sedie. Deve eseguirle tutte. L’obbligazione è…`,a:TIP[2],w:[],t:`Il debitore deve eseguire <b>tutte</b> le prestazioni: cumulativa.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} deve consegnare a ${b} un computer <b>oppure</b> un tablet, a sua scelta. È sufficiente una delle due cose. L’obbligazione è…`,a:TIP[3],w:[],t:`Basta eseguire <b>una</b> delle prestazioni: alternativa.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} deve a ${b} sia la riparazione dell’auto sia il lavaggio. Deve fare entrambe. L’obbligazione è…`,a:TIP[2],w:[],t:`Tutte le prestazioni sono dovute: cumulativa.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} può liberarsi dal debito verso ${b} pagando 500 € oppure consegnando una moto. Basta una. L’obbligazione è…`,a:TIP[3],w:[],t:`Una sola delle due prestazioni basta: alternativa.`}},
+];
+const C4c=[
+ ()=>{const[a,b]=names(2);return{q:`${a} deve consegnare a ${b} il quadro dipinto dal nonno, esattamente quello. L’obbligazione è…`,a:TIP[4],w:[],t:`Il bene è unico e non sostituibile: specifica.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} deve consegnare a ${b} 50 kg di grano. Qualsiasi grano della stessa qualità va bene. L’obbligazione è…`,a:TIP[5],w:[],t:`I beni sono sostituibili con altri dello stesso genere: generica.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} deve consegnare a ${b} la sua auto targata AB123CD. L’obbligazione è…`,a:TIP[4],w:[],t:`Si tratta di quella singola auto, non sostituibile: specifica.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} deve consegnare a ${b} 100 bottiglie di vino di una certa marca. L’obbligazione è…`,a:TIP[5],w:[],t:`Le bottiglie sono sostituibili con altre della stessa marca: generica.`}},
+];
+const exTipo1=exTipo(C4a),exTipo2=exTipo(C4b),exTipo3=exTipo(C4c);
+const exEffettoGenere=()=>{
+  const sp=Math.random()<0.5;const[a,b]=names(2);
+  const o=sp?pick(['il quadro dipinto dal nonno','l’auto targata AB123CD','il cavallo “Lampo”']):pick(['50 kg di grano','100 bottiglie di vino','30 quaderni']);
+  const c=sp?'L’obbligazione si estingue (se non è colpa del debitore)':'L’obbligazione non si estingue: il debitore deve procurare altro dello stesso genere';
+  const w=sp?['Il debitore deve procurare un altro bene uguale','Il debitore deve pagare il doppio']:['L’obbligazione si estingue','Il creditore perde ogni diritto'];
+  return mkEx(`${a} deve consegnare a ${b} ${o}, ma il bene va perso per caso fortuito (non per colpa di ${a}). Che cosa succede?`,c,w,
+   `<p>${sp?'Nell’obbligazione <b>specifica</b> il bene non è sostituibile: se si perde per cause non imputabili al debitore, l’obbligazione si estingue.':'Nell’obbligazione <b>generica</b> vale “il genere non perisce mai”: il debitore deve comunque procurare altri beni dello stesso genere.'}</p><p>Risposta: ${B(c)}.</p>`,'Specifica e generica');
+};
+const exNominale=()=>{
+  const s=pick([500,1000,2000,5000]),p=pick([20,30,50]),y=pick([2,5,8,10]);
+  const[a,b]=names(2);
+  const up=Math.round(s*(100+p)/100),down=Math.round(s*(100-p)/100);
+  return mkEx(`${a} ha preso in prestito ${eur(s)} da ${b}. Dopo ${y} anni i prezzi sono cresciuti del ${p}%. Senza altri accordi, quanto deve restituire?`,eur(s),[eur(up),eur(down)],
+   `<p>Vale il <b>principio nominalistico</b>: un debito di denaro si estingue pagando la somma scritta (valore nominale), anche se il potere d’acquisto è cambiato.</p><p>Quindi si restituiscono ${eur(s)} (più gli interessi, se previsti), non di più e non di meno.</p><p>Risposta: ${B(eur(s))}.</p>`,'Principio nominalistico');
+};
+const exInteresse=()=>{
+  const cap=pick([1000,2000,5000,10000]),r=pick([2,3,4,5]),t=pick([1,2,3]);
+  const I=cap*r*t/100;
+  const[a,b]=names(2);
+  return mkEx(`${a} deve restituire a ${b} un capitale di ${eur(cap)} con un interesse semplice del ${r}% annuo per ${t} ${t===1?'anno':'anni'}. Quanto sono gli interessi?`,eur(I),[eur(cap*r/100*(t+1)),eur(cap*t/100)],
+   `<p>Formula: interessi = capitale × tasso × anni : 100.</p><p class="m">I = ${F(cap+' × '+r+' × '+t,'100')} = ${F(eur(cap*r*t),'100')} = ${eur(I)}</p><p>Gli interessi sono un’<b>obbligazione accessoria</b>: si sommano al capitale.</p><p>Risposta: ${B(eur(I))}.</p>`,'Interessi semplici');
+};
+const exTotale=()=>{
+  const cap=pick([1000,2000,5000]),r=pick([2,3,4,5]),t=pick([1,2]);
+  const I=cap*r*t/100;
+  return mkEx(`Un debito di ${eur(cap)} produce interessi semplici del ${r}% annuo. Dopo ${t} ${t===1?'anno':'anni'} quanto va restituito in tutto?`,eur(cap+I),[eur(I),eur(cap+I*2)],
+   `<p>Interessi: ${F(cap+' × '+r+' × '+t,'100')} = ${eur(I)}.</p><p>Totale = capitale + interessi = ${eur(cap)} + ${eur(I)} = ${eur(cap+I)}.</p><p>Risposta: ${B(eur(cap+I))}.</p>`,'Capitale più interessi');
+};
+const exPecuniaria=fromCases('Obbligazioni pecuniarie',[
+ ()=>{const[a,b]=names(2);return{q:`${a} deve pagare 300 € a ${b}. Come si chiama questa obbligazione?`,a:'Pecuniaria',w:['Specifica','Alternativa'],t:`L’oggetto è una somma di denaro: obbligazione pecuniaria.`}},
+ ()=>{const[a]=names(1);return{q:`Con quale moneta si estingue un’obbligazione pecuniaria?`,a:'Con moneta a corso legale',w:['Solo con oro','Con qualunque bene di valore uguale'],t:`Il debito di denaro si paga con la moneta che per legge deve essere accettata: oggi l’euro.`}},
+ ()=>{const[a]=names(1);return{q:`Gli interessi sono rispetto al capitale un’obbligazione…`,a:'accessoria',w:['principale','naturale'],t:`Gli interessi dipendono dal debito principale: sono accessori.`}},
+ ()=>{const[a]=names(1);return{q:`In quale caso la somma da restituire cambia in base all’inflazione?`,a:'Solo se le parti lo hanno pattuito (clausola di indicizzazione)',w:['Sempre, automaticamente','Mai, nemmeno se lo hanno pattuito'],t:`Il principio nominalistico è la regola; si può derogare solo con un accordo.`}},
+]);
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const DANNO=['Danno emergente','Lucro cessante','Interessi moratori'];
+const exInadempimento=fromCases('Inadempimento',[
+ ()=>{const[a,b]=names(2),s=pick([300,500,800]);return{q:`${a} non consegna a ${b} il macchinario promesso e ${b} deve spendere ${eur(s)} per noleggiarne un altro. Questa perdita è…`,a:DANNO[0],w:[DANNO[1],DANNO[2]],t:`È una perdita effettivamente subita: <b>danno emergente</b>.`}},
+ ()=>{const[a,b]=names(2),s=pick([400,600,900]);return{q:`${a} consegna in ritardo la merce a ${b}, che per questo non ha potuto vendere e ha perso un guadagno di ${eur(s)}. Questo mancato guadagno è…`,a:DANNO[1],w:[DANNO[0],DANNO[2]],t:`È un guadagno che il creditore non ha potuto ottenere: <b>lucro cessante</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} non esegue la prestazione perché è diventata impossibile per una causa che non dipende da lui. Deve risarcire ${b}?`,a:'No, perché l’impossibilità non gli è imputabile',w:['Sì, sempre','Sì, ma solo la metà'],t:`Art. 1218: il debitore non risponde se prova che l’inadempimento è stato determinato da impossibilità derivante da causa a lui <b>non imputabile</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} rifiuta senza un buon motivo di ricevere la merce che ${b} gli offre nel modo corretto. Che situazione è?`,a:'Mora del creditore',w:['Mora del debitore','Adempimento esatto'],t:`Il creditore rifiuta ingiustificatamente la prestazione offerta: <b>mora del creditore</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a}, che doveva pagare entro il 1° marzo, paga solo il 20 marzo senza una ragione valida. Si parla di…`,a:'Mora del debitore',w:['Mora del creditore','Remissione del debito'],t:`Ritardo colpevole del debitore: <b>mora del debitore</b>.`}},
+]);
+const CAUSE=['Compensazione','Confusione','Remissione','Novazione','Prescrizione'];
+const exEstinzione=fromCases('Estinzione',[
+ ()=>{const[a,b]=names(2);return{q:`${a} deve 300 € a ${b} e ${b} deve 200 € a ${a}. I debiti si annullano fino a 200 €: resta un debito di 100 €. Come si chiama?`,a:CAUSE[0],w:[CAUSE[2],CAUSE[3]],t:`Due persone sono debitrici l’una dell’altra: <b>compensazione</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${b} ha un credito verso ${a}. ${b} muore e ${a} è l’unico erede. Il debito si estingue perché…`,a:'debitore e creditore diventano la stessa persona (confusione)',w:['il creditore rinuncia (remissione)','è scaduto il termine (prescrizione)'],t:`Quando debitore e creditore coincidono si ha <b>confusione</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${b} dice ad ${a}: «Ti condono il debito, non devi più nulla». Come si chiama?`,a:CAUSE[2],w:[CAUSE[0],CAUSE[1]],t:`Il creditore rinuncia al credito: <b>remissione del debito</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} e ${b} concordano che il vecchio debito è sostituito da una nuova obbligazione diversa. Come si chiama?`,a:CAUSE[3],w:[CAUSE[0],CAUSE[4]],t:`La nuova obbligazione sostituisce la precedente: <b>novazione</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${b} non ha chiesto il pagamento di un credito per oltre 10 anni. Il credito si estingue per…`,a:CAUSE[4],w:[CAUSE[0],CAUSE[1]],t:`Il diritto non esercitato per il tempo fissato dalla legge (di regola 10 anni) si prescrive: <b>prescrizione</b>.`}},
+]);
+const GAR=['Pegno','Ipoteca','Fideiussione'];
+const exGaranzie=fromCases('Garanzie',[
+ ()=>{const[a,b,c]=names(3);return{q:`${a} garantisce il debito di ${b} verso ${c}: se ${b} non paga, pagherà ${a} con il proprio patrimonio. Che garanzia è?`,a:GAR[2],w:[GAR[0],GAR[1]],t:`Un terzo si obbliga a pagare: è una garanzia <b>personale</b>, la fideiussione.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} dà in garanzia a ${b} un gioiello (bene mobile) che ${b} tiene fino al pagamento. Che garanzia è?`,a:GAR[0],w:[GAR[1],GAR[2]],t:`Garanzia reale su un bene mobile: <b>pegno</b>.`}},
+ ()=>{const[a,b]=names(2);return{q:`${a} concede a ${b} un’ipoteca sulla propria casa a garanzia di un mutuo. L’ipoteca è una garanzia…`,a:'reale su un immobile',w:['personale','su un bene mobile'],t:`L’ipoteca è una garanzia <b>reale</b> che di regola grava su un immobile.`}},
+ ()=>{const[a]=names(1);return{q:`${a} ha un debito e non paga. Con quali beni risponde del debito, in generale?`,a:'Con tutti i suoi beni presenti e futuri',w:['Solo con i beni che ha adesso','Solo con la casa'],t:`Responsabilità patrimoniale (art. 2740): il debitore risponde con tutti i suoi beni, presenti e futuri.`}},
+]);
+const GENS={
+ u1:[exTipoDiritto,exRuolo,exRequisiti,exRequisiti,exNaturale,exDef('u1')],
+ u2:[exFonti,exFonti,exFonti,exTitoli,exDef('u2')],
+ u3:[exSoggetti,exQuota,exDivisibile,exDef('u3')],
+ u4:[exTipo1,exTipo2,exTipo3,exEffettoGenere,exDef('u4')],
+ u5:[exNominale,exInteresse,exTotale,exPecuniaria,exDef('u5')],
+ u6:[exInadempimento,exInadempimento,exDef('u6')],
+ u7:[exEstinzione,exEstinzione,exGaranzie,exDef('u7')]
+};
+const UNITS={u1:'1 · Il rapporto obbligatorio',u2:'2 · Le fonti e i titoli di credito',u3:'3 · Più soggetti, parti dell’oggetto',u4:'4 · Semplice, cumulativa, specifica…',u5:'5 · Obbligazioni pecuniarie e interessi',u6:'6 · Adempimento e inadempimento (in più)',u7:'7 · Estinzione e garanzie (in più)'};
+const PROVA_PLAN={u1:3,u2:2,u3:3,u4:3,u5:2,u6:1,u7:1};
+
+/* ========== CONTENUTI FISSI (Diritto 4 ES: le obbligazioni) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const M=t=>`<span class="m">${t}</span>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const ESE=t=>`<p class="m">${t}</p>`;
+
+const DEFS={
+u1:[
+ ['Obbligazione','Rapporto giuridico per cui un debitore deve eseguire una prestazione a favore di un creditore.'],
+ ['Diritto di credito','Diritto che richiede la cooperazione di un’altra persona (il debitore) e si può far valere solo contro di lei.'],
+ ['Diritto reale','Diritto che si esercita direttamente su una cosa e si può far valere contro tutti (per esempio la proprietà).'],
+ ['Debitore','Chi deve eseguire la prestazione.'],
+ ['Creditore','Chi ha il diritto di pretendere la prestazione.'],
+ ['Prestazione','Ciò che il debitore deve dare o fare: pagare, consegnare, lavorare…'],
+ ['Obbligazione naturale','Dovere morale e non giuridico: il creditore non può rivolgersi a un giudice, ma se il debitore paga spontaneamente non può chiedere indietro la prestazione.']],
+u2:[
+ ['Fonti delle obbligazioni','Gli atti e i fatti giuridici che creano un rapporto obbligatorio.'],
+ ['Contratto','Accordo tra due o più parti per creare, regolare o estinguere un rapporto giuridico patrimoniale.'],
+ ['Fatto illecito','Comportamento che causa a qualcuno un danno ingiusto: obbliga a risarcirlo.'],
+ ['Pagamento dell’indebito','Chi riceve per errore un pagamento che non gli era dovuto deve restituirlo.'],
+ ['Arricchimento senza causa','Chi si arricchisce a danno di un altro senza una giustificazione deve indennizzarlo.'],
+ ['Gestione di affari altrui','Chi si occupa spontaneamente di affari altrui senza esserne incaricato ha diritto al rimborso delle spese utili.'],
+ ['Titolo di credito','Documento che contiene il diritto a ottenere una prestazione: per esigerla bisogna presentarlo.']],
+u3:[
+ ['Obbligazione parziaria','Ogni creditore può pretendere, o ogni debitore deve eseguire, solo la propria parte di prestazione.'],
+ ['Obbligazione solidale','Ogni creditore può pretendere, o ogni debitore deve eseguire, l’intera prestazione.'],
+ ['Obbligazione divisibile','La prestazione si può dividere giuridicamente in più parti.'],
+ ['Obbligazione indivisibile','La prestazione non si può dividere giuridicamente.'],
+ ['Regresso','Diritto del debitore solidale che ha pagato tutto di farsi rimborsare dagli altri la loro parte.']],
+u4:[
+ ['Obbligazione semplice','Ha per oggetto una sola prestazione.'],
+ ['Obbligazione facoltativa','Ha una sola prestazione, ma il debitore può liberarsi eseguendone un’altra.'],
+ ['Obbligazione cumulativa','Il debitore deve eseguire tutte le prestazioni indicate.'],
+ ['Obbligazione alternativa','Il debitore può eseguire una sola delle prestazioni indicate.'],
+ ['Obbligazione specifica','Ha per oggetto beni che non si possono sostituire con altri.'],
+ ['Obbligazione generica','Ha per oggetto beni sostituibili con altri dello stesso genere.']],
+u5:[
+ ['Obbligazione pecuniaria','Ha per oggetto il pagamento di una somma di denaro.'],
+ ['Moneta a corso legale','La moneta che per legge deve essere accettata come pagamento (oggi l’euro).'],
+ ['Principio nominalistico','Il debito di denaro si estingue pagando la somma indicata, anche se il valore reale della moneta è cambiato.'],
+ ['Interessi','Somma che si paga in più per l’uso di un capitale: sono un’obbligazione accessoria.'],
+ ['Obbligazione accessoria','Obbligazione che dipende da quella principale (per esempio gli interessi).'],
+ ['Capitale','La somma di denaro dovuta su cui si calcolano gli interessi.']],
+u6:[
+ ['Adempimento','Esatta esecuzione della prestazione dovuta: estingue l’obbligazione.'],
+ ['Inadempimento','Il debitore non esegue la prestazione, o la esegue male o in ritardo.'],
+ ['Mora del debitore','Ritardo colpevole del debitore nell’adempimento.'],
+ ['Mora del creditore','Il creditore rifiuta senza motivo la prestazione offerta in modo corretto.'],
+ ['Risarcimento del danno','Somma che il debitore inadempiente deve pagare per riparare il danno al creditore.'],
+ ['Danno emergente','La perdita effettivamente subita dal creditore.'],
+ ['Lucro cessante','Il mancato guadagno del creditore.']],
+u7:[
+ ['Compensazione','Due persone sono debitrici l’una dell’altra: i debiti si annullano fino alla somma minore.'],
+ ['Confusione','Debitore e creditore diventano la stessa persona.'],
+ ['Remissione del debito','Il creditore rinuncia al credito e libera il debitore.'],
+ ['Novazione','Una nuova obbligazione sostituisce quella precedente.'],
+ ['Prescrizione','Il diritto si estingue se il titolare non lo esercita per il tempo stabilito dalla legge (di regola 10 anni).'],
+ ['Responsabilità patrimoniale','Il debitore risponde dell’obbligazione con tutti i suoi beni presenti e futuri.'],
+ ['Pegno','Garanzia reale su un bene mobile.'],
+ ['Ipoteca','Garanzia reale che di regola grava su un immobile.'],
+ ['Fideiussione','Garanzia personale: un terzo si impegna a pagare se il debitore non paga.']]
+};
+
+const CONT={
+u1:{
+ cose:`<div class="box bia"><p>Un <b>diritto di credito</b> è il diritto di ottenere qualcosa da un’altra persona. Nasce da un’<b>obbligazione</b>: un rapporto giuridico tra un <b>debitore</b> (chi deve) e un <b>creditore</b> (chi può pretendere).</p>
+ <p>Esempio: se presto 50 € a un amico, io sono il <b>creditore</b>, lui è il <b>debitore</b>, e la <b>prestazione</b> è restituire 50 €.</p></div>`,
+ ricette:[
+  card('blu','1 · Diritto di credito e diritto reale',
+   TAB(['','Diritto reale','Diritto di credito'],[['Che cosa','potere diretto su una cosa','diritto verso una persona'],['Serve un altro?','no','sì: la cooperazione del debitore'],['Difesa','assoluta: contro tutti','relativa: solo contro il debitore'],['Esempio','proprietà di una bici','pretendere la restituzione di un prestito']])),
+  card('ver','2 · I tre elementi dell’obbligazione',stepsHtml([
+   'Il <b>creditore</b>: chi ha il diritto di pretendere.',
+   'Il <b>debitore</b>: chi ha il dovere di eseguire.',
+   'La <b>prestazione</b>: ciò che si deve dare o fare. Deve essere <b>possibile</b>, <b>determinata o determinabile</b> e <b>lecita</b>.'])),
+  card('gia','3 · Come si controlla la prestazione',stepsHtml([
+   '<b>Possibile?</b> Si può davvero fare? (Non “portare un pezzo di Sole”).',
+   '<b>Determinata o determinabile?</b> Si capisce che cosa e quanto? (Non “qualcosa”).',
+   '<b>Lecita?</b> La legge permette di farlo? (Non una prestazione vietata).',
+   'Se manca anche uno solo dei tre requisiti, la prestazione non è valida.'])),
+  card('ros','4 · L’obbligazione naturale',
+   '<p>È un <b>dovere morale o sociale</b>, non giuridico. Esempio: un debito di gioco non autorizzato.</p>'+TAB(['','Che cosa succede'],[['Il creditore','non può rivolgersi a un giudice'],['Il debitore paga spontaneamente','non può chiedere indietro quanto ha pagato']])+'<p class="note">Se invece non paga, nessuno può obbligarlo.</p>'),
+  card('blu','5 · In più (se lo chiede l’insegnante)',
+   '<p>La prestazione deve essere anche di <b>carattere patrimoniale</b>, cioè valutabile in denaro (art. 1174 del Codice civile). L’interesse del creditore può essere anche non economico.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p><b>Marco presta 200 € a Giulia.</b> Marco: <b>creditore</b>. Giulia: <b>debitore</b>. Prestazione: restituire 200 €. Diritto di <b>credito</b>: Marco dipende da Giulia.</p>
+ <p><b>Luca possiede un motorino.</b> Può usarlo senza chiedere a nessuno: diritto <b>reale</b>.</p>
+ <p><b>Sara promette a Paolo “qualcosa”.</b> Non si capisce cosa: manca la <b>determinatezza</b>.</p>
+ <p><b>Elena paga spontaneamente un debito di gioco non autorizzato.</b> È un’obbligazione <b>naturale</b>: non può riavere i soldi.</p></div>`,
+ errori:['Confondere debitore e creditore: il debitore è chi <b>deve</b>, il creditore è chi <b>riceve</b>.','Pensare che un diritto di credito si possa far valere contro tutti: vale <b>solo contro il debitore</b>.','Dimenticare i tre requisiti della prestazione: possibile, determinata o determinabile, lecita.','Credere che nell’obbligazione naturale il creditore possa andare dal giudice: <b>non può</b>.','Dire che chi ha pagato spontaneamente un’obbligazione naturale può chiedere indietro i soldi: <b>non può</b>.'],
+ orale:[
+  ['Che cos’è un’obbligazione?','È un rapporto giuridico tra un debitore e un creditore: il debitore deve eseguire una prestazione e il creditore ha il diritto di pretenderla. Da un’obbligazione deriva un diritto di credito.'],
+  ['Che cosa distingue un diritto di credito da un diritto reale?','Il diritto reale si esercita direttamente su una cosa e si difende contro tutti. Il diritto di credito richiede la cooperazione di un’altra persona, il debitore, ed è assistito da una difesa relativa: si può far valere solo contro di lui.'],
+  ['Quali requisiti deve avere la prestazione?','Deve essere possibile, determinata o determinabile e lecita.'],
+  ['Che cos’è l’obbligazione naturale?','È un dovere morale e non giuridico. Il creditore non può rivolgersi a un giudice, ma se il debitore paga spontaneamente non può chiedere la restituzione.'],
+ ],
+ quiz:[
+  ['Chi è il debitore?','Chi deve eseguire la prestazione',['Chi riceve la prestazione','Il giudice','Chi ha scritto il contratto'],'Il debitore deve; il creditore pretende.'],
+  ['Il diritto di credito richiede…','la cooperazione di un’altra persona',['nessuna cooperazione','solo la presenza di un giudice','solo un contratto scritto'],'È la sua caratteristica.'],
+  ['La difesa del diritto di credito è…','relativa (contro il debitore)',['assoluta (contro tutti)','inesistente','solo penale'],'Si fa valere solo contro il debitore.'],
+  ['Quale NON è un requisito della prestazione?','Che sia gratuita',['Che sia possibile','Che sia determinata o determinabile','Che sia lecita'],'Non è richiesta la gratuità.'],
+  ['Nell’obbligazione naturale il creditore…','non può rivolgersi a un giudice',['può sempre rivolgersi al giudice','deve rivolgersi al giudice','può pignorare i beni'],'È un dovere morale, non giuridico.'],
+  ['Chi paga spontaneamente un’obbligazione naturale…','non può chiedere indietro il pagamento',['può sempre chiedere indietro il pagamento','deve pagare il doppio','può chiedere solo metà'],'La prestazione spontanea non si ripete.'],
+ ]
+},
+u2:{
+ cose:`<div class="box bia"><p>Le <b>fonti delle obbligazioni</b> sono gli <b>atti e i fatti giuridici</b> da cui nasce un rapporto obbligatorio tra due o più persone. Le elenca l’art. 1173 del Codice civile.</p>
+ <p>Poi vediamo i <b>titoli di credito</b>: documenti che contengono un diritto a una prestazione.</p></div>`,
+ ricette:[
+  card('blu','1 · Le tre fonti (art. 1173)',
+   TAB(['Fonte','Che cos’è','Esempio'],[['<b>Contratto</b>','accordo tra due o più parti','compravendita, locazione, mutuo'],['<b>Fatto illecito</b>','comportamento che causa un danno ingiusto','rompere il vetro di un’auto'],['<b>Altri atti o fatti</b>','altro che la legge considera idoneo a creare obbligazioni','pagamento dell’indebito, gestione di affari altrui, arricchimento senza causa']])),
+  card('ver','2 · Come riconoscere la fonte',stepsHtml([
+   'C’è un <b>accordo</b> tra le persone? → <b>contratto</b>.',
+   'Qualcuno ha causato un <b>danno ingiusto</b>? → <b>fatto illecito</b> (obbligo di risarcire).',
+   'Altrimenti guarda se c’è un <b>pagamento per errore</b> (indebito), un <b>arricchimento senza giustificazione</b> o <b>qualcuno che cura spontaneamente affari altrui</b> → altri atti o fatti.'])),
+  card('gia','3 · I tre “altri fatti” più importanti',
+   TAB(['Fatto','Che cosa succede'],[['Pagamento dell’indebito','chi riceve per errore un pagamento non dovuto deve restituirlo'],['Arricchimento senza causa','chi si arricchisce a danno di un altro senza giustificazione deve indennizzarlo'],['Gestione di affari altrui','chi cura spontaneamente affari altrui ha diritto al rimborso delle spese utili']])),
+  card('ros','4 · I titoli di credito',stepsHtml([
+   'Sono <b>documenti</b> che contengono il <b>diritto</b> a ottenere una prestazione (di solito una somma).',
+   'Per esercitare il diritto bisogna <b>presentare il documento</b>.',
+   'Esempi: <b>assegno</b>, <b>cambiale</b>.'])+'<p class="note">In più: il diritto “passa” insieme al documento, quindi il titolo si può trasferire con facilità.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p><b>Anna compra un computer da Paolo.</b> Accordo tra due persone → <b>contratto</b>.</p>
+ <p><b>Davide rompe con il pallone il vetro di un’auto.</b> Danno ingiusto → <b>fatto illecito</b>.</p>
+ <p><b>Chiara riceve per errore 300 € destinati a un altro.</b> Deve restituirli → pagamento dell’<b>indebito</b>, quindi “altri atti o fatti”.</p>
+ <p><b>Elena presenta un assegno in banca per ottenere la somma.</b> L’assegno è un <b>titolo di credito</b>.</p></div>`,
+ errori:['Dire che solo il contratto crea obbligazioni: sono fonti anche il <b>fatto illecito</b> e gli <b>altri atti o fatti</b>.','Confondere fatto illecito e contratto: nel primo <b>non c’è nessun accordo</b>, c’è un danno.','Dimenticare che il pagamento fatto per errore va <b>restituito</b>.','Pensare che il titolo di credito sia un semplice impegno a voce: è un <b>documento</b>.'],
+ orale:[
+  ['Che cosa sono le fonti delle obbligazioni?','Sono gli atti e i fatti giuridici che possono creare un rapporto giuridico obbligatorio tra due o più persone.'],
+  ['Quali sono le fonti delle obbligazioni?','Il contratto, il fatto illecito e ogni altro atto o fatto idoneo a produrre obbligazioni in conformità dell’ordinamento giuridico, come il pagamento dell’indebito, l’arricchimento senza causa e la gestione di affari altrui.'],
+  ['Che cos’è un titolo di credito?','È un documento che contiene il diritto a ottenere una prestazione. Per esercitare il diritto bisogna presentarlo. Esempi: assegno e cambiale.'],
+ ],
+ quiz:[
+  ['Quale NON è una fonte delle obbligazioni?','Un semplice desiderio',['Il contratto','Il fatto illecito','Il pagamento dell’indebito'],'Un desiderio non crea obblighi.'],
+  ['Rompere per distrazione una vetrina crea l’obbligo di risarcire. La fonte è…','il fatto illecito',['il contratto','l’obbligazione naturale','il titolo di credito'],'Danno ingiusto.'],
+  ['Chi riceve per errore un pagamento non dovuto…','deve restituirlo',['può tenerlo','deve pagare una multa','deve darlo allo Stato'],'Pagamento dell’indebito.'],
+  ['Un titolo di credito è…','un documento che contiene un diritto',['un accordo orale','un dovere morale','un tipo di danno'],'Il diritto è nel documento.'],
+  ['Quale è un esempio di titolo di credito?','L’assegno',['La compravendita','Il fatto illecito','L’obbligazione naturale'],'Assegno e cambiale.'],
+  ['Il contratto è…','un accordo tra due o più parti',['un comportamento che causa un danno','un documento bancario','una somma di denaro'],'Accordo.'],
+ ]
+},
+u3:{
+ cose:`<div class="box bia"><p>Un’obbligazione può avere <b>più creditori e/o più debitori</b>. Il modo in cui si divide la prestazione dà due tipi di obbligazione: <b>parziaria</b> e <b>solidale</b>. Poi si guarda se l’oggetto si può dividere: <b>divisibile</b> o <b>indivisibile</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Parziaria o solidale?',
+   TAB(['','Parziaria','Solidale'],[['Ogni creditore può pretendere','solo la propria parte','l’intera prestazione'],['Ogni debitore deve','solo la propria parte','l’intera prestazione'],['Se uno paga','libera solo la sua parte','libera tutti']])+'<p class="note">Regola: <b>parte</b> = parziaria · <b>tutto</b> = solidale.</p>'),
+  card('ver','2 · Il calcolo (parti uguali)',stepsHtml([
+   'Guarda se l’obbligazione è parziaria o solidale.',
+   '<b>Parziaria</b>: dividi la somma per il numero dei debitori. '+M('900 € · 3 debitori → 300 € ciascuno'),
+   '<b>Solidale</b>: il creditore può chiedere <b>tutta la somma</b> anche a uno solo. '+M('900 € a uno solo'),
+   'In più, nella solidale: chi paga tutto ha il <b>regresso</b> verso gli altri per la loro parte.'])),
+  card('gia','3 · Divisibile o indivisibile?',
+   TAB(['Obbligazione','Caratteristica','Esempio'],[['<b>Divisibile</b>','si può dividere in più parti senza perdere valore','una somma di denaro, 100 kg di farina'],['<b>Indivisibile</b>','non si può dividere giuridicamente','un cavallo, un’auto, un appartamento']])),
+  card('ros','4 · Come non confondere',
+   '<p><b>Parziaria / solidale</b> riguardano i <b>soggetti</b> (quante persone e chi deve cosa).</p><p><b>Divisibile / indivisibile</b> riguardano l’<b>oggetto</b> (si può spezzare o no).</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p><b>Marco e Luca devono 800 € ad Anna, parziaria.</b> Ognuno deve 400 €. Anna può chiedere a Marco solo <b>400 €</b>.</p>
+ <p><b>Marco e Luca devono 800 € ad Anna, solidale.</b> Anna può chiedere a Marco tutti gli <b>800 €</b>. Se Marco paga, può chiedere a Luca 400 € (regresso).</p>
+ <p><b>Un cavallo da consegnare:</b> non si può dividere senza distruggerlo, quindi è <b>indivisibile</b>.</p>
+ <p><b>1.000 € da pagare:</b> si può dividere, quindi è <b>divisibile</b>.</p></div>`,
+ errori:['Confondere parziaria e solidale: nella solidale si risponde per l’<b>intero</b>.','Dimenticare di dividere la somma per il numero dei debitori nella parziaria.','Dire che nella solidale il debitore che paga tutto non può farsi rimborsare: ha il <b>regresso</b>.','Confondere divisibile e indivisibile con parziaria e solidale: sono due criteri diversi.','Dire che il denaro è indivisibile: è <b>divisibile</b>.'],
+ orale:[
+  ['Quando un’obbligazione è parziaria?','Quando ciascun creditore ha il diritto di pretendere, o ciascun debitore ha l’obbligo di eseguire, solo la sua parte di prestazione.'],
+  ['Quando un’obbligazione è solidale?','Quando ogni creditore ha il diritto di pretendere, o ogni debitore ha l’obbligo di eseguire, l’intera prestazione.'],
+  ['Quando un’obbligazione è divisibile e quando indivisibile?','È divisibile quando l’oggetto o la prestazione è giuridicamente divisibile in più parti; è indivisibile quando non lo è.'],
+ ],
+ quiz:[
+  ['Nell’obbligazione parziaria ogni debitore deve…','solo la sua parte',['l’intera prestazione','nulla','il doppio'],'Parziaria = parte.'],
+  ['Nell’obbligazione solidale ogni debitore deve…','l’intera prestazione',['solo la sua parte','solo la metà','nulla'],'Solidale = tutto.'],
+  ['Tre debitori devono 900 € in modo parziario. Ognuno deve…','300 €',['900 €','450 €','100 €'],'900 ÷ 3.'],
+  ['Il debitore solidale che ha pagato tutto ha il diritto di…','regresso verso gli altri',['non chiedere nulla','pagare di nuovo','denunciare il creditore'],'Regresso.'],
+  ['Quale è un’obbligazione indivisibile?','Consegnare un cavallo',['Pagare 1.000 €','Consegnare 100 kg di farina','Pagare 50 litri di olio'],'Il cavallo non si divide.'],
+  ['Una somma di denaro è…','divisibile',['indivisibile','sempre solidale','sempre naturale'],'Si divide in parti.'],
+ ]
+},
+u4:{
+ cose:`<div class="box bia"><p>Le obbligazioni si classificano anche in base a <b>quante e quali prestazioni</b> hanno come oggetto: <b>semplici</b> o con più prestazioni (<b>cumulative</b>, <b>alternative</b>), e a seconda dei beni: <b>specifiche</b> o <b>generiche</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Semplice o facoltativa',
+   TAB(['','Semplice','Facoltativa'],[['Prestazioni dovute','una sola','una sola'],['Il debitore può…','eseguire solo quella','liberarsi anche con una prestazione diversa'],['Il creditore può pretendere','quella prestazione','solo la prestazione dovuta (non la diversa)']])),
+  card('ver','2 · Cumulativa o alternativa',
+   TAB(['','Cumulativa','Alternativa'],[['Prestazioni','più prestazioni','più prestazioni'],['Il debitore deve','eseguirle tutte','eseguirne anche una sola'],['Parole chiave','«e» (e… e…)','«o» (oppure)']])),
+  card('gia','3 · Specifica o generica',
+   TAB(['','Specifica','Generica'],[['Oggetto','beni non sostituibili','beni sostituibili dello stesso genere'],['Esempio','il quadro del nonno, l’auto targata AB123CD','50 kg di grano, 100 bottiglie di vino'],['Se il bene si perde senza colpa','l’obbligazione si estingue','non si estingue: “il genere non perisce”']])),
+  card('ros','4 · Come ragionare',stepsHtml([
+   'Quante <b>prestazioni</b> ci sono? Una → semplice o facoltativa. Più di una → cumulativa o alternativa.',
+   'Il debitore può usarne una <b>diversa</b> da quella dovuta? → <b>facoltativa</b>.',
+   'Il debitore deve fare <b>tutto</b> (cumulativa) o <b>una sola cosa</b> (alternativa)?',
+   'Il bene è <b>unico</b> (specifica) o <b>sostituibile</b> (generica)?'])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p><b>Devo consegnare un tavolo e quattro sedie (tutto).</b> Prestazioni da eseguire tutte: <b>cumulativa</b>.</p>
+ <p><b>Devo consegnare un computer oppure un tablet.</b> Ne basta una: <b>alternativa</b>.</p>
+ <p><b>Devo una bicicletta, ma posso liberarmi dando una somma di denaro.</b> Una sola prestazione dovuta + facoltà di sostituirla: <b>facoltativa</b>.</p>
+ <p><b>Devo consegnare 50 kg di grano.</b> Beni sostituibili: <b>generica</b>.</p>
+ <p><b>Devo consegnare quel quadro.</b> Bene unico: <b>specifica</b>.</p></div>`,
+ errori:['Confondere cumulativa e alternativa: <b>tutte</b> = cumulativa, <b>una sola</b> = alternativa.','Confondere alternativa e facoltativa: nella facoltativa la prestazione dovuta è <b>una sola</b>; l’altra è una facoltà in più.','Pensare che la perdita del genere estingua l’obbligazione generica: <b>il genere non perisce</b>.','Confondere specifica e generica: guarda se il bene si può <b>sostituire</b>.'],
+ orale:[
+  ['Che differenza c’è tra obbligazione semplice e facoltativa?','La semplice ha come oggetto una singola prestazione. La facoltativa ha anch’essa una sola prestazione, ma il debitore può eseguirne una diversa da quella dovuta.'],
+  ['Che differenza c’è tra obbligazione cumulativa e alternativa?','Nella cumulativa il debitore deve eseguire tutte le prestazioni; nell’alternativa può eseguirne anche una sola.'],
+  ['Quando un’obbligazione è specifica e quando generica?','È specifica quando ha come oggetto beni non sostituibili; è generica quando i beni possono essere sostituiti con altri dello stesso genere.'],
+ ],
+ quiz:[
+  ['Nell’obbligazione cumulativa il debitore deve eseguire…','tutte le prestazioni',['una sola prestazione','nessuna prestazione','la prestazione che preferisce il creditore'],'Cumulativa = tutte.'],
+  ['Nell’obbligazione alternativa il debitore può eseguire…','anche una sola prestazione',['tutte le prestazioni','solo la più costosa','nessuna'],'Alternativa = una sola.'],
+  ['Una obbligazione con una prestazione e la possibilità di eseguirne un’altra è…','facoltativa',['cumulativa','alternativa','solidale'],'Facoltà di sostituire.'],
+  ['Consegnare un’auto con una certa targa è…','specifica',['generica','alternativa','pecuniaria'],'Bene unico.'],
+  ['Consegnare 100 kg di farina è…','generica',['specifica','facoltativa','indivisibile'],'Sostituibile.'],
+  ['Nell’obbligazione generica, se il bene si perde senza colpa…','non si estingue (il genere non perisce)',['si estingue sempre','il debitore è punito','il creditore perde il diritto'],'Si può trovare altro dello stesso genere.'],
+ ]
+},
+u5:{
+ cose:`<div class="box bia"><p>Quando l’oggetto dell’obbligazione è il pagamento di una <b>somma di denaro</b> si parla di <b>obbligazione pecuniaria</b>. Si estingue pagando con <b>moneta a corso legale</b> e secondo il <b>principio nominalistico</b>. Spesso comporta anche il pagamento di <b>interessi</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Moneta a corso legale e principio nominalistico',
+   '<p><b>Moneta a corso legale</b>: la moneta che per legge deve essere accettata (oggi l’<b>euro</b>).</p><p><b>Principio nominalistico</b>: si restituisce la <b>somma scritta</b>, anche se i prezzi sono saliti o scesi.</p>'+ESE('Prestito di 1.000 € → si restituiscono 1.000 € (non 1.300 € se i prezzi sono saliti del 30%).')),
+  card('ver','2 · Gli interessi',stepsHtml([
+   'Gli <b>interessi</b> sono una somma in più che si paga per l’uso del capitale.',
+   'Sono un’<b>obbligazione accessoria</b>: dipendono dall’obbligazione principale.',
+   'Formula degli interessi semplici: '+M('I = '+F('C × r × t','100'))+'<br>C = capitale, r = tasso % annuo, t = anni.'])),
+  card('gia','3 · Esempio di calcolo',stepsHtml([
+   'Capitale 2.000 €, tasso 3% annuo, 2 anni.',
+   'Interessi: '+M('I = '+F('2.000 × 3 × 2','100')+' = '+F('12.000','100')+' = 120 €'),
+   'Totale da restituire: 2.000 € + 120 € = <b>2.120 €</b>.'])),
+  card('ros','4 · In più',
+   '<p>Gli interessi possono essere <b>corrispettivi</b> (per il godimento del denaro), <b>compensativi</b> (a compensare un mancato godimento) o <b>moratori</b> (per il ritardo). Gli interessi “sugli interessi” (<b>anatocismo</b>) sono ammessi solo a precise condizioni.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p><b>Luca prende 5.000 € in prestito. Dopo 5 anni i prezzi sono saliti del 20%.</b> Per il principio nominalistico restituisce <b>5.000 €</b>.</p>
+ <p><b>Capitale 1.000 €, 4% annuo, 3 anni.</b> I = ${F('1.000 × 4 × 3','100')} = ${F('12.000','100')} = <b>120 €</b>.</p>
+ <p><b>Gli interessi</b> si pagano oltre al capitale: sono un’obbligazione <b>accessoria</b>.</p></div>`,
+ errori:['Pensare che un debito di denaro si rivaluti da solo con l’inflazione: vale il <b>valore nominale</b>.','Dimenticare di aggiungere gli interessi al capitale.','Dimenticare di dividere per 100 nella formula degli interessi.','Considerare gli interessi come un’obbligazione principale: sono <b>accessori</b>.'],
+ orale:[
+  ['Che cos’è un’obbligazione pecuniaria?','È un’obbligazione che ha per oggetto il pagamento di una somma di denaro. Si estingue con moneta a corso legale e in base al principio nominalistico.'],
+  ['Che cos’è il principio nominalistico?','Il debito di denaro si estingue pagando la somma indicata, cioè il suo valore nominale, anche se nel frattempo il valore reale della moneta è cambiato.'],
+  ['Che cosa sono gli interessi?','Sono una somma che si paga oltre al capitale. Costituiscono un’obbligazione accessoria rispetto a quella pecuniaria principale.'],
+ ],
+ quiz:[
+  ['L’obbligazione pecuniaria ha per oggetto…','una somma di denaro',['un bene unico','un servizio gratuito','un dovere morale'],'Pecunia = denaro.'],
+  ['Il principio nominalistico dice che si restituisce…','la somma nominale indicata',['la somma rivalutata con l’inflazione','sempre il doppio','solo metà'],'Valore nominale.'],
+  ['Gli interessi sono un’obbligazione…','accessoria',['principale','naturale','alternativa'],'Dipendono dal capitale.'],
+  ['Con quale moneta si estingue un debito di denaro?','Con moneta a corso legale',['Con qualunque bene','Solo con oro','Solo con assegni'],'Oggi l’euro.'],
+  ['Interessi su 1.000 € al 5% per 2 anni: quanti sono?','100 €',['50 €','10 €','500 €'],'1.000 × 5 × 2 : 100.'],
+  ['Il capitale è…','la somma su cui si calcolano gli interessi',['l’interesse','la moneta','il debitore'],'Capitale = somma dovuta.'],
+ ]
+},
+u6:{
+ cose:`<div class="box gia"><p><b>In più.</b> L’obbligazione si estingue normalmente con l’<b>adempimento</b>: il debitore esegue esattamente la prestazione. Se non lo fa, c’è <b>inadempimento</b> e può dover <b>risarcire il danno</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Adempimento',stepsHtml([
+   'Il debitore deve eseguire <b>esattamente</b> la prestazione dovuta, con la <b>diligenza</b> del buon padre di famiglia (cioè con la cura di una persona attenta).',
+   'Rispettando <b>luogo</b> e <b>tempo</b> stabiliti.',
+   'Se l’adempimento è esatto, l’obbligazione <b>si estingue</b>.'])),
+  card('ver','2 · Inadempimento e risarcimento',
+   '<p>Chi non esegue esattamente la prestazione deve <b>risarcire il danno</b>, a meno che provi che l’inadempimento dipende da un’<b>impossibilità non a lui imputabile</b> (art. 1218).</p>'+TAB(['Danno','Che cos’è'],[['<b>Danno emergente</b>','la perdita subita (spese, valore perso)'],['<b>Lucro cessante</b>','il mancato guadagno']])),
+  card('gia','3 · Mora',
+   TAB(['','Che cos’è'],[['Mora del debitore','ritardo colpevole nell’adempiere'],['Mora del creditore','il creditore rifiuta senza motivo la prestazione offerta correttamente']])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p><b>Anna non consegna la merce e Paolo spende 500 € per comprarla altrove.</b> Quei 500 € sono <b>danno emergente</b>.</p>
+ <p><b>Paolo per il ritardo perde un guadagno di 800 €.</b> È <b>lucro cessante</b>.</p>
+ <p><b>La prestazione diventa impossibile per un evento non dovuto al debitore.</b> Il debitore <b>non risarcisce</b>.</p></div>`,
+ errori:['Confondere danno emergente (perdita subita) e lucro cessante (mancato guadagno).','Dire che il debitore risarcisce sempre, anche se l’impossibilità non è colpa sua.','Confondere mora del debitore (ritardo) e mora del creditore (rifiuto).'],
+ orale:[
+  ['Che cos’è l’adempimento?','È l’esatta esecuzione della prestazione dovuta: estingue l’obbligazione.'],
+  ['Che cos’è l’inadempimento e quali conseguenze ha?','Il debitore non esegue, o esegue male o in ritardo, la prestazione. Deve risarcire il danno (danno emergente e lucro cessante), salvo prova di impossibilità non imputabile.'],
+ ],
+ quiz:[
+  ['L’obbligazione si estingue normalmente con…','l’adempimento',['la mora','il danno','l’ipoteca'],'Adempimento = esatta esecuzione.'],
+  ['Il danno emergente è…','la perdita effettivamente subita',['il mancato guadagno','un interesse','un contratto'],'Danno emergente.'],
+  ['Il lucro cessante è…','il mancato guadagno',['la perdita subita','la penale','una garanzia'],'Lucro cessante.'],
+  ['Il debitore non risarcisce se l’impossibilità è…','non a lui imputabile',['dovuta a sua colpa','dovuta a negligenza','dovuta a ritardo'],'Art. 1218.'],
+  ['Il creditore che rifiuta senza motivo la prestazione offerta è in…','mora del creditore',['mora del debitore','novazione','remissione'],'Mora del creditore.'],
+ ]
+},
+u7:{
+ cose:`<div class="box gia"><p><b>In più.</b> Oltre all’adempimento, l’obbligazione si può estinguere in altri modi. Inoltre il creditore può avere <b>garanzie</b> per essere sicuro di essere pagato.</p></div>`,
+ ricette:[
+  card('blu','1 · Altri modi di estinzione',
+   TAB(['Modo','Che cosa succede'],[['<b>Compensazione</b>','due debiti reciproci si annullano fino alla somma minore'],['<b>Confusione</b>','debitore e creditore diventano la stessa persona'],['<b>Remissione</b>','il creditore rinuncia al credito'],['<b>Novazione</b>','una nuova obbligazione sostituisce la precedente'],['<b>Prescrizione</b>','il diritto non esercitato si estingue (di regola dopo 10 anni)'],['<b>Impossibilità sopravvenuta</b>','la prestazione diventa impossibile senza colpa del debitore']])),
+  card('ver','2 · Responsabilità patrimoniale',
+   '<p>Il debitore risponde dell’obbligazione con <b>tutti i suoi beni presenti e futuri</b> (art. 2740). Per essere più sicuri, il creditore può chiedere una <b>garanzia</b>.</p>'),
+  card('gia','3 · Le garanzie',
+   TAB(['Garanzia','Tipo','Che cosa è'],[['<b>Pegno</b>','reale','su un bene mobile'],['<b>Ipoteca</b>','reale','di regola su un immobile'],['<b>Fideiussione</b>','personale','un terzo si impegna a pagare']])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p><b>Marco deve 300 € ad Anna e Anna deve 200 € a Marco.</b> Compensazione: resta un debito di 100 €.</p>
+ <p><b>Il creditore muore e il debitore è il suo unico erede.</b> Confusione.</p>
+ <p><b>Luca garantisce con la propria casa un mutuo.</b> Ipoteca.</p></div>`,
+ errori:['Confondere pegno (bene mobile) e ipoteca (immobile).','Dire che la fideiussione è una garanzia reale: è <b>personale</b>.','Confondere remissione (rinuncia) e novazione (sostituzione).'],
+ orale:[
+  ['Quali sono altri modi di estinzione oltre all’adempimento?','Compensazione, confusione, remissione, novazione, prescrizione, impossibilità sopravvenuta.'],
+  ['Che differenza c’è tra garanzie reali e personali?','Le reali (pegno, ipoteca) gravano su un bene; la personale (fideiussione) impegna un terzo a pagare.'],
+ ],
+ quiz:[
+  ['La compensazione estingue…','due debiti reciproci',['un solo debito','un contratto','un titolo di credito'],'Due debiti l’uno verso l’altro.'],
+  ['La confusione si ha quando…','debitore e creditore coincidono',['il creditore rinuncia','scade il termine','si perde il bene'],'Stessa persona.'],
+  ['L’ipoteca di regola grava su…','un immobile',['un assegno','un bene mobile','una somma di denaro'],'Ipoteca = immobili.'],
+  ['La fideiussione è una garanzia…','personale',['reale','naturale','alternativa'],'Un terzo si obbliga.'],
+  ['Il debitore risponde con…','tutti i suoi beni presenti e futuri',['solo i beni presenti','solo la casa','solo il denaro'],'Art. 2740.'],
+ ]
+}
+};
+
+const GLOSS=Object.values(DEFS).flat();
+
+const FORMULARIO=`
+<div class="box blu"><h3>Obbligazione</h3><p>Rapporto giuridico tra <b>debitore</b> (deve) e <b>creditore</b> (pretende). Oggetto: la <b>prestazione</b> (possibile, determinata o determinabile, lecita).</p><p>Diritto di credito: serve la cooperazione del debitore, difesa <b>relativa</b>.</p><p><b>Obbligazione naturale</b>: dovere morale; niente giudice, ma il pagamento spontaneo non si ripete.</p></div>
+<div class="box ver"><h3>Fonti</h3><p>Contratto · fatto illecito · altri atti o fatti (indebito, arricchimento senza causa, gestione di affari altrui, legge).</p><p>Titoli di credito: documenti che contengono il diritto (assegno, cambiale).</p></div>
+<div class="box gia"><h3>Classificazioni</h3>${TAB(['Criterio','Tipi'],[['Soggetti','<b>parziaria</b> (la propria parte) · <b>solidale</b> (l’intero)'],['Oggetto','<b>divisibile</b> · <b>indivisibile</b>'],['Prestazioni','<b>semplice</b> · <b>facoltativa</b>'],['Più prestazioni','<b>cumulativa</b> (tutte) · <b>alternativa</b> (una)'],['Beni','<b>specifica</b> (non sostituibile) · <b>generica</b> (sostituibile)']])}</div>
+<div class="box ros"><h3>Obbligazioni pecuniarie</h3><p>Moneta a corso legale · principio nominalistico (valore nominale).</p><p class="m">Interessi semplici: I = ${F('C × r × t','100')}</p><p>Gli interessi sono un’obbligazione <b>accessoria</b>.</p></div>
+<div class="box blu"><h3>In più</h3><p>Adempimento · inadempimento · risarcimento (danno emergente + lucro cessante) · mora.</p><p>Estinzione: compensazione, confusione, remissione, novazione, prescrizione (10 anni).</p><p>Garanzie: pegno (mobile), ipoteca (immobile), fideiussione (personale).</p></div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('dir_obbl_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('dir_obbl_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+</script>
+<!--AGG--><script>
+(function(){
+ var B="20261005110323",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
