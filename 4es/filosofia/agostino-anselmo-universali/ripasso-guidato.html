@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filosofia: Agostino, Anselmo, universali</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Filosofia</a></p><h1>Filosofia: Agostino, Anselmo e gli universali</h1><p>Interrogazione · un passo alla volta</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Agostino: ricerca</button>
+<button data-t="u2">2 Mondo, tempo, male</button>
+<button data-t="u3">3 Grazia e storia</button>
+<button data-t="u4">4 Anselmo</button>
+<button data-t="u5">5 Universali</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo all'interrogazione di <b>filosofia</b>. Il kit segue le <b>mappe del libro</b> che ha dato il professore. Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti. Ogni argomento ha sempre lo stesso ordine, così ti abitui.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>Agostino</b>: la ricerca (anima, Dio, dubbio), il mondo, il tempo, il male, il pelagianesimo, la storia (unità 1-3)</li>
+<li><b>Anselmo d'Aosta</b> e la scolastica: le prove dell'esistenza di Dio (unità 4)</li>
+<li><b>La disputa sugli universali</b>: le fazioni (unità 5)</li></ul>
+<p class="note">Le parti segnate <b>“in più”</b> vanno oltre le mappe del libro: studiale solo se le chiede l'insegnante.</p></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema della mappa, passo per passo.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi di risposta da ripetere a voce.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (5 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 (Agostino: ricerca, Dio, anima)</li><li><b>Giorno 2</b>: unità 2 (mondo, tempo, male)</li><li><b>Giorno 3</b>: unità 3 (pelagianesimo e storia)</li><li><b>Giorno 4</b>: unità 4 (scolastica e Anselmo)</li><li><b>Giorno 5</b>: unità 5 (universali), poi Prova finale, Orale e Formulario</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c'è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti <b>a voce alta</b> le risposte dell'Orale: l'interrogazione è parlata.</li><li>Impara le <b>coppie</b>: Padre = Essere, Figlio = Verità, Spirito Santo = Amore · città terrena = empi, città celeste = giusti · a posteriori = prove dei gradi, a priori = prova ontologica.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un'altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const NAMES=['Marco','Giulia','Luca','Sara','Paolo','Elena','Davide','Chiara','Andrea','Francesca','Matteo','Anna'];
+const names=n=>shuffle(NAMES).slice(0,n);
+const eur=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
+
+/* ========== FILOSOFIA: GENERATORI DI ESERCIZI ========== */
+const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+/* gruppi di coppie [sinistra, destra, spiegazione]; si chiede in entrambe le direzioni */
+function mapGroup(tag,askL,askR,pairs,both=true){
+  return ()=>{
+    const i=rnd(0,pairs.length-1),p=pairs[i];
+    const others=shuffle(pairs.filter((_,k)=>k!==i));
+    if(!both||Math.random()<0.5)
+      return mkEx(askL(p[0]),p[1],others.map(x=>x[1]),wy(p[2]||`${p[0]} → ${p[1]}`,p[1]),tag);
+    return mkEx(askR(p[1]),p[0],others.map(x=>x[0]),wy(p[2]||`${p[0]} → ${p[1]}`,p[0]),tag);
+  };
+}
+const TRI=mapGroup('La Trinità in Agostino',
+ l=>`Per Agostino Dio è anche Trinità. A quale aspetto di Dio corrisponde <b>${l}</b>?`,
+ r=>`Per Agostino, a quale persona della Trinità corrisponde <b>${r}</b>?`,
+ [['il Padre','Essere al sommo grado','Il Padre è l’<b>Essere al sommo grado</b>.'],
+  ['il Figlio (o Lógos)','Verità assoluta, che si rivela a chi la cerca nel profondo di sé','Il Figlio o Lógos è la <b>Verità assoluta</b> che si rivela a chi la cerca nel profondo di sé.'],
+  ['lo Spirito Santo','Amore, che si offre all’essere umano che ama','Lo Spirito Santo è l’<b>Amore</b> che si offre all’essere umano che ama.']]);
+const FAC=mapGroup('L’essere umano, immagine della Trinità',
+ l=>`Per Agostino l’essere umano è immagine della Trinità. Che cosa fa la <b>${l}</b>?`,
+ r=>`Per Agostino l’essere umano è immagine della Trinità. Quale facoltà corrisponde a «${r}»?`,
+ [['memoria','è (l’essere)','Memoria = <b>è</b>.'],
+  ['intelligenza','conosce','Intelligenza = <b>conosce</b>.'],
+  ['volontà','ama','Volontà = <b>ama</b>.']]);
+const RIC=mapGroup('La ricerca agostiniana',
+ l=>`Secondo Agostino, <b>${l}</b>`,
+ r=>`Quale punto della ricerca agostiniana corrisponde a questa frase: «${r}»?`,
+ [['la ricerca analizza…','l’anima e Dio','La ricerca agostiniana analizza <b>l’anima e Dio</b>.'],
+  ['l’anima e Dio richiedono…','un’unica indagine: Dio si conosce conoscendo sé stessi','Per Agostino l’indagine su anima e Dio è <b>una sola</b>.'],
+  ['la ricerca richiede anche…','il concorso di fede e ragione','Servono insieme fede e ragione (<i>crede ut intelligas, intellige ut credas</i>).'],
+  ['la ricerca parte dal…','dubbio scettico','Il punto di partenza è il <b>dubbio scettico</b>, che si può superare.'],
+  ['il dubbio si supera perché…','chi dubita, in quanto dubita, esiste','Chi dubita <b>esiste</b>.'],
+  ['chi dubita è già…','nella verità, cioè Dio, Luce che illumina la mente umana','Chi dubita è già nella verità, che è Dio, Luce che illumina la mente.']],false);
+const MON=mapGroup('Il mondo e il tempo',
+ l=>`Per Agostino, <b>${l}</b>`,
+ r=>`Quale elemento della dottrina agostiniana corrisponde a «${r}»?`,
+ [['il mondo è…','creato da Dio dal nulla','Il mondo è <b>creato da Dio dal nulla</b>.'],
+  ['il mondo è creato attraverso…','il Lógos (il Figlio)','La creazione avviene <b>attraverso il Lógos</b>, cioè il Figlio.'],
+  ['il Lógos ha in sé…','le idee o ragioni immutabili ed eterne delle cose (ragioni seminali)','Il Lógos ha in sé le <b>idee o ragioni</b> eterne delle cose.'],
+  ['il mondo è creato insieme con…','il tempo','Mondo e tempo sono creati <b>insieme</b>.'],
+  ['il tempo è, rispetto al mondo…','coeterno al mondo, ma non immutabile come Dio','Il tempo è <b>coeterno al mondo</b> ma non immutabile come Dio.'],
+  ['il tempo è anche…','una realtà interiore (distensio animi) che ricorda il passato e attende il futuro','Il tempo è <b>interiore</b>: distensio animi.']],false);
+const MAL=mapGroup('Il male in Agostino',
+ l=>`Per Agostino, <b>${l}</b>`,
+ r=>`Che cosa descrive questa frase: «${r}»? (secondo Agostino)`,
+ [['il male è…','privazione di essere, o di bene','Il male non è una cosa: è <b>privazione</b> di essere o di bene.'],
+  ['il male fisico in natura è…','necessario alla scala gerarchica degli esseri e funzionale alla vita del tutto','Nella natura il male fisico è <b>necessario</b> alla scala degli esseri e funzionale alla vita del tutto (che nel complesso è bene).'],
+  ['il male fisico nell’essere umano è…','la giusta pena per il peccato originale','Per l’uomo il male fisico è la <b>giusta pena</b> per il peccato originale.'],
+  ['il male morale è…','il peccato, la “superbia” della volontà che non si volge a Dio ma alle cose inferiori','Il male morale è il <b>peccato</b>: superbia della volontà che si volge alle cose inferiori.']],false);
+const STO=mapGroup('Pelagianesimo e storia',
+ l=>`Per Agostino, <b>${l}</b>`,
+ r=>`Quale elemento della filosofia di Agostino corrisponde a «${r}»?`,
+ [['Agostino difende il cristianesimo contro…','il pelagianesimo','Agostino combatte il <b>pelagianesimo</b>.'],
+  ['nella difesa del cristianesimo identifica…','la libertà umana con la grazia divina','Per Agostino la libertà umana si identifica con la <b>grazia divina</b>.'],
+  ['la storia è innervata dalla lotta tra…','la città terrena e la città celeste','La storia è lotta tra <b>città terrena e città celeste</b>.'],
+  ['la città terrena è…','la società degli empi','Città terrena = <b>società degli empi</b>.'],
+  ['la città celeste è…','la comunità dei giusti','Città celeste = <b>comunità dei giusti</b>.'],
+  ['la storia scorre…','in maniera lineare, verso il fine ultimo della salvezza','La storia è <b>lineare</b> e va verso la salvezza.']],false);
+const SCO=mapGroup('Scolastica e Anselmo',
+ l=>`<b>${l}</b>`,
+ r=>`A chi o a che cosa si riferisce questa frase: «${r}»?`,
+ [['La scolastica è…','la filosofia cristiana insegnata nelle scholae medievali','Scolastica = filosofia cristiana delle <i>scholae</i> medievali.'],
+  ['La scolastica verte sul problema centrale del…','rapporto tra fede e ragione','Il problema centrale è <b>fede e ragione</b>.'],
+  ['Anselmo sostiene che la ragione non può comprendere nulla se…','non è sorretta dalla fede: credo ut intelligam','<i>Credo ut intelligam</i>: credo per capire.'],
+  ['Anselmo dimostra che Dio esiste con…','le prove “dei gradi” (a posteriori) e la prova ontologica (a priori)','Due vie: prove <b>dei gradi</b> (a posteriori) e <b>ontologica</b> (a priori).'],
+  ['Per Anselmo le “qualità” umane sono…','aspetti della “quidditas” di Dio','Le qualità umane sono aspetti della <b>quidditas</b> di Dio.'],
+  ['Per Anselmo la libertà umana…','non è cancellata dal peccato originale','La libertà umana <b>non è cancellata</b> dal peccato originale.']],false);
+const UNI=mapGroup('Gli universali',
+ l=>`Nella disputa sugli universali, per <b>${l}</b>, gli universali…`,
+ r=>`Quale posizione sostiene che gli universali ${r}?`,
+ [['il realismo estremo','sono realmente esistenti fuori della mente e delle cose','Realismo <b>estremo</b>: gli universali esistono fuori dalla mente e dalle cose.'],
+  ['il realismo moderato','sono realmente esistenti fuori della mente ma dentro le cose','Realismo <b>moderato</b>: esistono dentro le cose.'],
+  ['il nominalismo estremo','sono puri nomi','Nominalismo <b>estremo</b>: sono puri nomi.'],
+  ['il nominalismo moderato','sono segni nella mente','Nominalismo <b>moderato</b>: sono segni nella mente.']]);
+const UNI2=()=>{
+  const A=[['realismo','sono realmente esistenti, fuori dalla mente'],['nominalismo','non esistono come realtà: sono nomi o segni nella mente']];
+  const i=rnd(0,1);const x=A[i];
+  return mkEx(`Per il <b>${x[0]}</b> gli universali…`,x[1],[A[1-i][1],'sono sempre la stessa cosa dei singoli individui'],wy(`Il ${x[0]}: ${x[1]}.`,x[1]),'Realismo e nominalismo');
+};
+/* chi lo sostiene? */
+const AU=['Agostino','Anselmo d’Aosta','Pelagio (pelagianesimo)'];
+const CHI=[
+ ['il male è privazione di essere o di bene',0,'Il male come privazione è la tesi di Agostino.'],
+ ['il tempo è una distensio animi, una realtà interiore',0,'Tema agostiniano: il tempo come realtà interiore.'],
+ ['la storia è lotta tra la città terrena e la città celeste',0,'È il tema di Agostino (La città di Dio).'],
+ ['chi dubita, in quanto dubita, esiste',0,'È il superamento agostiniano del dubbio scettico.'],
+ ['Dio è Luce che illumina la mente umana',0,'È l’illuminazione agostiniana.'],
+ ['credo ut intelligam',1,'La formula è di Anselmo d’Aosta.'],
+ ['Dio esiste, e lo dimostra con la prova ontologica (a priori)',1,'La prova ontologica è di Anselmo.'],
+ ['Dio esiste, e lo dimostra con le prove “dei gradi” (a posteriori)',1,'Le prove dei gradi sono di Anselmo.'],
+ ['le qualità umane sono aspetti della quidditas di Dio',1,'È un’idea di Anselmo.'],
+ ['l’uomo con le sue forze può evitare il peccato e la grazia serve solo ad aiutarlo',2,'È la posizione dei pelagiani, combattuta da Agostino.'],
+ ['il peccato originale non si trasmette da Adamo a tutti gli uomini',2,'È la tesi pelagiana, rifiutata da Agostino.']
+];
+const exChi=idx=>()=>{
+  const c=CHI[pick(idx)];
+  return mkEx(`Di chi è questa idea: <b>${c[0]}</b>?`,AU[c[1]],AU.filter((_,k)=>k!==c[1]),wy(c[2],AU[c[1]]),'Chi lo sostiene?');
+};
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const GENS={
+ u1:[RIC,RIC,TRI,FAC,exChi([3,4,5,6]),exDef('u1')],
+ u2:[MON,MON,MAL,MAL,exChi([0,1,5,7]),exDef('u2')],
+ u3:[STO,STO,exChi([2,9,10,0]),exChi([2,9,10,3]),exDef('u3')],
+ u4:[SCO,SCO,SCO,exChi([5,6,7,8,0,2]),exDef('u4')],
+ u5:[UNI,UNI,UNI2,exDef('u5')]
+};
+const UNITS={u1:'1 · Agostino: la ricerca, Dio e l’anima',u2:'2 · Agostino: mondo, tempo e male',u3:'3 · Agostino: grazia, libertà e storia',u4:'4 · Scolastica e Anselmo d’Aosta',u5:'5 · La disputa sugli universali'};
+const PROVA_PLAN={u1:4,u2:3,u3:3,u4:3,u5:2};
+
+/* ========== CONTENUTI FISSI (Filosofia 4 ES: Agostino, Anselmo, universali) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const M=t=>`<span class="m">${t}</span>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const INP=t=>`<div class="box gia"><h3>In più (se lo chiede l’insegnante)</h3>${t}</div>`;
+
+const DEFS={
+u1:[
+ ['Dubbio scettico','Il dubbio di chi pensa che non si possa conoscere la verità: è il punto di partenza della ricerca di Agostino.'],
+ ['Fede e ragione','Due strade che per Agostino lavorano insieme: «credi per capire, capisci per credere».'],
+ ['Illuminazione','Dio è la Luce che illumina la mente umana e le permette di conoscere la verità.'],
+ ['Trinità','Dio è uno in tre persone: Padre, Figlio (o Lógos) e Spirito Santo.'],
+ ['Lógos','Il Figlio, la Verità assoluta; in greco “parola, ragione”.'],
+ ['Interiorità','Per Agostino la verità e Dio si cercano nel profondo di sé.']],
+u2:[
+ ['Creazione dal nulla','Dio ha creato il mondo senza partire da una materia già esistente.'],
+ ['Ragioni seminali','Le idee o ragioni immutabili ed eterne delle cose, contenute nel Lógos.'],
+ ['Distensio animi','Il tempo come realtà interiore dell’anima, che ricorda il passato e attende il futuro.'],
+ ['Privazione','Mancanza di un essere o di un bene: così Agostino definisce il male.'],
+ ['Male fisico','Il male che si presenta nella natura e nella sofferenza dell’essere umano.'],
+ ['Male morale','Il peccato: la volontà che non si volge a Dio ma alle cose inferiori.'],
+  ],
+u3:[
+ ['Pelagianesimo','Dottrina di Pelagio: l’uomo, con la sua volontà, può evitare il peccato; Agostino la combatte.'],
+ ['Grazia divina','Il dono di Dio che, per Agostino, dà all’uomo le forze per volere il bene.'],
+ ['Città terrena','La società degli empi.'],
+ ['Città celeste','La comunità dei giusti.'],
+ ['Storia lineare','La storia ha un inizio e va in una sola direzione, verso il fine ultimo della salvezza.'],
+ ['Peccato originale','Il peccato delle origini, di cui per Agostino il male fisico dell’uomo è la giusta pena.']],
+u4:[
+ ['Scolastica','La filosofia cristiana insegnata nelle scholae medievali.'],
+ ['Scholae','Le scuole medievali dove si insegnava la filosofia cristiana.'],
+ ['Credo ut intelligam','«Credo per capire»: per Anselmo la ragione non comprende nulla se non è sorretta dalla fede.'],
+ ['Prove “dei gradi”','Prove dell’esistenza di Dio a posteriori.'],
+ ['Prova ontologica','Prova dell’esistenza di Dio a priori.'],
+ ['A posteriori','Che parte dall’esperienza, dai fatti, per arrivare alla conclusione.'],
+ ['A priori','Che parte dal solo ragionamento, prima dell’esperienza.'],
+ ['Quidditas','L’essenza di una cosa, ciò che essa è (in Anselmo: l’essenza di Dio).']],
+u5:[
+ ['Universali','I concetti generali che valgono per molte cose (per esempio “uomo”, “cavallo”).'],
+ ['Realismo','La posizione per cui gli universali esistono realmente (in forma estrema o moderata).'],
+ ['Realismo estremo','Gli universali esistono fuori della mente e delle cose.'],
+ ['Realismo moderato','Gli universali esistono fuori della mente ma dentro le cose.'],
+ ['Nominalismo','La posizione per cui gli universali non esistono come realtà (in forma estrema o moderata).'],
+ ['Nominalismo estremo','Gli universali sono puri nomi.'],
+ ['Nominalismo moderato','Gli universali sono segni nella mente.']]
+};
+
+const CONT={
+u1:{
+ cose:`<div class="box bia"><p><b>Agostino</b> è un filosofo cristiano (354-430), vescovo di Ippona. La sua ricerca ha due oggetti: <b>l’anima e Dio</b>. Parte dal <b>dubbio scettico</b> e arriva a Dio come <b>Luce</b> che illumina la mente.</p></div>`,
+ ricette:[
+  card('blu','1 · Che cosa cerca Agostino',stepsHtml([
+   'La ricerca <b>analizza l’anima e Dio</b>.',
+   'Questi due oggetti richiedono <b>un’unica indagine</b>: <b>Dio si conosce conoscendo sé stessi</b>.',
+   'Richiedono anche il <b>concorso di fede e ragione</b>: <i>crede ut intelligas, intellige ut credas</i> (credi per capire, capisci per credere).'])),
+  card('ver','2 · Dal dubbio alla verità',stepsHtml([
+   'La ricerca <b>parte dal dubbio scettico</b>.',
+   'Il dubbio si può <b>superare</b>, perché <b>chi dubita, in quanto dubita, esiste</b>.',
+   'E perché <b>chi dubita è già nella verità</b>, che è <b>Dio, Luce che illumina la mente umana</b>.'])+INP('<p>La frase <i>si fallor, sum</i> (“se mi sbaglio, esisto”), dal <i>De civitate Dei</i> (XI, 26), esprime l’idea che anche chi sbaglia deve esistere.</p>')),
+  card('gia','3 · Dio è Trinità',
+   TAB(['Aspetto di Dio','Persona'],[['<b>Essere al sommo grado</b>','Padre'],['<b>Verità assoluta</b>, che si rivela a chi la cerca nel profondo di sé','Figlio o <i>Lógos</i>'],['<b>Amore</b>, che si offre all’essere umano che ama','Spirito Santo']])),
+  card('ros','4 · L’essere umano è immagine della Trinità',
+   '<p>L’essere umano è <b>immagine della Trinità divina</b> perché è:</p>'+TAB(['Facoltà','Che cosa fa'],[['<b>memoria</b>','è'],['<b>intelligenza</b>','conosce'],['<b>volontà</b>','ama']])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Come supera Agostino lo scetticismo?»</b> Parte dal dubbio, ma osserva che chi dubita esiste e che chi dubita è già nella verità, cioè in Dio, Luce della mente.</p>
+ <p><b>«Perché l’uomo è immagine della Trinità?»</b> Perché è memoria (è), intelligenza (conosce) e volontà (ama).</p>
+ <p><b>«Come si conosce Dio?»</b> Con un’unica indagine che riguarda anche l’anima: Dio si conosce conoscendo sé stessi, con fede e ragione insieme.</p></div>`,
+ errori:['Dire che Agostino <b>nega</b> il dubbio: lo <b>supera</b>.','Dimenticare che l’indagine su anima e Dio è <b>una sola</b>.','Mettere fede e ragione in contrasto: per Agostino <b>collaborano</b>.','Confondere Padre, Figlio e Spirito Santo con Essere, Verità e Amore: <b>Padre = Essere, Figlio = Verità, Spirito Santo = Amore</b>.','Dimenticare che Dio è la <b>Luce</b> che illumina la mente.'],
+ orale:[
+  ['Come Agostino supera il dubbio scettico?','Parte dal dubbio scettico, che è possibile superare perché chi dubita, in quanto dubita, esiste, e perché chi dubita è già nella verità, che è Dio, Luce che illumina la mente umana.'],
+  ['Che cosa ricerca Agostino e come?','Analizza l’anima e Dio con un’unica indagine, perché Dio si conosce conoscendo sé stessi, e con il concorso di fede e ragione: crede ut intelligas, intellige ut credas.'],
+  ['Chi è Dio per Agostino?','È Essere al sommo grado (Padre), Verità assoluta che si rivela a chi la cerca nel profondo di sé (Figlio o Lógos) e Amore che si offre all’essere umano che ama (Spirito Santo).'],
+  ['In che senso l’uomo è immagine della Trinità?','In quanto è memoria (è), intelligenza (conosce) e volontà (ama).'],
+ ],
+ quiz:[
+  ['La ricerca agostiniana analizza…','l’anima e Dio',['solo il mondo','solo la storia','solo il male'],'Anima e Dio.'],
+  ['Il dubbio scettico per Agostino è…','il punto di partenza, superabile',['il punto di arrivo','una verità definitiva','una colpa'],'Parte dal dubbio e lo supera.'],
+  ['Perché il dubbio si supera?','Chi dubita, in quanto dubita, esiste',['Perché nessuno dubita','Perché il dubbio è proibito','Perché il mondo è eterno'],'Chi dubita esiste.'],
+  ['Dio è per Agostino la Luce che…','illumina la mente umana',['crea il tempo','produce il male','punisce gli empi'],'Illuminazione.'],
+  ['Il Padre è…','l’Essere al sommo grado',['la Verità assoluta','l’Amore','la volontà'],'Padre = Essere.'],
+  ['Il Figlio o Lógos è…','la Verità assoluta',['l’Essere al sommo grado','l’Amore','la memoria'],'Figlio = Verità.'],
+  ['Lo Spirito Santo è…','l’Amore',['l’Essere al sommo grado','la Verità assoluta','il tempo'],'Spirito Santo = Amore.'],
+  ['Nell’essere umano la volontà…','ama',['conosce','è','ricorda il passato'],'Volontà = ama.'],
+ ]
+},
+u2:{
+ cose:`<div class="box bia"><p>Per Agostino il <b>mondo</b> è creato da Dio dal nulla, insieme con il <b>tempo</b>. Il <b>male</b> non è una cosa creata da Dio, ma una <b>privazione</b> di essere o di bene.</p></div>`,
+ ricette:[
+  card('blu','1 · Il mondo',stepsHtml([
+   'Il mondo è <b>creato da Dio dal nulla</b>.',
+   'La creazione avviene <b>attraverso il Lógos</b>, cioè il Figlio.',
+   'Il Lógos ha in sé le <b>idee o ragioni immutabili ed eterne</b> delle cose (<b>ragioni seminali</b>).',
+   'Il mondo è creato <b>insieme con il tempo</b>.'])),
+  card('ver','2 · Il tempo',
+   TAB(['Il tempo è…','Che cosa vuol dire'],[['<b>coeterno al mondo</b>','nasce insieme al mondo'],['<b>non immutabile come Dio</b>','Dio è eterno e non cambia, il tempo sì'],['<b>realtà interiore</b> (<i>distensio animi</i>)','l’anima ricorda il passato e attende il futuro']])),
+  card('ros','3 · Il male',stepsHtml([
+   'Il male è <b>privazione di essere, o di bene</b>.',
+   '<b>Male fisico</b> in natura: <b>necessario</b> alla scala gerarchica degli esseri e <b>funzionale</b> alla vita del tutto (che nel complesso è bene).',
+   '<b>Male fisico</b> nell’essere umano: la <b>giusta pena</b> per il peccato originale.',
+   '<b>Male morale</b>: il <b>peccato</b>, la “superbia” della volontà che non si volge a Dio ma alle cose inferiori.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è il male per Agostino?»</b> Non è una realtà creata da Dio, ma privazione di essere o di bene. Si presenta come male fisico e male morale.</p>
+ <p><b>«Che cos’è il tempo?»</b> Nasce insieme al mondo, ma non è immutabile come Dio; è una realtà interiore, la <i>distensio animi</i>, che ricorda il passato e attende il futuro.</p>
+ <p><b>«Come nasce il mondo?»</b> Dio lo crea dal nulla attraverso il Lógos, che ha in sé le idee eterne delle cose.</p></div>`,
+ errori:['Dire che il male è <b>una cosa creata</b> da Dio: è <b>privazione</b>.','Dire che il tempo è <b>eterno come Dio</b>: è coeterno al mondo, <b>non</b> immutabile come Dio.','Dimenticare che il mondo è creato <b>dal nulla</b>.','Confondere male fisico e male morale: il morale è il <b>peccato</b>.','Dimenticare che il male fisico nell’uomo è la <b>giusta pena</b> del peccato originale.'],
+ orale:[
+  ['Come nasce il mondo per Agostino?','È creato da Dio dal nulla attraverso il Lógos, cioè il Figlio, che ha in sé le idee o ragioni immutabili ed eterne delle cose (ragioni seminali), insieme con il tempo.'],
+  ['Che cos’è il tempo per Agostino?','È coeterno al mondo ma non immutabile come Dio, ed è una realtà interiore (distensio animi) che ricorda il passato e attende il futuro.'],
+  ['Che cos’è il male per Agostino?','È privazione di essere o di bene. Il male fisico in natura è necessario alla scala degli esseri e funzionale al tutto; nell’uomo è la giusta pena del peccato originale. Il male morale è il peccato, la superbia della volontà che si volge alle cose inferiori.'],
+ ],
+ quiz:[
+  ['Per Agostino il mondo è creato…','da Dio dal nulla',['da una materia eterna','dal caso','dal tempo'],'Creazione dal nulla.'],
+  ['La creazione avviene attraverso…','il Lógos (il Figlio)',['lo Spirito Santo','il tempo','il male'],'Attraverso il Lógos.'],
+  ['Il tempo è…','coeterno al mondo, ma non immutabile come Dio',['eterno e immutabile come Dio','inesistente','uguale al mondo'],'Il tempo non è come Dio.'],
+  ['La “distensio animi” è…','il tempo come realtà interiore',['un tipo di male','la volontà di Dio','una città'],'Realtà interiore.'],
+  ['Il male è…','privazione di essere o di bene',['una cosa creata da Dio','un principio eterno','un’idea del Lógos'],'Privazione.'],
+  ['Il male morale è…','il peccato, la superbia della volontà',['la sofferenza fisica','la morte','una malattia'],'Peccato.'],
+  ['Nell’essere umano il male fisico è…','la giusta pena per il peccato originale',['una colpa personale','un dono','un’illusione'],'Giusta pena.'],
+ ]
+},
+u3:{
+ cose:`<div class="box bia"><p>Agostino <b>difende il cristianesimo</b> contro il <b>pelagianesimo</b>, e vede la <b>storia</b> come lotta tra la <b>città terrena</b> e la <b>città celeste</b>, in cammino verso la salvezza.</p></div>`,
+ ricette:[
+  card('blu','1 · Contro il pelagianesimo',stepsHtml([
+   'Agostino <b>difende il cristianesimo</b> contro il <b>pelagianesimo</b>.',
+   'Nel farlo <b>identifica la libertà umana con la grazia divina</b>.'])+INP('<p>I pelagiani (da Pelagio) sostenevano che l’uomo, con le sue forze, possa osservare i comandamenti e che il peccato originale non si trasmetta da Adamo a tutti gli uomini; per loro la grazia è soprattutto un aiuto. Agostino risponde che le forze per volere il bene sono date dalla grazia divina.</p>')),
+  card('ver','2 · La storia',stepsHtml([
+   'La storia è <b>innervata dalla lotta</b> tra due città.',
+   '<b>Città terrena</b> = <b>società degli empi</b>. <b>Città celeste</b> = <b>comunità dei giusti</b>.',
+   'La storia <b>scorre in maniera lineare</b>, <b>verso il fine ultimo della salvezza</b>.'])+INP('<p>Nel <i>De civitate Dei</i> le due città nascono da due amori: l’amore di sé fino al disprezzo di Dio (città terrena) e l’amore di Dio fino al disprezzo di sé (città celeste). Non coincidono con Stato e Chiesa.</p>')),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Come vede la storia Agostino?»</b> Come lotta tra la città terrena (società degli empi) e la città celeste (comunità dei giusti), che scorre in modo lineare verso il fine ultimo della salvezza.</p>
+ <p><b>«Contro chi difende il cristianesimo?»</b> Contro il pelagianesimo, identificando la libertà umana con la grazia divina.</p></div>`,
+ errori:['Pensare che la storia sia <b>ciclica</b>: per Agostino è <b>lineare</b>.','Confondere città terrena (<b>empi</b>) e città celeste (<b>giusti</b>).','Dimenticare l’avversario di Agostino: il <b>pelagianesimo</b>.','Dire che per Agostino la libertà umana <b>annulla</b> la grazia: la <b>identifica</b> con la grazia, secondo lo schema.'],
+ orale:[
+  ['Contro chi difende Agostino il cristianesimo?','Contro il pelagianesimo, identificando la libertà umana con la grazia divina.'],
+  ['Come vede la storia Agostino?','È innervata dalla lotta tra la città terrena, società degli empi, e la città celeste, comunità dei giusti, e scorre in maniera lineare verso il fine ultimo della salvezza.'],
+ ],
+ quiz:[
+  ['Agostino difende il cristianesimo contro…','il pelagianesimo',['lo scetticismo','la scolastica','il realismo'],'Pelagianesimo.'],
+  ['La città terrena è…','la società degli empi',['la comunità dei giusti','la Chiesa','lo Stato'],'Città terrena = empi.'],
+  ['La città celeste è…','la comunità dei giusti',['la società degli empi','l’impero','la scuola'],'Città celeste = giusti.'],
+  ['La storia per Agostino scorre…','in maniera lineare',['in cerchio','senza direzione','all’indietro'],'Lineare.'],
+  ['La storia va verso…','il fine ultimo della salvezza',['il nulla','la città terrena','il dubbio'],'Salvezza.'],
+ ]
+},
+u4:{
+ cose:`<div class="box bia"><p>La <b>scolastica</b> è la filosofia cristiana insegnata nelle <i>scholae</i> medievali. Il suo problema centrale è il <b>rapporto tra fede e ragione</b>. <b>Anselmo d’Aosta</b> è uno dei suoi primi protagonisti.</p></div>`,
+ ricette:[
+  card('blu','1 · La scolastica',stepsHtml([
+   'È la <b>filosofia cristiana</b> insegnata nelle <b><i>scholae</i> medievali</b>.',
+   'Verte sul problema centrale del <b>rapporto tra fede e ragione</b>.'])),
+  card('ver','2 · Che cosa sostiene Anselmo',
+   TAB(['Anselmo…','Idea'],[['<b>sostiene che</b>','la ragione non può comprendere nulla se non è sorretta dalla fede: <i>credo ut intelligam</i>'],['<b>dimostra che</b>','Dio esiste con le prove “<b>dei gradi</b>” (<i>a posteriori</i>) e con la <b>prova ontologica</b> (<i>a priori</i>)'],['<b>osserva che</b>','le “qualità” umane sono aspetti della “<b>quidditas</b>” di Dio'],['<b>sostiene che</b>','la libertà umana non è cancellata dal peccato originale']])),
+  card('gia','3 · A posteriori e a priori',
+   TAB(['','Che cosa significa','Prova di Anselmo'],[['<b>a posteriori</b>','si parte dai fatti e dall’esperienza','prove “dei gradi”'],['<b>a priori</b>','si parte dal solo ragionamento','prova ontologica']])),
+  card('ros','4 · In più: come funzionano le due prove',
+   '<p>Le prove “dei gradi” stanno nel <i>Monologion</i>: partendo dai diversi gradi di perfezione che si osservano nel mondo si arriva a un Essere perfettissimo.</p><p>La prova ontologica sta nel <i>Proslogion</i>: Dio è «ciò di cui non si può pensare nulla di più grande» (<i>id quo maius cogitari nequit</i>). Anche chi nega Dio ha in mente questo concetto; se esistesse solo nella mente, si potrebbe pensare qualcosa di più grande, cioè qualcosa che esiste anche nella realtà. Quindi esiste anche nella realtà.</p><p>Il monaco Gaunilone di Marmoutiers criticò la prova con l’esempio dell’“isola perduta”; Anselmo rispose che Dio è un essere necessario, non contingente come un’isola.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è la scolastica?»</b> La filosofia cristiana insegnata nelle scholae medievali; il suo problema centrale è il rapporto tra fede e ragione.</p>
+ <p><b>«Come dimostra Anselmo che Dio esiste?»</b> Con le prove “dei gradi”, a posteriori, e con la prova ontologica, a priori.</p>
+ <p><b>«Che cosa significa credo ut intelligam?»</b> Che la ragione non può comprendere nulla se non è sorretta dalla fede.</p></div>`,
+ errori:['Scambiare <b>a posteriori</b> e <b>a priori</b>: prove dei gradi = a posteriori; ontologica = a priori.','Dire che per Anselmo la ragione <b>basta da sola</b>: deve essere <b>sorretta dalla fede</b>.','Pensare che il peccato originale cancelli la libertà umana: <b>non la cancella</b>.','Confondere <b>scolastica</b> (la filosofia delle scholae) con una sola scuola.','Dimenticare che le “qualità” umane sono aspetti della <b>quidditas</b> di Dio.'],
+ orale:[
+  ['Che cos’è la scolastica?','È la filosofia cristiana insegnata nelle scholae medievali; verte sul problema centrale del rapporto tra fede e ragione.'],
+  ['Che cosa significa “credo ut intelligam”?','La ragione non può comprendere nulla se non è sorretta dalla fede: credo per capire.'],
+  ['Come dimostra Anselmo l’esistenza di Dio?','Con le prove “dei gradi”, a posteriori, e con la prova ontologica, a priori.'],
+  ['Che cosa osserva Anselmo sulle qualità umane e sulla libertà?','Che le qualità umane sono aspetti della quidditas di Dio e che la libertà umana non è cancellata dal peccato originale.'],
+ ],
+ quiz:[
+  ['La scolastica è…','la filosofia cristiana insegnata nelle scholae medievali',['la filosofia dell’antica Grecia','una scuola di Agostino','una dottrina scettica'],'Filosofia cristiana delle scholae.'],
+  ['Il problema centrale della scolastica è…','il rapporto tra fede e ragione',['l’origine del mondo','la storia','il diritto'],'Fede e ragione.'],
+  ['“Credo ut intelligam” significa che…','la ragione senza fede non comprende nulla',['la fede è inutile','la ragione basta sempre','non si deve ragionare'],'Credo per capire.'],
+  ['Le prove “dei gradi” sono…','a posteriori',['a priori','scettiche','pelagiane'],'A posteriori.'],
+  ['La prova ontologica è…','a priori',['a posteriori','sperimentale','storica'],'A priori.'],
+  ['Per Anselmo la libertà umana…','non è cancellata dal peccato originale',['è cancellata dal peccato originale','non esiste','coincide con il male'],'Non cancellata.'],
+  ['Le “qualità” umane sono…','aspetti della quidditas di Dio',['aspetti del male','opposti a Dio','prive di valore'],'Quidditas.'],
+ ]
+},
+u5:{
+ cose:`<div class="box bia"><p>La <b>disputa sugli universali</b> riguarda i concetti generali (per esempio “uomo”): <b>esistono davvero</b> oppure sono solo <b>nomi o segni nella mente</b>? Due fazioni: <b>realismo</b> e <b>nominalismo</b>, ciascuna in versione <b>estrema</b> e <b>moderata</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Lo schema',
+   TAB(['Posizione','Gli universali…'],[['<b>Realismo estremo</b>','sono realmente esistenti, <b>fuori della mente e delle cose</b>'],['<b>Realismo moderato</b>','sono realmente esistenti, <b>fuori della mente ma dentro le cose</b>'],['<b>Nominalismo estremo</b>','sono <b>puri nomi</b>'],['<b>Nominalismo moderato</b>','sono <b>segni nella mente</b>']])),
+  card('ver','2 · Come ricordarlo',stepsHtml([
+   '<b>Realismo</b> = gli universali <b>esistono davvero</b> (realtà).',
+   '<b>Nominalismo</b> = gli universali sono <b>nomi</b> (parole o segni).',
+   '<b>Estremo</b>: la posizione più netta (fuori dalle cose / puri nomi). <b>Moderato</b>: la posizione intermedia (dentro le cose / segni nella mente).'])),
+  card('ros','3 · In più: i nomi dei protagonisti',
+   '<p>La questione nasce da Porfirio (<i>Isagoge</i>): i generi e le specie esistono come realtà o solo nella mente?</p><p>Secondo molti manuali: <b>Guglielmo di Champeaux</b> = realismo estremo; <b>Roscellino</b> = nominalismo estremo (gli universali come <i>flatus vocis</i>, emissione di fiato); <b>Abelardo</b> = nominalismo moderato; <b>Tommaso d’Aquino</b> = realismo moderato.</p><p class="note">Controlla sul tuo libro come sono assegnati i nomi: i manuali non sono sempre uguali.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è il realismo estremo?»</b> Gli universali esistono realmente, fuori dalla mente e dalle cose.</p>
+ <p><b>«Che differenza c’è tra realismo moderato e nominalismo moderato?»</b> Per il realismo moderato gli universali esistono fuori dalla mente ma dentro le cose; per il nominalismo moderato sono segni nella mente.</p>
+ <p><b>«Che cos’è il nominalismo estremo?»</b> Gli universali sono puri nomi.</p></div>`,
+ errori:['Confondere <b>realismo</b> e <b>nominalismo</b>: reali o nomi?','Confondere <b>estremo</b> e <b>moderato</b>: realismo moderato = <b>dentro le cose</b>; nominalismo moderato = <b>segni nella mente</b>.','Pensare che “realismo” significhi che esistono solo le cose concrete: qui vuol dire che esistono gli <b>universali</b>.','Dimenticare le <b>quattro</b> posizioni: due realiste e due nominaliste.'],
+ orale:[
+  ['Che cos’è la disputa sugli universali?','È la discussione sul fatto che i concetti generali esistano realmente o siano solo nomi o segni. Si divide in realismo (esistono realmente) e nominalismo (sono nomi o segni).'],
+  ['Che differenza c’è tra realismo estremo e moderato?','Per il realismo estremo gli universali esistono fuori dalla mente e dalle cose; per il moderato esistono fuori dalla mente ma dentro le cose.'],
+  ['Che differenza c’è tra nominalismo estremo e moderato?','Per il nominalismo estremo gli universali sono puri nomi; per il moderato sono segni nella mente.'],
+ ],
+ quiz:[
+  ['Per il realismo gli universali…','esistono realmente',['sono solo nomi','non esistono','sono illusioni'],'Realismo = reali.'],
+  ['Per il nominalismo gli universali…','sono nomi o segni',['esistono come cose','sono dei','sono numeri'],'Nominalismo = nomi.'],
+  ['Il realismo estremo dice che gli universali esistono…','fuori della mente e delle cose',['dentro le cose','solo nella mente','solo nelle parole'],'Fuori da tutto.'],
+  ['Il realismo moderato dice che gli universali esistono…','fuori della mente ma dentro le cose',['fuori della mente e delle cose','solo nella mente','non esistono'],'Dentro le cose.'],
+  ['Per il nominalismo estremo gli universali sono…','puri nomi',['segni nella mente','realtà fuori dalle cose','realtà dentro le cose'],'Puri nomi.'],
+  ['Per il nominalismo moderato gli universali sono…','segni nella mente',['puri nomi','realtà esterne','idee di Dio'],'Segni nella mente.'],
+ ]
+}
+};
+const GLOSS=Object.values(DEFS).flat();
+const FORMULARIO=`
+<div class="box blu"><h3>Agostino: la ricerca</h3><p>Analizza <b>l’anima e Dio</b>: un’unica indagine; <b>Dio si conosce conoscendo sé stessi</b>; concorso di <b>fede e ragione</b> (<i>crede ut intelligas, intellige ut credas</i>).</p><p>Parte dal <b>dubbio scettico</b>: chi dubita <b>esiste</b> ed è già <b>nella verità</b>, cioè Dio, <b>Luce</b> che illumina la mente.</p></div>
+<div class="box ver"><h3>Dio e l’uomo</h3>${TAB(['Dio','Persona'],[['Essere al sommo grado','Padre'],['Verità assoluta','Figlio o Lógos'],['Amore','Spirito Santo']])}<p>L’uomo è immagine della Trinità: <b>memoria</b> (è), <b>intelligenza</b> (conosce), <b>volontà</b> (ama).</p></div>
+<div class="box gia"><h3>Mondo, tempo, male</h3><p>Mondo <b>creato dal nulla</b> attraverso il <b>Lógos</b>, che ha in sé le <b>ragioni immutabili</b>; insieme con il <b>tempo</b> (coeterno al mondo, non immutabile come Dio; realtà interiore, <i>distensio animi</i>).</p><p>Male = <b>privazione</b> di essere o di bene. Fisico: in natura necessario al tutto; nell’uomo giusta pena del peccato originale. Morale: <b>peccato</b> (superbia).</p></div>
+<div class="box ros"><h3>Pelagianesimo e storia</h3><p>Agostino difende il cristianesimo contro il <b>pelagianesimo</b> (libertà umana ↔ grazia divina).</p><p>Storia: lotta tra <b>città terrena</b> (empi) e <b>città celeste</b> (giusti); <b>lineare</b>, verso la <b>salvezza</b>.</p></div>
+<div class="box blu"><h3>Scolastica e Anselmo</h3><p><b>Scolastica</b>: filosofia cristiana delle <i>scholae</i>; problema: <b>fede e ragione</b>.</p><p>Anselmo: <i>credo ut intelligam</i>; Dio esiste con le prove <b>dei gradi</b> (a posteriori) e la prova <b>ontologica</b> (a priori); qualità umane = aspetti della <b>quidditas</b> di Dio; libertà umana non cancellata dal peccato originale.</p></div>
+<div class="box ver"><h3>Universali</h3>${TAB(['Posizione','Gli universali…'],[['Realismo estremo','fuori della mente e delle cose'],['Realismo moderato','fuori della mente, dentro le cose'],['Nominalismo estremo','puri nomi'],['Nominalismo moderato','segni nella mente']])}</div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('fil_agost_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('fil_agost_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+</script>
+<!--AGG--><script>
+(function(){
+ var B="20261005124049",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
