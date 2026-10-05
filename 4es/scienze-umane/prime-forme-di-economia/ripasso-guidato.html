@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antropologia: prime forme di economia</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Scienze Umane</a></p><h1>Antropologia: le prime forme di economia</h1><p>UDA 3 · un passo alla volta</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Caccia e raccolta</button>
+<button data-t="u2">2 Agricoltura</button>
+<button data-t="u3">3 Allevamento</button>
+<button data-t="u4">4 Industria</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo su <b>Le prime forme di economia</b> (Antropologia, UDA 3). Il kit segue la <b>sintesi</b> e le <b>mappe</b> del libro. Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti. Ogni argomento ha sempre lo stesso ordine.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>La caccia e la raccolta</b> (economia di acquisizione) · unità 1</li><li><b>L'agricoltura</b> (Rivoluzione neolitica) · unità 2</li><li><b>L'allevamento</b> · unità 3</li><li><b>L'industria</b> (Rivoluzione industriale) · unità 4</li></ul></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema della mappa, passo per passo.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi di risposta da ripetere a voce.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (4 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 (caccia e raccolta)</li><li><b>Giorno 2</b>: unità 2 (agricoltura)</li><li><b>Giorno 3</b>: unità 3 (allevamento) e unità 4 (industria)</li><li><b>Giorno 4</b>: Prova finale, Orale e Formulario</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c'è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti <b>a voce alta</b> le risposte dell'Orale: l'interrogazione è parlata.</li><li>Impara le <b>coppie</b>: acquisizione = prelievo / produttiva = agricoltura e allevamento · intensivo = stalle / estensivo = grandi spazi.</li><li>Ricorda i numeri: caccia <b>300 000</b> anni fa, Rivoluzione neolitica <b>10 000</b> anni fa.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un'altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const NAMES=['Marco','Giulia','Luca','Sara','Paolo','Elena','Davide','Chiara','Andrea','Francesca','Matteo','Anna'];
+const names=n=>shuffle(NAMES).slice(0,n);
+const eur=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
+
+/* ========== ANTROPOLOGIA UDA 3: GENERATORI DI ESERCIZI ========== */
+const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+const WR={
+ 'non comporta tecniche produttive, ma solo il “prelievo” dei prodotti dalla natura':['usa soltanto tecniche industriali','si basa sulla produzione di merci su vasta scala'],
+ 'la prima strategia di sopravvivenza attuata dal genere umano, ancora praticata da un’esigua minoranza di popolazioni':['una forma di economia nata con l’industria','la strategia più diffusa nel mondo di oggi'],
+ 'da un’economia acquisitiva a un’economia produttiva':['da un’economia produttiva a un’economia acquisitiva','dalla pastorizia all’industria'],
+ 'dalla caccia e raccolta all’agricoltura, abbinata all’allevamento':['dall’agricoltura alla caccia e raccolta','dalla pesca al commercio'],
+ 'dai cambiamenti climatici e dall’aumento della popolazione, dopo la fine dell’ultimo periodo glaciale':['dall’invenzione delle fabbriche e dalla meccanizzazione','dalla scoperta dell’America e dalla nascita delle città'],
+ 'cercare nuove risorse, inventare nuove tecnologie e stabilirsi in insediamenti stabili':['tornare alla raccolta e abbandonare le tecnologie','spostarsi continuamente senza coltivare'],
+ 'il vapore, il carbone, poi l’energia elettrica e il motore a scoppio':['il vento e la forza degli animali','solo la forza delle braccia'],
+ 'dell’incremento dei consumatori consapevoli e informati':['della diminuzione dei consumatori','del divieto di usare macchinari'],
+ 'la domesticazione di specie animali utili all’uomo e adatte a vivere in gruppo in spazi limitati':['la caccia di specie selvatiche solitarie','la raccolta di frutti selvatici'],
+ 'mutazione genetica di alcune specie e da caratteristiche di animali più docili e adattabili':['dal clima freddo e da animali feroci','dall’uso delle macchine e dall’industria'],
+ 'delle società di pastori e allevatori':['delle società di cacciatori e raccoglitori','delle società industriali'],
+ 'le tecniche tradizionali non possono competere con l’allevamento industriale':['sono scomparse da tutti i continenti','non esistono più allevatori'],
+ 'hanno culture originali, in cui il bestiame è fonte di ricchezza e prestigio sociale':['sono molto numerose e industrializzate','non hanno alcuna cultura propria'],
+ 'una modalità di produzione di merci su vasta scala, delineatasi dopo la Rivoluzione industriale':['una forma di economia di acquisizione','la produzione agricola per il consumo familiare'],
+ 'nuovi macchinari, nuove fonti di energia e nuove tecnologie':['solo la caccia e la raccolta','solo l’allevamento di erbivori'],
+ 'la crescita demografica ed economica, lo sviluppo sociale e politico':['le disuguaglianze sociali e i rischi ambientali','lo sfruttamento sconsiderato delle risorse'],
+ 'le disuguaglianze sociali e i rischi ambientali':['la crescita demografica ed economica','lo sviluppo sociale e politico'],
+ 'l’innovazione digitale, la robotica, la stampa in 3D e nuove modalità di programmazione':['il ruolo della ricerca e della conoscenza','l’introduzione del vapore'],
+ 'l’ambiente, a causa dello sfruttamento sconsiderato delle risorse naturali':['la ricerca scientifica, a causa dei costi','l’agricoltura, a causa del clima'],
+ 'raccolta, caccia e pesca':['agricoltura, allevamento e industria','caccia, agricoltura e commercio'],
+ 'la raccolta':['la caccia','la pesca'],
+ 'dalla raccolta, affidata alle donne':['dalla caccia, affidata agli uomini','dalla pesca, affidata ai giovani'],
+ '300 000 anni fa':['10 000 anni fa','30 000 anni fa'],
+ 'la cattura dell’animale e la sua uccisione':['la raccolta e la conservazione','la caccia e la pesca'],
+ 'con il rito della spartizione della carne tra i partecipanti':['con una gara tra i cacciatori','con la vendita della carne'],
+ 'una variante della caccia, praticata in ambienti acquatici':['una variante della raccolta, praticata solo in mare','una forma di agricoltura'],
+ 'quasi sempre associata ad altre attività: caccia, agricoltura, commercio':['sempre praticata da sola','praticata solo dalle donne'],
+ '10 000 anni fa, nella “Mezzaluna fertile”':['300 000 anni fa, nella “Mezzaluna fertile”','10 000 anni fa, in Europa occidentale'],
+ 'in Asia orientale e nel continente americano':['in Africa e in Oceania','in Europa e in Africa'],
+ 'fino all’avvento della meccanizzazione, all’inizio del XIX secolo':['fino alla fine del Medioevo','fino all’inizio del XV secolo'],
+ 'dalla policoltura alla specializzazione':['dalla specializzazione alla policoltura','dall’agricoltura all’allevamento'],
+ 'il mais e la patata':['il grano e l’orzo','il riso e il cotone'],
+ 'ovini, bovini, suini ed equini':['cani, gatti e uccelli','solo animali selvatici'],
+ 'prive di autorità centrale':['prive di parentela','prive di bestiame'],
+ 'la Rivoluzione neolitica e la Rivoluzione industriale':['la Rivoluzione francese e la Rivoluzione industriale','la Rivoluzione neolitica e la Rivoluzione digitale'],
+ 'tecniche di coltivazione antichissime':['solo l’agricoltura industrializzata','solo l’agricoltura biologica'],
+ 'il rispetto dell’equilibrio ecologico':['l’aumento della produzione a ogni costo','l’uso di macchinari più grandi'],
+ 'la fonte della ricchezza e del prestigio sociale':['una risorsa di poco valore','un peso per la società'],
+ 'il ruolo della ricerca e della conoscenza':['l’introduzione del vapore','la nascita delle fabbriche']
+};
+function mapGroup(tag,askL,pairs){
+  return ()=>{
+    const i=rnd(0,pairs.length-1),p=pairs[i];
+    const others=shuffle(pairs.filter((_,k)=>k!==i));
+    return mkEx(askL(p[0]),p[1],p[3]?p[3]:(WR[p[1]]||others.map(x=>x[1])),wy(p[2]||`${p[0]} ${p[1]}`,p[1]),tag);
+  };
+}
+const ACQ='Economia di acquisizione',PROD='Economia produttiva';
+const exTipoEco=()=>{
+  const C=[['raccogliere frutti e radici selvatici',ACQ,'Si prelevano risorse già presenti in natura.'],['cacciare un animale selvatico',ACQ,'La caccia preleva le risorse dall’ambiente.'],['pescare in un fiume',ACQ,'La pesca è una variante della caccia: si preleva.'],['coltivare il grano in un campo',PROD,'Con l’agricoltura le risorse sono prodotte.'],['allevare pecore e bovini',PROD,'Con l’allevamento si producono cibo e lana.'],['coltivare ortaggi dopo aver seminato',PROD,'Si semina, si coltiva: produzione.']];
+  const c=pick(C);
+  return mkEx(`<b>${c[0][0].toUpperCase()+c[0].slice(1)}</b> è un esempio di…`,c[1],[c[1]===ACQ?PROD:ACQ,'Rivoluzione industriale'],wy(c[2],c[1]),'Acquisizione o produzione');
+};
+const exSOP=mapGroup('Economia di acquisizione',l=>`<b>${l}</b>`,[
+ ['L’economia di acquisizione è una forma di economia che…','non comporta tecniche produttive, ma solo il “prelievo” dei prodotti dalla natura','Niente produzione: solo <b>prelievo</b> dalla natura.'],
+ ['L’economia di acquisizione è…','la prima strategia di sopravvivenza attuata dal genere umano, ancora praticata da un’esigua minoranza di popolazioni','È la <b>prima</b> strategia e oggi la praticano in pochi.'],
+ ['L’economia di acquisizione si basa su…','raccolta, caccia e pesca','Si basa su <b>raccolta, caccia, pesca</b>.'],
+ ['La strategia di sopravvivenza più antica è…','la raccolta','La più antica è la <b>raccolta</b>, documentata dal tempo degli australopitechi.'],
+ ['Nei popoli cacciatori e raccoglitori attuali la quota più consistente dell’alimentazione è data…','dalla raccolta, affidata alle donne','La <b>raccolta</b>, affidata alle donne.'],
+ ['La caccia comparve, nella storia dell’umanità, circa…','300 000 anni fa','La caccia è più recente della raccolta: circa <b>300 000 anni fa</b>.'],
+ ['Nella caccia si distinguono due momenti:','la cattura dell’animale e la sua uccisione','Cattura e uccisione.'],
+ ['Presso i popoli cacciatori e raccoglitori ogni battuta di caccia si conclude…','con il rito della spartizione della carne tra i partecipanti','Rito della <b>spartizione</b> della carne.'],
+ ['La pesca è…','una variante della caccia, praticata in ambienti acquatici','La pesca è una <b>variante della caccia</b>.'],
+ ['Oggi la pesca come strategia di sopravvivenza è…','quasi sempre associata ad altre attività: caccia, agricoltura, commercio','Oggi è <b>quasi sempre associata</b> ad altre attività.']]);
+const exNeo=mapGroup('La Rivoluzione neolitica',l=>`<b>${l}</b>`,[
+ ['La Rivoluzione neolitica avvenne circa…','10 000 anni fa, nella “Mezzaluna fertile”','Circa <b>10 000 anni fa</b>, nella Mezzaluna fertile.'],
+ ['Con la Rivoluzione neolitica l’umanità passa…','dalla caccia e raccolta all’agricoltura, abbinata all’allevamento','Dall’acquisizione all’<b>agricoltura e allevamento</b>.'],
+ ['La Rivoluzione neolitica segna il passaggio…','da un’economia acquisitiva a un’economia produttiva','Da economia <b>acquisitiva</b> a <b>produttiva</b>.'],
+ ['Dopo la Mezzaluna fertile la Rivoluzione neolitica si verificò, in modo indipendente, anche…','in Asia orientale e nel continente americano','Anche in <b>Asia orientale</b> e <b>America</b>.'],
+ ['La Rivoluzione neolitica fu preparata…','dai cambiamenti climatici e dall’aumento della popolazione, dopo la fine dell’ultimo periodo glaciale','Cause: clima e aumento della popolazione.'],
+ ['Spinti dai cambiamenti, gli uomini furono costretti a…','cercare nuove risorse, inventare nuove tecnologie e stabilirsi in insediamenti stabili','Nuove risorse, nuove tecnologie, insediamenti stabili.'],
+ ['Una conseguenza della Rivoluzione neolitica è…','l’incremento demografico','Una conseguenza è l’<b>incremento demografico</b>.',['la fine dell’agricoltura','la scomparsa degli insediamenti stabili']],
+ ['Una conseguenza della Rivoluzione neolitica è…','la nascita delle città','Un’altra conseguenza è la <b>nascita delle città</b>.',['il ritorno al nomadismo','la fine delle differenze sociali']],
+ ['Una conseguenza della Rivoluzione neolitica è…','l’inizio della stratificazione sociale','Inizia la <b>stratificazione sociale</b>.',['l’uguaglianza di tutti','la scomparsa della proprietà']]]);
+const exAgr=mapGroup('Gli sviluppi dell’agricoltura',l=>`<b>${l}</b>`,[
+ ['Il modello base dell’agricoltura rimase invariato…','fino all’avvento della meccanizzazione, all’inizio del XIX secolo','Invariato fino alla <b>meccanizzazione</b> (inizio XIX secolo).'],
+ ['Nel Medioevo l’agricoltura passa…','dalla policoltura alla specializzazione','<b>Policoltura → specializzazione</b>.'],
+ ['Dal continente americano arrivano nuove colture, come…','il mais e la patata','Mais e <b>patata</b>.'],
+ ['Tra le nuove fonti di energia che cambiano l’agricoltura ci sono…','il vapore, il carbone, poi l’energia elettrica e il motore a scoppio','Vapore, carbone, energia elettrica, motore a scoppio.'],
+ ['Oggi, accanto all’agricoltura industrializzata, sopravvivono ancora…','tecniche di coltivazione antichissime','Sopravvivono tecniche <b>antichissime</b>.'],
+ ['L’agricoltura biologica si pone come obiettivo…','il rispetto dell’equilibrio ecologico','Rispetto dell’<b>equilibrio ecologico</b>.'],
+ ['L’agricoltura biologica cresce anche a causa…','dell’incremento dei consumatori consapevoli e informati','Più <b>consumatori consapevoli</b>.']]);
+const exAllev=mapGroup('L’allevamento',l=>`<b>${l}</b>`,[
+ ['L’allevamento presuppone…','la domesticazione di specie animali utili all’uomo e adatte a vivere in gruppo in spazi limitati','Presuppone la <b>domesticazione</b>.'],
+ ['Gli animali domesticati sono per esempio…','ovini, bovini, suini ed equini','Ovini, bovini, suini, equini.'],
+ ['La domesticazione è favorita da…','mutazione genetica di alcune specie e da caratteristiche di animali più docili e adattabili','Mutazione genetica e animali più <b>docili e adattabili</b>.'],
+ ['L’allevamento di animali erbivori che danno cibo e lana è all’origine…','delle società di pastori e allevatori','Origine delle <b>società di pastori e allevatori</b>.'],
+ ['Le società di pastori oggi sono considerate residuali perché…','le tecniche tradizionali non possono competere con l’allevamento industriale','Non possono competere con l’allevamento <b>industriale</b>.'],
+ ['Le società di pastori hanno un elevato interesse antropologico perché…','hanno culture originali, in cui il bestiame è fonte di ricchezza e prestigio sociale','Culture originali: il <b>bestiame</b> dà ricchezza e prestigio.'],
+ ['Nelle società di pastori il bestiame rappresenta…','la fonte della ricchezza e del prestigio sociale','Ricchezza e prestigio.'],
+ ['Società “acefale” significa…','prive di autorità centrale','“Acefale” = prive di <b>autorità centrale</b>.']]);
+const exPastori=()=>{
+  const OK=[['stile di vita nomade o seminomade','Sono società nomadi o seminomadi.'],['patrilinearità','Sono spesso società patrilineari.'],['instabilità sociale','Sono socialmente instabili.'],['assenza di stratificazione sociale o autorità centrale','Sono “acefale”: senza autorità centrale.'],['organizzazione sulla base della parentela','Si organizzano sulla base della parentela.']];
+  const NO=['vita in grandi città','forte autorità centrale','stratificazione sociale rigida','allevamento in stalle meccanizzate','produzione industriale di merci'];
+  const c=pick(OK);
+  return mkEx('Quale è una caratteristica delle <b>società di pastori e allevatori</b>?',c[0],shuffle(NO).slice(0,2),wy(c[1],c[0]),'Società di pastori');
+};
+const exIntEst=()=>{
+  const C=[['gli animali sono concentrati all’interno di stalle meccanizzate','intensivo'],['gli animali sono liberi di pascolare in grandi spazi aperti','estensivo'],['gli animali pascolano e si muovono dove esistono grandi spazi','estensivo'],['gli animali vivono in stalle meccanizzate','intensivo']];
+  const c=pick(C);
+  return mkEx(`Un allevamento in cui <b>${c[0]}</b> è detto…`,c[1],[c[1]==='intensivo'?'estensivo':'intensivo','nomade'],wy('Intensivo = stalle meccanizzate; estensivo = grandi spazi in cui gli animali sono liberi di pascolare.',c[1]),'Intensivo o estensivo');
+};
+const exInd=mapGroup('L’industria',l=>`<b>${l}</b>`,[
+ ['Il termine “industria” indica oggi…','una modalità di produzione di merci su vasta scala, delineatasi dopo la Rivoluzione industriale','Produzione di merci <b>su vasta scala</b>.'],
+ ['Lo storico Paul Bairoch ha individuato due “fratture” nella storia dell’umanità:','la Rivoluzione neolitica e la Rivoluzione industriale','Le due fratture: <b>neolitica</b> e <b>industriale</b>.'],
+ ['La Rivoluzione industriale si articola in…','quattro fasi','<b>Quattro fasi</b>.',['due fasi','sei fasi']],
+ ['La Rivoluzione industriale prevede la progressiva introduzione di…','nuovi macchinari, nuove fonti di energia e nuove tecnologie','Macchinari, fonti di energia, tecnologie.'],
+ ['Una conseguenza positiva della Rivoluzione industriale è…','la crescita demografica ed economica, lo sviluppo sociale e politico','Conseguenze <b>positive</b>: crescita e sviluppo.'],
+ ['Una conseguenza negativa della Rivoluzione industriale è…','le disuguaglianze sociali e i rischi ambientali','Conseguenze <b>negative</b>: disuguaglianze e rischi ambientali.'],
+ ['La terza Rivoluzione industriale ha posto in primo piano…','il ruolo della ricerca e della conoscenza','Terza rivoluzione: ricerca e conoscenza.'],
+ ['La “quarta Rivoluzione industriale” riguarda…','l’innovazione digitale, la robotica, la stampa in 3D e nuove modalità di programmazione','Quarta: digitale, robotica, stampa 3D, programmazione.'],
+ ['Le principali ombre dello sviluppo industriale riguardano…','l’ambiente, a causa dello sfruttamento sconsiderato delle risorse naturali','Aspetto critico: l’<b>ambiente</b>.']]);
+const exNum=()=>{
+  const C=[['Circa quando comparve la caccia nella storia dell’umanità?','300 000 anni fa',['10 000 anni fa','30 000 anni fa']],['Circa quando avvenne la Rivoluzione neolitica?','10 000 anni fa',['300 000 anni fa','100 000 anni fa']]];
+  const c=pick(C);
+  return mkEx(c[0],c[1],c[2],wy('Caccia: circa 300 000 anni fa. Rivoluzione neolitica: circa 10 000 anni fa.',c[1]),'Date e numeri');
+};
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const GENS={
+ u1:[exTipoEco,exSOP,exSOP,exSOP,exNum,exDef('u1')],
+ u2:[exNeo,exNeo,exNeo,exAgr,exAgr,exNum,exDef('u2')],
+ u3:[exAllev,exAllev,exPastori,exIntEst,exDef('u3')],
+ u4:[exInd,exInd,exInd,exDef('u4')]
+};
+const UNITS={u1:'1 · La caccia e la raccolta',u2:'2 · L’agricoltura',u3:'3 · L’allevamento',u4:'4 · L’industria'};
+const PROVA_PLAN={u1:4,u2:4,u3:4,u4:3};
+
+/* ========== CONTENUTI FISSI (Antropologia UDA 3: prime forme di economia) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const M=t=>`<span class="m">${t}</span>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const LI=l=>'<ul>'+l.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+
+const DEFS={
+u1:[
+ ['Economia di acquisizione','Forma di economia che non usa tecniche produttive: preleva soltanto i prodotti dalla natura.'],
+ ['Raccolta','La strategia di sopravvivenza più antica, documentata dal tempo degli australopitechi.'],
+ ['Caccia','Strategia comparsa circa 300 000 anni fa, con due momenti: cattura e uccisione dell’animale.'],
+ ['Pesca','Variante della caccia praticata in ambienti acquatici, oggi quasi sempre associata ad altre attività.'],
+ ['Spartizione della carne','Il rito che conclude ogni battuta di caccia presso i popoli cacciatori e raccoglitori.']],
+u2:[
+ ['Rivoluzione neolitica','Il passaggio, circa 10 000 anni fa, dalla caccia e raccolta all’agricoltura abbinata all’allevamento.'],
+ ['Mezzaluna fertile','La regione in cui, circa 10 000 anni fa, avvenne per la prima volta il passaggio all’agricoltura.'],
+ ['Economia produttiva','Forma di economia in cui le risorse sono prodotte (agricoltura e allevamento).'],
+ ['Stratificazione sociale','La divisione della società in strati; inizia con la Rivoluzione neolitica.'],
+ ['Policoltura','La coltivazione di più prodotti insieme; nel Medioevo lascia il posto alla specializzazione.'],
+ ['Agricoltura biologica','Agricoltura che si pone come obiettivo il rispetto dell’equilibrio ecologico.']],
+u3:[
+ ['Domesticazione','Rendere gli animali utili all’uomo e adatti a vivere in gruppo in spazi limitati.'],
+ ['Società di pastori e allevatori','Società all’origine dell’allevamento di erbivori che danno cibo e lana, ancora esistenti ma residuali.'],
+ ['Società acefale','Società prive di autorità centrale, organizzate sulla base della parentela.'],
+ ['Patrilinearità','Appartenenza di una persona al gruppo di parentela del padre.'],
+ ['Allevamento intensivo','Animali concentrati all’interno di stalle meccanizzate.'],
+ ['Allevamento estensivo','Animali liberi di pascolare e muoversi in grandi spazi.']],
+u4:[
+ ['Industria','Modalità di produzione di merci su vasta scala, delineatasi dopo la Rivoluzione industriale.'],
+ ['Rivoluzione industriale','Si articola in quattro fasi, con l’introduzione di nuovi macchinari, fonti di energia e tecnologie.'],
+ ['Paul Bairoch','Lo storico che ha individuato due “fratture” nella storia: Rivoluzione neolitica e Rivoluzione industriale.'],
+ ['Terza Rivoluzione industriale','Quella che ha posto in primo piano il ruolo della ricerca e della conoscenza.'],
+ ['Quarta Rivoluzione industriale','Processi in corso: innovazione digitale, robotica, stampa 3D, nuove modalità di programmazione.']]
+};
+
+const CONT={
+u1:{
+ cose:`<div class="box bia"><p>Le prime forme di economia sono <b>raccolta, caccia e pesca</b>. Sono esempi di <b>economia di acquisizione</b>: le risorse <b>non sono prodotte</b> ma <b>prelevate</b> direttamente dall’ambiente naturale. È la <b>prima strategia di sopravvivenza</b> del genere umano e oggi la pratica un’esigua minoranza di popolazioni.</p></div>`,
+ ricette:[
+  card('blu','1 · L’economia di acquisizione',stepsHtml([
+   'È una forma di economia che <b>non comporta tecniche produttive</b>, ma soltanto il “<b>prelievo</b>” dei prodotti dalla natura.',
+   'È la <b>prima strategia di sopravvivenza</b> attuata dal genere umano, ancora praticata da un’esigua minoranza di popolazioni.',
+   'Si basa su <b>raccolta, caccia e pesca</b>.'])),
+  card('ver','2 · La raccolta',stepsHtml([
+   'È la strategia <b>più antica</b>, documentata dal tempo degli <b>australopitechi</b>.',
+   'Fino all’introduzione della caccia da parte di <i>Homo sapiens</i> fu l’<b>unica</b> strategia degli antichi ominidi.',
+   'Nei popoli cacciatori e raccoglitori attuali la <b>raccolta</b>, affidata alle <b>donne</b>, fornisce la <b>quota più consistente dell’alimentazione</b>.'])),
+  card('gia','3 · La caccia e la pesca',stepsHtml([
+   'La <b>caccia</b> comparve tardi: circa <b>300 000 anni fa</b>.',
+   'Può essere individuale o di gruppo e ha <b>due momenti</b>: la <b>cattura</b> dell’animale e la sua <b>uccisione</b>.',
+   'Ogni battuta di caccia si conclude con il <b>rito della spartizione della carne</b> tra i partecipanti.',
+   'La <b>pesca</b> è una <b>variante della caccia</b>, praticata in ambienti acquatici; oggi è <b>quasi sempre associata</b> ad altre attività (caccia, agricoltura, commercio).'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’economia di acquisizione?»</b> È una forma di economia in cui le risorse non sono prodotte ma prelevate dalla natura. Si basa su raccolta, caccia e pesca.</p>
+ <p><b>«Qual è la strategia più antica?»</b> La raccolta, documentata dal tempo degli australopitechi.</p>
+ <p><b>«Chi fornisce più cibo nei popoli attuali di cacciatori-raccoglitori?»</b> La raccolta, affidata alle donne.</p></div>`,
+ errori:['Dire che la <b>caccia</b> è la strategia più antica: è la <b>raccolta</b>. La caccia comparve circa 300 000 anni fa.','Pensare che nell’economia di acquisizione le risorse siano <b>prodotte</b>: sono <b>prelevate</b>.','Dimenticare che la raccolta è affidata alle <b>donne</b> e fornisce la quota più consistente di cibo.','Dimenticare il <b>rito della spartizione</b> della carne.','Dire che la pesca è una forma di agricoltura: è una <b>variante della caccia</b>.'],
+ orale:[
+  ['Che cos’è l’economia di acquisizione?','È una forma di economia che non comporta tecniche produttive ma soltanto il prelievo dei prodotti dalla natura. È la prima strategia di sopravvivenza del genere umano, ancora praticata da un’esigua minoranza di popolazioni, e si basa su raccolta, caccia e pesca.'],
+  ['Parla della raccolta.','È la strategia più antica, documentata dal tempo degli australopitechi; fino all’introduzione della caccia fu l’unica degli antichi ominidi. Oggi, nei popoli cacciatori e raccoglitori, è affidata alle donne e fornisce la quota più consistente dell’alimentazione.'],
+  ['Parla della caccia e della pesca.','La caccia comparve circa 300 000 anni fa, è individuale o di gruppo e ha due momenti, cattura e uccisione; si conclude con il rito della spartizione della carne. La pesca è una variante della caccia, in ambienti acquatici, oggi quasi sempre associata ad altre attività.'],
+ ],
+ quiz:[
+  ['Le risorse nell’economia di acquisizione sono…','prelevate dall’ambiente naturale',['prodotte con l’agricoltura','prodotte nelle fabbriche','comprate al mercato'],'Prelievo, non produzione.'],
+  ['L’economia di acquisizione si basa su…','raccolta, caccia e pesca',['agricoltura e allevamento','industria e commercio','allevamento e pesca'],'Tre strategie.'],
+  ['La strategia più antica è…','la raccolta',['la caccia','la pesca','l’agricoltura'],'Raccolta.'],
+  ['La caccia comparve circa…','300 000 anni fa',['10 000 anni fa','3 000 anni fa','100 anni fa'],'300 000 anni fa.'],
+  ['Nei popoli attuali di cacciatori-raccoglitori la raccolta è affidata…','alle donne',['agli uomini','ai bambini','agli anziani'],'Alle donne.'],
+  ['Ogni battuta di caccia si conclude con…','il rito della spartizione della carne',['una gara','la vendita della carne','un viaggio'],'Spartizione.'],
+  ['La pesca è…','una variante della caccia',['una variante della raccolta','una forma di agricoltura','una forma di allevamento'],'Variante della caccia.'],
+ ]
+},
+u2:{
+ cose:`<div class="box bia"><p>Circa <b>10 000 anni fa</b> nella <b>Mezzaluna fertile</b> l’umanità passò dalla caccia e raccolta all’<b>agricoltura</b>, abbinata all’<b>allevamento</b>: è la <b>Rivoluzione neolitica</b>. Segna il passaggio da un’<b>economia acquisitiva</b> a un’<b>economia produttiva</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · La Rivoluzione neolitica',stepsHtml([
+   'Circa <b>10 000 anni fa</b>, nelle regioni della <b>Mezzaluna fertile</b>.',
+   'Passaggio da <b>caccia e raccolta</b> all’<b>agricoltura</b> abbinata all’<b>allevamento</b>.',
+   'In epoche successive e <b>in modo indipendente</b> si verificò anche in <b>Asia orientale</b> e nel continente <b>americano</b>.'])),
+  card('ver','2 · Cause e conseguenze',
+   TAB(['Cause','Conseguenze'],[['<b>cambiamenti climatici</b> e <b>aumento della popolazione</b> dopo la fine dell’ultimo periodo glaciale','<b>incremento demografico</b>'],['gli uomini cercano <b>nuove risorse</b>, inventano <b>nuove tecnologie</b>, si stabiliscono in <b>insediamenti stabili</b>','<b>nascita delle città</b>'],['','<b>inizio della stratificazione sociale</b>']])),
+  card('gia','3 · Gli sviluppi dal Medioevo a oggi',stepsHtml([
+   'Il modello base <b>non cambia</b> fino alla <b>meccanizzazione</b>, all’inizio del <b>XIX secolo</b>.',
+   'Prima della Rivoluzione industriale: nel Medioevo il passaggio dalla <b>policoltura</b> alla <b>specializzazione</b>; l’arrivo di nuove colture dall’<b>America</b> (<b>mais</b> e <b>patata</b>).',
+   'Le <b>nuove fonti di energia</b> (vapore, carbone, poi energia elettrica e motore a scoppio) portano all’agricoltura attuale.'])),
+  card('ros','4 · Le ultime evoluzioni',
+   LI(['accanto all’<b>agricoltura industrializzata</b> sopravvivono <b>tecniche antichissime</b>','si affianca l’<b>agricoltura biologica</b>, che rispetta l’<b>equilibrio ecologico</b>','cresce il numero dei <b>consumatori consapevoli e informati</b>'])+'<p class="note">Dalla mappa: l’agricoltura si è trasformata grazie a nuovi macchinari, nuove fonti di energia, ricerca scientifica e una nuova attenzione per l’ambiente.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è la Rivoluzione neolitica?»</b> Il passaggio, circa 10 000 anni fa nella Mezzaluna fertile, dalla caccia e raccolta all’agricoltura abbinata all’allevamento: da un’economia acquisitiva a una produttiva.</p>
+ <p><b>«Quali sono le conseguenze?»</b> L’incremento demografico, la nascita delle città e l’inizio della stratificazione sociale.</p>
+ <p><b>«Come è cambiata l’agricoltura?»</b> Il modello base resta invariato fino alla meccanizzazione dell’inizio del XIX secolo; poi nuove fonti di energia e oggi anche agricoltura biologica.</p></div>`,
+ errori:['Confondere la data: la Rivoluzione neolitica è di circa <b>10 000 anni fa</b>, la caccia di 300 000.','Dire che avvenne <b>solo</b> nella Mezzaluna fertile: si verificò anche, in modo indipendente, in <b>Asia orientale</b> e in <b>America</b>.','Dimenticare le tre conseguenze: <b>demografia, città, stratificazione sociale</b>.','Confondere <b>policoltura</b> e <b>specializzazione</b>: nel Medioevo si passa dalla prima alla seconda.','Dire che mais e patata vengono dall’<b>Asia</b>: vengono dal continente <b>americano</b>.'],
+ orale:[
+  ['Che cos’è la Rivoluzione neolitica?','È il passaggio, circa 10 000 anni fa nelle regioni della Mezzaluna fertile, dalla caccia e raccolta all’agricoltura abbinata all’allevamento. Segna il passaggio da un’economia acquisitiva a una produttiva; si verificò poi, in modo indipendente, anche in Asia orientale e in America.'],
+  ['Quali furono le cause e le conseguenze?','Cause: i cambiamenti climatici e l’aumento della popolazione dopo la fine dell’ultimo periodo glaciale, che spinsero gli uomini a cercare nuove risorse, inventare nuove tecnologie e stabilirsi in insediamenti stabili. Conseguenze: incremento demografico, nascita delle città, inizio della stratificazione sociale.'],
+  ['Come si è sviluppata l’agricoltura dal Medioevo a oggi?','Il modello base è rimasto invariato fino alla meccanizzazione dell’inizio del XIX secolo. Nel Medioevo si passa dalla policoltura alla specializzazione e arrivano mais e patata dall’America; poi nuove fonti di energia (vapore, carbone, energia elettrica, motore a scoppio).'],
+  ['Com’è l’agricoltura oggi?','Accanto all’agricoltura industrializzata sopravvivono tecniche antichissime e si affianca l’agricoltura biologica, che rispetta l’equilibrio ecologico, anche per l’aumento dei consumatori consapevoli e informati.'],
+ ],
+ quiz:[
+  ['La Rivoluzione neolitica avvenne circa…','10 000 anni fa',['300 000 anni fa','1 000 anni fa','100 anni fa'],'10 000 anni fa.'],
+  ['La Rivoluzione neolitica segna il passaggio…','da un’economia acquisitiva a una produttiva',['da produttiva ad acquisitiva','dall’industria all’agricoltura','dal commercio alla caccia'],'Acquisitiva → produttiva.'],
+  ['Si verificò anche, in modo indipendente, in…','Asia orientale e America',['Africa e Oceania','Europa e Africa','solo in Europa'],'Asia orientale e America.'],
+  ['Una causa della Rivoluzione neolitica è…','la fine dell’ultimo periodo glaciale',['l’invenzione delle fabbriche','la scoperta dell’America','la nascita delle città'],'Cambiamenti climatici.'],
+  ['Una conseguenza è…','la nascita delle città',['la fine dell’agricoltura','il ritorno al nomadismo','la scomparsa della società'],'Nascita delle città.'],
+  ['Il modello base dell’agricoltura resta invariato fino…','alla meccanizzazione (inizio XIX secolo)',['alla Rivoluzione neolitica','al Medioevo','al XV secolo'],'Meccanizzazione.'],
+  ['Dall’America arrivano…','il mais e la patata',['il grano e l’orzo','il riso e il cotone','la vite e l’ulivo'],'Mais e patata.'],
+  ['L’agricoltura biologica rispetta…','l’equilibrio ecologico',['solo la tradizione','la velocità della produzione','la meccanizzazione'],'Equilibrio ecologico.'],
+ ]
+},
+u3:{
+ cose:`<div class="box bia"><p>L’<b>allevamento</b> presuppone la <b>domesticazione</b> di specie animali. È all’origine delle <b>società di pastori e allevatori</b>. Oggi, nei paesi sviluppati, può essere <b>intensivo</b> o <b>estensivo</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Domesticazione',stepsHtml([
+   'L’allevamento presuppone la <b>domesticazione</b> di specie animali <b>utili all’uomo</b> e <b>adatte a vivere in gruppo</b> in spazi limitati.',
+   'Esempi: <b>ovini, bovini, suini, equini</b>.',
+   'La domesticazione è favorita da una <b>mutazione genetica</b> di alcune specie e da <b>caratteristiche</b> di animali più <b>docili e adattabili</b>.'])),
+  card('ver','2 · Le società di pastori e allevatori',
+   '<p>L’allevamento di animali <b>erbivori</b> che forniscono <b>cibo e lana</b> è all’origine di queste società. Esistono ancora, diffuse nei cinque continenti, ma sono <b>residuali</b> perché le tecniche tradizionali <b>non possono competere</b> con l’allevamento industriale.</p>'+TAB(['Caratteristiche','Che cosa vuol dire'],[['stile di vita <b>nomade o seminomade</b>','si spostano'],['<b>instabilità</b>','società socialmente instabili'],['<b>patrilinearità</b>','la parentela segue la linea del padre'],['assenza di <b>stratificazione sociale</b> o autorità centrale','“<b>acefale</b>”: prive di autorità centrale, organizzate sulla base della parentela']])+'<p>Hanno un <b>elevato interesse antropologico</b>: culture originali, in cui il <b>bestiame</b> è la fonte della <b>ricchezza</b> e del <b>prestigio sociale</b>.</p>'),
+  card('gia','3 · L’allevamento odierno',
+   TAB(['','Intensivo','Estensivo'],[['Animali','concentrati all’interno di <b>stalle meccanizzate</b>','liberi di <b>pascolare e muoversi</b>'],['Dove','paesi sviluppati','dove esistono <b>grandi spazi</b>']])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cosa presuppone l’allevamento?»</b> La domesticazione di specie animali utili all’uomo e adatte a vivere in gruppo in spazi limitati, come ovini, bovini, suini ed equini.</p>
+ <p><b>«Come sono le società di pastori?»</b> Nomadi o seminomadi, instabili, patrilineari, “acefale”, cioè senza autorità centrale e organizzate sulla parentela; il bestiame è fonte di ricchezza e prestigio.</p>
+ <p><b>«Che differenza c’è tra intensivo ed estensivo?»</b> Nell’intensivo gli animali stanno in stalle meccanizzate; nell’estensivo pascolano in grandi spazi.</p></div>`,
+ errori:['Confondere <b>intensivo</b> (stalle meccanizzate) e <b>estensivo</b> (grandi spazi).','Dire che le società di pastori hanno una <b>forte autorità centrale</b>: sono <b>acefale</b>.','Dire che sono società <b>matrilineari</b>: spesso sono <b>patrilineari</b>.','Pensare che le società di pastori siano scomparse: esistono ancora, ma sono <b>residuali</b>.','Dimenticare che il bestiame è fonte di <b>ricchezza e prestigio sociale</b>.'],
+ orale:[
+  ['Che cosa presuppone l’allevamento?','La domesticazione di specie animali utili all’uomo e adatte a vivere in gruppo in spazi limitati: ovini, bovini, suini, equini. La domesticazione è favorita da mutazioni genetiche e da animali più docili e adattabili.'],
+  ['Parla delle società di pastori e allevatori.','Nascono dall’allevamento di animali erbivori che danno cibo e lana. Esistono ancora ma sono residuali, perché le tecniche tradizionali non competono con quelle industriali; hanno però un elevato interesse antropologico. Sono nomadi o seminomadi, instabili, patrilineari, acefale e organizzate sulla parentela; il bestiame è fonte di ricchezza e prestigio.'],
+  ['Che differenza c’è tra allevamento intensivo ed estensivo?','Nell’intensivo gli animali sono concentrati in stalle meccanizzate; nell’estensivo, praticato dove ci sono grandi spazi, gli animali sono liberi di pascolare e muoversi.'],
+ ],
+ quiz:[
+  ['L’allevamento presuppone…','la domesticazione degli animali',['la caccia','la raccolta','la pesca'],'Domesticazione.'],
+  ['Sono animali domesticati…','ovini, bovini, suini, equini',['leoni e tigri','balene e delfini','aquile e falchi'],'Esempi.'],
+  ['Le società di pastori sono spesso…','patrilineari e acefale',['matrilineari e centralizzate','industriali','sedentarie e urbane'],'Patrilineari e acefale.'],
+  ['“Acefale” vuol dire…','prive di autorità centrale',['prive di cibo','prive di bestiame','prive di parentela'],'Senza autorità centrale.'],
+  ['Per i pastori il bestiame è fonte di…','ricchezza e prestigio sociale',['sola alimentazione','vergogna','povertà'],'Ricchezza e prestigio.'],
+  ['Nell’allevamento intensivo gli animali sono…','in stalle meccanizzate',['liberi di pascolare','in grandi spazi aperti','selvatici'],'Stalle.'],
+  ['Nell’allevamento estensivo gli animali sono…','liberi di pascolare in grandi spazi',['chiusi in stalle meccanizzate','tenuti in gabbia','cacciati'],'Grandi spazi.'],
+ ]
+},
+u4:{
+ cose:`<div class="box bia"><p>Il termine <b>industria</b> indica oggi una modalità di <b>produzione di merci su vasta scala</b>, delineatasi dopo la <b>Rivoluzione industriale</b>. Per lo storico <b>Paul Bairoch</b> la storia ha due “<b>fratture</b>”: la <b>Rivoluzione neolitica</b> e la <b>Rivoluzione industriale</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · La Rivoluzione industriale',stepsHtml([
+   'Si articola in <b>quattro fasi</b>.',
+   'Prevede la progressiva introduzione di <b>nuovi macchinari</b>, <b>nuove fonti di energia</b> e <b>nuove tecnologie</b>.',
+   'Ha <b>conseguenze positive</b>: crescita demografica ed economica, sviluppo sociale e politico.',
+   'Ha <b>conseguenze negative</b>: disuguaglianze sociali e rischi ambientali.'])),
+  card('ver','2 · Le due fratture della storia (Bairoch)',
+   TAB(['Frattura','Quando / che cosa'],[['<b>prima</b>','Rivoluzione neolitica'],['<b>seconda</b>','Rivoluzione industriale']])),
+  card('gia','3 · La terza e la quarta Rivoluzione industriale',
+   TAB(['','Che cosa'],[['<b>Terza</b>','mette in primo piano il <b>ruolo della ricerca e della conoscenza</b>'],['<b>Quarta</b> (si inizia a parlarne)','processi ancora in corso: <b>innovazione digitale, robotica, stampa 3D</b>, nuove modalità di programmazione']])),
+  card('ros','4 · Gli aspetti critici',
+   '<p>Alle conseguenze positive fanno riscontro alcune <b>ombre</b>. Le principali riguardano l’<b>ambiente</b>, a causa dello <b>sfruttamento sconsiderato delle risorse naturali</b>.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’industria?»</b> Una modalità di produzione di merci su vasta scala, delineatasi dopo la Rivoluzione industriale.</p>
+ <p><b>«Che cosa dice Bairoch?»</b> Che nella storia ci sono due fratture: la Rivoluzione neolitica e la Rivoluzione industriale.</p>
+ <p><b>«Quali sono i lati negativi?»</b> Disuguaglianze sociali e rischi ambientali, soprattutto per lo sfruttamento sconsiderato delle risorse naturali.</p></div>`,
+ errori:['Dire che le fratture di Bairoch sono <b>caccia e raccolta</b>: sono la <b>Rivoluzione neolitica</b> e la <b>industriale</b>.','Confondere <b>terza</b> (ricerca e conoscenza) e <b>quarta</b> (digitale, robotica, 3D) rivoluzione industriale.','Dimenticare le <b>conseguenze negative</b>: disuguaglianze sociali e rischi ambientali.','Dire che le fasi della Rivoluzione industriale sono <b>due</b>: sono <b>quattro</b>.'],
+ orale:[
+  ['Che cos’è l’industria?','È una modalità di produzione di merci su vasta scala, delineatasi dopo la Rivoluzione industriale.'],
+  ['Che cosa sono le due fratture di Bairoch?','Lo storico Paul Bairoch individua due fratture principali nella storia dell’umanità: la prima è la Rivoluzione neolitica, la seconda la Rivoluzione industriale.'],
+  ['Parla della Rivoluzione industriale e delle sue conseguenze.','Si articola in quattro fasi e prevede nuovi macchinari, nuove fonti di energia e nuove tecnologie. Conseguenze positive: crescita demografica ed economica, sviluppo sociale e politico. Negative: disuguaglianze sociali e rischi ambientali.'],
+  ['Che cosa sono la terza e la quarta Rivoluzione industriale?','La terza ha posto in primo piano il ruolo della ricerca e della conoscenza. La quarta, di cui si inizia a parlare, riguarda processi ancora in corso: innovazione digitale, robotica, stampa in 3D e nuove modalità di programmazione.'],
+ ],
+ quiz:[
+  ['L’industria è una modalità di produzione di merci…','su vasta scala',['a mano','solo agricola','per il solo consumo familiare'],'Vasta scala.'],
+  ['Le due “fratture” di Bairoch sono…','Rivoluzione neolitica e industriale',['caccia e raccolta','Medioevo e Rinascimento','Rivoluzione francese e americana'],'Neolitica e industriale.'],
+  ['La Rivoluzione industriale si articola in…','quattro fasi',['due fasi','sei fasi','una fase'],'Quattro fasi.'],
+  ['Una conseguenza positiva è…','la crescita demografica ed economica',['le disuguaglianze sociali','i rischi ambientali','il ritorno alla caccia'],'Crescita.'],
+  ['Una conseguenza negativa è…','i rischi ambientali',['la crescita economica','lo sviluppo politico','la ricerca scientifica'],'Rischi ambientali.'],
+  ['La terza Rivoluzione industriale ha messo in primo piano…','la ricerca e la conoscenza',['il vapore','la caccia','la raccolta'],'Ricerca e conoscenza.'],
+  ['La quarta Rivoluzione industriale riguarda…','innovazione digitale, robotica, stampa 3D',['solo il carbone','solo il vapore','solo l’agricoltura'],'Digitale, robotica, 3D.'],
+ ]
+}
+};
+const GLOSS=Object.values(DEFS).flat();
+const FORMULARIO=`
+<div class="box blu"><h3>Economia di acquisizione</h3><p>Risorse <b>prelevate</b> dalla natura (non prodotte): <b>raccolta</b> (la più antica, affidata alle donne), <b>caccia</b> (circa 300 000 anni fa), <b>pesca</b> (variante della caccia).</p></div>
+<div class="box ver"><h3>Agricoltura</h3><p><b>Rivoluzione neolitica</b>: circa 10 000 anni fa, Mezzaluna fertile; da economia acquisitiva a <b>produttiva</b>; anche in Asia orientale e America.</p><p>Cause: clima e aumento della popolazione. Conseguenze: <b>demografia, città, stratificazione sociale</b>.</p><p>Sviluppi: invariata fino alla meccanizzazione (XIX secolo) · policoltura → specializzazione · mais e patata · nuove fonti di energia · oggi: industrializzata, tecniche antiche, <b>biologica</b>.</p></div>
+<div class="box gia"><h3>Allevamento</h3><p><b>Domesticazione</b> (ovini, bovini, suini, equini). <b>Società di pastori</b>: nomadi o seminomadi, instabili, <b>patrilineari</b>, <b>acefale</b>; il bestiame = ricchezza e prestigio.</p><p>Oggi: <b>intensivo</b> (stalle meccanizzate) · <b>estensivo</b> (grandi spazi).</p></div>
+<div class="box ros"><h3>Industria</h3><p>Produzione di merci su <b>vasta scala</b> · due fratture (<b>Bairoch</b>): neolitica e industriale · <b>quattro fasi</b> · positive: crescita e sviluppo · negative: disuguaglianze e rischi ambientali · terza (ricerca e conoscenza) · quarta (digitale, robotica, 3D).</p></div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('antro_uda3_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('antro_uda3_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+</script>
+<!--AGG--><script>
+(function(){
+ var B="20261005131608",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
