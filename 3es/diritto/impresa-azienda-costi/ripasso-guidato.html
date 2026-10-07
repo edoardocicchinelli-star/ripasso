@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diritto: impresa, azienda e costi</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Diritto</a></p><h1>Diritto: l'impresa, l'azienda e i costi</h1><p>Ripasso dagli appunti · un passo alla volta</p></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Imprenditore</button>
+<button data-t="u2">2 Azienda e marchio</button>
+<button data-t="u3">3 Le scelte</button>
+<button data-t="u4">4 Costi e ricavi</button>
+<button data-t="u5">5 Budget e pareggio</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo su <b>impresa, azienda, costi e ricavi</b>. Il kit segue gli <b>appunti</b> del corso. Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti. Ogni argomento ha sempre lo stesso ordine.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>L'imprenditore e l'impresa</b>: art. 2082, tipi di imprenditori, impresa familiare, impresa e azienda (unità 1)</li><li><b>Azienda, avviamento, ditta, insegna e marchio</b>, crisi dell'impresa (unità 2)</li><li><b>Le scelte dell'impresa</b>: finanziamenti, settori, fattori produttivi, produttività (unità 3)</li><li><b>Costi, ricavi e profitto</b> (unità 4)</li><li><b>Budget, punto di pareggio, successo ed esternalità</b> (unità 5)</li></ul>
+<p class="note">Le parti segnate <b>“in più”</b> vanno oltre gli appunti: studiale solo se le chiede l'insegnante.</p></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: i punti degli appunti, in ordine.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi da ripetere a voce.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande e calcoli sempre nuovi. Per i calcoli usa carta e penna. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle definizioni.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (5 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 (imprenditore e impresa)</li><li><b>Giorno 2</b>: unità 2 (azienda, ditta, marchio, crisi)</li><li><b>Giorno 3</b>: unità 3 (scelte dell'impresa, produttività)</li><li><b>Giorno 4</b>: unità 4 (costi e ricavi) e unità 5 (budget, pareggio)</li><li><b>Giorno 5</b>: Prova finale, Orale e Formulario</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c'è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti <b>a voce alta</b> le definizioni dell'Orale.</li><li>Impara le coppie: <b>impresa</b> (attività) / <b>azienda</b> (beni) · <b>ditta</b> (nome) / <b>insegna</b> (locali) / <b>marchio</b> (prodotti) · costi <b>fissi</b> / <b>variabili</b>.</li><li>Per il <b>medio</b> si divide, per il <b>marginale</b> si fa una sottrazione.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un'altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const NAMES=['Marco','Giulia','Luca','Sara','Paolo','Elena','Davide','Chiara','Andrea','Francesca','Matteo','Anna'];
+const names=n=>shuffle(NAMES).slice(0,n);
+const eur=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
+
+/* ========== DIRITTO 3 ES: GENERATORI DI ESERCIZI ========== */
+const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+const WR={};
+function mapGroup(tag,askL,pairs){
+  return ()=>{
+    const i=rnd(0,pairs.length-1),p=pairs[i];
+    const others=shuffle(pairs.filter((_,k)=>k!==i));
+    return mkEx(askL(p[0]),p[1],p[3]?p[3]:others.map(x=>x[1]),wy(p[2]||`${p[0]} ${p[1]}`,p[1]),tag);
+  };
+}
+/* classificazioni a casi: ogni categoria ha una lista di esempi */
+function classify(tag,question,cats,explain,extra){
+  return ()=>{
+    const names=Object.keys(cats);const c=pick(names);const ex=pick(cats[c]);
+    const wr=shuffle(names.filter(x=>x!==c)).concat(extra||[]);
+    return mkEx(question(ex),c,wr,wy(explain(ex,c),c),tag);
+  };
+}
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+/* ---- unità 1: imprenditore e impresa ---- */
+const exImprenditore=mapGroup('L’imprenditore',l=>`<b>${l}</b>`,[
+ ['L’imprenditore è colui che…','esercita professionalmente un’attività economica organizzata per produrre o scambiare beni e servizi','Art. 2082 del Codice civile.',['produce beni solo per sé stesso','lavora alle dipendenze di un’azienda']],
+ ['Per qualificare un soggetto come imprenditore (art. 2082) serve…','l’esercizio di un’attività economica, svolta con professionalità, per produrre o scambiare beni o servizi, con organizzazione','Servono attività economica, professionalità, produzione o scambio di beni o servizi, organizzazione.',['solo il possesso di una macchina','solo l’iscrizione a una scuola']],
+ ['Il requisito della professionalità significa che l’attività è svolta…','con continuità e in modo abituale','La professionalità è l’abitualità con cui l’attività è svolta.',['una volta sola','solo per hobby']],
+ ['Il requisito dell’organizzazione significa…','saper gestire l’attività, per esempio i dipendenti','Organizzazione: saper gestire per esempio i dipendenti.',['lavorare senza collaboratori','avere sempre un socio']]]);
+const exAttAgr=classify('Attività agricole e imprese',
+ ex=>`<b>${cap(ex)}</b>: di che tipo di attività si tratta?`,
+ {'Attività essenzialmente agricola':['la coltivazione del fondo','la selvicoltura','l’allevamento di animali'],
+  'Attività agricola per connessione':['la trasformazione dei prodotti ottenuti dalla coltivazione','la conservazione dei prodotti ottenuti dall’imprenditore agricolo','la valorizzazione dei prodotti ottenuti dall’imprenditore agricolo'],
+  'Attività commerciale':['il trasporto per natura','l’attività bancaria','l’attività assicurativa']},
+ (ex,c)=>c==='Attività essenzialmente agricola'?'Le attività essenzialmente agricole comprendono coltivazione del fondo, selvicoltura e allevamento di animali.':c==='Attività agricola per connessione'?'Sono connesse le attività dell’imprenditore dirette a manipolare, conservare, trasformare e valorizzare i prodotti ottenuti.':'Trasporto, attività bancarie e assicurative sono tra le attività dell’imprenditore commerciale.');
+const exPiccoli=classify('Piccoli imprenditori',
+ ex=>`<b>${cap(ex)}</b> è…`,
+ {'un piccolo imprenditore':['un coltivatore diretto del fondo','un artigiano','chi ha un’attività organizzata dalla propria famiglia'],
+  'un imprenditore commerciale':['una banca','una compagnia di assicurazioni','un’azienda di trasporti']},
+ (ex,c)=>c==='un piccolo imprenditore'?'Piccoli imprenditori: coltivatori diretti del fondo, artigiani e chi ha un’attività organizzata dalla propria famiglia.':'Banche, assicurazioni e trasporti sono attività commerciali.',['un lavoratore dipendente']);
+const exCommObblighi=()=>{
+  const ok=['l’iscrizione nel pubblico registro','la tenuta delle scritture contabili','la soggezione a liquidazione giudiziale'];
+  const c=pick(ok);
+  return mkEx('Quale è un <b>obbligo</b> degli imprenditori commerciali?',c,['la gestione dell’impresa solo con i familiari','l’obbligo di non assumere dipendenti'],wy('Obblighi: iscrizione nel pubblico registro, scritture contabili, soggezione a liquidazione giudiziale.',c),'Obblighi delle imprese commerciali');
+};
+const exImpFam=mapGroup('L’impresa familiare',l=>`<b>${l}</b>`,[
+ ['L’impresa familiare è disciplinata…','dall’art. 230 bis del Codice civile','Art. 230 bis.',['dall’art. 2082 del Codice civile','dall’art. 2557 del Codice civile']],
+ ['Nell’impresa familiare i familiari hanno diritto…','al mantenimento, a partecipare agli utili, a una quota dei beni acquistati con gli utili e sugli incrementi','Mantenimento, utili, beni acquistati con gli utili, incrementi.',['solo allo stipendio fisso','a nessun diritto, perché non sono imprenditori']],
+ ['Le decisioni sull’impiego degli utili, la gestione straordinaria e la cessazione dell’impresa sono prese…','secondo il principio di maggioranza','Principio di maggioranza.',['dal solo titolare','all’unanimità, sempre']],
+ ['La gestione ordinaria e il potere direttivo sui dipendenti appartengono…','al titolare','Gestione ordinaria → titolare.',['a tutti i familiari insieme','al familiare più anziano']],
+ ['In caso di insolvenza risponde…','solo il titolare, perché i familiari non rischiano il proprio patrimonio','Il titolare è l’unico a rispondere.',['tutti i familiari con il proprio patrimonio','nessuno']]]);
+const exImpAz=mapGroup('Impresa e azienda',l=>`<b>${l}</b>`,[
+ ['L’impresa è…','l’attività economica esercitata dall’imprenditore per produrre o scambiare beni e servizi','Impresa = attività.',['il complesso dei beni aziendali','la ditta']],
+ ['L’azienda è…','il complesso dei beni aziendali avviati dall’imprenditore','Azienda = complesso dei beni.',['l’attività economica dell’imprenditore','il nome dell’imprenditore']]]);
+const AZ=['i beni materiali','i beni immateriali','i contratti','i debiti e i crediti verso terzi'];
+const exAzComp=classify('I beni dell’azienda',
+ ex=>`A quale categoria dell’azienda appartiene <b>${ex}</b>?`,
+ {'beni materiali':['le materie prime','i macchinari','gli immobili'],
+  'beni immateriali':['i brevetti','i marchi'],
+  'contratti':['i contratti di lavoro','i contratti di affitto di immobili'],
+  'debiti e crediti verso terzi':['i crediti verso i clienti','i debiti verso le banche','i debiti verso i dipendenti']},
+ (ex,c)=>`L’azienda comprende beni materiali (materie prime, macchinari, immobili), beni immateriali (brevetti, marchi), contratti (di lavoro, di affitto) e debiti o crediti verso terzi (clienti, dipendenti, banche).`);
+/* ---- unità 2: avviamento, ditta, marchio, crisi ---- */
+const exAvv=mapGroup('Avviamento e concorrenza',l=>`<b>${l}</b>`,[
+ ['L’avviamento è…','l’attitudine dell’azienda a produrre un reddito','Avviamento = attitudine a produrre reddito.',['il nome sotto cui si esercita l’impresa','il segno che distingue i prodotti']],
+ ['La legge tutela l’avviamento attraverso…','il divieto di concorrenza','Divieto di concorrenza (art. 2557).',['la ditta','il budget']],
+ ['Chi vende un’azienda deve astenersi dall’avviare una nuova impresa idonea a prendere la clientela per…','cinque anni','Cinque anni dal trasferimento.',['un anno','dieci anni']]]);
+const exDitta=mapGroup('Ditta, insegna e marchio',l=>`<b>${l}</b>`,[
+ ['La ditta è…','il nome sotto il quale l’imprenditore esercita la sua impresa','Ditta = nome dell’impresa.',['il segno che distingue i locali','il segno che distingue i prodotti']],
+ ['Attraverso la ditta è possibile riconoscere…','il soggetto o più soggetti titolari dell’impresa','Si riconoscono i titolari.',['i prodotti dell’impresa','i locali dell’impresa']],
+ ['L’insegna è…','il segno distintivo che contraddistingue i locali in cui si esercita l’attività d’impresa','Insegna = i locali.',['il nome dell’imprenditore','il segno che distingue i prodotti']],
+ ['Il marchio è…','il segno distintivo dei prodotti, quindi dei beni e servizi che l’impresa offre','Marchio = i prodotti.',['il segno che distingue i locali','il nome dell’imprenditore']]]);
+const exSegno=classify('Ditta, insegna o marchio?',
+ ex=>`<b>${cap(ex)}</b>: di che cosa si tratta?`,
+ {'la ditta':['il nome con cui l’impresa è registrata e conosciuta, per esempio «Rossi Giuseppe, impresa di costruzioni»'],
+  'l’insegna':['la scritta posta all’ingresso del negozio'],
+  'il marchio':['il simbolo stampato sui prodotti messi in vendita']},
+ (ex,c)=>`Ditta = nome dell’impresa; insegna = locali; marchio = prodotti.`);
+const MARCHI=['marchio di fabbrica','marchio di commercio','marchio di servizio','marchio individuale','marchio collettivo','marchio forte','marchio debole','marchio di rinomanza','marchio sonoro','marchio di forma','marchio tridimensionale'];
+const exTipoMarchio=()=>{
+  const c=pick(MARCHI);const w=shuffle(['marchio dei familiari','marchio provvisorio','marchio statale'].filter(x=>!MARCHI.includes(x))).slice(0,2);
+  return mkEx('Quale di queste è una <b>tipologia di marchio</b> nell’elenco dei tuoi appunti?',c,w,wy('Tipologie di marchio: fabbrica, commercio, servizio, individuale, collettivo, forte, debole, di rinomanza, sonoro, di forma, tridimensionale.',c),'Tipologie di marchio');
+};
+const exCrisi=mapGroup('Crisi dell’impresa',l=>`<b>${l}</b>`,[
+ ['Le situazioni di difficoltà dell’impresa corrispondono a…','crisi e insolvenza','Crisi e insolvenza.',['avviamento e ditta','budget e break-even']],
+ ['La soluzione richiede…','ampia collaborazione delle parti, che devono comportarsi con buona fede e correttezza','Collaborazione, buona fede, correttezza.',['il silenzio delle parti','la sola decisione del giudice']],
+ ['Le norme per risolvere crisi e insolvenza sono nel…','Codice della crisi dell’impresa e dell’insolvenza','Codice della crisi dell’impresa e dell’insolvenza.',['Codice della strada','Codice del consumo']]]);
+/* ---- unità 3: scelte dell'impresa ---- */
+const exFinanz=classify('Capitale proprio o di credito',
+ ex=>`<b>${cap(ex)}</b>: che tipo di finanziamento è?`,
+ {'capitale proprio':['i soldi propri dell’imprenditore','i risparmi che l’imprenditore investe nell’impresa'],
+  'capitale di credito':['un prestito chiesto alla banca','il denaro ottenuto chiedendo un prestito']},
+ (ex,c)=>c==='capitale proprio'?'Capitale proprio = soldi propri.':'Capitale di credito = chiedere dei prestiti.',['un costo variabile']);
+const exSettore=classify('Settori produttivi',
+ ex=>`<b>${cap(ex)}</b> appartiene al settore…`,
+ {'primario':['l’agricoltura'],
+  'secondario':['un’impresa che opera nel piano industriale','una fabbrica'],
+  'terziario':['un’impresa di trasporti','una banca','una prestazione di servizio']},
+ (ex,c)=>`Primario: agricoltura, la prima forma di attività economica. Secondario: imprese che operano nel piano industriale. Terziario: prestazioni di servizio, per esempio trasporti o attività bancarie.`);
+const exScelte=mapGroup('Le scelte dell’impresa',l=>`<b>${l}</b>`,[
+ ['L’attività produttiva è…','la trasformazione della materia prima in beni e servizi acquistabili sul mercato e sul sistema commerciale','Attività produttiva = trasformazione di materia prima.',['il prestito chiesto alla banca','il budget dell’anno futuro']],
+ ['Per iniziare un’attività produttiva servono…','dei finanziamenti, cioè risorse monetarie','Servono finanziamenti.',['solo dei macchinari','solo dei clienti']],
+ ['Esistono due tipi di finanziamento:','capitale proprio e capitale di credito','Proprio e di credito.',['capitale fisso e variabile','capitale primario e terziario']],
+ ['La start up può finanziarsi tramite…','il crowdfunding, cioè chiedendo di donare fondi sui social','Crowdfunding: donazioni sui social.',['la vendita della ditta','la liquidazione giudiziale']],
+ ['I fattori produttivi sono…','la natura, il lavoro, il capitale, l’organizzazione e lo Stato per regolare l’attività','I fattori produttivi.',['solo il lavoro e il capitale','solo le materie prime']]]);
+const exProdTot=()=>{
+  const n=pick([50,100,120,200]),per=pick([5,8,10,12,15]),P=n*per;
+  const k=rnd(0,2);
+  if(k===0)return mkEx(`Una fabbrica produce <b>${P} prodotti</b> impiegando <b>${n} operai</b>. Quanto vale la <b>produttività totale</b>?`,String(P),[String(per),String(n)],`<p>Produttività totale = produzione complessivamente ottenuta con quella quantità del fattore.</p><p>Qui è ${P}.</p><p>Risposta: ${B(String(P))}.</p>`,'Produttività');
+  if(k===1)return mkEx(`Una fabbrica produce <b>${P} prodotti</b> con <b>${n} operai</b>. Quanto vale la <b>produttività media</b>?`,String(per),[String(P),String(n)],`<p>Produttività media = produzione totale divisa per il numero di operai.</p><p class="m">${F(P,n)} = ${per}</p><p>Risposta: ${B(String(per))}.</p>`,'Produttività');
+  const d=pick([5,10,12,15,20]);
+  return mkEx(`Con <b>${n} operai</b> si producono <b>${P}</b> prodotti. Con <b>un operaio in più</b> si passa a <b>${P+d}</b>. Quanto vale la <b>produttività marginale</b>?`,String(d),[String(P+d),String(per),String(P)],`<p>Produttività marginale = variazione nella produzione totale con un operaio in più.</p><p class="m">${P+d} − ${P} = ${d}</p><p>Risposta: ${B(String(d))}.</p>`,'Produttività');
+};
+const exRendDec=mapGroup('La legge dei rendimenti decrescenti',l=>`<b>${l}</b>`,[
+ ['Aumentando un solo fattore produttivo e lasciando gli altri inalterati si manifesta…','la legge dei rendimenti decrescenti','Rendimenti decrescenti.',['l’economia di scala','il punto di pareggio']],
+ ['La legge dei rendimenti decrescenti stabilisce che…','continuando ad aggiungere una sola risorsa mentre il resto rimane fermo, ogni aggiunta produce sempre meno','Ogni aggiunta produce sempre meno.',['ogni aggiunta produce sempre di più','la produzione non cambia mai']]]);
+/* ---- unità 4: costi e ricavi ---- */
+const exCostiDef=mapGroup('Costi e profitto',l=>`<b>${l}</b>`,[
+ ['I costi di produzione sono…','gli oneri economici del produttore, che servono per produrre i beni e servizi da vendere','Costi di produzione.',['la somma incassata vendendo','il guadagno dell’imprenditore']],
+ ['Il profitto è…','ciò che rimane all’imprenditore dalla differenza tra ricavo e costi di produzione','Profitto = ricavo − costi.',['il salario dell’operaio','lo stipendio del professore']],
+ ['L’operaio riceve…','il salario','Operaio → salario.',['il profitto','lo stipendio']],
+ ['Il professore riceve…','lo stipendio','Professore → stipendio.',['il profitto','il salario']],
+ ['L’analisi costi-benefici è fondamentale perché…','permette una saggia gestione dei costi e fa capire all’imprenditore il suo profitto','Analisi costi-benefici.',['elimina tutti i costi','serve solo a pagare le tasse']]]);
+const exFissiVar=classify('Costi fissi e variabili',
+ ex=>`<b>${cap(ex)}</b> è un costo…`,
+ {'fisso':['l’acquisto dei macchinari','i macchinari della fabbrica'],
+  'variabile':['le bollette di luce e gas','il consumo di luce e gas']},
+ (ex,c)=>c==='fisso'?'Costi fissi: non variano al variare dei prodotti (per esempio macchinari).':'Costi variabili: variano al variare della quantità prodotta (per esempio bollette, luce e gas).',['un ricavo']);
+const exFissiPeriodo=mapGroup('Breve e lungo periodo',l=>`<b>${l}</b>`,[
+ ['La differenza tra costi fissi e variabili è possibile…','solo nel breve periodo','Solo nel breve periodo.',['solo nel lungo periodo','sempre, senza limiti di tempo']],
+ ['Nel lungo periodo possono variare…','le dimensioni dell’impresa e i macchinari','Nel lungo periodo variano anche macchinari e dimensioni.',['solo i prezzi dei prodotti','solo il numero dei clienti']],
+ ['Gli aggravi di costo sono riconducibili…','all’aumento di errori di valutazione commessi dall’imprenditore','Aggravi di costo: errori di valutazione.',['all’aumento dei ricavi','alla diminuzione dei prodotti']]]);
+const exCostoMedio=()=>{
+  const q=pick([50,100,200,250]),c=q*pick([4,6,8,10]);
+  const k=rnd(0,2);
+  if(k===0)return mkEx(`Per produrre <b>${q}</b> unità si sostiene un costo totale di <b>${eur(c)}</b>. Quanto vale il <b>costo medio</b> di un’unità?`,eur(c/q),[eur(c),eur(q)],`<p>Costo medio = costo totale diviso per il numero di unità prodotte.</p><p class="m">${F(eur(c),q)} = ${eur(c/q)}</p><p>Risposta: ${B(eur(c/q))}.</p>`,'Costo medio e marginale');
+  const d=pick([5,8,10,12]);
+  if(k===1)return mkEx(`Producendo <b>${q}</b> unità il costo totale è <b>${eur(c)}</b>; producendone <b>una in più</b> il costo totale diventa <b>${eur(c+d)}</b>. Quanto vale il <b>costo marginale</b>?`,eur(d),[eur(c+d),eur(c/q),eur(c)],`<p>Costo marginale = aumento del costo totale se la produzione aumenta di un’unità.</p><p class="m">${eur(c+d)} − ${eur(c)} = ${eur(d)}</p><p>Risposta: ${B(eur(d))}.</p>`,'Costo medio e marginale');
+  return mkEx(`Il costo totale per produrre <b>${q}</b> unità è <b>${eur(c)}</b>. Quale operazione dà il <b>costo medio</b>?`,`${eur(c)} diviso ${q}`,[`${eur(c)} per ${q}`,`${eur(c)} meno ${q}`],`<p>Costo medio = costo totale diviso unità prodotte.</p><p>Risposta: ${B(`${eur(c)} diviso ${q}`)}.</p>`,'Costo medio e marginale');
+};
+const exRicavo=()=>{
+  const q=pick([40,50,100,200]),r=q*pick([5,8,10,12]);
+  const k=rnd(0,2);
+  if(k===0)return mkEx(`Vendendo <b>${q}</b> unità si realizza un ricavo totale di <b>${eur(r)}</b>. Quanto vale il <b>ricavo medio</b>?`,eur(r/q),[eur(r),eur(q)],`<p>Ricavo medio = ricavo totale diviso per la quantità venduta.</p><p class="m">${F(eur(r),q)} = ${eur(r/q)}</p><p>Risposta: ${B(eur(r/q))}.</p>`,'Ricavi');
+  const d=pick([6,9,10,12]);
+  if(k===1)return mkEx(`Vendendo <b>${q}</b> unità il ricavo totale è <b>${eur(r)}</b>; vendendone <b>una in più</b> è <b>${eur(r+d)}</b>. Quanto vale il <b>ricavo marginale</b>?`,eur(d),[eur(r+d),eur(r/q),eur(r)],`<p>Ricavo marginale = aumento del ricavo totale se si vende un’unità in più.</p><p class="m">${eur(r+d)} − ${eur(r)} = ${eur(d)}</p><p>Risposta: ${B(eur(d))}.</p>`,'Ricavi');
+  return mkEx('Il <b>ricavo totale</b> è…','la somma realizzata con la vendita di beni e servizi prodotti in un determinato arco di tempo',['la somma dei costi di produzione','l’aumento del costo totale'],wy('Ricavo totale = somma realizzata con la vendita in un arco di tempo.','la somma realizzata con la vendita di beni e servizi prodotti in un determinato arco di tempo'),'Ricavi');
+};
+const exProfitto=()=>{
+  const r=pick([800,1000,1500,2000]),c=pick([500,700,1200,1800]);
+  const p=r-c;
+  const res=p>0?`Profitto di ${eur(p)}`:p===0?'Pareggio: profitto zero':`Perdita di ${eur(-p)}`;
+  const w=[`Profitto di ${eur(r+c)}`,p>0?`Perdita di ${eur(p)}`:`Profitto di ${eur(Math.abs(p))}`];
+  return mkEx(`Un’impresa ha un ricavo di <b>${eur(r)}</b> e costi di produzione di <b>${eur(c)}</b>. Che cosa rimane all’imprenditore?`,res,w,`<p>Profitto = ricavo − costi di produzione.</p><p class="m">${eur(r)} − ${eur(c)} = ${eur(p)}</p><p>Risposta: ${B(res)}.</p>`,'Profitto');
+};
+const exScala=mapGroup('Economie di scala',l=>`<b>${l}</b>`,[
+ ['Le economie di scala sono…','la possibilità di produrre beni e servizi a costi inferiori aumentando la quantità di produzione','Economie di scala.',['produrre meno spendendo di più','vendere a prezzi più alti']]]);
+/* ---- unità 5: budget, break-even, successo, esternalità ---- */
+const exBudget=mapGroup('Budget e break-even',l=>`<b>${l}</b>`,[
+ ['Il budget è…','il programma di gestione riferito all’esercizio futuro, nel quale si definiscono gli obiettivi da raggiungere e le strategie necessarie','Budget = programma per l’esercizio futuro.',['il guadagno dell’imprenditore','la somma realizzata con la vendita']],
+ ['Il break-even point (punto di pareggio) è…','il livello di produzione in corrispondenza del quale costi e ricavi si equivalgono','Break-even = costi e ricavi uguali.',['il livello di massimo profitto','il livello in cui i costi sono zero']]]);
+const exPareggio=()=>{
+  const r=pick([1000,1500,2000]),k=rnd(0,2);
+  const c=k===0?r:k===1?r-pick([200,300]):r+pick([200,300]);
+  const res=k===0?'Punto di pareggio':k===1?'Profitto':'Perdita';
+  return mkEx(`Con una certa produzione i ricavi sono <b>${eur(r)}</b> e i costi <b>${eur(c)}</b>. Che situazione è?`,res,['Punto di pareggio','Profitto','Perdita'].filter(x=>x!==res),`<p>${k===0?'Costi e ricavi si equivalgono: è il break-even point.':k===1?'I ricavi superano i costi: c’è un profitto.':'I costi superano i ricavi: c’è una perdita.'}</p><p>Risposta: ${B(res)}.</p>`,'Punto di pareggio');
+};
+const exSuccesso=()=>{
+  const ok=['la qualità del prodotto','il criterio della produttività, di efficienza ed efficacia','le innovazioni tecnologiche','la velocità di risposta (dimostra la flessibilità dell’azienda)'];
+  const c=pick(ok);
+  return mkEx('Quale è un <b>elemento di successo</b> di un’impresa secondo i tuoi appunti?',c,['il numero di insegne','l’età dell’imprenditore'],wy('Elementi di successo: qualità del prodotto, produttività (efficienza ed efficacia), innovazioni tecnologiche, velocità di risposta.',c),'Elementi di successo');
+};
+const exEsternalita=mapGroup('Le esternalità',l=>`<b>${l}</b>`,[
+ ['Le esternalità corrispondono…','all’insieme degli effetti negativi e positivi che un’attività economica procura indirettamente ad altri soggetti','Esternalità: effetti indiretti su altri.',['ai costi sostenuti dall’impresa','ai ricavi dell’impresa']]]);
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const GENS={
+ u1:[exImprenditore,exAttAgr,exAttAgr,exPiccoli,exCommObblighi,exImpFam,exImpFam,exImpAz,exAzComp,exDef('u1')],
+ u2:[exAvv,exDitta,exDitta,exSegno,exTipoMarchio,exCrisi,exDef('u2')],
+ u3:[exFinanz,exSettore,exSettore,exScelte,exScelte,exProdTot,exProdTot,exRendDec,exDef('u3')],
+ u4:[exCostiDef,exFissiVar,exFissiPeriodo,exCostoMedio,exCostoMedio,exRicavo,exRicavo,exProfitto,exScala,exDef('u4')],
+ u5:[exBudget,exPareggio,exPareggio,exSuccesso,exEsternalita,exDef('u5')]
+};
+const UNITS={u1:'1 · L’imprenditore e l’impresa',u2:'2 · Azienda, avviamento, ditta e marchio',u3:'3 · Le scelte dell’impresa',u4:'4 · Costi, ricavi e profitto',u5:'5 · Budget, pareggio ed esternalità'};
+const PROVA_PLAN={u1:4,u2:3,u3:3,u4:3,u5:2};
+
+/* ========== CONTENUTI FISSI (Diritto 3 ES: impresa, azienda, costi) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const M=t=>`<span class="m">${t}</span>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const LI=l=>'<ul>'+l.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+const INP=t=>`<div class="box gia"><h3>In più</h3>${t}</div>`;
+
+const DEFS={
+u1:[
+ ['Imprenditore','Chi esercita professionalmente un’attività economica organizzata per produrre o scambiare beni e servizi (art. 2082).'],
+ ['Attività essenzialmente agricole','Coltivazione del fondo, selvicoltura e allevamento di animali.'],
+ ['Attività agricole per connessione','Attività dell’imprenditore dirette a manipolare, conservare, trasformare e valorizzare i prodotti ottenuti.'],
+ ['Imprenditore commerciale','Imprenditore che svolge attività come produzione di beni o servizi, intermediazione, trasporto, attività bancarie o assicurative.'],
+ ['Piccoli imprenditori','Coltivatori diretti del fondo, artigiani e chi ha un’attività organizzata dalla propria famiglia.'],
+ ['Impresa familiare','Impresa costituita dal titolare imprenditore e disciplinata dall’art. 230 bis del Codice civile.'],
+ ['Impresa','L’attività economica esercitata dall’imprenditore per produrre o scambiare beni e servizi.'],
+ ['Azienda','Il complesso dei beni aziendali avviati dall’imprenditore.']],
+u2:[
+ ['Avviamento','L’attitudine dell’azienda a produrre un reddito.'],
+ ['Divieto di concorrenza','Chi vende un’azienda deve astenersi per cinque anni dall’avviare una nuova impresa idonea a prendere la clientela dell’azienda ceduta.'],
+ ['Ditta','Il nome sotto il quale l’imprenditore esercita la sua impresa.'],
+ ['Insegna','Segno distintivo che contraddistingue i locali in cui si esercita l’attività d’impresa.'],
+ ['Marchio','Segno distintivo dei prodotti, quindi dei beni e servizi che l’impresa offre.'],
+ ['Crisi e insolvenza','Le situazioni di difficoltà dell’impresa, risolte con le norme del Codice della crisi dell’impresa e dell’insolvenza.']],
+u3:[
+ ['Attività produttiva','Trasformazione della materia prima in beni e servizi acquistabili sul mercato e sul sistema commerciale.'],
+ ['Capitale proprio','Finanziamento con i soldi propri dell’imprenditore.'],
+ ['Capitale di credito','Finanziamento chiedendo dei prestiti.'],
+ ['Crowdfunding','Modo per finanziare la propria attività (start up) chiedendo di donare fondi sui social.'],
+ ['Settore primario','L’agricoltura, cioè la prima forma di attività economica.'],
+ ['Settore secondario','Le imprese che operano nel piano industriale.'],
+ ['Settore terziario','Prestazioni di servizio, per esempio trasporti o attività bancarie.'],
+ ['Fattori produttivi','Natura, lavoro, capitale, organizzazione e Stato (per regolare l’attività).'],
+ ['Produttività totale','La produzione complessivamente ottenuta impiegando una data quantità di un fattore.'],
+ ['Produttività media','Produzione totale divisa per la quantità del fattore (per esempio gli operai).'],
+ ['Produttività marginale','La variazione della produzione totale quando si aggiunge una unità del fattore.'],
+ ['Legge dei rendimenti decrescenti','Aggiungendo una sola risorsa mentre il resto rimane fermo, ogni aggiunta produce sempre meno.']],
+u4:[
+ ['Costi di produzione','Oneri economici del produttore, necessari per produrre i beni e servizi da vendere.'],
+ ['Profitto','Ciò che rimane all’imprenditore dalla differenza tra ricavo e costi di produzione.'],
+ ['Costi fissi','Costi che non variano al variare dei prodotti (per esempio i macchinari).'],
+ ['Costi variabili','Costi che variano al variare della quantità prodotta (per esempio luce e gas).'],
+ ['Costo medio','Rapporto tra il costo totale sostenuto per produrre e il numero di unità prodotte.'],
+ ['Costo marginale','Aumento del costo totale se la produzione aumenta di un’unità.'],
+ ['Economie di scala','Possibilità di produrre beni e servizi a costi inferiori aumentando la quantità di produzione.'],
+ ['Ricavo totale','Somma realizzata con la vendita di beni e servizi prodotti in un determinato arco di tempo.'],
+ ['Ricavo medio','Ricavo corrispondente a ogni unità venduta: ricavo totale diviso per la quantità venduta.'],
+ ['Ricavo marginale','Aumento del ricavo totale se si vendono unità in più.']],
+u5:[
+ ['Budget','Programma di gestione riferito all’esercizio futuro, con gli obiettivi da raggiungere e le strategie necessarie.'],
+ ['Break-even point','Punto di pareggio: livello di produzione in cui costi e ricavi si equivalgono.'],
+ ['Elementi di successo','Qualità del prodotto, produttività (efficienza ed efficacia), innovazioni tecnologiche, velocità di risposta.'],
+ ['Esternalità','Insieme degli effetti negativi e positivi che un’attività economica procura indirettamente ad altri soggetti.']]
+};
+
+const CONT={
+u1:{
+ cose:`<div class="box bia"><p>L’<b>imprenditore</b> è colui che esercita <b>professionalmente</b> un’attività economica <b>organizzata</b> per produrre o scambiare beni e servizi. L’<b>impresa</b> è l’attività; l’<b>azienda</b> è il complesso dei beni usati dall’imprenditore.</p></div>`,
+ ricette:[
+  card('blu','1 · Chi è l’imprenditore (art. 2082)',stepsHtml([
+   'Esercita <b>professionalmente</b> un’attività economica.',
+   'L’attività è <b>organizzata</b> per <b>produrre o scambiare</b> beni e servizi.',
+   'Per qualificare un soggetto come imprenditore servono: l’<b>esercizio di un’attività economica</b>, la <b>professionalità</b> con cui è svolta, la <b>produzione e lo scambio</b> di beni o servizi, l’<b>organizzazione</b> dell’attività (saper gestire per esempio i dipendenti).'])),
+  card('ver','2 · Tipi di imprenditori',
+   TAB(['Tipo','Che cosa fa'],[['<b>Attività essenzialmente agricole</b>','coltivazione del fondo · selvicoltura · allevamento di animali'],['<b>Attività agricole per connessione</b>','manipolazione, conservazione, trasformazione e valorizzazione dei prodotti ottenuti'],['<b>Imprenditore commerciale</b>','produzione di beni o servizi · intermediazione · trasporto · attività bancarie o assicurative'],['<b>Piccoli imprenditori</b>','coltivatori diretti del fondo, artigiani, chi ha un’attività organizzata dalla propria famiglia']])+'<p><b>Obblighi nelle imprese commerciali</b>:</p>'+LI(['iscrizione nel pubblico registro','tenuta delle scritture contabili','soggezione a liquidazione giudiziale'])+INP('<p>L’art. 2083 comprende tra i piccoli imprenditori anche i piccoli commercianti.</p>')),
+  card('gia','3 · L’impresa familiare (art. 230 bis)',stepsHtml([
+   'È costituita dal <b>titolare imprenditore</b> ed è disciplinata dall’<b>art. 230 bis</b> del Codice civile.',
+   'Riconosce ai familiari: il <b>diritto di mantenimento</b>, la <b>partecipazione agli utili</b>, una <b>quota dei beni acquistati con gli utili</b> e sugli <b>incrementi</b>.',
+   'Decisioni su <b>impiego degli utili</b>, <b>gestione straordinaria</b> e <b>cessazione</b> dell’impresa: <b>principio di maggioranza</b>.',
+   '<b>Gestione ordinaria</b> e <b>potere direttivo sui dipendenti</b>: appartengono al <b>titolare</b>, unico a rispondere in caso di <b>insolvenza</b> (i familiari non rischiano il proprio patrimonio).'])),
+  card('ros','4 · Impresa e azienda',
+   TAB(['','Che cos’è'],[['<b>Impresa</b>','attività economica esercitata dall’imprenditore per produrre o scambiare beni e servizi'],['<b>Azienda</b>','complesso dei beni aziendali avviati dall’imprenditore']])+'<p>L’azienda comprende:</p>'+TAB(['Che cosa','Esempi'],[['beni materiali','materie prime, macchinari, immobili'],['beni immateriali','brevetti o marchi'],['contratti','di lavoro o di affitto di immobili'],['debiti o crediti verso terzi','clienti, dipendenti, banche']])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Chi è l’imprenditore?»</b> Chi esercita professionalmente un’attività economica organizzata per produrre o scambiare beni e servizi (art. 2082).</p>
+ <p><b>«Che differenza c’è tra impresa e azienda?»</b> L’impresa è l’attività; l’azienda è il complesso dei beni che l’imprenditore usa: beni materiali e immateriali, contratti, debiti e crediti.</p>
+ <p><b>«Chi risponde nell’impresa familiare?»</b> Solo il titolare, perché i familiari non rischiano il proprio patrimonio.</p></div>`,
+ errori:['Confondere <b>impresa</b> (l’attività) e <b>azienda</b> (i beni).','Dire che nell’impresa familiare risponde <b>ogni familiare</b>: risponde solo il <b>titolare</b>.','Dire che le decisioni sul <b>potere direttivo sui dipendenti</b> si prendono a maggioranza: appartiene al <b>titolare</b>.','Dimenticare uno dei requisiti dell’imprenditore: attività economica, professionalità, produzione o scambio, organizzazione.','Mettere i brevetti tra i beni <b>materiali</b>: sono <b>immateriali</b>.'],
+ orale:[
+  ['Chi è l’imprenditore?','È colui che esercita professionalmente la propria attività economica organizzata per produrre o scambiare beni e servizi (art. 2082 del Codice civile). Servono: esercizio di un’attività economica, professionalità, produzione o scambio di beni o servizi, organizzazione.'],
+  ['Quali sono i tipi di imprenditore?','Attività essenzialmente agricole (coltivazione del fondo, selvicoltura, allevamento), agricole per connessione (manipolazione, conservazione, trasformazione e valorizzazione dei prodotti), imprenditore commerciale, piccoli imprenditori (coltivatori diretti, artigiani, attività organizzate dalla famiglia).'],
+  ['Che cos’è l’impresa familiare?','È costituita dal titolare imprenditore ed è disciplinata dall’art. 230 bis. Riconosce ai familiari mantenimento, partecipazione agli utili, una quota dei beni acquistati con gli utili e degli incrementi. Le decisioni più importanti si prendono a maggioranza; gestione ordinaria e potere direttivo spettano al titolare, unico a rispondere in caso di insolvenza.'],
+  ['Che differenza c’è tra impresa e azienda?','L’impresa è l’attività economica esercitata dall’imprenditore; l’azienda è il complesso dei beni aziendali: beni materiali, immateriali, contratti, debiti e crediti verso terzi.'],
+ ],
+ quiz:[
+  ['L’imprenditore esercita…','professionalmente un’attività economica organizzata',['occasionalmente un hobby','un lavoro alle dipendenze','solo attività agricole'],'Art. 2082.'],
+  ['La selvicoltura è un’attività…','essenzialmente agricola',['commerciale','bancaria','di trasporto'],'Coltivazione, selvicoltura, allevamento.'],
+  ['La trasformazione dei prodotti ottenuti è un’attività agricola…','per connessione',['essenziale','bancaria','familiare'],'Per connessione.'],
+  ['Un obbligo delle imprese commerciali è…','la tenuta delle scritture contabili',['non iscriversi a nessun registro','assumere solo familiari','non pagare i debiti'],'Scritture contabili.'],
+  ['Sono piccoli imprenditori…','i coltivatori diretti del fondo e gli artigiani',['le banche','le compagnie assicurative','le grandi fabbriche'],'Piccoli imprenditori.'],
+  ['L’impresa familiare è disciplinata dall’art…','230 bis',['2082','2557','2563'],'230 bis.'],
+  ['Nell’impresa familiare in caso di insolvenza risponde…','il titolare',['tutti i familiari','nessuno','lo Stato'],'Il titolare.'],
+  ['I brevetti sono beni…','immateriali dell’azienda',['materiali dell’azienda','debiti verso terzi','contratti di lavoro'],'Immateriali.'],
+ ]
+},
+u2:{
+ cose:`<div class="box bia"><p>Fanno parte dell’azienda l’<b>avviamento</b> (la capacità di produrre reddito) e i <b>segni distintivi</b>: <b>ditta</b> (nome dell’impresa), <b>insegna</b> (i locali) e <b>marchio</b> (i prodotti). Se l’impresa va male si parla di <b>crisi e insolvenza</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · L’avviamento e il divieto di concorrenza',stepsHtml([
+   'L’<b>avviamento</b> consiste nell’<b>attitudine dell’azienda a produrre un reddito</b>.',
+   'La legge lo tutela con il <b>divieto di concorrenza</b>.',
+   'Chi vende un’azienda deve astenersi per <b>cinque anni</b> dall’avviare una nuova impresa idonea a prendere la clientela dell’azienda ceduta.'])),
+  card('ver','2 · Ditta, insegna e marchio',
+   TAB(['Segno','Che cos’è'],[['<b>Ditta</b>','il <b>nome</b> sotto il quale l’imprenditore esercita la sua impresa; permette di riconoscere i titolari dell’impresa'],['<b>Insegna</b>','segno distintivo dei <b>locali</b> in cui si esercita l’attività d’impresa'],['<b>Marchio</b>','segno distintivo dei <b>prodotti</b>, quindi dei beni e servizi che l’impresa offre']])),
+  card('gia','3 · La ditta',stepsHtml([
+   'Può essere <b>derivata</b> o originaria (derivata = ricevuta da un altro imprenditore).',
+   'Deve essere <b>vera, lecita, nuova e originale</b>.',
+   'Il diritto all’uso esclusivo della ditta si ottiene con l’<b>iscrizione al registro delle imprese</b>.'])+INP('<p>Per la legge la ditta originaria deve contenere almeno il cognome o la sigla dell’imprenditore (principio di verità). Per il principio di novità, chi per primo adotta una ditta acquista il diritto all’uso esclusivo.</p>')),
+  card('ros','4 · Le tipologie di marchio',
+   LI(['marchio di fabbrica · marchio di commercio · marchio di servizio','marchio individuale · marchio collettivo','marchio forte · marchio debole · marchio di rinomanza','marchio sonoro · marchio di forma · marchio tridimensionale'])),
+  card('blu','5 · Crisi e insolvenza',stepsHtml([
+   'Le situazioni di <b>difficoltà dell’impresa</b> corrispondono a <b>crisi e insolvenza</b>.',
+   'La soluzione richiede <b>ampia collaborazione delle parti</b>, che devono comportarsi con <b>buona fede e correttezza</b>.',
+   'Si usano le norme del <b>Codice della crisi dell’impresa e dell’insolvenza</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’avviamento?»</b> L’attitudine dell’azienda a produrre un reddito; la legge lo tutela con il divieto di concorrenza di cinque anni.</p>
+ <p><b>«Che differenza c’è tra ditta, insegna e marchio?»</b> La ditta è il nome dell’impresa, l’insegna distingue i locali, il marchio distingue i prodotti.</p></div>`,
+ errori:['Confondere <b>insegna</b> (locali) e <b>marchio</b> (prodotti).','Dire che il divieto di concorrenza dura <b>un anno</b> o dieci: dura <b>cinque anni</b>.','Dimenticare che il divieto vale per chi <b>vende</b> l’azienda.','Confondere <b>ditta</b> (nome dell’impresa) e <b>marchio</b> (segno dei prodotti).','Dimenticare che la soluzione della crisi richiede <b>buona fede e correttezza</b>.'],
+ orale:[
+  ['Che cos’è l’avviamento e come lo tutela la legge?','L’avviamento è l’attitudine dell’azienda a produrre un reddito. La legge lo tutela con il divieto di concorrenza: chi vende un’azienda deve astenersi per cinque anni dall’avviare una nuova impresa idonea a prendere la clientela dell’azienda ceduta.'],
+  ['Che cosa sono ditta, insegna e marchio?','La ditta è il nome sotto il quale l’imprenditore esercita l’impresa e permette di riconoscerne i titolari. L’insegna è il segno distintivo dei locali. Il marchio è il segno distintivo dei prodotti, cioè dei beni e servizi che l’impresa offre.'],
+  ['Quali tipi di marchio conosci?','Marchio di fabbrica, di commercio, di servizio, individuale, collettivo, forte, debole, di rinomanza, sonoro, di forma e tridimensionale.'],
+  ['Che cosa sono crisi e insolvenza?','Sono le situazioni di difficoltà dell’impresa. La soluzione richiede ampia collaborazione delle parti, con buona fede e correttezza, e si usano le norme del Codice della crisi dell’impresa e dell’insolvenza.'],
+ ],
+ quiz:[
+  ['L’avviamento è…','l’attitudine dell’azienda a produrre reddito',['il nome dell’impresa','un tipo di marchio','il capitale proprio'],'Avviamento.'],
+  ['Il divieto di concorrenza dura…','cinque anni',['un anno','tre mesi','dieci anni'],'Cinque anni.'],
+  ['La ditta è…','il nome sotto il quale si esercita l’impresa',['il segno dei prodotti','il segno dei locali','un tipo di contratto'],'Ditta = nome.'],
+  ['L’insegna contraddistingue…','i locali',['i prodotti','i dipendenti','i clienti'],'Locali.'],
+  ['Il marchio contraddistingue…','i prodotti',['i locali','l’imprenditore','il budget'],'Prodotti.'],
+  ['Quale è un tipo di marchio?','il marchio collettivo',['il marchio provvisorio','il marchio statale','il marchio dei familiari'],'Collettivo.'],
+  ['Crisi e insolvenza si risolvono con le norme del…','Codice della crisi dell’impresa e dell’insolvenza',['Codice della strada','Codice del consumo','Codice penale militare'],'Codice della crisi.'],
+ ]
+},
+u3:{
+ cose:`<div class="box bia"><p>Un’impresa deve scegliere <b>come produrre</b>: servono <b>finanziamenti</b>, si lavora in un <b>settore produttivo</b> e si combinano i <b>fattori produttivi</b>. La <b>produttività</b> misura quanto si produce con ciascun fattore.</p></div>`,
+ ricette:[
+  card('blu','1 · Attività produttiva e finanziamenti',stepsHtml([
+   'L’<b>attività produttiva</b> è la trasformazione della <b>materia prima</b> in beni e servizi acquistabili sul mercato e sul sistema commerciale.',
+   'Per iniziarla servono dei <b>finanziamenti</b>, cioè <b>risorse monetarie</b>.',
+   'Due tipi: <b>capitale proprio</b> (soldi propri) e <b>capitale di credito</b> (chiedere dei prestiti).',
+   'Per i giovani esiste la <b>start up</b>, che si finanzia con il <b>crowdfunding</b>: chiedere di donare fondi sui social.'])),
+  card('ver','2 · I settori produttivi',
+   TAB(['Settore','Che cosa comprende'],[['<b>Primario</b>','agricoltura: la prima forma di attività economica'],['<b>Secondario</b>','imprese che operano nel piano industriale'],['<b>Terziario</b>','prestazioni di servizio, per esempio trasporti o attività bancarie']])),
+  card('gia','3 · I fattori produttivi',
+   '<p>Sono i beni e servizi utilizzati e realizzati dagli imprenditori:</p>'+LI(['la <b>natura</b>','il <b>lavoro</b>','il <b>capitale</b>','l’<b>organizzazione</b>','lo <b>Stato</b>, per regolare l’attività'])),
+  card('ros','4 · La produttività',
+   TAB(['Tipo','Che cos’è','Esempio (100 operai, 1000 prodotti)'],[['<b>Totale</b>','produzione complessivamente ottenuta con una data quantità di quel fattore','1000'],['<b>Media</b>','produzione totale divisa per il numero di operai',M(F('1000','100')+' = 10')],['<b>Marginale</b>','variazione nella produzione totale con un operaio in più','da 1000 a 1015: 15']])),
+  card('blu','5 · La legge dei rendimenti decrescenti',stepsHtml([
+   'Che cosa succede alla produzione quando si aumenta <b>un solo fattore</b> lasciando gli altri inalterati?',
+   'Si manifesta la <b>legge dei rendimenti decrescenti</b>.',
+   'Continuando ad aggiungere una sola risorsa mentre il resto rimane fermo, <b>ogni aggiunta produce sempre meno</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p><b>Una fabbrica produce 1000 prodotti con 100 operai.</b> Produttività totale = <b>1000</b>. Produttività media = ${F('1000','100')} = <b>10</b>.</p>
+ <p><b>Arriva un nuovo operaio e si passa da 1000 a 1015 prodotti.</b> Produttività marginale = 1015 − 1000 = <b>15</b>.</p>
+ <p><b>Un imprenditore usa i suoi risparmi.</b> È capitale proprio. Se chiede un prestito alla banca è capitale di credito.</p></div>`,
+ errori:['Confondere <b>capitale proprio</b> (soldi propri) e <b>capitale di credito</b> (prestiti).','Dimenticare di <b>dividere</b> per il numero di operai nella produttività media.','Confondere produttività <b>media</b> (divisione) e <b>marginale</b> (differenza).','Mettere i trasporti nel settore <b>secondario</b>: sono <b>terziario</b>.','Dire che con i rendimenti decrescenti ogni aggiunta produce <b>di più</b>: produce <b>sempre meno</b>.'],
+ orale:[
+  ['Come si finanzia un’impresa?','Servono finanziamenti, cioè risorse monetarie. Due tipi: capitale proprio (soldi propri) e capitale di credito (prestiti). I giovani possono usare la start up con il crowdfunding, chiedendo di donare fondi sui social.'],
+  ['Quali sono i settori produttivi?','Primario (agricoltura, la prima forma di attività economica), secondario (imprese che operano nel piano industriale), terziario (prestazioni di servizio, come trasporti e attività bancarie).'],
+  ['Che cosa sono i fattori produttivi?','Sono la natura, il lavoro, il capitale, l’organizzazione e lo Stato, che regola l’attività.'],
+  ['Spiega produttività totale, media e marginale.','La totale è la produzione complessiva ottenuta con una quantità di fattore. La media è la produzione totale divisa per la quantità del fattore. La marginale è la variazione della produzione totale quando si aggiunge un’unità del fattore.'],
+  ['Che cos’è la legge dei rendimenti decrescenti?','Se si aumenta un solo fattore produttivo lasciando fermi gli altri, ogni aggiunta produce sempre meno.'],
+ ],
+ quiz:[
+  ['Il capitale proprio è…','il denaro dell’imprenditore',['un prestito','una donazione sui social','un contratto'],'Soldi propri.'],
+  ['Il capitale di credito si ottiene…','chiedendo dei prestiti',['con i risparmi','con il crowdfunding','vendendo il marchio'],'Prestiti.'],
+  ['Il crowdfunding è…','chiedere di donare fondi sui social',['un tipo di marchio','un obbligo di legge','un costo fisso'],'Donazioni.'],
+  ['I trasporti appartengono al settore…','terziario',['primario','secondario','non esistono'],'Terziario.'],
+  ['L’agricoltura è il settore…','primario',['secondario','terziario','finanziario'],'Primario.'],
+  ['Produzione 1000 con 100 operai: produttività media…','10',['100','1000','1100'],'1000 diviso 100.'],
+  ['Da 1000 a 1015 con un operaio in più: produttività marginale…','15',['1015','10','1000'],'1015 − 1000.'],
+  ['La legge dei rendimenti decrescenti dice che ogni aggiunta di una sola risorsa produce…','sempre meno',['sempre di più','lo stesso','nulla subito'],'Sempre meno.'],
+ ]
+},
+u4:{
+ cose:`<div class="box bia"><p>I <b>costi di produzione</b> sono gli oneri economici per produrre; i <b>ricavi</b> sono ciò che si incassa vendendo. Il <b>profitto</b> è ciò che rimane all’imprenditore dopo i costi. Si distinguono costi <b>fissi</b> e <b>variabili</b>, valori <b>medi</b> e <b>marginali</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Costi di produzione e profitto',stepsHtml([
+   'I <b>costi di produzione</b> sono oneri economici del produttore, necessari per produrre i beni e servizi da vendere.',
+   'L’<b>analisi costi-benefici</b> è fondamentale: è saggia gestione dei costi e fa capire all’imprenditore il suo profitto.',
+   '<b>Profitto</b> = ciò che rimane all’imprenditore dalla differenza tra costi di produzione e ricavo. '+M('profitto = ricavo − costi'),
+   'Invece un operaio ha il <b>salario</b> e un professore lo <b>stipendio</b>.'])),
+  card('ver','2 · Costi fissi e variabili',
+   TAB(['Costi','Come cambiano','Esempio'],[['<b>fissi</b>','non variano al variare dei prodotti','macchinari'],['<b>variabili</b>','variano al variare della quantità prodotta','bollette, luce e gas']])+'<p>La differenza è possibile <b>solo nel breve periodo</b>: nel <b>lungo periodo</b> possono variare le dimensioni dell’impresa e i macchinari.</p><p>Esiste un limite oltre il quale le imprese non riescono più a spendere nel modo migliore, per gli <b>aggravi di costo</b>, riconducibili all’<b>aumento di errori di valutazione</b> dell’imprenditore.</p>'),
+  card('gia','3 · Costo medio e costo marginale',
+   TAB(['','Che cos’è','Formula'],[['<b>Costo medio</b>','rapporto tra costo totale e unità prodotte',M(F('costo totale','unità prodotte'))],['<b>Costo marginale</b>','aumento del costo totale se la produzione aumenta di un’unità',M('costo totale nuovo − costo totale vecchio')]])+'<p><b>Economie di scala</b>: possibilità di produrre beni e servizi a costi inferiori aumentando la quantità di produzione.</p>'),
+  card('ros','4 · Ricavo totale, medio e marginale',
+   TAB(['','Che cos’è','Formula'],[['<b>Ricavo totale</b>','somma realizzata con la vendita di beni e servizi in un arco di tempo',''],['<b>Ricavo medio</b>','ricavo per ogni unità venduta',M(F('ricavo totale','quantità venduta'))],['<b>Ricavo marginale</b>','aumento del ricavo totale se si vende una unità in più',M('ricavo nuovo − ricavo vecchio')]])),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi svolti</h3>
+ <p><b>Costo totale 2.000 € per 100 unità.</b> Costo medio = ${F('2.000 €','100')} = <b>20 €</b>.</p>
+ <p><b>Il costo totale passa da 2.000 € a 2.015 € con un’unità in più.</b> Costo marginale = 2.015 − 2.000 = <b>15 €</b>.</p>
+ <p><b>Ricavo 1.500 €, costi 1.000 €.</b> Profitto = 1.500 − 1.000 = <b>500 €</b>.</p></div>`,
+ errori:['Confondere <b>costo medio</b> (divisione) e <b>costo marginale</b> (differenza).','Scrivere profitto = costi − ricavo: è <b>ricavo − costi</b>.','Dire che costi fissi e variabili sono distinti anche nel lungo periodo: solo nel <b>breve periodo</b>.','Confondere <b>salario</b> (operaio) e <b>stipendio</b> (professore).','Mettere luce e gas tra i costi <b>fissi</b>: sono <b>variabili</b>.'],
+ orale:[
+  ['Che cosa sono i costi di produzione e il profitto?','I costi di produzione sono gli oneri economici del produttore per produrre i beni e servizi da vendere. Il profitto è ciò che rimane all’imprenditore dalla differenza tra ricavo e costi di produzione. L’operaio riceve il salario, il professore lo stipendio.'],
+  ['Che differenza c’è tra costi fissi e variabili?','I costi fissi non variano al variare dei prodotti (per esempio i macchinari); i variabili variano con la quantità prodotta (bollette, luce e gas). La differenza vale solo nel breve periodo, perché nel lungo periodo possono variare dimensioni dell’impresa e macchinari.'],
+  ['Che cosa sono costo medio e costo marginale?','Il costo medio è il rapporto tra costo totale e unità prodotte. Il costo marginale è l’aumento del costo totale se la produzione aumenta di un’unità.'],
+  ['Che cosa sono le economie di scala?','La possibilità di produrre beni e servizi a costi inferiori aumentando la quantità di produzione.'],
+  ['Spiega ricavo totale, medio e marginale.','Il totale è la somma realizzata con la vendita in un arco di tempo. Il medio è il ricavo per ogni unità venduta (totale diviso quantità). Il marginale è l’aumento del ricavo totale se si vende un’unità in più.'],
+ ],
+ quiz:[
+  ['Il profitto è…','ricavo meno costi di produzione',['costi meno ricavo','la somma dei costi','il salario dell’operaio'],'Ricavo − costi.'],
+  ['Un operaio riceve…','il salario',['lo stipendio','il profitto','il ricavo'],'Salario.'],
+  ['Un costo fisso è per esempio…','i macchinari',['luce e gas','le bollette','il consumo di energia'],'Macchinari.'],
+  ['Un costo variabile è per esempio…','le bollette di luce e gas',['i macchinari','il capannone','le insegne'],'Luce e gas.'],
+  ['La differenza fissi/variabili vale…','solo nel breve periodo',['sempre','solo nel lungo periodo','mai'],'Breve periodo.'],
+  ['Il costo medio è…','costo totale diviso unità prodotte',['aumento del costo totale','ricavo diviso costi','costo per unità venduta'],'Costo medio.'],
+  ['Il costo marginale è…','l’aumento del costo totale con un’unità in più',['costo totale diviso unità','la somma dei costi fissi','il profitto'],'Costo marginale.'],
+  ['Le economie di scala permettono…','di produrre a costi inferiori aumentando la produzione',['di produrre meno','di vendere a prezzi doppi','di non pagare i dipendenti'],'Economie di scala.'],
+  ['Il ricavo medio si ottiene…','dividendo il ricavo totale per la quantità venduta',['sottraendo i costi','moltiplicando per i costi','sommando i costi fissi'],'Ricavo medio.'],
+ ]
+},
+u5:{
+ cose:`<div class="box bia"><p>L’impresa pianifica con il <b>budget</b>, controlla il <b>punto di pareggio</b> (break-even), punta su alcuni <b>elementi di successo</b> e produce <b>esternalità</b>, cioè effetti su altri soggetti.</p></div>`,
+ ricette:[
+  card('blu','1 · Il budget',
+   '<p>È il <b>programma di gestione riferito all’esercizio futuro</b>, nel quale vengono definiti gli <b>obiettivi</b> che si vogliono raggiungere e le <b>strategie</b> ritenute necessarie.</p>'),
+  card('ver','2 · Il break-even point (punto di pareggio)',
+   '<p>È il <b>livello di produzione</b> in corrispondenza del quale <b>costi e ricavi si equivalgono</b>.</p>'+TAB(['Situazione','Che cosa significa'],[['ricavi > costi','profitto'],['ricavi = costi','punto di pareggio'],['ricavi < costi','perdita']])),
+  card('gia','3 · Gli elementi di successo di un’impresa',
+   LI(['la <b>qualità del prodotto</b>','il criterio della <b>produttività</b>, di <b>efficienza</b> ed <b>efficacia</b>','le <b>innovazioni tecnologiche</b>','la <b>velocità di risposta</b> (dimostra la flessibilità dell’azienda)'])),
+  card('ros','4 · Le esternalità',
+   '<p>Corrispondono all’<b>insieme degli effetti negativi e positivi</b> che un’attività economica procura <b>indirettamente ad altri soggetti</b>.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è il budget?»</b> Il programma di gestione per l’esercizio futuro, con gli obiettivi da raggiungere e le strategie necessarie.</p>
+ <p><b>«Che cos’è il break-even point?»</b> Il livello di produzione in cui costi e ricavi si equivalgono (punto di pareggio).</p>
+ <p><b>«Che cosa sono le esternalità?»</b> Gli effetti positivi e negativi che un’attività economica ha indirettamente su altri.</p></div>`,
+ errori:['Dire che il break-even è il livello di <b>massimo profitto</b>: è dove costi e ricavi sono <b>uguali</b>.','Dire che il budget riguarda il <b>passato</b>: è riferito all’<b>esercizio futuro</b>.','Pensare che le esternalità siano solo <b>negative</b>: sono negative <b>e positive</b>.','Dimenticare la <b>velocità di risposta</b> tra gli elementi di successo.'],
+ orale:[
+  ['Che cos’è il budget?','È il programma di gestione riferito all’esercizio futuro, nel quale vengono definiti gli obiettivi che si vogliono raggiungere e le strategie ritenute necessarie.'],
+  ['Che cos’è il break-even point?','È il punto di pareggio: il livello di produzione in corrispondenza del quale costi e ricavi si equivalgono.'],
+  ['Quali sono gli elementi di successo di un’impresa?','La qualità del prodotto, il criterio della produttività di efficienza ed efficacia, le innovazioni tecnologiche e la velocità di risposta, che dimostra la flessibilità dell’azienda.'],
+  ['Che cosa sono le esternalità?','Sono l’insieme degli effetti negativi e positivi che un’attività economica procura indirettamente ad altri soggetti.'],
+ ],
+ quiz:[
+  ['Il budget è riferito…','all’esercizio futuro',['al passato','al solo anno scorso','alla ditta'],'Futuro.'],
+  ['Nel break-even point costi e ricavi…','si equivalgono',['sono zero','sono doppi','non esistono'],'Pareggio.'],
+  ['Se i ricavi superano i costi c’è…','un profitto',['una perdita','il pareggio','un’esternalità'],'Profitto.'],
+  ['La velocità di risposta dimostra…','la flessibilità dell’azienda',['la qualità del prodotto','il budget','l’avviamento'],'Flessibilità.'],
+  ['Le esternalità sono effetti…','positivi e negativi su altri soggetti',['solo negativi','solo positivi','solo sui costi'],'Positivi e negativi.'],
+ ]
+}
+};
+const GLOSS=Object.values(DEFS).flat();
+const FORMULARIO=`
+<div class="box blu"><h3>Imprenditore e azienda</h3><p>Imprenditore (art. 2082): attività <b>economica, professionale, organizzata</b>, per produrre o scambiare beni e servizi.</p><p>Impresa familiare (art. 230 bis): decisioni a <b>maggioranza</b>; risponde il <b>titolare</b>.</p><p>Impresa = attività · Azienda = complesso dei beni (materiali, immateriali, contratti, debiti e crediti).</p></div>
+<div class="box ver"><h3>Avviamento e segni distintivi</h3><p><b>Avviamento</b>: attitudine a produrre reddito · divieto di concorrenza <b>5 anni</b>.</p><p><b>Ditta</b> = nome · <b>insegna</b> = locali · <b>marchio</b> = prodotti.</p></div>
+<div class="box gia"><h3>Le scelte dell’impresa</h3><p>Finanziamenti: <b>capitale proprio</b> / <b>di credito</b> (crowdfunding per le start up). Settori: <b>primario</b> (agricoltura), <b>secondario</b> (industria), <b>terziario</b> (servizi). Fattori: natura, lavoro, capitale, organizzazione, Stato.</p><p class="m">Produttività media = ${F('produzione totale','n. operai')} · marginale = variazione della produzione</p><p>Rendimenti decrescenti: ogni aggiunta di una risorsa produce sempre meno.</p></div>
+<div class="box ros"><h3>Costi, ricavi, profitto</h3><p class="m">profitto = ricavo − costi</p><p class="m">costo medio = ${F('costo totale','unità prodotte')} · ricavo medio = ${F('ricavo totale','quantità venduta')}</p><p>Marginale = aumento del totale con un’unità in più. Costi fissi (macchinari) / variabili (luce e gas): solo nel breve periodo.</p></div>
+<div class="box blu"><h3>Budget, pareggio, esternalità</h3><p>Budget: programma per l’esercizio futuro. Break-even: costi = ricavi. Successo: qualità, produttività, innovazione, velocità di risposta. Esternalità: effetti positivi e negativi su altri.</p></div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('dir3_impresa_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('dir3_impresa_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+
+</script>
+<!--AGG--><script>
+(function(){
+ var B="20261007114623",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
