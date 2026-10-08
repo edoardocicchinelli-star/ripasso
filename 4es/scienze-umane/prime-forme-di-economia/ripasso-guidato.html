@@ -613,7 +613,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 
 </script>
-<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Raccolta, caccia e pesca sono le prime strategie.", "Si prende dalla natura, non si produce.", "La più antica è la raccolta.", "La caccia è arrivata circa 300 000 anni fa."], "u2": ["Circa 10 000 anni fa nasce l’agricoltura: è la Rivoluzione neolitica.", "Si passa dal prendere al produrre.", "Dopo nascono le città e le differenze tra gruppi sociali.", "Oggi esiste anche l’agricoltura biologica."], "u3": ["L’allevamento nasce dalla domesticazione degli animali.", "Le società di pastori sono nomadi o seminomadi.", "Non hanno un capo centrale: sono acefale.", "Oggi l’allevamento può essere intensivo (stalle) o estensivo (grandi spazi)."], "u4": ["L’industria produce merci in grande quantità.", "Nasce con la Rivoluzione industriale.", "Lati positivi: crescita e sviluppo.", "Lati negativi: disuguaglianze e rischi per l’ambiente."]}, "es": false};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Raccolta, caccia e pesca sono le prime strategie.", "Si prende dalla natura, non si produce.", "La più antica è la raccolta.", "La caccia è arrivata circa 300 000 anni fa."], "u2": ["Circa 10 000 anni fa nasce l’agricoltura: è la Rivoluzione neolitica.", "Si passa dal prendere al produrre.", "Dopo nascono le città e le differenze tra gruppi sociali.", "Oggi esiste anche l’agricoltura biologica."], "u3": ["L’allevamento nasce dalla domesticazione degli animali.", "Le società di pastori sono nomadi o seminomadi.", "Non hanno un capo centrale: sono acefale.", "Oggi l’allevamento può essere intensivo (stalle) o estensivo (grandi spazi)."], "u4": ["L’industria produce merci in grande quantità.", "Nasce con la Rivoluzione industriale.", "Lati positivi: crescita e sviluppo.", "Lati negativi: disuguaglianze e rischi per l’ambiente."]}, "es": false, "pics": [{"k": "caccia", "re": "caccia|cacciatore|cacciatori|cacciare", "id": 3010}, {"k": "raccolta", "re": "raccolta|raccogliere|raccoglitori", "id": 32663}, {"k": "pesca", "re": "pesca|pescare", "id": 4718}, {"k": "pesce", "re": "pesce", "id": 2520}, {"k": "agricoltura", "re": "agricoltura|agricola|agricole|agricolo", "id": 38079}, {"k": "campo", "re": "campo|campi|coltivazione", "id": 2683}, {"k": "grano", "re": "grano", "id": 7285}, {"k": "allevamento", "re": "allevamento|allevatori|allevare", "id": 38056}, {"k": "mucca", "re": "mucca|mucche", "id": 2609}, {"k": "pecora", "re": "pecora|pecore", "id": 2489}, {"k": "maiale", "re": "maiale|maiali", "id": 24972}, {"k": "fabbrica", "re": "fabbrica|fabbriche|industria|industriale|industriali", "id": 24507}, {"k": "citta", "re": "città", "id": 2704}, {"k": "donna", "re": "donna|donne", "id": 24621}, {"k": "uomo", "re": "uomo|uomini", "id": 4665}, {"k": "frutta", "re": "frutta|frutti", "id": 28339}, {"k": "computer", "re": "computer", "id": 7190}, {"k": "cavallo", "re": "cavallo|cavalli", "id": 2294}, {"k": "albero", "re": "albero|alberi", "id": 3057}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
 (function(){
   var CFG=window.A11Y_CFG||{simple:{},es:false};
   var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
@@ -799,6 +799,51 @@ if(location.hash==='#stampa')document.body.classList.add('print');
     ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
   }).observe(document.body,{childList:true,subtree:true});
 
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
   /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
   if(location.hash==='#stampa')return;
   var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
@@ -914,7 +959,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 </script><!--/A11Y--><!--AGG--><script>
 (function(){
- var B="20261008124309",t0=Date.now(),touched=false,last=0;
+ var B="20261008125320",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;

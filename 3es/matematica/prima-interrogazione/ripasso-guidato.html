@@ -1476,7 +1476,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 
 
 </script>
-<!--A11Y--><script>window.A11Y_CFG={"simple": {"u0": ["Prima ripassiamo 6 regole piccole.", "Servono in ogni esercizio.", "Quasi tutti gli errori nascono da qui.", "Se queste sono chiare, il resto diventa più facile."], "u1": ["Un’equazione ha un numero nascosto: la x.", "Lineare vuol dire x senza il quadrato.", "Intera vuol dire senza x sotto la linea di frazione.", "Esempio: x + 5 = 8, quindi x = 3."], "u2": ["Fratta vuol dire che la x sta sotto la linea di frazione.", "Non si può mai dividere per zero.", "Per questo scrivo prima le condizioni di esistenza (C.E.).", "Le C.E. dicono quali numeri la x non può essere."], "u3": ["Una disequazione ha > o < al posto dell’uguale.", "La risposta è tanti numeri, non uno solo.", "Se la x è sotto la linea di frazione, scrivo prima le C.E.", "Poi uso il grafico dei segni."]}, "es": false};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u0": ["Prima ripassiamo 6 regole piccole.", "Servono in ogni esercizio.", "Quasi tutti gli errori nascono da qui.", "Se queste sono chiare, il resto diventa più facile."], "u1": ["Un’equazione ha un numero nascosto: la x.", "Lineare vuol dire x senza il quadrato.", "Intera vuol dire senza x sotto la linea di frazione.", "Esempio: x + 5 = 8, quindi x = 3."], "u2": ["Fratta vuol dire che la x sta sotto la linea di frazione.", "Non si può mai dividere per zero.", "Per questo scrivo prima le condizioni di esistenza (C.E.).", "Le C.E. dicono quali numeri la x non può essere."], "u3": ["Una disequazione ha > o < al posto dell’uguale.", "La risposta è tanti numeri, non uno solo.", "Se la x è sotto la linea di frazione, scrivo prima le C.E.", "Poi uso il grafico dei segni."]}, "es": false, "pics": [{"k": "moltiplicare", "re": "moltiplicare|moltiplicazione", "id": 5798}, {"k": "dividere", "re": "dividere|divisione", "id": 5707}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
 (function(){
   var CFG=window.A11Y_CFG||{simple:{},es:false};
   var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
@@ -1662,6 +1662,51 @@ if(location.hash==='#stampa')document.body.classList.add('print');
     ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
   }).observe(document.body,{childList:true,subtree:true});
 
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
   /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
   if(location.hash==='#stampa')return;
   var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
@@ -1777,7 +1822,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 </script><!--/A11Y--><!--AGG--><script>
 (function(){
- var B="20261008124309",t0=Date.now(),touched=false,last=0;
+ var B="20261008125320",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;

@@ -979,7 +979,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 
 
 </script>
-<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Il subjuntivo è il congiuntivo spagnolo.", "Parto da “yo” del presente. Esempio: hablo.", "Tolgo la -o e metto la vocale opposta: -ar prende e, -er e -ir prendono a.", "Esempio: hablo → hable, como → coma.", "Sei verbi sono irregolari: ser, estar, ir, dar, saber, haber."], "u2": ["Il subjuntivo si usa per un desiderio, un’emozione o un dubbio.", "Esempio: Quiero que vengas.", "Se c’è certezza si usa l’indicativo. Esempio: Creo que viene.", "Se il soggetto è lo stesso, si usa l’infinito. Esempio: Quiero venir."], "u3": ["Si forma con haya + participio.", "Esempio: haya hablado.", "Si usa per un’azione già finita.", "Esempio: Espero que hayas llegado."], "u4": ["Parto da “ellos” del pretérito indefinido. Esempio: hablaron.", "Tolgo -ron e aggiungo -ra: hablara.", "Si usa quando il verbo principale è al passato.", "Esempio: Quería que vinieras."], "u5": ["Si forma con hubiera + participio.", "Esempio: hubiera hablado.", "Si usa per cose che non sono successe: “se avessi studiato”.", "Esempio: Si hubiera estudiado, habría aprobado."], "u6": ["Guardo il verbo principale: è al presente o al passato?", "Presente: uso il presente o il perfecto del subjuntivo.", "Passato: uso l’imperfecto o il pluscuamperfecto.", "Le frasi con “si” sono di tre tipi: possibile, irreale presente, irreale passato."]}, "es": true};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Il subjuntivo è il congiuntivo spagnolo.", "Parto da “yo” del presente. Esempio: hablo.", "Tolgo la -o e metto la vocale opposta: -ar prende e, -er e -ir prendono a.", "Esempio: hablo → hable, como → coma.", "Sei verbi sono irregolari: ser, estar, ir, dar, saber, haber."], "u2": ["Il subjuntivo si usa per un desiderio, un’emozione o un dubbio.", "Esempio: Quiero que vengas.", "Se c’è certezza si usa l’indicativo. Esempio: Creo que viene.", "Se il soggetto è lo stesso, si usa l’infinito. Esempio: Quiero venir."], "u3": ["Si forma con haya + participio.", "Esempio: haya hablado.", "Si usa per un’azione già finita.", "Esempio: Espero que hayas llegado."], "u4": ["Parto da “ellos” del pretérito indefinido. Esempio: hablaron.", "Tolgo -ron e aggiungo -ra: hablara.", "Si usa quando il verbo principale è al passato.", "Esempio: Quería que vinieras."], "u5": ["Si forma con hubiera + participio.", "Esempio: hubiera hablado.", "Si usa per cose che non sono successe: “se avessi studiato”.", "Esempio: Si hubiera estudiado, habría aprobado."], "u6": ["Guardo il verbo principale: è al presente o al passato?", "Presente: uso il presente o il perfecto del subjuntivo.", "Passato: uso l’imperfecto o il pluscuamperfecto.", "Le frasi con “si” sono di tre tipi: possibile, irreale presente, irreale passato."]}, "es": true, "pics": [{"k": "libro", "re": "libro|libri", "id": 25191}, {"k": "scuola", "re": "scuola|scuole|escuela", "id": 32446}, {"k": "parlare", "re": "parlare|hablar", "id": 9693}, {"k": "mangiare", "re": "mangiare|comer", "id": 6456}, {"k": "bere", "re": "bere|beber", "id": 6061}, {"k": "scrivere", "re": "scrivere|escribir", "id": 2380}, {"k": "leggere", "re": "leggere|leer", "id": 7141}, {"k": "studiare", "re": "studiare|estudiar", "id": 6495}, {"k": "pensare", "re": "pensare|pensar", "id": 38796}, {"k": "casa", "re": "casa|case", "id": 6964}, {"k": "famiglia", "re": "famiglia|familiari|familiare", "id": 38351}, {"k": "dubbio", "re": "dubbio|dubbi|dudar", "id": 11696}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
 (function(){
   var CFG=window.A11Y_CFG||{simple:{},es:false};
   var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
@@ -1165,6 +1165,51 @@ if(location.hash==='#stampa')document.body.classList.add('print');
     ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
   }).observe(document.body,{childList:true,subtree:true});
 
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
   /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
   if(location.hash==='#stampa')return;
   var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
@@ -1280,7 +1325,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 </script><!--/A11Y--><!--AGG--><script>
 (function(){
- var B="20261008124309",t0=Date.now(),touched=false,last=0;
+ var B="20261008125320",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;
