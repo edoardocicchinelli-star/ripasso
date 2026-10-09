@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antropologia: la cultura e le correnti</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Scienze Umane</a></p><h1>Antropologia: la cultura e le correnti</h1><p>Unità 1-2 · un passo alla volta</p></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Che cosa studia</button>
+<button data-t="u2">2 La cultura cambia</button>
+<button data-t="u3">3 Ambiti e origini</button>
+<button data-t="u4">4 Prime correnti</button>
+<button data-t="u5">5 Dopo il Novecento</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Riepilogo</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo su <b>Antropologia</b> (unità 1 e 2). Il kit segue gli <b>schemi</b> del corso. Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti. Ogni argomento ha sempre lo stesso ordine.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>Che cosa studia l'antropologia</b> e l'atteggiamento antropologico (unità 1)</li><li><b>Come si trasforma la cultura</b> (unità 2)</li><li><b>Ambiti di indagine</b> e come nasce l'antropologia (unità 3)</li><li><b>Le correnti antropologiche</b> (unità 4 e 5)</li></ul></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema, passo per passo.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi da ripetere a voce.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (5 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 (che cosa studia, atteggiamento antropologico)</li><li><b>Giorno 2</b>: unità 2 (come cambia la cultura)</li><li><b>Giorno 3</b>: unità 3 (ambiti di indagine e origini)</li><li><b>Giorno 4</b>: unità 4 e 5 (le correnti)</li><li><b>Giorno 5</b>: Prova finale, Orale e Riepilogo</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c'è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti <b>a voce alta</b> le risposte dell'Orale: l'interrogazione è parlata.</li><li>Impara le <b>coppie</b>: relativismo (nessuna cultura è superiore) / etnocentrismo (la mia è superiore) · inculturazione (tra generazioni) / acculturazione (tra società).</li><li>Collega ogni <b>autore</b> alla sua idea: Tylor (cultura), Boas (ogni cultura è unica), Malinowski (bisogni), Lévi-Strauss (strutture).</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un'altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const NAMES=['Marco','Giulia','Luca','Sara','Paolo','Elena','Davide','Chiara','Andrea','Francesca','Matteo','Anna'];
+const names=n=>shuffle(NAMES).slice(0,n);
+const eur=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
+
+/* ========== ANTROPOLOGIA 3 ES: GENERATORI ========== */
+const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+const WR={};
+function mapGroup(tag,askL,pairs){
+  return ()=>{
+    const i=rnd(0,pairs.length-1),p=pairs[i];
+    const others=shuffle(pairs.filter((_,k)=>k!==i));
+    return mkEx(askL(p[0]),p[1],p[3]?p[3]:others.map(x=>x[1]),wy(p[2]||`${p[0]} ${p[1]}`,p[1]),tag);
+  };
+}
+/* --- unità 1 --- */
+const exCosa=mapGroup('Che cosa studia l’antropologia',l=>`<b>${l}</b>`,[
+ ['Antropologia vuol dire…','“scienza dell’uomo”','Antropologia = <b>scienza dell’uomo</b>.',['“scienza degli animali”','“scienza delle macchine”']],
+ ['L’antropologia studia l’essere umano come…','elaboratore di cultura','Studia l’uomo come <b>elaboratore di cultura</b>.',['solo corpo biologico','solo lavoratore']],
+ ['L’antropologia studia le manifestazioni culturali e i sistemi di vita dei gruppi umani…','in epoche e luoghi diversi','In <b>epoche e luoghi diversi</b>.',['solo nel nostro paese','solo oggi']],
+ ['Secondo Tylor (1832-1917) la cultura è…','un insieme di pratiche materiali, riferimenti simbolici e conoscenze di un gruppo sociale','È la definizione di <b>Tylor</b>.',['solo l’insieme dei libri letti','solo l’arte e la musica']],
+ ['Le pratiche, i simboli e le conoscenze di un gruppo sono anche…','soluzioni socialmente organizzate ai problemi di sopravvivenza posti dall’ambiente','Sono <b>soluzioni</b> ai problemi di sopravvivenza.',['regole inventate a caso','abitudini senza scopo']],
+ ['Gli antropologi indagano nello spazio e nel tempo per…','comprenderne i significati','Per <b>capire i significati</b>.',['cancellare le differenze','scegliere la cultura migliore']]]);
+const ATT=['Relativismo culturale','Decentramento','Etnocentrismo'];
+const exAtt=()=>{
+  const C=[['nessuna distinzione di valore tra le culture: usi e costumi osservati senza pregiudizi',0],['cogliere il punto di vista dell’altro',1],['considerare la propria cultura superiore e interpretare le altre con i propri riferimenti',2],
+   ['Un ragazzo dice: «La nostra cultura è la migliore, le altre sono sbagliate».',2],['Una studentessa prova a capire come vede il mondo una persona di un’altra cultura.',1],['Un ricercatore osserva gli usi di un popolo senza giudicarli.',0]];
+  const c=pick(C);
+  return mkEx(`Come si chiama questo atteggiamento? <br><i>${c[0]}</i>`,ATT[c[1]],ATT.filter((_,k)=>k!==c[1]),wy(['Il relativismo culturale non distingue il valore tra le culture.','Il decentramento è cogliere il punto di vista dell’altro.','L’etnocentrismo è considerare superiore la propria cultura.'][c[1]],ATT[c[1]]),'Relativismo, decentramento, etnocentrismo');
+};
+const exAttAnt=mapGroup('L’atteggiamento antropologico',l=>`<b>${l}</b>`,[
+ ['Relativismo culturale e decentramento permettono di superare…','l’etnocentrismo','Superano l’<b>etnocentrismo</b>.',['la cultura','l’inculturazione']],
+ ['Relativismo culturale + decentramento =','atteggiamento antropologico','Insieme formano l’<b>atteggiamento antropologico</b>.',['etnocentrismo','acculturazione']],
+ ['L’atteggiamento antropologico consiste nel…','confrontarsi con esperienze culturali diverse osservandole con distacco e spirito critico','Si osserva <b>con distacco e spirito critico</b>.',['giudicare le altre culture con le proprie regole','evitare ogni contatto con altre culture']]]);
+/* --- unità 2 --- */
+const exTrasf=mapGroup('Come si trasforma la cultura',l=>`<b>${l}</b>`,[
+ ['La cultura è…','un processo dinamico: cambia nel tempo ed è influenzata dal contatto con altri gruppi','Non è fissa: è <b>dinamica</b>.',['un’entità fissa che non cambia mai','un’invenzione di un solo popolo']],
+ ['I due modi di cambiamento della cultura sono…','inculturazione e acculturazione','Inculturazione e acculturazione.',['etnocentrismo e relativismo','decentramento e globalizzazione']],
+ ['L’inculturazione è…','il passaggio delle tradizioni da una generazione all’altra','Tradizioni da una generazione all’altra.',['lo scambio con altre società','il rifiuto delle altre culture']],
+ ['L’acculturazione è…','lo scambio culturale con altre società: contatti pacifici (commercio), conflitti, dominazione coloniale','Scambio con altre società.',['il passaggio delle tradizioni in famiglia','la nascita di una nuova lingua']],
+ ['La socializzazione rovesciata è…','la trasmissione dalle nuove generazioni ai più anziani (per esempio tecnologie, lingue straniere)','I giovani insegnano agli anziani.',['la trasmissione dagli anziani ai giovani','il conflitto con altre società']]]);
+const exTipoCamb=()=>{
+  const T=['Inculturazione','Acculturazione','Socializzazione rovesciata'];
+  const C=[['Una nonna insegna a sua nipote le ricette di famiglia.',0],['Un popolo scambia merci e usanze con un altro popolo attraverso il commercio.',1],['Un ragazzo insegna alla nonna a usare lo smartphone.',2],['I genitori trasmettono ai figli le tradizioni del loro paese.',0],['Una società subisce la dominazione coloniale e cambia le sue usanze.',1],['Una figlia insegna a sua madre una lingua straniera.',2]];
+  const c=pick(C);
+  return mkEx(`Di che cosa si tratta? <br><i>${c[0]}</i>`,T[c[1]],T.filter((_,k)=>k!==c[1]),wy(['Inculturazione: le tradizioni passano da una generazione all’altra.','Acculturazione: scambio culturale con altre società.','Socializzazione rovesciata: dai giovani ai più anziani.'][c[1]],T[c[1]]),'Inculturazione, acculturazione, socializzazione rovesciata');
+};
+/* --- unità 3 --- */
+const AMB=[['Antropologia della parentela','relazioni di parentela e concetto di famiglia'],['Antropologia economica','attività economiche, soprattutto società non industrializzate'],['Antropologia politica','forme di aggregazione e partecipazione politica'],['Antropologia della religione','religiosità e ritualità']];
+const exAmbiti=()=>{
+  const i=rnd(0,3),o=shuffle(AMB.filter((_,k)=>k!==i));
+  if(Math.random()<0.5)return mkEx(`Che cosa studia l’<b>${AMB[i][0].toLowerCase()}</b>?`,AMB[i][1],o.slice(0,2).map(x=>x[1]),wy(`${AMB[i][0]}: ${AMB[i][1]}.`,AMB[i][1]),'Gli ambiti di indagine');
+  return mkEx(`Quale ambito studia: <i>${AMB[i][1]}</i>?`,AMB[i][0],o.slice(0,2).map(x=>x[0]),wy(`${AMB[i][0]}: ${AMB[i][1]}.`,AMB[i][0]),'Gli ambiti di indagine');
+};
+const exNasce=mapGroup('Come nasce l’antropologia',l=>`<b>${l}</b>`,[
+ ['Dal Quattrocento le esplorazioni geografiche portano…','all’incontro con altri popoli, curiosità e confronto','Esplorazioni → incontro con altri popoli.',['all’invenzione della stampa','alla fine dei commerci']],
+ ['Nel Settecento l’Illuminismo porta…','la relatività dei costumi e a osservare senza pregiudizi','Illuminismo: relatività dei costumi.',['l’idea di una sola cultura giusta','la fine dello studio dei popoli']],
+ ['A metà Ottocento nascono…','le prime istituzioni in Gran Bretagna e Francia','Le prime istituzioni.',['le prime università in Asia','le prime scuole di danza']],
+ ['Lewis Morgan (1818-1881) negli USA studia…','i nativi americani','Morgan studia i <b>nativi americani</b>.',['i popoli dell’antica Grecia','le società industriali']],
+ ['Il mondo contemporaneo è caratterizzato da…','società occidentali, dimensione urbana e globalizzazione: interdipendenza, influenze reciproche, cambiamento costante','Oggi si studia anche il <b>mondo contemporaneo</b>.',['società isolate e senza contatti','culture che non cambiano mai']]]);
+/* --- unità 4 e 5 --- */
+const AUT=['Tylor','Morgan','Frazer','Boas','Malinowski','Lévi-Strauss'];
+const exAutore=idx=>()=>{
+  const C=[
+   ['ha definito la cultura come insieme di pratiche materiali, riferimenti simbolici e conoscenze di un gruppo sociale','Tylor','Tylor (1832-1917) ha dato la definizione di cultura.'],
+   ['negli USA ha studiato i nativi americani (1818-1881)','Morgan','Lewis Morgan studiò i nativi americani.'],
+   ['è il fondatore del particolarismo culturale (1858-1942)','Boas','Franz Boas: particolarismo culturale.'],
+   ['sostiene che ogni cultura è unica e va studiata nel suo contesto, con il lavoro sul campo','Boas','Boas: relativismo e lavoro sul campo.'],
+   ['è il fondatore del funzionalismo (1884-1942)','Malinowski','Bronisław Malinowski: funzionalismo.'],
+   ['sostiene che la cultura risponde ai bisogni umani fondamentali','Malinowski','Malinowski: la cultura risponde ai bisogni.'],
+   ['è il fondatore dell’antropologia strutturale (1908-2009)','Lévi-Strauss','Claude Lévi-Strauss: antropologia strutturale.'],
+   ['ha cercato elementi ricorrenti (“strutture”) che orientano il comportamento in tutte le culture','Lévi-Strauss','Lévi-Strauss: le strutture.']];
+  const c=C[pick(idx)];
+  return mkEx(`Chi <b>${c[0]}</b>?`,c[1],shuffle(AUT.filter(a=>a!==c[1]&&!(c[1]==='Boas'&&false))).slice(0,2),wy(c[2],c[1]),'Chi lo ha detto?');
+};
+const exCorr1=mapGroup('Le correnti antropologiche',l=>`<b>${l}</b>`,[
+ ['L’evoluzionismo (Morgan, Tylor, Frazer) sostiene che la realtà si sviluppa…','da uno stato originario indefinito verso forme sempre più complesse','Dallo stato indefinito a forme più complesse.',['restando sempre uguale','solo in Europa']],
+ ['Per l’evoluzionismo le leggi di evoluzione sono…','valide per tutte le civiltà','Valide per <b>tutte</b> le civiltà.',['diverse per ogni cultura','false']],
+ ['Contro il modello unico di evoluzione nasce…','il particolarismo culturale (inizio Novecento)','Rifiuto del modello unico → <b>particolarismo</b>.',['il funzionalismo','l’antropologia strutturale']],
+ ['Per il particolarismo culturale (Franz Boas)…','ogni cultura è unica e va studiata nel suo contesto','Ogni cultura è unica.',['tutte le culture seguono la stessa strada','le culture si studiano da lontano']],
+ ['I capisaldi del particolarismo di Boas sono…','il relativismo e il lavoro sul campo','Relativismo e <b>lavoro sul campo</b>.',['la classificazione delle civiltà','lo studio dei soli libri']],
+ ['Gli allievi di Boas fondano la scuola…','“Cultura e personalità”','Scuola <b>Cultura e personalità</b>.',['“Struttura e società”','“Natura e bisogni”']],
+ ['La scuola “Cultura e personalità” sostiene che…','i comportamenti si trasmettono di generazione in generazione, con una personalità di base per ogni comunità','Personalità di base per ogni comunità.',['ogni persona ha la stessa personalità','la cultura non si trasmette']],
+ ['Il funzionalismo di Malinowski sostiene che la cultura…','risponde ai bisogni umani fondamentali','La cultura risponde ai <b>bisogni</b>.',['è un’invenzione senza scopo','è uguale in ogni luogo']],
+ ['Per il funzionalismo va indagata…','la funzione di ogni manifestazione culturale','Si cerca la <b>funzione</b> di ogni manifestazione.',['solo l’origine storica','solo la forma degli oggetti']],
+ ['L’antropologia strutturale di Lévi-Strauss cerca…','elementi ricorrenti (“strutture”) che orientano il comportamento in tutte le culture','Le <b>strutture</b> ricorrenti.',['le differenze irriducibili tra culture','la funzione dei bisogni']],
+ ['Per Lévi-Strauss le strutture distinguono…','l’uomo dagli animali','Distinguono l’uomo dagli animali.',['una cultura dall’altra','gli adulti dai bambini']],
+ ['Un esempio di struttura per Lévi-Strauss è…','la parentela, universale ma in forme diverse','Parentela: universale ma diversa.',['la moneta','la lingua dei segni']]]);
+const exCorr2=mapGroup('Dopo la metà del Novecento',l=>`<b>${l}</b>`,[
+ ['Il neoevoluzionismo…','cerca linee di sviluppo comuni a tutta l’umanità','Linee di sviluppo comuni.',['sostiene che ogni cultura è un mondo a sé','evidenzia la soggettività del ricercatore']],
+ ['Per il materialismo culturale l’uomo ha…','bisogni geneticamente prestabiliti a cui la cultura risponde','Bisogni prestabiliti → cultura.',['bisogni inventati dalla società','nessun bisogno']],
+ ['L’antropologia interpretativa sostiene che ogni cultura è…','un mondo a sé, letto dal punto di vista di chi la vive','Ogni cultura è un mondo a sé.',['uguale alle altre','inferiore a quella occidentale']],
+ ['L’antropologia postmoderna evidenzia…','la soggettività del ricercatore, condizionato dalla propria cultura','Il ricercatore è condizionato.',['l’oggettività perfetta del ricercatore','la fine dell’antropologia']]]);
+const COR=['Evoluzionismo','Particolarismo culturale','Funzionalismo','Antropologia strutturale','Neoevoluzionismo','Materialismo culturale','Antropologia interpretativa','Antropologia postmoderna'];
+const CORD=['la realtà si sviluppa verso forme sempre più complesse','ogni cultura è unica e va studiata nel suo contesto','la cultura risponde ai bisogni umani fondamentali','ci sono strutture ricorrenti in tutte le culture','cerca linee di sviluppo comuni a tutta l’umanità','l’uomo ha bisogni geneticamente prestabiliti','ogni cultura è un mondo a sé letto da chi la vive','il ricercatore è condizionato dalla propria cultura'];
+const CONF={0:[4],4:[0],1:[6],6:[1],2:[5],5:[2]};
+const exCorrente=idx=>()=>{
+  const i=pick(idx),o=shuffle(idx.filter(k=>k!==i&&!(CONF[i]||[]).includes(k))).slice(0,2);
+  return mkEx(`Quale corrente sostiene che <b>${CORD[i]}</b>?`,COR[i],o.map(k=>COR[k]),wy(`${COR[i]}: ${CORD[i]}.`,COR[i]),'Quale corrente?');
+};
+const VITE=[['Tylor','1832-1917'],['Morgan','1818-1881'],['Boas','1858-1942'],['Malinowski','1884-1942'],['Lévi-Strauss','1908-2009']];
+const exVita=()=>{
+  const v=pick(VITE),o=shuffle(VITE.filter(x=>x[0]!==v[0])).slice(0,2);
+  return mkEx(`In che anni visse <b>${v[0]}</b>?`,v[1],o.map(x=>x[1]),wy(`${v[0]}: ${v[1]}.`,v[1]),'Anni di vita');
+};
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const GENS={
+ u1:[exCosa,exCosa,exAtt,exAtt,exAttAnt,exDef('u1')],
+ u2:[exTrasf,exTrasf,exTipoCamb,exTipoCamb,exDef('u2')],
+ u3:[exAmbiti,exAmbiti,exNasce,exNasce,exDef('u3')],
+ u4:[exCorr1,exCorr1,exCorr1,exAutore([0,1,2,3,4,5,6,7]),exCorrente([0,1,2,3]),exVita,exDef('u4')],
+ u5:[exCorr2,exCorr2,exCorrente([4,5,6,7]),exCorrente([0,1,2,3,4,5,6,7]),exDef('u5')]
+};
+const UNITS={u1:'1 · Che cosa studia l’antropologia',u2:'2 · Come si trasforma la cultura',u3:'3 · Gli ambiti di indagine e la nascita dell’antropologia',u4:'4 · Le prime correnti antropologiche',u5:'5 · Le correnti dopo la metà del Novecento'};
+const PROVA_PLAN={u1:4,u2:3,u3:3,u4:3,u5:2};
+
+/* ========== CONTENUTI FISSI (Antropologia 3 ES: schemi 1-6) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const LI=l=>'<ul>'+l.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+const DEFS={
+u1:[
+ ['Antropologia','“Scienza dell’uomo”: studia l’essere umano come elaboratore di cultura, in epoche e luoghi diversi.'],
+ ['Cultura (Tylor)','Insieme di pratiche materiali, riferimenti simbolici e conoscenze di un gruppo sociale: soluzioni ai problemi di sopravvivenza posti dall’ambiente.'],
+ ['Relativismo culturale','Nessuna distinzione di valore tra le culture: usi e costumi osservati senza pregiudizi.'],
+ ['Decentramento','Cogliere il punto di vista dell’altro.'],
+ ['Etnocentrismo','Tendenza a considerare la propria cultura superiore e a interpretare le altre con i propri riferimenti storici e sociali.'],
+ ['Atteggiamento antropologico','Confrontarsi con esperienze culturali diverse osservandole con distacco e spirito critico.']],
+u2:[
+ ['Processo dinamico','Qualcosa che non è fisso: cambia nel tempo ed è influenzato dal contatto con altri gruppi (come la cultura).'],
+ ['Inculturazione','Passaggio delle tradizioni da una generazione all’altra.'],
+ ['Acculturazione','Scambio culturale con altre società: contatti pacifici (commercio), conflitti, dominazione coloniale.'],
+ ['Socializzazione rovesciata','Trasmissione dalle nuove generazioni ai più anziani (per esempio tecnologie, lingue straniere).']],
+u3:[
+ ['Antropologia della parentela','Studia le relazioni di parentela e il concetto di famiglia.'],
+ ['Antropologia economica','Studia le attività economiche, soprattutto delle società non industrializzate.'],
+ ['Antropologia politica','Studia le forme di aggregazione e la partecipazione politica.'],
+ ['Antropologia della religione','Studia la religiosità e la ritualità.'],
+ ['Mondo contemporaneo','Società occidentali, dimensione urbana, globalizzazione: interdipendenza tra gruppi, influenze reciproche, cambiamento costante.'],
+ ['Illuminismo','Nel Settecento porta la relatività dei costumi e l’idea di osservare senza pregiudizi.']],
+u4:[
+ ['Evoluzionismo','Morgan, Tylor, Frazer: la realtà si sviluppa da uno stato originario indefinito verso forme sempre più complesse; leggi valide per tutte le civiltà.'],
+ ['Particolarismo culturale','Franz Boas, inizio Novecento: ogni cultura è unica e va studiata nel suo contesto; capisaldi: relativismo e lavoro sul campo.'],
+ ['Cultura e personalità','Scuola degli allievi di Boas: comportamenti trasmessi di generazione in generazione, con una personalità di base per ogni comunità.'],
+ ['Funzionalismo','Malinowski: la cultura risponde ai bisogni umani fondamentali; va indagata la funzione di ogni manifestazione culturale.'],
+ ['Antropologia strutturale','Lévi-Strauss: elementi ricorrenti (“strutture”) che orientano il comportamento in tutte le culture e distinguono l’uomo dagli animali.'],
+ ['Lavoro sul campo','Studio diretto di una cultura sul posto: uno dei capisaldi di Boas.']],
+u5:[
+ ['Neoevoluzionismo','Cerca linee di sviluppo comuni a tutta l’umanità.'],
+ ['Materialismo culturale','L’uomo ha bisogni geneticamente prestabiliti a cui la cultura risponde.'],
+ ['Antropologia interpretativa','Ogni cultura è un mondo a sé, letto dal punto di vista di chi la vive.'],
+ ['Antropologia postmoderna','Evidenzia la soggettività del ricercatore, condizionato dalla propria cultura.']]
+};
+const CONT={
+u1:{
+ cose:`<div class="box bia"><p><b>Antropologia</b> vuol dire “<b>scienza dell’uomo</b>”. Studia l’essere umano come chi <b>crea cultura</b>. Oggetto di studio è la <b>cultura</b>, e per studiarla serve un atteggiamento speciale: l’<b>atteggiamento antropologico</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Che cosa studia l’antropologia',stepsHtml([
+   '“<b>Scienza dell’uomo</b>”: studia l’essere umano come <b>elaboratore di cultura</b>.',
+   'Studia le <b>manifestazioni culturali</b> e i <b>sistemi di vita</b> dei gruppi umani, in <b>epoche e luoghi diversi</b>.',
+   'L’oggetto di studio è la <b>cultura</b>.'])),
+  card('ver','2 · La cultura secondo Tylor',stepsHtml([
+   'Definizione di <b>E. B. Tylor</b> (1832-1917): <b>insieme di pratiche materiali, riferimenti simbolici e conoscenze</b> di un gruppo sociale.',
+   'Cioè: <b>soluzioni socialmente organizzate</b> ai problemi di <b>sopravvivenza</b> posti dall’ambiente.',
+   'Gli antropologi indagano <b>nello spazio e nel tempo</b> per comprenderne i <b>significati</b>.'])),
+  card('gia','3 · L’atteggiamento antropologico',
+   TAB(['Parola','Che cosa vuol dire'],[['<b>Relativismo culturale</b>','nessuna distinzione di valore tra le culture; usi e costumi osservati senza pregiudizi'],['<b>Decentramento</b>','cogliere il punto di vista dell’altro'],['<b>Etnocentrismo</b>','considerare la propria cultura superiore e interpretare le altre con i propri riferimenti']])+'<p>Relativismo e decentramento <b>permettono di superare l’etnocentrismo</b>.</p>'),
+  card('ros','4 · La formula',
+   '<p class="m">relativismo + decentramento = <b>atteggiamento antropologico</b></p><p>È <b>confrontarsi con esperienze culturali diverse osservandole con distacco e spirito critico</b>.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cosa studia l’antropologia?»</b> È la scienza dell’uomo: studia l’essere umano come elaboratore di cultura, in epoche e luoghi diversi.</p>
+ <p><b>«Che cos’è la cultura?»</b> Secondo Tylor è l’insieme di pratiche materiali, riferimenti simbolici e conoscenze di un gruppo sociale: soluzioni ai problemi di sopravvivenza posti dall’ambiente.</p>
+ <p><b>«Che cos’è l’atteggiamento antropologico?»</b> Relativismo culturale più decentramento: confrontarsi con culture diverse con distacco e spirito critico.</p></div>`,
+ errori:['Confondere <b>relativismo culturale</b> (nessuna cultura è superiore) con <b>etnocentrismo</b> (la mia cultura è superiore).','Dire che l’antropologia studia solo le società lontane: studia i gruppi umani in <b>epoche e luoghi diversi</b>.','Dimenticare che il <b>decentramento</b> è “cogliere il punto di vista dell’altro”.','Dire che l’atteggiamento antropologico è giudicare: è osservare <b>con distacco</b>.'],
+ orale:[
+  ['Che cosa studia l’antropologia?','L’antropologia, “scienza dell’uomo”, studia l’essere umano come elaboratore di cultura: le manifestazioni culturali e i sistemi di vita dei gruppi umani, in epoche e luoghi diversi.'],
+  ['Come definisce la cultura Tylor?','Come l’insieme di pratiche materiali, riferimenti simbolici e conoscenze di un gruppo sociale, cioè soluzioni socialmente organizzate ai problemi di sopravvivenza posti dall’ambiente.'],
+  ['Che cos’è l’atteggiamento antropologico?','È il confronto con esperienze culturali diverse osservandole con distacco e spirito critico. Nasce da relativismo culturale e decentramento, che permettono di superare l’etnocentrismo.'],
+ ],
+ quiz:[
+  ['Antropologia vuol dire…','“scienza dell’uomo”',['“scienza della terra”','“scienza degli animali”','“scienza dei numeri”'],'Scienza dell’uomo.'],
+  ['L’antropologia studia l’uomo come…','elaboratore di cultura',['solo corpo','solo animale','solo lavoratore'],'Elaboratore di cultura.'],
+  ['La definizione di cultura come insieme di pratiche, simboli e conoscenze è di…','Tylor',['Boas','Malinowski','Lévi-Strauss'],'Tylor (1832-1917).'],
+  ['Il relativismo culturale dice che tra le culture…','non c’è distinzione di valore',['una è superiore','l’occidentale è la migliore','si deve scegliere la più antica'],'Nessuna distinzione di valore.'],
+  ['Il decentramento è…','cogliere il punto di vista dell’altro',['giudicare l’altro','evitare gli altri','vivere in periferia'],'Punto di vista dell’altro.'],
+  ['Considerare superiore la propria cultura si chiama…','etnocentrismo',['relativismo','decentramento','acculturazione'],'Etnocentrismo.'],
+ ]
+},
+u2:{
+ cose:`<div class="box bia"><p>La cultura <b>non è ferma</b>: è un <b>processo dinamico</b>. Cambia nel tempo e cambia a contatto con altri gruppi. Ci sono due modi di cambiamento: l’<b>inculturazione</b> e l’<b>acculturazione</b>. Un caso particolare è la <b>socializzazione rovesciata</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · La cultura è dinamica',
+   '<p>La cultura <b>non è un’entità fissa</b>: <b>cambia nel tempo</b> ed è <b>influenzata dal contatto con altri gruppi</b>.</p>'),
+  card('ver','2 · I due modi di cambiamento',
+   TAB(['Modo','Che cosa vuol dire'],[['<b>Inculturazione</b>','passaggio delle tradizioni <b>da una generazione all’altra</b>'],['<b>Acculturazione</b>','<b>scambio culturale con altre società</b>: contatti pacifici (commercio), conflitti, dominazione coloniale']])),
+  card('gia','3 · Un caso particolare: la socializzazione rovesciata',
+   '<p>È la trasmissione <b>dalle nuove generazioni ai più anziani</b>.</p><p>Esempi: le <b>tecnologie</b>, le <b>lingue straniere</b>.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«La cultura è sempre uguale?»</b> No: è un processo dinamico, cambia nel tempo e a contatto con altri gruppi.</p>
+ <p><b>«Che differenza c’è tra inculturazione e acculturazione?»</b> L’inculturazione è il passaggio delle tradizioni da una generazione all’altra; l’acculturazione è lo scambio culturale con altre società.</p>
+ <p><b>«Fai un esempio di socializzazione rovesciata.»</b> Un ragazzo che insegna al nonno a usare lo smartphone: la trasmissione va dai giovani ai più anziani.</p></div>`,
+ errori:['Dire che la cultura è <b>fissa</b>: è un processo <b>dinamico</b>.','Confondere <b>inculturazione</b> (tra generazioni) e <b>acculturazione</b> (tra società).','Dimenticare che l’acculturazione comprende anche <b>conflitti</b> e <b>dominazione coloniale</b>.','Pensare che la socializzazione rovesciata vada dagli anziani ai giovani: va dai <b>giovani agli anziani</b>.'],
+ orale:[
+  ['Perché si dice che la cultura è un processo dinamico?','Perché non è un’entità fissa: cambia nel tempo ed è influenzata dal contatto con altri gruppi.'],
+  ['Che differenza c’è tra inculturazione e acculturazione?','L’inculturazione è il passaggio delle tradizioni da una generazione all’altra. L’acculturazione è lo scambio culturale con altre società: contatti pacifici come il commercio, conflitti, dominazione coloniale.'],
+  ['Che cos’è la socializzazione rovesciata?','È la trasmissione dalle nuove generazioni ai più anziani, per esempio di tecnologie e lingue straniere.'],
+ ],
+ quiz:[
+  ['La cultura è…','un processo dinamico',['un’entità fissa','un oggetto','una legge della natura'],'Dinamico.'],
+  ['L’inculturazione è il passaggio delle tradizioni…','da una generazione all’altra',['tra due società','dai giovani agli anziani','solo con la scrittura'],'Tra generazioni.'],
+  ['L’acculturazione è uno scambio culturale…','con altre società',['solo in famiglia','solo a scuola','mai con conflitti'],'Con altre società.'],
+  ['Un esempio di acculturazione è…','il commercio tra due popoli',['una fiaba raccontata dalla nonna','una ricetta di famiglia','una filastrocca imparata a casa'],'Il commercio è un contatto pacifico.'],
+  ['La socializzazione rovesciata va…','dalle nuove generazioni ai più anziani',['dagli anziani ai giovani','da una società a un’altra','dai genitori ai figli'],'Giovani → anziani.'],
+ ]
+},
+u3:{
+ cose:`<div class="box bia"><p>L’antropologia ha <b>quattro ambiti di indagine</b> (parentela, economia, politica, religione) e oggi studia anche il <b>mondo contemporaneo</b>. Nasce da lontano: dalle <b>esplorazioni geografiche</b> del Quattrocento, passando per l’<b>Illuminismo</b>, fino alle prime istituzioni di metà Ottocento.</p></div>`,
+ ricette:[
+  card('blu','1 · I quattro ambiti di indagine',
+   TAB(['Ambito','Che cosa studia'],[['<b>Antropologia della parentela</b>','relazioni di parentela e concetto di famiglia'],['<b>Antropologia economica</b>','attività economiche, soprattutto società non industrializzate'],['<b>Antropologia politica</b>','forme di aggregazione e partecipazione politica'],['<b>Antropologia della religione</b>','religiosità e ritualità']])),
+  card('ver','2 · Oggi anche il mondo contemporaneo',
+   '<p>Società <b>occidentali</b>, dimensione <b>urbana</b>, <b>globalizzazione</b>: <b>interdipendenza</b> tra gruppi, <b>influenze reciproche</b>, <b>cambiamento costante</b>.</p>'),
+  card('gia','3 · Come nasce l’antropologia',
+   TAB(['Quando','Che cosa succede'],[['<b>Dal Quattrocento</b>','esplorazioni geografiche: incontro con altri popoli, curiosità e confronto'],['<b>Settecento</b>','Illuminismo: relatività dei costumi, osservare senza pregiudizi'],['<b>Metà Ottocento</b>','prime istituzioni in Gran Bretagna e Francia; negli USA Lewis Morgan (1818-1881) studia i nativi americani']])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Quali sono gli ambiti di indagine?»</b> Parentela (relazioni di parentela e famiglia), economica (attività economiche, soprattutto di società non industrializzate), politica (aggregazione e partecipazione politica), religione (religiosità e ritualità).</p>
+ <p><b>«Come nasce l’antropologia?»</b> Dalle esplorazioni geografiche dal Quattrocento, poi con l’Illuminismo nel Settecento, poi con le prime istituzioni a metà Ottocento.</p>
+ <p><b>«Che cosa studia oggi?»</b> Anche il mondo contemporaneo: globalizzazione, società occidentali, dimensione urbana.</p></div>`,
+ errori:['Confondere <b>antropologia economica</b> (attività economiche) e <b>politica</b> (aggregazione e partecipazione).','Dire che l’antropologia nasce nel Novecento: le sue <b>origini</b> partono dal <b>Quattrocento</b>.','Dimenticare che Lewis Morgan studia i <b>nativi americani</b>.','Dire che oggi l’antropologia studia solo popoli lontani: studia anche il <b>mondo contemporaneo</b>.'],
+ orale:[
+  ['Quali sono gli ambiti di indagine dell’antropologia?','Parentela (relazioni di parentela e famiglia), economica (attività economiche, soprattutto società non industrializzate), politica (aggregazione e partecipazione politica) e religione (religiosità e ritualità). Oggi anche il mondo contemporaneo.'],
+  ['Che cosa studia l’antropologia nel mondo contemporaneo?','Le società occidentali, la dimensione urbana e la globalizzazione: interdipendenza tra gruppi, influenze reciproche e cambiamento costante.'],
+  ['Come nasce l’antropologia?','Dal Quattrocento con le esplorazioni geografiche, che portano all’incontro con altri popoli. Nel Settecento l’Illuminismo porta la relatività dei costumi. A metà Ottocento nascono le prime istituzioni in Gran Bretagna e Francia; negli USA Lewis Morgan studia i nativi americani.'],
+ ],
+ quiz:[
+  ['L’antropologia della parentela studia…','relazioni di parentela e famiglia',['le attività economiche','le forme di aggregazione politica','la ritualità'],'Parentela.'],
+  ['L’antropologia economica studia soprattutto…','le società non industrializzate',['le società industriali','i soli paesi europei','le città moderne'],'Non industrializzate.'],
+  ['L’antropologia della religione studia…','religiosità e ritualità',['parentela','partecipazione politica','attività economiche'],'Religione.'],
+  ['Dal Quattrocento nascono le esplorazioni geografiche che portano…','all’incontro con altri popoli',['all’invenzione dei computer','alla fine dei commerci','alla chiusura dei confini'],'Altri popoli.'],
+  ['L’Illuminismo porta…','la relatività dei costumi',['l’etnocentrismo','la superiorità occidentale','la fine dei viaggi'],'Relatività dei costumi.'],
+  ['Lewis Morgan negli USA studia…','i nativi americani',['gli antichi Greci','le società industriali','i popoli africani'],'Nativi americani.'],
+ ]
+},
+u4:{
+ cose:`<div class="box bia"><p>Le <b>correnti antropologiche</b> sono i modi in cui gli antropologi hanno studiato la cultura. Prima viene l’<b>evoluzionismo</b>, poi il <b>particolarismo culturale</b> di Boas, il <b>funzionalismo</b> di Malinowski e l’<b>antropologia strutturale</b> di Lévi-Strauss.</p></div>`,
+ ricette:[
+  card('blu','1 · Evoluzionismo',stepsHtml([
+   'Autori: <b>Morgan, Tylor, Frazer</b>.',
+   'La realtà si sviluppa da uno <b>stato originario indefinito</b> verso forme <b>sempre più complesse</b>.',
+   'Ci sono <b>leggi di evoluzione valide per tutte le civiltà</b>.'])),
+  card('ver','2 · Particolarismo culturale (inizio Novecento)',stepsHtml([
+   'Nasce dal <b>rifiuto del modello unico di evoluzione</b>.',
+   '<b>Franz Boas</b> (1858-1942): <b>ogni cultura è unica</b> e va studiata <b>nel suo contesto</b>.',
+   'Capisaldi: <b>relativismo</b> e <b>lavoro sul campo</b>.',
+   'Allievi: scuola <b>“Cultura e personalità”</b>: comportamenti trasmessi di generazione in generazione, con una <b>personalità di base</b> per ogni comunità.'])),
+  card('gia','3 · Funzionalismo',
+   '<p><b>Bronisław Malinowski</b> (1884-1942): la cultura <b>risponde ai bisogni umani fondamentali</b>. Va indagata la <b>funzione</b> di ogni manifestazione culturale.</p>'),
+  card('ros','4 · Antropologia strutturale',
+   '<p><b>Claude Lévi-Strauss</b> (1908-2009): esistono <b>elementi ricorrenti</b> (“<b>strutture</b>”) che orientano il comportamento in <b>tutte le culture</b> e distinguono l’uomo dagli animali.</p><p>Esempio: la <b>parentela</b>, universale ma in forme diverse.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’evoluzionismo?»</b> Morgan, Tylor, Frazer: la realtà si sviluppa da uno stato originario indefinito verso forme sempre più complesse, con leggi valide per tutte le civiltà.</p>
+ <p><b>«Che cosa sostiene Boas?»</b> Ogni cultura è unica e va studiata nel suo contesto: relativismo e lavoro sul campo.</p>
+ <p><b>«Che differenza c’è tra Malinowski e Lévi-Strauss?»</b> Per Malinowski la cultura risponde ai bisogni; per Lévi-Strauss ci sono strutture ricorrenti in tutte le culture.</p></div>`,
+ errori:['Dire che l’evoluzionismo studia ogni cultura come unica: è il <b>particolarismo</b>.','Confondere <b>Boas</b> (cultura unica, lavoro sul campo) con <b>Malinowski</b> (bisogni e funzione).','Dimenticare che per Lévi-Strauss le strutture <b>distinguono l’uomo dagli animali</b>.','Sbagliare le date: Boas 1858-1942, Malinowski 1884-1942, Lévi-Strauss 1908-2009.'],
+ orale:[
+  ['Che cos’è l’evoluzionismo?','Con Morgan, Tylor e Frazer: la realtà si sviluppa da uno stato originario indefinito verso forme sempre più complesse; ci sono leggi di evoluzione valide per tutte le civiltà.'],
+  ['Che cos’è il particolarismo culturale?','Nasce all’inizio del Novecento dal rifiuto del modello unico di evoluzione. Con Franz Boas ogni cultura è unica e va studiata nel suo contesto; capisaldi sono il relativismo e il lavoro sul campo. Gli allievi fondano la scuola “Cultura e personalità”.'],
+  ['Che cos’è il funzionalismo?','Con Malinowski: la cultura risponde ai bisogni umani fondamentali e va indagata la funzione di ogni manifestazione culturale.'],
+  ['Che cos’è l’antropologia strutturale?','Con Lévi-Strauss: ci sono elementi ricorrenti, le “strutture”, che orientano il comportamento in tutte le culture e distinguono l’uomo dagli animali. Un esempio è la parentela, universale ma in forme diverse.'],
+ ],
+ quiz:[
+  ['L’evoluzionismo è legato a…','Morgan, Tylor, Frazer',['Boas e Malinowski','Lévi-Strauss','Freud'],'Morgan, Tylor, Frazer.'],
+  ['Per l’evoluzionismo le leggi di evoluzione valgono…','per tutte le civiltà',['solo per l’Europa','per una sola cultura','per nessuna civiltà'],'Per tutte.'],
+  ['Il particolarismo culturale è di…','Franz Boas',['Tylor','Malinowski','Lévi-Strauss'],'Boas.'],
+  ['Per Boas ogni cultura è…','unica e va studiata nel suo contesto',['uguale alle altre','inferiore alla nostra','priva di regole'],'Unica.'],
+  ['Il funzionalismo è di…','Bronisław Malinowski',['Boas','Morgan','Frazer'],'Malinowski.'],
+  ['Per il funzionalismo la cultura risponde…','ai bisogni umani fondamentali',['a nessun bisogno','solo al caso','solo alla religione'],'Bisogni.'],
+  ['L’antropologia strutturale è di…','Claude Lévi-Strauss',['Malinowski','Boas','Tylor'],'Lévi-Strauss.'],
+  ['Per Lévi-Strauss le strutture distinguono l’uomo…','dagli animali',['dalle macchine','dai bambini','dalle piante'],'Dagli animali.'],
+ ]
+},
+u5:{
+ cose:`<div class="box bia"><p>Nella <b>seconda metà del Novecento</b> nascono quattro correnti: <b>neoevoluzionismo</b>, <b>materialismo culturale</b>, <b>antropologia interpretativa</b> e <b>antropologia postmoderna</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Le quattro correnti',
+   TAB(['Corrente','Idea'],[['<b>Neoevoluzionismo</b>','cerca <b>linee di sviluppo comuni</b> a tutta l’umanità'],['<b>Materialismo culturale</b>','uomo = <b>bisogni geneticamente prestabiliti</b> a cui la cultura risponde'],['<b>Antropologia interpretativa</b>','ogni cultura è <b>un mondo a sé</b>, letto dal punto di vista di chi la vive'],['<b>Antropologia postmoderna</b>','evidenzia la <b>soggettività del ricercatore</b>, condizionato dalla propria cultura']])),
+  card('ver','2 · Come non confondere',stepsHtml([
+   '<b>Neoevoluzionismo</b>: parte dalla parola “evoluzione” → linee di sviluppo comuni.',
+   '<b>Materialismo culturale</b>: parte dai <b>bisogni</b> dell’uomo.',
+   '<b>Interpretativa</b>: <b>punto di vista di chi vive</b> la cultura.',
+   '<b>Postmoderna</b>: il <b>ricercatore</b> è condizionato dalla propria cultura.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cosa cerca il neoevoluzionismo?»</b> Linee di sviluppo comuni a tutta l’umanità.</p>
+ <p><b>«Che cosa sostiene il materialismo culturale?»</b> Che l’uomo ha bisogni geneticamente prestabiliti a cui la cultura risponde.</p>
+ <p><b>«Che cosa evidenzia l’antropologia postmoderna?»</b> La soggettività del ricercatore, condizionato dalla propria cultura.</p></div>`,
+ errori:['Confondere <b>neoevoluzionismo</b> (sviluppo comune) con <b>particolarismo</b> (cultura unica).','Confondere <b>interpretativa</b> (punto di vista di chi vive la cultura) e <b>postmoderna</b> (soggettività del ricercatore).','Dimenticare che il materialismo culturale parla di <b>bisogni geneticamente prestabiliti</b>.'],
+ orale:[
+  ['Quali correnti nascono nella seconda metà del Novecento?','Il neoevoluzionismo, il materialismo culturale, l’antropologia interpretativa e l’antropologia postmoderna.'],
+  ['Che cos’è il neoevoluzionismo?','Una corrente che cerca linee di sviluppo comuni a tutta l’umanità.'],
+  ['Che cos’è il materialismo culturale?','Per questa corrente l’uomo ha bisogni geneticamente prestabiliti a cui la cultura risponde.'],
+  ['Che differenza c’è tra antropologia interpretativa e postmoderna?','Per l’interpretativa ogni cultura è un mondo a sé, letto dal punto di vista di chi la vive. La postmoderna evidenzia la soggettività del ricercatore, condizionato dalla propria cultura.'],
+ ],
+ quiz:[
+  ['Il neoevoluzionismo cerca…','linee di sviluppo comuni a tutta l’umanità',['la cultura unica di ogni popolo','le strutture della parentela','la soggettività'],'Linee comuni.'],
+  ['Il materialismo culturale parte da…','bisogni geneticamente prestabiliti',['simboli inventati','soli fatti religiosi','differenze tra culture'],'Bisogni.'],
+  ['L’antropologia interpretativa legge ogni cultura…','dal punto di vista di chi la vive',['dal punto di vista del ricercatore','con le leggi di un’altra cultura','senza ascoltare nessuno'],'Dal punto di vista di chi vive.'],
+  ['L’antropologia postmoderna evidenzia…','la soggettività del ricercatore',['l’oggettività assoluta','la fine delle culture','l’evoluzione della specie'],'Soggettività del ricercatore.'],
+ ]
+}
+};
+const GLOSS=Object.values(DEFS).flat();
+const FORMULARIO=`
+<div class="box blu"><h3>Che cosa studia l’antropologia</h3><p><b>Antropologia</b> = “scienza dell’uomo”: studia l’uomo come <b>elaboratore di cultura</b> in epoche e luoghi diversi.</p><p><b>Cultura</b> (Tylor, 1832-1917): pratiche materiali, riferimenti simbolici e conoscenze di un gruppo; soluzioni ai problemi di sopravvivenza posti dall’ambiente.</p></div>
+<div class="box ver"><h3>Atteggiamento antropologico</h3>${TAB(['Parola','Significato'],[['Relativismo culturale','nessuna cultura ha più valore delle altre'],['Decentramento','punto di vista dell’altro'],['Etnocentrismo','la mia cultura è superiore (da superare)']])}<p>relativismo + decentramento = <b>atteggiamento antropologico</b> (distacco e spirito critico).</p></div>
+<div class="box gia"><h3>La cultura cambia</h3><p>Processo <b>dinamico</b>. <b>Inculturazione</b>: tradizioni da una generazione all’altra. <b>Acculturazione</b>: scambio con altre società (commercio, conflitti, dominazione coloniale). <b>Socializzazione rovesciata</b>: dai giovani agli anziani.</p></div>
+<div class="box ros"><h3>Ambiti e origini</h3><p>Ambiti: <b>parentela</b>, <b>economica</b>, <b>politica</b>, <b>religione</b>; oggi anche il mondo contemporaneo (globalizzazione).</p><p>Origini: <b>Quattrocento</b> (esplorazioni) → <b>Settecento</b> (Illuminismo) → <b>metà Ottocento</b> (prime istituzioni; Morgan 1818-1881).</p></div>
+<div class="box blu"><h3>Le correnti</h3>${TAB(['Corrente','Autore / idea'],[['Evoluzionismo','Morgan, Tylor, Frazer: dallo stato indefinito a forme più complesse'],['Particolarismo culturale','Boas (1858-1942): ogni cultura è unica; relativismo e lavoro sul campo'],['Funzionalismo','Malinowski (1884-1942): la cultura risponde ai bisogni'],['Antropologia strutturale','Lévi-Strauss (1908-2009): strutture ricorrenti'],['Neoevoluzionismo','linee di sviluppo comuni a tutta l’umanità'],['Materialismo culturale','bisogni geneticamente prestabiliti'],['Antropologia interpretativa','ogni cultura è un mondo a sé'],['Antropologia postmoderna','soggettività del ricercatore']])}</div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('antro3_uda_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('antro3_uda_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formule e riepilogo</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Antropologia vuol dire “scienza dell’uomo”.", "Studia l’uomo che crea cultura, in epoche e luoghi diversi.", "Cultura (Tylor): pratiche, simboli e conoscenze di un gruppo.", "Per capire gli altri servono relativismo e decentramento."], "u2": ["La cultura non sta ferma: cambia nel tempo.", "Inculturazione: le tradizioni passano da una generazione all’altra.", "Acculturazione: scambio con altre società.", "Socializzazione rovesciata: i giovani insegnano agli anziani."], "u3": ["Gli ambiti sono quattro: parentela, economia, politica, religione.", "Oggi si studia anche il mondo contemporaneo.", "L’antropologia nasce dalle esplorazioni, dal Quattrocento.", "Poi viene l’Illuminismo. A metà Ottocento nascono le prime istituzioni."], "u4": ["Evoluzionismo: le civiltà vanno verso forme più complesse.", "Boas: ogni cultura è unica.", "Malinowski: la cultura risponde ai bisogni.", "Lévi-Strauss: ci sono strutture comuni a tutte le culture."], "u5": ["Dopo la metà del Novecento nascono quattro correnti.", "Neoevoluzionismo: linee di sviluppo comuni.", "Materialismo culturale: bisogni prestabiliti.", "Interpretativa: ogni cultura è un mondo a sé.", "Postmoderna: il ricercatore è condizionato dalla sua cultura."]}, "es": false, "pics": [{"k": "famiglia", "re": "famiglia|familiari|familiare", "id": 38351}, {"k": "religione", "re": "religione|religiose|fedi", "id": 27059}, {"k": "citta", "re": "città", "id": 2704}, {"k": "nave", "re": "nave|navi|barca", "id": 6932}, {"k": "uomo", "re": "uomo|uomini", "id": 4665}, {"k": "donna", "re": "donna|donne", "id": 24621}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    return els.map(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      return {t:say(nodeText(e)),l:es?'es-ES':'it-IT'};
+    }).filter(function(c){return c.t.length>1});
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)out.push({t:say(nodeText(qt)),l:'it-IT'});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'. '+say(nodeText(sp||o)),l:CFG.es?'es-ES':'it-IT'});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261009125706",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
