@@ -511,10 +511,31 @@ function exErrore(t){
   }
 }
 
+/* --- persona o cosa non conosciuta --- */
+const REFER=[
+ ['Busco a alguien que ___ (hablar) inglés.','hable',['habla','hablará','hablaba'],'s','Cerco qualcuno che parli inglese (non so chi sia).'],
+ ['Necesitamos un profesor que ___ (vivir) en Madrid.','viva',['vive','vivirá','vivía'],'s','Ci serve un professore che viva a Madrid (non lo abbiamo ancora).'],
+ ['No hay nadie que lo ___ (saber).','sepa',['sabe','sabrá','sabía'],'s','Non c’è nessuno che lo sappia.'],
+ ['No conozco a nadie que ___ (cantar) tan bien.','cante',['canta','cantará','cantaba'],'s','Non conosco nessuno che canti così bene.'],
+ ['Quiero un móvil que ___ (costar) poco.','cueste',['cuesta','costará','costaba'],'s','Voglio un cellulare che costi poco (non so quale).'],
+ ['¿Hay alguien que ___ (poder) ayudarme?','pueda',['puede','podrá','podía'],'s','C’è qualcuno che possa aiutarmi? (non so se c’è)'],
+ ['Tengo un amigo que ___ (hablar) inglés.','habla',['hable','hablará','hablara'],'i','Ho un amico che parla inglese (esiste, lo conosco).'],
+ ['Conozco a una chica que ___ (vivir) en Madrid.','vive',['viva','vivirá','viviera'],'i','Conosco una ragazza che vive a Madrid (esiste, la conosco).'],
+ ['Hay alguien que lo ___ (saber).','sabe',['sepa','sabrá','supiera'],'i','C’è qualcuno che lo sa (esiste).'],
+ ['Tengo un móvil que ___ (costar) poco.','cuesta',['cueste','costará','costara'],'i','Ho un cellulare che costa poco (lo ho).'],
+];
+function exReferente(){
+  const r=pick(REFER);
+  const full=r[0].replace('___',r[1]);
+  const why=r[3]==='s'
+    ?`<p>${r[4]}</p><p>Cerchi o neghi una persona o una cosa <b>non conosciuta</b> (forse non esiste) → <b>subjuntivo</b>.</p>`
+    :`<p>${r[4]}</p><p>La persona o la cosa <b>esiste ed è conosciuta</b> → <b>indicativo</b>.</p>`;
+  return mkEx(`Completa: «${r[0]}» <i>${r[4]}</i>`,r[1],r[2],why+`<p>Risposta: <b>${full}</b></p>`,()=>true,'Persona o cosa non conosciuta');
+}
 /* --- GENS --- */
 const GENS={
  u1:[exCP,exCP,exErrore(0),exRiconosci],
- u2:[exUsoPres,exUsoPres,exMismo,exUsoPres],
+ u2:[exUsoPres,exUsoPres,exMismo,exUsoPres,exReferente,exReferente],
  u3:[exCPerf,exCPerf,exErrore(1),exSeq],
  u4:[exCImp,exCImp,exErrore(2),exRiconosci],
  u5:[exCPlus,exCPlus,exErrore(3),exSeq],
@@ -526,7 +547,7 @@ const PROVA_PLAN={u1:3,u2:3,u3:2,u4:3,u5:2,u6:2};
 /* ========== CONTENUTI FISSI (Spagnolo 3 ES: el subjuntivo) ========== */
 const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
 const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
-const M=t=>`<span class="m">${t}</span>`;
+const M=t=>`<span class="m" style="display:block;margin:.25em 0">${t}</span>`;
 const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
 const P6=['yo','tú','él / ella / usted','nosotros','vosotros','ellos / ustedes'];
 const conjTab=(verbs,fn)=>TAB(['persona',...verbs.map(v=>v)],P6.map((p,i)=>[p,...verbs.map(v=>fn(byInf(v),i))]));
@@ -584,38 +605,51 @@ u1:{
 u2:{
  cose:`<div class="box bia"><p>Il subjuntivo si usa in una frase <b>subordinata con “que”</b> quando la frase principale esprime <b>volontà, emozione, dubbio, giudizio</b>. Se invece c’è <b>certezza</b>, si usa l’<b>indicativo</b>.</p>
  <p class="m">Quiero que ${ES('vengas')} · Dudo que ${ES('venga')} · Creo que ${ES('viene')}</p>
- <div class="box gia"><p><b>Regola d’oro:</b> due soggetti diversi + sentimento/dubbio/volontà → <b>que + subjuntivo</b>. Lo stesso soggetto → <b>infinito</b>.</p></div></div>`,
+ <div class="box gia"><p><b>Regola d’oro:</b> due soggetti diversi + sentimento/dubbio/volontà → <b>que + subjuntivo</b>. Lo stesso soggetto → <b>infinito</b>.</p></div>
+ <p>Il subjuntivo non dice <b>quando</b> avviene l’azione, ma <b>come la considera</b> chi parla. Si usa anche per una <b>persona o cosa che non conosci</b>: <i>Busco a alguien que hable inglés</i>.</p></div>`,
  ricette:[
   card('blu','1 · Volontà, richiesta, consiglio, divieto',
-   '<p>querer, desear, preferir, necesitar, pedir, aconsejar, recomendar, permitir, prohibir, esperar + <b>que</b> + subjuntivo.</p>'+M('Quiero que vengas. (Voglio che tu venga.)')+M('Mi madre prohíbe que salga. (Mia madre vieta che io esca.)')),
+   '<p>querer, desear, preferir, necesitar, pedir, aconsejar, recomendar, permitir, prohibir, esperar + <b>que</b> + subjuntivo.</p>'+M('Quiero que vengas. (Voglio che tu venga.)')+M('Mi madre prohíbe que salga. (Mia madre vieta che io esca.)')+M('Te recomiendo que visites Berlín. (Ti consiglio di visitare Berlino.)')+M('Espero que apruebes el examen. (Spero che tu superi l’esame.)')+M('El profesor recomienda que estudies. (Il professore raccomanda che tu studi.)')),
   card('ver','2 · Emozioni e sentimenti',
-   '<p>me alegro de que · me gusta que · me molesta que · tengo miedo de que · siento que · es una lástima que + subjuntivo.</p>'+M('Me alegro de que estés aquí. (Sono contento che tu sia qui.)')),
+   '<p>me alegro de que · me gusta / me encanta que · me molesta que · temo que / tengo miedo de que · siento que · es una lástima que + subjuntivo.</p>'+M('Me alegro de que estés aquí. (Sono contento che tu sia qui.)')+M('Me encanta que los días sean más largos. (Mi piace che le giornate siano più lunghe.)')+M('Temo que no llegue a tiempo. (Temo che non arrivi in tempo.)')),
   card('gia','3 · Dubbio e negazione dell’opinione',
-   '<p><b>Dudo que</b> · <b>no creo que</b> · <b>no pienso que</b> · <b>no es verdad que</b> · <b>no es cierto que</b> · es posible / probable que → <b>subjuntivo</b>.</p>'+M('No creo que tenga razón. (Non credo che abbia ragione.)')+
-   '<p>Al contrario, con <b>certezza</b> si usa l’<b>indicativo</b>: creo que · pienso que · es verdad que · está claro que · estoy seguro de que · no dudo que.</p>'+M('Creo que tiene razón. (Credo che abbia ragione.)')),
+   '<p><b>Dudo que</b> · <b>no creo que</b> · <b>no pienso que</b> · <b>no es verdad que</b> · <b>no es cierto que</b> · es posible / probable que → <b>subjuntivo</b>.</p>'+M('No creo que tenga razón. (Non credo che abbia ragione.)')+M('No estoy seguro de que venga. (Non sono sicuro che venga.)')+
+   '<p>Al contrario, con <b>certezza</b> si usa l’<b>indicativo</b>: creo que · pienso que · es verdad que · está claro que · estoy seguro de que · no dudo que.</p>'+M('Creo que tiene razón. (Credo che abbia ragione.)')+'<p class="note">Attenzione: <b>estoy seguro de que</b> + indicativo, ma <b>no estoy seguro de que</b> + subjuntivo.</p>'),
   card('ros','4 · Giudizi impersonali',
-   '<p>es importante · es necesario · es mejor · es bueno · es malo · es increíble · es una lástima + <b>que</b> + subjuntivo.</p>'+M('Es necesario que estudies. (È necessario che tu studi.)')),
+   '<p>es importante · es necesario · es mejor · es raro · es bueno · es malo · es increíble · es una lástima + <b>que</b> + subjuntivo.</p>'+M('Es necesario que estudies. (È necessario che tu studi.)')+M('Es mejor que llegues temprano. (È meglio che tu arrivi presto.)')+M('Es raro que no llame. (È strano che non chiami.)')),
   card('blu','5 · Congiunzioni',stepsHtml([
-   '<b>Sempre subjuntivo</b>: <b>para que</b> (affinché), <b>a menos que</b> (a meno che), <b>sin que</b> (senza che), <b>antes de que</b> (prima che), <b>con tal de que</b>, <b>en caso de que</b>. '+M('Te llamo para que vengas.'),
-   '<b>Cuando, en cuanto, hasta que, después de que, mientras</b>: subjuntivo se l’azione è <b>futura</b>, indicativo se è <b>abituale o passata</b>. '+M('Cuando llegues, llámame. · Cuando llego, saludo.'),
+   '<b>Sempre subjuntivo</b>: <b>para que</b> (affinché), <b>a menos que</b> (a meno che), <b>sin que</b> (senza che), <b>antes de que</b> (prima che), <b>con tal de que</b>, <b>en caso de que</b>. '+M('Te llamo para que vengas. · Estudio para que mis padres estén orgullosos. · Bajo la música para que duermas mejor.')+M('No salgo a menos que me llames. · Te ayudo con tal de que me lo pidas.'),
+   '<b>Cuando, en cuanto, hasta que, después de que, mientras</b>: subjuntivo se l’azione è <b>futura</b>, indicativo se è <b>abituale o passata</b>. '+M('Cuando llegues, llámame. · Cuando llego, saludo.')+M('Cuando tenga tiempo, te llamo. · Antes de que llegue, avísame.'),
    '<b>Aunque</b>: con il <b>subjuntivo</b> introduce un’ipotesi o un’azione futura (“anche se piovesse / dovesse piovere”); con un <b>fatto reale</b> si usa di regola l’indicativo (nei fatti già noti è possibile anche il subjuntivo). '+M('Aunque llueva, saldré. · Aunque llueve, salgo.')])),
   card('ver','6 · Altre espressioni',
    '<p><b>Ojalá (que)</b> + subjuntivo = “magari, speriamo che”. <b>Quizás / tal vez</b> (forse) di solito vogliono il <b>subjuntivo</b>, ma ammettono anche l’indicativo. <b>A lo mejor</b> (forse) si usa quasi sempre con l’<b>indicativo</b>.</p>'+M('Ojalá llueva. · Quizás venga. · A lo mejor viene.')),
   card('gia','7 · Stesso soggetto: infinito',
    TAB(['soggetti','costruzione','esempio'],[['diversi','que + subjuntivo','Quiero que vengas.'],['uguale','infinito','Quiero venir.']])+'<p class="note">Non si dice “Quiero que yo venga”: se il soggetto è lo stesso si usa l’infinito.</p>'),
+  card('ver','8 · Una persona o una cosa che non si conosce',stepsHtml([
+   'Dopo <b>que</b> che descrive qualcuno o qualcosa <b>che cerchi, che non conosci o che forse non esiste</b> → <b>subjuntivo</b>. '+M('Busco a alguien que hable inglés. (Cerco qualcuno che parli inglese.)')+M('Buscamos un profe que hable inglés y viva en Madrid.'),
+   'Lo stesso con <b>nadie, nada, no hay</b> (non esiste): '+M('No hay nadie que lo sepa. (Non c’è nessuno che lo sappia.)'),
+   'Se invece la persona o la cosa <b>esiste ed è conosciuta</b> → <b>indicativo</b>. '+M('Tengo un amigo que habla inglés. (Ho un amico che parla inglese.)')+M('Hay alguien que lo sabe. (C’è qualcuno che lo sa.)')])),
+  card('ros','9 · Per scegliere: indicativo o subjuntivo?',stepsHtml([
+   'Usa il <b>subjuntivo</b> se stai <b>valutando</b> un fatto, se esprimi <b>dubbio, emozione o volontà</b>, se parli di un <b>futuro non certo</b> o di qualcuno / qualcosa di <b>non identificato</b>.',
+   'Usa l’<b>indicativo</b> se stai <b>informando</b> o presenti un fatto come <b>reale</b>.',
+   'Confronta: '+M('Creo que es verdad. · No creo que sea verdad.')+M('Sé que vive aquí. · Es posible que viva aquí.')])),
  ],
  esempio:`<div class="box bia"><h3>Esempi svolti</h3>
  <p>«<i>Espero que (tú) ___ (venir)</i>» → esperar = desiderio → subjuntivo → <b>vengas</b>.</p>
  <p>«<i>Creo que (él) ___ (tener) razón</i>» → creer affermativo = opinione sicura → indicativo → <b>tiene</b>.</p>
  <p>«<i>No creo que (él) ___ (tener) razón</i>» → negazione dell’opinione → subjuntivo → <b>tenga</b>.</p>
  <p>«<i>Cuando (yo) ___ (llegar), te llamaré</i>» → azione futura dopo cuando → subjuntivo → <b>llegue</b>.</p>
- <p>«<i>Quiero (yo) ir al cine</i>» → stesso soggetto → infinito, niente <i>que</i>.</p></div>`,
- errori:['Usare il subjuntivo dopo “creo que” (affermativo): <b>creo que viene</b>, non “creo que venga”.','Usare l’indicativo dopo “no creo que”: <b>no creo que venga</b>.','Dimenticare che <b>para que, sin que, antes de que, a menos que</b> vogliono <b>sempre</b> il subjuntivo.','Mettere il subjuntivo dopo “cuando” anche quando l’azione è abituale (“Cuando llego” va bene).','Con “a lo mejor” scegli l’<b>indicativo</b> (<b>a lo mejor viene</b>): il subjuntivo è raro.','Usare que + subjuntivo con lo stesso soggetto: “Quiero que yo vaya” ✗ → <b>Quiero ir</b>.'],
+ <p>«<i>Quiero (yo) ir al cine</i>» → stesso soggetto → infinito, niente <i>que</i>.</p>
+ <p>«<i>Busco a alguien que ___ (hablar) inglés</i>» → persona che cerco, non so chi sia → subjuntivo → <b>hable</b>.</p>
+ <p>«<i>Tengo un amigo que ___ (hablar) inglés</i>» → persona che esiste e conosco → indicativo → <b>habla</b>.</p></div>`,
+ errori:['Usare il subjuntivo dopo “creo que” (affermativo): <b>creo que viene</b>, non “creo que venga”.','Usare l’indicativo dopo “no creo que”: <b>no creo que venga</b>.','Dimenticare che <b>para que, sin que, antes de que, a menos que</b> vogliono <b>sempre</b> il subjuntivo.','Mettere il subjuntivo dopo “cuando” anche quando l’azione è abituale (“Cuando llego” va bene).','Con “a lo mejor” scegli l’<b>indicativo</b> (<b>a lo mejor viene</b>): il subjuntivo è raro.','Usare que + subjuntivo con lo stesso soggetto: “Quiero que yo vaya” ✗ → <b>Quiero ir</b>.','Usare l’indicativo con una persona che cerchi o che non esiste: “Busco a alguien que habla inglés” ✗ → <b>que hable</b>.','Usare il subjuntivo con una persona che esiste ed è conosciuta: “Tengo un amigo que hable inglés” ✗ → <b>que habla</b>.','Dopo “estoy seguro de que” va l’indicativo, dopo “<b>no</b> estoy seguro de que” va il subjuntivo.'],
  orale:[
   ['Quando si usa il subjuntivo?','Nelle subordinate con que quando la frase principale esprime volontà o richiesta (quiero que), emozione (me alegro de que), dubbio o negazione (dudo que, no creo que), giudizio impersonale (es importante que), e dopo alcune congiunzioni (para que, antes de que, sin que, a menos que). Con la certezza (creo que, es verdad que) si usa l’indicativo.'],
   ['Che differenza c’è tra “creo que” e “no creo que”?','Creo que vuole l’indicativo (opinione sicura): creo que viene. No creo que vuole il subjuntivo (dubbio): no creo que venga.'],
   ['Quando si usa l’infinito invece di que + subjuntivo?','Quando il soggetto delle due azioni è lo stesso: Quiero venir. Se i soggetti sono diversi si usa que + subjuntivo: Quiero que vengas.'],
   ['Come si usa cuando?','Se l’azione è futura vuole il subjuntivo (Cuando llegues, llámame), se è abituale o passata vuole l’indicativo (Cuando llego, saludo).'],
+  ['Quando si usa il subjuntivo con “alguien que” o “nadie que”?','Quando la persona o la cosa non è conosciuta, non esiste o la stai solo cercando: Busco a alguien que hable inglés. No hay nadie que lo sepa. Se esiste ed è conosciuta si usa l’indicativo: Tengo un amigo que habla inglés.'],
+  ['Come scegli tra indicativo e subjuntivo?','Subjuntivo: valuto un fatto, esprimo dubbio, emozione o volontà, parlo di un futuro non certo o di qualcuno non identificato. Indicativo: informo e presento un fatto come reale (creo que, sé que).'],
  ],
  quiz:[
   ['«Quiero que tú ___ (venir).» Scegli.','vengas',['vienes','vendrás','vienas'],'Querer + que → subjuntivo.'],
@@ -626,6 +660,10 @@ u2:{
   ['«Cuando ___ (yo, llegar) a casa, te llamaré.» (futuro)','llegue',['llego','llegué','llegaba'],'Azione futura → subjuntivo.'],
   ['Dopo <i>a lo mejor</i> si usa di regola…','l’indicativo',['il subjuntivo','l’infinito','il condicional'],'A lo mejor + indicativo (quizás, invece, di solito vuole il subjuntivo).'],
   ['“Voglio andare al cinema” (io lo voglio) si dice…','Quiero ir al cine.',['Quiero que voy al cine.','Quiero que vaya al cine.','Quiero que yo ir al cine.'],'Stesso soggetto → infinito.'],
+  ['«Busco a alguien que ___ (hablar) inglés.»','hable',['habla','hablará','hablaba'],'Persona che cerchi, non conosciuta → subjuntivo.'],
+  ['«Tengo un amigo que ___ (hablar) inglés.»','habla',['hable','hablara','hablaría'],'Persona che esiste e conosci → indicativo.'],
+  ['«No hay nadie que lo ___ (saber).»','sepa',['sabe','sabía','sabrá'],'Nadie / non esiste → subjuntivo.'],
+  ['«No estoy seguro de que (él) ___ (venir).»','venga',['viene','vendrá','vendría'],'No estar seguro de que → dubbio → subjuntivo.'],
  ]
 },
 u3:{
@@ -641,7 +679,9 @@ u3:{
   card('gia','3 · Quando si usa',stepsHtml([
    'Il verbo principale è al <b>presente</b> (o al futuro o all’imperativo).',
    'L’azione del subjuntivo è <b>già conclusa</b> prima di adesso. '+M('Me alegro de que hayas aprobado. (Sono contento che tu sia stato promosso.)'),
-   'Con <b>cuando, en cuanto, después de que, hasta que</b> e un’azione futura <b>che sarà già finita</b>. '+M('Cuando hayas terminado, llámame. (Quando avrai finito…)')])),
+   'Con <b>cuando, en cuanto, después de que, hasta que</b> e un’azione futura <b>che sarà già finita</b>. '+M('Cuando hayas terminado, llámame. (Quando avrai finito…)'),
+   'Azione passata <b>vicina</b> a chi parla: '+M('Espero que haya comprado pan. (Spero che abbia comprato il pane.)'),
+   'Azione futura che sarà <b>finita prima di un’altra azione futura</b>: '+M('Espero que el próximo año hayas terminado la carrera. (Spero che l’anno prossimo tu abbia finito l’università.)')])),
   card('ros','4 · Dove vanno i pronomi',
    '<p>Prima di <b>haya</b>, mai tra haya e il participio.</p>'+M('No creo que se lo hayas dicho. ✓')+M('No creo que hayas se lo dicho. ✗')),
  ],
@@ -724,7 +764,9 @@ u5:{
   card('gia','3 · Altri usi',stepsHtml([
    '<b>Rimpianto</b> con ojalá: <b>Ojalá hubiera estudiado más.</b> (Magari avessi studiato di più.)',
    '<b>Verbo principale al passato</b> e azione <b>precedente</b>: <b>No creía que hubieras terminado ya.</b> (Non credevo che tu avessi già finito.)',
-   '<b>Me habría gustado que</b> + pluscuamperfecto: <b>Me habría gustado que hubieras venido.</b>'])),
+   '<b>Me habría gustado que</b> + pluscuamperfecto: <b>Me habría gustado que hubieras venido.</b>',
+   'Dopo un verbo di emozione al passato: '+M('Me sorprendió que hubieras llegado. (Mi ha sorpreso che tu fossi arrivato.)'),
+   '<b>Attenzione:</b> <b>había + participio</b> è il pluscuamperfecto de <b>indicativo</b> (un fatto reale, anteriore a un altro fatto passato): '+M('Cuando llegué a casa, mi hermano ya se había ido a trabajar.')+'Nel <b>subjuntivo</b> si usa <b>hubiera</b> (o <b>hubiese</b>) + participio.'])),
   card('ros','4 · Confronto tra i quattro tempi',
    TAB(['italiano','spagnolo'],[['che io parli','que yo <b>hable</b> (presente)'],['che io abbia parlato','que yo <b>haya hablado</b> (perfecto)'],['che io parlassi','que yo <b>hablara</b> (imperfecto)'],['che io avessi parlato','que yo <b>hubiera hablado</b> (pluscuamperfecto)']])),
  ],
@@ -819,7 +861,7 @@ const FORMULARIO=`
 <div class="box ver"><h3>Pretérito perfecto de subjuntivo</h3><p class="m"><b>haya, hayas, haya, hayamos, hayáis, hayan</b> + participio</p><p class="m">hablado · comido · vivido · hecho · dicho · escrito · puesto · visto · vuelto · abierto</p></div>
 <div class="box gia"><h3>Pretérito imperfecto de subjuntivo</h3><p>ellos del indefinido − <b>ron</b> + <b>ra, ras, ra, ramos, rais, ran</b> (o se, ses, se, semos, seis, sen)</p><p class="m">hablaron → hablara · tuvieron → tuviera · fueron → fuera</p><p>Con nosotros: accento (hablÁramos).</p></div>
 <div class="box ros"><h3>Pretérito pluscuamperfecto de subjuntivo</h3><p class="m"><b>hubiera, hubieras, hubiera, hubiéramos, hubierais, hubieran</b> + participio</p><p>(o hubiese, hubieses, hubiese, hubiésemos, hubieseis, hubiesen)</p></div>
-<div class="box blu"><h3>Quando si usa il subjuntivo</h3><p>Volontà (quiero que) · emozione (me alegro de que) · dubbio / negazione (dudo que, no creo que) · giudizio (es importante que) · ojalá · para que, sin que, antes de que, a menos que · cuando + futuro</p><p><b>Indicativo</b>: creo que · es verdad que · está claro que · estoy seguro de que · a lo mejor (di regola)</p><p>Stesso soggetto → <b>infinito</b>.</p></div>
+<div class="box blu"><h3>Quando si usa il subjuntivo</h3><p>Volontà (quiero que) · emozione (me alegro de que) · dubbio / negazione (dudo que, no creo que) · giudizio (es importante que) · ojalá · para que, sin que, antes de que, a menos que · cuando + futuro · persona o cosa non conosciuta (busco a alguien que hable)</p><p><b>Indicativo</b>: creo que · es verdad que · está claro que · estoy seguro de que · a lo mejor (di regola)</p><p>Stesso soggetto → <b>infinito</b>.</p><p><b>Per scegliere</b>: subjuntivo se valuti un fatto, esprimi dubbio / emozione / volontà o parli di un futuro non certo; indicativo se informi o presenti un fatto come reale.</p></div>
 <div class="box ver"><h3>Concordancia de tiempos</h3>${TAB(['principale','contemporanea','già finita'],[['presente · futuro','presente','perfecto'],['passato · condizionale','imperfecto','pluscuamperfecto']])}</div>
 <div class="box gia"><h3>Frasi con si</h3>${TAB(['tipo','si + …','principale'],[['possibile','presente indicativo','futuro'],['irreale presente','imperfecto de subj.','condicional'],['irreale passato','pluscuamperfecto de subj.','condicional compuesto']])}</div>`;
 
@@ -979,7 +1021,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 
 
 </script>
-<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Il subjuntivo è il congiuntivo spagnolo.", "Parto da “yo” del presente. Esempio: hablo.", "Tolgo la -o e metto la vocale opposta: -ar prende e, -er e -ir prendono a.", "Esempio: hablo → hable, como → coma.", "Sei verbi sono irregolari: ser, estar, ir, dar, saber, haber."], "u2": ["Il subjuntivo si usa per un desiderio, un’emozione o un dubbio.", "Esempio: Quiero que vengas.", "Se c’è certezza si usa l’indicativo. Esempio: Creo que viene.", "Se il soggetto è lo stesso, si usa l’infinito. Esempio: Quiero venir."], "u3": ["Si forma con haya + participio.", "Esempio: haya hablado.", "Si usa per un’azione già finita.", "Esempio: Espero que hayas llegado."], "u4": ["Parto da “ellos” del pretérito indefinido. Esempio: hablaron.", "Tolgo -ron e aggiungo -ra: hablara.", "Si usa quando il verbo principale è al passato.", "Esempio: Quería que vinieras."], "u5": ["Si forma con hubiera + participio.", "Esempio: hubiera hablado.", "Si usa per cose che non sono successe: “se avessi studiato”.", "Esempio: Si hubiera estudiado, habría aprobado."], "u6": ["Guardo il verbo principale: è al presente o al passato?", "Presente: uso il presente o il perfecto del subjuntivo.", "Passato: uso l’imperfecto o il pluscuamperfecto.", "Le frasi con “si” sono di tre tipi: possibile, irreale presente, irreale passato."]}, "es": true, "pics": [{"k": "libro", "re": "libro|libri", "id": 25191}, {"k": "scuola", "re": "scuola|scuole|escuela", "id": 32446}, {"k": "parlare", "re": "parlare|hablar", "id": 9693}, {"k": "mangiare", "re": "mangiare|comer", "id": 6456}, {"k": "bere", "re": "bere|beber", "id": 6061}, {"k": "scrivere", "re": "scrivere|escribir", "id": 2380}, {"k": "leggere", "re": "leggere|leer", "id": 7141}, {"k": "studiare", "re": "studiare|estudiar", "id": 6495}, {"k": "pensare", "re": "pensare|pensar", "id": 38796}, {"k": "casa", "re": "casa|case", "id": 6964}, {"k": "famiglia", "re": "famiglia|familiari|familiare", "id": 38351}, {"k": "dubbio", "re": "dubbio|dubbi|dudar", "id": 11696}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Il subjuntivo è il congiuntivo spagnolo.", "Parto da “yo” del presente. Esempio: hablo.", "Tolgo la -o e metto la vocale opposta: -ar prende e, -er e -ir prendono a.", "Esempio: hablo → hable, como → coma.", "Sei verbi sono irregolari: ser, estar, ir, dar, saber, haber."], "u2": ["Il subjuntivo si usa per un desiderio, un’emozione o un dubbio.", "Esempio: Quiero que vengas.", "Se c’è certezza si usa l’indicativo. Esempio: Creo que viene.", "Se il soggetto è lo stesso, si usa l’infinito. Esempio: Quiero venir.", "Si usa anche per una persona che cerchi o che non esiste. Esempio: Busco a alguien que hable inglés."], "u3": ["Si forma con haya + participio.", "Esempio: haya hablado.", "Si usa per un’azione già finita.", "Esempio: Espero que hayas llegado."], "u4": ["Parto da “ellos” del pretérito indefinido. Esempio: hablaron.", "Tolgo -ron e aggiungo -ra: hablara.", "Si usa quando il verbo principale è al passato.", "Esempio: Quería que vinieras."], "u5": ["Si forma con hubiera + participio.", "Esempio: hubiera hablado.", "Si usa per cose che non sono successe: “se avessi studiato”.", "Esempio: Si hubiera estudiado, habría aprobado."], "u6": ["Guardo il verbo principale: è al presente o al passato?", "Presente: uso il presente o il perfecto del subjuntivo.", "Passato: uso l’imperfecto o il pluscuamperfecto.", "Le frasi con “si” sono di tre tipi: possibile, irreale presente, irreale passato."]}, "es": true, "pics": [{"k": "libro", "re": "libro|libri", "id": 25191}, {"k": "scuola", "re": "scuola|scuole|escuela", "id": 32446}, {"k": "parlare", "re": "parlare|hablar", "id": 9693}, {"k": "mangiare", "re": "mangiare|comer", "id": 6456}, {"k": "bere", "re": "bere|beber", "id": 6061}, {"k": "scrivere", "re": "scrivere|escribir", "id": 2380}, {"k": "leggere", "re": "leggere|leer", "id": 7141}, {"k": "studiare", "re": "studiare|estudiar", "id": 6495}, {"k": "pensare", "re": "pensare|pensar", "id": 38796}, {"k": "casa", "re": "casa|case", "id": 6964}, {"k": "famiglia", "re": "famiglia|familiari|familiare", "id": 38351}, {"k": "dubbio", "re": "dubbio|dubbi|dudar", "id": 11696}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
 (function(){
   var CFG=window.A11Y_CFG||{simple:{},es:false};
   var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
@@ -1344,7 +1386,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 </script><!--/A11Y--><!--AGG--><script>
 (function(){
- var B="20261012090305",t0=Date.now(),touched=false,last=0;
+ var B="20261012140834",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;
