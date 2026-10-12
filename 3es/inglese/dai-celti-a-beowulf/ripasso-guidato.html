@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inglese: dai Celti a Beowulf</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+.tr{color:#2a4a6b;font-size:.92em}p.tr{margin:.1em 0 .8em;padding-left:10px;border-left:3px solid #9ec1ee}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+table.sg td{text-align:left}table.sg th{text-align:center}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Inglese</a></p><h1>Inglese: dai Celti a Beowulf</h1><p>3 ES · storia, letteratura anglosassone e Beowulf · un passo alla volta</p></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Celts and Romans</button>
+<button data-t="u2">2 Anglo-Saxons and Vikings</button>
+<button data-t="u3">3 The Normans</button>
+<button data-t="u4">4 Henry II to Magna Carta</button>
+<button data-t="u5">5 The wars</button>
+<button data-t="u6">6 Anglo-Saxon literature</button>
+<button data-t="u7">7 Beowulf</button>
+<button data-t="u8">8 The funeral</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Riepilogo</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo su <b>Inglese</b>: la storia dell’Inghilterra dai Celti al <b>1485</b>, la letteratura anglosassone e il poema <b>Beowulf</b>. Il kit segue i tuoi appunti. I testi sono in <b>inglese semplice</b> e sotto ogni frase c’è la <b>traduzione in italiano</b> (la riga azzurra). Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>Storia</b>: Celts and Romans · Anglo-Saxons and Vikings · The Normans · Henry II to the Magna Carta · The wars (unità 1-5)</li><li><b>Letteratura</b>: The Anglo-Saxon Age (unità 6)</li><li><b>Beowulf</b>: la storia e l’eroe (unità 7)</li><li><b>Beowulf’s Funeral</b>: le 4 sezioni e le figure retoriche (unità 8)</li></ul></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos’è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema in inglese, con la traduzione.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: risposte da ripetere a voce in inglese.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove, in inglese con la traduzione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (8 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 · <b>Giorno 2</b>: unità 2 · <b>Giorno 3</b>: unità 3 · <b>Giorno 4</b>: unità 4</li><li><b>Giorno 5</b>: unità 5 e ripasso della storia con la linea del tempo (Riepilogo)</li><li><b>Giorno 6</b>: unità 6 (letteratura)</li><li><b>Giorno 7</b>: unità 7 (Beowulf) · <b>Giorno 8</b>: unità 8 (il funerale)</li><li>Alla fine: Prova finale e Orale</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c’è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Premi <b>🔊 Ascolta</b>: la voce legge l’inglese con pronuncia inglese e l’italiano con pronuncia italiana.</li><li>Ripeti <b>a voce alta</b> le risposte dell’Orale: l’interrogazione è parlata.</li><li>Impara le <b>date</b> con la linea del tempo del Riepilogo: 43, 410, 793, 1066, 1215, 1337, 1485.</li><li>Per le figure retoriche ricorda: <b>alliteration</b> (stesso suono), <b>kenning</b> (due parole = metafora), <b>caesura</b> (pausa), <b>run-on lines</b> (il pensiero continua).</li><li>Il testo di <i>Beowulf’s Funeral</i> è sul tuo libro: leggilo insieme alla unità 8.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un’altra domanda.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section><section class="tab" id="u7"></section><section class="tab" id="u8"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const NAMES=['Marco','Giulia','Luca','Sara','Paolo','Elena','Davide','Chiara','Andrea','Francesca','Matteo','Anna'];
+const names=n=>shuffle(NAMES).slice(0,n);
+const eur=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
+
+/* ========== INGLESE 3 ES: GENERATORI DI ESERCIZI ========== */
+const wy=(a,b)=>`<p lang="en">${a}</p><p class="tr">${b}</p>`;
+const mkE=(q,c,w,steps,tag)=>mkEx(q,E(c),w.map(E),steps,tag);
+/* riga: [domanda EN, domanda IT, giusta, [sbagliate], spiegazione EN, spiegazione IT] */
+const ROWS=(tag,rows)=>()=>{const r=pick(rows);return mkE(QI(r[0],r[1]),r[2],r[3],wy(r[4],r[5]),tag)};
+/* ---- date ---- */
+const DATES=[
+ ['u1','The Romans conquered Britain under Emperor Claudius','I Romani conquistarono la Britannia con l’imperatore Claudio','43 CE'],
+ ['u1','The last Roman soldiers left Britain','Gli ultimi soldati romani lasciarono la Britannia','410 CE'],
+ ['u2','Viking raiders attacked the monastery of Lindisfarne','I Vichinghi attaccarono il monastero di Lindisfarne','793'],
+ ['u3','William defeated Harold at the battle of Hastings','Guglielmo sconfisse Harold nella battaglia di Hastings','1066'],
+ ['u3','William ordered the Domesday Book','Guglielmo ordinò il Domesday Book','1085'],
+ ['u3','Henry I died','Henry I morì','1135'],
+ ['u3','Stephen died','Stephen morì','1154'],
+ ['u4','King Henry II tried to impose the Constitutions of Clarendon','Re Enrico II cercò di imporre le Costituzioni di Clarendon','1164'],
+ ['u4','Thomas Becket was murdered in Canterbury Cathedral','Thomas Becket fu assassinato nella cattedrale di Canterbury','1170'],
+ ['u4','Richard the Lionheart became king','Riccardo Cuor di Leone diventò re','1189'],
+ ['u4','The barons forced John to sign the Magna Carta','I baroni costrinsero John a firmare la Magna Carta','1215'],
+ ['u5','The Hundred Years’ War began','Cominciò la Guerra dei Cent’anni','1337'],
+ ['u5','The only English possession left in France was Calais','L’unico possedimento inglese rimasto in Francia era Calais','1453'],
+ ['u5','The battle of Bosworth Field ended the War of the Roses','La battaglia di Bosworth Field pose fine alla Guerra delle Due Rose','1485']];
+const exWhen=u=>()=>{
+  const L=DATES.filter(d=>d[0]===u),d=pick(L);
+  const others=shuffle(DATES.filter(x=>x[3]!==d[3])).map(x=>x[3]);
+  return mkE(QI(`When did this happen? <i>${d[1]}</i>`,`Quando è successo? ${d[2]}`),d[3],others,wy(`${d[1]}: <b>${d[3]}</b>.`,`${d[2]}: ${d[3]}.`),'Dates');
+};
+/* ---- unità 1 ---- */
+const exCeltGroup=()=>{
+  const G=[['the Gauls','northern France','Francia del nord'],['the Britons','Wales and Cornwall','Galles e Cornovaglia'],['the Gaels','Ireland and Scotland','Irlanda e Scozia']];
+  const i=rnd(0,2),g=G[i];
+  if(Math.random()<0.5)return mkE(QI(`Which Celtic group lived in <b>${g[1]}</b>?`,`Quale gruppo celtico viveva in ${g[2]}?`),g[0],G.filter((_,k)=>k!==i).map(x=>x[0]),wy(`${g[0]}: ${g[1]}.`,`${g[0]}: ${g[2]}.`),'The three Celtic groups');
+  return mkE(QI(`Where did <b>${g[0]}</b> live?`,`Dove vivevano i ${g[0].replace('the ','')}?`),g[1],G.filter((_,k)=>k!==i).map(x=>x[1]),wy(`${g[0]}: ${g[1]}.`,`${g[0]}: ${g[2]}.`),'The three Celtic groups');
+};
+const exRomanBring=()=>{
+  const C=[['towns','città'],['roads','strade'],['stone villas','ville di pietra'],['aqueducts','acquedotti'],['Latin','il latino'],['Christianity','il cristianesimo']];
+  const W=['the feudal system','the Domesday Book','Norman French','Old English'];
+  const c=pick(C);
+  return mkE(QI('What did the <b>Romans</b> bring to Britain?','Che cosa portarono i Romani in Britannia?'),c[0],shuffle(W),wy(`The Romans brought towns, roads, stone villas, aqueducts, Latin and Christianity. ${c[0]} = ${c[1]}.`,'I Romani portarono città, strade, ville di pietra, acquedotti, latino e cristianesimo.'),'What the Romans brought');
+};
+const ROWS1=ROWS('Celts and Romans',[
+ ['Who spread across Europe about 1000 BCE and then crossed into Britain?','Chi si diffuse in Europa circa nel 1000 a.C. e passò in Britannia?','the Celts',['the Romans','the Vikings'],'About 1000 BCE the Celts spread across Europe and crossed into Britain.','Circa nel 1000 a.C. i Celti si diffusero in Europa e passarono in Britannia.'],
+ ['What was the Celtic religion?','Qual era la religione dei Celti?','Druidism',['Christianity','the feudal system'],'The Celtic religion was Druidism.','La religione dei Celti era il druidismo.'],
+ ['What was the most important Celtic divinity?','Qual era la divinità più importante dei Celti?','the sun god',['the sea god','the god of war'],'The most important divinity was the sun god.','La divinità più importante era il dio sole.'],
+ ['The Celtic language was…','La lingua dei Celti era…','much older than English',['the same as Latin','a dialect of Old English'],'The Celts spoke a language much older than English.','I Celti parlavano una lingua molto più antica dell’inglese.'],
+ ['Under which emperor did the Romans conquer Britain?','Sotto quale imperatore i Romani conquistarono la Britannia?','Claudius',['Hadrian','Alfred'],'The Romans conquered the island under Emperor Claudius (43 CE).','I Romani conquistarono l’isola sotto l’imperatore Claudio (43 d.C.).'],
+ ['Roman Britain included…','La Britannia romana comprendeva…','England and Wales',['Scotland and Ireland','England and Scotland'],'Roman Britain included present-day England and Wales.','La Britannia romana comprendeva l’attuale Inghilterra e il Galles.'],
+ ['Which people could the Romans not defeat?','Quale popolo i Romani non riuscirono a sconfiggere?','the Picts',['the Gauls','the Angles'],'The Romans could not defeat the fierce Picts of Caledonia.','I Romani non riuscirono a sconfiggere i feroci Pitti della Caledonia.'],
+ ['Where did the Picts live?','Dove vivevano i Pitti?','Caledonia (Scotland)',['Britannia (England and Wales)','Normandy'],'The Picts lived in Caledonia, today’s Scotland.','I Pitti vivevano in Caledonia, la Scozia di oggi.'],
+ ['Why did Emperor Hadrian build a wall?','Perché l’imperatore Adriano costruì un muro?','to defend the province of Britannia',['to keep the Saxons out','to stop the Vikings'],'Hadrian built a wall to defend the province of Britannia from the Picts.','Adriano costruì un muro per difendere la provincia di Britannia dai Pitti.'],
+ ['Hadrian’s Wall runs…','Il Vallo di Adriano va…','from coast to coast',['from London to Rome','from Wales to Ireland'],'It runs from coast to coast.','Va da una costa all’altra.'],
+ ['Hadrian’s Wall marks…','Il Vallo di Adriano segna…','the northernmost frontier of the Roman Empire',['the border with France','the southern coast of England'],'It marks the northernmost frontier of the Roman Empire.','Segna il confine più a nord dell’Impero romano.'],
+ ['Why did the Roman legions leave Britain in 410 CE?','Perché le legioni romane lasciarono la Britannia nel 410 d.C.?','to fight on the continent',['because the Picts defeated them','because the Normans arrived'],'The legions were withdrawn to fight on the continent.','Le legioni furono richiamate per combattere sul continente.']]);
+/* ---- unità 2 ---- */
+const KINGS=['Kent','Northumbria','East Anglia','Mercia','Essex','Wessex','Sussex'];
+const exKingdom=()=>{
+  if(Math.random()<0.5){const k=pick(KINGS);return mkE(QI('Which one was a kingdom of the Heptarchy?','Quale era un regno dell’Heptarchy?'),k,['Normandy','Caledonia','the Danelaw'],wy(`The seven kingdoms: ${KINGS.join(', ')}.`,'I sette regni: Kent, Northumbria, East Anglia, Mercia, Essex, Wessex, Sussex.'),'The seven kingdoms')}
+  const bad=pick(['Normandy','Caledonia','the Danelaw']);
+  return mkE(QI('Which one was <b>NOT</b> a kingdom of the Heptarchy?','Quale NON era un regno dell’Heptarchy?'),bad,shuffle(KINGS),wy(`The seven kingdoms: ${KINGS.join(', ')}. ${bad} was not one of them.`,`I sette regni: Kent, Northumbria, East Anglia, Mercia, Essex, Wessex, Sussex. ${bad} non è uno di essi.`),'The seven kingdoms');
+};
+const ROWS2=ROWS('Anglo-Saxons and Vikings',[
+ ['Who arrived from across the North Sea after the Romans left?','Chi arrivò dal Mare del Nord dopo la partenza dei Romani?','Angles, Saxons and Jutes',['Gauls, Britons and Gaels','Normans, Danes and Picts'],'Germanic tribes of Angles, Saxons and Jutes arrived from across the North Sea.','Tribù germaniche di Angli, Sassoni e Juti arrivarono dal Mare del Nord.'],
+ ['What did the Angles, Saxons and Jutes speak?','Che lingua parlavano Angli, Sassoni e Juti?','dialects of Old English',['Latin','Norman French'],'They spoke dialects of a language we now call Old English.','Parlavano dialetti di una lingua che oggi chiamiamo inglese antico.'],
+ ['How many kingdoms were there in the Heptarchy?','Quanti regni c’erano nell’Heptarchy?','seven',['five','twelve'],'Hepta = seven.','Hepta = sette.'],
+ ['What is the name of the period of the seven kingdoms?','Come si chiama il periodo dei sette regni?','the Heptarchy',['the Danelaw','the Domesday'],'This period is known as the Heptarchy.','Questo periodo è noto come Heptarchy.'],
+ ['What did Viking raiders attack in 793?','Che cosa attaccarono i Vichinghi nel 793?','the monastery of Lindisfarne',['Westminster Abbey','Hadrian’s Wall'],'In 793 they attacked the monastery of Lindisfarne.','Nel 793 attaccarono il monastero di Lindisfarne.'],
+ ['Where is Lindisfarne?','Dove si trova Lindisfarne?','on the coast of Northumbria',['in Wessex','in Ireland'],'Lindisfarne is on the coast of Northumbria.','Lindisfarne è sulla costa della Northumbria.'],
+ ['What did the monks take to Kells in Ireland?','Che cosa portarono i monaci a Kells, in Irlanda?','a gospel book',['the Domesday Book','a pyre'],'They fled with a gospel book, the Book of Kells.','Fuggirono con un libro dei Vangeli, il Book of Kells.'],
+ ['Who united the Anglo-Saxon people to fight against the Danes?','Chi unì gli anglosassoni per combattere i Danesi?','King Alfred',['King Edgar','Harold'],'King Alfred united the Anglo-Saxons against the Danes.','Re Alfredo unì gli anglosassoni contro i Danesi.'],
+ ['What was the Danelaw?','Che cos’era il Danelaw?','north-eastern England, controlled by the Danes',['a book of laws','a Viking ship'],'The Danes kept control of north-eastern England: the Danelaw.','I Danesi tennero il controllo dell’Inghilterra nord-orientale: il Danelaw.'],
+ ['Which kingdom did the Danes leave alone?','Quale regno i Danesi lasciarono in pace?','Wessex',['Northumbria','East Anglia'],'The Danes left Wessex alone.','I Danesi lasciarono in pace il Wessex.'],
+ ['Who reconquered the Danelaw?','Chi riconquistò il Danelaw?','Edward the Elder',['Edgar','Harold'],'Edward the Elder, Alfred’s son, reconquered the Danelaw.','Edward the Elder, figlio di Alfredo, riconquistò il Danelaw.'],
+ ['What did King Edgar’s laws recognise?','Che cosa riconoscevano le leggi di re Edgar?','the multi-ethnic character of England',['the power of the Church over the king','the Norman language'],'Edgar made laws that recognised the multi-ethnic character of England.','Edgar fece leggi che riconoscevano il carattere multietnico dell’Inghilterra.']]);
+/* ---- unità 3 ---- */
+const ROWS3=ROWS('The Normans',[
+ ['Who defeated the Anglo-Saxons at the battle of Hastings?','Chi sconfisse gli anglosassoni a Hastings?','William, Duke of Normandy',['Harold','King Alfred'],'William, Duke of Normandy, defeated the Anglo-Saxons.','Guglielmo, duca di Normandia, sconfisse gli anglosassoni.'],
+ ['Who was Harold?','Chi era Harold?','the last Anglo-Saxon king',['the first Norman king','a Viking leader'],'Harold was the last Anglo-Saxon king.','Harold era l’ultimo re anglosassone.'],
+ ['Before Hastings, Harold defeated…','Prima di Hastings, Harold sconfisse…','the Vikings in the north',['the Normans in the south','the Picts in Scotland'],'Harold defeated the Vikings in the north, then moved to the south coast.','Harold sconfisse i Vichinghi nel nord, poi si spostò sulla costa sud.'],
+ ['What happened to Harold at Hastings?','Che cosa successe a Harold a Hastings?','he was killed',['he was crowned','he escaped to Normandy'],'Harold was killed and the Anglo-Saxon reign came to an end.','Harold fu ucciso e il regno anglosassone finì.'],
+ ['On which day was William crowned king?','In quale giorno fu incoronato Guglielmo?','Christmas Day 1066',['14 October 1066','Easter Day 1066'],'He was crowned on Christmas Day 1066.','Fu incoronato il giorno di Natale del 1066.'],
+ ['Where was William crowned king?','Dove fu incoronato Guglielmo?','Westminster Abbey',['Canterbury Cathedral','Lindisfarne'],'He was crowned in Westminster Abbey.','Fu incoronato nell’abbazia di Westminster.'],
+ ['What happened to Normandy when William became king?','Che cosa successe alla Normandia quando Guglielmo diventò re?','it became an English territory',['it was lost forever','it became a Viking kingdom'],'Normandy became an English territory.','La Normandia diventò un territorio inglese.'],
+ ['The Normans built… to defend their conquest.','I Normanni costruirono… per difendere la conquista.','castles',['aqueducts','monasteries'],'They built castles to defend their conquest.','Costruirono castelli per difendere la conquista.'],
+ ['Which system did the Normans introduce?','Quale sistema introdussero i Normanni?','the feudal system',['Druidism','the Heptarchy'],'The Normans introduced the feudal system.','I Normanni introdussero il sistema feudale.'],
+ ['Which language did the Normans bring?','Quale lingua portarono i Normanni?','Norman French',['Old English','Celtic'],'They brought their language, Norman French.','Portarono la loro lingua, il francese normanno.'],
+ ['Which languages were used by church and government?','Quali lingue usavano Chiesa e governo?','Latin and Norman French',['Old English and Celtic','Old English and Danish'],'Latin and Norman French were the languages of church and government.','Latino e francese normanno erano le lingue di Chiesa e governo.'],
+ ['Why did William make the Domesday Book?','Perché Guglielmo fece fare il Domesday Book?','to calculate how much money could be raised in taxes',['to count all the castles','to write the laws of the Church'],'It was a survey of lands, to calculate how much money could be raised in taxes.','Era un’indagine sulle terre, per calcolare quanti soldi si potevano raccogliere con le tasse.'],
+ ['What does the Domesday Book show?','Che cosa mostra il Domesday Book?','the value and ownership of lands',['the names of all the kings','the plan of Hadrian’s Wall'],'It shows the value and ownership of lands in England.','Mostra il valore e la proprietà delle terre in Inghilterra.'],
+ ['Who succeeded William I as William II?','Chi succedette a Guglielmo I come William II?','his son',['his brother','his nephew'],'William I was succeeded by his son, William II.','A William I succedette suo figlio, William II.'],
+ ['Who succeeded the unpopular William II?','Chi succedette all’impopolare William II?','his brother Henry I',['his son Stephen','his nephew Henry II'],'William II was succeeded by his brother Henry I.','A William II succedette il fratello Henry I.'],
+ ['Henry I was the first Norman king…','Henry I fu il primo re normanno…','born in England',['to be crowned','to speak Norman French only'],'He was born in England and spoke English and French.','Era nato in Inghilterra e parlava inglese e francese.'],
+ ['Who succeeded Henry I?','Chi succedette a Henry I?','his nephew Stephen',['his son William','his brother John'],'Henry I was succeeded by his nephew Stephen, who lost control of much of England.','A Henry I succedette suo nipote Stephen, che perse il controllo di gran parte dell’Inghilterra.']]);
+/* ---- unità 4 ---- */
+const ROWS4=ROWS('From Henry II to the Magna Carta',[
+ ['Who became king in 1154, after Stephen?','Chi diventò re nel 1154, dopo Stephen?','Henry Plantagenet (Henry II)',['Richard the Lionheart','King John'],'On Stephen’s death the throne passed to Henry Plantagenet.','Alla morte di Stephen il trono passò a Henry Plantagenet.'],
+ ['Henry II dominated most of…','Enrico II dominava gran parte…','France',['Scotland','Ireland'],'Henry II was a strong king and soldier who dominated most of France.','Henry II era un re forte e un soldato che dominava gran parte della Francia.'],
+ ['Who was Thomas Becket?','Chi era Thomas Becket?','the Archbishop of Canterbury',['a Norman duke','a Viking raider'],'Thomas Becket was the Archbishop of Canterbury.','Thomas Becket era l’arcivescovo di Canterbury.'],
+ ['What did Becket refuse to accept?','Che cosa rifiutò di accettare Becket?','the Constitutions of Clarendon',['the Magna Carta','the Domesday Book'],'Becket refused the Constitutions of Clarendon (1164).','Becket rifiutò le Costituzioni di Clarendon (1164).'],
+ ['What did the king try to do with the Constitutions of Clarendon?','Che cosa voleva fare il re con le Costituzioni di Clarendon?','reduce the power of the Church and affirm royal authority',['give more power to the barons','conquer France'],'The king tried to reduce the power of the Church and affirm royal authority.','Il re voleva ridurre il potere della Chiesa e affermare l’autorità reale.'],
+ ['What happened to Thomas Becket in 1170?','Che cosa successe a Thomas Becket nel 1170?','he was murdered in Canterbury Cathedral',['he became king','he signed the Magna Carta'],'Becket was murdered in Canterbury Cathedral in 1170.','Becket fu assassinato nella cattedrale di Canterbury nel 1170.'],
+ ['Why was Richard called “the Lionheart”?','Perché Richard fu chiamato “Cuor di Leone”?','for his bravery and military abilities',['for his taxes','for his many castles'],'He was called the Lionheart for his bravery and military abilities.','Fu chiamato Cuor di Leone per il coraggio e le capacità militari.'],
+ ['Where did Richard spend his reign?','Dove passò il suo regno Richard?','on crusade in Palestine and fighting in France',['in London','building castles in Wales'],'He spent his reign on crusade in Palestine and fighting in France.','Passò il regno in crociata in Palestina e a combattere in Francia.'],
+ ['Who reigned while Richard was away?','Chi regnò mentre Richard era via?','his younger brother John',['Henry I','Stephen'],'His younger brother John reigned in his place. He was unpopular.','Il fratello minore John regnò al suo posto. Era impopolare.'],
+ ['What happened to the French possessions under King John?','Che cosa successe ai possedimenti francesi con re John?','England lost all of them',['England kept all of them','England gained more'],'John fought unsuccessful wars until England lost all its French possessions.','John fece guerre senza successo finché l’Inghilterra perse tutti i possedimenti francesi.'],
+ ['Why did the barons rebel in 1215?','Perché i baroni si ribellarono nel 1215?','because of the loss of French territories and the taxes',['because of the Domesday Book','because of the Vikings'],'They rebelled because of the loss of French territories and the taxes for the wars.','Si ribellarono per la perdita dei territori francesi e per le tasse per le guerre.'],
+ ['What did the barons force John to sign?','Che cosa i baroni costrinsero John a firmare?','the Magna Carta',['the Domesday Book','the Constitutions of Clarendon'],'They forced him to sign the Magna Carta in 1215.','Lo costrinsero a firmare la Magna Carta nel 1215.'],
+ ['Who did the Magna Carta not give freedom to?','A chi la Magna Carta non dava la libertà?','serfs',['barons','free men'],'It established freedom under the rule of law for all men, except serfs.','Stabilì la libertà sotto la legge per tutti gli uomini, tranne i servi.'],
+ ['According to the Magna Carta, the king…','Secondo la Magna Carta, il re…','was subject to the law of the land',['was above the law','was the head of the Church'],'The king himself was subject to the law of the land.','Il re stesso era soggetto alla legge del paese.']]);
+/* ---- unità 5 ---- */
+const ROWS5=ROWS('Hundred Years’ War and Wars of the Roses',[
+ ['Why did the English fight the Hundred Years’ War?','Perché gli inglesi combatterono la Guerra dei Cent’anni?','to regain lost territories in France and claim the French throne',['to defend Hadrian’s Wall','to stop the Vikings'],'The English wanted to regain lost territories and claimed the French throne.','Gli inglesi volevano riprendere i territori perduti e rivendicavano il trono francese.'],
+ ['Was the Hundred Years’ War continuous?','La Guerra dei Cent’anni fu continua?','No: there were long breaks',['Yes: there was fighting every day','Yes: it lasted only one year'],'The war did not happen all the time; there were long breaks.','La guerra non fu continua: ci furono lunghe pause.'],
+ ['Under which king did the English win important victories?','Sotto quale re gli inglesi vinsero vittorie importanti?','Edward III',['John','Henry I'],'Under Edward III the English won important victories.','Con Edward III gli inglesi vinsero vittorie importanti.'],
+ ['Who led the French to victory?','Chi guidò i francesi alla vittoria?','Joan of Arc',['Richard III','Henry Tudor'],'Joan of Arc led the French to victory.','Giovanna d’Arco guidò i francesi alla vittoria.'],
+ ['Where was the Dauphin crowned?','Dove fu incoronato il Delfino?','in Rheims',['in Calais','in London'],'Joan of Arc had the Dauphin crowned in Rheims.','Giovanna d’Arco fece incoronare il Delfino a Reims.'],
+ ['What was the only English possession left in France in 1453?','Qual era l’unico possedimento inglese rimasto in Francia nel 1453?','the port of Calais',['Normandy','Rheims'],'By 1453 the only English possession left was the port of Calais.','Nel 1453 l’unico possedimento inglese rimasto era il porto di Calais.'],
+ ['What was the War of the Roses?','Che cos’era la Guerra delle Due Rose?','a fight for the crown between two branches of the Plantagenet family',['a war against the Vikings','a war between England and France'],'It was a fight for the crown between York and Lancaster.','Fu una lotta per la corona tra York e Lancaster.'],
+ ['How long was the struggle of the War of the Roses?','Quanto durò la lotta della Guerra delle Due Rose?','about 30 years',['about 100 years','about 5 years'],'It was a 30-year struggle.','Fu una lotta di trent’anni.'],
+ ['Who won the battle of Bosworth Field?','Chi vinse la battaglia di Bosworth Field?','Henry Tudor of Lancaster',['Richard III of York','Edward III'],'Henry Tudor of Lancaster defeated Richard III.','Henry Tudor di Lancaster sconfisse Richard III.'],
+ ['Who was Richard III?','Chi era Richard III?','the last York king',['the first Tudor king','the last Anglo-Saxon king'],'Richard III was the last York king.','Richard III fu l’ultimo re di York.']]);
+const exRose=()=>{
+  const H=[['the House of York','a white rose','una rosa bianca'],['the House of Lancaster','a red rose','una rosa rossa']];
+  const i=rnd(0,1),h=H[i];
+  if(Math.random()<0.5)return mkE(QI(`What was the symbol of <b>${h[0]}</b>?`,`Qual era il simbolo di ${h[0]}?`),h[1],[H[1-i][1],'a lion'],wy(`${h[0]}: ${h[1]}.`,`${h[0]}: ${h[2]}.`),'The symbols');
+  return mkE(QI(`Which house had <b>${h[1]}</b> as its symbol?`,`Quale casata aveva come simbolo ${h[2]}?`),h[0],[H[1-i][0],'the House of Normandy'],wy(`${h[0]}: ${h[1]}.`,`${h[0]}: ${h[2]}.`),'The symbols');
+};
+/* ---- unità 6 ---- */
+const GEN=[['Epic poetry','anonymous poetry that celebrates bravery, altruism and integrity','poesia anonima che celebra coraggio, altruismo e integrità'],
+ ['Elegies','poems of melancholy about loss and pain','poesie di malinconia su perdita e dolore'],
+ ['Religious poetry','poetry about religious subjects, inspired by Christianity','poesia su temi religiosi, ispirata al cristianesimo'],
+ ['Chronicles','texts that tell the main events of Anglo-Saxon history until the 12th century','testi che raccontano i fatti principali della storia anglosassone fino al 12° secolo']];
+const GEN_EX=[['Beowulf',0],['The Seafarer',1],['Caedmon’s Hymn',2],['King Alfred’s Anglo-Saxon Chronicle',3]];
+const exGenre=()=>{
+  if(Math.random()<0.5){const i=rnd(0,3),g=GEN[i];return mkE(QI(`Which genre is this? <i>${g[1]}</i>`,`Quale genere è? ${g[2]}`),g[0],shuffle(GEN.filter((_,k)=>k!==i)).map(x=>x[0]),wy(`${g[0]}: ${g[1]}.`,`${g[0]}: ${g[2]}.`),'The genres')}
+  const e=pick(GEN_EX),g=GEN[e[1]];
+  return mkE(QI(`Which genre does <b>${e[0]}</b> belong to?`,`A quale genere appartiene ${e[0]}?`),g[0],shuffle(GEN.filter((_,k)=>k!==e[1])).map(x=>x[0]),wy(`${e[0]} belongs to: ${g[0]}.`,`${e[0]} appartiene al genere: ${g[0]}.`),'The genres');
+};
+const ROWS6=ROWS('The Anglo-Saxon Age',[
+ ['Anglo-Saxon literature was written in…','La letteratura anglosassone fu scritta in…','Old English',['Latin','Norman French'],'It was written in Old English.','Fu scritta in inglese antico.'],
+ ['When did the Anglo-Saxon Age end?','Quando finì l’età anglosassone?','with the Norman conquest in 1066',['with the Magna Carta in 1215','with the Roman invasion'],'It lasted until the Norman conquest in 1066.','Durò fino alla conquista normanna del 1066.'],
+ ['Which two events influenced the birth of English literature?','Quali due eventi influenzarono la nascita della letteratura inglese?','the Anglo-Saxon invasion and the spread of Christianity',['the Roman invasion and the Magna Carta','the Viking raids and the Domesday Book'],'The two events: the Anglo-Saxon invasion and the spread of Christianity.','I due eventi: l’invasione anglosassone e la diffusione del cristianesimo.'],
+ ['The Anglo-Saxons were a tribe of warriors who introduced…','Gli anglosassoni erano una tribù di guerrieri che portò…','epic poetry',['elegies','Christianity'],'They introduced epic poetry.','Portarono la poesia epica.'],
+ ['Who brought Christianity to Britain?','Chi portò il cristianesimo in Britannia?','a monk called Augustine',['King Alfred','Emperor Hadrian'],'A monk called Augustine, the first archbishop of Canterbury.','Un monaco, Agostino, primo arcivescovo di Canterbury.'],
+ ['The conversion to Christianity was…','La conversione al cristianesimo fu…','progressive and mainly peaceful',['sudden and violent','impossible'],'It was progressive and mainly peaceful.','Fu progressiva e in gran parte pacifica.'],
+ ['Which of these is a trait of Anglo-Saxon epic poetry?','Quale di questi è un carattere della poesia epica anglosassone?','celebration of war and heroism',['praise of the Norman kings','a comic tone'],'Epic poetry celebrates war and heroism and bravery.','La poesia epica celebra guerra, eroismo e coraggio.'],
+ ['The word “hero” comes from…','La parola “hero” viene…','Ancient Greek',['Latin','Old English'],'It comes from Ancient Greek and means valiant strong man.','Viene dal greco antico e significa uomo forte e valoroso.'],
+ ['The epic hero can be defeated, but…','L’eroe epico può essere sconfitto, ma…','his search for glory raises him above ordinary men',['he is never remembered','he always runs away'],'His search for glory raises him above ordinary men.','La sua ricerca di gloria lo innalza sopra gli uomini comuni.'],
+ ['Which are typical themes of an elegy?','Quali sono i temi tipici di un’elegia?','loneliness, loss and grief',['war and victory','love and marriage'],'Elegies have a strong sense of loneliness and melancholy, themes like loss and grief.','Le elegie hanno un forte senso di solitudine e malinconia, temi come perdita e dolore.'],
+ ['What is The Seafarer about?','Di che cosa parla The Seafarer?','the difficult life of an explorer of the sea',['a battle against a dragon','the life of King Alfred'],'It is a reflection on the difficult life of an Anglo-Saxon explorer of the sea.','È una riflessione sulla vita difficile di un esploratore del mare anglosassone.'],
+ ['What is a fixed stress-pattern?','Che cos’è uno schema di accenti fisso?','each line has two halves, each half has two main stresses',['each line has only one word','every line ends in the same word'],'Each line is divided into two halves and each half has two main stresses.','Ogni verso è diviso in due metà e ogni metà ha due accenti principali.'],
+ ['What is a kenning?','Che cos’è un kenning?','a metaphor that combines two different words',['a pause in the line','a repeated consonant sound'],'A kenning is a metaphor made of two words. Example: sky-candle = sun.','Un kenning è una metafora di due parole. Esempio: sky-candle = sole.'],
+ ['Sky-candle is a kenning for…','Sky-candle è un kenning per…','the sun',['the moon','a bird'],'Sky-candle = sun.','Sky-candle = sole.'],
+ ['What is alliteration?','Che cos’è l’allitterazione?','the repetition of the same consonant sound in the same line',['a metaphor of two words','a pause in the line'],'Alliteration repeats the same consonant sound in a line.','L’allitterazione ripete lo stesso suono di consonante nello stesso verso.'],
+ ['Which king is linked to the most famous Anglo-Saxon chronicle?','A quale re è legata la più famosa cronaca anglosassone?','King Alfred',['King Edgar','King John'],'It is King Alfred’s Anglo-Saxon Chronicle.','È la Anglo-Saxon Chronicle di re Alfredo.'],
+ ['Anglo-Saxon religious drama was…','Il teatro religioso anglosassone era…','an extension of religious ceremonies',['an independent art','performed in Roman theatres'],'Drama was not independent: it extended religious or liturgical ceremonies.','Il teatro non era indipendente: prolungava le cerimonie religiose o liturgiche.'],
+ ['When were liturgical pieces performed?','Quando si recitavano i brani liturgici?','at Christmas or Easter',['in summer','during battles'],'They were performed at Christmas or Easter time.','Si recitavano a Natale o a Pasqua.']]);
+/* ---- unità 7 ---- */
+const PARTS=[
+ [1,['Beowulf leaves the land of the Geats','Beowulf goes to the land of the Danes','Beowulf wants to free the Danes from Grendel','Beowulf kills Grendel, a man-eating monster'],['Beowulf lascia la terra dei Geati','Beowulf va nella terra dei Danesi','Beowulf vuole liberare i Danesi da Grendel','Beowulf uccide Grendel, un mostro mangia-uomini']],
+ [2,['Beowulf becomes king','Beowulf rules for 50 years peacefully'],['Beowulf diventa re','Beowulf regna 50 anni in pace']],
+ [3,['Beowulf is asked to kill a terrible dragon','Beowulf defeats the dragon despite his old age','Beowulf is mortally wounded in the fight'],['A Beowulf è chiesto di uccidere un terribile drago','Beowulf sconfigge il drago nonostante l’età','Beowulf è ferito a morte nella lotta']]];
+const exPart=()=>{
+  const p=pick(PARTS),k=rnd(0,p[1].length-1);
+  return mkE(QI(`In which part of the poem? <i>${p[1][k]}</i>`,`In quale parte del poema? ${p[2][k]}`),'Part '+p[0],[1,2,3].filter(n=>n!==p[0]).map(n=>'Part '+n),wy(`${p[1][k]}: Part ${p[0]}. Part 1: Grendel. Part 2: 50 years as king. Part 3: the dragon.`,`Parte ${p[0]}. Parte 1: Grendel. Parte 2: 50 anni da re. Parte 3: il drago.`),'The 3 parts of Beowulf');
+};
+const QUAL=[['warrior','guerriero'],['brave','coraggioso'],['honest','onesto'],['fearless','senza paura'],['wise','saggio'],['strong','forte'],['loyal','leale'],['reflective','riflessivo']];
+const exQuality=()=>{
+  const q=pick(QUAL);
+  return mkE(QI('Which word describes Beowulf, the perfect hero?','Quale parola descrive Beowulf, l’eroe perfetto?'),q[0],shuffle(['cowardly','selfish','dishonest','foolish','cruel']),wy(`Beowulf is: warrior, brave, honest, fearless, wise, strong, loyal, reflective. ${q[0]} = ${q[1]}.`,`Beowulf è: guerriero, coraggioso, onesto, senza paura, saggio, forte, leale, riflessivo. ${q[0]} = ${q[1]}.`),'Beowulf, a perfect hero');
+};
+const ROWS7=ROWS('Beowulf',[
+ ['Beowulf was based on…','Beowulf si basa su…','oral tradition',['a written diary','a Roman text'],'Beowulf was based on oral tradition.','Beowulf si basa sulla tradizione orale.'],
+ ['Who is the author of Beowulf?','Chi è l’autore di Beowulf?','there is no single author',['King Alfred','a Norman monk called William'],'Beowulf has no single author: storytellers passed it on and shaped it.','Beowulf non ha un solo autore: i cantastorie lo tramandarono e gli diedero forma.'],
+ ['Who transcribed Beowulf?','Chi trascrisse Beowulf?','a cultured Christian man who spoke Old English',['Beowulf himself','a Viking raider'],'A cultured man who lived in an Anglo-Saxon court, practised poetry, was Christian and spoke Old English.','Un uomo colto che viveva in una corte anglosassone, praticava la poesia, era cristiano e parlava inglese antico.'],
+ ['Where do the events of Beowulf take place?','Dove si svolgono gli eventi di Beowulf?','in Scandinavia',['in Britain','in Rome'],'The events take place in Scandinavia, not Britain.','Gli eventi sono in Scandinavia, non in Britannia.'],
+ ['Who is Beowulf?','Chi è Beowulf?','a Scandinavian prince',['a Roman emperor','a Saxon monk'],'Beowulf is a Scandinavian prince.','Beowulf è un principe scandinavo.'],
+ ['Which land does Beowulf leave in Part 1?','Quale terra lascia Beowulf nella Parte 1?','the land of the Geats (south Sweden)',['the land of the Danes (Denmark)','Britannia'],'He leaves the land of the Geats, in south Sweden.','Lascia la terra dei Geati, nel sud della Svezia.'],
+ ['Who is Grendel?','Chi è Grendel?','a terrible man-eating monster',['a Danish king','a Geat warrior'],'Grendel is a terrible man-eating monster.','Grendel è un terribile mostro mangia-uomini.'],
+ ['How many years does Beowulf rule peacefully?','Per quanti anni Beowulf regna in pace?','50',['5','500'],'He rules for 50 years peacefully.','Regna per 50 anni in pace.'],
+ ['Why is Beowulf not a flat character?','Perché Beowulf non è un personaggio piatto?','his heroism evolves from youth to maturity',['he never changes','he is a monster'],'His heroism evolves from the youthful fight against Grendel to a mature form: a wise old king.','Il suo eroismo evolve dalla lotta giovanile contro Grendel a una forma matura: un re vecchio e saggio.'],
+ ['What does the fight with Grendel show?','Che cosa mostra la lotta con Grendel?','Beowulf will become a brave king, loyal to his people',['Beowulf is afraid','Beowulf is cruel'],'It shows that Beowulf will become a brave king, loyal to himself and to his people.','Mostra che Beowulf diventerà un re coraggioso, leale a se stesso e al suo popolo.'],
+ ['What does Beowulf do in the final part of the poem?','Che cosa fa Beowulf nell’ultima parte del poema?','he reflects on his responsibilities and is ready to sacrifice himself',['he runs away from the dragon','he gives up the crown'],'He reflects on his responsibilities as a king and is ready to sacrifice himself.','Riflette sulle sue responsabilità di re ed è pronto a sacrificarsi.'],
+ ['Which fate does Beowulf face, like all great heroes?','Quale destino affronta Beowulf, come tutti i grandi eroi?','death',['exile','a wedding'],'He faces his unavoidable fate: death.','Affronta il suo destino inevitabile: la morte.'],
+ ['How does Beowulf become a leader?','Come diventa un capo Beowulf?','thanks to his physical strength; then he learns moral qualities',['thanks to money','thanks to the Church only'],'He becomes a leader thanks to his physical strength; then he learns to use his moral qualities and virtues.','Diventa capo grazie alla forza fisica; poi impara a usare le sue qualità morali e le virtù.'],
+ ['In Beowulf, supernatural creatures are…','In Beowulf le creature soprannaturali sono…','evil enemies and a test for the hero',['friends of the hero','gods to worship'],'They are evil, enemies to destroy, and a test for the hero’s abilities.','Sono malvagie, nemici da distruggere e una prova per le capacità dell’eroe.'],
+ ['Which Christian element is in the poem?','Quale elemento cristiano c’è nel poema?','God is the almighty father',['the Pope is king','Druidism'],'God is represented as the almighty father; there are references to Christian hell.','Dio è rappresentato come padre onnipotente; ci sono riferimenti all’inferno cristiano.'],
+ ['Which is a feature of the style of Beowulf?','Quale è un tratto dello stile di Beowulf?','an omniscient narrator',['a first-person diary','no figures of speech'],'Style: alliterations, high poetic diction, kennings, omniscient narrator, rich vocabulary.','Stile: allitterazioni, linguaggio poetico elevato, kenning, narratore onnisciente, vocabolario ricco.']]);
+/* ---- unità 8 ---- */
+const SECT=[['1-4','The Geat people build a pyre and decorate it','I Geati costruiscono una pira e la decorano'],['1-4','The pyre is hung with armour, a helmet and shields','La pira è ornata di armatura, elmo e scudi'],
+ ['5-13','The warriors place Beowulf’s body in the middle of the pyre','I guerrieri mettono il corpo di Beowulf al centro della pira'],['5-13','The burning of the hero’s body is described in detail','Il rogo del corpo dell’eroe è descritto nei dettagli'],
+ ['14-19','A Geat woman expresses collective grief and fear','Una donna dei Geati esprime dolore e paura collettivi'],['14-19','Someone speaks about invasion, enemies and slavery','Qualcuno parla di invasione, nemici e schiavitù'],
+ ['19-37','The Geats build a memorial on a mound','I Geati costruiscono un monumento su un tumulo'],['19-37','Precious ornaments and jewels are buried','Ornamenti preziosi e gioielli vengono sepolti'],['19-37','Twelve warriors ride around the tomb','Dodici guerrieri cavalcano attorno alla tomba']];
+const RANGES=['1-4','5-13','14-19','19-37'];
+const exSection=()=>{
+  const s=pick(SECT),oth=shuffle(RANGES.filter(r=>r!==s[0])).map(r=>'lines '+r);
+  return mkE(QI(`Which lines? <i>${s[1]}</i>`,`Quali righe? ${s[2]}`),'lines '+s[0],oth,wy(`${s[1]}: lines ${s[0]}. Sections: 1-4 preparation · 5-13 mourning and burning · 14-19 the Geat woman · 19-37 the mound and the treasure.`,`Righe ${s[0]}. Sezioni: 1-4 preparazione · 5-13 lutto e rogo · 14-19 la donna · 19-37 il tumulo e il tesoro.`),'The four sections');
+};
+const DEV=['run-on lines','alliteration','kenning','fixed stress-pattern','caesura'];
+const DEVEX=[
+ ['“On a height they kindled the hugest of all / funeral fires”',0,['kenning','caesura'],'The thought continues in the next line: run-on lines (enjambement).','Il pensiero continua nel verso dopo: run-on lines (enjambement).'],
+ ['“hung with helmets, heavy war-shields”',1,['kenning','run-on lines'],'The sound h is repeated: alliteration.','Il suono h si ripete: allitterazione.'],
+ ['“battle-sweat” (= blood)',2,['alliteration','caesura'],'Two words make a metaphor: kenning.','Due parole fanno una metafora: kenning.'],
+ ['“bone-house” (= body)',2,['alliteration','run-on lines'],'Two words make a metaphor: kenning.','Due parole fanno una metafora: kenning.'],
+ ['“It was their hero’s memorial; what remained from the fire”',4,['kenning','alliteration'],'The semicolon marks a pause in the line: caesura.','Il punto e virgola segna una pausa nel verso: cesura.']];
+const exDevEx=()=>{
+  const d=pick(DEVEX);
+  return mkE(QI(`Which literary device is this? ${d[0]}`,'Quale figura retorica è questa?'),DEV[d[1]],d[2],wy(d[3],d[4]),'Literary devices');
+};
+const DEVDEF=[
+ [0,'A line ends in the middle of a phrase and the thought continues in the next line.','Il verso finisce a metà frase e il pensiero continua nel verso dopo.'],
+ [1,'The repetition of the same initial consonant sound in the same line.','La ripetizione dello stesso suono iniziale di consonante nello stesso verso.'],
+ [2,'Two different words combined to create a metaphor.','Due parole diverse unite per creare una metafora.'],
+ [3,'Each line is divided into two halves and each half has two main stresses.','Ogni verso è diviso in due metà e ogni metà ha due accenti principali.'],
+ [4,'A break or pause in a line of poetry.','Una pausa o interruzione dentro un verso di poesia.']];
+const exDevDef=()=>{
+  const d=pick(DEVDEF);
+  return mkE(QI(`Which literary device is this? <i>${d[1]}</i>`,`Quale figura retorica è? ${d[2]}`),DEV[d[0]],shuffle(DEV.filter((_,k)=>k!==d[0])),wy(`${DEV[d[0]]}: ${d[1]}`,`${DEV[d[0]]}: ${d[2]}`),'Literary devices');
+};
+const exKenning=()=>{
+  const K=[['sky-candle','the sun','il sole'],['battle-sweat','blood','il sangue'],['bone-house','the body','il corpo']];
+  const i=rnd(0,2),k=K[i];
+  return mkE(QI(`What does the kenning <b>${k[0]}</b> mean?`,`Che cosa significa il kenning ${k[0]}?`),k[1],K.filter((_,j)=>j!==i).map(x=>x[1]),wy(`${k[0]} = ${k[1]}.`,`${k[0]} = ${k[2]}.`),'Kennings');
+};
+const exPoem=()=>{
+  const it=POEM.map(p=>p[1]);
+  const i=rnd(0,POEM.length-1),p=POEM[i];
+  const dup=it.filter(x=>x===p[1]).length>1;
+  if(dup||Math.random()<0.6){
+    const wr=shuffle(POEM.filter(x=>x[1]!==p[1])).map(x=>x[1]);
+    return mkEx(`<span>Che cosa significa</span> <b lang="en">“${p[0]}”</b> <span>nel brano?</span>`,p[1],wr,`<p><b lang="en">${p[0]}</b> = ${p[1]}.</p>`,'Words of the passage');
+  }
+  const wrE=shuffle(POEM.filter(x=>x[1]!==p[1])).map(x=>x[0]);
+  return mkE(`<span lang="en">Which word of the passage means</span> <b>“${p[1]}”</b>?<br><span class="tr">Quale parola inglese del brano significa “${p[1]}”?</span>`,p[0],wrE,`<p><b>${p[1]}</b> = <span lang="en">${p[0]}</span>.</p>`,'Words of the passage');
+};
+const ROWS8=ROWS('Beowulf’s Funeral',[
+ ['What is the passage about?','Di che cosa parla il brano?','Beowulf’s funeral',['Beowulf’s wedding','the fight with Grendel'],'It describes the funeral of Beowulf, a typical Anglo-Saxon funeral rite.','Descrive il funerale di Beowulf, un tipico rito funebre anglosassone.'],
+ ['Who builds the pyre?','Chi costruisce la pira?','the Geat people',['the Danes','the Vikings'],'The Geat people build a pyre for Beowulf.','I Geati costruiscono una pira per Beowulf.'],
+ ['What decorates the pyre?','Che cosa decora la pira?','armour, a helmet and shields',['flowers and ribbons','swords and crowns'],'The pyre is decorated with armour, a helmet and shields: symbols of his heroic status.','La pira è decorata con armatura, elmo e scudi: simboli del suo status di eroe.'],
+ ['Where do the warriors place Beowulf’s body?','Dove mettono il corpo di Beowulf i guerrieri?','in the middle of the pyre',['on a ship','in a castle'],'They place his body in the middle of the pyre.','Mettono il suo corpo in mezzo alla pira.'],
+ ['What is “mourning”?','Che cos’è il “mourning”?','showing great sadness when someone dies',['a victory song','a kind of weapon'],'Mourning is showing great sadness, crying, when someone dies.','Mourning è mostrare grande dolore, piangere, quando qualcuno muore.'],
+ ['What does the Geat woman fear?','Di che cosa ha paura la donna dei Geati?','invasion, destruction and slavery',['a storm at sea','a new dragon'],'Beowulf’s death will leave his people unguarded: invasion, destruction and slavery.','La morte di Beowulf lascerà il popolo senza protezione: invasione, distruzione e schiavitù.'],
+ ['What does the woman’s voice express?','Che cosa esprime la voce della donna?','collective grief and fear',['happiness','anger at Beowulf'],'It expresses the grief and fears of the whole people.','Esprime il dolore e le paure di tutto il popolo.'],
+ ['What do the Geats build in the last section?','Che cosa costruiscono i Geati nell’ultima sezione?','a memorial on a mound',['a new castle','a wall like Hadrian’s'],'A memorial built on a mound that people can see from afar.','Un monumento su un tumulo che si vede da lontano.'],
+ ['What is a mound?','Che cos’è un mound?','a small hill',['a deep lake','a wooden ship'],'A mound is a small hill.','Un mound è una piccola collina.'],
+ ['What do the Geats bury in the mound?','Che cosa seppelliscono i Geati nel tumulo?','precious ornaments and jewels',['their swords','the dragon’s body'],'They bury precious ornaments and jewels: the hero’s personal treasure.','Seppelliscono ornamenti preziosi e gioielli: il tesoro personale dell’eroe.'],
+ ['What does the passage say about money?','Che cosa dice il brano sul denaro?','it is not useful in life or after death',['it makes people happy','it saves the Geats'],'The description says that money is not useful in life or after death.','La descrizione dice che il denaro non serve né in vita né dopo la morte.'],
+ ['How is Beowulf described at the end?','Come è descritto Beowulf alla fine?','as a man and a king',['as a monster','as a god'],'The warriors mourn the loss of their hero, a man and a king.','I guerrieri piangono la perdita del loro eroe, un uomo e un re.'],
+ ['Who translated the passage in your book?','Chi ha tradotto il brano nel tuo libro?','Seamus Heaney',['King Alfred','Hans Schmidt'],'The passage is translated by Seamus Heaney.','Il brano è tradotto da Seamus Heaney.']]);
+/* ---- definizioni ---- */
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`<span>Quale termine inglese corrisponde a questo significato?</span><br><i>${L[i][1]}</i>`,E(L[i][0]),others.slice(0,2).map(x=>E(x[0])),`<p>${L[i][1]}</p><p>Risposta: ${B(E(L[i][0]))}.</p>`,'Words and meanings');
+  return mkEx(`<span>Che cosa significa</span> ${B(E(L[i][0]))}?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(E(L[i][0]))}: ${L[i][1]}</p>`,'Words and meanings');
+};
+const GENS={
+ u1:[ROWS1,ROWS1,ROWS1,exCeltGroup,exRomanBring,exWhen('u1'),exDef('u1')],
+ u2:[ROWS2,ROWS2,ROWS2,exKingdom,exKingdom,exWhen('u2'),exDef('u2')],
+ u3:[ROWS3,ROWS3,ROWS3,exWhen('u3'),exWhen('u3'),exDef('u3')],
+ u4:[ROWS4,ROWS4,ROWS4,exWhen('u4'),exWhen('u4'),exDef('u4')],
+ u5:[ROWS5,ROWS5,exWhen('u5'),exRose,exRose,exDef('u5')],
+ u6:[ROWS6,ROWS6,ROWS6,exGenre,exGenre,exDef('u6')],
+ u7:[ROWS7,ROWS7,ROWS7,exPart,exPart,exQuality,exDef('u7')],
+ u8:[ROWS8,ROWS8,exSection,exSection,exDevEx,exDevDef,exKenning,exPoem,exPoem,exDef('u8')]
+};
+const UNITS={u1:'1 · Celts and Romans',u2:'2 · Anglo-Saxons and Vikings',u3:'3 · 1066: the Normans',u4:'4 · From Henry II to the Magna Carta',u5:'5 · The Hundred Years’ War and the Wars of the Roses',u6:'6 · The Anglo-Saxon Age: literature',u7:'7 · Beowulf',u8:'8 · Beowulf’s Funeral'};
+const PROVA_PLAN={u1:2,u2:2,u3:2,u4:2,u5:1,u6:2,u7:2,u8:2};
+
+/* ========== INGLESE 3 ES: dai Celti a Beowulf — CONTENUTI (parte 1: aiuti, definizioni, unità 1-4) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const LI=l=>'<ul>'+l.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+const E=s=>`<span lang="en">${s}</span>`;
+const en=s=>`<b lang="en">${s}</b>`;
+const S2=(a,b)=>`<span lang="en">${a}</span><br><span class="tr">${b}</span>`;
+const EN=(a,b)=>`<p lang="en">${a}</p><p class="tr">${b}</p>`;
+const QI=(a,b)=>`<span lang="en">${a}</span><br><span class="tr">${b}</span>`;
+const OR=(qa,qb,aa,ab)=>[QI(qa,qb),EN(aa,ab)];
+const QZ=(qa,qb,c,w,ex)=>[QI(qa,qb),E(c),w.map(E),ex];
+/* DEFS: [termine inglese, significato in italiano] */
+const DEFS={
+u1:[
+ ['the Celts','i Celti: popolo che circa nel 1000 a.C. si diffuse in Europa e arrivò in Britannia'],
+ ['Druidism','il druidismo: la religione dei Celti (il dio più importante era il sole)'],
+ ['the Picts','i Pitti: i feroci abitanti della Caledonia (Scozia), che i Romani non riuscirono a sconfiggere'],
+ ['Hadrian’s Wall','il Vallo di Adriano: muro da costa a costa, il confine più a nord dell’Impero romano'],
+ ['Britannia','la provincia romana: comprendeva l’attuale Inghilterra e il Galles'],
+ ['BCE / CE','a.C. (prima di Cristo) / d.C. (dopo Cristo)']],
+u2:[
+ ['Angles, Saxons and Jutes','tribù germaniche arrivate dal Mare del Nord dopo la partenza dei Romani'],
+ ['Old English','l’inglese antico: la lingua (dialetti germanici) parlata dagli anglosassoni'],
+ ['the Heptarchy','i sette regni anglosassoni (Kent, Northumbria, East Anglia, Mercia, Essex, Wessex, Sussex)'],
+ ['the Vikings','predoni venuti dal mare (Scandinavia): attaccarono i monasteri'],
+ ['the Danelaw','la parte nord-orientale dell’Inghilterra, controllata dai Danesi'],
+ ['the Book of Kells','il libro dei Vangeli che i monaci portarono con sé in Irlanda, a Kells']],
+u3:[
+ ['the Normans','i Normanni: venivano dalla Normandia e conquistarono l’Inghilterra nel 1066'],
+ ['the battle of Hastings','la battaglia del 14 ottobre 1066: Guglielmo vinse e Harold fu ucciso'],
+ ['the feudal system','il sistema feudale, introdotto dai Normanni'],
+ ['Norman French','il francese normanno, la lingua portata dai Normanni'],
+ ['the Domesday Book','il registro del 1085 sul valore e sulla proprietà delle terre, per calcolare le tasse'],
+ ['to be crowned','essere incoronato (diventare re o regina con la cerimonia)']],
+u4:[
+ ['Plantagenet','la famiglia reale di Enrico II (Henry Plantagenet)'],
+ ['the Archbishop of Canterbury','l’arcivescovo di Canterbury: il capo della Chiesa inglese (Thomas Becket)'],
+ ['a crusade','una spedizione militare cristiana in Terrasanta (Palestina)'],
+ ['the barons','i baroni: i nobili potenti del regno'],
+ ['a serf','un servo della gleba: i servi erano esclusi dalla libertà della Magna Carta'],
+ ['the Magna Carta','documento del 1215: il re stesso è soggetto alla legge']],
+u5:[
+ ['the Hundred Years’ War','la guerra tra Inghilterra e Francia, cominciata nel 1337'],
+ ['the Dauphin','il Delfino: l’erede al trono di Francia'],
+ ['Calais','il porto: nel 1453 l’unico possedimento inglese rimasto in Francia'],
+ ['the War of the Roses','la lotta di trent’anni per la corona tra York e Lancaster'],
+ ['the House of York','il ramo dei Plantageneti con la rosa bianca'],
+ ['the House of Lancaster','il ramo dei Plantageneti con la rosa rossa']],
+u6:[
+ ['epic poetry','poesia epica: anonima, celebra il coraggio, l’altruismo e l’integrità'],
+ ['an elegy','un’elegia: poesia di malinconia, su perdita e dolore'],
+ ['a chronicle','una cronaca: racconta i fatti principali della storia anglosassone'],
+ ['a hero','un eroe: dal greco antico, “uomo forte e valoroso”'],
+ ['a kenning','una metafora di due parole unite (per esempio sky-candle = sole)'],
+ ['alliteration','la ripetizione dello stesso suono di consonante nello stesso verso']],
+u7:[
+ ['the Geats','i Geati: il popolo di Beowulf, nel sud della Svezia'],
+ ['Grendel','un terribile mostro mangia-uomini ucciso da Beowulf'],
+ ['a flat character','un personaggio piatto: che non cambia mai (Beowulf NON lo è)'],
+ ['an omniscient narrator','un narratore onnisciente: sa tutto della storia'],
+ ['fate','il destino: l’eroe affronta la morte, inevitabile'],
+ ['a mortal wound','una ferita mortale: Beowulf la riceve nella lotta con il drago']],
+u8:[
+ ['run-on lines (enjambement)','versi che finiscono a metà frase: il pensiero continua nel verso dopo'],
+ ['a caesura','una pausa, una interruzione dentro il verso'],
+ ['a fixed stress-pattern','verso diviso in due metà, con due accenti principali per metà'],
+ ['a mound','un tumulo: una piccola collina costruita sopra la tomba'],
+ ['mourning','il lutto: mostrare grande dolore, piangere per un morto'],
+ ['a pyre','una pira: la catasta di legna dove si brucia il corpo']]
+};
+const CONT={};
+CONT.u1={
+ cose:`<div class="box bia"><p>Prima degli Anglosassoni la Britannia ebbe due “padroni”: i <b>Celti</b> e poi i <b>Romani</b>. In inglese i fatti sono semplici: ${en('Celtic Britain')} (circa 1000 a.C.), ${en('the Roman invasion')} (43 d.C.), poi i Romani se ne vanno nel 410 d.C.</p></div>`,
+ ricette:[
+  card('blu','1 · Celtic Britain',stepsHtml([
+   S2('About <b>1000 BCE</b>: the <b>Celts</b> spread across Europe and crossed into Britain.','Circa nel 1000 a.C. i Celti si diffusero in Europa e passarono in Britannia.'),
+   S2('Three main groups: the <b>Gauls</b> (northern France), the <b>Britons</b> (Wales, Cornwall), the <b>Gaels</b> (Ireland, Scotland).','Tre gruppi: Galli (nord della Francia), Britanni (Galles, Cornovaglia), Gaeli (Irlanda, Scozia).'),
+   S2('Their language was <b>much older than English</b>. Their religion was <b>Druidism</b>: the most important divinity was the <b>sun god</b>.','La loro lingua era molto più antica dell’inglese. La religione era il druidismo: il dio più importante era il dio sole.')])),
+  card('ver','2 · The Roman invasion',stepsHtml([
+   S2('<b>43 CE</b>: the Romans conquered the island under <b>Emperor Claudius</b>. Roman Britain included <b>England and Wales</b>.','Nel 43 d.C. i Romani conquistarono l’isola con l’imperatore Claudio. La Britannia romana comprendeva Inghilterra e Galles.'),
+   S2('They could not defeat the fierce <b>Picts</b> of Caledonia (Scotland). So <b>Emperor Hadrian</b> built a wall to defend the province of Britannia.','Non riuscirono a sconfiggere i feroci Pitti della Caledonia (Scozia). Così l’imperatore Adriano costruì un muro per difendere la provincia.'),
+   S2('<b>Hadrian’s Wall</b> runs from coast to coast: it is the northernmost frontier of the Roman Empire.','Il Vallo di Adriano va da una costa all’altra: è il confine più a nord dell’Impero romano.')])),
+  card('gia','3 · What the Romans brought',TAB(['English','Italiano'],[[en('towns, roads, stone villas, aqueducts'),'città, strade, ville di pietra, acquedotti'],[en('their language: Latin'),'il latino'],[en('Christianity'),'il cristianesimo']])),
+  card('ros','4 · 410 CE: the Romans leave',stepsHtml([
+   S2('In <b>410 CE</b> the last Roman soldiers left Britain.','Nel 410 d.C. gli ultimi soldati romani lasciarono la Britannia.'),
+   S2('The legions were withdrawn <b>to fight on the continent</b>.','Le legioni furono richiamate per combattere sul continente.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>Who were the Celts?</b> They spread across Europe about 1000 BCE and crossed into Britain. There were three main groups: the Gauls, the Britons and the Gaels. Their religion was Druidism.','<b>Chi erano i Celti?</b> Circa nel 1000 a.C. si diffusero in Europa e passarono in Britannia. Tre gruppi principali: Galli, Britanni e Gaeli. La religione era il druidismo.')}
+ ${EN('<b>What did the Romans do in Britain?</b> They conquered the island in 43 CE under Claudius. They built Hadrian’s Wall against the Picts. They brought towns, roads, Latin and Christianity.','<b>Che cosa fecero i Romani in Britannia?</b> La conquistarono nel 43 d.C. con Claudio. Costruirono il Vallo di Adriano contro i Pitti. Portarono città, strade, latino e cristianesimo.')}</div>`,
+ errori:['<b>Britons</b> (Galles, Cornovaglia) e <b>Gaels</b> (Irlanda, Scozia) non sono la stessa cosa. I <b>Gauls</b> sono in Francia.','Il Vallo di Adriano <b>non</b> è in Inghilterra del sud: è il confine più a nord dell’Impero, contro i Pitti della Scozia.','<b>43 CE</b> = i Romani arrivano. <b>410 CE</b> = i Romani se ne vanno. Non invertire le date.','<b>BCE</b> = prima di Cristo (a.C.). <b>CE</b> = dopo Cristo (d.C.).'],
+ orale:[
+  OR('Who were the Celts and where did they live?','Chi erano i Celti e dove vivevano?','The Celts spread across Europe about 1000 BCE. There were three groups: the Gauls in northern France, the Britons in Wales and Cornwall, and the Gaels in Ireland and Scotland.','I Celti si diffusero in Europa circa nel 1000 a.C. Tre gruppi: i Galli nel nord della Francia, i Britanni in Galles e Cornovaglia, i Gaeli in Irlanda e Scozia.'),
+  OR('What was the Celtic religion?','Qual era la religione dei Celti?','It was Druidism. The most important divinity was the sun god.','Era il druidismo. La divinità più importante era il dio sole.'),
+  OR('Tell me about the Roman invasion.','Parlami dell’invasione romana.','In 43 CE the Romans conquered the island under Emperor Claudius. Roman Britain included England and Wales. They could not defeat the Picts of Scotland, so they built a wall.','Nel 43 d.C. i Romani conquistarono l’isola con l’imperatore Claudio. La Britannia romana comprendeva Inghilterra e Galles. Non sconfissero i Pitti della Scozia, così costruirono un muro.'),
+  OR('What is Hadrian’s Wall?','Che cos’è il Vallo di Adriano?','It is a wall that runs from coast to coast. It marks the northernmost frontier of the Roman Empire.','È un muro che va da costa a costa. Segna il confine più a nord dell’Impero romano.'),
+  OR('What did the Romans bring to Britain?','Che cosa portarono i Romani in Britannia?','They brought towns, roads, stone villas and aqueducts. They also brought their language, Latin, and Christianity.','Portarono città, strade, ville di pietra e acquedotti. Portarono anche la lingua, il latino, e il cristianesimo.'),
+  OR('What happened in 410 CE?','Che cosa successe nel 410 d.C.?','The last Roman soldiers left Britain. The legions were withdrawn to fight on the continent.','Gli ultimi soldati romani lasciarono la Britannia. Le legioni furono richiamate per combattere sul continente.')],
+ quiz:[
+  QZ('Who built a wall to defend Britannia?','Chi costruì un muro per difendere la Britannia?','Emperor Hadrian',['Emperor Claudius','King Alfred'],'Il muro è di Adriano (Hadrian). Claudio conquistò l’isola.'),
+  QZ('Which Celtic group lived in Ireland and Scotland?','Quale gruppo celtico viveva in Irlanda e Scozia?','the Gaels',['the Gauls','the Britons'],'Gaeli: Irlanda e Scozia. Galli: Francia. Britanni: Galles e Cornovaglia.'),
+  QZ('When did the last Roman soldiers leave Britain?','Quando se ne andarono gli ultimi soldati romani?','410 CE',['43 CE','1066'],'410 d.C.'),
+  QZ('What was the Celtic religion?','Qual era la religione dei Celti?','Druidism',['Christianity','the feudal system'],'Druidismo; il cristianesimo lo portarono i Romani.')]
+};
+CONT.u2={
+ cose:`<div class="box bia"><p>Dopo i Romani arrivano i popoli germanici: gli <b>Angles, Saxons and Jutes</b>. Parlano ${en('Old English')}. Poi arrivano i <b>Vichinghi</b> (${en('Vikings')}) e il re ${en('Alfred')} li affronta.</p></div>`,
+ ricette:[
+  card('blu','1 · Beginning of Anglo-Saxon England',stepsHtml([
+   S2('After the Romans left, <b>new invaders</b> arrived from across the North Sea.','Dopo la partenza dei Romani arrivarono nuovi invasori dal Mare del Nord.'),
+   S2('They were <b>Germanic tribes</b>: <b>Angles, Saxons and Jutes</b>. They spoke dialects of <b>Old English</b>.','Erano tribù germaniche: Angli, Sassoni e Juti. Parlavano dialetti dell’inglese antico.')])),
+  card('ver','2 · The Heptarchy (660-800 CE)',stepsHtml([S2('The invaders fought to conquer territories until England was divided into <b>seven kingdoms</b>.','Gli invasori combatterono finché l’Inghilterra fu divisa in sette regni.')])+TAB(['The seven kingdoms'],[[en('Kent')],[en('Northumbria')],[en('East Anglia')],[en('Mercia')],[en('Essex')],[en('Wessex')],[en('Sussex')]])+'<p lang="en">This period is called the <b>Heptarchy</b>.</p><p class="tr">Questo periodo si chiama Heptarchy (“sette regni”).</p>'),
+  card('gia','3 · The Vikings',stepsHtml([
+   S2('<b>793 CE</b>: Viking raiders attacked the monastery of <b>Lindisfarne</b>, on the coast of Northumbria. Many monasteries in the north were destroyed.','Nel 793 i Vichinghi attaccarono il monastero di Lindisfarne, sulla costa della Northumbria. Molti monasteri del nord furono distrutti.'),
+   S2('The remaining monks fled to <b>Kells</b> in Ireland with a gospel book: the <b>Book of Kells</b>.','I monaci rimasti fuggirono a Kells, in Irlanda, con un libro dei Vangeli: il Book of Kells.')])),
+  card('ros','4 · King Alfred and the Danelaw',stepsHtml([
+   S2('<b>871-900 CE</b>: the Vikings prepared large armies. <b>King Alfred</b> united the Anglo-Saxons to fight the <b>Danes</b>.','871-900: i Vichinghi preparavano grandi eserciti. Re Alfredo unì gli anglosassoni contro i Danesi.'),
+   S2('The Danes kept <b>north-eastern England</b>, the <b>Danelaw</b>, but left <b>Wessex</b> alone.','I Danesi tennero l’Inghilterra nord-orientale (Danelaw) ma lasciarono in pace il Wessex.'),
+   S2('<b>Edward the Elder</b> (900-924), Alfred’s son, <b>reconquered the Danelaw</b>.','Edward the Elder (900-924), figlio di Alfredo, riconquistò il Danelaw.'),
+   S2('<b>King Edgar</b> (959-975) made laws that recognised the <b>multi-ethnic character</b> of England.','Re Edgar (959-975) fece leggi che riconoscevano il carattere multietnico dell’Inghilterra.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>Who invaded Britain after the Romans?</b> Germanic tribes: the Angles, the Saxons and the Jutes. They came from across the North Sea and spoke Old English.','<b>Chi invase la Britannia dopo i Romani?</b> Tribù germaniche: Angli, Sassoni e Juti. Vennero dal Mare del Nord e parlavano inglese antico.')}
+ ${EN('<b>What happened in 793?</b> Viking raiders attacked the monastery of Lindisfarne, on the coast of Northumbria.','<b>Che cosa successe nel 793?</b> I predoni vichinghi attaccarono il monastero di Lindisfarne, sulla costa della Northumbria.')}</div>`,
+ errori:['<b>Heptarchy</b> = <b>sette</b> regni (hepta = sette): Kent, Northumbria, East Anglia, Mercia, Essex, Wessex, Sussex.','Il <b>Danelaw</b> è il nord-est controllato dai Danesi. Il <b>Wessex</b> invece fu lasciato in pace.','<b>Alfred</b> unì gli anglosassoni contro i Danesi; il figlio <b>Edward the Elder</b> riconquistò il Danelaw.','Non confondere gli <b>Anglo-Saxons</b> (dal 5° secolo) con i <b>Normans</b> (dal 1066).'],
+ orale:[
+  OR('Who were the Anglo-Saxons?','Chi erano gli Anglosassoni?','They were Germanic tribes of Angles, Saxons and Jutes. They arrived from across the North Sea after the Romans left. They spoke dialects of Old English.','Erano tribù germaniche di Angli, Sassoni e Juti. Arrivarono dal Mare del Nord dopo la partenza dei Romani. Parlavano dialetti dell’inglese antico.'),
+  OR('What was the Heptarchy?','Che cos’era l’Heptarchy?','Anglo-Saxon England was divided into seven kingdoms: Kent, Northumbria, East Anglia, Mercia, Essex, Wessex and Sussex. This period is called the Heptarchy.','L’Inghilterra anglosassone era divisa in sette regni: Kent, Northumbria, East Anglia, Mercia, Essex, Wessex e Sussex. Questo periodo si chiama Heptarchy.'),
+  OR('What happened at Lindisfarne?','Che cosa successe a Lindisfarne?','In 793 Viking raiders attacked the monastery of Lindisfarne, on the coast of Northumbria. Many monasteries in the north were destroyed.','Nel 793 i predoni vichinghi attaccarono il monastero di Lindisfarne, sulla costa della Northumbria. Molti monasteri del nord furono distrutti.'),
+  OR('What did King Alfred do?','Che cosa fece re Alfredo?','He united the Anglo-Saxon people to fight against the Danes. The Danes kept the Danelaw, but they left Wessex alone.','Unì il popolo anglosassone per combattere i Danesi. I Danesi tennero il Danelaw ma lasciarono in pace il Wessex.'),
+  OR('What did Edward the Elder and King Edgar do?','Che cosa fecero Edward the Elder e re Edgar?','Edward the Elder, Alfred’s son, reconquered the Danelaw. King Edgar made laws that recognised the multi-ethnic character of England.','Edward the Elder, figlio di Alfredo, riconquistò il Danelaw. Re Edgar fece leggi che riconoscevano il carattere multietnico dell’Inghilterra.')],
+ quiz:[
+  QZ('Where did the Angles, Saxons and Jutes arrive from?','Da dove arrivarono Angli, Sassoni e Juti?','across the North Sea',['from Rome','from Ireland'],'Arrivarono dal Mare del Nord.'),
+  QZ('How many kingdoms were there in the Heptarchy?','Quanti regni c’erano nell’Heptarchy?','seven',['four','nine'],'Hepta = sette.'),
+  QZ('Which monastery did the Vikings attack in 793?','Quale monastero attaccarono i Vichinghi nel 793?','Lindisfarne',['Canterbury','Kells'],'Lindisfarne, in Northumbria.'),
+  QZ('Who united the Anglo-Saxons against the Danes?','Chi unì gli anglosassoni contro i Danesi?','King Alfred',['King Edgar','Harold'],'Alfred (871-900).')]
+};
+CONT.u3={
+ cose:`<div class="box bia"><p>Nel <b>1066</b> tutto cambia: i <b>Normanni</b> (${en('the Normans')}) sconfiggono Harold a ${en('Hastings')}. Il duca Guglielmo diventa re. Porta il <b>sistema feudale</b>, i <b>castelli</b>, il francese normanno e il libro del ${en('Domesday Book')}.</p></div>`,
+ ricette:[
+  card('blu','1 · The battle of Hastings (1066)',stepsHtml([
+   S2('<b>Harold</b>, the last Anglo-Saxon king, defeated the <b>Vikings in the north</b> of England.','Harold, l’ultimo re anglosassone, sconfisse i Vichinghi nel nord dell’Inghilterra.'),
+   S2('Then he had to move his army to the <b>south coast</b> to face a <b>Norman invasion</b>.','Poi dovette spostare l’esercito sulla costa sud per affrontare l’invasione normanna.'),
+   S2('<b>William the Conqueror</b>, Duke of Normandy, landed. On <b>14 October 1066</b> he defeated the Anglo-Saxons at the <b>battle of Hastings</b>. <b>Harold was killed</b>.','Guglielmo il Conquistatore, duca di Normandia, sbarcò. Il 14 ottobre 1066 sconfisse gli anglosassoni a Hastings. Harold fu ucciso.')])),
+  card('ver','2 · Norman England (1066-1087)',stepsHtml([
+   S2('William was <b>crowned king</b> in <b>Westminster Abbey</b> on <b>Christmas Day 1066</b>.','Guglielmo fu incoronato re nell’abbazia di Westminster il giorno di Natale del 1066.'),
+   S2('With William as king, <b>Normandy became an English territory</b>.','Con Guglielmo re, la Normandia diventò territorio inglese.'),
+   S2('The Normans introduced the <b>feudal system</b> and built <b>castles</b> to defend their conquest.','I Normanni introdussero il sistema feudale e costruirono castelli per difendere la conquista.'),
+   S2('They brought <b>Norman French</b>. <b>Latin and Norman French</b> were the languages of church and government.','Portarono il francese normanno. Latino e francese normanno erano le lingue di Chiesa e governo.')])),
+  card('gia','3 · The Domesday Book (1085)',stepsHtml([
+   S2('In <b>1085</b> William ordered a <b>survey of the value and ownership of lands</b>.','Nel 1085 Guglielmo ordinò un’indagine sul valore e la proprietà delle terre.'),
+   S2('Reason: to calculate <b>how much money could be raised in taxes</b>.','Scopo: calcolare quanti soldi si potevano raccogliere con le tasse.'),
+   S2('It offers important historical information about England in William’s time.','Dà informazioni storiche importanti sull’Inghilterra ai tempi di Guglielmo.')])),
+  card('ros','4 · After William (1087)',TAB(['King','What to remember'],[[en('William II'),'son of William I; <b>very unpopular</b>'],[en('Henry I'),'brother of William II; <b>first Norman king born in England</b>; spoke English and French; died <b>1135</b>'],[en('Stephen'),'nephew of Henry I; <b>lost control</b> of much of England; died <b>1154</b>']]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>What happened in 1066?</b> William, Duke of Normandy, defeated the Anglo-Saxons at the battle of Hastings on 14 October. Harold was killed. William was crowned king on Christmas Day.','<b>Che cosa successe nel 1066?</b> Guglielmo, duca di Normandia, sconfisse gli anglosassoni a Hastings il 14 ottobre. Harold fu ucciso. Guglielmo fu incoronato a Natale.')}
+ ${EN('<b>What did the Normans introduce?</b> The feudal system and castles. They also brought Norman French.','<b>Che cosa introdussero i Normanni?</b> Il sistema feudale e i castelli. Portarono anche il francese normanno.')}</div>`,
+ errori:['<b>Harold</b> è l’ultimo re <b>anglosassone</b>; <b>William</b> è il duca <b>normanno</b>.','Hastings: <b>14 ottobre 1066</b>. Incoronazione di William: <b>Natale 1066</b>, a Westminster Abbey.','Il <b>Domesday Book</b> (1085) serve per le <b>tasse</b>: valore e proprietà delle terre.','L’ordine dei re: William I → William II → Henry I → Stephen.'],
+ orale:[
+  OR('What happened at the battle of Hastings?','Che cosa successe alla battaglia di Hastings?','On 14 October 1066 William, Duke of Normandy, defeated the Anglo-Saxons. Harold, the last Anglo-Saxon king, was killed. The Anglo-Saxon reign came to an end.','Il 14 ottobre 1066 Guglielmo, duca di Normandia, sconfisse gli anglosassoni. Harold, l’ultimo re anglosassone, fu ucciso. Il regno anglosassone finì.'),
+  OR('What did Harold do before Hastings?','Che cosa fece Harold prima di Hastings?','He defeated the Vikings in the north of England. Then he moved his army to the south coast to face the Normans.','Sconfisse i Vichinghi nel nord dell’Inghilterra. Poi spostò l’esercito sulla costa sud per affrontare i Normanni.'),
+  OR('What did the Normans bring to England?','Che cosa portarono i Normanni in Inghilterra?','They introduced the feudal system and built castles. They brought Norman French. Latin and Norman French were the languages of church and government.','Introdussero il sistema feudale e costruirono castelli. Portarono il francese normanno. Latino e francese normanno erano le lingue di Chiesa e governo.'),
+  OR('What was the Domesday Book?','Che cos’era il Domesday Book?','In 1085 William ordered a survey of the value and ownership of lands, to calculate how much money could be raised in taxes.','Nel 1085 Guglielmo ordinò un’indagine sul valore e la proprietà delle terre, per calcolare quanti soldi si potevano raccogliere con le tasse.'),
+  OR('Who were the kings after William I?','Chi furono i re dopo Guglielmo I?','His son William II, who was unpopular. Then his brother Henry I, the first Norman king born in England. Then Stephen, Henry’s nephew, who lost control of much of England.','Suo figlio William II, impopolare. Poi il fratello Henry I, il primo re normanno nato in Inghilterra. Poi Stephen, nipote di Henry, che perse il controllo di gran parte dell’Inghilterra.')],
+ quiz:[
+  QZ('Who was the last Anglo-Saxon king?','Chi fu l’ultimo re anglosassone?','Harold',['William','Alfred'],'Harold fu ucciso a Hastings.'),
+  QZ('Where was William crowned king?','Dove fu incoronato Guglielmo?','Westminster Abbey',['Lindisfarne','Hastings'],'Westminster Abbey, a Natale 1066.'),
+  QZ('Why was the Domesday Book made?','Perché fu fatto il Domesday Book?','to calculate taxes',['to count the castles','to write the laws of the Church'],'Per calcolare le tasse.'),
+  QZ('Who was the first Norman king born in England?','Chi fu il primo re normanno nato in Inghilterra?','Henry I',['William II','Stephen'],'Henry I (morì nel 1135).')]
+};
+CONT.u4={
+ cose:`<div class="box bia"><p>Dopo Stephen sale al trono <b>Henry II</b> (la famiglia ${en('Plantagenet')}). Poi i suoi figli <b>Richard</b> e <b>John</b>. Nel <b>1215</b> i baroni costringono John a firmare la ${en('Magna Carta')}: anche il re è soggetto alla legge.</p></div>`,
+ ricette:[
+  card('blu','1 · Henry II (1154-1189)',stepsHtml([
+   S2('On Stephen’s death the throne passed to <b>Henry Plantagenet</b>: <b>Henry II</b>. He was a strong king and soldier and <b>dominated most of France</b>.','Alla morte di Stephen il trono passò a Henry Plantagenet: Enrico II. Era un re forte e un soldato e dominava gran parte della Francia.'),
+   S2('He quarrelled with <b>Thomas Becket</b>, the <b>Archbishop of Canterbury</b>. Becket refused the <b>Constitutions of Clarendon (1164)</b>: with them the king tried to <b>reduce the power of the Church</b> and affirm royal authority.','Litigò con Thomas Becket, arcivescovo di Canterbury. Becket rifiutò le Costituzioni di Clarendon (1164): con esse il re voleva ridurre il potere della Chiesa e affermare l’autorità reale.'),
+   S2('<b>1170</b>: Becket was <b>murdered in Canterbury Cathedral</b>.','Nel 1170 Becket fu assassinato nella cattedrale di Canterbury.')])),
+  card('ver','2 · Henry II’s sons: Richard and John',stepsHtml([
+   S2('<b>1189</b>: Richard became king. He is <b>“Richard the Lionheart”</b> for his bravery and military abilities.','Nel 1189 Richard diventò re. È “Riccardo Cuor di Leone” per il coraggio e le capacità militari.'),
+   S2('He spent his reign on <b>crusade in Palestine</b> and fighting in <b>France</b> to regain lost territories.','Passò il regno in crociata in Palestina e a combattere in Francia per riprendere i territori perduti.'),
+   S2('His younger brother <b>John</b> reigned in his place: an <b>unpopular</b> figure.','Il fratello minore John regnò al suo posto: una figura impopolare.'),
+   S2('<b>1199</b>: Richard died and John became king. He fought unsuccessful wars in France until England <b>lost all its French possessions</b>.','Nel 1199 Richard morì e John diventò re. Fece guerre senza successo in Francia finché l’Inghilterra perse tutti i possedimenti francesi.')])),
+  card('gia','3 · The Magna Carta (1215)',stepsHtml([
+   S2('<b>1215</b>: the <b>barons</b> rebelled against the king.','Nel 1215 i baroni si ribellarono al re.'),
+   S2('Reasons: the <b>loss of French territories</b> and the <b>taxes</b> for his military expeditions.','Motivi: la perdita dei territori francesi e le tasse per le spedizioni militari.'),
+   S2('They forced him to sign the <b>Magna Carta</b>.','Lo costrinsero a firmare la Magna Carta.'),
+   S2('It established <b>freedom under the rule of law</b> for all men (except <b>serfs</b>). It said that <b>the king himself was subject to the law of the land</b>.','Stabilì la libertà sotto la legge per tutti gli uomini (tranne i servi). Disse che il re stesso era soggetto alla legge del paese.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>Who was Thomas Becket?</b> He was the Archbishop of Canterbury. He refused the Constitutions of Clarendon of 1164 and was murdered in Canterbury Cathedral in 1170.','<b>Chi era Thomas Becket?</b> Era l’arcivescovo di Canterbury. Rifiutò le Costituzioni di Clarendon del 1164 e fu assassinato nella cattedrale di Canterbury nel 1170.')}
+ ${EN('<b>What was the Magna Carta?</b> In 1215 the barons forced King John to sign it. It said that the king was subject to the law.','<b>Che cos’era la Magna Carta?</b> Nel 1215 i baroni costrinsero re John a firmarla. Diceva che il re era soggetto alla legge.')}</div>`,
+ errori:['<b>Richard</b> (Cuor di Leone, in crociata) e <b>John</b> (impopolare, firma la Magna Carta) sono due fratelli diversi.','<b>1164</b> = Costituzioni di Clarendon. <b>1170</b> = Becket ucciso. <b>1215</b> = Magna Carta.','La Magna Carta vale per tutti gli uomini <b>tranne i servi (serfs)</b>.','Becket rifiuta le Costituzioni perché riducono il potere della <b>Chiesa</b>.'],
+ orale:[
+  OR('Who was Henry II?','Chi era Enrico II?','Henry Plantagenet became king in 1154. He was a strong king and soldier and dominated most of France.','Henry Plantagenet diventò re nel 1154. Era un re forte e un soldato e dominava gran parte della Francia.'),
+  OR('Tell me about Henry II and Thomas Becket.','Parlami di Enrico II e Thomas Becket.','Becket was the Archbishop of Canterbury. He refused the Constitutions of Clarendon of 1164, with which the king tried to reduce the power of the Church. Becket was murdered in Canterbury Cathedral in 1170.','Becket era l’arcivescovo di Canterbury. Rifiutò le Costituzioni di Clarendon del 1164, con cui il re voleva ridurre il potere della Chiesa. Fu assassinato nella cattedrale di Canterbury nel 1170.'),
+  OR('Who was Richard the Lionheart?','Chi era Riccardo Cuor di Leone?','Richard became king in 1189. He was called the Lionheart for his bravery and military abilities. He spent his reign on crusade in Palestine and fighting in France.','Richard diventò re nel 1189. Fu chiamato Cuor di Leone per il coraggio e le capacità militari. Passò il regno in crociata in Palestina e a combattere in Francia.'),
+  OR('Why did the barons rebel against King John?','Perché i baroni si ribellarono a re John?','Because of his loss of French territories and the taxes imposed to pay for his military expeditions.','A causa della perdita dei territori francesi e delle tasse imposte per pagare le spedizioni militari.'),
+  OR('What was the Magna Carta?','Che cos’era la Magna Carta?','In 1215 the barons forced King John to sign it. It established freedom under the rule of law for all men, except serfs. It declared that the king himself was subject to the law of the land.','Nel 1215 i baroni costrinsero re John a firmarla. Stabilì la libertà sotto la legge per tutti gli uomini, tranne i servi. Dichiarò che il re stesso era soggetto alla legge del paese.')],
+ quiz:[
+  QZ('Who was murdered in Canterbury Cathedral in 1170?','Chi fu assassinato nella cattedrale di Canterbury nel 1170?','Thomas Becket',['Richard the Lionheart','King John'],'Thomas Becket, arcivescovo di Canterbury.'),
+  QZ('Which king was called “the Lionheart”?','Quale re fu chiamato “Cuor di Leone”?','Richard',['John','Henry II'],'Richard I.'),
+  QZ('Who signed the Magna Carta?','Chi firmò la Magna Carta?','King John',['King Richard','Henry I'],'John, nel 1215, costretto dai baroni.'),
+  QZ('What did the Magna Carta say about the king?','Che cosa diceva la Magna Carta sul re?','he was subject to the law of the land',['he was above the law','he was the head of the Church'],'Il re stesso era soggetto alla legge.')]
+};
+/* ========== CONTENUTI parte 2: unità 5-8, glossario, riepilogo ========== */
+CONT.u5={
+ cose:`<div class="box bia"><p>Due lunghe lotte: la ${en('Hundred Years’ War')} contro la Francia (dal <b>1337</b>) e la ${en('War of the Roses')} tra due rami della stessa famiglia (finisce nel <b>1485</b>).</p></div>`,
+ ricette:[
+  card('blu','1 · The Hundred Years’ War (from 1337)',stepsHtml([
+   S2('The war with France began in <b>1337</b>. The English wanted to <b>regain lost territories</b> in France and <b>claimed the French throne</b>.','La guerra con la Francia cominciò nel 1337. Gli inglesi volevano riprendere i territori perduti in Francia e rivendicavano il trono francese.'),
+   S2('The war did not happen all the time: there were <b>long breaks</b>.','La guerra non fu continua: ci furono lunghe pause.'),
+   S2('Under <b>Edward III</b> the English won important victories; another victory came under <b>Henry V</b>. Under <b>Henry VI</b> things changed.','Con Edward III gli inglesi vinsero battaglie importanti; un’altra vittoria arrivò con Henry V. Con Henry VI le cose cambiarono.'),
+   S2('<b>Joan of Arc</b> led the French to victory and had the <b>Dauphin crowned in Rheims</b>.','Giovanna d’Arco guidò i francesi alla vittoria e fece incoronare il Delfino a Reims.'),
+   S2('By <b>1453</b> the only English possession left in France was the port of <b>Calais</b>.','Nel 1453 l’unico possedimento inglese rimasto in Francia era il porto di Calais.')])),
+  card('ver','2 · The War of the Roses',stepsHtml([S2('England was divided by a fight for the crown between <b>two branches of the Plantagenet family</b>.','L’Inghilterra era divisa da una lotta per la corona tra due rami della famiglia Plantagenet.')])+TAB(['House','Symbol'],[[en('House of York'),'<b>white</b> rose (rosa bianca)'],[en('House of Lancaster'),'<b>red</b> rose (rosa rossa)']])+'<p lang="en">It was a <b>30-year struggle</b>.</p><p class="tr">Fu una lotta di trent’anni.</p>'),
+  card('gia','3 · The end: 1485',stepsHtml([
+   S2('The conflict ended in <b>1485</b> at the <b>battle of Bosworth Field</b>.','Il conflitto finì nel 1485 alla battaglia di Bosworth Field.'),
+   S2('<b>Henry Tudor of Lancaster</b> defeated <b>Richard III</b>, the last York king.','Henry Tudor di Lancaster sconfisse Richard III, l’ultimo re di York.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>What was the Hundred Years’ War?</b> It was a war between England and France that began in 1337. The English wanted to regain lost territories and claimed the French throne. By 1453 only Calais was left to the English.','<b>Che cos’era la Guerra dei Cent’anni?</b> Una guerra tra Inghilterra e Francia cominciata nel 1337. Gli inglesi volevano riprendere i territori perduti e rivendicavano il trono francese. Nel 1453 agli inglesi restava solo Calais.')}
+ ${EN('<b>What was the War of the Roses?</b> A fight for the crown between the House of York, with a white rose, and the House of Lancaster, with a red rose. It ended in 1485 at Bosworth Field.','<b>Che cos’era la Guerra delle Due Rose?</b> Una lotta per la corona tra la casata di York, con la rosa bianca, e la casata di Lancaster, con la rosa rossa. Finì nel 1485 a Bosworth Field.')}</div>`,
+ errori:['<b>York = rosa bianca</b>, <b>Lancaster = rosa rossa</b>. Henry Tudor era di <b>Lancaster</b>.','Il <b>1337</b> è l’inizio della Guerra dei Cent’anni; il <b>1485</b> è la fine della Guerra delle Due Rose.','L’ultimo re di York è <b>Richard III</b>, battuto a Bosworth Field.','Nel 1453 resta agli inglesi solo <b>Calais</b>.'],
+ orale:[
+  OR('Why did the Hundred Years’ War begin?','Perché cominciò la Guerra dei Cent’anni?','It began in 1337. The English wanted to regain lost territories in France and claimed the French throne.','Cominciò nel 1337. Gli inglesi volevano riprendere i territori perduti in Francia e rivendicavano il trono francese.'),
+  OR('Tell me about Joan of Arc.','Parlami di Giovanna d’Arco.','Joan of Arc led the French to victory and had the Dauphin crowned in Rheims. Over the following years the French regained their territories.','Giovanna d’Arco guidò i francesi alla vittoria e fece incoronare il Delfino a Reims. Negli anni seguenti i francesi ripresero i loro territori.'),
+  OR('How did the Hundred Years’ War end?','Come finì la Guerra dei Cent’anni?','By 1453 the only English possession left in France was the port of Calais.','Nel 1453 l’unico possedimento inglese rimasto in Francia era il porto di Calais.'),
+  OR('What was the War of the Roses?','Che cos’era la Guerra delle Due Rose?','It was a fight for the crown between two branches of the Plantagenet family, the House of York and the House of Lancaster. It lasted about 30 years.','Fu una lotta per la corona tra due rami della famiglia Plantagenet, la casata di York e la casata di Lancaster. Durò circa 30 anni.'),
+  OR('How did the War of the Roses end?','Come finì la Guerra delle Due Rose?','In 1485, at the battle of Bosworth Field, Henry Tudor of Lancaster defeated Richard III, the last York king.','Nel 1485, alla battaglia di Bosworth Field, Henry Tudor di Lancaster sconfisse Richard III, l’ultimo re di York.')],
+ quiz:[
+  QZ('When did the Hundred Years’ War begin?','Quando cominciò la Guerra dei Cent’anni?','1337',['1215','1485'],'Nel 1337.'),
+  QZ('Who had the Dauphin crowned in Rheims?','Chi fece incoronare il Delfino a Reims?','Joan of Arc',['Richard III','Edward III'],'Giovanna d’Arco.'),
+  QZ('What was the symbol of the House of Lancaster?','Qual era il simbolo di Lancaster?','a red rose',['a white rose','a lion'],'Lancaster: rosa rossa. York: rosa bianca.'),
+  QZ('Who defeated Richard III at Bosworth Field?','Chi sconfisse Richard III a Bosworth Field?','Henry Tudor',['Henry V','Edward III'],'Henry Tudor di Lancaster (1485).')]
+};
+CONT.u6={
+ cose:`<div class="box bia"><p>La letteratura anglosassone (${en('Old English literature')}) va dalla seconda metà del <b>5° secolo</b> al <b>1066</b>. È scritta in ${en('Old English')}. Due eventi la fanno nascere: l’<b>invasione anglosassone</b> e la <b>diffusione del cristianesimo</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · The Anglo-Saxon Age',stepsHtml([
+   S2('Anglo-Saxon literature was written in <b>Old English</b>. It lasted from the <b>second half of the 5th century</b> until the <b>Norman conquest in 1066</b>.','La letteratura anglosassone fu scritta in inglese antico. Va dalla seconda metà del 5° secolo alla conquista normanna del 1066.'),
+   S2('Two events influenced its birth: the <b>Anglo-Saxon invasion</b> (5th century) and the <b>spread of Christianity</b>.','Due eventi ne influenzarono la nascita: l’invasione anglosassone (5° secolo) e la diffusione del cristianesimo.'),
+   S2('The Anglo-Saxons were <b>a tribe of warriors</b> who introduced <b>epic poetry</b>.','Gli anglosassoni erano una tribù di guerrieri che portò la poesia epica.'),
+   S2('Christianity was brought by a monk called <b>Augustine</b>, the first <b>archbishop of Canterbury</b>. The conversion was <b>progressive and mainly peaceful</b>.','Il cristianesimo fu portato da un monaco, Agostino, primo arcivescovo di Canterbury. La conversione fu progressiva e in gran parte pacifica.')])),
+  card('ver','2 · The genres',TAB(['Genre','What it is'],[[en('Epic poetry'),'anonymous poetry that celebrates <b>bravery, altruism and integrity</b>'],[en('Elegies'),'poems of <b>melancholy</b>, about <b>loss and pain</b>'],[en('Religious poetry'),'about religious subjects, inspired by Christianity: <b>Caedmon’s Hymn</b> (7th century)'],[en('Chronicles'),'the main events of Anglo-Saxon history until the <b>12th century</b>']])+'<p class="tr">Un quinto genere: il <b>teatro religioso</b> (religious drama).</p>'),
+  card('gia','3 · Epic poetry and the hero',stepsHtml([
+   S2('Traits: <b>war and heroism</b>, <b>bravery</b>, reflections on the <b>human condition</b>, questions on the <b>meaning of life</b>.','Caratteri: guerra ed eroismo, coraggio, riflessioni sulla condizione umana, domande sul senso della vita.'),
+   S2('The word <b>hero</b> comes from Ancient Greek: <b>valiant strong man</b>.','La parola hero viene dal greco antico: uomo forte e valoroso.'),
+   S2('The epic hero can be defeated, but his <b>search for glory</b> raises him above ordinary men.','L’eroe epico può essere sconfitto, ma la sua ricerca di gloria lo innalza sopra gli uomini comuni.')])),
+  card('ros','4 · Elegy, chronicle, drama',stepsHtml([
+   S2('<b>Elegy</b>: loneliness, melancholy, a meditative tone; loss and grief. The most famous: <b>The Seafarer</b>, a reflection on the difficult life of an Anglo-Saxon explorer of the sea.','Elegia: solitudine, malinconia, tono meditativo; perdita e dolore. La più famosa: The Seafarer, riflessione sulla vita difficile di un esploratore del mare.'),
+   S2('<b>Chronicle</b>: King Alfred’s <b>Anglo-Saxon Chronicle</b>, a historical report of the main events from the Anglo-Saxon invasion onwards.','Cronaca: la Anglo-Saxon Chronicle di re Alfredo, un resoconto storico degli eventi principali dall’invasione anglosassone in poi.'),
+   S2('<b>Religious drama</b>: not an independent art. It is an <b>extension of religious ceremonies</b>, performed at <b>Christmas or Easter</b> (for example Christ’s resurrection).','Teatro religioso: non è un’arte indipendente. Prolunga le cerimonie religiose e si recita a Natale o a Pasqua (per esempio la resurrezione di Cristo).')])),
+  card('bia','5 · Language and style',stepsHtml([
+   S2('<b>Fixed stress-pattern</b>: each line has two halves, each half has <b>two main stresses</b>.','Schema di accenti fisso: ogni verso ha due metà, ogni metà ha due accenti principali.'),
+   S2('<b>Alliteration</b>: the same consonant sound repeated in the same line.','Allitterazione: lo stesso suono di consonante ripetuto nello stesso verso.'),
+   S2('<b>Kennings</b>: two words combined into a metaphor. Example: <b>sky-candle</b> = sun.','Kenning: due parole unite in una metafora. Esempio: sky-candle = sole.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>What are the Anglo-Saxon genres?</b> Epic poetry, elegies, religious poetry and chronicles. Drama is not independent: it is an extension of religious ceremonies.','<b>Quali sono i generi anglosassoni?</b> Poesia epica, elegie, poesia religiosa e cronache. Il teatro non è indipendente: prolunga le cerimonie religiose.')}
+ ${EN('<b>What is a kenning?</b> It is a metaphor that combines two different words. For example, sky-candle is a kenning for sun.','<b>Che cos’è un kenning?</b> È una metafora che unisce due parole diverse. Per esempio sky-candle è un kenning per sole.')}</div>`,
+ errori:['<b>Epic</b> (coraggio, eroi) ≠ <b>elegy</b> (malinconia, perdita, dolore).','<b>Alliteration</b> = stesso suono di <b>consonante</b>; <b>kenning</b> = metafora di <b>due parole</b>.','L’<b>Anglo-Saxon Chronicle</b> è di re <b>Alfred</b>; la <b>Caedmon’s Hymn</b> è poesia religiosa (7° secolo).','Il teatro di questo periodo <b>non è autonomo</b>: nasce dalle cerimonie religiose.'],
+ orale:[
+  OR('Describe the Anglo-Saxon Age.','Descrivi l’età anglosassone.','Anglo-Saxon literature was written in Old English. It lasted from the second half of the 5th century until the Norman conquest in 1066. Two events influenced it: the Anglo-Saxon invasion and the spread of Christianity.','La letteratura anglosassone fu scritta in inglese antico. Va dalla seconda metà del 5° secolo alla conquista normanna del 1066. Due eventi la influenzarono: l’invasione anglosassone e la diffusione del cristianesimo.'),
+  OR('How did Christianity spread in Britain?','Come si diffuse il cristianesimo in Britannia?','It was brought by a monk called Augustine, who became the first archbishop of Canterbury. The conversion was progressive and mainly peaceful.','Fu portato da un monaco, Agostino, che diventò il primo arcivescovo di Canterbury. La conversione fu progressiva e in gran parte pacifica.'),
+  OR('Name the four main genres of Anglo-Saxon literature.','Nomina i quattro generi principali della letteratura anglosassone.','Epic poetry, elegies, religious poetry and chronicles.','Poesia epica, elegie, poesia religiosa e cronache.'),
+  OR('What are the main traits of epic poetry? Who is the hero?','Quali sono i caratteri della poesia epica? Chi è l’eroe?','Epic poetry celebrates war, heroism and bravery. It reflects on the human condition and the meaning of life. The hero is a valiant strong man. He can be defeated, but his search for glory raises him above ordinary men.','La poesia epica celebra guerra, eroismo e coraggio. Riflette sulla condizione umana e sul senso della vita. L’eroe è un uomo forte e valoroso. Può essere sconfitto, ma la ricerca di gloria lo innalza sopra gli uomini comuni.'),
+  OR('What is an elegy? Give an example.','Che cos’è un’elegia? Fai un esempio.','An elegy is a poem with a strong sense of loneliness and melancholy, a meditative tone, and themes like loss and grief. The most famous example is The Seafarer.','Un’elegia è una poesia con forte senso di solitudine e malinconia, tono meditativo e temi come perdita e dolore. L’esempio più famoso è The Seafarer.'),
+  OR('Describe the language and style of Anglo-Saxon poetry.','Descrivi la lingua e lo stile della poesia anglosassone.','There is a fixed stress-pattern: each line has two halves and each half has two main stresses. There are alliterations and kennings.','C’è uno schema di accenti fisso: ogni verso ha due metà e ogni metà ha due accenti principali. Ci sono allitterazioni e kenning.')],
+ quiz:[
+  QZ('Which genre celebrates bravery, altruism and integrity?','Quale genere celebra coraggio, altruismo e integrità?','epic poetry',['elegies','chronicles'],'La poesia epica.'),
+  QZ('What is the most famous Anglo-Saxon elegy?','Qual è la più famosa elegia anglosassone?','The Seafarer',['Beowulf','Caedmon’s Hymn'],'The Seafarer.'),
+  QZ('Who brought Christianity to Britain?','Chi portò il cristianesimo in Britannia?','a monk called Augustine',['King Alfred','Hadrian'],'Il monaco Agostino, primo arcivescovo di Canterbury.'),
+  QZ('What is a kenning?','Che cos’è un kenning?','a metaphor made of two words',['a pause in the line','a repeated consonant sound'],'Due parole unite in una metafora (sky-candle = sole).')]
+};
+CONT.u7={
+ cose:`<div class="box bia"><p>${en('Beowulf')} è il più famoso poema epico anglosassone. È <b>anonimo</b>, nato dalla <b>tradizione orale</b>. Racconta le imprese del principe scandinavo Beowulf contro mostri terribili. È pieno di <b>tristezza</b>, tipica della poesia anglosassone.</p></div>`,
+ ricette:[
+  card('blu','1 · A Germanic legend',stepsHtml([
+   S2('<i>Beowulf</i> was based on <b>oral tradition</b>. It has <b>no single author</b>: storytellers passed it on by voice and gave it its final form.','Beowulf nasce dalla tradizione orale. Non ha un solo autore: i cantastorie lo tramandarono a voce e gli diedero la forma finale.'),
+   S2('It was <b>transcribed</b> by a cultured man who lived in an Anglo-Saxon court, practised poetry, was <b>Christian</b> and spoke <b>Old English</b>. (Your notes say: a monk, in the 9th century.)','Fu trascritto da un uomo colto che viveva in una corte anglosassone, praticava la poesia, era cristiano e parlava inglese antico. (I tuoi appunti dicono: un monaco, nel 9° secolo.)'),
+   S2('The events take place in <b>Scandinavia</b>, not Britain. The hero is a <b>Scandinavian prince</b>.','Gli eventi sono in Scandinavia, non in Britannia. L’eroe è un principe scandinavo.')])),
+  card('ver','2 · The plot: 3 parts',TAB(['Part','What happens'],[
+   ['<b>1</b>','Beowulf leaves the land of the <b>Geats</b> (south Sweden) and goes to the land of the <b>Danes</b> (Denmark). He wants to free the Danes from <b>Grendel</b>, a man-eating monster. He <b>kills</b> it.'],
+   ['<b>2</b>','Beowulf becomes <b>king</b> and rules for <b>50 years</b> peacefully.'],
+   ['<b>3</b>','He is asked to kill a terrible <b>dragon</b>. Despite his old age he defeats it, but he is <b>mortally wounded</b>. The poem ends with his <b>funeral</b>.']])),
+  card('gia','3 · A perfect hero',stepsHtml([
+   S2('Eight qualities: <b>warrior, brave, honest, fearless, wise, strong, loyal, reflective</b>.','Otto qualità: guerriero, coraggioso, onesto, senza paura, saggio, forte, leale, riflessivo.'),
+   S2('He is <b>not a flat character</b>: his heroism grows from the <b>youthful</b> fight against Grendel to a <b>mature</b> form: a wise old king.','Non è un personaggio piatto: il suo eroismo cresce dalla lotta giovanile contro Grendel a una forma matura: un re vecchio e saggio.'),
+   S2('The fight with Grendel shows he will become a <b>brave king, loyal to himself and to his people</b>.','La lotta con Grendel mostra che diventerà un re coraggioso, leale a se stesso e al suo popolo.'),
+   S2('In the last part he <b>reflects</b> on his responsibilities as a king and is ready to <b>sacrifice himself</b> to save his country.','Nell’ultima parte riflette sulle sue responsabilità di re ed è pronto a sacrificarsi per salvare il suo paese.'),
+   S2('Like all great heroes, he faces his unavoidable <b>fate: death</b>.','Come tutti i grandi eroi affronta il suo destino inevitabile: la morte.')])),
+  card('ros','4 · Main themes',TAB(['Theme','Idea'],[
+   [en('Qualities of a good leader'),'Beowulf becomes a leader thanks to his <b>physical strength</b>; then he learns to use his <b>moral qualities and virtues</b>.'],
+   [en('The supernatural'),'dragons and monsters: they are <b>evil</b>, <b>enemies to destroy</b>, and <b>a test for the hero’s abilities</b>.'],
+   [en('Christian values'),'<b>God</b> is the almighty father; there are references to <b>Christian hell</b>.']])),
+  card('bia','5 · Language and style',stepsHtml([
+   S2('Typical of Anglo-Saxon poetry: <b>alliterations</b>, <b>kennings</b>, <b>high poetic diction</b>, an <b>omniscient narrator</b>, a <b>rich vocabulary</b>.','Tipico della poesia anglosassone: allitterazioni, kenning, linguaggio poetico elevato, narratore onnisciente, vocabolario ricco.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>Tell me the plot of Beowulf.</b> In part one Beowulf goes to the land of the Danes and kills the monster Grendel. In part two he becomes king and rules for fifty years. In part three he kills a dragon but he is mortally wounded.','<b>Raccontami la trama di Beowulf.</b> Nella prima parte Beowulf va nella terra dei Danesi e uccide il mostro Grendel. Nella seconda diventa re e regna cinquant’anni. Nella terza uccide un drago ma è ferito a morte.')}
+ ${EN('<b>Why is Beowulf a perfect hero?</b> He is brave, strong, honest, wise and loyal. He is not a flat character: he grows from a young warrior to a wise old king.','<b>Perché Beowulf è un eroe perfetto?</b> È coraggioso, forte, onesto, saggio e leale. Non è un personaggio piatto: cresce da giovane guerriero a re vecchio e saggio.')}</div>`,
+ errori:['L’azione è in <b>Scandinavia</b> (Geats = sud della Svezia, Danes = Danimarca), <b>non</b> in Britannia.','<b>Parte 1</b> = Grendel · <b>Parte 2</b> = 50 anni di regno · <b>Parte 3</b> = drago e morte.','Beowulf <b>non è un flat character</b>: il suo eroismo evolve.','I mostri sono <b>malvagi</b>, nemici da distruggere e una <b>prova</b> per l’eroe.'],
+ orale:[
+  OR('Why is Beowulf called a Germanic legend?','Perché Beowulf è detto una leggenda germanica?','It was based on oral tradition and has no single author. Storytellers passed it on, and a cultured Christian man who spoke Old English wrote it down.','Nasce dalla tradizione orale e non ha un solo autore. I cantastorie lo tramandarono e un uomo colto e cristiano che parlava inglese antico lo mise per iscritto.'),
+  OR('Where does the story take place?','Dove si svolge la storia?','It takes place in Scandinavia, not in Britain. Beowulf is a Scandinavian prince from the land of the Geats, in south Sweden.','Si svolge in Scandinavia, non in Britannia. Beowulf è un principe scandinavo del paese dei Geati, nel sud della Svezia.'),
+  OR('Tell me the plot, part by part.','Raccontami la trama, parte per parte.','Part one: Beowulf goes to the land of the Danes and kills Grendel, a man-eating monster. Part two: he becomes king and rules for 50 years. Part three: he kills a dragon but is mortally wounded. The poem ends with his funeral.','Parte uno: Beowulf va nella terra dei Danesi e uccide Grendel, un mostro mangia-uomini. Parte due: diventa re e regna 50 anni. Parte tre: uccide un drago ma è ferito a morte. Il poema finisce con il suo funerale.'),
+  OR('Describe Beowulf as a hero.','Descrivi Beowulf come eroe.','He is a perfect hero: warrior, brave, honest, fearless, wise, strong, loyal and reflective. His heroism evolves from youth to maturity. He faces his unavoidable fate: death.','È un eroe perfetto: guerriero, coraggioso, onesto, senza paura, saggio, forte, leale e riflessivo. Il suo eroismo evolve dalla giovinezza alla maturità. Affronta il suo destino inevitabile: la morte.'),
+  OR('What are the main themes of the poem?','Quali sono i temi principali del poema?','The qualities of a good leader, the supernatural and Christian values. The monsters are evil and a test for the hero. God is the almighty father.','Le qualità di un buon capo, il soprannaturale e i valori cristiani. I mostri sono malvagi e una prova per l’eroe. Dio è il padre onnipotente.'),
+  OR('What are the language and style of Beowulf?','Come sono la lingua e lo stile di Beowulf?','They are typical of Anglo-Saxon poetry: alliterations, kennings, high poetic diction, an omniscient narrator and a rich vocabulary.','Sono tipici della poesia anglosassone: allitterazioni, kenning, linguaggio poetico elevato, narratore onnisciente e vocabolario ricco.')],
+ quiz:[
+  QZ('Who is Grendel?','Chi è Grendel?','a man-eating monster',['a Danish king','a dragon'],'Un mostro mangia-uomini, ucciso nella parte 1.'),
+  QZ('How long does Beowulf rule peacefully?','Per quanto tempo Beowulf regna in pace?','50 years',['10 years','100 years'],'50 anni (parte 2).'),
+  QZ('How does the poem end?','Come finisce il poema?','with Beowulf’s funeral',['with a wedding','with a battle against the Danes'],'Con la descrizione del funerale di Beowulf.'),
+  QZ('Which land does Beowulf come from?','Da quale terra viene Beowulf?','the land of the Geats',['the land of the Danes','Britain'],'I Geati, nel sud della Svezia.')]
+};
+CONT.u8={
+ cose:`<div class="box bia"><p>Il poema finisce con il <b>funerale di Beowulf</b>: un rito tipico anglosassone. Il brano ha <b>4 sezioni</b> (righe 1-4, 5-13, 14-19, 19-37). Studiamo cosa succede in ogni sezione e le <b>figure retoriche</b> (${en('literary devices')}). Il testo è la traduzione di <b>Seamus Heaney</b>: leggilo sul tuo libro, qui trovi l’analisi.</p></div>`,
+ ricette:[
+  card('blu','1 · The four sections',TAB(['Lines','What happens'],[
+   ['<b>1-4</b>','The Geat people build a <b>pyre</b> and decorate it with <b>armour, helmet and shield</b>: symbols of his heroic status. It is the <b>preparation</b>.'],
+   ['<b>5-13</b>','His warriors place Beowulf’s body in the <b>middle of the pyre</b>. The <b>mourning</b> starts. The <b>burning</b> is described in detail; people are crying.'],
+   ['<b>14-19</b>','A <b>Geat woman</b> uses her voice to express <b>collective grief and fear</b>: Beowulf’s death will leave the people unguarded: <b>invasion, destruction, slavery</b>.'],
+   ['<b>19-37</b>','The Geats build a <b>memorial on a mound</b>, visible from afar. They bury <b>precious ornaments and jewels</b>: the hero’s treasure. Money is <b>useless</b> in life and after death. Twelve warriors ride around the tomb and mourn <b>“a man and a king”</b>.']])),
+  card('ver','2 · Literary devices (1): run-on lines and alliteration',stepsHtml([
+   S2('<b>Run-on lines</b> (enjambement): a line ends in the middle of a phrase and the thought <b>continues</b> in the next line.','Run-on lines (enjambement): il verso finisce a metà frase e il pensiero continua nel verso dopo.')+`<p lang="en"><i>“On a height they kindled the hugest of all / funeral fires”</i></p>`,
+   S2('<b>Alliteration</b>: the same <b>initial consonant sound</b> repeated in a line. It creates images and sounds.','Allitterazione: lo stesso suono iniziale di consonante ripetuto in un verso. Crea immagini e suoni.')+`<p lang="en"><i>“hung with helmets, heavy war-shields”</i> (h – h – h)</p>`])),
+  card('gia','3 · Literary devices (2): kennings, stress-pattern, caesura',stepsHtml([
+   S2('<b>Kenning</b>: two different words combined to make a <b>metaphor</b>.','Kenning: due parole diverse unite per fare una metafora.')+TAB(['Kenning','Meaning'],[[en('battle-sweat'),'blood (sangue)'],[en('bone-house'),'body (corpo)']]),
+   S2('<b>Fixed stress-pattern</b>: each line has two halves; each half has <b>two main stresses</b>.','Schema di accenti fisso: ogni verso ha due metà; ogni metà ha due accenti principali.'),
+   S2('<b>Caesura</b>: a <b>break or pause</b> in a line of poetry.','Cesura: una pausa dentro il verso.')+`<p lang="en"><i>“It was their hero’s memorial; what remained from the fire”</i></p>`])),
+  card('ros','4 · The big ideas',stepsHtml([
+   S2('Funeral = <b>honour</b> for a hero who died for his people.','Il funerale è un onore per un eroe morto per il suo popolo.'),
+   S2('The woman’s lament shows the <b>fear</b> of the people: without Beowulf they are in danger.','Il lamento della donna mostra la paura del popolo: senza Beowulf è in pericolo.'),
+   S2('The buried treasure is <b>useless</b> for men: only the memory of the hero remains.','Il tesoro sepolto è inutile per gli uomini: resta solo il ricordo dell’eroe.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>What happens in the second section?</b> Beowulf’s warriors place his body in the middle of the pyre and the mourning starts. The burning is described in detail.','<b>Che cosa succede nella seconda sezione?</b> I guerrieri di Beowulf mettono il corpo al centro della pira e inizia il lutto. Il rogo è descritto nei dettagli.')}
+ ${EN('<b>Find a kenning.</b> “Bone-house” is a kenning for body.','<b>Trova un kenning.</b> “Bone-house” è un kenning per corpo.')}</div>`,
+ errori:['Le sezioni: <b>1-4 preparazione</b> · <b>5-13 lutto e rogo</b> · <b>14-19 la donna</b> · <b>19-37 il tumulo e il tesoro</b>.','<b>Alliteration</b> = stesso suono iniziale. <b>Kenning</b> = metafora di due parole. <b>Caesura</b> = pausa. <b>Run-on lines</b> = pensiero che continua nel verso dopo.','<b>Bone-house</b> = corpo; <b>battle-sweat</b> = sangue (non il contrario).','Il brano è la <b>traduzione di Seamus Heaney</b> (non è in inglese antico).'],
+ orale:[
+  OR('What is the passage about?','Di che cosa parla il brano?','It describes Beowulf’s funeral, a typical Anglo-Saxon funeral rite.','Descrive il funerale di Beowulf, un tipico rito funebre anglosassone.'),
+  OR('Describe the first section (lines 1-4).','Descrivi la prima sezione (righe 1-4).','The Geat people build a pyre and decorate it with the symbols of his heroic status: armour, helmet and shield. It is the preparation to the burning of the hero’s body.','I Geati costruiscono una pira e la decorano con i simboli del suo status di eroe: armatura, elmo e scudo. È la preparazione al rogo del corpo dell’eroe.'),
+  OR('Describe the second section (lines 5-13).','Descrivi la seconda sezione (righe 5-13).','The warriors place Beowulf’s body in the middle of the pyre and the mourning starts. The burning is described in detail and there is a direct reference to people’s crying.','I guerrieri mettono il corpo di Beowulf al centro della pira e inizia il lutto. Il rogo è descritto nei dettagli e c’è un riferimento diretto al pianto del popolo.'),
+  OR('Who speaks in the third section (lines 14-19)? What does she fear?','Chi parla nella terza sezione (righe 14-19)? Di che cosa ha paura?','A Geat woman. She expresses collective grief and fear: Beowulf’s death will leave his people unguarded and will lead to destruction, invasion and slavery.','Una donna dei Geati. Esprime dolore e paura collettivi: la morte di Beowulf lascerà il popolo senza protezione e porterà distruzione, invasione e schiavitù.'),
+  OR('Describe the last section (lines 19-37).','Descrivi l’ultima sezione (righe 19-37).','The Geats build a memorial on a mound, visible from afar. They bury precious ornaments and jewels, the hero’s treasure. Money is not useful in life or after death. A group of warriors ride around the tomb and mourn the loss of a man and a king.','I Geati costruiscono un monumento su un tumulo, visibile da lontano. Seppelliscono ornamenti preziosi e gioielli, il tesoro dell’eroe. Il denaro non serve né in vita né dopo la morte. Un gruppo di guerrieri cavalca attorno alla tomba e piange la perdita di un uomo e di un re.'),
+  OR('Name the literary devices in the passage and give an example.','Nomina le figure retoriche del brano e fai un esempio.','Run-on lines, alliterations, kennings, a fixed stress-pattern and caesura. For example, “bone-house” is a kenning for body, and “hung with helmets, heavy war-shields” is an alliteration.','Run-on lines, allitterazioni, kenning, schema di accenti fisso e cesura. Per esempio “bone-house” è un kenning per corpo e “hung with helmets, heavy war-shields” è un’allitterazione.')],
+ quiz:[
+  QZ('What does the Geat woman fear?','Di che cosa ha paura la donna dei Geati?','invasion and slavery',['a storm at sea','a new dragon'],'Teme invasione, distruzione e schiavitù.'),
+  QZ('What are the symbols of Beowulf’s heroic status on the pyre?','Quali sono i simboli dell’eroismo di Beowulf sulla pira?','armour, helmet and shield',['gold and jewels','a crown and a sword'],'Armatura, elmo e scudo (sezione 1).'),
+  QZ('What does “bone-house” mean?','Che cosa significa “bone-house”?','body',['castle','tomb'],'È un kenning: corpo.'),
+  QZ('What do the Geats bury in the mound?','Che cosa seppelliscono i Geati nel tumulo?','precious ornaments and jewels',['their weapons','the dragon’s body'],'Ornamenti preziosi e gioielli: il tesoro dell’eroe.')]
+};
+/* ========== parole del brano (dal libro): inglese → italiano ========== */
+const POEM=[
+ ['pyre','pira'],['decked it','la ornarono'],['until it stood foursquare','finché non fu squadrata'],['armor','armatura'],['mourning','piangendo'],['kindled','accesero'],
+ ['billowed','si levarono'],['blaze','fiamme'],['wrought havoc','distrussero'],['bone-house','corpo'],['abasement','degrado'],['mound','tumulo'],['headland','promontorio'],
+ ['torques','collane'],['barrow','tumulo'],['trove','tesoro'],['trespassing men','trasgressori'],['drag','togliere'],['hoard','tesoro'],['gravel','sabbia'],
+ ['chieftains','capi tribù'],['distraught','devastati dal dolore'],['dirges','litanie funebri']];
+const GLOSS=[
+ ...Object.keys(DEFS).flatMap(u=>DEFS[u].map(d=>[`<span lang="en">${d[0]}</span>`,d[1]])),
+ ...POEM.map(p=>[`<span lang="en">${p[0]}</span>`,p[1]+' <span class="note">(parola del brano)</span>'])];
+const TL=[
+ ['about 1000 BCE','The Celts spread across Europe and into Britain'],
+ ['43 CE','The Romans conquer Britain (Emperor Claudius)'],
+ ['410 CE','The last Roman soldiers leave Britain'],
+ ['660-800 CE','The Heptarchy: seven Anglo-Saxon kingdoms'],
+ ['793','Vikings attack the monastery of Lindisfarne'],
+ ['871-900','King Alfred fights the Danes'],
+ ['900-924','Edward the Elder reconquers the Danelaw'],
+ ['959-975','King Edgar'],
+ ['14 Oct 1066','Battle of Hastings: William defeats Harold'],
+ ['25 Dec 1066','William is crowned in Westminster Abbey'],
+ ['1085','The Domesday Book'],
+ ['1135','Henry I dies'],
+ ['1154-1189','Henry II (first Plantagenet)'],
+ ['1164','Constitutions of Clarendon'],
+ ['1170','Thomas Becket is murdered'],
+ ['1189','Richard the Lionheart becomes king'],
+ ['1199','John becomes king'],
+ ['1215','The Magna Carta'],
+ ['1337','The Hundred Years’ War begins'],
+ ['1453','Only Calais is left to the English'],
+ ['1485','Battle of Bosworth Field: end of the War of the Roses']];
+const FORMULARIO=
+ '<h3 class="sec">La linea del tempo</h3>'+TAB(['Year','What happened'],TL.map(t=>[`<b>${t[0]}</b>`,E(t[1])]))+
+ '<h3 class="sec">Anglo-Saxon literature: i generi</h3>'+TAB(['Genre','Key words'],[
+  [en('Epic poetry'),'anonymous · bravery, altruism, integrity · <b>Beowulf</b>'],
+  [en('Elegies'),'melancholy · loss and pain · <b>The Seafarer</b>'],
+  [en('Religious poetry'),'Christianity · <b>Caedmon’s Hymn</b> (7th century)'],
+  [en('Chronicles'),'history until the 12th century · <b>King Alfred’s Anglo-Saxon Chronicle</b>'],
+  [en('Religious drama'),'not independent · Christmas and Easter · Christ’s resurrection']])+
+ '<h3 class="sec">Beowulf in 3 parti</h3>'+TAB(['Part','Key words'],[['<b>1</b>','Geats → Danes · <b>Grendel</b> · Beowulf kills the monster'],['<b>2</b>','king · <b>50 years</b> · peace'],['<b>3</b>','<b>dragon</b> · old age · mortally wounded · funeral']])+
+ '<h3 class="sec">Beowulf: the perfect hero</h3><p lang="en" class="m"><b>warrior · brave · honest · fearless · wise · strong · loyal · reflective</b></p>'+
+ '<h3 class="sec">Beowulf’s Funeral: le 4 sezioni</h3>'+TAB(['Lines','Key words'],[['<b>1-4</b>','pyre · armour, helmet, shield · preparation'],['<b>5-13</b>','body in the middle of the pyre · mourning · burning'],['<b>14-19</b>','a Geat woman · collective grief · invasion, slavery'],['<b>19-37</b>','mound · treasure buried · twelve warriors · “a man and a king”']])+
+ '<h3 class="sec">Literary devices</h3>'+TAB(['Device','Meaning','Example'],[
+  [en('Run-on lines'),'the thought continues in the next line','“On a height they kindled the hugest of all / funeral fires”'],
+  [en('Alliteration'),'same initial consonant sound','“hung with helmets, heavy war-shields”'],
+  [en('Kenning'),'two words = a metaphor','battle-sweat = blood · bone-house = body'],
+  [en('Fixed stress-pattern'),'2 halves × 2 main stresses','every line'],
+  [en('Caesura'),'a pause in the line','“It was their hero’s memorial; what remained from the fire”']]);
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('ing3_celti_beowulf_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('ing3_celti_beowulf_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante, in inglese con la traduzione. Leggi la domanda e <b>rispondi a voce alta in inglese</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Riepilogo</h2><p class="note">Date, generi e figure retoriche su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Prima arrivarono i Celti (circa 1000 a.C.). Erano tre gruppi: Gauls, Britons, Gaels.", "I Romani conquistarono la Britannia nel 43 d.C. con l’imperatore Claudius.", "Non sconfissero i Pitti della Scozia: per questo costruirono il Hadrian’s Wall.", "Nel 410 d.C. i Romani se ne andarono."], "u2": ["Dopo i Romani arrivarono gli Angles, i Saxons e i Jutes. Parlavano Old English.", "Fecero sette regni: questo periodo si chiama Heptarchy.", "Nel 793 i Vichinghi attaccarono il monastero di Lindisfarne.", "King Alfred unì gli anglosassoni contro i Danesi. Il Danelaw era la parte dei Danesi."], "u3": ["Nel 1066 il duca Guglielmo (William) sconfisse Harold a Hastings.", "Harold, l’ultimo re anglosassone, fu ucciso. Guglielmo fu incoronato a Natale.", "I Normanni portarono il sistema feudale, i castelli e il francese normanno.", "Nel 1085 fece il Domesday Book: un registro delle terre per le tasse."], "u4": ["Henry II fu un re forte. Litigò con Thomas Becket, che fu ucciso nel 1170.", "Poi regnarono Richard Cuor di Leone (in crociata) e suo fratello John.", "John perse la Francia. Nel 1215 i baroni lo costrinsero a firmare la Magna Carta.", "La Magna Carta dice: anche il re deve rispettare la legge."], "u5": ["La Guerra dei Cent’anni cominciò nel 1337, tra Inghilterra e Francia.", "Giovanna d’Arco guidò i francesi. Nel 1453 agli inglesi restava solo Calais.", "La Guerra delle Due Rose: York (rosa bianca) contro Lancaster (rosa rossa).", "Finì nel 1485 a Bosworth Field: vinse Henry Tudor."], "u6": ["La letteratura anglosassone va dal 5° secolo al 1066, in Old English.", "Due eventi la fanno nascere: l’invasione e il cristianesimo.", "I generi sono: poesia epica, elegie, poesia religiosa, cronache.", "Stile: accenti fissi, alliterazione, kenning (due parole = metafora)."], "u7": ["Beowulf è un poema epico anonimo, nato a voce. Si svolge in Scandinavia.", "Parte 1: uccide il mostro Grendel. Parte 2: è re per 50 anni. Parte 3: uccide un drago e muore.", "È un eroe perfetto, ma non è un personaggio piatto: cresce.", "Temi: il buon capo, il soprannaturale, i valori cristiani."], "u8": ["Il brano racconta il funerale di Beowulf in 4 sezioni.", "Righe 1-4: la pira. Righe 5-13: il lutto e il rogo. Righe 14-19: la donna dei Geats. Righe 19-37: il tumulo e il tesoro.", "Figure retoriche: run-on lines, alliteration, kenning, stress-pattern, caesura.", "Bone-house vuol dire corpo; battle-sweat vuol dire sangue."]}, "es": false, "pics": [{"k": "king_en", "re": "king|kings|queen", "id": 5563}, {"k": "crown_en", "re": "crown|crowned", "id": 2718}, {"k": "soldier_en", "re": "soldiers?|army|armies|warriors?", "id": 11246}, {"k": "castle_en", "re": "castles?", "id": 5421}, {"k": "church_en", "re": "church|cathedral|abbey|monastery|monasteries", "id": 3118}, {"k": "war_en", "re": "war|wars", "id": 12256}, {"k": "ship_en", "re": "ships?|boats?", "id": 6932}, {"k": "town_en", "re": "towns?|cit(?:y|ies)", "id": 2704}, {"k": "book_en", "re": "books?", "id": 25191}, {"k": "sun_en", "re": "sun", "id": 7252}, {"k": "fire_en", "re": "fire|fires|blaze", "id": 4654}, {"k": "money_en", "re": "money|taxes|tax", "id": 8506}, {"k": "law_en", "re": "law|laws", "id": 11473}, {"k": "woman_en", "re": "woman", "id": 24621}, {"k": "document_en", "re": "documents?", "id": 21802}, {"k": "religione", "re": "religione|religiose|fedi", "id": 27059}, {"k": "re", "re": "re", "id": 5563}, {"k": "castello", "re": "castello", "id": 5421}, {"k": "chiesa", "re": "chiesa", "id": 3118}, {"k": "guerra", "re": "guerra", "id": 12256}, {"k": "soldato", "re": "soldato|soldati|esercito", "id": 11246}, {"k": "corona", "re": "corona", "id": 2718}, {"k": "nave", "re": "nave|navi|barca", "id": 6932}, {"k": "citta", "re": "città", "id": 2704}, {"k": "libro", "re": "libro|libri", "id": 25191}, {"k": "sole", "re": "sole", "id": 7252}, {"k": "fuoco", "re": "fuoco", "id": 4654}, {"k": "denaro", "re": "denaro|soldi", "id": 8506}, {"k": "legge", "re": "legge|leggi", "id": 11473}, {"k": "documento", "re": "documento|documenti", "id": 21802}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  /* testo con parti in inglese: ogni parte con la sua voce */
+  function segs(el,dl){
+    var out=[],buf='';
+    function flush(){var t=say(buf);if(t.length>1)out.push({t:t,l:dl});buf=''}
+    (function walk(n){
+      if(n.nodeType===3){buf+=n.nodeValue;return}
+      if(n.nodeType!==1)return;
+      if(n.classList&&n.classList.contains('a11y-ui'))return;
+      var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return;
+      if(n.getAttribute('lang')==='en'){flush();var t=say(nodeText(n));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      if(n.classList.contains('fr')||tg==='SUP'){buf+=nodeText(n);return}
+      n.childNodes.forEach(walk);
+    })(el);
+    flush();return out;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    var out=[];
+    els.forEach(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      if(e.closest('[lang="en"]')){var t=say(nodeText(e));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      segs(e,es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    return out;
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=c.l==='en-GB'?0.8:0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)segs(qt,'it-IT').forEach(function(c){out.push(c)});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'.',l:'it-IT'});
+      segs(sp||o,CFG.es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261012084909",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
