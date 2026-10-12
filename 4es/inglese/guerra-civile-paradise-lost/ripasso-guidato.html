@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inglese: dalla guerra civile a Paradise Lost</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+.tr{color:#2a4a6b;font-size:.92em}p.tr{margin:.1em 0 .8em;padding-left:10px;border-left:3px solid #9ec1ee}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+table.sg td{text-align:left}table.sg th{text-align:center}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Inglese</a></p><h1>Inglese: dalla guerra civile a Paradise Lost</h1><p>4 ES · storia del Seicento e Settecento, letteratura puritana, Milton · un passo alla volta</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Charles I</button>
+<button data-t="u2">2 Cromwell</button>
+<button data-t="u3">3 The Restoration</button>
+<button data-t="u4">4 William, Mary, Anne</button>
+<button data-t="u5">5 Augustan Age</button>
+<button data-t="u6">6 Puritan literature</button>
+<button data-t="u7">7 John Milton</button>
+<button data-t="u8">8 Paradise Lost: plot</button>
+<button data-t="u9">9 Paradise Lost: themes</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Riepilogo</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo su <b>Inglese</b>: la storia dal <b>1625</b> al <b>1760</b> (guerra civile, Cromwell, Restaurazione, Rivoluzione Gloriosa, età augustea), la <b>letteratura puritana</b> e <b>John Milton</b> con <b>Paradise Lost</b>. Il kit segue i tuoi appunti. I testi sono in <b>inglese semplice</b> e sotto ogni frase c’è la <b>traduzione in italiano</b> (la riga azzurra). Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>Storia</b>: Charles I e la guerra civile · Cromwell · la Restaurazione · William, Mary e Anne · l’età augustea (unità 1-5)</li><li><b>Letteratura</b>: Puritan literature (unità 6)</li><li><b>John Milton</b>: vita e opere (unità 7)</li><li><b>Paradise Lost</b>: la trama (unità 8), temi, Satana e stile (unità 9)</li></ul></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos’è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema in inglese, con la traduzione.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: risposte da ripetere a voce in inglese.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove, in inglese con la traduzione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (9 giorni)</h3><ul><li><b>Giorni 1-5</b>: la storia, una unità al giorno. Alla fine ripassa con la linea del tempo (Riepilogo).</li><li><b>Giorno 6</b>: unità 6 (letteratura puritana)</li><li><b>Giorno 7</b>: unità 7 (John Milton)</li><li><b>Giorno 8</b>: unità 8 (trama di Paradise Lost)</li><li><b>Giorno 9</b>: unità 9 (temi, Satana, stile)</li><li>Alla fine: Prova finale e Orale</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c’è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Premi <b>🔊 Ascolta</b>: la voce legge l’inglese con pronuncia inglese e l’italiano con pronuncia italiana.</li><li>Ripeti <b>a voce alta</b> le risposte dell’Orale: l’interrogazione è parlata.</li><li>Impara le <b>date</b> con la linea del tempo del Riepilogo: 1625, 1642-49, 1653, 1660, 1689, 1707, 1714.</li><li>Ricorda le coppie: <b>Royalists</b> (re) / <b>Roundheads</b> (Parlamento) · <b>Whigs</b> (limitano il re) / <b>Tories</b> (sostengono la monarchia) · poeti <b>puritani</b> / <b>metafisici</b>.</li><li>In Paradise Lost: <b>Satana sceglie la dannazione</b>, <b>Adamo ed Eva</b> ottengono la redenzione con il pentimento.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un’altra domanda.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section><section class="tab" id="u7"></section><section class="tab" id="u8"></section><section class="tab" id="u9"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const NAMES=['Marco','Giulia','Luca','Sara','Paolo','Elena','Davide','Chiara','Andrea','Francesca','Matteo','Anna'];
+const names=n=>shuffle(NAMES).slice(0,n);
+const eur=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
+
+/* ========== INGLESE 4 ES: GENERATORI DI ESERCIZI ========== */
+const wy=(a,b)=>`<p lang="en">${a}</p><p class="tr">${b}</p>`;
+const mkE=(q,c,w,steps,tag)=>mkEx(q,E(c),w.map(E),steps,tag);
+const ROWS=(tag,rows)=>()=>{const r=pick(rows);return mkE(QI(r[0],r[1]),r[2],r[3],wy(r[4],r[5]),tag)};
+const DATES=[
+ ['u1','Charles I became king','Charles I diventò re','1625'],
+ ['u1','The Petition of Right','La Petition of Right','1628'],
+ ['u1','Charles shut down Parliament and ruled alone for 11 years','Charles chiuse il Parlamento e governò da solo per 11 anni','1629'],
+ ['u1','The Short Parliament and the Long Parliament','Il Parlamento Breve e il Parlamento Lungo','1640'],
+ ['u1','Charles I was beheaded','Charles I fu decapitato','1649'],
+ ['u2','England was proclaimed a Commonwealth','L’Inghilterra fu proclamata Commonwealth','1649'],
+ ['u2','The battle of Dunbar','La battaglia di Dunbar','1650'],
+ ['u2','Cromwell became Lord Protector','Cromwell diventò Lord Protector','1653'],
+ ['u2','Cromwell was succeeded by his son Richard','A Cromwell succedette il figlio Richard','1658'],
+ ['u3','The Restoration of Charles II','La Restaurazione di Charles II','1660'],
+ ['u3','The Test Act','Il Test Act','1673'],
+ ['u3','James II became king','James II diventò re','1685'],
+ ['u4','The Glorious Revolution: William and Mary were crowned','La Rivoluzione Gloriosa: William e Mary furono incoronati','1689'],
+ ['u4','The Act of Settlement','L’Act of Settlement','1701'],
+ ['u4','The Act of Union united England and Scotland','L’Act of Union unì Inghilterra e Scozia','1707'],
+ ['u4','The Treaty of Utrecht','Il Trattato di Utrecht','1713'],
+ ['u5','George I was proclaimed king','George I fu proclamato re','1714'],
+ ['u5','The first Jacobite rebellion','La prima rivolta giacobita','1715'],
+ ['u5','The battle of Culloden','La battaglia di Culloden','1746'],
+ ['u5','The War of Jenkins’ Ear','La guerra dell’orecchio di Jenkins','1739'],
+ ['u7','John Milton was born','John Milton nacque','1608'],
+ ['u7','Areopagitica','L’Areopagitica','1644'],
+ ['u7','Milton was completely blind','Milton era completamente cieco','1651'],
+ ['u7','Milton died','Milton morì','1674'],
+ ['u8','Paradise Lost was published','Paradise Lost fu pubblicato','1667']];
+const exWhen=u=>()=>{
+  const L=DATES.filter(d=>d[0]===u),d=pick(L);
+  const others=shuffle(DATES.filter(x=>x[3]!==d[3])).map(x=>x[3]);
+  return mkE(QI(`When did this happen? <i>${d[1]}</i>`,`Quando è successo? ${d[2]}`),d[3],others,wy(`${d[1]}: <b>${d[3]}</b>.`,`${d[2]}: ${d[3]}.`),'Dates');
+};
+/* ---- unità 1 ---- */
+const ROWS1=ROWS('Charles I and the Civil War',[
+ ['Who succeeded King James in 1625?','Chi succedette a re James nel 1625?','his son Charles I',['Oliver Cromwell','William Laud'],'Charles I succeeded his father James.','Charles I succedette al padre James.'],
+ ['What is the Divine Right of Kings?','Che cos’è il diritto divino dei re?','kings are chosen by God and have absolute power',['kings are chosen by Parliament','kings must obey the people'],'Kings claimed they had been chosen by God and had absolute power.','I re dicevano di essere scelti da Dio e di avere potere assoluto.'],
+ ['What did Charles I do about taxes?','Che cosa fece Charles I con le tasse?','he raised them without the consent of Parliament',['he lowered them','he asked the people to vote'],'He raised the taxes without the consent of the Parliament.','Alzò le tasse senza il consenso del Parlamento.'],
+ ['Who was William Laud?','Chi era William Laud?','the Archbishop of Canterbury chosen by the king',['the leader of the Roundheads','a Scottish Presbyterian'],'Laud was the Archbishop of Canterbury; he persecuted the Puritans.','Laud era l’arcivescovo di Canterbury; perseguitò i Puritani.'],
+ ['Where did thousands of Puritans emigrate?','Dove emigrarono migliaia di Puritani?','to America',['to Spain','to Scotland'],'Thousands of Puritans emigrated to America.','Migliaia di Puritani emigrarono in America.'],
+ ['Why did Charles call Parliament in 1628?','Perché Charles convocò il Parlamento nel 1628?','to raise money for a war with France',['to fight Scotland','to judge Laud'],'He wanted money for a war with France.','Voleva soldi per una guerra con la Francia.'],
+ ['What did the Petition of Right say?','Che cosa diceva la Petition of Right?','no taxes without Parliament’s approval and no imprisonment without a good reason',['the king can rule alone','all Puritans must leave England'],'No one should pay taxes without Parliament’s approval; no one should be imprisoned without a good reason.','Nessuno doveva pagare tasse senza l’approvazione del Parlamento né essere imprigionato senza un buon motivo.'],
+ ['What did Charles do in 1629?','Che cosa fece Charles nel 1629?','he shut down Parliament and ruled as a despot for 11 years',['he called the Long Parliament','he fled to the north'],'He shut down Parliament and ruled as a despot for 11 years.','Chiuse il Parlamento e governò da despota per 11 anni.'],
+ ['Why did Charles call Parliament in 1640?','Perché Charles convocò il Parlamento nel 1640?','to raise taxes for a war with Scotland',['to sign the Petition of Right','to execute Laud'],'To enforce Church of England practices on Scottish Presbyterians he needed taxes for a war with Scotland.','Per imporre le pratiche anglicane ai presbiteriani scozzesi servivano tasse per una guerra con la Scozia.'],
+ ['What did the Long Parliament do?','Che cosa fece il Parlamento Lungo?','it refused funds and aimed to reduce the king’s power',['it gave money to the king','it lasted only a month'],'The Long Parliament refused to give funds and aimed to reduce the king’s power.','Il Parlamento Lungo rifiutò i fondi e voleva ridurre il potere del re.'],
+ ['What happened to Archbishop Laud?','Che cosa successe all’arcivescovo Laud?','he was imprisoned and executed',['he became Lord Protector','he fled to America'],'Archbishop Laud was imprisoned and executed.','L’arcivescovo Laud fu imprigionato e giustiziato.'],
+ ['What happened when the king tried to arrest four members of Parliament?','Che cosa successe quando il re cercò di arrestare quattro parlamentari?','he failed and had to flee to the north',['he arrested them all','they escaped to America'],'He failed and had to flee to the north.','Non ci riuscì e dovette fuggire al nord.'],
+ ['Who were the Royalists?','Chi erano i realisti?','Anglican aristocrats and landlords who supported the king',['Puritans supported by the middle class','Scottish Presbyterians'],'The king’s supporters, called Royalists, included Anglican aristocrats and landlords.','I sostenitori del re, detti realisti, includevano aristocratici e proprietari anglicani.'],
+ ['Who were the Roundheads?','Chi erano le Teste Rotonde?','the Parliamentarians, mainly Puritans',['the king’s soldiers','the Scottish army'],'The Parliamentarians, known as Roundheads, were mainly Puritans.','I parlamentari, detti Roundheads, erano soprattutto puritani.'],
+ ['Who led the Parliamentarian army, the Ironsides?','Chi guidava l’esercito parlamentare, gli Ironsides?','Oliver Cromwell',['William Laud','John Milton'],'Led by Oliver Cromwell, they formed an army called the Ironsides.','Guidati da Oliver Cromwell formarono un esercito detto Ironsides.'],
+ ['Where did the Ironsides defeat the king’s forces?','Dove gli Ironsides sconfissero le forze del re?','at Marston Moor and Naseby',['at Dunbar and Culloden','at Utrecht'],'They defeated the king at Marston Moor and Naseby.','Sconfissero il re a Marston Moor e a Naseby.'],
+ ['What did Charles do at his trial?','Che cosa fece Charles al suo processo?','he refused to recognise the court’s authority',['he asked for mercy','he blamed Cromwell'],'He refused to recognise the court’s authority or defend himself against the charges of treason.','Rifiutò di riconoscere l’autorità del tribunale e di difendersi dall’accusa di tradimento.']]);
+/* ---- unità 2 ---- */
+const ROWS2=ROWS('Cromwell and the Commonwealth',[
+ ['What is a Commonwealth?','Che cos’è un Commonwealth?','a Republic',['a monarchy','a kind of army'],'England was proclaimed a Commonwealth (a Republic).','L’Inghilterra fu proclamata Commonwealth (una repubblica).'],
+ ['Who could sit in the Rump Parliament?','Chi poteva sedere nel Rump Parliament?','only supporters of the Republic',['only Royalists','only lords'],'Only supporters of the Republic could sit in the House of Commons.','Alla Camera dei Comuni potevano sedere solo i sostenitori della Repubblica.'],
+ ['What was abolished with the Commonwealth?','Che cosa fu abolito con il Commonwealth?','the monarchy and the House of Lords',['the Church of England','the House of Commons'],'The Monarchy and the House of Lords were abolished.','Furono abolite la monarchia e la Camera dei Lord.'],
+ ['What did the execution of the king provoke in 1650?','Che cosa provocò l’esecuzione del re nel 1650?','a Royalist reaction in Ireland and Scotland',['a revolution in France','a war with Spain'],'It provoked a Royalist reaction in Ireland and Scotland.','Provocò una reazione realista in Irlanda e Scozia.'],
+ ['What happened at the battle of Dunbar?','Che cosa successe nella battaglia di Dunbar?','a Scottish royalist rebellion was crushed',['the king was captured','Cromwell was defeated'],'A Scottish royalist rebellion was crushed at the battle of Dunbar.','Una rivolta realista scozzese fu schiacciata a Dunbar.'],
+ ['What did Cromwell do in 1653?','Che cosa fece Cromwell nel 1653?','he closed Parliament down and became Lord Protector',['he became king','he left England'],'He closed the Parliament down and was appointed Lord Protector of the Realm.','Chiuse il Parlamento e fu nominato Lord Protettore del Regno.'],
+ ['Which countries did Cromwell rule?','Quali paesi governò Cromwell?','England, Ireland and Scotland',['England and France','England and Spain'],'He ruled England, Ireland and Scotland as a military dictator.','Governò Inghilterra, Irlanda e Scozia come dittatore militare.'],
+ ['How did Cromwell rule after the Royalist rising of 1655?','Come governò Cromwell dopo la rivolta realista del 1655?','through the army',['through Parliament','through the Church'],'He started to rule the country through the army.','Cominciò a governare il paese tramite l’esercito.'],
+ ['Who succeeded Cromwell?','Chi successe a Cromwell?','his son Richard',['his brother John','Charles II'],'He was succeeded by his son Richard.','Gli succedette il figlio Richard.'],
+ ['What happened to Richard Cromwell?','Che cosa successe a Richard Cromwell?','he abdicated after 8 months',['he ruled for 20 years','he was beheaded'],'Richard abdicated 8 months later: the Republic fell apart.','Richard abdicò otto mesi dopo: la Repubblica si sfasciò.']]);
+/* ---- unità 3 ---- */
+const ROWS3=ROWS('The Restoration',[
+ ['Which king returned to the throne in 1660?','Quale re tornò sul trono nel 1660?','Charles II',['James II','Charles I'],'The Restoration began with Charles II (1660-1685).','La Restaurazione cominciò con Charles II (1660-1685).'],
+ ['What was the first Parliament of the Restoration like?','Com’era il primo Parlamento della Restaurazione?','almost entirely made up of Royalists',['made up of Puritans only','made up of Whigs only'],'It consisted almost entirely of Royalists.','Era formato quasi interamente da realisti.'],
+ ['What did Parliament want to make sure of?','Di che cosa voleva assicurarsi il Parlamento?','that the king could never rule alone',['that the king had absolute power','that there was no king'],'It wanted to restore both king and Parliament and make sure the king could never rule alone.','Voleva restaurare re e Parlamento e assicurarsi che il re non potesse mai governare da solo.'],
+ ['Which Church did Parliament bring back?','Quale Chiesa riportò il Parlamento?','the Church of England',['the Catholic Church','the Presbyterian Church'],'Parliament brought back the Church of England.','Il Parlamento riportò la Chiesa d’Inghilterra.'],
+ ['According to the Test Act of 1673, people in public office had to be…','Secondo il Test Act del 1673, chi aveva un incarico pubblico doveva essere…','Protestants who accepted the king as head of the Church of England',['Catholics','Puritans only'],'Anyone in public office had to be a Protestant and accept the king as the head of the Church of England.','Chi aveva un incarico pubblico doveva essere protestante e accettare il re come capo della Chiesa d’Inghilterra.'],
+ ['Who succeeded Charles II in 1685?','Chi successe a Charles II nel 1685?','his brother James, a Catholic',['his son Charles','his nephew William'],'His brother James became king as James II. He was a Catholic king.','Suo fratello James diventò re come James II. Era un re cattolico.']]);
+const exParty=()=>{
+  const P=[['the Whigs','They were anti-Catholic and wanted to limit the powers of the monarch.','Erano contro i cattolici e volevano limitare i poteri del monarca.'],['the Tories','They supported the monarchy.','Sostenevano la monarchia.']];
+  const i=rnd(0,1),p=P[i];
+  const q=i===0?['Which party wanted to limit the powers of the monarch?','Quale partito voleva limitare i poteri del monarca?']:['Which party supported the monarchy?','Quale partito sosteneva la monarchia?'];
+  return mkE(QI(q[0],q[1]),p[0],[P[1-i][0],'the Puritans'],wy(p[1],p[2]),'Whigs and Tories');
+};
+const MONARCHS=[['Charles II','1660-1685'],['James II','1685-1688'],['William and Mary','1689-1702'],['Anne','1702-1714'],['George I','1714-1727'],['George II','1727-1760']];
+const exMonarch=()=>{
+  const m=pick(MONARCHS),o=shuffle(MONARCHS.filter(x=>x[0]!==m[0]));
+  if(Math.random()<0.5)return mkE(QI(`Which years did <b>${m[0]}</b> reign?`,`In quali anni regnò ${m[0]}?`),m[1],o.slice(0,3).map(x=>x[1]),wy(`${m[0]}: ${m[1]}.`,`${m[0]}: ${m[1]}.`),'Monarchs');
+  return mkE(QI(`Who reigned in <b>${m[1]}</b>?`,`Chi regnò nel ${m[1]}?`),m[0],o.slice(0,3).map(x=>x[0]),wy(`${m[0]}: ${m[1]}.`,`${m[0]}: ${m[1]}.`),'Monarchs');
+};
+/* ---- unità 4 ---- */
+const ROWS4=ROWS('William and Mary, and Anne',[
+ ['Who was William of Orange?','Chi era William d’Orange?','the Protestant husband of Mary Stuart',['a Catholic king of France','James II’s son'],'William of Orange was the Protestant husband of James’s daughter Mary Stuart.','William d’Orange era il marito protestante di Mary Stuart, figlia di James.'],
+ ['What happened to James II in the Glorious Revolution?','Che cosa successe a James II nella Rivoluzione Gloriosa?','he fled abroad',['he was beheaded','he was crowned again'],'James II fled abroad.','James II fuggì all’estero.'],
+ ['What did the Bill of Rights (1689) do?','Che cosa fece il Bill of Rights (1689)?','it limited the king’s power: a parliamentary constitutional monarchy',['it abolished Parliament','it made the king absolute'],'The king’s power was limited and a parliamentary Constitutional Monarchy was established.','Il potere del re fu limitato e fu stabilita una monarchia costituzionale parlamentare.'],
+ ['What did the Toleration Act (1689) give?','Che cosa diede il Toleration Act (1689)?','freedom of worship to Dissenters',['freedom of the press','votes for everyone'],'It gave Dissenters freedom of worship.','Diede ai Dissenters la libertà di culto.'],
+ ['What did the Act of Settlement (1701) say?','Che cosa diceva l’Act of Settlement (1701)?','only Protestants could be heirs to the throne',['only Catholics could be king','the king was chosen by God'],'Only Protestants could be heirs to the throne.','Solo i protestanti potevano ereditare il trono.'],
+ ['Who became queen in 1702?','Chi diventò regina nel 1702?','Anne, Mary’s sister',['Mary Stuart','Elizabeth'],'William died and Mary’s sister Anne became queen.','William morì e Anne, sorella di Mary, diventò regina.'],
+ ['Why did England enter the War of the Spanish Succession?','Perché l’Inghilterra entrò nella guerra di successione spagnola?','Charles II of Spain died without children and chose Philip as his heir',['Spain attacked Gibraltar','Anne wanted to be queen of Spain'],'In 1700 Charles II of Spain died without children and chose Philip as his heir.','Nel 1700 Charles II di Spagna morì senza figli e scelse Philip come erede.'],
+ ['Who was England allied with in the War of the Spanish Succession?','Con chi era alleata l’Inghilterra nella guerra di successione spagnola?','Holland and Prussia',['France and Spain','Portugal and Spain'],'England was allied with Holland and Prussia.','L’Inghilterra era alleata con Olanda e Prussia.'],
+ ['Who did England fight in the War of the Spanish Succession?','Contro chi combatté l’Inghilterra nella guerra di successione spagnola?','France, Spain and Portugal',['Holland and Prussia','Scotland and Ireland'],'England fought against France, Spain and Portugal.','L’Inghilterra combatté contro Francia, Spagna e Portogallo.'],
+ ['What did Britain get from the Treaty of Utrecht (1713)?','Che cosa ottenne la Gran Bretagna dal Trattato di Utrecht (1713)?','Gibraltar, Minorca and the right to trade with Spanish colonies',['Calais and Normandy','the Spanish throne'],'Britain received Gibraltar and Minorca and the right to trade with the Spanish South American colonies.','La Gran Bretagna ricevette Gibilterra e Minorca e il diritto di commerciare con le colonie spagnole sudamericane.'],
+ ['What did the Act of Union (1707) create?','Che cosa creò l’Act of Union (1707)?','the United Kingdom of Great Britain',['a Republic','the Commonwealth'],'It united England and Scotland into the United Kingdom of Great Britain.','Unì Inghilterra e Scozia nel Regno Unito di Gran Bretagna.'],
+ ['Why was the Act of Union important?','Perché fu importante l’Act of Union?','it helped prevent the return of a Stuart Catholic monarch',['it gave Scotland independence','it ended the Spanish war'],'It reinforced England’s control over Scotland and helped prevent the return of a Stuart Catholic monarch.','Rafforzò il controllo dell’Inghilterra sulla Scozia e aiutò a evitare il ritorno di un monarca cattolico Stuart.']]);
+const LAWS=[['the Bill of Rights','1689','limited the king’s power','limitò il potere del re'],['the Toleration Act','1689','gave Dissenters freedom of worship','diede ai Dissenters la libertà di culto'],['the Act of Settlement','1701','said only Protestants could be heirs to the throne','stabilì che solo i protestanti potevano ereditare il trono']];
+const exLaw=()=>{
+  const i=rnd(0,2),l=LAWS[i],o=LAWS.filter((_,k)=>k!==i);
+  if(Math.random()<0.5)return mkE(QI(`Which law <b>${l[2]}</b>?`,`Quale legge ${l[3]}?`),l[0],o.map(x=>x[0]),wy(`${l[0]} (${l[1]}) ${l[2]}.`,`${l[0]} (${l[1]}): ${l[3]}.`),'The laws');
+  const s=['the Bill of Rights','the Toleration Act','the Act of Settlement'];
+  return mkE(QI(`What did <b>${l[0]}</b> do?`,`Che cosa fece ${l[0]}?`),l[2],o.map(x=>x[2]),wy(`${l[0]} (${l[1]}) ${l[2]}.`,`${l[0]} (${l[1]}): ${l[3]}.`),'The laws');
+};
+/* ---- unità 5 ---- */
+const ROWS5=ROWS('The Augustan Age',[
+ ['Who became king in 1714?','Chi diventò re nel 1714?','George I, Elector of Hanover',['James II’s son James','William of Orange'],'George I, Elector of Hanover, was proclaimed king.','George I, principe elettore di Hannover, fu proclamato re.'],
+ ['Why was the position of Prime Minister created?','Perché fu creata la figura del Primo Ministro?','George I didn’t speak English',['Parliament was closed','the king died'],'The Prime Minister was a link between the ministers and the king because George I didn’t speak English.','Il Primo Ministro era un collegamento tra i ministri e il re perché George I non parlava inglese.'],
+ ['Who was the first Prime Minister in this sense?','Chi fu il primo Primo Ministro in questo senso?','Sir Robert Walpole',['William Pitt the Elder','Oliver Cromwell'],'The first Prime Minister was Sir Robert Walpole (1676-1745).','Il primo fu Sir Robert Walpole (1676-1745).'],
+ ['Who were the Jacobites?','Chi erano i giacobiti?','supporters of the restoration of James II’s son and grandson',['supporters of the Hanoverians','supporters of Cromwell'],'They supported the restoration of James II’s son James and grandson Charles.','Sostenevano la restaurazione del figlio James e del nipote Charles di James II.'],
+ ['What happened to the first Jacobite rebellion (1715)?','Che cosa successe alla prima rivolta giacobita (1715)?','it was unsuccessful',['it won in Scotland','it made James king'],'The first Jacobite rebellion was unsuccessful.','La prima rivolta giacobita non ebbe successo.'],
+ ['Where were the Jacobites defeated in 1746?','Dove furono sconfitti i giacobiti nel 1746?','at Culloden, in Scotland',['at Dunbar, in Scotland','at Naseby, in England'],'They were defeated in Scotland at the battle of Culloden (1746).','Furono sconfitti in Scozia nella battaglia di Culloden (1746).'],
+ ['What was the War of Jenkins’ Ear about?','Di che cosa trattava la guerra dell’orecchio di Jenkins?','trade and colonies',['religion','the Spanish throne'],'Britain fought Spain and won the right to trade with Spanish colonies in the Caribbean and Americas.','La Gran Bretagna combatté la Spagna e vinse il diritto di commerciare con le colonie spagnole dei Caraibi e delle Americhe.'],
+ ['Why did the War of the Austrian Succession start?','Perché cominciò la guerra di successione austriaca?','Maria Theresa became queen and some countries did not accept a female ruler',['Austria attacked England','Maria Theresa died'],'Some countries did not accept a female ruler. England supported Maria Theresa.','Alcuni paesi non accettavano una donna come sovrana. L’Inghilterra sostenne Maria Theresa.'],
+ ['Who led Britain in the Seven Years’ War?','Chi guidò la Gran Bretagna nella guerra dei Sette anni?','William Pitt the Elder',['Robert Walpole','Oliver Cromwell'],'William Pitt the Elder led Britain.','William Pitt il Vecchio guidò la Gran Bretagna.'],
+ ['What was the result of the Seven Years’ War for Britain?','Qual fu il risultato della guerra dei Sette anni per la Gran Bretagna?','Britain became stronger in India and Canada',['Britain lost India','Britain lost Canada'],'The war made Britain stronger in India and Canada.','La guerra rese la Gran Bretagna più forte in India e Canada.'],
+ ['Why was the Seven Years’ War a global war?','Perché la guerra dei Sette anni fu una guerra globale?','it was fought in Europe, North America, India and on the seas',['it was fought only in Europe','it was fought only at sea'],'It happened in Europe, North America, India and the seas.','Si combatté in Europa, Nord America, India e sui mari.']]);
+const WARS=[['the War of Jenkins’ Ear','1739','Spain, trade in the Caribbean and Americas','la Spagna, il commercio nei Caraibi e nelle Americhe'],['the War of the Austrian Succession','1740-48','Maria Theresa, queen of Austria','Maria Theresa, regina d’Austria'],['the Seven Years’ War','1756-63','William Pitt the Elder, India and Canada','William Pitt il Vecchio, India e Canada']];
+const exWar=()=>{
+  const i=rnd(0,2),w=WARS[i],o=WARS.filter((_,k)=>k!==i);
+  if(Math.random()<0.5)return mkE(QI(`Which war? <i>${w[2]}</i>`,`Quale guerra? ${w[3]}`),w[0],o.map(x=>x[0]),wy(`${w[0]} (${w[1]}): ${w[2]}.`,`${w[0]} (${w[1]}): ${w[3]}.`),'The wars of George II');
+  return mkE(QI(`When was <b>${w[0]}</b>?`,`Quando fu ${w[0]}?`),w[1],o.map(x=>x[1]),wy(`${w[0]}: ${w[1]}.`,`${w[0]}: ${w[1]}.`),'The wars of George II');
+};
+/* ---- unità 6 ---- */
+const ROWS6=ROWS('Puritan literature',[
+ ['What is Puritan literature?','Che cos’è la letteratura puritana?','works produced when Puritans held political and religious power',['works written by Catholic poets','works written in Latin'],'Puritan literature refers to works produced when Puritans gained and held political and religious power.','Indica le opere prodotte quando i Puritani ottennero e tennero il potere politico e religioso.'],
+ ['Which period does Puritan literature cover?','Quale periodo copre la letteratura puritana?','1625-1660',['1066-1215','1714-1760'],'The Puritan literature period: 1625-1660.','Il periodo della letteratura puritana: 1625-1660.'],
+ ['Which is a feature of Puritan literature?','Quale è un carattere della letteratura puritana?','a tendency to teach moral lessons',['a comic and light tone','a love for the Pope'],'It has a general tendency to teach and convey moral lessons.','Ha la tendenza generale a insegnare lezioni morali.'],
+ ['What did Puritan poets defend?','Che cosa difendevano i poeti puritani?','the purification of society and of the arts',['the power of the Pope','the Divine Right of Kings'],'They defended the purification of society and of the arts.','Difendevano la purificazione della società e delle arti.'],
+ ['Which themes did Puritan poets reflect on?','Su quali temi riflettevano i poeti puritani?','salvation and predestination',['love and beauty only','war and heroism'],'They reflect on religious themes such as salvation and predestination.','Riflettono su temi religiosi come salvezza e predestinazione.'],
+ ['Which tone did Puritan poems have?','Quale tono avevano le poesie puritane?','didactic, with references to the Bible',['humorous, with references to myths','angry, with no references'],'They had a didactic tone and contained references to the Bible.','Avevano un tono didattico e riferimenti alla Bibbia.'],
+ ['What did Metaphysical poets explore?','Che cosa esploravano i poeti metafisici?','universal and philosophical concepts',['only the life of the king','only the history of England'],'They devoted themselves to the exploration of universal and philosophical concepts.','Si dedicavano all’esplorazione di concetti universali e filosofici.'],
+ ['What did Metaphysical poets feel?','Che cosa provavano i poeti metafisici?','dissatisfaction and confusion',['perfect optimism','pride in the Renaissance'],'They expressed dissatisfaction and confusion from the loss of optimism and of the stability of the Renaissance.','Esprimevano insoddisfazione e confusione per la perdita dell’ottimismo e della stabilità del Rinascimento.'],
+ ['Which fields inspired the Metaphysical poets?','Quali campi ispiravano i poeti metafisici?','philosophy, religion, astronomy, anatomy and medicine',['sport and cooking','law and trade'],'They drew inspiration from philosophy, religion, astronomy, anatomy and medicine.','Prendevano ispirazione da filosofia, religione, astronomia, anatomia e medicina.'],
+ ['What is a conceit?','Che cos’è un conceit?','an elaborate, surprising comparison between two very different things',['a pause in a line','a long poem about war'],'A conceit connects abstract ideas with physical reality through a surprising comparison.','Un conceit collega idee astratte e realtà fisica con un paragone sorprendente.'],
+ ['What are John Donne’s main topics?','Quali sono i temi principali di John Donne?','love and the relationship between man and God',['war and kings','the history of England'],'Donne’s main topics: love and the relationship between man and God.','I temi principali di Donne: l’amore e il rapporto tra uomo e Dio.'],
+ ['For Donne, love is…','Per Donne l’amore è…','both a spiritual and a physical force',['only a spiritual force','only a physical force'],'For Donne love is both a spiritual and a physical force.','Per Donne l’amore è una forza insieme spirituale e fisica.'],
+ ['What does Donne reject?','Che cosa rifiuta Donne?','the tradition of Petrarch’s poetry',['the Bible','the Metaphysical style'],'Donne rejects the tradition of Petrarch’s poetry.','Donne rifiuta la tradizione della poesia di Petrarca.'],
+ ['Which author best represents the poetry of the 17th century?','Quale autore rappresenta meglio la poesia del Seicento?','John Milton',['John Donne','Oliver Cromwell'],'The author who best represents the poetic production of the 17th century is John Milton.','L’autore che meglio rappresenta la produzione poetica del Seicento è John Milton.']]);
+const exPoet=()=>{
+  const F=[['the Puritan poets','they defended the purification of society and of the arts','difendevano la purificazione della società e delle arti'],['the Puritan poets','their poems reflect on salvation and predestination','le loro poesie riflettono su salvezza e predestinazione'],['the Puritan poets','they had a didactic tone and references to the Bible','avevano un tono didattico e riferimenti alla Bibbia'],
+   ['the Metaphysical poets','they used conceits','usavano i conceit'],['the Metaphysical poets','they were inspired by philosophy, astronomy, anatomy and medicine','erano ispirati da filosofia, astronomia, anatomia e medicina'],['the Metaphysical poets','they felt dissatisfaction and confusion after the Renaissance','provavano insoddisfazione e confusione dopo il Rinascimento']];
+  const f=pick(F),other=f[0]==='the Puritan poets'?'the Metaphysical poets':'the Puritan poets';
+  return mkE(QI(`Who? <i>${f[1]}</i>`,`Chi? ${f[2]}`),f[0],[other,'the Anglo-Saxon poets'],wy(`${f[0]}: ${f[1]}.`,`${f[0]}: ${f[2]}.`),'Puritan and Metaphysical poets');
+};
+/* ---- unità 7 ---- */
+const ROWS7=ROWS('John Milton',[
+ ['Where was Milton born?','Dove nacque Milton?','in London, into a Puritan family',['in Cambridge, into a Catholic family','in Edinburgh'],'He was born in 1608 into a Puritan family in London.','Nacque nel 1608 in una famiglia puritana a Londra.'],
+ ['Where was Milton educated?','Dove studiò Milton?','St Paul’s School and Cambridge University',['Oxford and Eton','Rome and Florence'],'He was educated at St Paul’s School, London and Cambridge University.','Studiò alla St Paul’s School di Londra e all’Università di Cambridge.'],
+ ['Whom did Milton support during the Civil War?','Chi sostenne Milton durante la guerra civile?','Cromwell and the Puritans',['Charles I and the Royalists','James II'],'He supported Cromwell and the Puritans during the Civil War.','Sostenne Cromwell e i Puritani durante la guerra civile.'],
+ ['What happened to Milton’s eyes?','Che cosa successe agli occhi di Milton?','he became completely blind by 1651',['he never had problems','he was blind from birth'],'He became completely blind by 1651.','Divenne completamente cieco entro il 1651.'],
+ ['What happened to Milton in 1660?','Che cosa successe a Milton nel 1660?','he fell from grace with the Restoration',['he became Lord Protector','he left for America'],'He fell from grace with the Restoration of Charles II.','Cadde in disgrazia con la Restaurazione di Charles II.'],
+ ['How did Milton live after 1660?','Come visse Milton dopo il 1660?','in seclusion and poverty',['in a palace','as a minister'],'He lived in seclusion and poverty.','Visse isolato e in povertà.'],
+ ['Which poems follow the example of Petrarch?','Quali poesie seguono l’esempio di Petrarca?','L’Allegro and Il Penseroso',['Areopagitica','Paradise Lost'],'The Italian poems L’Allegro and Il Penseroso (1631) follow the example of Petrarch.','Le poesie italiane L’Allegro e Il Penseroso (1631) seguono l’esempio di Petrarca.'],
+ ['What did Pro Populo Anglicano Defensio defend?','Che cosa difendeva la Pro Populo Anglicano Defensio?','the execution of Charles I',['the king’s power','the Church of England'],'It defended the execution of Charles I and supported Cromwell.','Difendeva l’esecuzione di Charles I e sosteneva Cromwell.'],
+ ['What is Areopagitica?','Che cos’è l’Areopagitica?','a defence of freedom of speech and a criticism of censorship',['an epic poem about Satan','a love poem'],'Areopagitica (1644) is an impassioned defence of freedom of speech and a criticism of censorship.','L’Areopagitica (1644) è un’appassionata difesa della libertà di parola e una critica della censura.'],
+ ['Which of these did Milton defend?','Quale di queste cose difese Milton?','freedom of the press and divorce',['censorship','the Divine Right of Kings'],'He defended religious, civil and domestic liberties, freedom of the press, Parliament, divorce and freedom of speech.','Difese le libertà religiose, civili e domestiche, la libertà di stampa, il Parlamento, il divorzio e la libertà di parola.'],
+ ['What is Milton’s masterpiece?','Qual è il capolavoro di Milton?','Paradise Lost',['Areopagitica','L’Allegro'],'Milton’s masterpiece is Paradise Lost (1667).','Il capolavoro di Milton è Paradise Lost (1667).']]);
+const MW=[['L’Allegro and Il Penseroso','Italian poems after Petrarch','poesie italiane sul modello di Petrarca','first'],['Pro Populo Anglicano Defensio','it defended the execution of Charles I','difendeva l’esecuzione di Charles I','first'],['Areopagitica','a defence of freedom of speech','una difesa della libertà di parola','second'],['Paradise Lost','Milton’s masterpiece, written in blindness and poverty','il capolavoro di Milton, scritto in cecità e povertà','third']];
+const PER=['first','second','third'];
+const exMiltonWork=()=>{
+  const i=rnd(0,3),w=MW[i],o=shuffle(MW.filter((_,k)=>k!==i)).map(x=>x[0]);
+  if(Math.random()<0.5)return mkE(QI(`Which work? <i>${w[1]}</i>`,`Quale opera? ${w[2]}`),w[0],o,wy(`${w[0]}: ${w[1]}.`,`${w[0]}: ${w[2]}.`),'Milton’s works');
+  return mkE(QI(`In which creative period did Milton write <b>${w[0]}</b>?`,`In quale periodo creativo Milton scrisse ${w[0]}?`),`the ${w[3]} period`,PER.filter(p=>p!==w[3]).map(p=>`the ${p} period`),wy(`${w[0]}: the ${w[3]} creative period.`,`${w[0]}: ${w[3]==='first'?'primo':w[3]==='second'?'secondo':'terzo'} periodo creativo.`),'Milton’s works');
+};
+/* ---- unità 8: trama ---- */
+const PLOT=[
+ ['Satan and his companion are chained to a lake of fire in Hell','Satana e il suo compagno sono incatenati a un lago di fuoco nell’Inferno'],
+ ['They free themselves and want to start another war against God','Si liberano e vogliono cominciare un’altra guerra contro Dio'],
+ ['Beelzebub suggests to corrupt mankind','Belzebù suggerisce di corrompere l’umanità'],
+ ['Satan returns to Eden as a serpent and compliments Eve on her beauty','Satana torna nell’Eden come serpente e fa i complimenti a Eva'],
+ ['Eve asks the serpent how he learned to speak','Eva chiede al serpente come ha imparato a parlare'],
+ ['Satan says he has eaten the fruit of the Tree of Knowledge','Satana dice di aver mangiato il frutto dell’Albero della Conoscenza'],
+ ['Eve eats the fruit','Eva mangia il frutto'],
+ ['Adam is horrified, but he eats the fruit too','Adamo è inorridito, ma mangia anche lui il frutto'],
+ ['God punishes the serpent and condemns Adam and Eve to pain and death','Dio punisce il serpente e condanna Adamo ed Eva a dolore e morte'],
+ ['The archangel Michael shows them the future of mankind and they leave the Garden','L’arcangelo Michele mostra loro il futuro e lasciano il giardino']];
+const exNext=()=>{
+  const i=rnd(0,PLOT.length-2),n=PLOT[i+1];
+  const o=shuffle(PLOT.filter((_,k)=>k!==i&&k!==i+1&&k!==i+2&&k!==i-1)).map(x=>x[0]);
+  return mkE(QI(`What happens <b>next</b>, after this? <i>${PLOT[i][0]}</i>`,`Che cosa succede dopo? ${PLOT[i][1]}`),n[0],o,wy(`${PLOT[i][0]}. Next: ${n[0]}.`,`${PLOT[i][1]}. Dopo: ${n[1]}.`),'The plot, step by step');
+};
+const exWhoPL=()=>{
+  const R=[['Who suggests to corrupt mankind?','Chi suggerisce di corrompere l’umanità?','Beelzebub',['Michael','Adam'],'Beelzebub suggests to corrupt mankind.','Belzebù suggerisce di corrompere l’umanità.'],
+   ['Who compliments Eve on her beauty?','Chi fa i complimenti a Eva per la sua bellezza?','Satan, as a serpent',['Adam','the archangel Michael'],'Satan returns to Eden in the form of a serpent and compliments Eve on her beauty.','Satana torna nell’Eden in forma di serpente e fa i complimenti a Eva.'],
+   ['Who eats the fruit first?','Chi mangia il frutto per primo?','Eve',['Adam','Satan'],'Eve eats the fruit; then Adam eats it too.','Eva mangia il frutto; poi lo mangia anche Adamo.'],
+   ['Who is horrified to find out that Eve has eaten from the Tree?','Chi è inorridito nello scoprire che Eva ha mangiato dall’Albero?','Adam',['God','Beelzebub'],'Adam is horrified, but he eats the fruit too.','Adamo è inorridito, ma mangia anche lui il frutto.'],
+   ['Who shows Adam and Eve the future of mankind?','Chi mostra ad Adamo ed Eva il futuro dell’umanità?','the archangel Michael',['Satan','Beelzebub'],'The archangel Michael shows them the future of mankind.','L’arcangelo Michele mostra loro il futuro dell’umanità.']];
+  const r=pick(R);return mkE(QI(r[0],r[1]),r[2],r[3],wy(r[4],r[5]),'Who is who?');
+};
+const ROWS8=ROWS('Paradise Lost: the plot',[
+ ['What kind of work is Paradise Lost?','Che tipo di opera è Paradise Lost?','an epic poem',['a play','a prose pamphlet'],'Paradise Lost (1667) is an epic poem.','Paradise Lost (1667) è un poema epico.'],
+ ['Which biblical book does Paradise Lost retell?','Quale libro biblico racconta di nuovo Paradise Lost?','the Book of Genesis',['the Book of Revelation','the Psalms'],'It retells the story of the Book of Genesis.','Racconta di nuovo la storia del libro della Genesi.'],
+ ['What is the “divine drama” in the poem?','Qual è il “dramma divino” nel poema?','the fall of the angels led by Satan',['the fall of man','the death of Adam'],'Divine drama: the fall of the angels led by Satan.','Dramma divino: la caduta degli angeli guidati da Satana.'],
+ ['What is the “human drama” in the poem?','Qual è il “dramma umano” nel poema?','the fall of man: Adam and Eve',['the war in Heaven','Satan’s journey'],'Human drama: the fall of man, Adam and Eve.','Dramma umano: la caduta dell’uomo, Adamo ed Eva.'],
+ ['Where does the poem begin?','Dove comincia il poema?','in Hell, with Satan chained to a lake of fire',['in Eden, with Adam and Eve','in Heaven, with God'],'The poem begins with Satan and his companion chained to a lake of fire in Hell.','Il poema comincia con Satana e il suo compagno incatenati a un lago di fuoco nell’Inferno.'],
+ ['What do Satan and his companion want after freeing themselves?','Che cosa vogliono Satana e il suo compagno dopo essersi liberati?','another war against God',['to ask God for pardon','to leave Hell in peace'],'They want to start another war against God.','Vogliono cominciare un’altra guerra contro Dio.'],
+ ['Why does Satan compliment Eve on her beauty?','Perché Satana fa i complimenti a Eva?','to tempt her (he is in the form of a serpent)',['because he loves her','because God ordered him'],'Satan returns to Eden as a serpent and compliments Eve on her beauty.','Satana torna nell’Eden come serpente e fa i complimenti a Eva.'],
+ ['What does Eve ask the serpent?','Che cosa chiede Eva al serpente?','how he learned to speak',['where Adam is','who made him'],'Eve is amazed and asks the serpent how he learned to speak.','Eva è stupita e chiede al serpente come ha imparato a parlare.'],
+ ['What does Satan tell Eve?','Che cosa dice Satana a Eva?','he has eaten the fruit of the Tree of Knowledge',['God is not angry','Adam is dead'],'Satan tells her that he has eaten the fruit of the Tree of Knowledge.','Satana le dice che ha mangiato il frutto dell’Albero della Conoscenza.'],
+ ['Why does Adam eat the fruit?','Perché Adamo mangia il frutto?','he would rather be fallen with Eve than remain pure',['he is hungry','the serpent forces him'],'He would rather be fallen with her than remain pure.','Preferisce essere caduto con lei piuttosto che restare puro.'],
+ ['What does God do when he knows about the disobedience?','Che cosa fa Dio quando sa della disobbedienza?','he punishes the serpent and condemns Adam and Eve to pain and death',['he forgives everyone at once','he destroys the Earth'],'God knows immediately. He first punishes the serpent, then Adam and Eve are condemned to suffer pain and death.','Dio lo sa subito. Prima punisce il serpente, poi Adamo ed Eva sono condannati a soffrire dolore e morte.'],
+ ['How is the serpent punished?','Come è punito il serpente?','it must crawl on the ground',['it must fly','it must sing'],'God condemns it to crawl on the ground.','Dio lo condanna a strisciare per terra.'],
+ ['What gives Adam and Eve comfort at the end?','Che cosa conforta Adamo ed Eva alla fine?','a vision of redemption',['a vision of war','a promise of gold'],'Comforted by a vision of redemption, they leave the Garden.','Confortati da una visione di redenzione, lasciano il giardino.']]);
+/* ---- unità 9 ---- */
+const REALMS=[['Heaven','glorious, above','glorioso, sopra'],['Hell','dreadful, below','terribile, sotto'],['Chaos','confusing','confuso'],['Earth','young','giovane']];
+const exRealm=()=>{
+  const i=rnd(0,3),r=REALMS[i],o=shuffle(REALMS.filter((_,k)=>k!==i)).map(x=>x[0]);
+  return mkE(QI(`Which realm is <b>${r[1]}</b>?`,`Quale regno è ${r[2]}?`),r[0],o,wy(`${r[0]}: ${r[1]}. Four realms: Heaven, Hell, Chaos, Earth.`,`${r[0]}: ${r[2]}. Quattro regni: Paradiso, Inferno, Caos, Terra.`),'The four realms');
+};
+const exHier=()=>{
+  if(Math.random()<0.5){const c=pick(['the Son','the archangels and cherubs']);return mkE(QI('Which one is <b>closer to God</b> than humans (Adam and Eve)?','Quale è più vicino a Dio degli esseri umani (Adamo ed Eva)?'),c,['animals','devils (fallen angels)'],wy('Order: the Son, the archangels and cherubs, humans, animals, devils.','Ordine: il Figlio, gli arcangeli e i cherubini, gli esseri umani, gli animali, i diavoli.'),'The social hierarchy')}
+  const c=pick(['animals','devils (fallen angels)']);return mkE(QI('Which one is <b>farther from God</b> than humans (Adam and Eve)?','Quale è più lontano da Dio degli esseri umani (Adamo ed Eva)?'),c,['the Son','the archangels and cherubs'],wy('Order: the Son, the archangels and cherubs, humans, animals, devils.','Ordine: il Figlio, gli arcangeli e i cherubini, gli esseri umani, gli animali, i diavoli.'),'The social hierarchy');
+};
+const ROWS9=ROWS('Paradise Lost: themes, Satan, style',[
+ ['What are the two moral paths in the poem?','Quali sono le due strade morali nel poema?','Satan’s sin and punishment; man’s repentance and redemption',['Satan’s redemption; man’s punishment','God’s rebellion; Satan’s mercy'],'Satan’s disobedience leads to sin and punishment; man’s disobedience is followed by repentance and hope of redemption.','La disobbedienza di Satana porta a peccato e punizione; quella dell’uomo è seguita da pentimento e speranza di redenzione.'],
+ ['Which of these is a theme of Paradise Lost?','Quale di questi è un tema di Paradise Lost?','disobedience',['the discovery of America','the joy of the Restoration'],'Themes: disobedience, rebellion, redemption, God’s grace and mercy.','Temi: disobbedienza, ribellione, redenzione, grazia e misericordia di Dio.'],
+ ['What does Satan choose?','Che cosa sceglie Satana?','damnation and rejection',['redemption','repentance'],'Satan rebels against God and chooses damnation and rejection.','Satana si ribella a Dio e sceglie la dannazione e il rifiuto.'],
+ ['How do Adam and Eve obtain redemption?','Come ottengono la redenzione Adamo ed Eva?','through repentance of their sin',['through war','through a rebellion'],'They seek and obtain redemption through repentance of their sin.','Cercano e ottengono la redenzione con il pentimento del loro peccato.'],
+ ['What is the cosmic geography of the poem based on?','Su che cosa si basa la geografia cosmica del poema?','religion, not science',['astronomy','the maps of Milton’s time'],'It is based on religion, not on the science or astronomy of Milton’s time.','Si basa sulla religione, non sulla scienza o sull’astronomia dell’epoca di Milton.'],
+ ['How many realms are there in the universe?','Quanti regni ci sono nell’universo?','four',['three','seven'],'Four realms: Heaven, Hell, Chaos and Earth.','Quattro regni: Paradiso, Inferno, Caos e Terra.'],
+ ['What is the social hierarchy based on?','Su che cosa si basa la gerarchia sociale?','proximity to God',['wealth','age'],'The social hierarchy is based on proximity to God.','La gerarchia sociale si basa sulla vicinanza a Dio.'],
+ ['Which is the most famous line of Satan?','Qual è la frase più famosa di Satana?','“Better to reign in Hell than serve in Heaven”',['“God is great”','“I will serve in Heaven”'],'Satan says: “Better to reign in Hell than serve in Heaven”.','Satana dice: “Meglio regnare all’Inferno che servire in Paradiso”.'],
+ ['Why does Satan refuse to accept God’s superiority?','Che cosa fa Satana rispetto alla superiorità di Dio?','he refuses to accept it and is banished to Hell',['he accepts it','he asks God for pardon'],'Satan refuses to accept God’s superiority and is banished to Hell.','Satana rifiuta di accettare la superiorità di Dio ed è bandito all’Inferno.'],
+ ['What does Milton show for Satan’s courage?','Che cosa mostra Milton per il coraggio di Satana?','some respect',['no interest','hatred only'],'God will always be more powerful, yet Milton shows some respect for Satan’s courage.','Dio sarà sempre più potente, ma Milton mostra un certo rispetto per il coraggio di Satana.'],
+ ['How does Satan appear at first?','Come appare Satana all’inizio?','heroic',['cowardly','humble'],'He initially appears to be heroic: he has the strength to refuse defeat.','All’inizio appare eroico: ha la forza di rifiutare la sconfitta.'],
+ ['What does Satan represent in the end?','Che cosa rappresenta Satana alla fine?','moral and physical degradation, dominated by vanity',['wisdom and humility','a perfect hero'],'In the end he represents moral and physical degradation.','Alla fine rappresenta la degradazione morale e fisica.'],
+ ['Who was Paradise Lost written for?','Per chi fu scritto Paradise Lost?','highly-educated readers',['children','soldiers'],'It is a complex work written for highly-educated readers.','È un’opera complessa scritta per lettori molto colti.'],
+ ['Which features does the style of Paradise Lost have?','Quali caratteri ha lo stile di Paradise Lost?','obscure allusions, archaic vocabulary and extended similes',['simple words and short sentences','slang and jokes'],'It has allusions, archaic vocabulary, complex grammar and extended similes.','Ha allusioni, vocabolario arcaico, grammatica complessa e similitudini estese.'],
+ ['What is the meter of Paradise Lost?','Qual è il metro di Paradise Lost?','unrhymed iambic pentameters (blank verse)',['rhymed couplets','free verse'],'It is written in blank verse, as used by Marlowe and Shakespeare.','È scritto in versi sciolti, come usati da Marlowe e Shakespeare.'],
+ ['Why did Milton avoid rhyme?','Perché Milton evitò la rima?','he believed rhyme was not suitable for the solemn subject',['he did not know how to rhyme','rhyme was forbidden'],'Milton believed that rhyme was not suitable for the solemn subject matter of the work.','Milton credeva che la rima non fosse adatta al soggetto solenne dell’opera.']]);
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`<span>Quale termine inglese corrisponde a questo significato?</span><br><i>${L[i][1]}</i>`,E(L[i][0]),others.slice(0,2).map(x=>E(x[0])),`<p>${L[i][1]}</p><p>Risposta: ${B(E(L[i][0]))}.</p>`,'Words and meanings');
+  return mkEx(`<span>Che cosa significa</span> ${B(E(L[i][0]))}?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(E(L[i][0]))}: ${L[i][1]}</p>`,'Words and meanings');
+};
+const GENS={
+ u1:[ROWS1,ROWS1,ROWS1,exWhen('u1'),exWhen('u1'),exDef('u1')],
+ u2:[ROWS2,ROWS2,ROWS2,exWhen('u2'),exDef('u2')],
+ u3:[ROWS3,ROWS3,exParty,exMonarch,exWhen('u3'),exDef('u3')],
+ u4:[ROWS4,ROWS4,ROWS4,exLaw,exLaw,exWhen('u4'),exDef('u4')],
+ u5:[ROWS5,ROWS5,ROWS5,exWar,exWar,exWhen('u5'),exMonarch,exDef('u5')],
+ u6:[ROWS6,ROWS6,ROWS6,exPoet,exPoet,exDef('u6')],
+ u7:[ROWS7,ROWS7,exMiltonWork,exMiltonWork,exWhen('u7'),exDef('u7')],
+ u8:[ROWS8,ROWS8,exNext,exNext,exWhoPL,exWhen('u8'),exDef('u8')],
+ u9:[ROWS9,ROWS9,exRealm,exHier,exHier,exDef('u9')]
+};
+const UNITS={u1:'1 · Charles I and the Civil War',u2:'2 · Cromwell and the Commonwealth',u3:'3 · The Restoration: Charles II and James II',u4:'4 · William and Mary, and Queen Anne',u5:'5 · The Augustan Age',u6:'6 · Puritan literature',u7:'7 · John Milton',u8:'8 · Paradise Lost: the plot',u9:'9 · Paradise Lost: themes, Satan, style'};
+const PROVA_PLAN={u1:2,u2:1,u3:2,u4:2,u5:1,u6:2,u7:1,u8:2,u9:2};
+
+/* ========== INGLESE 3 ES: dai Celti a Beowulf — CONTENUTI (parte 1: aiuti, definizioni, unità 1-4) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const LI=l=>'<ul>'+l.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+const E=s=>`<span lang="en">${s}</span>`;
+const en=s=>`<b lang="en">${s}</b>`;
+const S2=(a,b)=>`<span lang="en">${a}</span><br><span class="tr">${b}</span>`;
+const EN=(a,b)=>`<p lang="en">${a}</p><p class="tr">${b}</p>`;
+const QI=(a,b)=>`<span lang="en">${a}</span><br><span class="tr">${b}</span>`;
+const OR=(qa,qb,aa,ab)=>[QI(qa,qb),EN(aa,ab)];
+const QZ=(qa,qb,c,w,ex)=>[QI(qa,qb),E(c),w.map(E),ex];
+/* ========== DEFS e unità 1-4 (4 ES: dalla guerra civile a Paradise Lost) ========== */
+const DEFS={
+u1:[
+ ['the Divine Right of Kings','il diritto divino dei re: i re dicevano di essere scelti da Dio, con potere assoluto'],
+ ['the Petition of Right','la Petizione dei diritti (1628): nessuna tassa senza il Parlamento, nessun arresto senza buon motivo'],
+ ['the Short Parliament','il Parlamento Breve (1640): durò un mese'],
+ ['the Long Parliament','il Parlamento Lungo: rifiutò i fondi e voleva ridurre il potere del re'],
+ ['the Royalists','i realisti: i sostenitori del re (aristocratici e proprietari anglicani)'],
+ ['the Roundheads','le Teste Rotonde: i parlamentari, in maggioranza puritani'],
+ ['the Ironsides','“Fianchi di Ferro”: l’esercito formato da Oliver Cromwell']],
+u2:[
+ ['the Commonwealth','la Repubblica proclamata nel 1649'],
+ ['the Rump Parliament','il Parlamento “Rump”: la Camera dei Comuni con i soli sostenitori della Repubblica (fino al 1653)'],
+ ['Lord Protector','Lord Protettore: il titolo di Cromwell, dittatore militare dal 1653'],
+ ['a death warrant','un mandato di morte: l’ordine di giustiziare il re'],
+ ['the battle of Dunbar','la battaglia (1650) in cui fu schiacciata la rivolta realista scozzese'],
+ ['to abdicate','abdicare: lasciare il trono (o il potere)']],
+u3:[
+ ['the Restoration','la Restaurazione: il ritorno della monarchia nel 1660 con Charles II'],
+ ['the Test Act (1673)','la legge del 1673: chi ricopriva un incarico pubblico doveva essere protestante'],
+ ['the Whigs','i Whig: contro i cattolici, volevano limitare i poteri del monarca'],
+ ['the Tories','i Tory: sostenevano la monarchia'],
+ ['a Protestant','un protestante (il re doveva esserlo, per la Chiesa d’Inghilterra)'],
+ ['a Catholic','un cattolico (James II lo era)']],
+u4:[
+ ['the Glorious Revolution','la Rivoluzione Gloriosa: William d’Orange arriva e James II fugge'],
+ ['the Bill of Rights (1689)','limitò il potere del re: nacque la monarchia costituzionale parlamentare'],
+ ['the Toleration Act (1689)','diede ai Dissenters la libertà di culto'],
+ ['the Act of Settlement (1701)','solo i protestanti potevano ereditare il trono'],
+ ['the Treaty of Utrecht (1713)','la Gran Bretagna ottenne Gibilterra e Minorca'],
+ ['the Act of Union (1707)','unì Inghilterra e Scozia nel Regno Unito di Gran Bretagna'],
+ ['Dissenters','i dissenzienti: i protestanti fuori dalla Chiesa d’Inghilterra']],
+u5:[
+ ['the Augustan Age','l’età augustea: i regni di George I e George II'],
+ ['the Prime Minister','il Primo Ministro: collega i ministri e il re'],
+ ['the Jacobites','i giacobiti: sostenevano il ritorno degli Stuart (James II, suo figlio e suo nipote)'],
+ ['the Hanoverians','gli Hannover: la dinastia di George I'],
+ ['the battle of Culloden (1746)','la sconfitta finale dei giacobiti in Scozia'],
+ ['the Seven Years’ War','la guerra globale (1756-63): la Gran Bretagna più forte in India e Canada']],
+u6:[
+ ['Puritan literature','le opere inglesi scritte quando i Puritani ebbero il potere (1625-1660)'],
+ ['predestination','la predestinazione: tema religioso dei poeti puritani'],
+ ['didactic','didattico: che vuole insegnare una lezione morale'],
+ ['Metaphysical poets','poeti metafisici: esplorano concetti universali e filosofici'],
+ ['a conceit','una metafora elaborata e sorprendente tra due cose molto diverse'],
+ ['John Donne','il più famoso poeta metafisico inglese: amore e rapporto tra uomo e Dio']],
+u7:[
+ ['Areopagitica (1644)','appassionata difesa della libertà di parola e critica della censura'],
+ ['Pro Populo Anglicano Defensio (1651)','difese l’esecuzione di Charles I e sostenne Cromwell'],
+ ['L’Allegro and Il Penseroso (1631)','poesie italiane di Milton, sul modello di Petrarca'],
+ ['Paradise Lost (1667)','il capolavoro di Milton, un poema epico'],
+ ['a pamphlet','un opuscolo politico: Milton ne scrisse molti'],
+ ['censorship','la censura: Milton la criticò']],
+u8:[
+ ['Satan','l’angelo che si ribella a Dio e tenta Eva'],
+ ['Beelzebub','il compagno di Satana: propone di corrompere l’umanità'],
+ ['the Tree of Knowledge','l’albero proibito: Eva e Adamo mangiano il suo frutto'],
+ ['the archangel Michael','mostra ad Adamo ed Eva il futuro dell’umanità'],
+ ['Eden','il giardino dove vivono Adamo ed Eva'],
+ ['redemption','la redenzione: la salvezza dopo il peccato']],
+u9:[
+ ['blank verse','versi sciolti: pentametri giambici senza rima'],
+ ['an extended simile','una similitudine lunga e sviluppata'],
+ ['a realm','un regno: l’universo ne ha quattro (Heaven, Hell, Chaos, Earth)'],
+ ['Chaos','il regno confuso tra Paradiso e Inferno'],
+ ['damnation','la dannazione: Satana la sceglie'],
+ ['God’s grace and mercy','la grazia e la misericordia di Dio']]
+};
+const CONT={};
+CONT.u1={
+ cose:`<div class="box bia"><p>Nel <b>1625</b> sale al trono ${en('Charles I')}. Il re vuole il potere assoluto e litiga con il ${en('Parliament')} (il Parlamento) per le tasse e per la religione. Il conflitto porta alla ${en('Civil War')} (1642-1649) e alla <b>decapitazione del re</b> nel gennaio 1649.</p></div>`,
+ ricette:[
+  card('blu','1 · Charles I and the Divine Right of Kings (1625)',stepsHtml([
+   S2('<b>1625</b>: Charles I succeeded his father <b>James</b>. A struggle began between <b>Crown and Parliament</b>.','1625: Charles I succedette al padre James. Cominciò uno scontro tra Corona e Parlamento.'),
+   S2('He believed in the <b>Divine Right of Kings</b>: kings were <b>chosen by God</b>, his representatives on Earth, with <b>absolute power</b>. They expected <b>total obedience</b>.','Credeva nel diritto divino dei re: i re erano scelti da Dio, suoi rappresentanti sulla Terra, con potere assoluto. Pretendevano obbedienza totale.'),
+   S2('He <b>raised taxes without the consent of Parliament</b> and wanted absolute obedience to the <b>Church of England</b>.','Alzò le tasse senza il consenso del Parlamento e voleva obbedienza assoluta alla Chiesa d’Inghilterra.'),
+   S2('He chose <b>William Laud</b> as Archbishop of Canterbury. Laud enforced <b>High Church</b> worship and <b>persecuted the Puritans</b>. Thousands emigrated to <b>America</b>.','Scelse William Laud come arcivescovo di Canterbury. Laud impose il culto della High Church e perseguitò i Puritani. Migliaia emigrarono in America.')])),
+  card('ver','2 · Personal rule (1628-1640)',stepsHtml([
+   S2('<b>1628</b>: Charles called Parliament to raise money for a <b>war with France</b>. Parliament agreed only if he accepted the <b>Petition of Right</b>.','1628: Charles convocò il Parlamento per avere soldi per la guerra con la Francia. Il Parlamento accettò solo se lui accettava la Petition of Right.'),
+   S2('The Petition: <b>no taxes</b> without Parliament’s approval; <b>no one imprisoned</b> without a good reason.','La Petizione: nessuna tassa senza l’approvazione del Parlamento; nessuno in prigione senza un buon motivo.'),
+   S2('<b>1629</b>: the disagreements got worse. Charles <b>shut down Parliament</b> and ruled as a <b>despot for 11 years</b>.','1629: i contrasti peggiorarono. Charles chiuse il Parlamento e governò da despota per 11 anni.')])),
+  card('gia','3 · Breakdown of personal rule (1640)',stepsHtml([
+   S2('<b>1640</b>: to impose Church of England practices on <b>Scottish Presbyterians</b>, Charles called Parliament to raise taxes for a <b>war with Scotland</b>.','1640: per imporre le pratiche anglicane ai presbiteriani scozzesi, Charles convocò il Parlamento per le tasse per una guerra con la Scozia.'),
+   S2('That Parliament lasted a month: the <b>Short Parliament</b>. Six months later came the <b>Long Parliament</b>: it <b>refused funds</b> and aimed to <b>reduce the king’s power</b>.','Quel Parlamento durò un mese: il Parlamento Breve. Sei mesi dopo venne il Parlamento Lungo: rifiutò i fondi e voleva ridurre il potere del re.'),
+   S2('A law said it <b>could not be dissolved</b> without its own consent. <b>Laud</b> was imprisoned and <b>executed</b>.','Una legge disse che non poteva essere sciolto senza il suo consenso. Laud fu imprigionato e giustiziato.'),
+   S2('The king tried to <b>arrest four members</b>, failed and <b>fled to the north</b>.','Il re cercò di arrestare quattro parlamentari, non ci riuscì e fuggì al nord.')])),
+  card('ros','4 · The Civil War (1642-1649)',stepsHtml([
+   S2('<b>Royalists</b> (the king’s supporters): Anglican <b>aristocrats and landlords</b>.','Realisti (sostenitori del re): aristocratici e proprietari anglicani.'),
+   S2('<b>Parliamentarians</b>, or <b>Roundheads</b>: mainly <b>Puritans</b>, supported by the <b>middle class and cities</b>.','Parlamentari, o Teste Rotonde: soprattutto puritani, sostenuti dalla borghesia e dalle città.'),
+   S2('Led by <b>Oliver Cromwell</b>, they formed the <b>Ironsides</b> army and defeated the king at <b>Marston Moor</b> and <b>Naseby</b>.','Guidati da Oliver Cromwell, formarono l’esercito dei Ironsides e sconfissero il re a Marston Moor e a Naseby.'),
+   S2('<b>1649</b>: Charles refused to recognise the court and to defend himself against <b>treason</b>. Cromwell got the judges to sign a <b>death warrant</b>. In <b>January 1649</b> the king was <b>beheaded</b>.','1649: Charles rifiutò di riconoscere il tribunale e di difendersi dall’accusa di tradimento. Cromwell fece firmare ai giudici il mandato di morte. Nel gennaio 1649 il re fu decapitato.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>What was the Divine Right of Kings?</b> The kings claimed that they had been chosen by God and were his representatives on Earth. They had absolute power and expected total obedience.','<b>Che cos’era il diritto divino dei re?</b> I re dicevano di essere stati scelti da Dio e di essere i suoi rappresentanti sulla Terra. Avevano potere assoluto e pretendevano obbedienza totale.')}
+ ${EN('<b>Who were the Roundheads?</b> The Parliamentarians, mainly Puritans, supported by the middle class and the cities. They were led by Oliver Cromwell.','<b>Chi erano le Teste Rotonde?</b> I parlamentari, soprattutto puritani, sostenuti dalla borghesia e dalle città. Erano guidati da Oliver Cromwell.')}</div>`,
+ errori:['<b>Royalists</b> = il re (aristocratici anglicani). <b>Roundheads</b> = il Parlamento (puritani, borghesia).','<b>Short Parliament</b> (1640, un mese) ≠ <b>Long Parliament</b> (sei mesi dopo, riduce il potere del re).','La <b>Petition of Right</b> è del <b>1628</b>; la chiusura del Parlamento è del <b>1629</b> (11 anni di governo personale).','Il re fu giustiziato nel <b>gennaio 1649</b> (non dopo Cromwell: fu Cromwell a far firmare il mandato di morte).'],
+ orale:[
+  OR('Who was Charles I and what did he believe in?','Chi era Charles I e in che cosa credeva?','Charles I succeeded his father James in 1625. He believed in the Divine Right of Kings, so he wanted absolute power and total obedience.','Charles I succedette al padre James nel 1625. Credeva nel diritto divino dei re, quindi voleva potere assoluto e obbedienza totale.'),
+  OR('What did Charles I do with taxes and religion?','Che cosa fece Charles I con le tasse e la religione?','He raised taxes without the consent of Parliament and wanted absolute obedience to the Church of England. His Archbishop, William Laud, persecuted the Puritans, and thousands emigrated to America.','Alzò le tasse senza il consenso del Parlamento e voleva obbedienza assoluta alla Chiesa d’Inghilterra. Il suo arcivescovo, William Laud, perseguitò i Puritani e migliaia emigrarono in America.'),
+  OR('What was the Petition of Right?','Che cos’era la Petition of Right?','In 1628 Parliament agreed to give money for a war with France if Charles accepted it. It said that no one should pay taxes without Parliament’s approval and no one should be imprisoned without a good reason.','Nel 1628 il Parlamento accettò di dare soldi per una guerra con la Francia se Charles la accettava. Diceva che nessuno doveva pagare tasse senza l’approvazione del Parlamento e nessuno doveva essere imprigionato senza un buon motivo.'),
+  OR('What happened between 1629 and 1640?','Che cosa successe tra il 1629 e il 1640?','Charles shut down Parliament and ruled as a despot for 11 years. In 1640 he called Parliament to raise taxes for a war with Scotland. The Short Parliament lasted a month, then came the Long Parliament.','Charles chiuse il Parlamento e governò da despota per 11 anni. Nel 1640 convocò il Parlamento per le tasse per una guerra con la Scozia. Il Parlamento Breve durò un mese, poi venne il Parlamento Lungo.'),
+  OR('Who fought in the Civil War?','Chi combatté nella guerra civile?','The Royalists, Anglican aristocrats and landlords, fought for the king. The Parliamentarians, or Roundheads, mainly Puritans supported by the middle class and cities, were led by Oliver Cromwell and his Ironsides.','I realisti, aristocratici e proprietari anglicani, combatterono per il re. I parlamentari, o Teste Rotonde, soprattutto puritani sostenuti dalla borghesia e dalle città, erano guidati da Oliver Cromwell e dai suoi Ironsides.'),
+  OR('How did Charles I die?','Come morì Charles I?','He was imprisoned and refused to recognise the court’s authority. Cromwell got the judges to sign a death warrant, and in January 1649 the king was beheaded.','Fu imprigionato e rifiutò di riconoscere l’autorità del tribunale. Cromwell fece firmare ai giudici il mandato di morte e nel gennaio 1649 il re fu decapitato.')],
+ quiz:[
+  QZ('Who was Archbishop of Canterbury under Charles I?','Chi era arcivescovo di Canterbury sotto Charles I?','William Laud',['Oliver Cromwell','John Milton'],'William Laud, scelto dal re.'),
+  QZ('What did the Petition of Right (1628) say?','Che cosa diceva la Petition of Right (1628)?','no taxes without Parliament’s approval',['the king is chosen by God','Parliament can be closed at any time'],'Niente tasse senza il Parlamento; nessuno in prigione senza motivo.'),
+  QZ('How long did Charles I rule without Parliament?','Per quanto tempo Charles I governò senza Parlamento?','11 years',['11 months','50 years'],'Dal 1629 per 11 anni.'),
+  QZ('Where did Cromwell’s army defeat the king?','Dove l’esercito di Cromwell sconfisse il re?','Marston Moor and Naseby',['Dunbar and Culloden','Utrecht and Gibraltar'],'Marston Moor e Naseby.')]
+};
+CONT.u2={
+ cose:`<div class="box bia"><p>Dopo l’esecuzione del re, l’Inghilterra diventa una <b>repubblica</b> (${en('the Commonwealth')}, 1649). La guida ${en('Oliver Cromwell')}, che dal <b>1653</b> governa da <b>dittatore militare</b> come ${en('Lord Protector')}. Alla sua morte la repubblica si sfascia.</p></div>`,
+ ricette:[
+  card('blu','1 · The Commonwealth (1649-1653)',stepsHtml([
+   S2('<b>1649</b>: England was proclaimed a <b>Commonwealth</b> (a Republic).','1649: l’Inghilterra fu proclamata Commonwealth (una repubblica).'),
+   S2('Until <b>1653</b> England was ruled by the House of Commons, the <b>Rump Parliament</b>. Only <b>supporters of the Republic</b> could sit in it.','Fino al 1653 l’Inghilterra fu governata dalla Camera dei Comuni, il Rump Parliament. Poteva sedervi solo chi sosteneva la Repubblica.'),
+   S2('The <b>monarchy</b> and the <b>House of Lords</b> were <b>abolished</b>.','La monarchia e la Camera dei Lord furono abolite.')])),
+  card('ver','2 · Royalist reaction (1650)',stepsHtml([
+   S2('<b>1650</b>: the execution of the king provoked a <b>Royalist reaction in Ireland and Scotland</b>.','1650: l’esecuzione del re provocò una reazione realista in Irlanda e Scozia.'),
+   S2('A Scottish royalist rebellion was <b>crushed at the battle of Dunbar</b>.','Una rivolta realista scozzese fu schiacciata nella battaglia di Dunbar.')])),
+  card('gia','3 · Cromwell, Lord Protector (from 1653)',stepsHtml([
+   S2('<b>1653</b>: Cromwell <b>closed Parliament down</b> and was appointed <b>“Lord Protector of the Realm”</b>.','1653: Cromwell chiuse il Parlamento e fu nominato “Lord Protettore del Regno”.'),
+   S2('He ruled over <b>England, Ireland and Scotland</b> as a <b>military dictator</b>.','Governò Inghilterra, Irlanda e Scozia come dittatore militare.'),
+   S2('<b>1655</b>: another Royalist rising broke out in March, so Cromwell started to rule the country <b>through the army</b>.','1655: a marzo scoppiò un’altra rivolta realista, così Cromwell cominciò a governare il paese tramite l’esercito.')])),
+  card('ros','4 · The end of the Republic (1658)',stepsHtml([
+   S2('<b>1658</b>: Cromwell was succeeded by his son <b>Richard</b>, who <b>abdicated 8 months later</b>.','1658: a Cromwell succedette il figlio Richard, che abdicò otto mesi dopo.'),
+   S2('The Republic <b>fell apart</b>.','La Repubblica si sfasciò.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>What was the Commonwealth?</b> In 1649 England was proclaimed a Republic. The monarchy and the House of Lords were abolished. Until 1653 the Rump Parliament ruled.','<b>Che cos’era il Commonwealth?</b> Nel 1649 l’Inghilterra fu proclamata una repubblica. La monarchia e la Camera dei Lord furono abolite. Fino al 1653 governò il Rump Parliament.')}
+ ${EN('<b>Who was Cromwell?</b> He was Lord Protector of the Realm from 1653. He ruled England, Ireland and Scotland as a military dictator.','<b>Chi era Cromwell?</b> Fu Lord Protettore dal 1653. Governò Inghilterra, Irlanda e Scozia come dittatore militare.')}</div>`,
+ errori:['<b>Commonwealth</b> = repubblica (1649). La monarchia e la Camera dei Lord sono <b>abolite</b>.','<b>Dunbar</b> (1650) è la sconfitta dei realisti scozzesi; <b>Marston Moor e Naseby</b> sono battaglie della guerra civile.','Cromwell diventa <b>Lord Protector</b> nel <b>1653</b>, dopo aver chiuso il Parlamento.','Dopo Cromwell (1658) il figlio <b>Richard</b> abdica dopo 8 mesi: la Repubblica finisce.'],
+ orale:[
+  OR('What happened in 1649?','Che cosa successe nel 1649?','Charles I was beheaded in January. England was proclaimed a Commonwealth, a Republic.','Charles I fu decapitato a gennaio. L’Inghilterra fu proclamata Commonwealth, una repubblica.'),
+  OR('What was the Rump Parliament?','Che cos’era il Rump Parliament?','Until 1653 England was under the rule of the House of Commons, known as the Rump Parliament. Only supporters of the Republic could sit in the House of Commons. The monarchy and the House of Lords were abolished.','Fino al 1653 l’Inghilterra fu governata dalla Camera dei Comuni, detta Rump Parliament. Nella Camera potevano sedere solo i sostenitori della Repubblica. La monarchia e la Camera dei Lord furono abolite.'),
+  OR('What happened in Ireland and Scotland in 1650?','Che cosa successe in Irlanda e Scozia nel 1650?','The execution of the king provoked a Royalist reaction. A Scottish royalist rebellion was crushed at the battle of Dunbar.','L’esecuzione del re provocò una reazione realista. Una rivolta realista scozzese fu schiacciata nella battaglia di Dunbar.'),
+  OR('How did Cromwell rule the country?','Come governò il paese Cromwell?','In 1653 he closed Parliament down and became Lord Protector of the Realm. He ruled England, Ireland and Scotland as a military dictator. After a Royalist rising in 1655 he ruled through the army.','Nel 1653 chiuse il Parlamento e diventò Lord Protettore. Governò Inghilterra, Irlanda e Scozia come dittatore militare. Dopo una rivolta realista nel 1655 governò tramite l’esercito.'),
+  OR('How did the Republic end?','Come finì la Repubblica?','In 1658 Cromwell was succeeded by his son Richard, who abdicated 8 months later. The Republic fell apart.','Nel 1658 a Cromwell succedette il figlio Richard, che abdicò otto mesi dopo. La Repubblica si sfasciò.')],
+ quiz:[
+  QZ('What was the Rump Parliament?','Che cos’era il Rump Parliament?','the House of Commons with only supporters of the Republic',['the House of Lords','Charles I’s court'],'La Camera dei Comuni con i soli sostenitori della Repubblica.'),
+  QZ('What title did Cromwell take in 1653?','Quale titolo prese Cromwell nel 1653?','Lord Protector of the Realm',['King of England','Archbishop of Canterbury'],'Lord Protector of the Realm.'),
+  QZ('Where was the Scottish royalist rebellion crushed?','Dove fu schiacciata la rivolta realista scozzese?','at the battle of Dunbar',['at Naseby','at Culloden'],'Dunbar, 1650.'),
+  QZ('Who succeeded Cromwell in 1658?','Chi successe a Cromwell nel 1658?','his son Richard',['Charles II','William Laud'],'Il figlio Richard, che abdicò dopo 8 mesi.')]
+};
+CONT.u3={
+ cose:`<div class="box bia"><p>Nel <b>1660</b> la monarchia torna: è la ${en('Restoration')}. Regnano ${en('Charles II')} (1660-1685) e poi suo fratello ${en('James II')} (1685-1688), che è <b>cattolico</b>. Nascono due partiti: i <b>Whig</b> e i <b>Tory</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · The Restoration: the monarchs',TAB(['King / Queen','Years'],[[en('Charles II'),'1660-1685'],[en('James II'),'1685-1688'],[en('William and Mary'),'1689-1702'],[en('Anne'),'1702-1714']])),
+  card('ver','2 · King Charles II (1660-1685)',stepsHtml([
+   S2('The first Parliament was made up almost entirely of <b>Royalists</b>.','Il primo Parlamento era formato quasi solo da realisti.'),
+   S2('It wanted to <b>restore both king and Parliament</b> and make sure the king could <b>never rule alone</b>.','Voleva restaurare sia il re sia il Parlamento e assicurarsi che il re non potesse mai governare da solo.'),
+   S2('Parliament brought back the <b>Church of England</b>. The <b>Test Act (1673)</b>: anyone in public office had to be a <b>Protestant</b> and accept the king as <b>head of the Church of England</b>.','Il Parlamento riportò la Chiesa d’Inghilterra. Test Act (1673): chi ricopriva un incarico pubblico doveva essere protestante e accettare il re come capo della Chiesa d’Inghilterra.')])),
+  card('gia','3 · The political parties',TAB(['Party','What they wanted'],[[en('The Whigs'),'<b>anti-Catholic</b>; wanted to <b>limit the powers</b> of the monarch'],[en('The Tories'),'<b>supported the monarchy</b>']])),
+  card('ros','4 · King James II (1685-1688)',stepsHtml([
+   S2('In <b>1685</b> Charles II died and his <b>brother James</b> became king as James II.','Nel 1685 Charles II morì e il fratello James diventò re come James II.'),
+   S2('He was a <b>Catholic</b> king.','Era un re cattolico.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>What was the Test Act?</b> It was a law of 1673. Anyone in public office had to be a Protestant and accept the king as the head of the Church of England.','<b>Che cos’era il Test Act?</b> Una legge del 1673. Chi ricopriva un incarico pubblico doveva essere protestante e accettare il re come capo della Chiesa d’Inghilterra.')}
+ ${EN('<b>Who were the Whigs and the Tories?</b> The Whigs were anti-Catholic and wanted to limit the powers of the monarch. The Tories supported the monarchy.','<b>Chi erano i Whig e i Tory?</b> I Whig erano contro i cattolici e volevano limitare i poteri del monarca. I Tory sostenevano la monarchia.')}</div>`,
+ errori:['<b>Whigs</b> = limitare il monarca, anti-cattolici. <b>Tories</b> = sostengono la monarchia.','Il <b>Test Act</b> è del <b>1673</b>: serve essere <b>protestanti</b> per avere un incarico pubblico.','<b>Charles II</b> (1660-1685) e <b>James II</b> (1685-1688) sono fratelli; James è <b>cattolico</b>.','La Restaurazione riporta <b>re e Parlamento</b>, ma il re non deve mai poter governare da solo.'],
+ orale:[
+  OR('What was the Restoration?','Che cos’era la Restaurazione?','It was the return of the monarchy in 1660 with King Charles II. The first Parliament was almost entirely made up of Royalists.','Fu il ritorno della monarchia nel 1660 con re Charles II. Il primo Parlamento era formato quasi solo da realisti.'),
+  OR('What did Parliament want under Charles II?','Che cosa voleva il Parlamento sotto Charles II?','It wanted to restore both king and Parliament and to make sure that the king could never rule alone. It also brought back the Church of England.','Voleva restaurare sia il re sia il Parlamento e assicurarsi che il re non potesse mai governare da solo. Riportò anche la Chiesa d’Inghilterra.'),
+  OR('What was the Test Act of 1673?','Che cos’era il Test Act del 1673?','According to the Test Act, anyone in public office had to be a Protestant and accept the king as the head of the Church of England.','Secondo il Test Act, chi ricopriva un incarico pubblico doveva essere protestante e accettare il re come capo della Chiesa d’Inghilterra.'),
+  OR('Who were the Whigs and the Tories?','Chi erano i Whig e i Tory?','The Whigs were anti-Catholic and wanted to limit the powers of the monarch. The Tories supported the monarchy.','I Whig erano contro i cattolici e volevano limitare i poteri del monarca. I Tory sostenevano la monarchia.'),
+  OR('Who was James II?','Chi era James II?','In 1685 Charles II died and his brother James became king as James II. He was a Catholic king.','Nel 1685 Charles II morì e il fratello James diventò re come James II. Era un re cattolico.')],
+ quiz:[
+  QZ('Who was king from 1660 to 1685?','Chi fu re dal 1660 al 1685?','Charles II',['James II','Charles I'],'Charles II.'),
+  QZ('What did the Test Act (1673) require?','Che cosa richiedeva il Test Act (1673)?','public officials had to be Protestants',['all people had to be Catholic','the king had to be elected'],'Chi aveva un incarico pubblico doveva essere protestante.'),
+  QZ('Which party supported the monarchy?','Quale partito sosteneva la monarchia?','the Tories',['the Whigs','the Puritans'],'I Tory.'),
+  QZ('What religion was James II?','Di quale religione era James II?','Catholic',['Puritan','Presbyterian'],'Cattolico.')]
+};
+CONT.u4={
+ cose:`<div class="box bia"><p>James II è cattolico: nel <b>1689</b> arriva il protestante ${en('William of Orange')} e James fugge. È la ${en('Glorious Revolution')}. William e Mary firmano il ${en('Bill of Rights')}. Poi regna ${en('Queen Anne')}: la guerra di successione spagnola, il Trattato di Utrecht e l’${en('Act of Union')} (1707).</p></div>`,
+ ricette:[
+  card('blu','1 · William and Mary: the Glorious Revolution (1689-1702)',stepsHtml([
+   S2('<b>William of Orange</b> was the <b>Protestant</b> husband of <b>Mary Stuart</b>, James’s daughter.','William d’Orange era il marito protestante di Mary Stuart, figlia di James.'),
+   S2('They arrived in England to fight <b>James II</b>, who <b>fled abroad</b>. William and Mary were <b>crowned king and queen</b>.','Arrivarono in Inghilterra per combattere James II, che fuggì all’estero. William e Mary furono incoronati re e regina.')])),
+  card('ver','2 · Three important laws',TAB(['Law','What it did'],[[en('Bill of Rights (1689)'),'the <b>king’s power was limited</b>: a <b>parliamentary constitutional monarchy</b>'],[en('Toleration Act (1689)'),'gave <b>Dissenters</b> freedom of worship'],[en('Act of Settlement (1701)'),'only <b>Protestants</b> could be heirs to the throne']])),
+  card('gia','3 · Queen Anne (1702-1714): the War of the Spanish Succession',stepsHtml([
+   S2('<b>1700</b>: Charles II of Spain died without children and chose <b>Philip</b> as his heir.','1700: Charles II di Spagna morì senza figli e scelse Philip come erede.'),
+   S2('<b>1702</b>: William died and <b>Anne</b>, Mary’s sister, became queen. Two months later England entered the <b>War of the Spanish Succession</b>.','1702: William morì e Anne, sorella di Mary, diventò regina. Due mesi dopo l’Inghilterra entrò nella guerra di successione spagnola.'),
+   S2('England, allied with <b>Holland and Prussia</b>, fought <b>France, Spain and Portugal</b>. It won several battles and strengthened its position.','L’Inghilterra, alleata con Olanda e Prussia, combatté Francia, Spagna e Portogallo. Vinse diverse battaglie e rafforzò la sua posizione.'),
+   S2('<b>Treaty of Utrecht (1713)</b>: Britain received <b>Gibraltar and Minorca</b> and the right to <b>trade with the Spanish South American colonies</b>.','Trattato di Utrecht (1713): la Gran Bretagna ottenne Gibilterra e Minorca e il diritto di commerciare con le colonie spagnole sudamericane.')])),
+  card('ros','4 · The Act of Union (1707)',stepsHtml([
+   S2('It united <b>England and Scotland</b> into the <b>United Kingdom of Great Britain</b>.','Unì Inghilterra e Scozia nel Regno Unito di Gran Bretagna.'),
+   S2('It reinforced <b>England’s control over Scotland</b>.','Rafforzò il controllo dell’Inghilterra sulla Scozia.'),
+   S2('It ensured the <b>Act of Settlement</b> applied to Scotland too.','Garantì che l’Act of Settlement valesse anche per la Scozia.'),
+   S2('It helped prevent the return of a <b>Stuart Catholic monarch</b>.','Aiutò a evitare il ritorno di un monarca cattolico Stuart.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>What was the Glorious Revolution?</b> William of Orange, the Protestant husband of Mary Stuart, arrived in England to fight James II, who fled abroad. William and Mary were crowned king and queen.','<b>Che cos’era la Rivoluzione Gloriosa?</b> William d’Orange, marito protestante di Mary Stuart, arrivò in Inghilterra per combattere James II, che fuggì all’estero. William e Mary furono incoronati re e regina.')}
+ ${EN('<b>What did the Bill of Rights do?</b> It limited the king’s power and established a parliamentary constitutional monarchy.','<b>Che cosa fece il Bill of Rights?</b> Limitò il potere del re e stabilì una monarchia costituzionale parlamentare.')}</div>`,
+ errori:['<b>Bill of Rights</b> (limita il re) ≠ <b>Toleration Act</b> (libertà di culto ai Dissenters) ≠ <b>Act of Settlement</b> (solo protestanti sul trono).','Il <b>Bill of Rights</b> e il <b>Toleration Act</b> sono del <b>1689</b>; l’<b>Act of Settlement</b> del <b>1701</b>; l’<b>Act of Union</b> del <b>1707</b>.','<b>Utrecht</b> (1713): Gibilterra e Minorca + commercio con le colonie spagnole.','L’<b>Act of Union</b> unisce <b>Inghilterra e Scozia</b> (non l’Irlanda).'],
+ orale:[
+  OR('Who were William and Mary?','Chi erano William e Mary?','William of Orange was the Protestant husband of Mary Stuart, James II’s daughter. They arrived in England, James fled abroad, and they were crowned king and queen of England.','William d’Orange era il marito protestante di Mary Stuart, figlia di James II. Arrivarono in Inghilterra, James fuggì all’estero ed essi furono incoronati re e regina d’Inghilterra.'),
+  OR('What did William and Mary sign, and what did it do?','Che cosa firmarono William e Mary e che cosa fece?','They signed the Bill of Rights in 1689. The king’s power was limited and a parliamentary constitutional monarchy was established.','Firmarono il Bill of Rights nel 1689. Il potere del re fu limitato e fu stabilita una monarchia costituzionale parlamentare.'),
+  OR('Explain the Toleration Act and the Act of Settlement.','Spiega il Toleration Act e l’Act of Settlement.','The Toleration Act of 1689 gave Dissenters freedom of worship. The Act of Settlement of 1701 said that only Protestants could be heirs to the throne.','Il Toleration Act del 1689 diede ai Dissenters la libertà di culto. L’Act of Settlement del 1701 stabilì che solo i protestanti potevano ereditare il trono.'),
+  OR('What was the War of the Spanish Succession?','Che cos’era la guerra di successione spagnola?','In 1700 Charles II of Spain died and chose Philip as his heir. In 1702 England entered the war with Holland and Prussia, against France, Spain and Portugal. England won several battles.','Nel 1700 Charles II di Spagna morì e scelse Philip come erede. Nel 1702 l’Inghilterra entrò in guerra con Olanda e Prussia, contro Francia, Spagna e Portogallo. L’Inghilterra vinse diverse battaglie.'),
+  OR('What did Britain get from the Treaty of Utrecht?','Che cosa ottenne la Gran Bretagna dal Trattato di Utrecht?','Britain received Gibraltar and Minorca and gained the right to trade with the Spanish South American colonies.','La Gran Bretagna ricevette Gibilterra e Minorca e ottenne il diritto di commerciare con le colonie spagnole sudamericane.'),
+  OR('What was the Act of Union of 1707?','Che cos’era l’Act of Union del 1707?','It united England and Scotland into the United Kingdom of Great Britain. It reinforced England’s control over Scotland, ensured the Act of Settlement applied to Scotland too, and helped prevent the return of a Stuart Catholic monarch.','Unì Inghilterra e Scozia nel Regno Unito di Gran Bretagna. Rafforzò il controllo dell’Inghilterra sulla Scozia, garantì che l’Act of Settlement valesse anche per la Scozia e aiutò a evitare il ritorno di un monarca cattolico Stuart.')],
+ quiz:[
+  QZ('Who was William of Orange?','Chi era William d’Orange?','the Protestant husband of Mary Stuart',['a Catholic king of Spain','James II’s brother'],'Marito protestante di Mary Stuart.'),
+  QZ('Which law gave Dissenters freedom of worship?','Quale legge diede ai Dissenters la libertà di culto?','the Toleration Act',['the Test Act','the Act of Union'],'Il Toleration Act (1689).'),
+  QZ('What did Britain receive in 1713?','Che cosa ricevette la Gran Bretagna nel 1713?','Gibraltar and Minorca',['Calais and Normandy','Canada and India'],'Gibilterra e Minorca (Trattato di Utrecht).'),
+  QZ('What did the Act of Union (1707) unite?','Che cosa unì l’Act of Union (1707)?','England and Scotland',['England and France','Scotland and Ireland'],'Inghilterra e Scozia.')]
+};
+/* ========== unità 5-9, glossario, riepilogo ========== */
+CONT.u5={
+ cose:`<div class="box bia"><p>Con la regina Anne finisce la dinastia Stuart. Nel <b>1714</b> diventa re ${en('George I')} di Hannover: comincia l’${en('Augustan Age')}. Nasce la figura del ${en('Prime Minister')} (Primo Ministro). I giacobiti provano a riprendere il trono, ma perdono a ${en('Culloden')} (1746). La Gran Bretagna combatte molte guerre per le colonie.</p></div>`,
+ ricette:[
+  card('blu','1 · King George I (1714)',stepsHtml([
+   S2('<b>1714</b>: Queen Anne died and the <b>Whigs</b> enacted the <b>Act of Settlement</b>. <b>George I</b>, Elector of <b>Hanover</b>, was proclaimed king.','1714: la regina Anne morì e i Whig applicarono l’Act of Settlement. George I, principe elettore di Hannover, fu proclamato re.'),
+   S2('Important constitutional effect: the position of <b>Prime Minister</b> was created. He was a <b>link between the ministers and the king</b>, because George I <b>didn’t speak English</b>.','Effetto costituzionale importante: nacque la figura del Primo Ministro. Era un collegamento tra i ministri e il re, perché George I non parlava inglese.'),
+   S2('The first Prime Minister in this sense was <b>Sir Robert Walpole</b> (1676-1745).','Il primo Primo Ministro in questo senso fu Sir Robert Walpole (1676-1745).')])),
+  card('ver','2 · The Jacobites',stepsHtml([
+   S2('<b>1715</b>: the <b>Jacobites</b> opposed the Hanoverians. They supported the restoration of <b>James II’s son James</b> and his <b>grandson Charles</b>.','1715: i giacobiti si opposero agli Hannover. Sostenevano la restaurazione del figlio di James II, James, e del nipote Charles.'),
+   S2('The <b>first Jacobite rebellion</b> was <b>unsuccessful</b>.','La prima rivolta giacobita non ebbe successo.'),
+   S2('<b>1745</b>: the second and last Jacobite rising was a failure. They were defeated in Scotland at the <b>battle of Culloden (1746)</b>.','1745: la seconda e ultima rivolta giacobita fallì. Furono sconfitti in Scozia nella battaglia di Culloden (1746).')])),
+  card('gia','3 · King George II: wars for colonies and trade',TAB(['War','What to remember'],[
+   [en('War of Jenkins’ Ear (1739)'),'Britain fought <b>Spain</b> and won the right to <b>trade with Spanish colonies</b> in the Caribbean and Americas'],
+   [en('War of the Austrian Succession (1740-48)'),'<b>Maria Theresa</b> became queen of Austria; England supported her; England and France fought in <b>India and America</b>'],
+   [en('Seven Years’ War (1756-63)'),'Britain stronger in <b>India and Canada</b>; led by <b>William Pitt the Elder</b>; a <b>global war</b>']])),
+  card('ros','4 · Why wars for colonies?',stepsHtml([
+   S2('Under George II, Britain fought a series of wars abroad <b>for colonies and trade</b>.','Sotto George II la Gran Bretagna combatté una serie di guerre all’estero per colonie e commercio.'),
+   S2('Pitt understood that <b>colonies were very important for power and money</b>.','Pitt capì che le colonie erano molto importanti per il potere e per il denaro.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>What was the role of the Prime Minister?</b> He was a link between the council of ministers and the king, because George I didn’t speak English. The first one was Sir Robert Walpole.','<b>Qual era il ruolo del Primo Ministro?</b> Era un collegamento tra il consiglio dei ministri e il re, perché George I non parlava inglese. Il primo fu Sir Robert Walpole.')}
+ ${EN('<b>Who were the Jacobites?</b> They supported the restoration of James II’s son James and grandson Charles. The last rising was defeated at Culloden in 1746.','<b>Chi erano i giacobiti?</b> Sostenevano la restaurazione del figlio James e del nipote Charles di James II. L’ultima rivolta fu sconfitta a Culloden nel 1746.')}</div>`,
+ errori:['<b>George I</b> (1714-1727) e <b>George II</b> (1727-1760) sono due re diversi: il Primo Ministro nasce con George I.','<b>Walpole</b> = primo Primo Ministro. <b>Pitt the Elder</b> = guerra dei Sette anni.','I <b>giacobiti</b> sostengono gli <b>Stuart</b> (James II); gli <b>Hannover</b> sono la dinastia di George I.','<b>1715</b> prima rivolta giacobita; <b>1745-46</b> seconda e ultima (Culloden).'],
+ orale:[
+  OR('Who was George I?','Chi era George I?','In 1714 Queen Anne died and George I, Elector of Hanover, was proclaimed king. The Whigs enacted the Act of Settlement.','Nel 1714 la regina Anne morì e George I, principe elettore di Hannover, fu proclamato re. I Whig applicarono l’Act of Settlement.'),
+  OR('Why was the Prime Minister created?','Perché nacque il Primo Ministro?','Because George I didn’t speak English. The Prime Minister was a link between the council of ministers and the king. This gave him power and authority. The first was Sir Robert Walpole.','Perché George I non parlava inglese. Il Primo Ministro era un collegamento tra il consiglio dei ministri e il re. Questo gli diede potere e autorità. Il primo fu Sir Robert Walpole.'),
+  OR('Who were the Jacobites and what happened to them?','Chi erano i giacobiti e che cosa successe loro?','They opposed the Hanoverians and supported the restoration of James II’s son and grandson. The first rebellion, in 1715, was unsuccessful. The second, in 1745, was defeated at Culloden in 1746.','Si opposero agli Hannover e sostenevano la restaurazione del figlio e del nipote di James II. La prima rivolta, nel 1715, non ebbe successo. La seconda, nel 1745, fu sconfitta a Culloden nel 1746.'),
+  OR('What wars did Britain fight under George II?','Quali guerre combatté la Gran Bretagna sotto George II?','The War of Jenkins’ Ear (1739), the War of the Austrian Succession (1740-48) and the Seven Years’ War (1756-63). They were wars for colonies and trade.','La guerra dell’orecchio di Jenkins (1739), la guerra di successione austriaca (1740-48) e la guerra dei Sette anni (1756-63). Erano guerre per colonie e commercio.'),
+  OR('Why was the Seven Years’ War important?','Perché fu importante la guerra dei Sette anni?','It made Britain stronger in India and Canada. William Pitt the Elder led Britain. It was a global war: in Europe, North America, India and on the seas.','Rese la Gran Bretagna più forte in India e Canada. La guidò William Pitt il Vecchio. Fu una guerra globale: in Europa, Nord America, India e sui mari.')],
+ quiz:[
+  QZ('Who was the first Prime Minister?','Chi fu il primo Primo Ministro?','Sir Robert Walpole',['William Pitt the Elder','Oliver Cromwell'],'Sir Robert Walpole (1676-1745).'),
+  QZ('Why was the Prime Minister created?','Perché fu creato il Primo Ministro?','George I didn’t speak English',['Parliament was closed','the king was a child'],'George I non parlava inglese.'),
+  QZ('Where were the Jacobites defeated in 1746?','Dove furono sconfitti i giacobiti nel 1746?','at Culloden',['at Dunbar','at Naseby'],'A Culloden, in Scozia.'),
+  QZ('Who led Britain in the Seven Years’ War?','Chi guidò la Gran Bretagna nella guerra dei Sette anni?','William Pitt the Elder',['Robert Walpole','Oliver Cromwell'],'William Pitt il Vecchio.')]
+};
+CONT.u6={
+ cose:`<div class="box bia"><p>La ${en('Puritan literature')} (1625-1660) è la letteratura scritta quando i Puritani ebbero il potere politico e religioso. Ha un tono riflessivo, vuole insegnare lezioni morali, ha fervore religioso. Nel Seicento ci sono due tipi di poesia: i <b>poeti puritani</b> e i <b>poeti metafisici</b> (il più famoso è ${en('John Donne')}). Il poeta che meglio rappresenta il secolo è ${en('John Milton')}.</p></div>`,
+ ricette:[
+  card('blu','1 · Puritan literature (1625-1660)',stepsHtml([
+   S2('Works produced when the <b>Puritans gained and held political and religious power</b>.','Opere prodotte quando i Puritani ottennero e tennero il potere politico e religioso.'),
+   S2('Features: a <b>deep reflective tone</b>; a tendency to <b>teach moral lessons</b>; <b>religious fervor</b>; reflection on the connection between the <b>earthly world and the afterlife</b>.','Caratteri: tono profondamente riflessivo; tendenza a insegnare lezioni morali; fervore religioso; riflessione sul legame tra mondo terreno e aldilà.')])),
+  card('ver','2 · Puritan poets',stepsHtml([
+   S2('They shared the values of <b>Puritanism</b> and defended the <b>purification of society and of the arts</b>.','Condividevano i valori del puritanesimo e difendevano la purificazione della società e delle arti.'),
+   S2('Themes: <b>salvation and predestination</b>.','Temi: salvezza e predestinazione.'),
+   S2('<b>Didactic tone</b>, with references to the <b>Bible</b>.','Tono didattico, con riferimenti alla Bibbia.')])),
+  card('gia','3 · Metaphysical poets',stepsHtml([
+   S2('They explored <b>universal and philosophical concepts</b>.','Esploravano concetti universali e filosofici.'),
+   S2('They expressed <b>dissatisfaction and confusion</b>: the loss of optimism in human abilities and of the stability of the Renaissance.','Esprimevano insoddisfazione e confusione: la perdita dell’ottimismo nelle capacità umane e della stabilità del Rinascimento.'),
+   S2('Inspiration from <b>philosophy, religion, astronomy, anatomy and medicine</b> to explore <b>love and religion</b>.','Ispirazione da filosofia, religione, astronomia, anatomia e medicina per esplorare l’amore e la religione.'),
+   S2('They used <b>conceits</b>: an elaborate, surprising comparison between <b>two very different things</b>, to connect abstract ideas with physical reality.','Usavano i conceit: un paragone elaborato e sorprendente tra due cose molto diverse, per collegare idee astratte e realtà fisica.')])),
+  card('ros','4 · John Donne (metaphysical) and John Milton (Puritan)',stepsHtml([
+   S2('<b>John Donne</b> is the most famous Metaphysical poet. Topics: <b>love</b> and the relationship between <b>man and God</b>.','John Donne è il più famoso poeta metafisico. Temi: l’amore e il rapporto tra uomo e Dio.'),
+   S2('For Donne love is <b>both a spiritual and a physical force</b>. He <b>rejects Petrarch’s tradition</b> and uses <b>unconventional imagery</b> and surprising associations of ideas.','Per Donne l’amore è una forza insieme spirituale e fisica. Rifiuta la tradizione di Petrarca e usa immagini non convenzionali e associazioni di idee sorprendenti.'),
+   S2('<b>John Milton</b> best represents the poetry of the 17th century: a <b>fervent Puritan</b>. His masterpiece is <b>Paradise Lost (1667)</b>.','John Milton rappresenta meglio la poesia del Seicento: un puritano fervente. Il suo capolavoro è Paradise Lost (1667).')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>What are the two main types of 17th-century poetry?</b> Puritan poetry and Metaphysical poetry. Puritan poets have a didactic tone and reflect on salvation and predestination. Metaphysical poets explore universal and philosophical concepts and use conceits.','<b>Quali sono i due tipi principali di poesia del Seicento?</b> Poesia puritana e poesia metafisica. I poeti puritani hanno un tono didattico e riflettono su salvezza e predestinazione. I poeti metafisici esplorano concetti universali e filosofici e usano i conceit.')}
+ ${EN('<b>What is a conceit?</b> It is an extended metaphor: an elaborate, surprising comparison between two very different things.','<b>Che cos’è un conceit?</b> È una metafora estesa: un paragone elaborato e sorprendente tra due cose molto diverse.')}</div>`,
+ errori:['<b>Poeti puritani</b> (didattici, Bibbia, predestinazione) ≠ <b>poeti metafisici</b> (filosofia, conceit, amore).','Il <b>conceit</b> unisce <b>due cose molto diverse</b> in un paragone sorprendente.','<b>John Donne</b> è metafisico; <b>John Milton</b> è il puritano fervente.','Donne <b>rifiuta</b> la tradizione di Petrarca (Milton invece scrive anche poesie italiane sul modello di Petrarca, ma sono un’altra cosa).'],
+ orale:[
+  OR('What is Puritan literature?','Che cos’è la letteratura puritana?','It refers to English literary works produced when Puritans gained and held political and religious power. It has a deep reflective tone, a tendency to teach moral lessons, religious fervor, and reflection on the connection between the earthly world and the afterlife.','Indica le opere letterarie inglesi prodotte quando i Puritani ottennero e tennero il potere politico e religioso. Ha un tono profondamente riflessivo, la tendenza a insegnare lezioni morali, fervore religioso e riflessione sul legame tra mondo terreno e aldilà.'),
+  OR('Who were the Puritan poets?','Chi erano i poeti puritani?','They shared the values of Puritanism and defended the purification of society and of the arts. Their poems reflect on religious themes such as salvation and predestination, with a didactic tone and references to the Bible.','Condividevano i valori del puritanesimo e difendevano la purificazione della società e delle arti. Le loro poesie riflettono su temi religiosi come salvezza e predestinazione, con tono didattico e riferimenti alla Bibbia.'),
+  OR('Who were the Metaphysical poets?','Chi erano i poeti metafisici?','They explored universal and philosophical concepts. They expressed dissatisfaction and confusion after the loss of optimism of the Renaissance. They drew inspiration from philosophy, religion, astronomy, anatomy and medicine, and they used conceits.','Esploravano concetti universali e filosofici. Esprimevano insoddisfazione e confusione dopo la perdita dell’ottimismo del Rinascimento. Prendevano ispirazione da filosofia, religione, astronomia, anatomia e medicina e usavano i conceit.'),
+  OR('Tell me about John Donne.','Parlami di John Donne.','He is the most famous English Metaphysical poet. His main topics are love and the relationship between man and God. For Donne love is both a spiritual and a physical force. He rejects Petrarch’s tradition and uses unconventional imagery and surprising associations of ideas.','È il più famoso poeta metafisico inglese. I suoi temi principali sono l’amore e il rapporto tra uomo e Dio. Per Donne l’amore è una forza insieme spirituale e fisica. Rifiuta la tradizione di Petrarca e usa immagini non convenzionali e associazioni di idee sorprendenti.'),
+  OR('Why is Milton important in 17th-century poetry?','Perché Milton è importante nella poesia del Seicento?','He best represents the poetic production of the 17th century. He was a fervent Puritan and used his works to express his religious values and political views. His masterpiece is Paradise Lost (1667).','Rappresenta meglio la produzione poetica del Seicento. Era un puritano fervente e usò le sue opere per esprimere i suoi valori religiosi e le sue idee politiche. Il suo capolavoro è Paradise Lost (1667).')],
+ quiz:[
+  QZ('Which poets had a didactic tone and references to the Bible?','Quali poeti avevano un tono didattico e riferimenti alla Bibbia?','Puritan poets',['Metaphysical poets','Anglo-Saxon poets'],'I poeti puritani.'),
+  QZ('What is a conceit?','Che cos’è un conceit?','an elaborate comparison between two very different things',['a pause in a line','a rhyme at the end of a line'],'Un paragone elaborato e sorprendente tra due cose molto diverse.'),
+  QZ('Who is the most famous English Metaphysical poet?','Chi è il più famoso poeta metafisico inglese?','John Donne',['John Milton','Petrarch'],'John Donne.'),
+  QZ('Which topics did John Donne write about?','Di quali temi scriveva John Donne?','love and the relationship between man and God',['war and heroism','the life of kings'],'Amore e rapporto tra uomo e Dio.')]
+};
+CONT.u7={
+ cose:`<div class="box bia"><p>${en('John Milton')} (1608-1674) è il grande poeta puritano. Nasce a Londra, sostiene Cromwell, diventa <b>cieco</b> nel 1651. Con la Restaurazione cade in disgrazia. Scrive il capolavoro ${en('Paradise Lost')} (1667). Ha tre periodi creativi.</p></div>`,
+ ricette:[
+  card('blu','1 · Milton’s life (1608-1674)',stepsHtml([
+   S2('<b>1608</b>: born into a <b>Puritan family</b> in London. Educated at <b>St Paul’s School</b> and <b>Cambridge University</b>. He studied classical and several modern languages.','1608: nasce in una famiglia puritana a Londra. Studia alla St Paul’s School e all’Università di Cambridge. Studia lingue classiche e diverse lingue moderne.'),
+   S2('He <b>supported Cromwell and the Puritans</b> during the Civil War. He became <b>completely blind by 1651</b>.','Sostenne Cromwell e i Puritani durante la guerra civile. Divenne completamente cieco nel 1651.'),
+   S2('<b>1660</b>: he <b>fell from grace</b> with the Restoration of Charles II. He was forced to <b>hide</b> and was briefly <b>arrested</b>. He lived in <b>seclusion and poverty</b>.','1660: cadde in disgrazia con la Restaurazione di Charles II. Fu costretto a nascondersi e fu arrestato per breve tempo. Visse isolato e in povertà.'),
+   S2('<b>1664-1674</b>: he devoted himself to <b>poetry</b>. He died in <b>1674</b>.','1664-1674: si dedicò alla poesia. Morì nel 1674.')])),
+  card('ver','2 · First creative period',stepsHtml([
+   S2('<b>Italian poems</b>: <b>L’Allegro</b> and <b>Il Penseroso</b> (1631), following the example of <b>Petrarch</b>. Also Latin and English poems.','Poesie italiane: L’Allegro e Il Penseroso (1631), sul modello di Petrarca. Anche poesie latine e inglesi.'),
+   S2('<b>Pro Populo Anglicano Defensio</b> (1651): it defended the <b>execution of Charles I</b> and supported <b>Cromwell</b>.','Pro Populo Anglicano Defensio (1651): difese l’esecuzione di Charles I e sostenne Cromwell.')])),
+  card('gia','3 · Second creative period: prose',stepsHtml([
+   S2('Numerous <b>political pamphlets</b> and prose works.','Numerosi opuscoli politici e opere in prosa.'),
+   S2('<b>Areopagitica (1644)</b>: an impassioned defence of <b>freedom of speech</b> and a criticism of <b>censorship</b>.','Areopagitica (1644): un’appassionata difesa della libertà di parola e una critica della censura.'),
+   S2('Milton defended: <b>religious, civil and domestic liberties</b>; <b>freedom of the press</b>; <b>Parliament</b>; <b>divorce</b>; freedom of speech.','Milton difese: le libertà religiose, civili e domestiche; la libertà di stampa; il Parlamento; il divorzio; la libertà di parola.')])),
+  card('ros','4 · Third creative period',stepsHtml([
+   S2('Marked by <b>blindness and poverty</b>.','Segnato da cecità e povertà.'),
+   S2('He produced his masterpiece, <b>Paradise Lost (1667)</b>.','Produsse il suo capolavoro, Paradise Lost (1667).'),
+   `<p lang="en"><i>“The mind is its own place, and in itself can make a heaven of hell, a hell of heaven”</i></p><p class="tr">“La mente è un luogo a sé e in se stessa può fare un paradiso dell’inferno, un inferno del paradiso.” (una frase famosa di Paradise Lost)</p>`]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>Who was John Milton?</b> He was born in 1608 into a Puritan family in London. He supported Cromwell and became completely blind by 1651. He died in 1674. His masterpiece is Paradise Lost.','<b>Chi era John Milton?</b> Nacque nel 1608 in una famiglia puritana a Londra. Sostenne Cromwell e divenne completamente cieco nel 1651. Morì nel 1674. Il suo capolavoro è Paradise Lost.')}
+ ${EN('<b>What was Areopagitica?</b> It was published in 1644. It is an impassioned defence of freedom of speech and a criticism of censorship.','<b>Che cos’era l’Areopagitica?</b> Fu pubblicata nel 1644. È un’appassionata difesa della libertà di parola e una critica della censura.')}</div>`,
+ errori:['Milton fu <b>cieco</b> dal <b>1651</b>; con la <b>Restaurazione (1660)</b> cadde in disgrazia.','<b>Areopagitica</b> (1644, libertà di parola) ≠ <b>Pro Populo Anglicano Defensio</b> (1651, difende l’esecuzione di Charles I).','Le poesie italiane (<b>L’Allegro</b>, <b>Il Penseroso</b>) sono del <b>1631</b>, primo periodo.','<b>Paradise Lost</b> è del <b>1667</b>, terzo periodo (cecità e povertà).'],
+ orale:[
+  OR('Tell me about Milton’s life.','Parlami della vita di Milton.','He was born in 1608 into a Puritan family in London. He studied at St Paul’s School and Cambridge University. He supported Cromwell during the Civil War and became completely blind by 1651.','Nacque nel 1608 in una famiglia puritana a Londra. Studiò alla St Paul’s School e all’Università di Cambridge. Sostenne Cromwell durante la guerra civile e divenne completamente cieco nel 1651.'),
+  OR('What happened to Milton after 1660?','Che cosa successe a Milton dopo il 1660?','He fell from grace with the Restoration of Charles II. He was forced to hide and was arrested for a brief period. He lived in seclusion and poverty. From 1664 to 1674 he devoted himself to poetry. He died in 1674.','Cadde in disgrazia con la Restaurazione di Charles II. Fu costretto a nascondersi e fu arrestato per breve tempo. Visse isolato e in povertà. Dal 1664 al 1674 si dedicò alla poesia. Morì nel 1674.'),
+  OR('What did Milton write in his first creative period?','Che cosa scrisse Milton nel primo periodo creativo?','Some Italian poems, L’Allegro and Il Penseroso (1631), following the example of Petrarch, and Latin and English poems. In 1651 he wrote Pro Populo Anglicano Defensio, defending the execution of Charles I and supporting Cromwell.','Alcune poesie italiane, L’Allegro e Il Penseroso (1631), sul modello di Petrarca, e poesie latine e inglesi. Nel 1651 scrisse Pro Populo Anglicano Defensio, difendendo l’esecuzione di Charles I e sostenendo Cromwell.'),
+  OR('What is Areopagitica?','Che cos’è l’Areopagitica?','It is a prose work of 1644, an impassioned defence of freedom of speech and a criticism of censorship.','È un’opera in prosa del 1644, un’appassionata difesa della libertà di parola e una critica della censura.'),
+  OR('Which liberties did Milton defend in his prose?','Quali libertà difese Milton nella sua prosa?','He defended religious, civil and domestic liberties, freedom of the press, Parliament, divorce and freedom of speech.','Difese le libertà religiose, civili e domestiche, la libertà di stampa, il Parlamento, il divorzio e la libertà di parola.'),
+  OR('What is Milton’s third creative period?','Qual è il terzo periodo creativo di Milton?','It is marked by blindness and poverty. He produced his masterpiece, Paradise Lost, in 1667.','È segnato da cecità e povertà. Produsse il suo capolavoro, Paradise Lost, nel 1667.')],
+ quiz:[
+  QZ('When did Milton become completely blind?','Quando Milton divenne completamente cieco?','by 1651',['in 1608','in 1674'],'Entro il 1651.'),
+  QZ('What did Areopagitica defend?','Che cosa difendeva l’Areopagitica?','freedom of speech',['the execution of Charles I','the divorce of the king'],'La libertà di parola (contro la censura).'),
+  QZ('Which poems follow the example of Petrarch?','Quali poesie seguono l’esempio di Petrarca?','L’Allegro and Il Penseroso',['Areopagitica','Paradise Lost'],'L’Allegro e Il Penseroso (1631).'),
+  QZ('What happened to Milton with the Restoration (1660)?','Che cosa successe a Milton con la Restaurazione (1660)?','he fell from grace and lived in poverty',['he became a minister','he was made Lord Protector'],'Cadde in disgrazia e visse in povertà.')]
+};
+CONT.u8={
+ cose:`<div class="box bia"><p>${en('Paradise Lost')} (1667) è un <b>poema epico</b>. Racconta la storia biblica di Adamo ed Eva (il libro della Genesi) e ha due parti: il “dramma divino” (la caduta degli angeli guidati da Satana) e il “dramma umano” (la caduta dell’uomo). Qui impari la <b>trama</b>, passo per passo.</p></div>`,
+ ricette:[
+  card('blu','1 · What is Paradise Lost?',stepsHtml([
+   S2('An <b>epic poem</b> (1667). It <b>retells the story of the Book of Genesis</b>: the biblical story of <b>Adam and Eve’s disobedience</b>.','Un poema epico (1667). Racconta di nuovo la storia del libro della Genesi: la storia biblica della disobbedienza di Adamo ed Eva.'),
+   S2('<b>Divine drama</b>: the fall of the angels led by <b>Satan</b>. <b>Human drama</b>: the fall of man, <b>Adam and Eve</b>.','Dramma divino: la caduta degli angeli guidati da Satana. Dramma umano: la caduta dell’uomo, Adamo ed Eva.')])),
+  card('ver','2 · The plot (1): Satan in Hell',stepsHtml([
+   S2('The poem begins with <b>Satan</b> and his companion <b>chained to a lake of fire in Hell</b>.','Il poema comincia con Satana e il suo compagno incatenati a un lago di fuoco nell’Inferno.'),
+   S2('They <b>free themselves</b> and want to start <b>another war against God</b>.','Si liberano e vogliono cominciare un’altra guerra contro Dio.'),
+   S2('<b>Beelzebub</b> suggests to <b>corrupt mankind</b>, God’s beloved new creation.','Belzebù suggerisce di corrompere l’umanità, la nuova amata creazione di Dio.')])),
+  card('gia','3 · The plot (2): the temptation in Eden',stepsHtml([
+   S2('Satan returns to <b>Eden</b> in the form of a <b>serpent</b> and <b>compliments Eve on her beauty</b>.','Satana torna nell’Eden in forma di serpente e fa i complimenti a Eva per la sua bellezza.'),
+   S2('Eve is amazed and asks the serpent <b>how he learned to speak</b>.','Eva è stupita e chiede al serpente come ha imparato a parlare.'),
+   S2('Satan tells her that he has <b>eaten the fruit of the Tree of Knowledge</b>.','Satana le dice che ha mangiato il frutto dell’Albero della Conoscenza.'),
+   S2('<b>Eve eats the fruit</b>. Adam is horrified to find out that Eve has eaten from the forbidden Tree.','Eva mangia il frutto. Adamo è inorridito quando scopre che Eva ha mangiato dall’Albero proibito.'),
+   S2('<b>Adam eats the fruit too</b>. Why? He would rather be <b>fallen with her</b> than remain pure.','Anche Adamo mangia il frutto. Perché? Preferisce essere caduto con lei piuttosto che restare puro.')])),
+  card('ros','4 · The plot (3): punishment and hope',stepsHtml([
+   S2('<b>God knows immediately</b> about their disobedience.','Dio sa subito della loro disobbedienza.'),
+   S2('He first punishes the <b>serpent</b>: it must <b>crawl on the ground</b>.','Prima punisce il serpente: deve strisciare per terra.'),
+   S2('<b>Adam and Eve</b> are condemned to suffer <b>pain and death</b>.','Adamo ed Eva sono condannati a soffrire dolore e morte.'),
+   S2('The <b>archangel Michael</b> shows them the <b>future of mankind</b>. Comforted by a vision of <b>redemption</b>, they leave the Garden of Eden.','L’arcangelo Michele mostra loro il futuro dell’umanità. Confortati da una visione di redenzione, lasciano il giardino dell’Eden.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>Tell me the plot of Paradise Lost.</b> It is the biblical story of Adam and Eve’s disobedience. Satan returns to Eden as a serpent and persuades Eve to eat the fruit of the Tree of Knowledge. Adam eats it too. God punishes them, but the archangel Michael shows them a vision of redemption.','<b>Raccontami la trama di Paradise Lost.</b> È la storia biblica della disobbedienza di Adamo ed Eva. Satana torna nell’Eden come serpente e convince Eva a mangiare il frutto dell’Albero della Conoscenza. Anche Adamo lo mangia. Dio li punisce, ma l’arcangelo Michele mostra loro una visione di redenzione.')}</div>`,
+ errori:['Il poema <b>comincia</b> con Satana nell’Inferno (lago di fuoco), non con Adamo ed Eva.','<b>Belzebù</b> propone di corrompere l’umanità; <b>Satana</b> torna nell’Eden come <b>serpente</b>.','<b>Prima</b> mangia Eva, <b>poi</b> Adamo (che preferisce cadere con lei).','Alla fine ci sono <b>punizione</b> (dolore e morte) ma anche <b>speranza di redenzione</b> (Michele).'],
+ orale:[
+  OR('What is Paradise Lost about?','Di che cosa parla Paradise Lost?','It is the biblical story of Adam and Eve’s disobedience. It is an epic poem that retells the story of the Book of Genesis.','È la storia biblica della disobbedienza di Adamo ed Eva. È un poema epico che racconta di nuovo la storia del libro della Genesi.'),
+  OR('How does the poem begin?','Come comincia il poema?','It begins with Satan and his companion chained to a lake of fire in Hell. They free themselves and want to start another war against God.','Comincia con Satana e il suo compagno incatenati a un lago di fuoco nell’Inferno. Si liberano e vogliono cominciare un’altra guerra contro Dio.'),
+  OR('What does Beelzebub suggest?','Che cosa suggerisce Belzebù?','Beelzebub suggests to corrupt mankind, God’s beloved new creation.','Belzebù suggerisce di corrompere l’umanità, la nuova amata creazione di Dio.'),
+  OR('How does Satan tempt Eve?','Come Satana tenta Eva?','He returns to Eden in the form of a serpent and compliments Eve on her beauty. Eve is amazed and asks how he learned to speak. Satan tells her that he has eaten the fruit of the Tree of Knowledge. Eve eats the fruit.','Torna nell’Eden in forma di serpente e fa i complimenti a Eva per la sua bellezza. Eva è stupita e chiede come ha imparato a parlare. Satana le dice che ha mangiato il frutto dell’Albero della Conoscenza. Eva mangia il frutto.'),
+  OR('Why does Adam eat the fruit?','Perché Adamo mangia il frutto?','Adam is horrified to find out that Eve has eaten from the forbidden Tree. But he would rather be fallen with her than remain pure, so he eats the fruit too.','Adamo è inorridito quando scopre che Eva ha mangiato dall’Albero proibito. Ma preferisce essere caduto con lei piuttosto che restare puro, così mangia anche lui il frutto.'),
+  OR('How does God punish them? How does the poem end?','Come Dio li punisce? Come finisce il poema?','God knows immediately. He punishes the serpent, which must crawl on the ground, and condemns Adam and Eve to suffer pain and death. The archangel Michael shows them the future of mankind and, comforted by a vision of redemption, they leave the Garden.','Dio lo sa subito. Punisce il serpente, che deve strisciare per terra, e condanna Adamo ed Eva a soffrire dolore e morte. L’arcangelo Michele mostra loro il futuro dell’umanità e, confortati da una visione di redenzione, lasciano il giardino.')],
+ quiz:[
+  QZ('Who suggests to corrupt mankind?','Chi suggerisce di corrompere l’umanità?','Beelzebub',['the archangel Michael','Adam'],'Belzebù.'),
+  QZ('In what form does Satan return to Eden?','In quale forma Satana torna nell’Eden?','a serpent',['an angel','a lion'],'Un serpente.'),
+  QZ('Why does Adam eat the fruit?','Perché Adamo mangia il frutto?','he would rather be fallen with Eve',['he is hungry','God ordered him to'],'Preferisce cadere con lei piuttosto che restare puro.'),
+  QZ('Who shows Adam and Eve the future of mankind?','Chi mostra ad Adamo ed Eva il futuro dell’umanità?','the archangel Michael',['Satan','Cromwell'],'L’arcangelo Michele.')]
+};
+CONT.u9={
+ cose:`<div class="box bia"><p>In ${en('Paradise Lost')} ci sono due strade morali: la <b>disobbedienza di Satana</b> porta a peccato e punizione; la <b>disobbedienza dell’uomo</b> è seguita da pentimento e speranza di redenzione. L’universo ha quattro regni. ${en('Satan')} sembra un eroe, poi si degrada. Lo stile è difficile e senza rime (${en('blank verse')}).</p></div>`,
+ ricette:[
+  card('blu','1 · Plot and themes',stepsHtml([
+   S2('Milton tells the story of Adam and Eve’s disobedience in the context of <b>Satan’s rebellion</b> against God. <b>Two moral paths</b>.','Milton racconta la disobbedienza di Adamo ed Eva nel contesto della ribellione di Satana contro Dio. Due strade morali.'),
+   S2('<b>Satan</b>’s disobedience leads to further <b>sin, degradation and punishment</b>.','La disobbedienza di Satana porta a ulteriore peccato, degradazione e punizione.'),
+   S2('<b>Man</b>’s disobedience is followed by <b>repentance</b> and hope of <b>redemption</b>.','La disobbedienza dell’uomo è seguita da pentimento e speranza di redenzione.'),
+   ])+TAB(['Theme','Meaning'],[[en('Disobedience'),'both Satan and Adam and Eve disobey God'],[en('Rebellion'),'Satan rebels and chooses <b>damnation</b> and rejection'],[en('Redemption'),'Adam and Eve (humanity) seek and obtain it through <b>repentance</b>'],[en('God’s grace and mercy'),'they save humanity']])),
+  card('ver','2 · The universe and the hierarchy',stepsHtml([
+   S2('Cosmic geography based on <b>religion</b>, not on the science of Milton’s time. <b>Four realms</b>: glorious <b>Heaven</b> (above), dreadful <b>Hell</b> (below), confusing <b>Chaos</b>, a young <b>Earth</b>.','Geografia cosmica basata sulla religione, non sulla scienza dell’epoca di Milton. Quattro regni: il glorioso Paradiso (sopra), il terribile Inferno (sotto), il confuso Caos, una giovane Terra.'),
+   ])+TAB(['Social hierarchy (closer to God → farther)','Italiano'],[[en('1. the Son (closest to God)'),'il Figlio'],[en('2. archangels and cherubs (Gabriel, Raphael)'),'arcangeli e cherubini'],[en('3. humans (Adam and Eve)'),'gli esseri umani'],[en('4. animals'),'gli animali'],[en('5. devils (fallen angels): Satan, Beelzebub'),'i diavoli (angeli caduti)']])),
+  card('gia','3 · The figure of Satan',stepsHtml([
+   S2('He <b>refuses to accept God’s superiority</b> and is <b>banished to Hell</b>. He tries to console himself and the rebel angels.','Rifiuta di accettare la superiorità di Dio ed è bandito all’Inferno. Cerca di consolare se stesso e gli angeli ribelli.'),
+   `<p lang="en"><i>“Better to reign in Hell than serve in Heaven”</i></p>`,
+   S2('God will always be <b>more powerful</b>, yet Milton shows some <b>respect for Satan’s courage</b>: his determination to be free.','Dio sarà sempre più potente, ma Milton mostra un certo rispetto per il coraggio di Satana: la sua determinazione a essere libero.'),
+   S2('<b>At first</b> he appears <b>heroic</b>: he has the strength to refuse defeat and is not afraid to be damned eternally.','All’inizio appare eroico: ha la forza di rifiutare la sconfitta e non ha paura di essere dannato per sempre.'),
+   S2('<b>In the end</b> he shows the <b>moral and physical degradation</b> of a character dominated by <b>vanity</b>.','Alla fine mostra la degradazione morale e fisica di un personaggio dominato dalla vanità.')])),
+  card('ros','4 · Style and meter',stepsHtml([
+   S2('A <b>complex</b> work for <b>highly-educated readers</b>: obscure <b>allusions</b>, <b>archaic vocabulary</b>, complex grammar and <b>extended similes</b>.','Un’opera complessa per lettori molto colti: allusioni oscure, vocabolario arcaico, grammatica complessa e similitudini estese.'),
+   S2('<b>Meter</b>: <b>unrhymed iambic pentameters</b> (<b>blank verse</b>), as used by <b>Marlowe and Shakespeare</b>.','Metro: pentametri giambici senza rima (versi sciolti), come usati da Marlowe e Shakespeare.'),
+   S2('Milton believed that <b>rhyme was not suitable</b> for the solemn subject matter of the work.','Milton credeva che la rima non fosse adatta al soggetto solenne dell’opera.')]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde (a voce, in inglese)</h3>
+ ${EN('<b>What are the main themes of Paradise Lost?</b> Disobedience, rebellion, redemption and God’s grace and mercy. Both Satan and Adam and Eve disobey God, but Satan chooses damnation, while Adam and Eve obtain redemption through repentance.','<b>Quali sono i temi principali di Paradise Lost?</b> Disobbedienza, ribellione, redenzione e grazia e misericordia di Dio. Sia Satana sia Adamo ed Eva disobbediscono a Dio, ma Satana sceglie la dannazione, mentre Adamo ed Eva ottengono la redenzione con il pentimento.')}
+ ${EN('<b>Describe the figure of Satan.</b> He refuses to accept God’s superiority and is banished to Hell. At first he appears heroic, but in the end he shows moral and physical degradation.','<b>Descrivi la figura di Satana.</b> Rifiuta di accettare la superiorità di Dio ed è bandito all’Inferno. All’inizio appare eroico, ma alla fine mostra degradazione morale e fisica.')}</div>`,
+ errori:['<b>Satana</b>: scelta della <b>dannazione</b>. <b>Adamo ed Eva</b>: <b>redenzione</b> con il pentimento.','I quattro regni: <b>Heaven</b> (sopra), <b>Hell</b> (sotto), <b>Chaos</b>, <b>Earth</b>.','Vicino a Dio: il <b>Figlio</b>, poi gli arcangeli, gli esseri umani, gli animali, i diavoli.','<b>Blank verse</b> = pentametri giambici <b>senza rima</b> (Milton non voleva la rima).'],
+ orale:[
+  OR('What are the two moral paths in Paradise Lost?','Quali sono le due strade morali in Paradise Lost?','Satan’s disobedience leads to further sin, degradation and punishment. Man’s disobedience is followed by repentance and hope of redemption.','La disobbedienza di Satana porta a ulteriore peccato, degradazione e punizione. La disobbedienza dell’uomo è seguita da pentimento e speranza di redenzione.'),
+  OR('What are the main themes?','Quali sono i temi principali?','Disobedience, rebellion, redemption, and God’s grace and mercy. Satan rebels against God and chooses damnation. Adam and Eve seek and obtain redemption through repentance of their sin.','Disobbedienza, ribellione, redenzione, grazia e misericordia di Dio. Satana si ribella a Dio e sceglie la dannazione. Adamo ed Eva cercano e ottengono la redenzione con il pentimento del loro peccato.'),
+  OR('Describe the universe in the poem.','Descrivi l’universo nel poema.','The cosmic geography is based on religion, not on science. The universe is divided into four realms: glorious Heaven above, dreadful Hell below, confusing Chaos and a young Earth.','La geografia cosmica è basata sulla religione, non sulla scienza. L’universo è diviso in quattro regni: il glorioso Paradiso sopra, il terribile Inferno sotto, il confuso Caos e una giovane Terra.'),
+  OR('Explain the social hierarchy.','Spiega la gerarchia sociale.','It is based on proximity to God: the Son, the archangels and cherubs, humans, animals, and devils, the fallen angels.','Si basa sulla vicinanza a Dio: il Figlio, gli arcangeli e i cherubini, gli esseri umani, gli animali e i diavoli, gli angeli caduti.'),
+  OR('Describe the figure of Satan.','Descrivi la figura di Satana.','Satan refuses to accept God’s superiority and is banished to Hell. He says: “Better to reign in Hell than serve in Heaven”. Milton shows some respect for his courage. At first he appears heroic, but in the end he is dominated by vanity and shows moral and physical degradation.','Satana rifiuta di accettare la superiorità di Dio ed è bandito all’Inferno. Dice: “Meglio regnare all’Inferno che servire in Paradiso”. Milton mostra un certo rispetto per il suo coraggio. All’inizio appare eroico, ma alla fine è dominato dalla vanità e mostra degradazione morale e fisica.'),
+  OR('Describe the style and meter of Paradise Lost.','Descrivi lo stile e il metro di Paradise Lost.','It is a complex work for highly-educated readers, full of allusions, with archaic vocabulary, complex grammar and extended similes. It is written in blank verse, unrhymed iambic pentameters, as used by Marlowe and Shakespeare.','È un’opera complessa per lettori molto colti, piena di allusioni, con vocabolario arcaico, grammatica complessa e similitudini estese. È scritta in versi sciolti, pentametri giambici senza rima, come usati da Marlowe e Shakespeare.')],
+ quiz:[
+  QZ('What is blank verse?','Che cosa sono i versi sciolti (blank verse)?','unrhymed iambic pentameters',['rhymed couplets','free verse without rhythm'],'Pentametri giambici senza rima.'),
+  QZ('Which realm is called dreadful?','Quale regno è detto terribile?','Hell',['Heaven','Earth'],'Hell è “dreadful”; Heaven è “glorious”; Earth è “young”.'),
+  QZ('Who is closest to God in the hierarchy?','Chi è più vicino a Dio nella gerarchia?','the Son',['the archangels','Adam and Eve'],'Il Figlio.'),
+  QZ('Which readers was Paradise Lost written for?','Per quali lettori fu scritto Paradise Lost?','highly-educated readers',['children','soldiers'],'È un’opera complessa per lettori molto colti.')]
+};
+const GLOSS=[...Object.keys(DEFS).flatMap(u=>DEFS[u].map(d=>[`<span lang="en">${d[0]}</span>`,d[1]]))];
+const TL=[
+ ['1625','Charles I becomes king; struggle between Crown and Parliament'],
+ ['1628','The Petition of Right'],
+ ['1629','Charles shuts down Parliament: 11 years of personal rule'],
+ ['1640','Short Parliament, then the Long Parliament'],
+ ['1642-1649','The Civil War: Royalists v Roundheads (Cromwell’s Ironsides)'],
+ ['Jan 1649','Charles I is beheaded; the Commonwealth is proclaimed'],
+ ['1650','Battle of Dunbar'],
+ ['1653','Cromwell, Lord Protector'],
+ ['1658','Cromwell dies; his son Richard abdicates after 8 months'],
+ ['1660','The Restoration: Charles II'],
+ ['1673','The Test Act'],
+ ['1685','James II (Catholic)'],
+ ['1689','Glorious Revolution: William and Mary; Bill of Rights; Toleration Act'],
+ ['1701','The Act of Settlement'],
+ ['1702','Queen Anne; War of the Spanish Succession'],
+ ['1707','The Act of Union: England and Scotland'],
+ ['1713','The Treaty of Utrecht'],
+ ['1714','George I: the Augustan Age; the first Prime Minister (Walpole)'],
+ ['1715 / 1745-46','Jacobite risings; Culloden 1746'],
+ ['1739-1763','Wars for colonies: Jenkins’ Ear, Austrian Succession, Seven Years’ War']];
+const TLM=[
+ ['1608','John Milton is born'],['1631','L’Allegro and Il Penseroso'],['1644','Areopagitica'],['1651','Milton is completely blind; Pro Populo Anglicano Defensio'],
+ ['1660','Milton falls from grace (Restoration)'],['1667','Paradise Lost'],['1674','Milton dies']];
+const FORMULARIO=
+ '<h3 class="sec">La linea del tempo: la storia</h3>'+TAB(['Year','What happened'],TL.map(t=>[`<b>${t[0]}</b>`,E(t[1])]))+
+ '<h3 class="sec">La linea del tempo: John Milton</h3>'+TAB(['Year','What happened'],TLM.map(t=>[`<b>${t[0]}</b>`,E(t[1])]))+
+ '<h3 class="sec">I monarchi</h3>'+TAB(['Years','Monarch'],[['1625-1649',E('Charles I (beheaded)')],['1649-1660',E('Commonwealth: Cromwell, Lord Protector from 1653')],['1660-1685',E('Charles II')],['1685-1688',E('James II')],['1689-1702',E('William and Mary')],['1702-1714',E('Anne')],['1714-1727',E('George I (Hanover)')],['1727-1760',E('George II')]])+
+ '<h3 class="sec">Le tre leggi del 1689-1701</h3>'+TAB(['Law','Key words'],[[en('Bill of Rights 1689'),'king’s power limited · constitutional monarchy'],[en('Toleration Act 1689'),'Dissenters · freedom of worship'],[en('Act of Settlement 1701'),'only Protestants as heirs']])+
+ '<h3 class="sec">Puritani e metafisici</h3>'+TAB(['Poets','Key words'],[[en('Puritan poets'),'purification of society · salvation, predestination · didactic · Bible'],[en('Metaphysical poets'),'philosophical concepts · conceits · love and religion · <b>John Donne</b>']])+
+ '<h3 class="sec">Paradise Lost: la trama</h3>'+TAB(['Step','What happens'],[['<b>1</b>','Satan and Beelzebub chained in Hell → free themselves → war against God'],['<b>2</b>','Beelzebub: corrupt mankind'],['<b>3</b>','Satan, a serpent, tempts Eve → Eve eats → Adam eats'],['<b>4</b>','God punishes: serpent crawls; pain and death'],['<b>5</b>','The archangel Michael: vision of redemption → they leave Eden']])+
+ '<h3 class="sec">Paradise Lost: temi, universo, Satana, stile</h3>'+TAB(['Topic','Key words'],[
+  [en('Themes'),'disobedience · rebellion · redemption · God’s grace and mercy'],
+  [en('Four realms'),'Heaven (above) · Hell (below) · Chaos · Earth'],
+  [en('Hierarchy'),'the Son · archangels · humans · animals · devils'],
+  [en('Satan'),'“Better to reign in Hell than serve in Heaven” · heroic → degradation (vanity)'],
+  [en('Style'),'complex · allusions · archaic words · extended similes · blank verse (no rhyme)']]);
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('ing4_guerracivile_milton_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('ing4_guerracivile_milton_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante, in inglese con la traduzione. Leggi la domanda e <b>rispondi a voce alta in inglese</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Riepilogo</h2><p class="note">Date, generi e figure retoriche su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Charles I (re dal 1625) crede nel Divine Right of Kings: il re è scelto da Dio.", "Alza le tasse senza il Parlamento e persegue i Puritani.", "Nel 1642 comincia la guerra civile: Royalists (re) contro Roundheads (Parlamento).", "Nel gennaio 1649 il re è decapitato."], "u2": ["Nel 1649 l’Inghilterra diventa una repubblica: il Commonwealth.", "Dal 1653 Cromwell governa da dittatore militare: è il Lord Protector.", "Nel 1658 il figlio Richard abdica dopo otto mesi."], "u3": ["Nel 1660 torna il re: è la Restoration, con Charles II.", "Il Test Act (1673): per avere un incarico pubblico bisogna essere protestanti.", "I Whig limitano il re. I Tory sostengono la monarchia.", "Dal 1685 regna James II, che è cattolico."], "u4": ["Nel 1689 arrivano William e Mary: è la Glorious Revolution. James II fugge.", "Bill of Rights: il re ha meno potere. Toleration Act: libertà di culto. Act of Settlement (1701): solo protestanti sul trono.", "Con Anne c’è la guerra di successione spagnola. Nel 1713 il Trattato di Utrecht dà Gibilterra e Minorca.", "Nel 1707 l’Act of Union unisce Inghilterra e Scozia."], "u5": ["Dal 1714 regna George I di Hannover: non parla inglese, nasce il Prime Minister (Walpole).", "I Jacobites vogliono gli Stuart: perdono a Culloden (1746).", "Con George II la Gran Bretagna fa guerre per le colonie: la più importante è la guerra dei Sette anni."], "u6": ["La Puritan literature va dal 1625 al 1660.", "I poeti puritani sono didattici: salvezza e predestinazione.", "I poeti metafisici usano i conceit (metafore sorprendenti). Il più famoso è John Donne.", "Milton è l’autore che rappresenta meglio il secolo."], "u7": ["John Milton (1608-1674) è un puritano di Londra. Sostiene Cromwell.", "Nel 1651 è cieco. Nel 1660 cade in disgrazia con la Restoration.", "Opere: L’Allegro e Il Penseroso (1631), Areopagitica (1644) sulla libertà di parola, Paradise Lost (1667)."], "u8": ["Paradise Lost racconta la disobbedienza di Adamo ed Eva (Genesi).", "Satana è all’Inferno, si libera e vuole la guerra contro Dio. Belzebù propone di corrompere l’uomo.", "Satana torna nell’Eden come serpente. Eva mangia il frutto, poi Adamo.", "Dio punisce tutti. L’arcangelo Michele mostra la redenzione."], "u9": ["Due strade: Satana sceglie la dannazione; Adamo ed Eva, con il pentimento, la redenzione.", "L’universo ha quattro regni: Heaven, Hell, Chaos, Earth.", "Satana all’inizio sembra un eroe, poi si degrada.", "Lo stile è difficile e senza rime: blank verse."]}, "es": false, "pics": [{"k": "king_en", "re": "king|kings|queen", "id": 5563}, {"k": "crown_en", "re": "crown|crowned", "id": 2718}, {"k": "soldier_en", "re": "soldiers?|army|armies|warriors?", "id": 11246}, {"k": "church_en", "re": "church|cathedral|abbey|monastery|monasteries", "id": 3118}, {"k": "war_en", "re": "war|wars", "id": 12256}, {"k": "book_en", "re": "books?", "id": 25191}, {"k": "money_en", "re": "money|taxes|tax", "id": 8506}, {"k": "law_en", "re": "law|laws", "id": 11473}, {"k": "document_en", "re": "documents?", "id": 21802}, {"k": "parliament_en", "re": "parliament", "id": 21551}, {"k": "tree_en", "re": "trees?", "id": 3057}, {"k": "fire_en", "re": "fire|fires|blaze", "id": 4654}, {"k": "religione", "re": "religione|religiose|fedi", "id": 27059}, {"k": "re", "re": "re", "id": 5563}, {"k": "corona", "re": "corona", "id": 2718}, {"k": "chiesa", "re": "chiesa", "id": 3118}, {"k": "guerra", "re": "guerra", "id": 12256}, {"k": "soldato", "re": "soldato|soldati|esercito", "id": 11246}, {"k": "legge", "re": "legge|leggi", "id": 11473}, {"k": "documento", "re": "documento|documenti", "id": 21802}, {"k": "denaro", "re": "denaro|soldi", "id": 8506}, {"k": "libro", "re": "libro|libri", "id": 25191}, {"k": "parlamento", "re": "parlamento|parlamenti", "id": 21551}, {"k": "albero", "re": "albero|alberi", "id": 3057}, {"k": "fuoco", "re": "fuoco", "id": 4654}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  /* testo con parti in inglese: ogni parte con la sua voce */
+  function segs(el,dl){
+    var out=[],buf='';
+    function flush(){var t=say(buf);if(t.length>1)out.push({t:t,l:dl});buf=''}
+    (function walk(n){
+      if(n.nodeType===3){buf+=n.nodeValue;return}
+      if(n.nodeType!==1)return;
+      if(n.classList&&n.classList.contains('a11y-ui'))return;
+      var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return;
+      if(n.getAttribute('lang')==='en'){flush();var t=say(nodeText(n));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      if(n.classList.contains('fr')||tg==='SUP'){buf+=nodeText(n);return}
+      n.childNodes.forEach(walk);
+    })(el);
+    flush();return out;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    var out=[];
+    els.forEach(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      if(e.closest('[lang="en"]')){var t=say(nodeText(e));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      segs(e,es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    return out;
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=c.l==='en-GB'?0.8:0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)segs(qt,'it-IT').forEach(function(c){out.push(c)});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'.',l:'it-IT'});
+      segs(sp||o,CFG.es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261012090305",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
