@@ -1021,7 +1021,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 
 
 </script>
-<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Il subjuntivo è il congiuntivo spagnolo.", "Parto da “yo” del presente. Esempio: hablo.", "Tolgo la -o e metto la vocale opposta: -ar prende e, -er e -ir prendono a.", "Esempio: hablo → hable, como → coma.", "Sei verbi sono irregolari: ser, estar, ir, dar, saber, haber."], "u2": ["Il subjuntivo si usa per un desiderio, un’emozione o un dubbio.", "Esempio: Quiero que vengas.", "Se c’è certezza si usa l’indicativo. Esempio: Creo que viene.", "Se il soggetto è lo stesso, si usa l’infinito. Esempio: Quiero venir.", "Si usa anche per una persona che cerchi o che non esiste. Esempio: Busco a alguien que hable inglés."], "u3": ["Si forma con haya + participio.", "Esempio: haya hablado.", "Si usa per un’azione già finita.", "Esempio: Espero que hayas llegado."], "u4": ["Parto da “ellos” del pretérito indefinido. Esempio: hablaron.", "Tolgo -ron e aggiungo -ra: hablara.", "Si usa quando il verbo principale è al passato.", "Esempio: Quería que vinieras."], "u5": ["Si forma con hubiera + participio.", "Esempio: hubiera hablado.", "Si usa per cose che non sono successe: “se avessi studiato”.", "Esempio: Si hubiera estudiado, habría aprobado."], "u6": ["Guardo il verbo principale: è al presente o al passato?", "Presente: uso il presente o il perfecto del subjuntivo.", "Passato: uso l’imperfecto o il pluscuamperfecto.", "Le frasi con “si” sono di tre tipi: possibile, irreale presente, irreale passato."]}, "es": true, "pics": [{"k": "libro", "re": "libro|libri", "id": 25191}, {"k": "scuola", "re": "scuola|scuole|escuela", "id": 32446}, {"k": "parlare", "re": "parlare|hablar", "id": 9693}, {"k": "mangiare", "re": "mangiare|comer", "id": 6456}, {"k": "bere", "re": "bere|beber", "id": 6061}, {"k": "scrivere", "re": "scrivere|escribir", "id": 2380}, {"k": "leggere", "re": "leggere|leer", "id": 7141}, {"k": "studiare", "re": "studiare|estudiar", "id": 6495}, {"k": "pensare", "re": "pensare|pensar", "id": 38796}, {"k": "casa", "re": "casa|case", "id": 6964}, {"k": "famiglia", "re": "famiglia|familiari|familiare", "id": 38351}, {"k": "dubbio", "re": "dubbio|dubbi|dudar", "id": 11696}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Il subjuntivo è il congiuntivo spagnolo.", "Parto da “yo” del presente. Esempio: hablo.", "Tolgo la -o e metto la vocale opposta: -ar prende e, -er e -ir prendono a.", "Esempio: hablo → hable, como → coma.", "Sei verbi sono irregolari: ser, estar, ir, dar, saber, haber."], "u2": ["Il subjuntivo si usa per un desiderio, un’emozione o un dubbio.", "Esempio: Quiero que vengas.", "Se c’è certezza si usa l’indicativo. Esempio: Creo que viene.", "Se il soggetto è lo stesso, si usa l’infinito. Esempio: Quiero venir.", "Si usa anche per una persona che cerchi o che non esiste. Esempio: Busco a alguien que hable inglés."], "u3": ["Si forma con haya + participio.", "Esempio: haya hablado.", "Si usa per un’azione già finita.", "Esempio: Espero que hayas llegado."], "u4": ["Parto da “ellos” del pretérito indefinido. Esempio: hablaron.", "Tolgo -ron e aggiungo -ra: hablara.", "Si usa quando il verbo principale è al passato.", "Esempio: Quería que vinieras."], "u5": ["Si forma con hubiera + participio.", "Esempio: hubiera hablado.", "Si usa per cose che non sono successe: “se avessi studiato”.", "Esempio: Si hubiera estudiado, habría aprobado."], "u6": ["Guardo il verbo principale: è al presente o al passato?", "Presente: uso il presente o il perfecto del subjuntivo.", "Passato: uso l’imperfecto o il pluscuamperfecto.", "Le frasi con “si” sono di tre tipi: possibile, irreale presente, irreale passato."]}, "es": true, "steps": false, "pics": [{"k": "libro", "re": "libro|libri", "id": 25191}, {"k": "scuola", "re": "scuola|scuole|escuela", "id": 32446}, {"k": "parlare", "re": "parlare|hablar", "id": 9693}, {"k": "mangiare", "re": "mangiare|comer", "id": 6456}, {"k": "bere", "re": "bere|beber", "id": 6061}, {"k": "scrivere", "re": "scrivere|escribir", "id": 2380}, {"k": "leggere", "re": "leggere|leer", "id": 7141}, {"k": "studiare", "re": "studiare|estudiar", "id": 6495}, {"k": "pensare", "re": "pensare|pensar", "id": 38796}, {"k": "casa", "re": "casa|case", "id": 6964}, {"k": "famiglia", "re": "famiglia|familiari|familiare", "id": 38351}, {"k": "dubbio", "re": "dubbio|dubbi|dudar", "id": 11696}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
 (function(){
   var CFG=window.A11Y_CFG||{simple:{},es:false};
   var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
@@ -1127,6 +1127,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
     var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
      '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
      '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     (CFG.steps?'<div class="step"><b class="n">★</b><div>Gli <b>esempi svolti</b> si aprono <b>un passo alla volta</b>: tocca <b>▶ Prossimo passo</b> e leggi con calma. Se preferisci vedere tutto, tocca <b>Mostra tutto</b>.</div></div>':'')+
      '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
      '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
      '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
@@ -1217,6 +1218,58 @@ if(location.hash==='#stampa')document.body.classList.add('print');
   function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
   eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
   bar.appendChild(eb);
+  /* ===== ESEMPI SVOLTI UN PASSO ALLA VOLTA ===== */
+  if(CFG.steps&&location.hash!=='#stampa'){
+    var stOn=true;try{stOn=localStorage.getItem('a11y_steps')!=='0'}catch(e){}
+    var st4=document.createElement('style');
+    st4.textContent='section.tab .box.bia [hidden]{display:none!important}'+
+     '.a11y-newstep{background:#fff8dc;border-left:6px solid #d1b24a;padding:4px 8px;border-radius:6px}'+
+     '.a11y-stepper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 2px}'+
+     '.a11y-sc{font-weight:bold;font-size:.95rem;color:#22314d}'+
+     '.a11y-stepper .a11y-btn{margin:0}'+
+     '@media print{.a11y-stepper{display:none!important}section.tab .box.bia [hidden]{display:revert!important}.a11y-newstep{background:none;border:0;padding:0}}';
+    document.head.appendChild(st4);
+    var stGroups=[];
+    document.querySelectorAll('section.tab .stat .box.bia').forEach(function(box){
+      var h=box.querySelector(':scope>h3');if(!h||!/^Esempio/i.test(h.textContent))return;
+      var kids=[].slice.call(box.children).filter(function(c){return c!==h});
+      if(kids.length<3)return;
+      var isNum=function(e){return /^\s*\d+\./.test(e.textContent)};
+      var rest=kids.slice(1),groups=[];
+      if(rest.some(isNum)){
+        var started=false;
+        rest.forEach(function(e){
+          if(isNum(e)){groups.push([e]);started=true}
+          else if(started)groups[groups.length-1].push(e);
+        });
+      }else{rest.forEach(function(e){groups.push([e])})}
+      if(groups.length<2)return;
+      var idx=0,bx=mk('div','a11y-ui a11y-stepper'),go=mk('button','a11y-btn',null),all=mk('button','a11y-btn',null),cnt=mk('span','a11y-sc',null);
+      go.type='button';all.type='button';all.textContent='Mostra tutto';
+      bx.appendChild(go);bx.appendChild(cnt);bx.appendChild(all);box.appendChild(bx);
+      function paint(){
+        groups.forEach(function(g,i){g.forEach(function(e){e.hidden=stOn&&i>=idx;e.classList.toggle('a11y-newstep',stOn&&idx>0&&i===idx-1&&idx<groups.length+1)})});
+        bx.style.display=stOn?'':'none';
+        cnt.textContent='Passo '+idx+' di '+groups.length;
+        go.textContent=idx===0?'▶ Mostrami il primo passo':idx<groups.length?'▶ Prossimo passo':'↺ Ricomincia';
+        all.hidden=idx>=groups.length;
+      }
+      go.addEventListener('click',function(){
+        if(idx>=groups.length)idx=0;else idx++;
+        paint();
+        var t=idx>0?groups[idx-1][0]:box;try{t.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+      });
+      all.addEventListener('click',function(){idx=groups.length;paint()});
+      stGroups.push({paint:paint,reset:function(){idx=0}});
+      paint();
+    });
+    if(stGroups.length){
+      var sb=mk('button','a11y-btn a11y-ui',null);sb.type='button';
+      var paintSb=function(){sb.textContent='👣 Esempi un passo alla volta: '+(stOn?'SÌ':'NO');sb.classList.toggle('on',stOn);sb.setAttribute('aria-pressed',stOn?'true':'false')};
+      sb.addEventListener('click',function(){stOn=!stOn;try{localStorage.setItem('a11y_steps',stOn?'1':'0')}catch(e){};stGroups.forEach(function(g){g.reset();g.paint()});paintSb()});
+      paintSb();bar.appendChild(sb);
+    }
+  }
   var mainEl=document.querySelector('main');
   if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
   applyEasy();
@@ -1386,7 +1439,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 </script><!--/A11Y--><!--AGG--><script>
 (function(){
- var B="20261012141332",t0=Date.now(),touched=false,last=0;
+ var B="20261013084552",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;

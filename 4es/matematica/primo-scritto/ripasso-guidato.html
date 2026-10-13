@@ -886,7 +886,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 
 </script>
-<!--A11Y--><script>window.A11Y_CFG={"simple": {"u0": ["Prima ripassiamo 4 cose: frazioni con π, radici, piano cartesiano, quadranti.", "Si sbaglia più spesso qui che nella goniometria.", "Se queste sono chiare, il resto è più facile."], "u1": ["Gli angoli si misurano in gradi o in radianti.", "L’angolo giro è 360°, cioè 2π rad.", "L’angolo piatto è 180°, cioè π rad.", "Devo saper passare dai gradi ai radianti e viceversa."], "u2": ["Un angolo orientato ha un senso di rotazione.", "Senso antiorario (contrario alle lancette): angolo positivo.", "Senso orario: angolo negativo.", "La circonferenza goniometrica ha centro O e raggio 1."], "u3": ["Sulla circonferenza, l’angolo α porta a un punto B.", "Il coseno è la coordinata x di B.", "Il seno è la coordinata y di B.", "Quindi B = (cos α ; sin α)."], "u4": ["La tangente è il seno diviso il coseno.", "La cotangente è il contrario: coseno diviso seno.", "Non si può dividere per zero.", "In alcuni angoli la tangente o la cotangente non esistono."], "u5": ["Collegano seno, coseno e tangente.", "La prima: cos²α + sin²α = 1.", "La seconda: tan α = sin α diviso cos α.", "Se conosco un valore e il quadrante, trovo gli altri."]}, "es": false, "pics": [{"k": "cerchio", "re": "cerchio|circonferenza", "id": 4603}, {"k": "triangolo", "re": "triangolo", "id": 4763}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u0": ["Prima ripassiamo 4 cose: frazioni con π, radici, piano cartesiano, quadranti.", "Si sbaglia più spesso qui che nella goniometria.", "Se queste sono chiare, il resto è più facile."], "u1": ["Gli angoli si misurano in gradi o in radianti.", "L’angolo giro è 360°, cioè 2π rad.", "L’angolo piatto è 180°, cioè π rad.", "Devo saper passare dai gradi ai radianti e viceversa."], "u2": ["Un angolo orientato ha un senso di rotazione.", "Senso antiorario (contrario alle lancette): angolo positivo.", "Senso orario: angolo negativo.", "La circonferenza goniometrica ha centro O e raggio 1."], "u3": ["Sulla circonferenza, l’angolo α porta a un punto B.", "Il coseno è la coordinata x di B.", "Il seno è la coordinata y di B.", "Quindi B = (cos α ; sin α)."], "u4": ["La tangente è il seno diviso il coseno.", "La cotangente è il contrario: coseno diviso seno.", "Non si può dividere per zero.", "In alcuni angoli la tangente o la cotangente non esistono."], "u5": ["Collegano seno, coseno e tangente.", "La prima: cos²α + sin²α = 1.", "La seconda: tan α = sin α diviso cos α.", "Se conosco un valore e il quadrante, trovo gli altri."]}, "es": false, "steps": false, "pics": [{"k": "cerchio", "re": "cerchio|circonferenza", "id": 4603}, {"k": "triangolo", "re": "triangolo", "id": 4763}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
 (function(){
   var CFG=window.A11Y_CFG||{simple:{},es:false};
   var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
@@ -992,6 +992,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
     var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
      '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
      '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     (CFG.steps?'<div class="step"><b class="n">★</b><div>Gli <b>esempi svolti</b> si aprono <b>un passo alla volta</b>: tocca <b>▶ Prossimo passo</b> e leggi con calma. Se preferisci vedere tutto, tocca <b>Mostra tutto</b>.</div></div>':'')+
      '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
      '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
      '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
@@ -1082,6 +1083,58 @@ if(location.hash==='#stampa')document.body.classList.add('print');
   function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
   eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
   bar.appendChild(eb);
+  /* ===== ESEMPI SVOLTI UN PASSO ALLA VOLTA ===== */
+  if(CFG.steps&&location.hash!=='#stampa'){
+    var stOn=true;try{stOn=localStorage.getItem('a11y_steps')!=='0'}catch(e){}
+    var st4=document.createElement('style');
+    st4.textContent='section.tab .box.bia [hidden]{display:none!important}'+
+     '.a11y-newstep{background:#fff8dc;border-left:6px solid #d1b24a;padding:4px 8px;border-radius:6px}'+
+     '.a11y-stepper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 2px}'+
+     '.a11y-sc{font-weight:bold;font-size:.95rem;color:#22314d}'+
+     '.a11y-stepper .a11y-btn{margin:0}'+
+     '@media print{.a11y-stepper{display:none!important}section.tab .box.bia [hidden]{display:revert!important}.a11y-newstep{background:none;border:0;padding:0}}';
+    document.head.appendChild(st4);
+    var stGroups=[];
+    document.querySelectorAll('section.tab .stat .box.bia').forEach(function(box){
+      var h=box.querySelector(':scope>h3');if(!h||!/^Esempio/i.test(h.textContent))return;
+      var kids=[].slice.call(box.children).filter(function(c){return c!==h});
+      if(kids.length<3)return;
+      var isNum=function(e){return /^\s*\d+\./.test(e.textContent)};
+      var rest=kids.slice(1),groups=[];
+      if(rest.some(isNum)){
+        var started=false;
+        rest.forEach(function(e){
+          if(isNum(e)){groups.push([e]);started=true}
+          else if(started)groups[groups.length-1].push(e);
+        });
+      }else{rest.forEach(function(e){groups.push([e])})}
+      if(groups.length<2)return;
+      var idx=0,bx=mk('div','a11y-ui a11y-stepper'),go=mk('button','a11y-btn',null),all=mk('button','a11y-btn',null),cnt=mk('span','a11y-sc',null);
+      go.type='button';all.type='button';all.textContent='Mostra tutto';
+      bx.appendChild(go);bx.appendChild(cnt);bx.appendChild(all);box.appendChild(bx);
+      function paint(){
+        groups.forEach(function(g,i){g.forEach(function(e){e.hidden=stOn&&i>=idx;e.classList.toggle('a11y-newstep',stOn&&idx>0&&i===idx-1&&idx<groups.length+1)})});
+        bx.style.display=stOn?'':'none';
+        cnt.textContent='Passo '+idx+' di '+groups.length;
+        go.textContent=idx===0?'▶ Mostrami il primo passo':idx<groups.length?'▶ Prossimo passo':'↺ Ricomincia';
+        all.hidden=idx>=groups.length;
+      }
+      go.addEventListener('click',function(){
+        if(idx>=groups.length)idx=0;else idx++;
+        paint();
+        var t=idx>0?groups[idx-1][0]:box;try{t.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+      });
+      all.addEventListener('click',function(){idx=groups.length;paint()});
+      stGroups.push({paint:paint,reset:function(){idx=0}});
+      paint();
+    });
+    if(stGroups.length){
+      var sb=mk('button','a11y-btn a11y-ui',null);sb.type='button';
+      var paintSb=function(){sb.textContent='👣 Esempi un passo alla volta: '+(stOn?'SÌ':'NO');sb.classList.toggle('on',stOn);sb.setAttribute('aria-pressed',stOn?'true':'false')};
+      sb.addEventListener('click',function(){stOn=!stOn;try{localStorage.setItem('a11y_steps',stOn?'1':'0')}catch(e){};stGroups.forEach(function(g){g.reset();g.paint()});paintSb()});
+      paintSb();bar.appendChild(sb);
+    }
+  }
   var mainEl=document.querySelector('main');
   if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
   applyEasy();
@@ -1251,7 +1304,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 </script><!--/A11Y--><!--AGG--><script>
 (function(){
- var B="20261012141332",t0=Date.now(),touched=false,last=0;
+ var B="20261013084552",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;
