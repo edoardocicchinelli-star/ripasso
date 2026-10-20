@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spagnolo: el Renacimiento y La Celestina</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Spagnolo</a></p><h1>Spagnolo: el Renacimiento y La Celestina</h1><p>4 ES · siglo XV, Humanismo, Romancero, novela, Celestina · un passo alla volta</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Siglo XV</button>
+<button data-t="u2">2 Humanismo</button>
+<button data-t="u3">3 Lírica y prosa</button>
+<button data-t="u4">4 Romancero</button>
+<button data-t="u5">5 La novela</button>
+<button data-t="u6">6 La Celestina</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Riepilogo</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo al primo scritto di <b>Spagnolo</b>: il Siglo XV, l’Humanismo, il Renacimiento letterario (lírica, prosa, Romancero, novela) e La Celestina. I testi sono in <b>spagnolo semplice</b> e sotto ogni frase c’è la <b>traduzione in italiano</b> (la riga azzurra). Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>El siglo XV</b>: época de transición, Reyes Católicos (unità 1)</li><li><b>El Humanismo</b> (unità 2)</li><li><b>Renacimiento literario</b>: lírica y prosa (unità 3), Romancero Viejo (unità 4), la novela (unità 5)</li><li><b>La Celestina</b> di Fernando de Rojas (unità 6)</li></ul></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos’è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema in spagnolo, con la traduzione.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: risposte da ripetere a voce in spagnolo.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove, in spagnolo con la traduzione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (6 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 (Siglo XV) · <b>Giorno 2</b>: unità 2 (Humanismo)</li><li><b>Giorno 3</b>: unità 3 (lírica y prosa) · <b>Giorno 4</b>: unità 4 (Romancero)</li><li><b>Giorno 5</b>: unità 5 (la novela) · <b>Giorno 6</b>: unità 6 (La Celestina), Prova finale, Orale e Riepilogo</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c’è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Premi <b>🔊 Ascolta</b>: la voce legge lo spagnolo con pronuncia spagnola e l’italiano con pronuncia italiana.</li><li>Ripeti <b>a voce alta</b>, in spagnolo, le risposte dell’Orale.</li><li>Impara le date con la linea del tempo del Riepilogo: 1440, 1474, 1492, 1500, 1502.</li><li>Ricorda le coppie: <b>arte menor</b> (8 sillabe o meno) / <b>arte mayor</b> (9 o più) · <b>novela idealista</b> (4 tipi) / <b>novela realista</b> (picaresca) · <b>Comedia</b> (16 atti) / <b>Tragicomedia</b> (21 atti).</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un’altra domanda.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const NAMES=['Marco','Giulia','Luca','Sara','Paolo','Elena','Davide','Chiara','Andrea','Francesca','Matteo','Anna'];
+const names=n=>shuffle(NAMES).slice(0,n);
+const eur=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
+
+
+/* ========== SPAGNOLO 4 ES: GENERATORI ========== */
+const wy=(a,b)=>`<p lang="es">${a}</p><p class="tr">${b}</p>`;
+const mkE=(q,c,w,steps,tag)=>mkEx(q,E(c),w.map(E),steps,tag);
+const ROWS=(tag,rows)=>()=>{const r=pick(rows);return mkE(QI(r[0],r[1]),r[2],r[3],wy(r[4],r[5]),tag)};
+/* ---- unità 1 ---- */
+const ROWS1=ROWS('El siglo XV',[
+ ['¿En qué año sube al trono Isabel?','In che anno sale al trono Isabella?','1474',['1492','1440'],'Isabel sube al trono en 1474.','Isabella sale al trono nel 1474.'],
+ ['¿Qué conquistan los Reyes Católicos en 1492?','Che cosa conquistano i Re Cattolici nel 1492?','Granada y las Canarias',['Sevilla y Toledo','Aragón y Castilla'],'En 1492 conquistan Granada y las Canarias.','Nel 1492 conquistano Granada e le Canarie.'],
+ ['¿Qué tribunal nace con los Reyes Católicos?','Quale tribunale nasce con i Re Cattolici?','La Santa Inquisición',['La Santa Hermandad','El cancionero'],'La Santa Inquisición es un tribunal de censura y control de las obras escritas.','La Santa Inquisición è un tribunale di censura e controllo delle opere scritte.'],
+ ['¿Qué corpo armado nace para reforzar la monarquía?','Quale corpo armato nasce per rafforzare la monarchia?','La Santa Hermandad',['La Santa Inquisición','La burguesía'],'La Santa Hermandad refuerza el poder de la monarquía.','La Santa Hermandad rafforza il potere della monarchia.'],
+ ['¿Qué se inventa hacia 1440?','Che cosa si inventa intorno al 1440?','La imprenta',['Las gafas','La pólvora'],'Hacia 1440 se inventa la imprenta.','Intorno al 1440 si inventa la stampa.'],
+ ['¿Qué decreto expulsa a los judíos en 1492?','Quale decreto espelle gli ebrei nel 1492?','El Decreto de la Alhambra',['La Tragicomedia','La Santa Hermandad'],'El Decreto de la Alhambra expulsa a los judíos en 1492.','Il Decreto de la Alhambra espelle gli ebrei nel 1492.'],
+ ['¿Qué nueva clase social nace con las actividades mercantiles?','Quale nuova classe sociale nasce con le attività commerciali?','La burguesía',['La nobleza','El clero'],'Nacen nuevas actividades mercantiles y la burguesía.','Nascono nuove attività commerciali e la borghesia.'],
+ ['¿Por qué el siglo XV es una época de transición?','Perché il Siglo XV è un’epoca di transizione?','Porque está entre la Edad Media y el Renacimiento',['Porque dura solo un año','Porque no hay cambios'],'Es el pre-renacimiento, a medio camino entre dos épocas.','È il pre-rinascimento, a metà strada tra due epoche.']]);
+/* ---- unità 2 ---- */
+const ROWS2=ROWS('El Humanismo',[
+ ['¿Qué pone el Humanismo en el centro de todo?','Che cosa mette l’Umanesimo al centro di tutto?','El ser humano',['A Dios','La Iglesia'],'El Humanismo es antropocéntrico.','L’Umanesimo è antropocentrico.'],
+ ['¿En qué se inspiraba el Humanismo?','A che cosa si ispirava l’Umanesimo?','En el clasicismo',['En el mundo medieval','En la Santa Inquisición'],'Se estudiaban las obras clásicas, sobre todo griegas.','Si studiavano le opere classiche, soprattutto greche.'],
+ ['¿Cómo se llama la idea de poner al hombre en el centro?','Come si chiama l’idea di mettere l’uomo al centro?','Antropocentrismo',['Teocentrismo','Clasicismo'],'Antropocentrismo: el ser humano en el centro.','Antropocentrismo: l’essere umano al centro.'],
+ ['¿Qué antigüedades se estudiaban sobre todo?','Quali antichità si studiavano soprattutto?','Las griegas',['Las egipcias','Las árabes'],'Se estudiaban las antigüedades clásicas, sobre todo griegas.','Si studiavano le antichità classiche, soprattutto greche.']]);
+/* ---- unità 3 ---- */
+const ROWS3=ROWS('La lírica y la prosa',[
+ ['¿Cuántas sílabas tiene un verso de arte menor?','Quante sillabe ha un verso di arte menor?','Ocho o menos',['Nueve o más','Siempre diez'],'Arte menor: ocho sílabas o menos.','Arte menor: otto sillabe o meno.'],
+ ['¿Cuántas sílabas tiene un verso de arte mayor?','Quante sillabe ha un verso di arte mayor?','Nueve o más',['Ocho o menos','Siempre seis'],'Arte mayor: nueve sílabas o más.','Arte mayor: nove sillabe o più.'],
+ ['¿Cómo es la poesía popular?','Com’è la poesia popolare?','Simple y directa',['Culta y cortesana','Siempre en latín'],'La poesía popular es simple y directa.','La poesia popolare è semplice e diretta.'],
+ ['¿Cómo es la poesía culta?','Com’è la poesia colta?','Culta y cortesana',['Simple y directa','Anónima siempre'],'La poesía culta es culta y cortesana.','La poesia colta è colta e cortigiana.'],
+ ['¿Cuál es el tema principal de la poesía culta?','Qual è il tema principale della poesia colta?','El amor cortés',['La guerra','La religión'],'El tema principal es el amor cortés.','Il tema principale è l’amore cortese.'],
+ ['¿Dónde se recogía la poesía culta?','Dove veniva raccolta la poesia colta?','En los cancioneros',['En los cantares de gesta','En la Tragicomedia'],'La poesía culta se recoge en los cancioneros.','La poesia colta viene raccolta nei cancioneros.'],
+ ['¿Quién es el protagonista de las narraciones caballerescas?','Chi è il protagonista delle narrazioni cavalleresche?','El héroe caballero',['El pícaro','El rey'],'El héroe caballero es el protagonista.','L’eroe cavaliere è il protagonista.']]);
+/* ---- unità 4 ---- */
+const ROWS4=ROWS('El Romancero Viejo',[
+ ['¿Los romances son…','I romances sono…','Anónimos',['Firmados por un autor','Escritos solo en prosa'],'Los romances son anónimos.','I romances sono anonimi.'],
+ ['¿Quién cantaba los romances?','Chi cantava i romances?','Los juglares',['Los reyes','Los caballeros'],'Los juglares cantaban los romances.','I juglares cantavano i romances.'],
+ ['¿De dónde provienen los romances?','Da dove provengono i romances?','De la división de los cantares de gesta',['De los cancioneros','De la novela picaresca'],'Provienen de la división de los cantares de gesta.','Provengono dalla divisione dei cantares de gesta.'],
+ ['¿Cuándo nace el Romancero Viejo?','Quando nasce il Romancero Viejo?','A mediados del siglo XIV',['En el siglo XV','En 1492'],'Nace a mediados del siglo catorce.','Nasce a metà del Trecento.'],
+ ['¿Cuándo se desarrolla el Romancero Viejo?','Quando si sviluppa il Romancero Viejo?','Durante el siglo XV',['Durante el siglo XIV','Durante el siglo XVI'],'Se desarrolla durante el siglo quince.','Si sviluppa durante il Quattrocento.'],
+ ['¿Cómo es el estilo del Romancero?','Com’è lo stile del Romancero?','Simple, esencial y fragmentario',['Complejo y culto','Siempre en prosa'],'Estilo simple, esencial, fragmentario, con diálogos.','Stile semplice, essenziale, frammentario, con dialoghi.'],
+ ['¿Qué tiene en abundancia el estilo del Romancero?','Che cosa ha in abbondanza lo stile del Romancero?','Diálogos',['Descripciones','Fórmulas matemáticas'],'Abundancia de diálogos.','Abbondanza di dialoghi.']]);
+const TEMAS=['histórico','de amor','carolingio','fronterizo','lírico','novelesco'];
+const exTema=()=>{
+  const t=pick(TEMAS);
+  const w=['picaresco','bizantino','pastoril'];
+  return mkE(QI('¿Cuál de estos es un tema del Romancero Viejo?','Quale di questi è un tema del Romancero Viejo?'),t,shuffle(w),wy(`Los temas del Romancero: histórico, de amor, carolingios, fronterizos, líricos, novelescos.`,'I temi del Romancero: storico, d’amore, carolingio, di frontiera, lirico, novelesco.'),'Los temas del Romancero');
+};
+/* ---- unità 5 ---- */
+const ROWS5=ROWS('La novela en el Renacimiento',[
+ ['¿Qué género es el más utilizado en el Renacimiento?','Quale genere è il più usato nel Rinascimento?','La novela',['El teatro','La poesía épica'],'La novela es el género más utilizado.','La novela è il genere più usato.'],
+ ['¿Cómo se divide la novela en el Renacimiento?','Come si divide la novela nel Rinascimento?','En idealista y realista',['En culta y popular','En larga y breve'],'Se divide en novela idealista y novela realista.','Si divide in novela idealista e novela realista.'],
+ ['¿Cuál de estas es una novela idealista?','Quale di questi è un romanzo idealista?','La novela de caballerías',['La novela picaresca','Ninguna'],'Idealistas: caballerías, pastoril, morisca, bizantina.','Idealiste: caballerías, pastoril, morisca, bizantina.'],
+ ['¿Qué novela realista existe?','Quale romanzo realista esiste?','La novela picaresca',['La novela bizantina','La novela morisca'],'La única novela realista es la picaresca.','L’unico romanzo realista è la picaresca.'],
+ ['¿Cómo son los personajes de la novela picaresca?','Come sono i personaggi del romanzo picaresco?','Pobres y de clase social baja',['Caballeros y damas','Reyes y nobles'],'Personajes pobres, de clase social baja.','Personaggi poveri, di classe sociale bassa.'],
+ ['¿Qué visión de la vida tiene la novela realista?','Quale visione della vita ha il romanzo realista?','Pesimista',['Optimista','Idealizada'],'Visión pesimista de la vida.','Visione pessimista della vita.'],
+ ['¿Qué critica la novela realista?','Che cosa critica il romanzo realista?','A la sociedad',['A la Iglesia solamente','A los Reyes Católicos'],'Critica la sociedad: un mundo de maldad e injusticia.','Critica la società: un mondo di cattiveria e ingiustizia.'],
+ ['¿Dónde viven los personajes de la novela pastoril?','Dove vivono i personaggi del romanzo pastorale?','En el mundo de los pastores',['En el mar','En la ciudad'],'La novela pastoril está ambientada en el mundo pastoril.','Il romanzo pastorale è ambientato nel mondo dei pastori.']]);
+const exNovIdeal=()=>{
+  const T=[['de caballerías','héroes caballeros con sus damas','eroi cavalieri con le loro dame'],['pastoril','ambientada en el mundo de los pastores','ambientato nel mondo dei pastori'],['morisca','temas del mundo musulmán de España','temi del mondo musulmano di Spagna'],['bizantina','aventuras y viajes','avventure e viaggi']];
+  const i=rnd(0,3),t=T[i];
+  return mkE(QI(`¿Qué novela idealista tiene: <i>${t[1]}</i>?`,`Quale romanzo idealista ha: ${t[2]}?`),'novela '+t[0],T.filter((_,k)=>k!==i).slice(0,2).map(x=>'novela '+x[0]),wy(`novela ${t[0]}: ${t[1]}.`,`romanzo ${t[0]}: ${t[2]}.`),'Los cuatro tipos de novela idealista');
+};
+/* ---- unità 6 ---- */
+const ROWS6=ROWS('La Celestina',[
+ ['¿Quién es el autor de La Celestina?','Chi è l’autore de La Celestina?','Fernando de Rojas',['Juan de Mena','Garcilaso de la Vega'],'El autor es Fernando de Rojas.','L’autore è Fernando de Rojas.'],
+ ['¿Dónde se licenció Fernando de Rojas?','Dove si laureò Fernando de Rojas?','En Salamanca',['En Toledo','En Madrid'],'Se licenció en Derecho en Salamanca.','Si laureò in Diritto a Salamanca.'],
+ ['¿Cuántos actos tiene la Comedia de Calisto y Melibea?','Quanti atti ha la Comedia de Calisto y Melibea?','16',['21','28'],'La Comedia tiene dieciséis actos.','La Comedia ha sedici atti.'],
+ ['¿Cuántos actos tiene la Tragicomedia de Calisto y Melibea?','Quanti atti ha la Tragicomedia de Calisto y Melibea?','21',['16','10'],'La Tragicomedia tiene veintiún actos.','La Tragicomedia ha ventuno atti.'],
+ ['¿Quién es Celestina?','Chi è Celestina?','Una alcahueta',['La protagonista enamorada','La madre de Melibea'],'Celestina es una alcahueta (mezzana).','Celestina è un’alcahueta (mezzana).'],
+ ['¿De quién se enamora Calisto?','Di chi si innamora Calisto?','De Melibea',['De Celestina','De Areúsa'],'Calisto se enamora de Melibea.','Calisto si innamora di Melibea.'],
+ ['¿Por qué matan los criados a Celestina?','Perché i servi uccidono Celestina?','Por una cadena de oro',['Por venganza política','Por error'],'La matan por una cadena de oro.','La uccidono per una catena d’oro.'],
+ ['¿Cómo muere Calisto?','Come muore Calisto?','Cae de una escalera',['En un duelo','De enfermedad'],'Muere cayendo de una escalera.','Muore cadendo da una scala.'],
+ ['¿Qué hace Melibea al final?','Che cosa fa Melibea alla fine?','Se suicida',['Se casa con Calisto','Huye a Salamanca'],'Melibea se suicida.','Melibea si suicida.'],
+ ['¿Qué tipo de obra es La Celestina?','Che tipo di opera è La Celestina?','Una obra dialogada',['Una obra de teatro para representar','Un poema épico'],'Es una obra dialogada, pensada para la lectura en voz alta.','È un’opera dialogata, pensata per la lettura ad alta voce.']]);
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`<span>Quale termine spagnolo corrisponde a questo significato?</span><br><i>${L[i][1]}</i>`,E(L[i][0]),others.slice(0,2).map(x=>E(x[0])),`<p>${L[i][1]}</p><p>Risposta: ${B(E(L[i][0]))}.</p>`,'Palabras y significados');
+  return mkEx(`<span>Che cosa significa</span> ${B(E(L[i][0]))}?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(E(L[i][0]))}: ${L[i][1]}</p>`,'Palabras y significados');
+};
+const GENS={
+ u1:[ROWS1,ROWS1,ROWS1,exDef('u1')],
+ u2:[ROWS2,ROWS2,exDef('u2')],
+ u3:[ROWS3,ROWS3,ROWS3,exDef('u3')],
+ u4:[ROWS4,ROWS4,ROWS4,exTema,exDef('u4')],
+ u5:[ROWS5,ROWS5,ROWS5,exNovIdeal,exNovIdeal,exDef('u5')],
+ u6:[ROWS6,ROWS6,ROWS6,ROWS6,exDef('u6')]
+};
+const UNITS={u1:'1 · El siglo XV: época de transición',u2:'2 · El Humanismo',u3:'3 · La lírica y la prosa',u4:'4 · El Romancero Viejo',u5:'5 · La novela en el Renacimiento',u6:'6 · La Celestina de Fernando de Rojas'};
+const PROVA_PLAN={u1:3,u2:2,u3:3,u4:3,u5:2,u6:2};
+
+/* ========== SPAGNOLO 4 ES: aiuti comuni ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const LI=l=>'<ul>'+l.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+const E=s=>`<span lang="es">${s}</span>`;
+const es=s=>`<b lang="es">${s}</b>`;
+const S2=(a,b)=>`<span lang="es">${a}</span><br><span class="tr">${b}</span>`;
+const EN=(a,b)=>`<p lang="es">${a}</p><p class="tr">${b}</p>`;
+const QI=(a,b)=>`<span lang="es">${a}</span><br><span class="tr">${b}</span>`;
+/* ========== CONTENUTI (parte 1: unità 1-3) ========== */
+const DEFS={
+u1:[
+ ['época de transición','periodo di passaggio: il Siglo XV è a metà tra Medioevo e Rinascimento (è il “pre-rinascimento”).'],
+ ['Reyes Católicos','Isabella di Castiglia e Ferdinando d’Aragona, i re che uniscono la Spagna.'],
+ ['Santa Hermandad','corpo armato creato dai Re Cattolici per rafforzare l’ordine e il potere della monarchia.'],
+ ['Santa Inquisición','tribunale di censura e controllo delle opere scritte, nato in questo periodo.'],
+ ['Decreto de la Alhambra','il decreto del 1492 con cui i Re Cattolici espellono gli ebrei dalla Spagna.'],
+ ['burguesía','la nuova classe sociale dei mercanti, nata con le attività commerciali.']],
+u2:[
+ ['Humanismo','corrente di pensiero che mette l’essere umano al centro di tutto (antropocentrismo).'],
+ ['antropocentrismo','l’idea che l’uomo, non Dio, sia al centro dell’attenzione: tipica dell’Umanesimo.'],
+ ['clasicismo','il modello delle opere dell’antichità greca e latina, studiato e imitato dagli umanisti.']],
+u3:[
+ ['poesía culta','poesia colta, cortigiana, scritta per un pubblico raffinato.'],
+ ['poesía popular','poesia semplice e diretta, vicina al popolo.'],
+ ['amor cortés','il tema dell’amore cortese: un amore idealizzato, spesso impossibile, tipico della poesia colta.'],
+ ['cancionero','raccolta di poesie del Quattrocento spagnolo (“cancioniere”).'],
+ ['verso de arte menor','verso di 8 sillabe o meno, nella poesia dei cancioneros.'],
+ ['verso de arte mayor','verso di 9 sillabe o più, nella poesia dei cancioneros.'],
+ ['narraciones caballerescas','racconti in prosa dove il protagonista è un cavaliere eroe (novelas de caballerías).']],
+u4:[
+ ['Romancero Viejo','insieme dei romances anonimi, nati a metà del Trecento e sviluppati nel Quattrocento.'],
+ ['romance','breve componimento in versi, anonimo, trasmesso oralmente, cantato dai juglares.'],
+ ['juglar','il cantastorie medievale che cantava i romances davanti al pubblico.'],
+ ['cantar de gesta','lungo poema epico medievale, da cui derivano (per frammentazione) i romances.'],
+ ['romance fronterizo','romance a tema di frontiera, sui conflitti tra cristiani e musulmani.'],
+ ['romance carolingio','romance ispirato ai cicli epici legati a Carlo Magno.']],
+u5:[
+ ['novela idealista','racconta una realtà idealizzata, non concreta (per esempio eroi cavalieri e dame).'],
+ ['novela realista','racconta la realtà vera, spesso cruda: personaggi poveri, visione pessimista.'],
+ ['novela de caballerías','romanzo idealista: eroi cavalieri con le loro dame.'],
+ ['novela pastoril','romanzo idealista ambientato nel mondo dei pastori.'],
+ ['novela morisca','romanzo idealista su temi legati al mondo musulmano di Spagna (mori).'],
+ ['novela bizantina','romanzo idealista di avventura e viaggi, sul modello dei romanzi greci antichi.'],
+ ['novela picaresca','romanzo realista: racconta la vita di un pícaro (furfante) povero, in modo satirico.']],
+u6:[
+ ['Fernando de Rojas','l’autore de “La Celestina”: giurista, laureato a Salamanca, vissuto a Talavera de la Reina.'],
+ ['Comedia de Calisto y Melibea','prima versione de “La Celestina” (16 atti).'],
+ ['Tragicomedia de Calisto y Melibea','seconda versione, più lunga (21 atti), dello stesso testo.'],
+ ['alcahueta','mezzana: il ruolo di Celestina, che fa innamorare Melibea di Calisto.'],
+ ['obra dialogada','opera scritta tutta in dialoghi, senza narratore: non è pensata per il teatro ma per la lettura ad alta voce.'],
+ ['loco amor','“amore folle”: l’amore passionale e distruttivo di Calisto per Melibea.']]
+};
+const CONT={};
+CONT.u1={
+ cose:`<div class="box bia"><p>Il <b>Siglo XV</b> (${E('siglo XV')}) è un’<b>época de transición</b> tra Medioevo e Rinascimento: per questo si chiama anche <b>pre-rinascimento</b>. È un periodo di <b>crisi di valori ed economico-sociale</b>, ma anche di grandi cambiamenti con i <b>Reyes Católicos</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Un’epoca di transizione',stepsHtml([
+   `Il Siglo XV è ${es('una época de transición')}: sta a metà tra Medioevo e Rinascimento.`,
+   'C’è una <b>crisi di valori</b> e una <b>crisi economico-sociale</b>.'])),
+  card('ver','2 · I Reyes Católicos e lo Stato moderno',stepsHtml([
+   `Nel <b>1474</b> sale al trono <b>Isabella</b> (${es('Isabel')}): un regno forte.`,
+   'Nasce lo <b>Stato moderno</b>: la monarchia si rafforza e nasce la <b>Santa Hermandad</b>.',
+   'Nasce la <b>Santa Inquisición</b>: tribunale di censura e controllo delle opere scritte.'])),
+  card('gia','3 · L’espansione',stepsHtml([
+   `Politica di <b>espansione</b> verso il sud e il Mediterraneo.`,
+   'Nel <b>1492</b>: <b>conquista di Granada</b>.',
+   'Conquista delle <b>Canarie</b>.',
+   `Nel 1492, con il <b>Decreto de la Alhambra</b>, gli ebrei vengono <b>espulsi</b> dalla Spagna. (I musulmani di Spagna sono costretti a convertirsi solo più tardi, nel 1502: la loro vera espulsione avverrà nel Seicento.)`])),
+  card('ros','4 · Progresso tecnico e nuove classi sociali',stepsHtml([
+   'Intorno al <b>1440</b>: <b>invenzione della stampa</b>.',
+   'Si diffonde l’uso degli <b>occhiali</b>.',
+   'Nuove <b>attività commerciali</b> e nuove classi sociali: nasce la <b>borghesia</b> (<i>burguesía</i>).'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Perché il Siglo XV è detto época de transición?»</b> Perché sta a metà tra Medioevo e Rinascimento: è il pre-rinascimento, un periodo di crisi di valori ed economico-sociale.</p>
+ <p><b>«Che cosa fanno i Reyes Católicos?»</b> Isabella sale al trono nel 1474; la monarchia si rafforza (Santa Hermandad, Santa Inquisición); nel 1492 conquistano Granada e le Canarie ed espellono gli ebrei.</p>
+ <p><b>«Quali novità tecniche e sociali ci sono?»</b> L’invenzione della stampa (1440 circa), l’uso degli occhiali, nuove attività commerciali e la nascita della borghesia.</p></div>`,
+ errori:['<b>1474</b> = Isabella sale al trono. <b>1492</b> = conquista di Granada ed espulsione degli ebrei: non scambiare le date.','La <b>Santa Hermandad</b> è un corpo armato per l’ordine; la <b>Santa Inquisición</b> è un tribunale di censura: sono due cose diverse.','Gli <b>ebrei</b> furono espulsi nel 1492; i <b>musulmani</b> di Spagna furono costretti a convertirsi solo nel 1502, e la loro espulsione vera avvenne molto dopo (primo Seicento).','La stampa si inventa intorno al <b>1440</b> (non nel Cinquecento).'],
+ orale:[
+  [QI('¿Por qué el siglo XV es una época de transición?','Perché il Siglo XV è un’epoca di transizione?'),EN('Porque está a medio camino entre la Edad Media y el Renacimiento: es el pre-renacimiento, una época de crisis de valores y económico-social.','Perché sta a metà tra Medioevo e Rinascimento: è il pre-rinascimento, un’epoca di crisi di valori ed economico-sociale.')],
+  [QI('¿Qué hacen los Reyes Católicos?','Che cosa fanno i Re Cattolici?'),EN('En 1474 sube al trono Isabel. La monarquía se refuerza con la Santa Hermandad y nace la Santa Inquisición. En 1492 conquistan Granada y las Canarias, y expulsan a los judíos.','Nel 1474 sale al trono Isabella. La monarchia si rafforza con la Santa Hermandad e nasce la Santa Inquisición. Nel 1492 conquistano Granada e le Canarie, ed espellono gli ebrei.')],
+  [QI('¿Qué avances tecnológicos y sociales hay?','Quali progressi tecnici e sociali ci sono?'),EN('La invención de la imprenta hacia 1440, el uso de las gafas, y nuevas actividades mercantiles con el nacimiento de la burguesía.','L’invenzione della stampa intorno al 1440, l’uso degli occhiali, e nuove attività commerciali con la nascita della borghesia.')],
+ ],
+ quiz:[
+  ['¿En qué año sube al trono Isabel?','1474',['1492','1440'],'1474: Isabel sube al trono.'],
+  ['¿Qué conquistan los Reyes Católicos en 1492?','Granada y las Canarias',['Sevilla y Toledo','Aragón y Castilla'],'1492: conquista de Granada y Canarias.'],
+  ['¿Qué tribunal nace con los Reyes Católicos?','La Santa Inquisición',['La Santa Hermandad','El cancionero'],'Tribunal de censura y control de las obras escritas.'],
+  ['¿Qué se inventa hacia 1440?','La imprenta',['Las gafas','La pólvora'],'Invención de la imprenta.']]
+};
+CONT.u2={
+ cose:`<div class="box bia"><p>L’<b>Humanismo</b> è la corrente di pensiero che mette <b>l’essere umano al centro di tutto</b> (<b>antropocentrismo</b>). Si ispira al <b>classicismo</b>: si studiano le <b>opere classiche</b>, soprattutto greche.</p></div>`,
+ ricette:[
+  card('blu','1 · L’uomo al centro',stepsHtml([
+   `L’Umanesimo ${es('pone el ser humano al centro de todo')}: è l’antropocentrismo.`])),
+  card('ver','2 · Ispirazione classica',stepsHtml([
+   'Si ispira al <b>classicismo</b>.',
+   'Si studiano le <b>opere classiche</b>.',
+   'In particolare le <b>antichità classiche greche</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’Humanismo?»</b> È la corrente che mette l’essere umano al centro di tutto (antropocentrismo), ispirandosi al classicismo e studiando le opere classiche, soprattutto greche.</p></div>`,
+ errori:['L’Umanesimo mette al centro l’<b>uomo</b>, non Dio: è <b>antropocentrico</b>, non teocentrico.','Si ispira al <b>classicismo</b> (le opere antiche), non al mondo medievale.'],
+ orale:[
+  [QI('¿Qué es el Humanismo?','Che cos’è l’Humanismo?'),EN('Es la corriente que pone al ser humano en el centro de todo: el antropocentrismo. Se inspiraba en el clasicismo y se estudiaban las obras clásicas, sobre todo griegas.','È la corrente che mette l’essere umano al centro di tutto: l’antropocentrismo. Si ispirava al classicismo e si studiavano le opere classiche, soprattutto greche.')],
+ ],
+ quiz:[
+  ['¿Qué pone el Humanismo en el centro?','El ser humano',['A Dios','La Iglesia'],'Antropocentrismo.'],
+  ['¿En qué se inspiraba el Humanismo?','En el clasicismo',['En el mundo medieval','En la Santa Inquisición'],'Se estudiaban las obras clásicas, sobre todo griegas.']]
+};
+CONT.u3={
+ cose:`<div class="box bia"><p>Nel Siglo XV fioriscono la <b>lírica</b> (poesia) e la <b>prosa</b>. La poesia è divisa tra <b>poesía culta</b> (colta) e <b>poesía popular</b> (popolare); il tema principale è l’<b>amor cortés</b>. La prosa racconta <b>narraciones caballerescas</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · La poesía: culta e popular',TAB(['Tipo','Com’è'],[['<b>poesía culta</b>, cortesana','poesia colta, per un pubblico raffinato'],['<b>poesía popular</b>','semplice e diretta']])+'<p class="note">Il tema principale: l’<b>amor cortés</b> (amore cortese).</p>'),
+  card('ver','2 · I cancioneros: arte menor e arte mayor',stepsHtml([
+   'Le poesie colte sono raccolte nei <b>cancioneros</b> (cancionieri).',
+   'I versi si dividono in due tipi: <b>arte menor</b> (8 sillabe o meno) e <b>arte mayor</b> (9 sillabe o più).'])),
+  card('gia','3 · La prosa: narraciones caballerescas',stepsHtml([
+   'Nella prosa nascono le <b>narraciones caballerescas</b>.',
+   'Il <b>protagonista</b> è l’<b>eroe cavaliere</b> (el héroe).'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Come si divide la poesía del Siglo XV?»</b> In poesía culta (cortesana) e poesía popular (semplice e diretta); il tema principale è l’amor cortés.</p>
+ <p><b>«Che cosa sono i cancioneros?»</b> Le raccolte di poesia colta, con versi di arte menor (8 sillabe o meno) e arte mayor (9 sillabe o più).</p>
+ <p><b>«Che cosa racconta la prosa del periodo?»</b> Le narraciones caballerescas, dove il protagonista è l’eroe cavaliere.</p></div>`,
+ errori:['<b>Arte menor</b> = 8 sillabe o meno; <b>arte mayor</b> = 9 sillabe o più: non scambiarli.','La <b>poesía culta</b> è cortigiana e raffinata; la <b>poesía popular</b> è semplice e diretta.','Nelle narraciones caballerescas il protagonista è un <b>cavaliere</b>, non un pícaro (quello è nella novela picaresca, unità 5).'],
+ orale:[
+  [QI('¿Cómo se divide la poesía del siglo XV?','Come si divide la poesia del Siglo XV?'),EN('En poesía culta, cortesana, y poesía popular, simple y directa. El tema principal es el amor cortés.','In poesia colta, cortigiana, e poesia popolare, semplice e diretta. Il tema principale è l’amore cortese.')],
+  [QI('¿Qué son los cancioneros?','Che cosa sono i cancioneros?'),EN('Son las colecciones de poesía culta, con versos de arte menor (ocho sílabas o menos) y de arte mayor (nueve sílabas o más).','Sono le raccolte di poesia colta, con versi di arte menor (otto sillabe o meno) e arte mayor (nove sillabe o più).')],
+  [QI('¿Qué cuenta la prosa de esta época?','Che cosa racconta la prosa di questa epoca?'),EN('Las narraciones caballerescas, donde el héroe caballero es el protagonista.','Le narrazioni cavalleresche, dove l’eroe cavaliere è il protagonista.')],
+ ],
+ quiz:[
+  ['¿Cuántas sílabas tiene un verso de arte menor?','Ocho o menos',['Nueve o más','Siempre diez'],'Arte menor: 8 sílabas o menos.'],
+  ['¿Cómo es la poesía popular?','Simple y directa',['Culta y cortesana','Siempre en latín'],'Poesía popular: simple y directa.'],
+  ['¿Cuál es el tema principal de la poesía culta?','El amor cortés',['La guerra','La religión'],'Amor cortés.'],
+  ['¿Quién es el protagonista de las narraciones caballerescas?','El héroe caballero',['El pícaro','El rey'],'El héroe caballero.']]
+};
+/* ========== CONTENUTI (parte 2: unità 4-6, glossario, riepilogo) ========== */
+CONT.u4={
+ cose:`<div class="box bia"><p>Il <b>Romancero Viejo</b> è la <b>prima forma di novela</b> (narrativa). È fatto di <b>romances</b>: brevi poesie <b>anonime</b>, nate a metà del <b>Trecento</b> e sviluppate nel <b>Quattrocento</b>, cantate dai <b>juglares</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Che cos’è',stepsHtml([
+   'È una <b>prima forma di novela</b> (narrativa).',
+   'I <b>romances</b> sono <b>anonimos</b>: nessuno ne conosce l’autore.',
+   'Trasmissione <b>orale</b>: cantati dai <b>juglares</b>.'])),
+  card('ver','2 · Nascita e origine',stepsHtml([
+   'Origine: <b>metà del Trecento</b> (<i>mediados del siglo XIV</i>).',
+   'Sviluppo: durante il <b>Quattrocento</b> (<i>siglo XV</i>).',
+   'Provengono dalla <b>divisione dei cantares de gesta</b> (i lunghi poemi epici si frammentano in romances).'])),
+  card('gia','3 · I temi principali',TAB(['Tema'],[['<b>histórico</b> (storico)'],['<b>de amor</b> (d’amore)'],['<b>carolingio</b> (ciclo di Carlo Magno)'],['<b>fronterizo</b> (di frontiera, cristiani e musulmani)'],['<b>lírico</b>'],['<b>novelesco</b>']])),
+  card('ros','4 · Lo stile',stepsHtml([
+   '<b>Semplice ed essenziale</b>.',
+   '<b>Frammentario</b>.',
+   '<b>Abbondanza di dialoghi</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è il Romancero Viejo?»</b> È la prima forma di narrativa: romances anonimi, nati a metà del Trecento e sviluppati nel Quattrocento, cantati dai juglares.</p>
+ <p><b>«Da dove vengono i romances?»</b> Dalla divisione dei cantares de gesta: i lunghi poemi epici si frammentano in romances più brevi.</p>
+ <p><b>«Quali sono i temi e lo stile?»</b> Temi: storico, d’amore, carolingio, di frontiera, lirico, novelesco. Stile: semplice ed essenziale, frammentario, con molti dialoghi.</p></div>`,
+ errori:['I romances sono <b>anonimi</b>: non hanno un autore conosciuto.','Origine: <b>metà del Trecento</b>; sviluppo: <b>Quattrocento</b>. Non scambiare i due secoli.','I romances derivano dalla <b>divisione</b> dei cantares de gesta, non sono la stessa cosa.','I temi sono <b>sei</b>: storico, d’amore, carolingio, di frontiera, lirico, novelesco.'],
+ orale:[
+  [QI('¿Qué es el Romancero Viejo?','Che cos’è il Romancero Viejo?'),EN('Era una primera forma de novela. Los romances eran anónimos, de transmisión oral, cantados por juglares.','Era una prima forma di narrativa. I romances erano anonimi, a trasmissione orale, cantati dai juglares.')],
+  [QI('¿Cuándo nace y se desarrolla el Romancero?','Quando nasce e si sviluppa il Romancero?'),EN('Su origen está a mediados del siglo catorce, y se desarrolla durante el siglo quince.','La sua origine è a metà del Trecento, e si sviluppa durante il Quattrocento.')],
+  [QI('¿De dónde vienen los romances?','Da dove vengono i romances?'),EN('Provienen de la división de los cantares de gesta.','Derivano dalla divisione dei cantares de gesta.')],
+  [QI('¿Cuáles son las temáticas principales?','Quali sono i temi principali?'),EN('Histórico, de amor, carolingios, fronterizos, líricos y novelescos.','Storico, d’amore, carolingio, di frontiera, lirico, novelesco.')],
+  [QI('¿Cómo es el estilo del Romancero?','Com’è lo stile del Romancero?'),EN('Simple y esencial, fragmentario, con abundancia de diálogos.','Semplice ed essenziale, frammentario, con abbondanza di dialoghi.')],
+ ],
+ quiz:[
+  ['¿Los romances son…','Anónimos',['Firmados por un autor','Escritos solo en prosa'],'Romances anónimos.'],
+  ['¿Quién cantaba los romances?','Los juglares',['Los reyes','Los caballeros'],'Transmisión oral, cantados por juglares.'],
+  ['¿De dónde provienen los romances?','De la división de los cantares de gesta',['De los cancioneros','De la novela picaresca'],'División de los cantares de gesta.'],
+  ['¿Cuál de estos NO es un tema del Romancero?','Picaresco',['Fronterizo','Carolingio'],'Los temas son: histórico, de amor, carolingios, fronterizos, líricos, novelescos.']]
+};
+CONT.u5={
+ cose:`<div class="box bia"><p>La <b>novela</b> è il genere più usato nel Rinascimento. Si divide in due tipi: <b>novela idealista</b> (racconta una realtà idealizzata) e <b>novela realista</b> (racconta la realtà vera, spesso cruda).</p></div>`,
+ ricette:[
+  card('blu','1 · Due tipi di novela',TAB(['Tipo','Che cos’è'],[['<b>novela idealista</b>','racconta una realtà idealizzata, non concreta'],['<b>novela realista</b>','racconta la realtà vera, spesso cruda']])),
+  card('ver','2 · Le novelas idealistas (quattro tipi)',TAB(['Tipo'],[['<b>novela de caballerías</b>: eroi cavalieri con le loro dame'],['<b>novela pastoril</b>: ambientata nel mondo dei pastori'],['<b>novela morisca</b>: temi legati al mondo musulmano di Spagna'],['<b>novela bizantina</b>: avventura e viaggi']])),
+  card('gia','3 · La novela realista',stepsHtml([
+   'Comprende la <b>novela picaresca</b>.',
+   'È <b>autobiografica</b>.',
+   'Ha <b>personaggi poveri</b>, di classe sociale bassa.',
+   'È <b>satirica</b>.',
+   'Ha una <b>visione pessimista</b> della vita.',
+   'Critica la società: un mondo di <b>cattiveria e ingiustizia</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Come si divide la novela del Rinascimento?»</b> In novela idealista (realtà idealizzata, come le novelas de caballerías) e novela realista (realtà vera, come la novela picaresca).</p>
+ <p><b>«Com’è la novela picaresca?»</b> È autobiografica, con personaggi poveri, satirica, con una visione pessimista della vita: critica la società, un mondo di cattiveria e ingiustizia.</p></div>`,
+ errori:['Le novelas <b>idealiste</b> sono quattro: caballerías, pastoril, morisca, bizantina. La novela <b>realista</b> è la picaresca.','La novela picaresca è <b>realista</b>, non idealista.','La novela de caballerías ha <b>cavalieri e dame</b>; non confonderla con la picaresca, che ha personaggi poveri.'],
+ orale:[
+  [QI('¿Cómo se divide la novela en el Renacimiento?','Come si divide la novela nel Rinascimento?'),EN('En novela idealista, que vive una realidad idealizada, y novela realista.','In novela idealista, che vive una realtà idealizzata, e novela realista.')],
+  [QI('¿Qué novelas comprende la idealista?','Quali romanzi comprende l’idealista?'),EN('La novela de caballerías, la novela pastoril, la novela morisca y la novela bizantina.','Il romanzo di cavalleria, il romanzo pastorale, il romanzo moresco e il romanzo bizantino.')],
+  [QI('¿Cómo es la novela realista?','Com’è la novela realista?'),EN('Comprende la novela picaresca. Es autobiográfica, tiene personajes pobres y de clase social baja, es satírica, con una visión pesimista de la vida, y critica la sociedad.','Comprende il romanzo picaresco. È autobiografico, ha personaggi poveri e di classe sociale bassa, è satirico, con una visione pessimista della vita, e critica la società.')],
+ ],
+ quiz:[
+  ['¿Qué género es el más utilizado en el Renacimiento?','La novela',['El teatro','La poesía épica'],'La novela.'],
+  ['¿Cuál de estas es una novela idealista?','La novela de caballerías',['La novela picaresca','Ninguna'],'Idealistas: caballerías, pastoril, morisca, bizantina.'],
+  ['¿Cómo son los personajes de la novela picaresca?','Pobres y de clase social baja',['Caballeros y damas','Reyes y nobles'],'Novela realista: personajes pobres.'],
+  ['¿Qué visión de la vida tiene la novela realista?','Pesimista',['Optimista','Idealizada'],'Visión pesimista de la vida.']]
+};
+CONT.u6={
+ cose:`<div class="box bia"><p><b>La Celestina</b> è l’opera di <b>Fernando de Rojas</b>. Esistono due versioni: la <b>Comedia de Calisto y Melibea</b> (16 atti) e la <b>Tragicomedia de Calisto y Melibea</b> (21 atti). Non è nel materiale della tua insegnante ma è un’opera molto importante: i fatti qui sotto sono stati verificati su fonti esterne, segnalati come tali.</p></div>`,
+ ricette:[
+  card('blu','1 · L’autore e le due versioni',stepsHtml([
+   `<b>Fernando de Rojas</b>: giurista, laureato in Diritto a <b>Salamanca</b>, visse e lavorò a <b>Talavera de la Reina</b> (1465 circa - 1541).`,
+   `<b>Comedia de Calisto y Melibea</b>: prima versione, <b>16 atti</b> (circa 1500).`,
+   `<b>Tragicomedia de Calisto y Melibea</b>: seconda versione, più lunga, <b>21 atti</b> (1502).`])),
+  card('ver','2 · Il genere',stepsHtml([
+   `È un’<b>obra dialogada</b>: tutta scritta in dialoghi, senza narratore.`,
+   'Non è pensata per il teatro, ma per la <b>lettura ad alta voce</b>, drammatizzata.'])),
+  card('gia','3 · La trama',stepsHtml([
+   `<b>Calisto</b> si innamora di <b>Melibea</b>, ma viene respinto.`,
+   `Si rivolge a <b>Celestina</b>, un’<b>alcahueta</b> (mezzana): con la sua abilità fa innamorare Melibea.`,
+   `I servi di Calisto, <b>Sempronio</b> e <b>Pármeno</b>, uccidono Celestina per una catena d’oro, e vengono giustiziati.`,
+   `<b>Calisto muore</b> cadendo da una scala; <b>Melibea si toglie la vita</b>.`])),
+  card('ros','4 · I temi',TAB(['Tema','Che cos’è'],[['<b>amor</b> (loco amor)','l’amore passionale e distruttivo'],['<b>muerte</b> (morte)','il finale tragico, conseguenza degli errori'],['<b>fortuna</b>','visione pessimista: la vita è dominata da forze avverse'],['<b>clases sociales</b>','conflitto tra padroni e servi, giovani e vecchi']])+'<p class="note">Lo stile mescola un linguaggio elevato (Calisto e Melibea) e uno popolare (Celestina e i servi): per questo è un’opera di transizione tra Medioevo e Rinascimento.</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Chi è l’autore de La Celestina?»</b> Fernando de Rojas, un giurista laureato a Salamanca.</p>
+ <p><b>«Quali sono le due versioni?»</b> La Comedia de Calisto y Melibea (16 atti) e la Tragicomedia de Calisto y Melibea (21 atti).</p>
+ <p><b>«Racconta la trama.»</b> Calisto si innamora di Melibea e si rivolge a Celestina, che li fa incontrare. I servi uccidono Celestina per i soldi; Calisto muore cadendo, Melibea si toglie la vita.</p></div>`,
+ errori:['La <b>Comedia</b> ha <b>16 atti</b>; la <b>Tragicomedia</b> ne ha <b>21</b>: non scambiarle.','<b>Celestina</b> è l’alcahueta (mezzana), non la protagonista innamorata: l’innamorata è <b>Melibea</b>.','I servi uccidono Celestina per una <b>catena d’oro</b>, non per vendetta.','È un’opera <b>dialogata</b>, ma non è stata scritta per il teatro.'],
+ orale:[
+  [QI('¿Quién es el autor de La Celestina?','Chi è l’autore de La Celestina?'),EN('Fernando de Rojas, un jurista licenciado en Salamanca que vivió en Talavera de la Reina.','Fernando de Rojas, un giurista laureato a Salamanca, vissuto a Talavera de la Reina.')],
+  [QI('¿Cuáles son las dos versiones de la obra?','Quali sono le due versioni dell’opera?'),EN('La Comedia de Calisto y Melibea, con dieciséis actos, y la Tragicomedia de Calisto y Melibea, con veintiún actos.','La Comedia de Calisto y Melibea, con sedici atti, e la Tragicomedia de Calisto y Melibea, con ventuno atti.')],
+  [QI('Cuéntame el argumento.','Raccontami la trama.'),EN('Calisto se enamora de Melibea y acude a Celestina, una alcahueta, que logra que Melibea se enamore. Los criados matan a Celestina por una cadena de oro. Calisto muere al caer de una escalera, y Melibea se suicida.','Calisto si innamora di Melibea e si rivolge a Celestina, un’alcahueta, che riesce a far innamorare Melibea. I servi uccidono Celestina per una catena d’oro. Calisto muore cadendo da una scala, e Melibea si suicida.')],
+  [QI('¿Por qué es una obra de transición?','Perché è un’opera di transizione?'),EN('Mezcla elementos medievales, como el amor cortés, con elementos renacentistas, como el pensamiento humanista y el realismo social.','Mescola elementi medievali, come l’amore cortese, con elementi rinascimentali, come il pensiero umanista e il realismo sociale.')],
+ ],
+ quiz:[
+  ['¿Cuántos actos tiene la Tragicomedia de Calisto y Melibea?','21',['16','28'],'Tragicomedia: 21 actos.'],
+  ['¿Quién es Celestina?','Una alcahueta',['La protagonista enamorada','La madre de Melibea'],'Celestina es una alcahueta (mezzana).'],
+  ['¿Por qué matan los criados a Celestina?','Por una cadena de oro',['Por venganza política','Por error'],'La matan por una cadena de oro.'],
+  ['¿Cómo muere Calisto?','Cae de una escalera',['En un duelo','De enfermedad'],'Muere cayendo de una escalera.']]
+};
+const GLOSS=[...Object.keys(DEFS).flatMap(u=>DEFS[u].map(d=>[`<span lang="es">${d[0]}</span>`,d[1]]))];
+const TL=[
+ ['1440 ca.',E('invención de la imprenta')],
+ ['Mediados s. XIV',E('origen del Romancero Viejo')],
+ ['1474',E('Isabel sube al trono')],
+ ['Siglo XV',E('desarrollo del Romancero Viejo')],
+ ['1492',E('conquista de Granada y de las Canarias; expulsión de los judíos')],
+ ['1500 ca.',E('Comedia de Calisto y Melibea (16 actos)')],
+ ['1502',E('Tragicomedia de Calisto y Melibea (21 actos)')]];
+const FORMULARIO=
+ '<h3 class="sec">La linea del tempo</h3>'+TAB(['Anno','Che cosa succede'],TL.map(t=>[`<b>${t[0]}</b>`,t[1]]))+
+ '<h3 class="sec">El siglo XV: da ricordare</h3>'+
+ TAB(['Argomento','Parole chiave'],[
+  ['Reyes Católicos','Isabel (1474) · Santa Hermandad · Santa Inquisición · 1492: Granada, Canarias, judíos'],
+  ['Humanismo','antropocentrismo · clasicismo'],
+  ['Lírica','poesía culta/popular · amor cortés · cancioneros · arte menor/mayor'],
+  ['Romancero Viejo','romances anónimos · juglares · cantares de gesta · 6 temáticas'],
+  ['Novela idealista','caballerías · pastoril · morisca · bizantina'],
+  ['Novela realista','picaresca · autobiográfica · satírica · pesimista'],
+  ['La Celestina','Fernando de Rojas · Comedia (16) / Tragicomedia (21) · Calisto, Melibea, Celestina']]);
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('spagnolo4_renacimiento_celestina_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('spagnolo4_renacimiento_celestina_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Riepilogo</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Il Siglo XV è un’epoca di transizione tra Medioevo e Rinascimento.", "Nel 1474 Isabella sale al trono. Nasce la Santa Hermandad e la Santa Inquisición.", "Nel 1492: conquista di Granada e delle Canarie, ed espulsione degli ebrei.", "Si inventa la stampa (1440 circa) e nasce la borghesia."], "u2": ["L’Humanismo mette l’uomo al centro di tutto: antropocentrismo.", "Si ispira al classicismo e studia le opere greche antiche."], "u3": ["La poesia si divide in colta (amore cortese) e popolare (semplice).", "Le poesie colte si raccolgono nei cancioneros, con versi di arte menor o arte mayor.", "La prosa racconta storie di cavalieri eroi."], "u4": ["Il Romancero Viejo è la prima forma di narrativa: romances anonimi, cantati dai juglares.", "Nasce a metà del Trecento e si sviluppa nel Quattrocento.", "Derivano dalla divisione dei cantares de gesta. Sei temi, stile semplice con dialoghi."], "u5": ["La novela si divide in idealista (realtà non vera) e realista (realtà cruda).", "Idealista: caballerías, pastoril, morisca, bizantina.", "Realista: la novela picaresca, povera, satirica, pessimista."], "u6": ["La Celestina è di Fernando de Rojas: due versioni, Comedia (16 atti) e Tragicomedia (21 atti).", "Calisto si innamora di Melibea e si rivolge a Celestina, un’alcahueta.", "I servi uccidono Celestina per una catena d’oro. Calisto muore, Melibea si suicida."]}, "es": false, "steps": false, "pics": [{"k": "libro", "re": "libro|libri", "id": 25191}, {"k": "re", "re": "re", "id": 5563}, {"k": "corona", "re": "corona", "id": 2718}, {"k": "chiesa", "re": "chiesa", "id": 3118}, {"k": "citta", "re": "città", "id": 2704}, {"k": "mondo", "re": "mondo", "id": 30015}, {"k": "denaro", "re": "denaro|soldi", "id": 8506}, {"k": "donna", "re": "donna|donne", "id": 24621}, {"k": "uomo", "re": "uomo|uomini", "id": 4665}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  /* testo con parti in inglese: ogni parte con la sua voce */
+  function segs(el,dl){
+    var out=[],buf='';
+    function flush(){var t=say(buf);if(t.length>1)out.push({t:t,l:dl});buf=''}
+    (function walk(n){
+      if(n.nodeType===3){buf+=n.nodeValue;return}
+      if(n.nodeType!==1)return;
+      if(n.classList&&n.classList.contains('a11y-ui'))return;
+      var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return;
+      var LL=n.getAttribute&&n.getAttribute('lang');if(LL&&LL!=='it'){flush();var t=say(nodeText(n));if(t.length>1)out.push({t:t,l:{en:'en-GB',es:'es-ES'}[LL]||'it-IT'});return}
+      if(n.classList.contains('fr')||tg==='SUP'){buf+=nodeText(n);return}
+      n.childNodes.forEach(walk);
+    })(el);
+    flush();return out;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    var out=[];
+    els.forEach(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      var EL=e.closest('[lang]:not([lang="it"])');if(EL){var t=say(nodeText(e));var LL=EL.getAttribute('lang');if(t.length>1)out.push({t:t,l:{en:'en-GB',es:'es-ES'}[LL]||'it-IT'});return}
+      segs(e,es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    return out;
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=(c.l==='en-GB'||c.l==='es-ES')?0.8:0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     (CFG.steps?'<div class="step"><b class="n">★</b><div>Gli <b>esempi svolti</b> si aprono <b>un passo alla volta</b>: tocca <b>▶ Prossimo passo</b> e leggi con calma. Se preferisci vedere tutto, tocca <b>Mostra tutto</b>.</div></div>':'')+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)segs(qt,'it-IT').forEach(function(c){out.push(c)});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'.',l:'it-IT'});
+      segs(sp||o,CFG.es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  /* ===== ESEMPI SVOLTI UN PASSO ALLA VOLTA ===== */
+  if(CFG.steps&&location.hash!=='#stampa'){
+    var stOn=true;try{stOn=localStorage.getItem('a11y_steps')!=='0'}catch(e){}
+    var st4=document.createElement('style');
+    st4.textContent='section.tab .box.bia [hidden]{display:none!important}'+
+     '.a11y-newstep{background:#fff8dc;border-left:6px solid #d1b24a;padding:4px 8px;border-radius:6px}'+
+     '.a11y-stepper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 2px}'+
+     '.a11y-sc{font-weight:bold;font-size:.95rem;color:#22314d}'+
+     '.a11y-stepper .a11y-btn{margin:0}'+
+     '@media print{.a11y-stepper{display:none!important}section.tab .box.bia [hidden]{display:revert!important}.a11y-newstep{background:none;border:0;padding:0}}';
+    document.head.appendChild(st4);
+    var stGroups=[];
+    document.querySelectorAll('section.tab .stat .box.bia').forEach(function(box){
+      var h=box.querySelector(':scope>h3');if(!h||!/^Esempio/i.test(h.textContent))return;
+      var kids=[].slice.call(box.children).filter(function(c){return c!==h});
+      if(kids.length<3)return;
+      var isNum=function(e){return /^\s*\d+\./.test(e.textContent)};
+      var rest=kids.slice(1),groups=[];
+      if(rest.some(isNum)){
+        var started=false;
+        rest.forEach(function(e){
+          if(isNum(e)){groups.push([e]);started=true}
+          else if(started)groups[groups.length-1].push(e);
+        });
+      }else{rest.forEach(function(e){groups.push([e])})}
+      if(groups.length<2)return;
+      var idx=0,bx=mk('div','a11y-ui a11y-stepper'),go=mk('button','a11y-btn',null),all=mk('button','a11y-btn',null),cnt=mk('span','a11y-sc',null);
+      go.type='button';all.type='button';all.textContent='Mostra tutto';
+      bx.appendChild(go);bx.appendChild(cnt);bx.appendChild(all);box.appendChild(bx);
+      function paint(){
+        groups.forEach(function(g,i){g.forEach(function(e){e.hidden=stOn&&i>=idx;e.classList.toggle('a11y-newstep',stOn&&idx>0&&i===idx-1&&idx<groups.length+1)})});
+        bx.style.display=stOn?'':'none';
+        cnt.textContent='Passo '+idx+' di '+groups.length;
+        go.textContent=idx===0?'▶ Mostrami il primo passo':idx<groups.length?'▶ Prossimo passo':'↺ Ricomincia';
+        all.hidden=idx>=groups.length;
+      }
+      go.addEventListener('click',function(){
+        if(idx>=groups.length)idx=0;else idx++;
+        paint();
+        var t=idx>0?groups[idx-1][0]:box;try{t.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+      });
+      all.addEventListener('click',function(){idx=groups.length;paint()});
+      stGroups.push({paint:paint,reset:function(){idx=0}});
+      paint();
+    });
+    if(stGroups.length){
+      var sb=mk('button','a11y-btn a11y-ui',null);sb.type='button';
+      var paintSb=function(){sb.textContent='👣 Esempi un passo alla volta: '+(stOn?'SÌ':'NO');sb.classList.toggle('on',stOn);sb.setAttribute('aria-pressed',stOn?'true':'false')};
+      sb.addEventListener('click',function(){stOn=!stOn;try{localStorage.setItem('a11y_steps',stOn?'1':'0')}catch(e){};stGroups.forEach(function(g){g.reset();g.paint()});paintSb()});
+      paintSb();bar.appendChild(sb);
+    }
+  }
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261020120731",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
