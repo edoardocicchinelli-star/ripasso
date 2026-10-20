@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filosofia: dalle origini a Parmenide</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Filosofia</a></p><h1>Filosofia: dalle origini a Parmenide</h1><p>3 ES · origini, archè, indagine sull’essere · un passo alla volta</p></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Origini</button>
+<button data-t="u2">2 Retroterra e fonti</button>
+<button data-t="u3">3 Mileto</button>
+<button data-t="u4">4 Pitagorici</button>
+<button data-t="u5">5 Eraclito</button>
+<button data-t="u6">6 Parmenide</button>
+<button data-t="u7">7 Zenone</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Riepilogo</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo all’interrogazione di <b>Filosofia</b>. Il kit segue le <b>tre mappe del libro</b>: capitolo 1 (<i>Le origini della filosofia in Grecia</i>), capitolo 2 (<i>La ricerca dell’archè</i>) e capitolo 3 (<i>L’indagine sull’essere</i>). Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti. Ogni argomento ha sempre lo stesso ordine.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>Capitolo 1</b>: le origini della filosofia (unità 1), il retroterra culturale, i periodi e le fonti (unità 2)</li><li><b>Capitolo 2</b>: la scuola di Mileto (unità 3), Pitagora e i pitagorici (unità 4), Eraclito (unità 5)</li><li><b>Capitolo 3</b>: Parmenide (unità 6) e Zenone (unità 7)</li></ul></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos’è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema della mappa, passo per passo.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi da ripetere a voce.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (7 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 (origini) · <b>Giorno 2</b>: unità 2 (retroterra, periodi, fonti)</li><li><b>Giorno 3</b>: unità 3 (Mileto) · <b>Giorno 4</b>: unità 4 (pitagorici) · <b>Giorno 5</b>: unità 5 (Eraclito)</li><li><b>Giorno 6</b>: unità 6 (Parmenide) · <b>Giorno 7</b>: unità 7 (Zenone), Prova finale, Orale e Riepilogo</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c’è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti <b>a voce alta</b> le risposte dell’Orale: l’interrogazione è parlata.</li><li>Segui la mappa del libro con il dito: ogni parola sulle frecce (<i>afferma che</i>, <i>per il quale</i>, <i>da cui</i>) dice <b>come sono collegate</b> le cose.</li><li>Impara le <b>coppie filosofo → principio</b>: Talete (acqua) · Anassimandro (àpeiron) · Anassimene (aria) · pitagorici (numero) · Eraclito (lógos, fuoco).</li><li>Per Parmenide ricorda: <b>verità = ragione = essere vero</b> · <b>opinione = sensi = essere apparente</b>.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un’altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section><section class="tab" id="u7"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const NAMES=['Marco','Giulia','Luca','Sara','Paolo','Elena','Davide','Chiara','Andrea','Francesca','Matteo','Anna'];
+const names=n=>shuffle(NAMES).slice(0,n);
+const eur=n=>n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
+
+
+/* ========== FILOSOFIA 3 ES: GENERATORI ========== */
+const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+function mapGroup(tag,askL,pairs){
+  return ()=>{
+    const i=rnd(0,pairs.length-1),p=pairs[i];
+    return mkEx(askL(p[0]),p[1],p[3],wy(p[2]||`${p[0]} ${p[1]}`,p[1]),tag);
+  };
+}
+/* unità 1 */
+const exOrigini=mapGroup('Le origini della filosofia',l=>`<b>${l}</b>`,[
+ ['In quale paese nasce la filosofia?','In Grecia','La filosofia nasce in <b>Grecia</b>.',['In Egitto','In Oriente']],
+ ['Precisamente in quali colonie?','Nelle colonie della Ionia','Nelle colonie della <b>Ionia</b>.',['Nelle colonie dell’Egitto','Nelle colonie della Sicilia']],
+ ['Com’erano le colonie della Ionia?','Dinamiche e aperte alla circolazione delle idee','Dinamiche e <b>aperte alla circolazione delle idee</b>.',['Chiuse e immobili','Religiose e tradizionaliste']],
+ ['Com’è la sapienza orientale?','Religiosa e tradizionalistica','Religiosa e <b>tradizionalistica</b>.',['Razionale e critica','Libera e democratica']],
+ ['Com’è la ricerca filosofica?','Razionale, libera e critica','Ricerca <b>razionale, libera e critica</b>.',['Religiosa e tradizionalistica','Solo tradizionale']],
+ ['Che cosa favorisce la nascita della filosofia?','La tendenziale democraticità delle póleis greche','Le póleis sono tendenzialmente <b>democratiche</b>.',['La chiusura delle città','Il potere di un solo re']],
+ ['Che cosa fanno i cittadini nelle póleis?','Partecipano alla vita pubblica','I cittadini <b>partecipano alla vita pubblica</b>.',['Non parlano mai','Obbediscono e basta']],
+ ['Che cosa facilita la discussione?','Il confronto razionale','La discussione <b>facilita il confronto razionale</b>.',['La tradizione','La religione']]]);
+/* unità 2 */
+const RETRO=[['le cosmologie mitiche','narrano l’origine e la vita del cosmo'],['le religioni misteriche, in particolare l’orfismo','cominciano a considerare il pensiero come forma di vita autentica'],['la riflessione etico-politica dei poeti','elabora alcuni concetti fondamentali per la successiva interpretazione del mondo']];
+const exRetro=()=>{
+  const i=rnd(0,2),r=RETRO[i];
+  if(Math.random()<0.5)return mkEx(`Quale parte del retroterra culturale <b>${r[1]}</b>?`,r[0],RETRO.filter((_,k)=>k!==i).map(x=>x[0]),wy(`${r[0]}: ${r[1]}.`,r[0]),'Il retroterra culturale');
+  return mkEx(`Che cosa fanno <b>${r[0]}</b>?`,r[1],RETRO.filter((_,k)=>k!==i).map(x=>x[1]),wy(`${r[0]}: ${r[1]}.`,r[1]),'Il retroterra culturale');
+};
+const PER=['cosmologico','antropologico','ontologico','etico','religioso'];
+const exPeriodi=()=>{
+  const i=rnd(0,4);
+  const Z=['il periodo cristiano','il periodo moderno','il periodo medievale'];
+  if(Math.random()<0.5)return mkEx('Quale è uno dei <b>periodi</b> della filosofia greca?',`il periodo ${PER[i]}`,shuffle(Z).slice(0,2),wy('I periodi: cosmologico, antropologico, ontologico, etico, religioso.',`il periodo ${PER[i]}`),'I periodi');
+  const w=pick(Z);return mkEx('Quale NON è un periodo della filosofia greca?',w,shuffle(PER).slice(0,2).map(p=>`il periodo ${p}`),wy('I periodi: cosmologico, antropologico, ontologico, etico, religioso.',w),'I periodi');
+};
+const exFonti=mapGroup('Le fonti',l=>`<b>${l}</b>`,[
+ ['Quale è una fonte diretta sulla filosofia greca?','Le opere o i frammenti degli stessi filosofi','Opere o frammenti dei filosofi.',['Le dossografie','Le opere di Platone']],
+ ['Quali opere sono testimonianze sul pensiero dei filosofi?','Le opere di Platone e Aristotele','Sono <b>testimonianze</b>.',['I frammenti di Talete','Le opere dei poeti']],
+ ['Che cosa sono le dossografie?','Testimonianze della tarda antichità','Dossografie della <b>tarda antichità</b>.',['Opere dei pitagorici','Frammenti di Eraclito']]]);
+/* unità 3 */
+const ARCHE=[['Talete','l’acqua'],['Anassimandro','l’àpeiron'],['Anassimene','l’aria']];
+const exArche=()=>{
+  const i=rnd(0,2),a=ARCHE[i];
+  const w=['il fuoco','il numero'];
+  const others=ARCHE.filter((_,k)=>k!==i).map(x=>x[1]);
+  if(Math.random()<0.5)return mkEx(`Qual è il principio per <b>${a[0]}</b>?`,a[1],shuffle(others.concat(w)).slice(0,2),wy(`${a[0]}: ${a[1]}.`,a[1]),'Il principio (archè)');
+  return mkEx(`Per quale filosofo il principio è <b>${a[1]}</b>?`,a[0],ARCHE.filter((_,k)=>k!==i).map(x=>x[0]),wy(`${a[1]}: ${a[0]}.`,a[0]),'Il principio (archè)');
+};
+const MILETO=[['la sostanza del mondo','Talete'],['“sta sotto” la Terra, sostenendola','Talete'],['materia infinita e indeterminata','Anassimandro'],['derivano le cose per separazione dei contrari','Anassimandro'],['forza che anima il mondo','Anassimene'],['derivano le cose per rarefazione e condensazione','Anassimene']];
+const exMileto=()=>{
+  const m=pick(MILETO);
+  const o=['Talete','Anassimandro','Anassimene'].filter(x=>x!==m[1]);
+  return mkEx(`Di quale filosofo di Mileto si dice: <i>${m[0]}</i>?`,m[1],o,wy(`${m[0]}: ${m[1]}.`,m[1]),'Chi dice che cosa');
+};
+const exMiletoBase=mapGroup('La scuola di Mileto',l=>`<b>${l}</b>`,[
+ ['Chi rappresenta la scuola di Mileto?','Talete, Anassimandro e Anassimene','Sono <b>tre</b> filosofi.',['Pitagora e i pitagorici','Parmenide e Zenone']],
+ ['Che cos’è l’archè?','Il principio di tutte le cose','Archè = <b>principio</b>.',['Un tipo di acqua','Una città greca']],
+ ['L’àpeiron è…','Materia infinita e indeterminata','Principio di Anassimandro.',['Il fuoco di Eraclito','Il numero dei pitagorici']],
+ ['L’aria è…','Materia infinita e forza che anima il mondo','Principio di Anassimene.',['La sostanza del mondo','Un contrario']]]);
+/* unità 4 */
+const PIT=[['matematica','la fondano come disciplina scientifica'],['filosofia','il numero come archè; il cosmo come ordine e armonia tra limite e illimitato'],['astronomia','la sfericità dei corpi celesti e il movimento attorno a un “fuoco” centrale'],['antropologia','il corpo come prigione dell’anima e l’anima come armonia tra gli elementi del corpo'],['etica','la giustizia come armonia']];
+const exPit=()=>{
+  const i=rnd(0,4),p=PIT[i];
+  const o=shuffle(PIT.filter((_,k)=>k!==i));
+  if(Math.random()<0.5)return mkEx(`Di quale ambito dei pitagorici si dice: <i>${p[1]}</i>?`,p[0],o.slice(0,2).map(x=>x[0]),wy(`${p[0]}: ${p[1]}.`,p[0]),'Gli ambiti dei pitagorici');
+  return mkEx(`Che cosa concepiscono i pitagorici in <b>${p[0]}</b>?`,p[1],o.slice(0,2).map(x=>x[1]),wy(`${p[0]}: ${p[1]}.`,p[1]),'Gli ambiti dei pitagorici');
+};
+const exPitBase=mapGroup('Pitagora e i pitagorici',l=>`<b>${l}</b>`,[
+ ['Qual è l’archè per i pitagorici?','Il numero','L’archè è il <b>numero</b>.',['L’acqua','Il fuoco']],
+ ['Il cosmo è ordine e armonia tra…','Limite e illimitato (dispari e pari)','Limite e illimitato.',['Acqua e fuoco','Essere e non essere']],
+ ['Quanti ambiti ha la loro ricerca?','Cinque','Matematica, filosofia, astronomia, antropologia, etica.',['Tre','Sette']]]);
+/* unità 5 */
+const exEraclito=mapGroup('Eraclito',l=>`<b>${l}</b>`,[
+ ['Tra che cosa distingue Eraclito?','Tra filosofia e opinione comune','Filosofia e <b>opinione comune</b>.',['Tra acqua e aria','Tra essere e non essere']],
+ ['Che cosa riconosce la filosofia?','La legge segreta del mondo (il lógos)','Il <b>lógos</b>.',['La sostanza del mondo','L’àpeiron']],
+ ['Che cos’è l’opinione comune?','Fonte di errore','È <b>fonte di errore</b>.',['La legge segreta del mondo','Il simbolo del fuoco']],
+ ['Di che cosa è simbolo il fuoco?','Di perenne trasformazione','Perenne <b>trasformazione</b>.',['Di immobilità','Di giustizia']],
+ ['Il lógos si riconosce nell’incessante…','Divenire dell’universo','Divenire.',['Immobilità dell’essere','Sfericità dei corpi']],
+ ['Il lógos si riconosce nella lotta e nell’unità…','Dei contrari','Lotta e unità dei <b>contrari</b>.',['Degli elementi del corpo','Dei numeri']]]);
+/* unità 6 */
+const exParm=mapGroup('Parmenide',l=>`<b>${l}</b>`,[
+ ['Che cosa afferma Parmenide?','Soltanto l’essere è, mentre il non essere non è','Soltanto l’<b>essere è</b>.',['Tutto scorre','Il principio è l’acqua']],
+ ['Quante vie di indagine derivano dalla sua tesi?','Due','Via della verità e via dell’opinione.',['Tre','Una']],
+ ['La via della verità è basata sulla…','Ragione','Verità = <b>ragione</b>.',['Sensi','Tradizione']],
+ ['La via dell’opinione è basata sui…','Sensi','Opinione = <b>sensi</b>.',['Numeri','Miti']],
+ ['La via della verità porta a conoscere…','L’essere vero','Essere vero: che è e non può non essere.',['L’essere apparente','Il non essere']],
+ ['La via dell’opinione porta a indagare…','L’essere apparente','Essere apparente: che in realtà non è.',['L’essere vero','Il lógos']]]);
+const ESS=[['ingenerato e imperituro','v'],['eterno','v'],['immobile','v'],['immutabile','v'],['unico','v'],['omogeneo','v'],['finito','v'],['generato e corruttibile','a'],['mobile','a'],['mutevole','a'],['molteplice','a'],['disomogeneo','a']];
+const exCaratteri=()=>{
+  const c=pick(ESS);
+  const T=['L’essere vero','L’essere apparente'];
+  const ok=c[1]==='v'?T[0]:T[1];
+  return mkEx(`Quale essere è <b>${c[0]}</b>?`,ok,[c[1]==='v'?T[1]:T[0],'Il non essere'],wy('L’essere vero è ingenerato e imperituro, eterno, immobile, immutabile, unico, omogeneo e finito. L’essere apparente è generato e corruttibile, mobile, mutevole, molteplice e disomogeneo.',ok),'Essere vero ed essere apparente');
+};
+/* unità 7 */
+const exZenone=mapGroup('Zenone',l=>`<b>${l}</b>`,[
+ ['Chi difende Zenone?','Parmenide','Difende le tesi <b>parmenidee</b>.',['Eraclito','Talete']],
+ ['Contro che cosa porta argomenti?','Contro la pluralità e contro il movimento','Pluralità e movimento.',['Contro l’essere','Contro la ragione']],
+ ['Quale metodo usa?','La riduzione ad assurdo','Metodo della <b>riduzione ad assurdo</b>.',['La rarefazione e condensazione','La separazione dei contrari']],
+ ['Quale è un argomento contro il movimento?','Achille e la tartaruga','Anche stadio, freccia, masse nello stadio.',['L’àpeiron','Il lógos']],
+ ['Quanti argomenti contro il movimento sono citati?','Quattro','Stadio, Achille e la tartaruga, freccia, masse nello stadio.',['Due','Sei']]]);
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const GENS={
+ u1:[exOrigini,exOrigini,exOrigini,exDef('u1')],
+ u2:[exRetro,exRetro,exPeriodi,exFonti,exDef('u2')],
+ u3:[exArche,exArche,exMileto,exMileto,exMiletoBase,exDef('u3')],
+ u4:[exPit,exPit,exPitBase,exDef('u4')],
+ u5:[exEraclito,exEraclito,exEraclito,exDef('u5')],
+ u6:[exParm,exParm,exCaratteri,exCaratteri,exDef('u6')],
+ u7:[exZenone,exZenone,exDef('u7')]
+};
+const UNITS={u1:'1 · Le origini della filosofia in Grecia',u2:'2 · Retroterra, periodi e fonti',u3:'3 · La scuola di Mileto',u4:'4 · Pitagora e i pitagorici',u5:'5 · Eraclito',u6:'6 · Parmenide',u7:'7 · Zenone'};
+const PROVA_PLAN={u1:2,u2:2,u3:3,u4:2,u5:2,u6:3,u7:1};
+
+/* ========== CONTENUTI FISSI (Filosofia 3 ES: origini, archè, essere) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const LI=l=>'<ul>'+l.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+const DEFS={
+u1:[
+ ['Ionia','La zona delle colonie greche dove nasce la filosofia: colonie dinamiche e aperte alla circolazione delle idee.'],
+ ['Sapienza orientale','Il sapere dell’Oriente: religiosa e tradizionalistica. La filosofia è diversa.'],
+ ['Ricerca razionale, libera e critica','Come è la filosofia: usa la ragione, è libera e critica.'],
+ ['Pólis (plurale: póleis)','La città-stato greca.'],
+ ['Democraticità','Il fatto che i cittadini partecipano alla vita pubblica. Nelle póleis greche è “tendenziale”.'],
+ ['Circolazione delle idee','Le idee passano facilmente da un luogo e da una persona all’altra.']],
+u2:[
+ ['Retroterra culturale','Ciò che esiste prima della filosofia e la prepara: cosmologie mitiche, religioni misteriche, riflessione dei poeti.'],
+ ['Cosmologie mitiche','Racconti che narrano l’origine e la vita del cosmo.'],
+ ['Orfismo','Una religione misterica. Comincia a considerare il pensiero come forma di vita autentica.'],
+ ['Riflessione etico-politica dei poeti','I poeti elaborano alcuni concetti fondamentali per interpretare il mondo.'],
+ ['Dossografie','Opere della tarda antichità che raccontano il pensiero dei filosofi. Sono una fonte.'],
+ ['Fonti','I modi per conoscere la filosofia greca: opere e frammenti dei filosofi, testimonianze.'],
+ ['Periodo cosmologico, antropologico, ontologico, etico, religioso','I cinque periodi della filosofia greca, in questo ordine.']],
+u3:[
+ ['Archè','Il principio: ciò da cui tutto deriva. I filosofi di Mileto cercano l’archè.'],
+ ['Scuola di Mileto','Scuola rappresentata da Talete, Anassimandro e Anassimene.'],
+ ['Àpeiron','Il principio di Anassimandro: materia infinita e indeterminata.'],
+ ['Separazione dei contrari','Per Anassimandro le cose derivano dall’àpeiron per separazione dei contrari.'],
+ ['Rarefazione e condensazione','Per Anassimene le cose derivano dall’aria così: l’aria diventa meno densa o più densa.'],
+ ['Sostanza del mondo','Per Talete l’acqua è la sostanza del mondo.']],
+u4:[
+ ['Pitagorici','Seguaci di Pitagora: si occupano di matematica, filosofia, astronomia, antropologia, etica.'],
+ ['Il numero come archè','Per i pitagorici il principio di tutto è il numero.'],
+ ['Limite e illimitato','Il cosmo è ordine e armonia tra limite e illimitato (dispari e pari).'],
+ ['Sfericità dei corpi celesti','I corpi celesti sono sferici: è un’intuizione dei pitagorici.'],
+ ['“Fuoco” centrale','I corpi celesti si muovono attorno a un “fuoco” centrale.'],
+ ['Corpo come prigione dell’anima','Idea dei pitagorici: il corpo tiene prigioniera l’anima.'],
+ ['Giustizia come armonia','Per i pitagorici la giustizia è armonia.']],
+u5:[
+ ['Lógos','La legge segreta del mondo, che la filosofia riconosce.'],
+ ['Divenire','Il cambiamento continuo: Eraclito lo vede nell’universo, che cambia incessantemente.'],
+ ['Lotta e unità dei contrari','Un modo in cui Eraclito vede il lógos.'],
+ ['Fuoco','Per Eraclito è il simbolo della perenne trasformazione.'],
+ ['Opinione comune','Per Eraclito è fonte di errore.'],
+ ['Filosofia (per Eraclito)','Riconosce la legge segreta del mondo, il lógos.']],
+u6:[
+ ['Essere','Per Parmenide: soltanto l’essere è. Il non essere non è.'],
+ ['Via della verità','Basata sulla ragione: porta a conoscere l’essere vero.'],
+ ['Via dell’opinione','Basata sui sensi: porta a indagare l’essere apparente.'],
+ ['Essere vero','Ciò che è e non può non essere.'],
+ ['Essere apparente','Ciò che in realtà non è.'],
+ ['Ingenerato e imperituro','Che non nasce e non muore.'],
+ ['Generato e corruttibile','Che nasce e che può finire.']],
+u7:[
+ ['Zenone','Filosofo che difende le tesi di Parmenide.'],
+ ['Argomenti contro la pluralità','Zenone li usa per difendere Parmenide (l’essere è uno).'],
+ ['Argomenti contro il movimento','Stadio, Achille e la tartaruga, freccia, masse nello stadio.'],
+ ['Riduzione ad assurdo','Il metodo di Zenone: parte dalla tesi opposta e arriva a una contraddizione.']]
+};
+const CONT={
+u1:{
+ cose:`<div class="box bia"><p>La <b>filosofia nasce in Grecia</b>. Qui impari <b>dove</b> nasce, <b>in che cosa è diversa</b> dalla sapienza dell’Oriente e <b>perché</b> nasce proprio nelle città greche.</p></div>`,
+ ricette:[
+  card('blu','1 · Dove nasce',stepsHtml([
+   'La filosofia <b>nasce in Grecia</b>.',
+   '<b>Precisamente</b> nelle <b>colonie della Ionia</b>: sono <b>dinamiche</b> e <b>aperte alla circolazione delle idee</b>.'])),
+  card('ver','2 · In che cosa è diversa dall’Oriente',stepsHtml([
+   'La <b>sapienza orientale</b> è <b>religiosa e tradizionalistica</b>.',
+   'La filosofia <b>si differenzia</b> perché è <b>ricerca razionale, libera e critica</b>.'])),
+  card('gia','3 · Perché nasce nelle póleis',stepsHtml([
+   'È <b>favorita</b> dalla <b>tendenziale democraticità</b> delle <b>póleis</b> greche.',
+   'Nelle póleis i <b>cittadini partecipano alla vita pubblica</b>.',
+   'La <b>discussione facilita il confronto razionale</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Dove nasce la filosofia?»</b> In Grecia, precisamente nelle colonie della Ionia, dinamiche e aperte alla circolazione delle idee.</p>
+ <p><b>«Come si differenzia dalla sapienza orientale?»</b> La sapienza orientale è religiosa e tradizionalistica; la filosofia è ricerca razionale, libera e critica.</p>
+ <p><b>«Perché nelle póleis?»</b> Perché sono tendenzialmente democratiche: i cittadini partecipano alla vita pubblica e la discussione facilita il confronto razionale.</p></div>`,
+ errori:['La filosofia nasce in <b>Grecia</b> (nelle colonie della <b>Ionia</b>), non in Oriente.','La sapienza orientale è <b>religiosa e tradizionalistica</b>; la filosofia è <b>razionale, libera e critica</b>.','La democraticità delle póleis è <b>tendenziale</b> (non perfetta).','La parola <b>pólis</b> è al singolare; <b>póleis</b> è il plurale.'],
+ orale:[
+  ['Dove nasce la filosofia?','In Grecia, precisamente nelle colonie della Ionia, che sono dinamiche e aperte alla circolazione delle idee.'],
+  ['In che cosa si differenzia dalla sapienza orientale?','La sapienza orientale è religiosa e tradizionalistica. La filosofia è ricerca razionale, libera e critica.'],
+  ['Perché la filosofia è favorita dalle póleis?','Perché le póleis greche sono tendenzialmente democratiche: i cittadini partecipano alla vita pubblica e la discussione facilita il confronto razionale.'],
+ ],
+ quiz:[
+  ['In quale zona nasce la filosofia?','Nelle colonie della Ionia',['Nelle colonie dell’Egitto','Nelle città dell’Oriente'],'Precisamente nelle colonie della Ionia.'],
+  ['Com’è la sapienza orientale?','Religiosa e tradizionalistica',['Razionale e critica','Libera e democratica'],'Religiosa e tradizionalistica.'],
+  ['Com’è la filosofia?','Una ricerca razionale, libera e critica',['Una ricerca religiosa','Una tradizione da ripetere'],'Ricerca razionale, libera e critica.'],
+  ['Che cosa facilita il confronto razionale nelle póleis?','La discussione',['Il silenzio','La tradizione'],'La discussione facilita il confronto razionale.']]
+},
+u2:{
+ cose:`<div class="box bia"><p>La filosofia non nasce dal nulla: ha un <b>retroterra culturale</b>. Qui vedi anche i <b>cinque periodi</b> della filosofia greca e le <b>fonti</b> per conoscerla.</p></div>`,
+ ricette:[
+  card('blu','1 · Il retroterra culturale comprende tre cose',TAB(['Che cosa','Che cosa fa'],[['le <b>cosmologie mitiche</b>','narrano l’origine e la vita del cosmo'],['le <b>religioni misteriche</b>, in particolare l’<b>orfismo</b>','cominciano a considerare il pensiero come forma di vita autentica'],['la <b>riflessione etico-politica dei poeti</b>','elabora alcuni concetti fondamentali per la successiva interpretazione del mondo']])),
+  card('ver','2 · I periodi della filosofia greca',stepsHtml([
+   'il periodo <b>cosmologico</b>',
+   'il periodo <b>antropologico</b>',
+   'il periodo <b>ontologico</b>',
+   'il periodo <b>etico</b>',
+   'il periodo <b>religioso</b>'])),
+  card('gia','3 · Le fonti: come conosciamo la filosofia greca',stepsHtml([
+   'Le <b>opere o i frammenti</b> degli stessi filosofi.',
+   'Le <b>testimonianze</b> sul pensiero dei filosofi: <b>opere di Platone e Aristotele</b> e <b>dossografie della tarda antichità</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cosa comprende il retroterra culturale?»</b> Le cosmologie mitiche, le religioni misteriche (in particolare l’orfismo) e la riflessione etico-politica dei poeti.</p>
+ <p><b>«Quali sono i periodi?»</b> Cosmologico, antropologico, ontologico, etico, religioso.</p>
+ <p><b>«Quali sono le fonti?»</b> Le opere o i frammenti degli stessi filosofi e le testimonianze: opere di Platone e Aristotele, dossografie della tarda antichità.</p></div>`,
+ errori:['I periodi sono <b>cinque</b>: cosmologico, antropologico, ontologico, etico, religioso.','Le <b>cosmologie mitiche</b> narrano l’origine e la vita del <b>cosmo</b>.','L’<b>orfismo</b> è una religione <b>misterica</b>.','Le <b>dossografie</b> sono della <b>tarda antichità</b> e sono una <b>testimonianza</b>, non l’opera di un filosofo.'],
+ orale:[
+  ['Che cosa comprende il retroterra culturale della filosofia?','Le cosmologie mitiche, che narrano l’origine e la vita del cosmo; le religioni misteriche, in particolare l’orfismo, che cominciano a considerare il pensiero come forma di vita autentica; la riflessione etico-politica dei poeti, che elaborano concetti fondamentali per la successiva interpretazione del mondo.'],
+  ['Quali sono i periodi della filosofia greca?','Il periodo cosmologico, antropologico, ontologico, etico e religioso.'],
+  ['Quali sono le fonti per conoscere la filosofia greca?','Le opere o i frammenti degli stessi filosofi e le testimonianze sul loro pensiero: le opere di Platone e Aristotele e le dossografie della tarda antichità.'],
+ ],
+ quiz:[
+  ['Quanti sono i periodi della filosofia greca?','Cinque',['Tre','Sette'],'Cosmologico, antropologico, ontologico, etico, religioso.'],
+  ['Che cosa narrano le cosmologie mitiche?','L’origine e la vita del cosmo',['Le leggi della pólis','La vita dei poeti'],'Narrano l’origine e la vita del cosmo.'],
+  ['Quale religione misterica è citata?','L’orfismo',['Il tradizionalismo','La dossografia'],'In particolare l’orfismo.'],
+  ['Che cosa sono le dossografie?','Testimonianze della tarda antichità',['Opere di Talete','Frammenti di Eraclito'],'Testimonianze sul pensiero dei filosofi.']]
+},
+u3:{
+ cose:`<div class="box bia"><p>La <b>scuola di Mileto</b> è rappresentata da <b>Talete</b>, <b>Anassimandro</b> e <b>Anassimene</b>. Ognuno dice qual è il <b>principio</b> (l’<b>archè</b>) di tutte le cose.</p></div>`,
+ ricette:[
+  card('blu','1 · Talete',stepsHtml([
+   'Per Talete il principio è l’<b>acqua</b>.',
+   'L’acqua è la <b>sostanza del mondo</b>.',
+   '“<b>Sta sotto</b>” la Terra, <b>sostenendola</b>.'])),
+  card('ver','2 · Anassimandro',stepsHtml([
+   'Per Anassimandro il principio è l’<b>àpeiron</b>.',
+   'L’àpeiron è <b>materia infinita e indeterminata</b>.',
+   'Le cose <b>derivano</b> da lui per <b>separazione dei contrari</b>.'])),
+  card('gia','3 · Anassimene',stepsHtml([
+   'Per Anassimene il principio è l’<b>aria</b>.',
+   'L’aria è <b>materia infinita</b> e <b>forza che anima il mondo</b>.',
+   'Le cose <b>derivano</b> da lei per <b>rarefazione e condensazione</b>.'])),
+  card('ros','4 · Tabella da ricordare',TAB(['Filosofo','Principio','Come derivano le cose'],[['<b>Talete</b>','acqua','—'],['<b>Anassimandro</b>','àpeiron','separazione dei contrari'],['<b>Anassimene</b>','aria','rarefazione e condensazione']])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Qual è il principio per Talete?»</b> L’acqua, che è la sostanza del mondo e “sta sotto” la Terra, sostenendola.</p>
+ <p><b>«Che cos’è l’àpeiron?»</b> È il principio di Anassimandro: materia infinita e indeterminata, da cui le cose derivano per separazione dei contrari.</p>
+ <p><b>«E per Anassimene?»</b> Il principio è l’aria: materia infinita e forza che anima il mondo. Le cose derivano per rarefazione e condensazione.</p></div>`,
+ errori:['Talete = <b>acqua</b>, Anassimandro = <b>àpeiron</b>, Anassimene = <b>aria</b>: non scambiarli.','L’<b>àpeiron</b> non è l’acqua: è materia <b>infinita e indeterminata</b>.','<b>Separazione dei contrari</b> è di Anassimandro; <b>rarefazione e condensazione</b> è di Anassimene.','I filosofi di Mileto sono <b>tre</b>.'],
+ orale:[
+  ['Chi rappresenta la scuola di Mileto?','Talete, Anassimandro e Anassimene.'],
+  ['Qual è il principio per Talete?','L’acqua. È la sostanza del mondo e “sta sotto” la Terra, sostenendola.'],
+  ['Qual è il principio per Anassimandro?','L’àpeiron, cioè materia infinita e indeterminata. Le cose ne derivano per separazione dei contrari.'],
+  ['Qual è il principio per Anassimene?','L’aria, che è materia infinita e forza che anima il mondo. Le cose ne derivano per rarefazione e condensazione.'],
+ ],
+ quiz:[
+  ['Qual è il principio per Talete?','L’acqua',['L’aria','L’àpeiron'],'Talete: l’acqua.'],
+  ['Che cos’è l’àpeiron?','Materia infinita e indeterminata',['Un tipo di acqua','Un tipo di fuoco'],'È il principio di Anassimandro.'],
+  ['Quale principio sceglie Anassimene?','L’aria',['L’acqua','Il numero'],'Anassimene: l’aria.'],
+  ['Come derivano le cose per Anassimene?','Per rarefazione e condensazione',['Per separazione dei contrari','Per lotta dei contrari'],'Rarefazione e condensazione.']]
+},
+u4:{
+ cose:`<div class="box bia"><p><b>Pitagora e i pitagorici</b> si occupano di <b>cinque ambiti</b>: matematica, filosofia, astronomia, antropologia, etica. Il loro principio è il <b>numero</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Matematica e filosofia',stepsHtml([
+   'In <b>matematica</b>: la <b>fondano come disciplina scientifica</b>.',
+   'In <b>filosofia</b>: il <b>numero come archè</b>.',
+   'Il cosmo è <b>ordine e armonia</b> tra <b>limite e illimitato</b> (dispari e pari).'])),
+  card('ver','2 · Astronomia',stepsHtml([
+   'Intuiscono la <b>sfericità dei corpi celesti</b>.',
+   'Intuiscono il <b>movimento dei corpi celesti attorno a un “fuoco” centrale</b>.'])),
+  card('gia','3 · Antropologia ed etica',stepsHtml([
+   'Antropologia: il <b>corpo</b> come <b>prigione dell’anima</b>.',
+   'Antropologia: l’<b>anima</b> come <b>armonia tra gli elementi del corpo</b>.',
+   'Etica: la <b>giustizia</b> come <b>armonia</b>.'])),
+  card('ros','4 · Tabella da ricordare',TAB(['Ambito','Che cosa concepiscono'],[['<b>Matematica</b>','la fondano come disciplina scientifica'],['<b>Filosofia</b>','numero come archè; cosmo = armonia tra limite e illimitato'],['<b>Astronomia</b>','sfericità dei corpi celesti; “fuoco” centrale'],['<b>Antropologia</b>','corpo = prigione dell’anima; anima = armonia'],['<b>Etica</b>','giustizia = armonia']])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Di che cosa si occupano i pitagorici?»</b> Di matematica, filosofia, astronomia, antropologia ed etica.</p>
+ <p><b>«Qual è il loro archè?»</b> Il numero.</p>
+ <p><b>«Che cosa intuiscono in astronomia?»</b> La sfericità dei corpi celesti e il loro movimento attorno a un “fuoco” centrale.</p></div>`,
+ errori:['Per i pitagorici l’archè è il <b>numero</b> (non l’acqua o l’aria).','La giustizia è <b>armonia</b>.','Il corpo è la <b>prigione dell’anima</b>; l’anima è <b>armonia</b> tra gli elementi del corpo.','Gli ambiti sono <b>cinque</b>.','Limite e illimitato = <b>dispari e pari</b>.'],
+ orale:[
+  ['Di che cosa si occupano Pitagora e i pitagorici?','Di matematica, filosofia, astronomia, antropologia ed etica.'],
+  ['Che cosa concepiscono in filosofia?','Il numero come archè e il cosmo come ordine e armonia tra limite e illimitato (dispari e pari).'],
+  ['Che cosa intuiscono in astronomia?','La sfericità dei corpi celesti e il movimento dei corpi celesti attorno a un “fuoco” centrale.'],
+  ['Che cosa concepiscono in antropologia e in etica?','In antropologia il corpo come prigione dell’anima e l’anima come armonia tra gli elementi del corpo. In etica la giustizia come armonia.'],
+ ],
+ quiz:[
+  ['Qual è l’archè per i pitagorici?','Il numero',['L’acqua','Il fuoco'],'Il numero.'],
+  ['Che cos’è la giustizia per i pitagorici?','Armonia',['Lotta','Divenire'],'La giustizia come armonia.'],
+  ['Attorno a che cosa si muovono i corpi celesti?','A un “fuoco” centrale',['Alla Terra','All’acqua'],'Attorno a un “fuoco” centrale.'],
+  ['Il corpo è…','La prigione dell’anima',['L’armonia degli elementi','Il principio di tutto'],'Il corpo come prigione dell’anima.']]
+},
+u5:{
+ cose:`<div class="box bia"><p><b>Eraclito</b> distingue tra due cose: la <b>filosofia</b> e l’<b>opinione comune</b>. La filosofia riconosce la <b>legge segreta del mondo</b>, il <b>lógos</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · La distinzione',TAB(['Che cosa','Per Eraclito'],[['<b>Filosofia</b>','riconosce la legge segreta del mondo (il <b>lógos</b>)'],['<b>Opinione comune</b>','è <b>fonte di errore</b>']])),
+  card('ver','2 · Dove la filosofia riconosce il lógos',stepsHtml([
+   'Nell’<b>incessante divenire</b> dell’universo.',
+   'Nella <b>lotta e nell’unità dei contrari</b>.',
+   'Nel <b>fuoco</b>, simbolo di <b>perenne trasformazione</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Tra che cosa distingue Eraclito?»</b> Tra la filosofia e l’opinione comune.</p>
+ <p><b>«Che cosa riconosce la filosofia?»</b> La legge segreta del mondo, il lógos.</p>
+ <p><b>«Dove si vede il lógos?»</b> Nell’incessante divenire dell’universo, nella lotta e nell’unità dei contrari e nel fuoco, simbolo di perenne trasformazione.</p></div>`,
+ errori:['L’<b>opinione comune</b> è <b>fonte di errore</b>; la <b>filosofia</b> riconosce il lógos.','Il <b>fuoco</b> è simbolo di <b>trasformazione</b> (non di immobilità).','Il lógos si riconosce in <b>tre</b> cose: divenire, lotta e unità dei contrari, fuoco.','Eraclito parla di <b>divenire</b>; Parmenide dell’essere <b>immobile</b>: non confonderli.'],
+ orale:[
+  ['Tra che cosa distingue Eraclito?','Tra filosofia e opinione comune.'],
+  ['Che cosa riconosce la filosofia per Eraclito?','La legge segreta del mondo, il lógos.'],
+  ['Dove si riconosce il lógos?','Nell’incessante divenire dell’universo, nella lotta e nell’unità dei contrari e nel fuoco, simbolo di perenne trasformazione.'],
+  ['Che cos’è l’opinione comune per Eraclito?','È fonte di errore.'],
+ ],
+ quiz:[
+  ['Che cos’è il lógos per Eraclito?','La legge segreta del mondo',['Un tipo di fuoco','Un’opinione comune'],'La legge segreta del mondo.'],
+  ['Che cosa è fonte di errore?','L’opinione comune',['La filosofia','Il fuoco'],'L’opinione comune.'],
+  ['Di che cosa è simbolo il fuoco?','Di perenne trasformazione',['Di immobilità','Di sapienza orientale'],'Perenne trasformazione.'],
+  ['Quale idea compare nell’universo secondo Eraclito?','L’incessante divenire',['L’essere immobile','La pluralità'],'L’incessante divenire.']]
+},
+u6:{
+ cose:`<div class="box bia"><p><b>Parmenide</b> afferma che <b>soltanto l’essere è</b>, mentre <b>il non essere non è</b>. Da qui nascono <b>due vie</b> di indagine: la via della <b>verità</b> (ragione) e la via dell’<b>opinione</b> (sensi).</p></div>`,
+ ricette:[
+  card('blu','1 · La tesi',stepsHtml([
+   '<b>Soltanto l’essere è.</b>',
+   '<b>Il non essere non è.</b>',
+   'Da qui derivano <b>due possibilità di indagine</b>.'])),
+  card('ver','2 · La via della verità',stepsHtml([
+   'È <b>basata sulla ragione</b>.',
+   'Porta a conoscere l’<b>essere vero</b>: ciò che <b>è e non può non essere</b>.',
+   'L’essere vero è <b>ingenerato e imperituro</b>, e quindi <b>eterno, immobile, immutabile, unico, omogeneo e finito</b>.'])),
+  card('gia','3 · La via dell’opinione',stepsHtml([
+   'È <b>basata sui sensi</b>.',
+   'Porta a indagare l’<b>essere apparente</b>: ciò che <b>in realtà non è</b>.',
+   'Lo considera <b>generato e corruttibile</b>, e quindi <b>mobile, mutevole, molteplice e disomogeneo</b>.'])),
+  card('ros','4 · Confronto',TAB(['','Via della verità','Via dell’opinione'],[['<b>Basata su</b>','ragione','sensi'],['<b>Porta a</b>','essere vero','essere apparente'],['<b>È</b>','ingenerato e imperituro: eterno, immobile, immutabile, unico, omogeneo, finito','generato e corruttibile: mobile, mutevole, molteplice, disomogeneo']])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cosa afferma Parmenide?»</b> Che soltanto l’essere è, mentre il non essere non è.</p>
+ <p><b>«Quali sono le due vie?»</b> La via della verità, basata sulla ragione, e la via dell’opinione, basata sui sensi.</p>
+ <p><b>«Com’è l’essere vero?»</b> Ingenerato e imperituro, quindi eterno, immobile, immutabile, unico, omogeneo e finito.</p></div>`,
+ errori:['<b>Verità</b> = <b>ragione</b> = essere <b>vero</b>. <b>Opinione</b> = <b>sensi</b> = essere <b>apparente</b>.','L’essere vero è <b>immobile</b> e <b>unico</b>; l’essere apparente è <b>mobile</b> e <b>molteplice</b>.','L’essere vero è <b>finito</b> (non infinito).','L’essere apparente “in realtà <b>non è</b>”.','L’essere vero è <b>ingenerato e imperituro</b> (non nasce e non muore).'],
+ orale:[
+  ['Che cosa afferma Parmenide?','Che soltanto l’essere è, mentre il non essere non è.'],
+  ['Quali sono le due possibilità di indagine?','La via della verità, basata sulla ragione, e la via dell’opinione, basata sui sensi.'],
+  ['A che cosa porta la via della verità?','A conoscere l’essere vero, che è e non può non essere. È ingenerato e imperituro, e quindi eterno, immobile, immutabile, unico, omogeneo e finito.'],
+  ['A che cosa porta la via dell’opinione?','A indagare l’essere apparente, che in realtà non è, considerandolo generato e corruttibile, e quindi mobile, mutevole, molteplice e disomogeneo.'],
+ ],
+ quiz:[
+  ['La via della verità è basata sulla…','Ragione',['Sensi','Tradizione'],'Verità = ragione.'],
+  ['La via dell’opinione è basata sui…','Sensi',['Numeri','Miti'],'Opinione = sensi.'],
+  ['Com’è l’essere vero?','Eterno e immobile',['Mobile e mutevole','Generato e corruttibile'],'Ingenerato e imperituro: eterno, immobile.'],
+  ['Com’è l’essere apparente?','Mobile e molteplice',['Unico e immutabile','Eterno e finito'],'Generato e corruttibile: mobile, mutevole, molteplice.']]
+},
+u7:{
+ cose:`<div class="box bia"><p><b>Zenone</b> <b>difende le tesi di Parmenide</b> con due tipi di argomenti: contro la <b>pluralità</b> e contro il <b>movimento</b>. Usa il metodo della <b>riduzione ad assurdo</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Che cosa fa Zenone',stepsHtml([
+   '<b>Difende le tesi parmenidee</b>.',
+   'Usa argomenti <b>contro la pluralità</b>.',
+   'Usa argomenti <b>contro il movimento</b>.'])),
+  card('ver','2 · Gli argomenti contro il movimento',stepsHtml([
+   'lo <b>stadio</b>',
+   '<b>Achille e la tartaruga</b>',
+   'la <b>freccia</b>',
+   'le <b>masse nello stadio</b>'])),
+  card('gia','3 · Il metodo',stepsHtml([
+   'Gli argomenti sono condotti con il metodo della <b>riduzione ad assurdo</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cosa fa Zenone?»</b> Difende le tesi di Parmenide con argomenti contro la pluralità e contro il movimento.</p>
+ <p><b>«Quali sono gli argomenti contro il movimento?»</b> Lo stadio, Achille e la tartaruga, la freccia, le masse nello stadio.</p>
+ <p><b>«Con quale metodo?»</b> Con la riduzione ad assurdo.</p></div>`,
+ errori:['Zenone <b>difende</b> Parmenide: non lo contraddice.','Gli argomenti contro il movimento sono <b>quattro</b>: stadio, Achille e la tartaruga, freccia, masse nello stadio.','Il metodo è la <b>riduzione ad assurdo</b>.','Gli argomenti sono contro la <b>pluralità</b> e contro il <b>movimento</b>.'],
+ orale:[
+  ['Che cosa fa Zenone?','Difende le tesi parmenidee con argomenti contro la pluralità e contro il movimento.'],
+  ['Quali sono gli argomenti contro il movimento?','Lo stadio, Achille e la tartaruga, la freccia e le masse nello stadio.'],
+  ['Con quale metodo li conduce?','Con il metodo della riduzione ad assurdo.'],
+ ],
+ quiz:[
+  ['Chi difende Zenone?','Parmenide',['Eraclito','Talete'],'Difende le tesi parmenidee.'],
+  ['Contro che cosa porta argomenti Zenone?','Contro la pluralità e contro il movimento',['Contro l’essere','Contro la ragione'],'Pluralità e movimento.'],
+  ['Quale metodo usa?','La riduzione ad assurdo',['La rarefazione','La separazione dei contrari'],'Riduzione ad assurdo.'],
+  ['Quale è un argomento contro il movimento?','Achille e la tartaruga',['Il fuoco di Eraclito','L’àpeiron'],'Achille e la tartaruga.']]
+}
+};
+const GLOSS=Object.keys(DEFS).flatMap(u=>DEFS[u]).filter((d,i,a)=>a.findIndex(x=>x[0]===d[0])===i);
+const FORMULARIO=`
+<div class="box blu"><h3>Le origini della filosofia</h3>${TAB(['Argomento','Da ricordare'],[['<b>Dove</b>','Grecia, colonie della Ionia'],['<b>Differenza</b>','sapienza orientale religiosa e tradizionalistica / filosofia ricerca razionale, libera, critica'],['<b>Póleis</b>','tendenziale democraticità: cittadini partecipano, discussione = confronto razionale'],['<b>Retroterra</b>','cosmologie mitiche · religioni misteriche (orfismo) · riflessione dei poeti'],['<b>Periodi</b>','cosmologico · antropologico · ontologico · etico · religioso'],['<b>Fonti</b>','opere o frammenti dei filosofi · Platone e Aristotele · dossografie']])}</div>
+<div class="box ver"><h3>La ricerca dell’archè</h3>${TAB(['Filosofo','Principio','Da ricordare'],[['<b>Talete</b>','acqua','sostanza del mondo; “sta sotto” la Terra'],['<b>Anassimandro</b>','àpeiron','materia infinita e indeterminata; separazione dei contrari'],['<b>Anassimene</b>','aria','materia infinita, forza che anima il mondo; rarefazione e condensazione'],['<b>Pitagorici</b>','numero','matematica, filosofia, astronomia, antropologia, etica'],['<b>Eraclito</b>','lógos','divenire · lotta e unità dei contrari · fuoco; opinione comune = errore']])}</div>
+<div class="box gia"><h3>L’indagine sull’essere</h3>${TAB(['','Da ricordare'],[['<b>Parmenide</b>','soltanto l’essere è; il non essere non è'],['<b>Via della verità</b>','ragione → essere vero: ingenerato e imperituro, eterno, immobile, immutabile, unico, omogeneo, finito'],['<b>Via dell’opinione</b>','sensi → essere apparente: generato e corruttibile, mobile, mutevole, molteplice, disomogeneo'],['<b>Zenone</b>','difende Parmenide: argomenti contro la pluralità e contro il movimento (stadio, Achille e la tartaruga, freccia, masse nello stadio); riduzione ad assurdo']])}</div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('filosofia3_origini_essere_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('filosofia3_origini_essere_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Riepilogo</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["La filosofia nasce in Grecia, nelle colonie della Ionia.", "È diversa dalla sapienza orientale, che è religiosa e tradizionalistica: la filosofia è ricerca razionale, libera e critica.", "Nelle póleis i cittadini partecipano alla vita pubblica e la discussione aiuta il confronto."], "u2": ["La filosofia ha un retroterra: cosmologie mitiche, religioni misteriche (orfismo), riflessione dei poeti.", "I periodi sono cinque: cosmologico, antropologico, ontologico, etico, religioso.", "Le fonti sono le opere dei filosofi e le testimonianze (Platone, Aristotele, dossografie)."], "u3": ["La scuola di Mileto ha tre filosofi.", "Talete: il principio è l’acqua. Anassimandro: l’àpeiron. Anassimene: l’aria.", "L’àpeiron è materia infinita e indeterminata."], "u4": ["I pitagorici si occupano di matematica, filosofia, astronomia, antropologia ed etica.", "Il loro principio è il numero.", "Il cosmo è armonia tra limite e illimitato. La giustizia è armonia."], "u5": ["Eraclito distingue tra filosofia e opinione comune.", "La filosofia riconosce il lógos, la legge segreta del mondo.", "Il lógos è nel divenire, nella lotta dei contrari e nel fuoco."], "u6": ["Parmenide: soltanto l’essere è, il non essere non è.", "Via della verità = ragione = essere vero (eterno, immobile).", "Via dell’opinione = sensi = essere apparente (mobile, molteplice)."], "u7": ["Zenone difende Parmenide.", "Porta argomenti contro la pluralità e contro il movimento.", "Usa la riduzione ad assurdo."]}, "es": false, "steps": false, "pics": [{"k": "acqua", "re": "acqua", "id": 32464}, {"k": "fuoco", "re": "fuoco", "id": 4654}, {"k": "mondo", "re": "mondo", "id": 30015}, {"k": "mente", "re": "mente", "id": 37369}, {"k": "uomo", "re": "uomo|uomini", "id": 4665}, {"k": "citta", "re": "città", "id": 2704}, {"k": "legge", "re": "legge|leggi", "id": 11473}, {"k": "religione", "re": "religione|religiose|fedi", "id": 27059}, {"k": "pensare", "re": "pensare|pensar", "id": 38796}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  /* testo con parti in inglese: ogni parte con la sua voce */
+  function segs(el,dl){
+    var out=[],buf='';
+    function flush(){var t=say(buf);if(t.length>1)out.push({t:t,l:dl});buf=''}
+    (function walk(n){
+      if(n.nodeType===3){buf+=n.nodeValue;return}
+      if(n.nodeType!==1)return;
+      if(n.classList&&n.classList.contains('a11y-ui'))return;
+      var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return;
+      if(n.getAttribute('lang')==='en'){flush();var t=say(nodeText(n));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      if(n.classList.contains('fr')||tg==='SUP'){buf+=nodeText(n);return}
+      n.childNodes.forEach(walk);
+    })(el);
+    flush();return out;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    var out=[];
+    els.forEach(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      if(e.closest('[lang="en"]')){var t=say(nodeText(e));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      segs(e,es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    return out;
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=c.l==='en-GB'?0.8:0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     (CFG.steps?'<div class="step"><b class="n">★</b><div>Gli <b>esempi svolti</b> si aprono <b>un passo alla volta</b>: tocca <b>▶ Prossimo passo</b> e leggi con calma. Se preferisci vedere tutto, tocca <b>Mostra tutto</b>.</div></div>':'')+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)segs(qt,'it-IT').forEach(function(c){out.push(c)});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'.',l:'it-IT'});
+      segs(sp||o,CFG.es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  /* ===== ESEMPI SVOLTI UN PASSO ALLA VOLTA ===== */
+  if(CFG.steps&&location.hash!=='#stampa'){
+    var stOn=true;try{stOn=localStorage.getItem('a11y_steps')!=='0'}catch(e){}
+    var st4=document.createElement('style');
+    st4.textContent='section.tab .box.bia [hidden]{display:none!important}'+
+     '.a11y-newstep{background:#fff8dc;border-left:6px solid #d1b24a;padding:4px 8px;border-radius:6px}'+
+     '.a11y-stepper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 2px}'+
+     '.a11y-sc{font-weight:bold;font-size:.95rem;color:#22314d}'+
+     '.a11y-stepper .a11y-btn{margin:0}'+
+     '@media print{.a11y-stepper{display:none!important}section.tab .box.bia [hidden]{display:revert!important}.a11y-newstep{background:none;border:0;padding:0}}';
+    document.head.appendChild(st4);
+    var stGroups=[];
+    document.querySelectorAll('section.tab .stat .box.bia').forEach(function(box){
+      var h=box.querySelector(':scope>h3');if(!h||!/^Esempio/i.test(h.textContent))return;
+      var kids=[].slice.call(box.children).filter(function(c){return c!==h});
+      if(kids.length<3)return;
+      var isNum=function(e){return /^\s*\d+\./.test(e.textContent)};
+      var rest=kids.slice(1),groups=[];
+      if(rest.some(isNum)){
+        var started=false;
+        rest.forEach(function(e){
+          if(isNum(e)){groups.push([e]);started=true}
+          else if(started)groups[groups.length-1].push(e);
+        });
+      }else{rest.forEach(function(e){groups.push([e])})}
+      if(groups.length<2)return;
+      var idx=0,bx=mk('div','a11y-ui a11y-stepper'),go=mk('button','a11y-btn',null),all=mk('button','a11y-btn',null),cnt=mk('span','a11y-sc',null);
+      go.type='button';all.type='button';all.textContent='Mostra tutto';
+      bx.appendChild(go);bx.appendChild(cnt);bx.appendChild(all);box.appendChild(bx);
+      function paint(){
+        groups.forEach(function(g,i){g.forEach(function(e){e.hidden=stOn&&i>=idx;e.classList.toggle('a11y-newstep',stOn&&idx>0&&i===idx-1&&idx<groups.length+1)})});
+        bx.style.display=stOn?'':'none';
+        cnt.textContent='Passo '+idx+' di '+groups.length;
+        go.textContent=idx===0?'▶ Mostrami il primo passo':idx<groups.length?'▶ Prossimo passo':'↺ Ricomincia';
+        all.hidden=idx>=groups.length;
+      }
+      go.addEventListener('click',function(){
+        if(idx>=groups.length)idx=0;else idx++;
+        paint();
+        var t=idx>0?groups[idx-1][0]:box;try{t.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+      });
+      all.addEventListener('click',function(){idx=groups.length;paint()});
+      stGroups.push({paint:paint,reset:function(){idx=0}});
+      paint();
+    });
+    if(stGroups.length){
+      var sb=mk('button','a11y-btn a11y-ui',null);sb.type='button';
+      var paintSb=function(){sb.textContent='👣 Esempi un passo alla volta: '+(stOn?'SÌ':'NO');sb.classList.toggle('on',stOn);sb.setAttribute('aria-pressed',stOn?'true':'false')};
+      sb.addEventListener('click',function(){stOn=!stOn;try{localStorage.setItem('a11y_steps',stOn?'1':'0')}catch(e){};stGroups.forEach(function(g){g.reset();g.paint()});paintSb()});
+      paintSb();bar.appendChild(sb);
+    }
+  }
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261020104155",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
