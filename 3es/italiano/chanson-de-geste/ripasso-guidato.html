@@ -73,6 +73,7 @@ body.print #u1{break-before:auto}
 <button data-t="u2">2 Contesto storico</button>
 <button data-t="u3">3 Chanson de Roland</button>
 <button data-t="u4">4 Temi e stile</button>
+<button data-t="u5">5 Lirica e romanzo</button>
 <button data-t="orale">Orale</button>
 <button data-t="prova">Prova finale</button>
 <button data-t="formulario">Riepilogo</button>
@@ -83,7 +84,7 @@ body.print #u1{break-before:auto}
 <h2>Come si studia con questo kit</h2>
 <p>Qui trovi tutto per prepararti da solo all’interrogazione di <b>Italiano</b> su <b>la chanson de geste</b>. Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti. Ogni argomento ha sempre lo stesso ordine.</p>
 <div class="box gia"><h3>Gli argomenti</h3>
-<ul><li><b>Che cos’è</b> la chanson de geste (unità 1)</li><li><b>Il contesto storico</b>: Carlo Magno e le Crociate (unità 2)</li><li><b>La Chanson de Roland</b>: trama e personaggi (unità 3)</li><li><b>Temi, valori e stile</b> (unità 4)</li></ul></div>
+<ul><li><b>Che cos’è</b> la chanson de geste (unità 1)</li><li><b>Il contesto storico</b>: Carlo Magno e le Crociate (unità 2)</li><li><b>La Chanson de Roland</b>: trama e personaggi (unità 3)</li><li><b>Temi, valori e stile</b> (unità 4)</li><li><b>Lirica trovadorica e romanzo cortese</b>: lo stesso secolo, un mondo diverso (unità 5)</li></ul></div>
 <div class="box blu"><h3>I passi di ogni unità</h3>
 <div class="step"><b class="n">1</b><div><b>Che cos’è</b>: una spiegazione con parole semplici.</div></div>
 <div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema, passo per passo.</div></div>
@@ -91,12 +92,12 @@ body.print #u1{break-before:auto}
 <div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
 <div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
 <div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
-<div class="box ver"><h3>Piano suggerito (4 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 (che cos’è) · <b>Giorno 2</b>: unità 2 (contesto storico)</li><li><b>Giorno 3</b>: unità 3 (la Chanson de Roland) · <b>Giorno 4</b>: unità 4 (temi e stile), Prova finale, Orale e Riepilogo</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c’è fretta.</p></div>
-<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti <b>a voce alta</b> le risposte dell’Orale: l’interrogazione è parlata.</li><li>Attento a non confondere: <b>Gano</b> tradisce, <b>Oliviero</b> è l’amico leale di Orlando.</li><li>Ricorda bene: a Roncisvalle, nella realtà storica attaccano i <b>Baschi</b>; nel poema diventano i <b>Saraceni</b>.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un’altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<div class="box ver"><h3>Piano suggerito (5 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 (che cos’è) · <b>Giorno 2</b>: unità 2 (contesto storico)</li><li><b>Giorno 3</b>: unità 3 (la Chanson de Roland) · <b>Giorno 4</b>: unità 4 (temi e stile)</li><li><b>Giorno 5</b>: unità 5 (lirica e romanzo cortese), Prova finale, Orale e Riepilogo</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c’è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti <b>a voce alta</b> le risposte dell’Orale: l’interrogazione è parlata.</li><li>Attento a non confondere: <b>Gano</b> tradisce, <b>Oliviero</b> è l’amico leale di Orlando.</li><li>Ricorda bene: a Roncisvalle, nella realtà storica attaccano i <b>Baschi</b>; nel poema diventano i <b>Saraceni</b>.</li><li>Non confondere i due generi: nella chanson de geste <b>non</b> c’è l’amore; nel romanzo cortese e nella lirica trovadorica sì.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un’altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
 <h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
 <p class="note">I progressi sono salvati su questo telefono.</p>
 </section>
-<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section>
 <section class="tab" id="orale"></section>
 <section class="tab" id="prova"></section>
 <section class="tab" id="formulario"></section>
@@ -170,6 +171,17 @@ const exTemi=mapGroup('Temi, valori e stile',l=>`<b>${l}</b>`,[
  ['Che cosa lega i versi di una laissa?','L’assonanza, non la rima','Da ricordare bene.',['La rima baciata','Niente, sono versi liberi']],
  ['In quale personaggio del Rinascimento italiano torna Orlando?','Nell’Orlando furioso di Ludovico Ariosto','Eredità italiana.',['Nella Gerusalemme liberata di Tasso','Nei Promessi Sposi di Manzoni']],
  ['Quali altri autori italiani riprendono il personaggio di Orlando, prima di Ariosto?','Pulci (Morgante) e Boiardo (Orlando innamorato)','Prima di Ariosto.',['Dante e Petrarca','Boccaccio e Machiavelli']]]);
+/* unità 5: lirica trovadorica e romanzo cortese */
+const exCortese=mapGroup('Lirica trovadorica e romanzo cortese',l=>`<b>${l}</b>`,[
+ ['Che cos’è un trovatore?','Un poeta-musicista che compone liriche d’amore in lingua d’oc','Nelle corti, dal XII secolo.',['Un cavaliere che combatte per il re','Un copista di manoscritti religiosi']],
+ ['In che lingua scrivono i trovatori?','In lingua d’oc (provenzale)','Lingua della Francia meridionale.',['In lingua d’oïl','In latino']],
+ ['Chi è il primo trovatore conosciuto?','Guglielmo IX duca d’Aquitania','Attivo dal 1100 circa.',['Chrétien de Troyes','Carlo Magno']],
+ ['Che cos’è l’amor cortese (fin’amor)?','Il poeta si pone in servizio della donna amata, come un vassallo','Amore raffinato e spesso segreto.',['L’amore tra Orlando e Oliviero','L’amore per la propria patria']],
+ ['Che cos’è il romanzo cortese?','Un genere narrativo sulle avventure dei cavalieri della Tavola Rotonda','Appartiene al ciclo bretone.',['Un genere teatrale comico','Un trattato di diritto feudale']],
+ ['Chi è l’autore principale del romanzo cortese?','Chrétien de Troyes','Attivo tra il 1160 e il 1190 circa.',['Turoldo','Guglielmo IX d’Aquitania']],
+ ['Sono contemporanei la chanson de geste e il romanzo cortese?','Sì, si sviluppano entrambi nel XII secolo','In ambienti sociali diversi.',['No, il romanzo cortese è molto posteriore','No, la chanson de geste è del Trecento']],
+ ['In quale ambiente nasce il romanzo cortese?','Nelle corti aristocratiche raffinate','Per esempio la corte di Eleonora d’Aquitania.',['Tra i giullari di piazza','Nei monasteri']],
+ ['Qual è la differenza principale tra chanson de geste e romanzo cortese?','Nella chanson de geste non c’è l’ideale di donna; nel romanzo cortese sì','Amor cortese assente/presente.',['Nella chanson de geste le donne sono le protagoniste','Sono esattamente lo stesso genere']]]);
 const exDef=u=>()=>{
   const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
   const others=shuffle(L.filter((_,k)=>k!==i));
@@ -180,10 +192,11 @@ const GENS={
  u1:[exGenere,exGenere,exGenere,exDef('u1')],
  u2:[exContesto,exContesto,exContesto,exDef('u2')],
  u3:[exRoland,exRoland,exRoland,exDef('u3')],
- u4:[exTemi,exTemi,exTemi,exDef('u4')]
+ u4:[exTemi,exTemi,exTemi,exDef('u4')],
+ u5:[exCortese,exCortese,exCortese,exDef('u5')]
 };
-const UNITS={u1:'1 · Che cos’è la chanson de geste',u2:'2 · Il contesto storico',u3:'3 · La Chanson de Roland',u4:'4 · Temi, valori e stile'};
-const PROVA_PLAN={u1:3,u2:3,u3:4,u4:3};
+const UNITS={u1:'1 · Che cos’è la chanson de geste',u2:'2 · Il contesto storico',u3:'3 · La Chanson de Roland',u4:'4 · Temi, valori e stile',u5:'5 · Lirica trovadorica e romanzo cortese'};
+const PROVA_PLAN={u1:3,u2:3,u3:3,u4:3,u5:3};
 
 /* ========== CONTENUTI FISSI (Italiano 3 ES: la chanson de geste) ========== */
 const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
@@ -209,7 +222,12 @@ u3:[
 u4:[
  ['Dismisura','L’eccesso di orgoglio di Orlando, che aspetta troppo a chiedere aiuto: è anche il suo difetto.'],
  ['Formula epica','Espressione fissa, ripetuta più volte, tipica dello stile orale della chanson de geste.'],
- ['Orlando furioso','Il poema di Ludovico Ariosto (1516) che riprende, nel Rinascimento italiano, il personaggio di Orlando.']]
+ ['Orlando furioso','Il poema di Ludovico Ariosto (1516) che riprende, nel Rinascimento italiano, il personaggio di Orlando.']],
+u5:[
+ ['Trovatore','Poeta-musicista che compone ed esegue liriche d’amore in lingua d’oc, nelle corti, a partire dal XII secolo.'],
+ ['Amor cortese (fin’amor)','Il codice d’amore raffinato dei trovatori: il poeta si pone in servizio della donna amata, come un vassallo verso il signore.'],
+ ['Romanzo cortese','Genere narrativo nato nella seconda metà del XII secolo: racconta le avventure dei cavalieri della Tavola Rotonda.'],
+ ['Materia di Bretagna (ciclo bretone)','Il gruppo di racconti su re Artù e i cavalieri della Tavola Rotonda, diverso dalla materia di Francia.']]
 };
 const CONT={};
 CONT.u1={
@@ -337,9 +355,41 @@ CONT.u4={
   ['Che cosa lega i versi di una laissa?','L’assonanza, non la rima',['La rima baciata','Niente, sono versi liberi'],'Da ricordare bene.'],
   ['In quale personaggio del Rinascimento italiano torna Orlando?','Nell’Orlando furioso di Ludovico Ariosto',['Nella Gerusalemme liberata di Tasso','Nei Promessi Sposi di Manzoni'],'Eredità italiana (dopo Pulci e Boiardo).']]
 };
+CONT.u5={
+ cose:`<div class="box bia"><p>Nello stesso secolo della chanson de geste (il <b>XII secolo</b>) nascono, nelle <b>corti aristocratiche</b>, la <b>lirica trovadorica</b> (poesia d’amore in lingua d’oc) e il <b>romanzo cortese</b> (le avventure dei cavalieri di re Artù). Qui, a differenza della chanson de geste, l’<b>amore</b> e l’<b>ideale di donna</b> sono centrali.</p></div>`,
+ ricette:[
+  card('blu','1 · I trovatori e l’amor cortese',stepsHtml([
+   'I <b>trovatori</b> sono poeti-musicisti che compongono liriche d’amore in <b>lingua d’oc</b> (provenzale), nelle corti del <b>XII secolo</b>.',
+   'Il primo trovatore conosciuto è <b>Guglielmo IX d’Aquitania</b>, attivo dal <b>1100</b> circa.',
+   'Il loro codice d’amore si chiama <b>amor cortese</b> (o «fin’amor»): il poeta si pone in <b>servizio della donna amata</b>, come un vassallo verso il signore.'])),
+  card('ver','2 · Il romanzo cortese',stepsHtml([
+   'Il <b>romanzo cortese</b> nasce nella seconda metà del XII secolo: racconta le avventure dei cavalieri della <b>Tavola Rotonda</b> di re Artù (il <b>ciclo bretone</b>, o «materia di Bretagna»).',
+   'L’autore principale è <b>Chrétien de Troyes</b> (Francia, 1160-1190 circa): scrive <i>Lancillotto</i>, <i>Perceval</i> e altre opere.',
+   'Famosa anche la leggenda di <b>Tristano e Isotta</b>, un amore fatale legato a un filtro magico.'])),
+  card('gia','3 · Stesso secolo, mondi diversi',TAB(['Genere','Ambiente e temi'],[
+   ['<b>Chanson de geste</b>','ambiente feudale-guerriero, giullari, fedeltà e guerra; niente ideale di donna'],
+   ['<b>Lirica trovadorica e romanzo cortese</b>','corti aristocratiche raffinate (es. Eleonora d’Aquitania); amor cortese, ideale di donna']])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’amor cortese?»</b> Il codice d’amore dei trovatori: il poeta si pone in servizio della donna amata, come un vassallo verso il signore.</p>
+ <p><b>«Che cos’è il romanzo cortese?»</b> Un genere narrativo del XII secolo (autore principale Chrétien de Troyes) sulle avventure dei cavalieri della Tavola Rotonda di re Artù.</p>
+ <p><b>«Sono contemporanei alla chanson de geste?»</b> Sì, stesso secolo (il XII), ma nascono in un ambiente diverso: le corti aristocratiche, non il mondo feudale-guerriero.</p></div>`,
+ errori:['Il romanzo cortese <b>non</b> è posteriore alla chanson de geste: sono <b>contemporanei</b>, entrambi del XII secolo.','Nella chanson de geste l’amore <b>non</b> è un tema centrale: lì è centrale nel romanzo cortese e nella lirica trovadorica.','I trovatori scrivono in <b>lingua d’oc</b> (provenzale), diversa dalla <b>lingua d’oïl</b> della chanson de geste.'],
+ orale:[
+  ['Che cosa sono i trovatori e che cos’è l’amor cortese?','I trovatori sono poeti-musicisti che compongono liriche d’amore in lingua d’oc, nelle corti del XII secolo; il loro codice, l’amor cortese, pone il poeta in servizio della donna amata, come un vassallo verso il signore.'],
+  ['Che cos’è il romanzo cortese e chi ne è l’autore principale?','È un genere narrativo nato nella seconda metà del XII secolo, sulle avventure dei cavalieri della Tavola Rotonda di re Artù (il ciclo bretone); l’autore principale è Chrétien de Troyes.'],
+  ['La chanson de geste e il romanzo cortese sono dello stesso periodo?','Sì, sono contemporanei: entrambi si sviluppano nel XII secolo. Nascono però in ambienti diversi: la chanson de geste nel mondo feudale-guerriero, il romanzo cortese nelle corti aristocratiche raffinate.'],
+ ],
+ quiz:[
+  ['Che cos’è un trovatore?','Un poeta-musicista che compone liriche d’amore in lingua d’oc',['Un cavaliere che combatte per il re','Un copista di manoscritti religiosi'],'Nelle corti, a partire dal XII secolo.'],
+  ['Che cos’è l’amor cortese?','Il poeta si pone in servizio della donna amata, come un vassallo',['L’amore tra Orlando e Oliviero','L’amore per la propria patria'],'Amore raffinato e spesso segreto.'],
+  ['Chi è l’autore principale del romanzo cortese?','Chrétien de Troyes',['Turoldo','Guglielmo IX d’Aquitania'],'Attivo tra il 1160 e il 1190 circa.'],
+  ['La chanson de geste e il romanzo cortese sono contemporanei?','Sì, si sviluppano entrambi nel XII secolo',['No, il romanzo cortese è molto posteriore (Seicento)','No, la chanson de geste è del Trecento'],'Ambienti sociali diversi, stesso secolo.']]
+};
 const GLOSS=Object.keys(DEFS).flatMap(u=>DEFS[u]).filter((d,i,a)=>a.findIndex(x=>x[0]===d[0])===i);
 const FORMULARIO=`
-<div class="box blu"><h3>La chanson de geste</h3>${TAB(['Argomento','Da ricordare'],[['<b>Che cos’è</b>','poema epico-cavalleresco in lingua d’oïl · laisse (assonanza, non rima) · nasce orale, cantata dai giullari · XI-XIII secolo · ciclo carolingio (materia di Francia), diverso dal ciclo bretone'],['<b>Contesto storico</b>','Carlo Magno (re dei Franchi, imperatore nell’800) · società feudale e vassallaggio · clima delle Crociate · Roncisvalle 778: nella realtà i Baschi, nel poema i Saraceni'],['<b>La Chanson de Roland</b>','composta verso il 1100 · tradimento di Gano di Maganza · Orlando, Oliviero e Turpino a Roncisvalle · dismisura: l’olifante suonato troppo tardi · morte di Orlando con Durlindana · Carlo Magno vince e condanna Gano'],['<b>Temi e stile</b>','fedeltà vassallatica, onore/dismisura, fede cristiana, amicizia · stile orale: formule epiche, iperboli, laisses · eredità: Pulci, Boiardo, Ariosto (Orlando furioso)']])}</div>`;
+<div class="box blu"><h3>La chanson de geste</h3>${TAB(['Argomento','Da ricordare'],[['<b>Che cos’è</b>','poema epico-cavalleresco in lingua d’oïl · laisse (assonanza, non rima) · nasce orale, cantata dai giullari · XI-XIII secolo · ciclo carolingio (materia di Francia), diverso dal ciclo bretone'],['<b>Contesto storico</b>','Carlo Magno (re dei Franchi, imperatore nell’800) · società feudale e vassallaggio · clima delle Crociate · Roncisvalle 778: nella realtà i Baschi, nel poema i Saraceni'],['<b>La Chanson de Roland</b>','composta verso il 1100 · tradimento di Gano di Maganza · Orlando, Oliviero e Turpino a Roncisvalle · dismisura: l’olifante suonato troppo tardi · morte di Orlando con Durlindana · Carlo Magno vince e condanna Gano'],['<b>Temi e stile</b>','fedeltà vassallatica, onore/dismisura, fede cristiana, amicizia · stile orale: formule epiche, iperboli, laisses · eredità: Pulci, Boiardo, Ariosto (Orlando furioso)']])}</div>
+<div class="box ver"><h3>Lirica trovadorica e romanzo cortese (a confronto)</h3>${TAB(['Argomento','Da ricordare'],[['<b>Trovatori</b>','lingua d’oc, corti del XII secolo · primo trovatore: Guglielmo IX d’Aquitania (dal 1100 ca.) · amor cortese (fin’amor): il poeta in servizio della donna'],['<b>Romanzo cortese</b>','ciclo bretone (materia di Bretagna): Artù e i cavalieri della Tavola Rotonda · autore principale: Chrétien de Troyes (1160-1190 ca.) · opere: Lancillotto, Perceval, Tristano e Isotta'],['<b>Contemporaneità</b>','stesso secolo (XII) della chanson de geste, ma corti aristocratiche raffinate, non l’ambiente feudale-guerriero · qui l’amore e la donna sono centrali, nella chanson de geste no']])}</div>`;
 
 /* ========== APP ========== */
 const $=(s,r)=>(r||document).querySelector(s);
@@ -497,7 +547,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 {const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
 
 </script>
-<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["La chanson de geste è un poema (un lungo racconto in versi) sulle imprese dei cavalieri.", "Prima veniva cantata a voce dai giullari, poi fu scritta.", "Fa parte del ciclo di Carlo Magno, diverso dal ciclo di re Artù."], "u2": ["Carlo Magno era il re dei Franchi; nell'800 diventò imperatore.", "Nel Medioevo i cavalieri dovevano fedeltà al loro signore.", "Nel 778 un esercito fu attaccato sui Pirenei: nella realtà erano i Baschi, nel poema diventano i Saraceni."], "u3": ["La Chanson de Roland racconta di Orlando, un cavaliere di Carlo Magno.", "Gano tradisce Orlando e lo fa attaccare dai nemici.", "Orlando aspetta troppo a chiedere aiuto e muore da eroe."], "u4": ["Il poema parla di fedeltà, onore e amicizia.", "È scritto in uno stile parlato, con frasi ripetute.", "Il personaggio di Orlando torna poi nei poemi italiani di Pulci, Boiardo e Ariosto."]}, "es": false, "steps": false, "pics": [{"k": "guerra", "re": "guerra", "id": 12256}, {"k": "re", "re": "re", "id": 5563}, {"k": "chiesa", "re": "chiesa", "id": 3118}, {"k": "religione", "re": "religione|religiose", "id": 27059}, {"k": "libro", "re": "libro|libri", "id": 25191}, {"k": "scrivere", "re": "scrivere", "id": 2380}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["La chanson de geste è un poema (un lungo racconto in versi) sulle imprese dei cavalieri.", "Prima veniva cantata a voce dai giullari, poi fu scritta.", "Fa parte del ciclo di Carlo Magno, diverso dal ciclo di re Artù."], "u2": ["Carlo Magno era il re dei Franchi; nell'800 diventò imperatore.", "Nel Medioevo i cavalieri dovevano fedeltà al loro signore.", "Nel 778 un esercito fu attaccato sui Pirenei: nella realtà erano i Baschi, nel poema diventano i Saraceni."], "u3": ["La Chanson de Roland racconta di Orlando, un cavaliere di Carlo Magno.", "Gano tradisce Orlando e lo fa attaccare dai nemici.", "Orlando aspetta troppo a chiedere aiuto e muore da eroe."], "u4": ["Il poema parla di fedeltà, onore e amicizia.", "È scritto in uno stile parlato, con frasi ripetute.", "Il personaggio di Orlando torna poi nei poemi italiani di Pulci, Boiardo e Ariosto."], "u5": ["Nello stesso periodo nascono i trovatori: poeti che cantano l'amore.", "Nasce anche il romanzo cortese, con i cavalieri di re Artù.", "A differenza della chanson de geste, qui l'amore è il tema centrale."]}, "es": false, "steps": false, "pics": [{"k": "guerra", "re": "guerra", "id": 12256}, {"k": "re", "re": "re", "id": 5563}, {"k": "chiesa", "re": "chiesa", "id": 3118}, {"k": "religione", "re": "religione|religiose", "id": 27059}, {"k": "libro", "re": "libro|libri", "id": 25191}, {"k": "scrivere", "re": "scrivere", "id": 2380}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
 (function(){
   var CFG=window.A11Y_CFG||{simple:{},es:false};
   var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
@@ -915,7 +965,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 </script><!--/A11Y--><!--AGG--><script>
 (function(){
- var B="20261029113235",t0=Date.now(),touched=false,last=0;
+ var B="20261030105336",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;
