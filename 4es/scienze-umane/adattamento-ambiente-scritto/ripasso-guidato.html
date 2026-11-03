@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scienze Umane: l’adattamento all’ambiente</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Scienze Umane</a></p><h1>Scienze Umane: l’adattamento all’ambiente</h1><p>4 ES · verifica scritta · dalla caccia e raccolta all’industria · un passo alla volta</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Acquisizione</button>
+<button data-t="u2">2 La raccolta</button>
+<button data-t="u3">3 Caccia e pesca</button>
+<button data-t="u4">4 Rivoluzione neolitica</button>
+<button data-t="u5">5 Agricoltura</button>
+<button data-t="u6">6 Allevamento</button>
+<button data-t="u7">7 Industria</button>
+<button data-t="u8">8 Ambiente</button>
+<button data-t="orale">Domande aperte</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Riepilogo</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo alla <b>verifica scritta di Scienze Umane</b> (antropologia) sull’<b>adattamento all’ambiente</b>: dalla caccia e raccolta all’industria. Vai con calma, <b>un blocco di unità al giorno</b>. Ogni unità ha sempre lo stesso ordine.</p>
+<div class="box gia"><h3>⭐ Parti da quello che è evidenziato</h3><p>Il simbolo <b>⭐</b> segna le parti che nel tuo libro sono <b>evidenziate o sottolineate</b>. Studiale per prime: sono le più importanti.</p></div>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>Le prime forme di economia</b>: l’economia di acquisizione (unità 1), la raccolta (unità 2), la caccia e la pesca (unità 3)</li><li><b>L’agricoltura</b>: la Rivoluzione neolitica (unità 4) e le trasformazioni dell’agricoltura (unità 5)</li><li><b>L’allevamento</b> e il nomadismo (unità 6)</li><li><b>L’industria</b> (unità 7) e le sue conseguenze sull’ambiente (unità 8)</li></ul></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos’è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema, passo per passo.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi da ripetere e da scrivere.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (3 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1, 2 e 3 (caccia, raccolta, pesca)</li><li><b>Giorno 2</b>: unità 4, 5 e 6 (agricoltura e allevamento)</li><li><b>Giorno 3</b>: unità 7 e 8 (industria e ambiente), poi Prova finale, Domande aperte e Riepilogo</li></ul><p class="note">Hai poco tempo? Studia prima le parti con la ⭐ e le Domande aperte.</p></div>
+<div class="box bia"><h3>Consigli per lo scritto</h3><ul><li>Nelle <b>Domande aperte</b> scrivi la risposta con parole tue (3-5 righe) e poi confrontala con la risposta modello.</li><li>Impara bene le <b>parole chiave</b>: economia di acquisizione, Rivoluzione neolitica, domesticazione, società pastorali, Rivoluzione industriale.</li><li>Ricorda i <b>numeri</b>: circa 2 milioni di anni fa (genere umano), circa 10 000 anni fa (agricoltura), tra il 7500 e il 2500 a.C. (agricoltura nel resto del mondo), 4 fasi della Rivoluzione industriale.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un’altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section><section class="tab" id="u7"></section><section class="tab" id="u8"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+
+/* ========== SCIENZE UMANE 4 ES: L'ADATTAMENTO ALL'AMBIENTE - GENERATORI ========== */
+const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+function mapGroup(tag,pairs){
+  return ()=>{
+    const p=pairs[rnd(0,pairs.length-1)];
+    return mkEx(`<b>${p[0]}</b>`,p[1],p[3],wy(p[2],p[1]),tag);
+  };
+}
+const exU1=mapGroup('L’economia di acquisizione',[
+ ['Quanto tempo fa è comparso il genere umano, secondo il libro?','Circa due milioni di anni fa','Da allora ha vissuto per la maggior parte del tempo di caccia e raccolta.',['Circa diecimila anni fa','Circa duecento anni fa']],
+ ['Quando è nata l’agricoltura?','Circa 10 000 anni fa','L’agricoltura è molto più recente della caccia e raccolta.',['Circa due milioni di anni fa','Nel Settecento']],
+ ['Chi introdusse la caccia, secondo recenti teorie archeologiche?','L’Homo sapiens','La raccolta è più antica; la caccia fu introdotta dall’Homo sapiens.',['Gli australopitechi','L’Homo habilis']],
+ ['Dove vivono gli Hazda?','Nel Nord della Tanzania','Gli Hazda sono cacciatori-raccoglitori della Tanzania.',['Nel deserto del Kalahari','Nelle isole Andamane']],
+ ['Che cosa fanno gli Hazda del cibo cacciato o raccolto?','Lo condividono: ignorano la proprietà privata','Vivono in piccoli gruppi e decidono insieme.',['Lo vendono ai villaggi vicini','Lo tengono in granai privati']],
+ ['Perché i Boscimani sono chiamati «uomini-scorpione»?','Perché cacciano con frecce avvelenate','Così dice la scheda dedicata ai Boscimani.',['Perché vivono sotto terra','Perché allevano scorpioni']],
+ ['Di che cosa vivono soprattutto gli Andamanesi?','Di caccia con l’arco e di pesca','Mangiano anche frutta, semi, radici selvatiche e miele.',['Di agricoltura','Di allevamento di cammelli']],
+ ['Che cosa studiava Radcliffe-Brown nelle società tribali?','Le società come organismi in cui ogni parte ha una funzione','È un antropologo funzionalista.',['Solo gli attrezzi di pietra','Solo le lingue antiche']],
+ ['Dove andò Radcliffe-Brown nel 1906?','Alle isole Andamane','Vi restò circa 24 mesi. Nel 1910 andò in Australia.',['In Australia','In Tanzania']]]);
+
+const exU2=mapGroup('La raccolta',[
+ ['Che cosa raccoglievano gli ominidi nella stagione umida?','Germogli di graminacee, fiori, foglie e frutti','La savana offriva una vasta scelta di vegetali commestibili.',['Solo carne e midollo osseo','Solo pesci e molluschi']],
+ ['Con che cosa si scavava per trovare le radici?','Con un bastone da scavo','Il bastone era appuntito a un’estremità.',['Con una fiocina','Con una falce']],
+ ['Chi uccideva gli erbivori vicino alle pozze d’acqua?','I carnivori predatori, come i felini','Gli umani sfruttavano le carcasse rimaste.',['I Boscimani','Gli esseri umani con le lance']],
+ ['Quando gli umani prendevano carne dalle carcasse?','Dopo i felini e prima degli sciacalli','Era una strategia opportunistica.',['Prima dei felini','Dopo gli sciacalli']],
+ ['Di quali animali erano le carcasse prese dagli umani?','Antilopi, zebre, gnu e altri ungulati','Da queste carcasse prendevano carne e midollo osseo.',['Leoni, leopardi e pantere','Insetti e lucertole']],
+ ['Perché la raccolta di carcasse non è una caccia?','Perché è una strategia opportunistica: si sfrutta ciò che altri hanno ucciso','È una variante della raccolta.',['Perché si usano le lance','Perché si fa sempre in gruppo']],
+ ['Di quali animali l’essere umano è «preda»?','Dei grandi felini','È predatore di piccoli animali, ma preda dei feroci carnivori.',['Delle zebre','Delle lumache']],
+ ['Quanti chilometri percorrono ogni giorno le donne per raccogliere?','Una decina','Camminano a piedi alla ricerca di vegetali.',['Circa uno','Circa cento']],
+ ['Che cosa usano le donne per trasportare il raccolto?','Canestri intrecciati fatti da loro','Spesso portano con sé anche i bambini.',['Carri trainati da cavalli','Reti da pesca']]]);
+
+const exU3=mapGroup('La caccia e la pesca',[
+ ['Quale strategia di sopravvivenza è la più antica?','La raccolta','La raccolta è più antica della caccia.',['La caccia','La pesca con le reti']],
+ ['Che cosa fanno le strategie opportunistiche?','Procurano carne senza cacciare davvero, per esempio spolpando carcasse','Carcasse, molluschi, uova e piccoli uccelli.',['Producono cibo con l’agricoltura','Costruiscono grandi trappole di gruppo']],
+ ['Quando la caccia è «di gruppo»?','Quando gli animali sono grandi e si spostano in branco','Gli animali piccoli o medi si cacciano da soli.',['Quando gli animali sono molto piccoli','Quando si caccia solo di notte']],
+ ['Quali sono i tre tipi di armi per uccidere l’animale catturato?','Lance, archi con frecce e mazze','Per la cattura invece servono reti, trappole e recinti.',['Reti, trappole e recinti','Fiocine, esche e canestri']],
+ ['Con che cosa si può catturare un animale (primo momento della caccia)?','Con reti, trappole e recinti','Cattura: reti, trappole, recinti.',['Con lance e mazze','Con canestri intrecciati']],
+ ['Perché esiste la spartizione della carne?','Per dare cibo a tutti e mantenere l’uguaglianza sociale','Nessuno può tenere l’animale intero.',['Per far vincere il cacciatore più bravo','Per tenere la carne solo agli uomini']],
+ ['Chi riceve la carne indirettamente, perché esclusa dal rituale della spartizione?','Le donne','La ricevono dagli uomini della comunità.',['I cacciatori','I bambini piccoli']],
+ ['Qual è il compito delle donne nella caccia, di solito?','Fare le battitrici, per spingere gli animali verso le reti','La caccia è l’attività maschile per eccellenza.',['Uccidere gli animali più grandi','Spartire la carne tra tutti']],
+ ['Perché la raccolta è adatta alle donne?','Si può fare in gravidanza e con i piccoli, ed è meno faticosa e rischiosa','Non richiede lunghi allontanamenti.',['Perché è un’attività molto rischiosa','Perché si fa solo di notte']],
+ ['In quali ambienti si pratica la pesca?','Negli ambienti acquatici','Mari, laghi, fiumi e lagune.',['Nella savana africana','Nelle steppe asiatiche']],
+ ['Quali cibi furono presi per primi dall’acqua dagli ominidi?','Molluschi e pesci presi con le mani','Prime prede facili da prendere a mano.',['Balene e squali','Pesci presi con le fiocine']],
+ ['Che cosa succede alla pesca oggi?','È quasi sempre associata ad altre attività','Per esempio alla caccia (Inuit) o all’agricoltura (Trobriandesi).',['Si pratica sempre da sola','Non si pratica più']],
+ ['Che cosa hanno di speciale i Bajau secondo gli studi?','Una milza più grande e geni che aiutano a resistere sott’acqua','Selezione naturale.',['Un cuore con due camere in più','Branchie al posto dei polmoni']]]);
+
+const exU4=mapGroup('La Rivoluzione neolitica',[
+ ['Quanti anni fa, circa, nel Vicino Oriente si ebbe la svolta verso agricoltura e allevamento?','Circa 10 000 anni fa','Svolta dalle conseguenze incalcolabili.',['Circa 2 milioni di anni fa','Circa 200 anni fa']],
+ ['Da che cosa a che cosa passò l’essere umano con la Rivoluzione neolitica?','Da cacciatore e raccoglitore ad agricoltore e allevatore','Da economia acquisitiva a economia produttiva.',['Da agricoltore a operaio di fabbrica','Da pescatore a pastore nomade']],
+ ['Di che nazionalità era l’archeologo Childe?','Australiano','Vere Gordon Childe (1892-1957), padre della moderna paleoetnologia.',['Svizzero','Statunitense']],
+ ['Qual è il presupposto della Rivoluzione neolitica?','La domesticazione di alcune specie vegetali e animali','Base alimentare della popolazione mondiale.',['La scoperta della macchina a vapore','La nascita del commercio mondiale']],
+ ['Quale di questi è un cereale domesticato?','Il grano','Cereali: grano, orzo, riso, miglio.',['Il pomodoro','Il tacchino']],
+ ['Quale di questi animali fu domesticato?','La pecora','Animali: pecora, capra, maiale, mucca.',['Il leone','Lo squalo']],
+ ['Dove si trova la sommità della Mezzaluna fertile?','In Anatolia, nell’odierna Turchia','Dalla Palestina al Golfo Persico.',['In Egitto','In Cina']],
+ ['Quando comparve l’agricoltura nel resto del mondo, secondo il libro?','In tempi diversi tra il 7500 e il 2500 a.C.','In almeno quattro regioni.',['Nello stesso momento, 10 000 anni fa','Solo dopo l’anno Mille']],
+ ['In quale area comparve l’agricoltura oltre al Medio Oriente?','Nella Cina orientale','Anche Messico, Ande, Stati Uniti orientali.',['Nell’Artico','Nel deserto del Kalahari']],
+ ['Che cosa significa che la rivoluzione fu «graduale»?','Avvenne molto lentamente','Il termine «rivoluzione» può essere fuorviante.',['Avvenne in pochi mesi','Avvenne senza cambiare nulla']],
+ ['Che cosa successe al clima circa 13 000 anni fa?','Finì l’ultima glaciazione: ghiacci in ritiro e temperatura più alta','Prima precondizione.',['Cominciò una nuova glaciazione','Il clima non cambiò']],
+ ['Perché l’aumento della popolazione spinse verso nuove strategie?','La fauna si diradava e gli uomini non volevano più lunghi spostamenti','Seconda precondizione.',['Perché non c’erano più piante commestibili','Perché i cacciatori erano diventati troppo pochi']],
+ ['Quale attrezzo agricolo compare con il progresso tecnologico (11 000 a.C.)?','La falce con lame di selce','Anche ceste, mortai, pestelli e mole.',['Il trattore','L’aratro a motore']],
+ ['Quale villaggio dell’Anatolia ha più di 10 000 anni?','Çatal Hüyük','Un altro è Cayonu Tepesi.',['Roma','Babilonia']],
+ ['Quanti abitanti c’erano nel mondo 10 000 anni fa, circa?','Da 8 a 15 milioni','Poi 250-300 milioni nel I secolo d.C.',['Circa 1 miliardo','Circa 250 000']]]);
+
+const exU5=mapGroup('Le trasformazioni dell’agricoltura',[
+ ['Che cosa permisero i mulini ad acqua e a vento?','Di macinare maggiori quantità di grano','Rispetto ai mulini azionati dalla forza animale o umana.',['Di arare più in profondità','Di allevare più cavalli']],
+ ['Che cos’è la policoltura?','La coltivazione di più prodotti insieme all’allevamento di diversi tipi di bestiame','Nel Medioevo molti agricoltori la lasciarono.',['La coltura di un solo prodotto su terreni vasti','La caccia in più territori']],
+ ['Che cosa vuol dire «specializzazione» delle attività agricole?','Dedicarsi a una sola attività secondo le caratteristiche del territorio','Esempio: la viticoltura in Borgogna e in Renania.',['Coltivare tutto in ogni campo','Smettere di vendere i prodotti']],
+ ['Quali nuove fonti di energia seguirono i primi grandi cambiamenti dell’agricoltura moderna?','Vapore, elettricità e motore a combustione interna','Il motore a combustione interna è il motore a scoppio.',['Solo la forza degli animali','Solo i mulini ad acqua']],
+ ['A che cosa servì l’energia elettrica in agricoltura?','A creare sistemi di refrigerazione per conservare le merci deperibili','Per esempio frutta, latte, carne, pesce.',['A far funzionare i primi aratri di ferro','A macinare il grano nei mulini']],
+ ['Quale agricoltura trasse più vantaggio dalle nuove macchine?','Quella del Nuovo Mondo, con i suoi immensi spazi pianeggianti','Spazi facili da coltivare con le macchine.',['Quella dell’Europa nordica del Medioevo','Quella dei popoli cacciatori']],
+ ['Che cosa permise la genetica in agricoltura?','La selezione delle sementi e la creazione di nuovi ibridi','Per avere cereali, frutta e ortaggi più resistenti.',['La costruzione di mulini più grandi','La preparazione del suolo con l’aratro']],
+ ['Che cosa sono i GAS?','Associazioni di persone che fanno la spesa in comune','Gruppi di acquisto solidale.',['Imprese che producono macchine agricole','Reti di mulini a vento']],
+ ['Quanti GAS ci sono in Italia, secondo l’archivio della Rete di Economia Solidale?','Più di 300','Distribuiti su tutto il territorio.',['Circa 30','Più di 3000']]
+]);
+
+const exU6=mapGroup('L’allevamento e il nomadismo',[
+ ['Quali animali si addomesticano per le fibre tessili?','Pecore e capre (lana) e bachi (seta)','Fibre tessili: lana e seta.',['Cavalli e asini','Cani e gatti']],
+ ['Che cosa rese docile qualche animale, secondo alcuni studiosi?','Una mutazione genetica','Docile, facilmente catturabile e ammaestrabile.',['Una malattia','Un cambiamento di clima']],
+ ['Perché il bestiame erbivoro è prezioso per l’uomo?','Trasforma l’erba in proteine: latte, formaggio, carne','L’uomo non sa trasformare in proteine la cellulosa.',['Perché mangia la carne al posto dell’uomo','Perché non ha bisogno di acqua']],
+ ['Quale popolo alleva femmine di dromedario nella penisola arabica?','Gli Al Murrah','Ne ricavano di tutto, dal latte alle pelli.',['I Basseri','I Masai']],
+ ['Chi è Alberto Salza?','Un antropologo che ha descritto la vita dei pastori nomadi delle steppe asiatiche','Autore dell’Atlante delle popolazioni (nato nel 1944).',['Un biologo che studia gli animali domestici','Uno storico svizzero dell’economia']],
+ ['Che cosa cambiò in Mongolia con la rivoluzione del 1924, secondo Salza?','Il nomadismo fu controllato con centri di servizio, cioè villaggi con scuole e negozi','Cambiò il mondo dei nomadi.',['I nomadi diventarono tutti agricoltori','Il bestiame fu vietato']],
+ ['Quale percentuale dei Rom conduce oggi una vita itinerante?','Il 3%','Due terzi vivono in case di muratura.',['Il 50%','Il 90%']],
+ ['Quale di questi animali, secondo il libro, NON è domesticabile?','La zebra','Carattere aggressivo (grizzly, bufalo africano, zebra, onagro).',['La pecora','La capra']],
+ ['Come vive il bestiame nell’allevamento estensivo?','Allo stato brado, pascolando liberamente','Gran parte dell’anno.',['In grandi ambienti meccanizzati','Sempre dentro la stalla']]
+]);
+
+const exU7=mapGroup('L’industria e la Rivoluzione industriale',[
+ ['Che cos’è la sharing economy?','Un modello economico basato sulla condivisione di risorse con piattaforme virtuali','«Economia della condivisione».',['Un modello basato solo sulla vendita di merci nei negozi','Un tipo di industria meccanica del Settecento']],
+ ['Che cosa indica l’espressione «società della conoscenza»?','Che oggi la ricerca e il sapere sono molto importanti','La usano alcuni studiosi.',['Che la società non ha più bisogno di scuole','Che ci sono più fabbriche che negozi']],
+ ['In quanto tempo, secondo Bairoch, la Rivoluzione industriale ha trasformato il mondo?','In 200 anni','La Rivoluzione neolitica ha richiesto meno di 2000 anni.',['In meno di 2000 anni','In un solo anno']],
+ ['In quanto tempo, secondo Bairoch, la Rivoluzione neolitica ha portato all’agricoltura e all’allevamento?','In meno di 2000 anni','La Rivoluzione industriale ha richiesto 200 anni.',['In 200 anni','In un solo anno']],
+ ['In quale settore si colloca l’industria nel senso generale del termine?','Nel settore secondario','Sta tra il primario e il terziario.',['Nel settore primario','Nel settore terziario']],
+ ['Che cosa fa il robot «Silver 2»?','Pulisce i fondali marini dai rifiuti di plastica','Fa parte del progetto Blue Resolution.',['Taglia il grano nei campi','Costruisce stampanti 3D']],
+ ['Che cosa sono i «Big Data»?','Dati raccolti dai dispositivi collegati a Internet e poi analizzati','Primo aspetto dell’Industria 4.0.',['Le grandi fabbriche del Settecento','Macchine agricole molto potenti']],
+ ['Che cos’è la stampa 3D?','Una tecnologia che crea un oggetto reale a partire da un progetto virtuale','È il passaggio dal digitale al reale.',['Una macchina per stampare libri','Un tipo di macchina a vapore']],
+ ['Che cosa succede alle disuguaglianze con la terza Rivoluzione industriale, secondo il World Inequality Report 2018?','Aumentano','Alcuni paesi crescono, ma le disuguaglianze sono in aumento.',['Spariscono','Restano uguali in tutto il mondo']]]);
+
+const exU8=mapGroup('Conseguenze dello sviluppo industriale e ambiente',[
+ ['Che cos’è il Welfare?','L’insieme delle iniziative che garantiscono ai cittadini i servizi fondamentali','È una conseguenza sociale e politica positiva.',['Un tipo di macchina industriale','Una tassa sulle fabbriche']],
+ ['Che cosa succede alla giornata lavorativa quando aumenta la produttività?','Diminuisce e nasce il tempo libero','Si produce di più in meno tempo.',['Aumenta sempre di più','Non cambia mai']],
+ ['Che cos’è il prodotto interno lordo?','Il valore dei beni e dei servizi prodotti in un Paese, riferito all’intera nazione','Il prodotto pro capite è riferito al singolo individuo.',['Il numero degli abitanti di un Paese','Il valore delle merci importate']],
+ ['Quali Stati europei sono tra i «promossi» dell’indice ONU del 2018?','Svezia, Norvegia e Finlandia','Sono i più attenti alla protezione dell’ambiente.',['Italia, Francia e Spagna','Cina, India e Brasile']],
+ ['Quali problemi ambientali sono conseguenze dello sviluppo industriale?','Deforestazione, desertificazione e perdita di biodiversità','Sono conseguenze negative.',['Suffragio universale e Welfare','Allungamento della vita media']],
+ ['Che cosa c’era nello stomaco della tartaruga trovata a Marina di Camerota?','Plastica: filtri, etichette, pezzi di bicchiere e frammenti di buste','Fu trovata il 14 febbraio 2019.',['Solo alghe e piccoli pesci','Petrolio']],
+ ['Che cosa lega Agenda 2030 tra loro?','La sostenibilità ambientale e lo sviluppo economico e sociale','Una visione integrata dello sviluppo.',['Solo la pesca e i mari','Solo lo sviluppo dei paesi ricchi']],
+ ['Chi ha lanciato Agenda 2030?','Le Nazioni Unite','Il 25 settembre 2015.',['L’Unione europea','La Scuola Superiore Sant’Anna']],
+ ['Che cosa dice il rapporto Brundtland del 1987?','«Il nostro futuro è comune»','È il primo documento internazionale sullo sviluppo sostenibile.',['«L’industria è il nostro futuro»','«Ogni paese pensi solo a sé»']]]);
+
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const GENS={
+ u1:[exU1,exU1,exU1,exDef('u1')],
+ u2:[exU2,exU2,exU2,exDef('u2')],
+ u3:[exU3,exU3,exU3,exDef('u3')],
+ u4:[exU4,exU4,exU4,exDef('u4')],
+ u5:[exU5,exU5,exU5,exDef('u5')],
+ u6:[exU6,exU6,exU6,exDef('u6')],
+ u7:[exU7,exU7,exU7,exDef('u7')],
+ u8:[exU8,exU8,exU8,exDef('u8')]
+};
+const UNITS={u1:'1 · L’economia di acquisizione',u2:'2 · La raccolta',u3:'3 · La caccia e la pesca',u4:'4 · La Rivoluzione neolitica',u5:'5 · Le trasformazioni dell’agricoltura',u6:'6 · L’allevamento e il nomadismo',u7:'7 · L’industria e la Rivoluzione industriale',u8:'8 · Le conseguenze dello sviluppo industriale e l’ambiente'};
+const PROVA_PLAN={u1:2,u2:2,u3:2,u4:2,u5:2,u6:2,u7:2,u8:2};
+
+/* ========== CONTENUTI FISSI (Scienze Umane 4 ES: l'adattamento all'ambiente) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const DEFS={};
+const CONT={};
+DEFS.u1=[
+ ['Economia di acquisizione','Forma di economia senza tecniche produttive: si prende (si preleva) direttamente dalla natura ciò che serve per vivere. Si chiama anche economia «di prelievo».'],
+ ['Caccia e raccolta','La prima strategia di sopravvivenza del genere umano: cacciare animali e raccogliere ciò che la natura offre.'],
+ ['Popoli cacciatori-raccoglitori','Popoli che ancora oggi vivono di caccia e raccolta. Sono una esigua minoranza e sono destinati a scomparire.'],
+ ['Hazda','Popolo di cacciatori-raccoglitori che vive nel Nord della Tanzania.'],
+ ['Funzionalista','Antropologo che studia le società come organismi viventi, in cui ogni parte ha una propria funzione.']];
+CONT.u1={
+ cose:`<div class="box bia"><p>La <b>caccia e la raccolta</b> sono la <b>prima strategia di sopravvivenza</b> del genere umano. È una <b>economia di acquisizione</b> (o di <b>prelievo</b>): non ci sono tecniche produttive, si prende direttamente dalla natura ciò che serve. Il genere umano ha vissuto così per <b>quasi tutta la sua storia</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · La prima strategia di sopravvivenza',stepsHtml([
+   '⭐ Con l’espressione <b>caccia e raccolta</b> si indica la <b>prima strategia di sopravvivenza</b> messa a punto dal genere umano.',
+   '⭐ Il genere umano è comparso circa <b>due milioni di anni fa</b> e ha trascorso <b>la maggior parte del tempo</b> vivendo di caccia e raccolta.',
+   'L’<b>agricoltura</b> è nata circa <b>10 000 anni fa</b>. La <b>produzione industriale</b> è ancora più recente (seconda metà del Settecento). In un immaginario orologio della storia umana occupano solo «gli ultimi secondi prima della mezzanotte».'])),
+  card('ver','2 · L’economia di acquisizione',stepsHtml([
+   '⭐ Caccia e raccolta sono forme di <b>economia di acquisizione</b>, detta anche <b>«di prelievo»</b>.',
+   '⭐ Chi la praticava <b>non conosceva tecniche produttive</b> in senso stretto (come l’agricoltura o l’allevamento).',
+   '⭐ Prendeva <b>direttamente dalla natura</b> ciò di cui aveva bisogno per sopravvivere.',
+   '⭐ La <b>raccolta è più antica della caccia</b>: la praticavano già gli <b>australopitechi</b> (4-5 milioni di anni fa). Secondo recenti teorie archeologiche fu l’<b><i>Homo sapiens</i></b> a introdurre la caccia.'])),
+  card('gia','3 · I popoli di oggi',stepsHtml([
+   '⭐ Oggi esistono ancora <b>popoli cacciatori e raccoglitori</b>, ma sono una <b>esigua minoranza</b>: poche decine di migliaia di persone.',
+   '⭐ Sono <b>destinati a scomparire</b>: per estinzione o perché le loro abitudini cambiano a contatto con altre popolazioni.',
+   'Esempi: gli <b>Inuit</b> (ghiacci dell’Artico), i <b>Boscimani</b> (deserti africani), gli <b>aborigeni</b> australiani, i <b>Pigmei</b> (foresta equatoriale africana), gli <b>Andamanesi</b> (isole Andamane).',
+   'Gli <b>Hazda</b> vivono nel Nord della Tanzania in piccoli gruppi: decidono insieme, <b>condividono il cibo</b>, non hanno proprietà privata né differenze sociali o di età.'])),
+  card('blu','4 · Boscimani, Andamanesi e Radcliffe-Brown',TAB(['','I Boscimani','Gli Andamanesi'],[
+   ['<b>Dove vivono</b>','deserto del Kalahari (Africa)','isole Andamane, nel golfo del Bengala'],
+   ['<b>Di che cosa vivono</b>','caccia e raccolta; frecce avvelenate («uomini-scorpione»)','caccia con l’arco e pesca; anche frutta, semi, radici, miele'],
+   ['<b>Famiglia</b>','l’uomo chiede la moglie alla madre di lei; l’eredità va per linea paterna','matrimonio combinato dai familiari; comandano le persone di maggior prestigio (gli anziani)']])+stepsHtml([
+   '<b>Alfred Radcliffe-Brown</b> (nato a Birmingham nel 1881, morto a Londra nel 1955) è un <b>antropologo funzionalista</b>.',
+   'Nel 1906 parte per le <b>isole Andamane</b> e vi resta circa 24 mesi: nel 1922 scrive <i>The Andaman Islanders</i>. Nel 1910 va in Australia.',
+   'Studia le società tribali come <b>organismi viventi</b>: <b>ogni parte ha una propria funzione</b> e contribuisce all’equilibrio del tutto.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’economia di acquisizione?»</b> È un’economia senza tecniche produttive: si prende direttamente dalla natura ciò che serve. Si chiama anche economia di prelievo. Sono economie di acquisizione la caccia e la raccolta.</p>
+ <p><b>«Per quanto tempo l’essere umano è stato cacciatore-raccoglitore?»</b> Il genere umano è comparso circa due milioni di anni fa e ha vissuto di caccia e raccolta per la maggior parte del tempo. L’agricoltura è nata solo circa 10 000 anni fa.</p>
+ <p><b>«Chi sono gli Hazda?»</b> Un popolo di cacciatori-raccoglitori del Nord della Tanzania: vivono in piccoli gruppi, decidono insieme e condividono il cibo.</p></div>`,
+ errori:['La <b>raccolta</b> è più antica della <b>caccia</b>, non il contrario.','Caccia e raccolta <b>non</b> sono tecniche produttive: si prende dalla natura ciò che c’è. Si chiama economia di <b>acquisizione</b> (o di prelievo).','L’agricoltura <b>non</b> è la prima strategia: è nata solo circa <b>10 000 anni fa</b>.','Oggi i popoli cacciatori-raccoglitori sono una <b>esigua minoranza</b>, non la maggioranza.'],
+ orale:[
+  ['Spiega che cosa si intende con «caccia e raccolta» e perché è una economia di acquisizione.','Con «caccia e raccolta» si indica la prima strategia di sopravvivenza messa a punto dal genere umano. È una economia di acquisizione, o di prelievo, perché chi la praticava non conosceva tecniche produttive (come l’agricoltura o l’allevamento) ma prendeva direttamente dalla natura ciò di cui aveva bisogno per sopravvivere.'],
+  ['Che cosa è più antico: la raccolta o la caccia? Spiega.','La raccolta è più antica della caccia. Fornì sostentamento dapprima agli australopitechi (4-5 milioni di anni fa) e poi a Homo habilis, Homo erectus e alle varie sottospecie di Homo sapiens. Secondo recenti teorie archeologiche fu proprio Homo sapiens a introdurre la caccia.'],
+  ['Per quanto tempo il genere umano ha vissuto di caccia e raccolta?','Il genere umano è comparso sulla Terra circa due milioni di anni fa e ha trascorso la maggior parte del tempo vivendo di caccia e raccolta. L’agricoltura è nata circa 10 000 anni fa e la produzione industriale nella seconda metà del Settecento: in un immaginario orologio occupano solo gli ultimi secondi prima della mezzanotte.'],
+  ['Che cosa sono oggi i popoli cacciatori-raccoglitori? Fai qualche esempio.','Oggi esistono ancora popoli cacciatori e raccoglitori, ma sono una esigua minoranza di poche decine di migliaia di persone, destinati a scomparire per estinzione o per la trasformazione del loro modo di vita a contatto con altre popolazioni. Esempi: gli Inuit, i Boscimani, gli aborigeni australiani, i Pigmei, gli Andamanesi e gli Hazda della Tanzania.'],
+  ['Chi era Alfred Radcliffe-Brown e che cosa ha studiato?','Alfred Radcliffe-Brown (1881-1955) è un antropologo funzionalista. Nel 1906 andò alle isole Andamane e nel 1922 scrisse The Andaman Islanders. Studiava le società tribali come organismi viventi, in cui ogni parte ha una propria funzione e contribuisce all’equilibrio del tutto.'],
+ ],
+ quiz:[
+  ['Qual è la prima strategia di sopravvivenza del genere umano?','La caccia e la raccolta',['L’agricoltura','L’allevamento'],'Caccia e raccolta: la prima strategia messa a punto dal genere umano.'],
+  ['Che cosa vuol dire «economia di acquisizione»?','Si prende direttamente dalla natura ciò che serve',['Si producono cibo e oggetti con le macchine','Si coltivano i campi con l’aratro'],'È anche detta economia di prelievo: niente tecniche produttive.'],
+  ['Che cosa è più antico?','La raccolta',['La caccia','L’allevamento'],'La raccolta è più antica della caccia.'],
+  ['Oggi i popoli cacciatori e raccoglitori sono…','Una esigua minoranza',['La maggioranza degli esseri umani','Del tutto scomparsi'],'Poche decine di migliaia di persone, destinate a scomparire.'],
+  ['Chi era Radcliffe-Brown?','Un antropologo funzionalista che studiò gli Andamanesi',['Un archeologo del Neolitico','Un esploratore che inventò la fiocina'],'Nel 1906 partì per le isole Andamane.']]
+};
+
+DEFS.u2=[
+ ['Savana africana','Ambiente con due stagioni (umida e secca) dove, probabilmente, gli ominidi cominciarono la raccolta nella preistoria.'],
+ ['Bastone da scavo','Bastone appuntito a un’estremità, usato nella stagione secca per scavare e trovare radici ricche di acqua.'],
+ ['Strategia opportunistica','Prendere carne e midollo dalle carcasse di erbivori uccisi dai predatori: non è caccia, ma una variante della raccolta.'],
+ ['Onnivoro','Essere che si nutre di cibi diversi. L’essere umano raccoglie vegetali e prende anche carne e piccoli animali.'],
+ ['Canestri intrecciati','Cesti fatti a mano dalle donne per trasportare il raccolto.']];
+CONT.u2={
+ cose:`<div class="box bia"><p>La <b>raccolta</b> è la strategia di sopravvivenza più antica. Probabilmente nacque nella <b>savana africana</b>, che ha una stagione umida e una secca. Oggi, presso i popoli cacciatori-raccoglitori, la raccolta fornisce circa il <b>70%</b> del cibo ed è un <b>compito delle donne</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · La savana africana',stepsHtml([
+   '⭐ L’ambiente che nelle epoche remote spinse gli ominidi alla raccolta fu probabilmente la <b>savana africana</b>, con due stagioni: <b>umida</b> e <b>secca</b>.',
+   '⭐ Nella <b>stagione umida</b> offriva molti vegetali commestibili: <b>germogli di graminacee, fiori e foglie appena spuntati, frutti</b> di vario tipo.',
+   '⭐ Nella <b>stagione secca</b> si scavava con un <b>bastone da scavo</b> alla ricerca di <b>radici</b> profonde, ricche di acqua.'])),
+  card('ver','2 · Le carcasse: una strategia opportunistica',stepsHtml([
+   'Quando mancavano i vegetali si potevano sfruttare le <b>carcasse di animali erbivori</b> uccisi dai carnivori vicino alle poche pozze d’acqua.',
+   '⭐ Dopo che i <b>felini</b> (leoni, leopardi, pantere) si erano allontanati e <b>prima degli sciacalli</b>, gli esseri umani prendevano <b>carne e midollo osseo</b> da carcasse di antilopi, zebre, gnu e altri ungulati.',
+   '⭐ È una <b>variante della raccolta</b>, non una caccia: è una <b>strategia opportunistica</b>.',
+   'L’essere umano è <b>onnivoro</b> e occupa più nicchie ecologiche: <b>predatore</b> di piccoli animali (insetti, lucertole, uccelli di nido), <b>competitore</b> degli erbivori per alcuni vegetali e per l’acqua, <b>preda</b> dei grandi felini.'])),
+  card('gia','3 · La raccolta oggi',stepsHtml([
+   '⭐ Presso gli odierni popoli cacciatori e raccoglitori (Boscimani !Kung San del Botswana, Pigmei Mbuti del Congo, aborigeni australiani) la <b>raccolta</b> fornisce la parte più consistente, <b>circa il 70%</b>, delle risorse alimentari.',
+   '⭐ È un <b>compito delle donne</b>, che ogni giorno percorrono <b>una decina di chilometri a piedi</b> in cerca di vegetali.',
+   'Raccolgono frutti, foglie, radici, bacche, funghi, tuberi, noci, uova, larve, miele, insetti e piccoli animali facili da prendere con le mani (lucertole, lumache, uccellini nel nido, piccoli di gazzella).',
+   '⭐ Spesso le donne portano con sé i <b>bambini</b> e trasportano il raccolto in <b>canestri intrecciati</b> fatti da loro.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Dove nacque probabilmente la raccolta?»</b> Nella savana africana, che ha due stagioni: una umida e una secca.</p>
+ <p><b>«Che cosa si faceva nella stagione secca?»</b> Si scavava con un bastone da scavo per trovare radici ricche di acqua e si sfruttavano le carcasse di erbivori uccisi dai carnivori.</p>
+ <p><b>«Chi si occupa della raccolta oggi?»</b> Presso i popoli cacciatori-raccoglitori è compito delle donne e fornisce circa il 70% del cibo.</p></div>`,
+ errori:['Prendere carne dalle <b>carcasse</b> non è caccia: è una variante della raccolta (strategia <b>opportunistica</b>).','La raccolta oggi è un compito delle <b>donne</b>, non degli uomini.','La raccolta non è solo di frutti: si raccolgono anche radici, uova, insetti e piccoli animali facili da prendere.','Le due stagioni della savana sono <b>umida</b> e <b>secca</b>: i vegetali abbondano in quella umida; in quella secca si cercano le radici.'],
+ orale:[
+  ['Descrivi la savana africana e che cosa offriva agli ominidi.','La savana africana è probabilmente l’ambiente che spinse gli ominidi alla raccolta. Ha due stagioni: quella umida e quella secca. Nella stagione umida offriva una vasta scelta di vegetali commestibili, come germogli di graminacee, fiori e foglie appena spuntati e frutti di vario tipo.'],
+  ['Che cosa si faceva nella stagione secca per trovare cibo?','Nella stagione secca bisognava scavare con un apposito bastone da scavo, appuntito a un’estremità, alla ricerca di radici profonde ricche di acqua. Alla carenza di vegetali si poteva supplire con le carcasse di animali erbivori uccisi dai carnivori predatori vicino alle poche pozze d’acqua.'],
+  ['Che cos’è la strategia opportunistica delle carcasse? Perché non è una caccia?','Una volta allontanati i felini e prima dell’arrivo degli sciacalli, gli esseri umani prendevano carne e midollo osseo dalle carcasse di antilopi, zebre, gnu e altri ungulati. Non è caccia ma una variante della raccolta: è una strategia opportunistica, cioè si approfitta di ciò che altri hanno già ucciso.'],
+  ['Perché l’essere umano è definito un essere onnivoro che occupa più nicchie ecologiche?','Perché è predatore di piccoli animali (insetti, lucertole, uccelli di nido), competitore degli erbivori per alcuni vegetali e per l’acqua, e allo stesso tempo preda dei feroci carnivori come i grandi felini.'],
+  ['Chi si occupa della raccolta presso i popoli odierni e quanto cibo fornisce?','Presso gli odierni popoli cacciatori e raccoglitori, come i Boscimani !Kung San, i Pigmei Mbuti e gli aborigeni australiani, la raccolta fornisce circa il 70% delle risorse alimentari. È un compito delle donne, che ogni giorno percorrono una decina di chilometri a piedi alla ricerca di vegetali e portano spesso con sé i bambini.'],
+ ],
+ quiz:[
+  ['Dove nacque probabilmente la raccolta?','Nella savana africana',['Nella foresta equatoriale','Nel deserto del Kalahari'],'La savana africana spinse gli ominidi alla raccolta.'],
+  ['Come si chiamano le due stagioni della savana?','Umida e secca',['Calda e fredda','Piovosa e nevosa'],'Nella stagione umida i vegetali sono più abbondanti.'],
+  ['Che cosa si cercava scavando nella stagione secca?','Radici ricche di acqua',['Uova di uccello','Pesci nei fiumi'],'Si usava un bastone da scavo.'],
+  ['Quanta parte del cibo fornisce la raccolta ai popoli di oggi?','Circa il 70%',['Circa il 10%','Quasi nulla'],'È la parte più consistente delle risorse alimentari.'],
+  ['Chi si occupa della raccolta presso i popoli odierni?','Le donne',['Soprattutto gli uomini','Solo i bambini'],'Ogni giorno percorrono una decina di chilometri a piedi.']]
+};
+
+DEFS.u3=[
+ ['Caccia','Attività di ricerca, cattura e uccisione di animali selvatici. Serve conoscere bene il territorio e le abitudini della selvaggina.'],
+ ['Strategia opportunistica','Modo di procurarsi carne senza cacciare: spolpare carcasse di erbivori, raccogliere molluschi, rubare uova e piccoli uccelli dai nidi.'],
+ ['Spartizione della carne','Alla fine della caccia la carne si divide con regole precise: chi ha ucciso l’animale non può averlo intero. Serve a dare cibo a tutti e a mantenere l’uguaglianza sociale.'],
+ ['Pesca','Attività di ricerca e acquisizione di cibo negli ambienti acquatici. È affine alla caccia.'],
+ ['Fiocina','Una specie di lancia attaccata a una fune: la preda colpita non va via con l’acqua e si può tirare a riva.'],
+ ['Bajau','Popolo di pescatori detti «nomadi del mare»: vivono sul mare, sulle barche o in villaggi su palafitte.']];
+CONT.u3={
+ cose:`<div class="box bia"><p>La <b>caccia</b> compare <b>piuttosto tardi</b> nella storia del genere umano: i primi uomini non erano predatori e prendevano la carne con <b>strategie opportunistiche</b>. La <b>pesca</b> è simile alla caccia, ma si fa negli <b>ambienti acquatici</b>. Oggi un popolo di pescatori molto speciale sono i <b>Bajau</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · La caccia: una pratica tardiva',stepsHtml([
+   '⭐ Nella storia del genere umano la <b>caccia</b> compare <b>piuttosto tardi</b>: i primi uomini del genere <i>Homo</i> (<i>Homo habilis</i> e <i>Homo erectus</i>) <b>non erano predatori</b>.',
+   '⭐ Si procuravano la carne con <b>strategie opportunistiche</b>: <b>spolpavano le carcasse</b> di erbivori, <b>raccoglievano molluschi</b> sulle rive del mare, <b>rubavano uova e piccoli uccelli</b> ai nidi.',
+   'Le prime battute di caccia furono organizzate da forme arcaiche di <i>Homo sapiens</i>.'])),
+  card('ver','2 · Come si svolge la caccia',stepsHtml([
+   'La caccia è <b>ricerca, cattura e uccisione</b> di animali selvatici. Può essere <b>individuale</b> (animali piccoli o medi) o <b>di gruppo</b> (animali grandi che vanno in branco).',
+   'Ci sono <b>due momenti</b>: la <b>cattura</b> (reti, trappole, recinti) e l’<b>uccisione</b> (lance, archi con frecce spesso avvelenate, mazze).',
+   'Poi c’è la <b>spartizione della carne</b>: chi ha ucciso l’animale non può averlo intero. Il fine è dare cibo a tutti e mantenere l’uguaglianza sociale.',
+   'La caccia è l’<b>attività maschile</b> per eccellenza: le donne di solito sono solo <b>battitrici</b>. La raccolta invece è delle donne perché si può fare in gravidanza e con i piccoli, è meno faticosa e meno rischiosa.'])),
+  card('gia','3 · La pesca e i Bajau',stepsHtml([
+   'La <b>pesca</b> è ricerca di cibo negli <b>ambienti acquatici</b>. All’inizio si prendevano a mano i <b>molluschi</b> e, probabilmente, anche i primi pesci. Poi arrivarono la <b>fiocina</b>, le <b>reti</b>, le armi appuntite (arpioni, frecce avvelenate) e le <b>esche</b>.',
+   'Oggi la pesca è <b>quasi sempre associata ad altre attività</b>: per esempio alla caccia (Inuit) o all’agricoltura (Trobriandesi).',
+   'I <b>Bajau</b> sono circa <b>35 000</b> persone che vivono sul mare nel Borneo settentrionale, nelle Filippine meridionali (isole Sulu) e in Indonesia.',
+   'Hanno una <b>milza più grande</b> e geni particolari: sott’acqua resistono più a lungo. Lo studio mostra che la <b>selezione naturale</b> agisce ancora oggi.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Perché si dice che la caccia è una pratica tardiva?»</b> Perché i primi uomini del genere Homo, Homo habilis e Homo erectus, non erano predatori: prendevano la carne con strategie opportunistiche.</p>
+ <p><b>«Quali sono i due momenti della caccia?»</b> La cattura dell’animale (con reti, trappole, recinti) e la sua uccisione (con lance, archi e frecce, mazze).</p>
+ <p><b>«Chi sono i Bajau?»</b> Un popolo di pescatori, detti «nomadi del mare», che vive sul mare nel Borneo settentrionale, nelle Filippine meridionali e in Indonesia.</p></div>`,
+ errori:['La caccia <b>non</b> è la strategia più antica: la più antica è la <b>raccolta</b>. La caccia compare piuttosto tardi.','<i>Homo habilis</i> e <i>Homo erectus</i> <b>non erano predatori</b>: ottenevano la carne con strategie opportunistiche.','Chi ha ucciso l’animale <b>non lo può tenere intero</b>: la carne si spartisce con regole precise.','La pesca <b>non</b> si fa solo a mani nude: con il tempo gli uomini inventarono fiocina, reti, armi appuntite ed esche.'],
+ orale:[
+  ['Perché la caccia è considerata una pratica tardiva? Come si procuravano la carne i primi uomini?','Nella storia del genere umano la caccia compare piuttosto tardi: i primi rappresentanti del genere Homo, Homo habilis e Homo erectus, non erano predatori. Si procuravano la carne con strategie opportunistiche: spolpavano le carcasse di erbivori, raccoglievano molluschi sulle rive del mare e rubavano uova e piccoli uccelli ai nidi.'],
+  ['Descrivi i due momenti principali della caccia.','Il primo momento è la cattura dell’animale, con reti, trappole e recinti. Il secondo è l’uccisione, con tre tipi di armi: lance, archi con frecce spesso avvelenate e mazze.'],
+  ['Che cos’è la spartizione della carne e a che cosa serve?','Alla fine di ogni battuta di caccia la carne si divide secondo regole precise: chi ha ucciso l’animale può scegliere una parte o ricevere il primo pezzo, ma non può averlo intero. Serve a dare cibo a tutti i membri della comunità e a mantenere l’uguaglianza sociale.'],
+  ['Perché la caccia è un’attività maschile e la raccolta è un compito delle donne?','La caccia è ritenuta l’attività maschile per eccellenza; le donne di solito partecipano solo come battitrici. La raccolta può essere fatta dalla donna in gravidanza e dopo la nascita dei piccoli: non richiede lunghi allontanamenti, è meno faticosa e rischiosa, è quotidiana e sicura.'],
+  ['Che cos’è la pesca e chi sono i Bajau?','La pesca è ricerca e acquisizione di cibo negli ambienti acquatici. I Bajau, detti «nomadi del mare», sono circa 35 000 persone che vivono sul mare nel Borneo settentrionale, nelle Filippine meridionali (isole Sulu) e in Indonesia, e sono pescatori di perle, cetrioli di mare, cernie e altri pesci.'],
+ ],
+ quiz:[
+  ['Quali uomini NON erano predatori?','Homo habilis e Homo erectus',['Gli Homo sapiens arcaici','Gli uomini dell’età industriale'],'I primi Homo non erano predatori.'],
+  ['Che cos’è una strategia opportunistica per procurarsi la carne?','Spolpare le carcasse di erbivori già uccisi da altri',['Costruire una trappola con recinti','Allevare animali in casa'],'Carcasse, molluschi, uova e piccoli uccelli.'],
+  ['Come si dividono le carni dopo la caccia?','Con regole precise: chi ha ucciso non può avere l’animale intero',['Le tiene tutte chi ha ucciso l’animale','Si dividono solo tra le donne'],'La spartizione mantiene l’uguaglianza sociale.'],
+  ['Che cos’è la fiocina?','Una specie di lancia attaccata a una fune',['Una rete da pesca molto larga','Un’esca fatta con le uova'],'Permette di tirare a riva la preda.'],
+  ['Dove vivono i Bajau?','Sul mare, nel Borneo settentrionale, nelle Filippine meridionali e in Indonesia',['Nel deserto del Kalahari','Nella foresta equatoriale africana'],'Sono i «nomadi del mare».']]
+};
+
+DEFS.u4=[
+ ['Rivoluzione neolitica','Passaggio da un’economia «acquisitiva» di caccia e raccolta a un’economia «produttiva», caratterizzata da agricoltura e allevamento.'],
+ ['Domesticazione','Processo al termine del quale una specie vegetale o animale è resa domestica: abituata a vivere con l’uomo e a essere controllata da lui.'],
+ ['Mezzaluna fertile','Ampia area del Medio Oriente a forma di arco, dalle coste mediterranee della Palestina al Golfo Persico, con la sommità in Anatolia (odierna Turchia).'],
+ ['Vere Gordon Childe','Archeologo australiano (1892-1957), padre della moderna paleoetnologia: diede il nome di Rivoluzione neolitica a questo processo.'],
+ ['Stratificazione sociale','Divisione della società in gruppi con ruoli e prestigio diversi, come contadini, artigiani, governanti, soldati e sacerdoti.']];
+CONT.u4={
+ cose:`<div class="box bia"><p>Circa <b>10 000 anni fa</b>, nel Vicino Oriente, l’essere umano da <b>cacciatore e raccoglitore</b> divenne <b>agricoltore e allevatore</b>. Lo studioso <b>Childe</b> la chiamò <b>Rivoluzione neolitica</b>. In realtà fu un processo <b>molto lento e graduale</b>, con tre cause: il <b>clima</b>, l’<b>aumento della popolazione</b> e il <b>progresso tecnologico</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Che cos’è la Rivoluzione neolitica',stepsHtml([
+   '⭐ Circa <b>10 000 anni fa</b>, nel Vicino Oriente, ci fu una svolta dalle conseguenze incalcolabili: da <b>cacciatore e raccoglitore</b> l’essere umano divenne <b>agricoltore e allevatore</b> di animali.',
+   '⭐ L’archeologo australiano <b>Vere Gordon Childe</b> (1892-1957) diede a questo processo il nome di <b>Rivoluzione neolitica</b>.',
+   '⭐ Il suo presupposto è la <b>domesticazione</b> di alcune specie vegetali e animali: cereali (grano, orzo, riso, miglio), legumi (piselli, fave), ulivo, pecora, capra, maiale, mucca.',
+   '⭐ Il teatro del processo fu la <b>Mezzaluna fertile</b>, in Medio Oriente: dalle coste della Palestina al Golfo Persico, con la sommità in Anatolia (Turchia).'])),
+  card('ver','2 · Lenta e graduale, con tre cause',stepsHtml([
+   '⭐ Nel resto del mondo il passaggio all’agricoltura avvenne in tempi diversi, <b>tra il 7500 e il 2500 a.C.</b>, in almeno quattro regioni: Cina orientale, Messico centrale e meridionale, Ande (forse anche Amazzonia), Stati Uniti orientali.',
+   '⭐ Il nome «rivoluzione» può essere fuorviante: la domesticazione di piante e animali avvenne <b>molto lentamente e in modo graduale</b>. Non esistono spiegazioni semplici.',
+   'Le <b>tre cause</b> (precondizioni) sono nella tabella qui sotto.'])+TAB(['Causa','Che cosa è successo'],[
+   ['⭐ <b>1 · Cambiamento climatico</b>','circa 13 000 anni fa, dopo l’ultima glaciazione: ritiro dei ghiacci, temperatura più alta, vegetazione ricca e varia, più cereali domesticabili'],
+   ['⭐ <b>2 · Aumento della popolazione</b>','negli ultimi tempi del Paleolitico superiore (circa 40 000-10 000 anni fa) la popolazione cresceva e i grandi animali si diradavano: gli uomini cercarono modi alternativi per sopravvivere'],
+   ['⭐ <b>3 · Progresso tecnologico</b>','verso l’11 000 a.C., nella Mezzaluna fertile, attrezzi agricoli (falci con lame di selce, ceste, mortai, pestelli, mole) e scorte di cibo nei granai sotterranei: uno stile di vita incompatibile con il nomadismo']])),
+  card('gia','3 · Le conseguenze',stepsHtml([
+   'Nascono gli <b>insediamenti fissi</b>: villaggi come <b>Cayonu Tepesi</b> e <b>Çatal Hüyük</b> in Anatolia, città fortificate come <b>Gerico</b> in Palestina, con più di 10 000 anni.',
+   'La <b>popolazione aumenta in fretta</b>: 10 000 anni fa nel mondo erano 8-15 milioni di persone; nel I secolo d.C. erano 250-300 milioni.',
+   'Compaiono la <b>divisione del lavoro</b> e la <b>stratificazione sociale</b>: accanto a contadini, allevatori e artigiani nascono i <b>governanti</b>, i <b>soldati</b> e i <b>sacerdoti</b>.',
+   'Nelle bande di cacciatori e raccoglitori non c’erano capi, gli scontri cruenti erano eccezionali e non esisteva il soldato.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è la Rivoluzione neolitica?»</b> È il passaggio, circa 10 000 anni fa nel Vicino Oriente, da un’economia di caccia e raccolta a un’economia di agricoltura e allevamento. Il nome è di Vere Gordon Childe.</p>
+ <p><b>«Quali sono le tre cause?»</b> Il cambiamento climatico dopo l’ultima glaciazione, l’aumento della popolazione e il progresso tecnologico nella raccolta e nella conservazione del cibo.</p>
+ <p><b>«Quali sono le conseguenze?»</b> Nascono gli insediamenti fissi, la popolazione aumenta rapidamente e compaiono la divisione del lavoro e la stratificazione sociale.</p></div>`,
+ errori:['La Rivoluzione neolitica <b>non</b> fu un cambiamento rapido: la domesticazione avvenne <b>molto lentamente e in modo graduale</b>.','Non c’è una causa sola o una spiegazione semplice: le precondizioni sono <b>tre</b> (clima, popolazione, tecnologia).','L’agricoltura non nacque solo nella Mezzaluna fertile: in altre regioni del mondo comparve <b>tra il 7500 e il 2500 a.C.</b>','Nelle società di cacciatori e raccoglitori in piccole bande <b>non c’erano capi né soldati</b>: governanti, soldati e sacerdoti compaiono con l’agricoltura.'],
+ orale:[
+  ['Spiega che cos’è la Rivoluzione neolitica e chi le diede questo nome.','Circa 10 000 anni fa, nel Vicino Oriente, ci fu una svolta: da cacciatore e raccoglitore l’essere umano divenne agricoltore e allevatore di animali, cominciando a usare tecniche e strategie produttive. L’archeologo australiano Vere Gordon Childe diede a questo processo il nome di Rivoluzione neolitica.'],
+  ['Che cos’è la domesticazione e che cosa fu la Mezzaluna fertile?','La domesticazione è il processo con cui una specie vegetale o animale viene abituata a vivere con l’uomo e a essere controllata da lui: per esempio cereali, legumi, ulivo, pecora, capra, maiale, mucca. La Mezzaluna fertile è l’ampia area del Medio Oriente dove avvenne il processo: dalle coste della Palestina al Golfo Persico, con la sommità in Anatolia.'],
+  ['Perché il nome «Rivoluzione» può essere fuorviante?','Perché fa pensare a un cambiamento rapido e tumultuoso, mentre la domesticazione di piante e animali avvenne in realtà molto lentamente e in modo graduale. Fu un processo estremamente lungo e complesso.'],
+  ['Elenca e spiega le tre cause della Rivoluzione neolitica.','Prima il cambiamento climatico, circa 13 000 anni fa dopo l’ultima glaciazione: più cereali domesticabili. Poi l’aumento della popolazione, mentre la fauna si diradava. Infine il progresso tecnologico nella raccolta e nella conservazione del cibo: attrezzi agricoli e scorte nei granai, uno stile di vita scarsamente compatibile con il nomadismo.'],
+  ['Quali furono le conseguenze della domesticazione?','Nacquero gli insediamenti fissi, come Cayonu Tepesi, Çatal Hüyük e Gerico; la popolazione aumentò rapidamente, da 8-15 milioni di persone 10 000 anni fa a 250-300 milioni nel I secolo d.C.; comparvero la divisione del lavoro e la stratificazione sociale, con governanti, soldati e sacerdoti.'],
+ ],
+ quiz:[
+  ['Chi diede il nome «Rivoluzione neolitica» al passaggio all’agricoltura?','Vere Gordon Childe',['Paul Bairoch','Jared Diamond'],'Archeologo australiano (1892-1957).'],
+  ['Dove avvenne il processo di domesticazione descritto nel libro?','Nella Mezzaluna fertile, in Medio Oriente',['Nelle steppe dell’Asia centrale','Nella savana africana'],'Dalla Palestina al Golfo Persico, con la sommità in Anatolia.'],
+  ['Come avvenne la domesticazione di piante e animali?','Molto lentamente e in modo graduale',['In pochi anni, in modo improvviso','Solo grazie alle macchine a vapore'],'Il nome «rivoluzione» può essere fuorviante.'],
+  ['Quale NON è una delle tre cause della Rivoluzione neolitica?','La scoperta dell’elettricità',['Il cambiamento climatico','L’aumento della popolazione'],'Le cause sono clima, popolazione, progresso tecnologico.'],
+  ['Quali nuove figure sociali compaiono con l’agricoltura?','Governanti, soldati e sacerdoti',['Solo cacciatori e raccoglitori','Solo pescatori'],'Divisione del lavoro e stratificazione sociale.']]
+};
+
+DEFS.u5=[
+ ['Policoltura','Coltivazione di più prodotti insieme all’allevamento di diversi tipi di bestiame. Nel Medioevo molti agricoltori la lasciarono per specializzarsi.'],
+ ['Rotazione biennale e triennale','Modi di organizzare la coltivazione dei campi: la biennale è dell’agricoltura mediterranea, la triennale di quella dell’Europa nordica.'],
+ ['Modello estensivo','Coltivazione di un solo prodotto (per esempio cereali o cotone) su aree di terreno molto vaste.'],
+ ['Agricoltura biologica','Agricoltura che non danneggia l’ambiente: non usa diserbanti e pesticidi, combatte i parassiti con metodi naturali, usa concimi organici, valorizza la biodiversità e pratica la rotazione delle colture.'],
+ ['Gruppi di acquisto solidale (GAS)','Associazioni di persone che fanno la spesa in comune: oltre agli sconti puntano su consumo critico, sostenibilità ambientale e difesa dei diritti dei lavoratori.']
+];
+CONT.u5={
+ cose:`<div class="box bia"><p>Nella storia dell’agricoltura colpiscono due cose: la sua <b>«vittoria»</b>, perché si è estesa a tutto il mondo, e la <b>stabilità del modello base</b> (aratro e irrigazione), rimasto quasi uguale fino al XIX secolo. Poi arrivano <b>macchinari, nuove energie e ricerca scientifica</b>. Oggi si cerca anche un’agricoltura che rispetti l’ambiente.</p></div>`,
+ ricette:[
+  card('blu','1 · Due caratteristiche dell’agricoltura nella storia',stepsHtml([
+   'La <b>«vittoria» dell’agricoltura</b>: si estende a tutto il mondo e si impone sulle altre strategie di sopravvivenza, sia sulla <b>caccia e raccolta</b> sia sulla <b>pastorizia nomade</b>. Queste scompaiono o restano nelle zone più aride e impervie.',
+   'La <b>stabilità del modello base</b>: preparazione del suolo con l’<b>aratro</b> e <b>irrigazione</b> dei campi seminati.',
+   'Già usato nel IV millennio a.C. in Egitto e in Mesopotamia, il modello fu perfezionato ma restò quasi uguale <b>dall’Impero romano fino al XIX secolo</b>.'])),
+  card('ver','2 · L’agricoltura nel Medioevo: due varianti',TAB(['','Agricoltura mediterranea','Agricoltura dell’Europa nordica'],[
+   ['<b>Aratro</b>','leggero, con vomere di ferro (a volte con coltro)','pesante, a versoio: va in profondità e rovescia la zolla'],
+   ['<b>Rotazione</b>','biennale','triennale']])+stepsHtml([
+   'Nell’agricoltura mediterranea si semina <b>a spaglio</b> (le sementi si spargono a mano) e si miete a mano con la <b>falce</b>.'])),
+  card('gia','3 · Le innovazioni del Medioevo',stepsHtml([
+   '⭐ La <b>sostituzione del bue con il cavallo</b>: è più forte e costa meno da nutrire (mangia soprattutto avena e non ha bisogno di grandi pascoli).',
+   '⭐ I <b>mulini ad acqua</b> (in Inghilterra, dal X secolo) e <b>a vento</b> (in Francia, dal XII secolo): <b>permisero di macinare maggiori quantità di grano</b>.',
+   'La <b>specializzazione</b>: molti agricoltori lasciano la policoltura e fanno una sola attività (viticoltura in Borgogna e in Renania, pecore merinos in Inghilterra e in Spagna). Aumentano gli scambi commerciali.'])),
+  card('blu','4 · L’età moderna e il XIX secolo',stepsHtml([
+   '⭐ All’inizio dell’età moderna, grazie alle scoperte geografiche, <b>arrivano in Europa nuove colture</b> dal Nuovo Mondo: il <b>mais</b> e la <b>patata</b>.',
+   'Dal <b>XIX secolo</b> l’agricoltura occidentale cambia molto e la produttività cresce, per far fronte all’aumento della popolazione.',
+   '⭐ Come? Con l’<b>impiego su larga scala di nuovi macchinari</b> e con il <b>modello estensivo</b>: si coltiva un solo prodotto (cereali, cotone) su aree di terreno molto vaste.'])),
+  card('ver','5 · Nuove energie e ricerca scientifica',stepsHtml([
+   'Le <b>nuove fonti di energia</b>: il <b>vapore</b> (macchine agricole più potenti, treni e navi per vendere lontano), l’<b>elettricità</b> (refrigerazione per conservare frutta, latte, carne, pesce) e il <b>motore a scoppio</b> (nuove macchine e camion).',
+   'Ne trasse vantaggio soprattutto l’agricoltura del <b>Nuovo Mondo</b>, con i suoi immensi spazi pianeggianti.',
+   '⭐ Enorme fu anche l’impatto della <b>ricerca scientifica</b>: la <b>genetica</b> con la <b>selezione delle sementi e la creazione di nuovi ibridi</b> (cereali, frutta e ortaggi più resistenti).',
+   '⭐ La <b>chimica</b> con <b>fertilizzanti, diserbanti e pesticidi</b>: preparano il suolo, fanno produrre di più e combattono gli insetti nocivi.'])),
+  card('gia','6 · L’agricoltura oggi',stepsHtml([
+   'L’<b>agricoltura biologica</b> non danneggia l’ambiente (niente diserbanti e pesticidi, concimi organici, rotazione delle colture). Si impone anche perché crescono i <b>consumatori consapevoli e informati</b>.',
+   'I <b>GAS</b> (gruppi di acquisto solidale) sono associazioni di persone che fanno la spesa in comune. In Italia ce ne sono <b>più di 300</b>.',
+   'Accanto all’<b>agricoltura industrializzata</b> esistono ancora <b>tecniche antichissime</b>, come l’agricoltura itinerante in Amazzonia e in Nuova Guinea.']))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Quali sono le due caratteristiche della storia dell’agricoltura?»</b> La sua «vittoria» (si estende a tutto il mondo e si impone sulle altre strategie) e la stabilità del modello base, aratro e irrigazione, fino al XIX secolo.</p>
+ <p><b>«Che differenza c’è tra agricoltura mediterranea e dell’Europa nordica?»</b> La mediterranea ha l’aratro leggero con vomere di ferro e la rotazione biennale; quella nordica ha l’aratro pesante a versoio e la rotazione triennale.</p>
+ <p><b>«Che cosa cambia dal XIX secolo?»</b> Arrivano nuovi macchinari e nuove energie (vapore, elettricità, motore a scoppio), il modello estensivo, la genetica (sementi e ibridi) e la chimica (fertilizzanti, diserbanti, pesticidi).</p></div>`,
+ errori:['L’aratro <b>pesante a versoio</b> è dell’Europa <b>nordica</b> (rotazione triennale). L’aratro <b>leggero</b> è <b>mediterraneo</b> (rotazione biennale).','Nel Medioevo il <b>cavallo sostituisce il bue</b>, non il contrario.','Il <b>modello estensivo</b> è la coltura di <b>un solo prodotto</b> su terreni molto vasti, non di tanti prodotti.','<b>Mais e patata</b> arrivano in Europa dal <b>Nuovo Mondo</b>, all’inizio dell’età moderna.'],
+ orale:[
+  ['Spiega perché si parla di «vittoria» dell’agricoltura.','Perché l’agricoltura si è estesa progressivamente a tutto il mondo e si è imposta sulle altre strategie di sopravvivenza, cioè sulla caccia e raccolta e sulla pastorizia nomade. Queste sono scomparse oppure sono rimaste solo nelle zone più aride e impervie.'],
+  ['Descrivi le due varianti dell’agricoltura nel Medioevo.','L’agricoltura mediterranea usa l’aratro leggero, con vomere di ferro e a volte con coltro, la semina a spaglio, la mietitura a mano con la falce e la rotazione biennale. L’agricoltura dell’Europa nordica usa l’aratro pesante a versoio, che va in profondità e rovescia la zolla, con la rotazione triennale.'],
+  ['Quali innovazioni ci furono nel Medioevo?','Il cavallo sostituì il bue, perché è più forte e costa meno da nutrire. Si diffusero i mulini ad acqua e a vento, che permisero di macinare più grano. Molti agricoltori lasciarono la policoltura per specializzarsi in una sola attività.'],
+  ['Che cosa cambia nell’agricoltura dal XIX secolo?','Si usano nuovi macchinari su larga scala e il modello estensivo, cioè un solo prodotto su terreni vastissimi. Arrivano nuove energie (vapore, elettricità, motore a scoppio). La genetica crea nuovi ibridi e seleziona le sementi; la chimica porta fertilizzanti, diserbanti e pesticidi.'],
+  ['Che cosa sono l’agricoltura biologica e i GAS?','L’agricoltura biologica non danneggia l’ambiente: non usa diserbanti e pesticidi, usa concimi organici e pratica la rotazione delle colture. I GAS sono gruppi di acquisto solidale: associazioni di persone che fanno la spesa in comune, con attenzione a consumo critico, ambiente e diritti dei lavoratori.']
+ ],
+ quiz:[
+  ['Quale modello base della produzione agricola è rimasto quasi uguale fino al XIX secolo?','Aratro e irrigazione dei campi',['Macchinari a vapore e concimi chimici','Caccia e raccolta'],'Era già usato nel IV millennio a.C. in Egitto e in Mesopotamia.'],
+  ['Quale aratro caratterizza l’agricoltura dell’Europa nordica?','L’aratro pesante a versoio',['L’aratro leggero con vomere di ferro','La zappa a mano'],'Va in profondità e rovescia la zolla; rotazione triennale.'],
+  ['Quale animale sostituì il bue nel Medioevo?','Il cavallo',['Il cammello','L’asino'],'È più forte e meno costoso da nutrire.'],
+  ['Quali colture arrivano in Europa dal Nuovo Mondo all’inizio dell’età moderna?','Mais e patata',['Grano e orzo','Segale e avena'],'Entrano accanto ai cereali già coltivati (grano, orzo, avena, segale).'],
+  ['Che cos’è il modello estensivo?','La coltura di un solo prodotto su aree di terreno molto vaste',['La coltura di molti prodotti su piccoli campi','L’allevamento di animali al chiuso'],'Per esempio cereali o cotone.']
+ ]
+};
+
+DEFS.u6=[
+ ['Domesticazione animale','Passo fondamentale per l’allevamento. Gli animali sono addomesticati per il cibo, il trasporto, le fibre tessili e la compagnia.'],
+ ['Società acefale','Società «senza capo»: prive di stratificazione sociale e di autorità centrale. Si basano sulla parentela.'],
+ ['Lignaggio','Gruppo sociale con comune discendenza. Quando diventa troppo grande per le risorse disponibili, si scinde in due o più segmenti.'],
+ ['Nomadismo','Stile di vita con spostamenti periodici, per esempio con mandrie o greggi, alla ricerca di risorse. Viene dal verbo greco némein, «pascolare».'],
+ ['Allevamento intensivo','Allevamento in grandi ambienti meccanizzati, simili a fabbriche, dove scarseggiano gli spazi per il pascolo.'],
+ ['Allevamento estensivo','Allevamento in cui gli animali vivono allo stato brado gran parte dell’anno, pascolando liberamente e percorrendo grandi distanze.']
+];
+CONT.u6={
+ cose:`<div class="box bia"><p>Con la <b>domesticazione degli animali</b> nasce l’<b>allevamento</b>. Gli allevatori sono all’inizio <b>nomadi</b>: nascono le <b>società di pastori</b>. Oggi l’allevamento può essere <b>intensivo</b> (in ambienti meccanizzati) o <b>estensivo</b> (in ampi spazi aperti).</p></div>`,
+ ricette:[
+  card('blu','1 · La domesticazione animale',stepsHtml([
+   'La domesticazione è un passo fondamentale non solo per l’agricoltura ma anche per l’<b>allevamento</b>.',
+   'Gli <b>scopi</b>: <b>cibo</b> (pecore, capre, maiali, mucche), <b>trasporto</b> (cavalli, asini, cammelli, elefanti), <b>fibre tessili</b> (lana da pecore e capre, seta dai bachi) e <b>compagnia</b> (cani, gatti).',
+   'Una spiegazione scientifica: secondo alcuni studiosi una <b>mutazione genetica</b> rese qualche animale docile, facile da catturare e da ammaestrare, non insofferente agli spazi chiusi.',
+   'Esempio del <b>cane</b>: alcuni <b>lupi</b> seguirono l’uomo e nacque uno scambio vantaggioso (cibo in cambio di aiuto nella caccia, segnalazione dei pericoli, guardia agli accampamenti).'])),
+  card('ver','2 · I sei tratti degli animali domesticabili',stepsHtml([
+   '⭐ Lo dice il biologo statunitense <b>Jared Diamond</b> (nato nel 1937) nel libro <i>Armi, acciaio e malattie</i> (1997): gli animali, per essere addomesticati con successo, devono avere <b>sei caratteristiche</b>.'])+TAB(['N.','Caratteristica','Esempio'],[
+   ['1','<b>abitudini alimentari non dispendiose</b>','meglio gli erbivori dei carnivori'],
+   ['2','<b>elevato tasso di crescita</b>','bovini e suini crescono in fretta; gorilla ed elefanti no'],
+   ['3','<b>attitudine a riprodursi in cattività</b>','ghepardi e vigogne non sono mai stati addomesticati'],
+   ['4','<b>carattere non aggressivo</b>','grizzly, bufalo africano, zebra e onagro non sono domesticabili'],
+   ['5','<b>assenza di tendenza al panico</b>','le gazzelle, nervose, sbattono contro le recinzioni'],
+   ['6','<b>struttura sociale adatta</b>','vivono in branco, seguono un leader, accettano intrusi (cavalli, pecore, capre, bovini, lupi)']])),
+  card('gia','3 · Le società di pastori',stepsHtml([
+   'L’allevamento di <b>animali erbivori ruminanti</b> (mucche, pecore, capre, cavalli, cammelli) è alla base delle <b>società di pastori e allevatori, nomadi o seminomadi</b>.',
+   'Si diffusero negli <b>ambienti inadatti alle coltivazioni</b> per clima e suolo (deserti, steppe, tundra, altopiani, montagne). Il bestiame trasforma l’erba in latte, formaggio e carne: l’uomo non può trasformare in proteine la cellulosa.',
+   'Oggi i pastori sono pochi milioni, in tutti i continenti: per esempio i <b>Basseri</b> (Iran), gli <b>Al Murrah</b> (penisola arabica), i <b>Ciukci</b> (Siberia), i <b>Masai</b> del Kenya, i <b>Turkana</b> e i <b>Nuer</b> del Sudan, i pastori sardi e delle Alpi.'])),
+  card('blu','4 · Le caratteristiche delle società pastorali',stepsHtml([
+   'Il <b>bestiame</b> è la <b>ricchezza</b> e la principale fonte di <b>prestigio sociale</b>; può servire anche come moneta negli scambi.',
+   'Sono <b>società instabili</b>: il bestiame può essere decimato da un’epidemia o razziato.',
+   'Sono <b>società patrilineari</b>: il bestiame è dei maschi capifamiglia.',
+   'Sono <b>società acefale</b> (senza capo): senza stratificazione sociale e autorità centrale. Si organizzano per <b>parentela</b>, con i <b>lignaggi segmentari</b>.'])),
+  card('ver','5 · Il nomadismo',stepsHtml([
+   'La parola viene dal verbo greco <i>némein</i>, «pascolare»: gruppi che si spostano periodicamente con mandrie o greggi alla ricerca di risorse.',
+   'Il nomadismo non riguarda solo i pastori, ma anche gli <b>ultimi cacciatori e raccoglitori</b>.',
+   'I <b>Rom</b> sono una popolazione originaria dell’India nord-occidentale. Il loro stile di vita tradizionale è vicino al nomadismo, ma oggi solo il <b>3%</b> è itinerante e due terzi vivono in case di muratura.',
+   'Alcuni antropologi parlano di <b>nomadismo contemporaneo</b>: migrazioni di massa, esodo dei profughi, «fuga di cervelli», spostamenti per lavoro di manager, artisti, intellettuali, esperti di informatica.'])),
+  card('gia','6 · L’allevamento di oggi',`<p>Le due principali forme di allevamento moderno producono quasi tutta la carne, il latte, le uova e la lana del mondo.</p>`+TAB(['','Intensivo','Estensivo'],[
+   ['<b>Dove</b>','dove scarseggiano gli spazi per il pascolo: zone molto urbanizzate (Europa, Pianura Padana)','dove ci sono ampi spazi (Stati Uniti, Argentina, Brasile, Australia)'],
+   ['<b>Come</b>','bestiame (bovini, suini, pollame) in grandi ambienti meccanizzati, simili a fabbriche; il lavoro è fatto da macchinari automatici','animali (bovini e ovini) allo stato brado gran parte dell’anno, che pascolano liberamente e percorrono grandi distanze']]))
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Quali sono gli scopi della domesticazione animale?»</b> Il cibo, il trasporto, le fibre tessili e la compagnia.</p>
+ <p><b>«Quali sono le caratteristiche delle società pastorali?»</b> Il bestiame è ricchezza e prestigio; sono società instabili, patrilineari e acefale, cioè senza capo.</p>
+ <p><b>«Che differenza c’è tra allevamento intensivo ed estensivo?»</b> L’intensivo è in grandi ambienti meccanizzati dove mancano gli spazi; l’estensivo è allo stato brado, in ampi spazi aperti.</p></div>`,
+ errori:['Le società pastorali sono <b>patrilineari</b> (il bestiame è dei maschi), non matrilineari.','«<b>Acefale</b>» vuol dire <b>senza capo</b>: non hanno un’autorità centrale.','L’allevamento <b>intensivo</b> è in ambienti meccanizzati dove mancano gli spazi; quello <b>estensivo</b> è allo stato brado in ampi spazi.','Il nomadismo non è solo dei pastori: riguarda anche gli ultimi <b>cacciatori e raccoglitori</b>.'],
+ orale:[
+  ['Elenca gli scopi della domesticazione animale e fai un esempio per ciascuno.','Il cibo (pecore, capre, maiali, mucche); il trasporto (cavalli, asini, cammelli, elefanti); le fibre tessili (lana da pecore e capre, seta dai bachi); la compagnia (cani, gatti).'],
+  ['Quali sono le sei caratteristiche degli animali domesticabili secondo Jared Diamond?','Secondo il biologo Jared Diamond, nel libro Armi, acciaio e malattie (1997), gli animali domesticabili hanno: abitudini alimentari non dispendiose, elevato tasso di crescita, attitudine a riprodursi in cattività, carattere non aggressivo, assenza di tendenza al panico e una struttura sociale adatta (vivono in branco, seguono un leader, accettano intrusi).'],
+  ['Descrivi le caratteristiche delle società pastorali.','Il bestiame è la ricchezza e la principale fonte di prestigio sociale e può servire come moneta. Sono società instabili, perché il bestiame può essere decimato da un’epidemia o razziato. Sono patrilineari, perché il bestiame è dei maschi capifamiglia. Sono acefale, cioè senza capo né stratificazione sociale, e si organizzano per parentela, con i lignaggi segmentari.'],
+  ['Che cos’è il nomadismo? Fai qualche esempio.','È uno stile di vita con spostamenti periodici alla ricerca di risorse; il nome viene dal verbo greco némein, «pascolare». Riguarda i pastori con le loro mandrie, ma anche gli ultimi cacciatori e raccoglitori. Anche i Rom hanno uno stile di vita vicino al nomadismo e alcuni antropologi parlano di nomadismo contemporaneo (migrazioni, profughi, fuga di cervelli).'],
+  ['Spiega la differenza tra allevamento intensivo ed estensivo.','L’allevamento intensivo è diffuso dove scarseggiano gli spazi, nelle zone molto urbanizzate (per esempio la Pianura Padana): il bestiame cresce in grandi ambienti meccanizzati, simili a fabbriche. L’allevamento estensivo è praticato dove ci sono ampi spazi (Stati Uniti, Argentina, Brasile, Australia): gli animali vivono allo stato brado gran parte dell’anno.']
+ ],
+ quiz:[
+  ['Chi ha elencato sei caratteristiche degli animali domesticabili?','Jared Diamond',['Alberto Salza','Paul Bairoch'],'Biologo statunitense, autore di Armi, acciaio e malattie (1997).'],
+  ['Quale di questi animali serve per il trasporto?','Il cammello',['La pecora','Il gatto'],'Trasporto: cavalli, asini, cammelli, elefanti.'],
+  ['Che cosa significa «società acefale»?','Società senza capo',['Società guidate da un re','Società di sole donne'],'Senza stratificazione sociale e senza autorità centrale.'],
+  ['Da quale verbo greco deriva la parola «nomadismo»?','Da un verbo che significa «pascolare»',['Da un verbo che significa «cacciare»','Da un verbo che significa «navigare»'],'Némein, «pascolare»: gruppi che si spostano con mandrie o greggi.'],
+  ['Dove si pratica l’allevamento intensivo?','Dove scarseggiano gli spazi per il pascolo',['Dove ci sono ampi spazi aperti','Solo nei deserti'],'Per esempio nelle zone molto urbanizzate, come la Pianura Padana.']
+ ]
+};
+
+DEFS.u7=[
+ ['Industria','In senso generale, la trasformazione di materie prime o semilavorati in prodotti finiti. Oggi indica soprattutto la produzione di merci su vasta scala.'],
+ ['Rivoluzione industriale','Il complesso di eventi storici in seguito ai quali la produzione industriale si è affermata (nel XIX secolo) e ha trasformato il volto del pianeta.'],
+ ['Frattura','Per Paul Bairoch, un evento storico che porta cambiamenti molto profondi in un tempo relativamente breve. Le fratture sono due: la Rivoluzione neolitica e la Rivoluzione industriale.'],
+ ['Sharing economy','«Economia della condivisione»: modello economico basato sulla condivisione di risorse umane e materiali tramite piattaforme virtuali.'],
+ ['Società della conoscenza','Espressione usata da alcuni studiosi per sottolineare l’importanza che oggi hanno la ricerca e il sapere.'],
+ ['Industria 4.0','Il nome della quarta Rivoluzione industriale: produzione automatizzata e interconnessa, con dati, robotica e stampa 3D.']];
+CONT.u7={
+ cose:`<div class="box bia"><p>L’<b>industria</b> trasforma le materie prime in <b>prodotti finiti</b>. Con la <b>Rivoluzione industriale</b> è diventata <b>produzione di massa</b> e ha trasformato il pianeta. Si distinguono <b>quattro fasi</b>, fino alla quarta, l’<b>Industria 4.0</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Che cos’è l’industria',stepsHtml([
+   'In senso generale l’<b>industria</b> è la <b>trasformazione in prodotti finiti</b> di materie prime o semilavorati, che vengono da agricoltura, allevamento, caccia, pesca ed estrazione mineraria.',
+   'Appartiene al settore <b>secondario</b>, che sta tra il <b>primario</b> (agricoltura, allevamento, caccia e pesca, attività estrattiva) e il <b>terziario</b> (commercio e servizi).',
+   'Oggi «industria» indica soprattutto la <b>produzione meccanizzata di merci su vasta scala</b>: la <b>produzione di massa</b>.',
+   'La produzione di massa ha le <b>grandi fabbriche</b>, la <b>concentrazione dei mezzi di produzione</b> e usa le <b>scoperte scientifiche</b> e le <b>innovazioni tecnologiche</b>, a partire dalla <b>macchina a vapore</b>.'])),
+  card('ver','2 · Le due «fratture» e le quattro fasi',stepsHtml([
+   'Lo storico <b>Paul Bairoch</b> (1930-1999) dice che le <b>due fratture</b> della storia sono la <b>Rivoluzione neolitica</b> e la <b>Rivoluzione industriale</b>.',
+   '«Frattura» vuol dire <b>cambiamenti molto profondi</b> in un tempo <b>relativamente breve</b>: la neolitica in <b>meno di 2000 anni</b>, la industriale in <b>200 anni</b>.',
+   'Con la Rivoluzione industriale l’uomo si afferma come colui che <b>«domina» la natura</b> e la trasforma.'])+TAB(['Fase','Quando e che cosa'],[
+   ['<b>Prima</b>','Settecento: macchina a vapore nei settori tessile e metallurgico'],
+   ['<b>Seconda</b>','fine Ottocento: elettricità, prodotti chimici e petrolio'],
+   ['<b>Terza</b>','elettronica e informatica nei processi produttivi'],
+   ['<b>Quarta</b>','produzione automatizzata e interconnessa: innovazioni digitali e robotica']])),
+  card('gia','3 · La terza Rivoluzione industriale',stepsHtml([
+   'È esplosa nell’<b>ultimo quarto del XX secolo</b>: lo sviluppo si basa anche e soprattutto sulle risorse <b>scientifiche e tecnologiche</b>.',
+   'Nascono nuovi modelli economici, come la <b>sharing economy</b> («economia della condivisione»): si condividono risorse umane e materiali con <b>piattaforme virtuali</b>.',
+   'Alcuni studiosi parlano di <b>società della conoscenza</b>, perché la ricerca e il sapere sono molto importanti.',
+   'Per lo sviluppo sociale c’è una <b>diversa distribuzione del reddito</b>: alcuni paesi crescono (le «economie emergenti», come Cina, India e Brasile), ma le <b>disuguaglianze aumentano</b> (World Inequality Report, 2018).'])),
+  card('blu','4 · La quarta Rivoluzione industriale: Industria 4.0',stepsHtml([
+   'L’espressione è stata usata la prima volta nel <b>2011 ad Hannover</b>, alla Fiera dedicata a industria e automazione.',
+   'Sono processi ancora in corso: <b>innovazione digitale</b>, <b>robotica</b>, <b>stampa in 3D</b> e nuove modalità di programmazione.',
+   'Quattro aspetti: i <b>dati</b> (Big Data); il miglioramento dell’<b>interazione uomo-macchina</b> (touch, realtà aumentata); l’<b>automazione</b> (robotica); il <b>passaggio dal digitale al reale</b> (stampa 3D).',
+   'Un esempio è <b>Silver 2</b>, un robot che ricorda un granchio: pulisce i fondali marini dalla plastica (progetto <b>Blue Resolution</b>, Scuola Superiore Sant’Anna di Pisa).'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’industria?»</b> È la trasformazione di materie prime o semilavorati in prodotti finiti. Oggi indica soprattutto la produzione di massa, cioè di merci su vasta scala.</p>
+ <p><b>«Che cosa sono le due fratture di Bairoch?»</b> La Rivoluzione neolitica e la Rivoluzione industriale: due eventi che hanno portato cambiamenti molto profondi in un tempo relativamente breve.</p>
+ <p><b>«Quali sono le quattro fasi della Rivoluzione industriale?»</b> La prima con la macchina a vapore, la seconda con elettricità, chimica e petrolio, la terza con elettronica e informatica, la quarta con digitale e robotica.</p></div>`,
+ errori:['La <b>macchina a vapore</b> segna la <b>prima</b> Rivoluzione industriale. La <b>terza</b> è quella dell’<b>elettronica e dell’informatica</b>.','Per Bairoch le fratture sono <b>due</b>: la Rivoluzione <b>neolitica</b> e quella <b>industriale</b>.','Rivoluzione neolitica: <b>meno di 2000 anni</b>. Rivoluzione industriale: <b>200 anni</b>. Non scambiare i numeri.','L’<b>Industria 4.0</b> è la <b>quarta</b> rivoluzione (produzione automatizzata e interconnessa), non la terza.'],
+ orale:[
+  ['Che cos’è l’industria? In quale settore si colloca?','In senso generale l’industria è la trasformazione di materie prime o semilavorati in prodotti finiti. È il settore secondario, che sta tra il primario (agricoltura, allevamento, caccia, pesca, attività estrattiva) e il terziario (commercio e servizi).'],
+  ['Spiega che cosa sono le due «fratture» della storia secondo Paul Bairoch.','Per Bairoch una frattura è un evento storico che porta cambiamenti molto profondi in un tempo relativamente breve. Le due fratture sono la Rivoluzione neolitica, avvenuta in meno di 2000 anni, e la Rivoluzione industriale, avvenuta in 200 anni.'],
+  ['Elenca le quattro fasi della Rivoluzione industriale.','La prima, nel Settecento, con la macchina a vapore nei settori tessile e metallurgico. La seconda, a fine Ottocento, con elettricità, prodotti chimici e petrolio. La terza con elettronica e informatica. La quarta con una produzione automatizzata e interconnessa.'],
+  ['Che cosa sono la sharing economy e la società della conoscenza?','La sharing economy, o economia della condivisione, è un modello che si basa sulla condivisione di risorse umane e materiali con piattaforme virtuali. «Società della conoscenza» è l’espressione usata da alcuni studiosi per dire che oggi la ricerca e il sapere sono molto importanti.'],
+  ['Descrivi la quarta Rivoluzione industriale e i suoi quattro aspetti.','È stata chiamata così per la prima volta nel 2011 ad Hannover. Cambierà la produzione con innovazione digitale, robotica, stampa 3D. I quattro aspetti sono: la raccolta e l’uso dei dati, il miglioramento dell’interazione uomo-macchina, l’automazione e il passaggio dal digitale al reale.'],
+ ],
+ quiz:[
+  ['Che cos’è l’industria in senso generale?','La trasformazione di materie prime o semilavorati in prodotti finiti',['La coltivazione dei campi','Solo il commercio di merci'],'Appartiene al settore secondario.'],
+  ['Quante sono le «fratture» della storia secondo Bairoch?','Due: Rivoluzione neolitica e Rivoluzione industriale',['Tre: neolitica, industriale e digitale','Una sola: la Rivoluzione industriale'],'Paul Bairoch (1930-1999).'],
+  ['Quale invenzione caratterizza la prima Rivoluzione industriale?','La macchina a vapore',['L’elettricità','La stampa in 3D'],'Nel Settecento, nei settori tessile e metallurgico.'],
+  ['Che cosa caratterizza la seconda Rivoluzione industriale?','Elettricità, prodotti chimici e petrolio',['Elettronica e informatica','Robotica e stampa 3D'],'Risale alla fine dell’Ottocento.'],
+  ['Dove è stata usata per la prima volta l’espressione «quarta Rivoluzione industriale»?','Ad Hannover, nel 2011',['A Pisa, nel 1999','A Londra, nel 1955'],'Alla Fiera dedicata a industria e automazione.']]
+};
+
+DEFS.u8=[
+ ['Welfare','L’insieme delle iniziative che mirano a garantire ai cittadini i servizi fondamentali.'],
+ ['Prodotto interno','Il valore dei beni e dei servizi prodotti in un Paese. È lordo se riguarda l’intera nazione, pro capite se riguarda il singolo individuo.'],
+ ['Oro blu','Il modo di chiamare l’acqua potabile, che oggi è sempre più scarsa.'],
+ ['Biodiversità','La varietà delle specie vegetali e animali. Con lo sviluppo industriale si sta contraendo: moltissime specie sono scomparse.'],
+ ['Sviluppo sostenibile','Sviluppo che tiene insieme ambiente, economia e società. Il rapporto Brundtland (1987) è il primo documento internazionale su questo tema.'],
+ ['Agenda 2030','Programma delle Nazioni Unite lanciato il 25 settembre 2015 e sottoscritto da 193 paesi, con 17 obiettivi di sviluppo sostenibile.']];
+CONT.u8={
+ cose:`<div class="box bia"><p>Lo sviluppo industriale ha avuto <b>conseguenze positive</b> (demografiche, economiche, sociali e politiche) e <b>conseguenze negative sull’ambiente</b>. Per affrontare la crisi ambientale le Nazioni Unite hanno lanciato <b>Agenda 2030</b>, con <b>17 obiettivi</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Le conseguenze positive',stepsHtml([
+   '<b>Demografiche</b>: aumenta la popolazione e la vita si allunga: dai <b>35 anni</b> del primo Ottocento agli <b>oltre 80</b> di oggi.',
+   '<b>Economiche</b>: cresce il prodotto interno (lordo e pro capite) e aumenta la produttività del lavoro. Si produce di più in meno tempo, la giornata lavorativa diminuisce e nasce il <b>tempo libero</b>.',
+   '<b>Sociali e politiche</b>: democrazia, migliori condizioni di vita dei lavoratori, diritti civili e sociali (suffragio universale, istruzione obbligatoria, assicurazioni sociali, <b>Welfare</b>, diritti delle donne).'])),
+  card('ros','2 · Le conseguenze negative',stepsHtml([
+   'Preoccupano soprattutto le conseguenze sull’<b>ambiente</b>.',
+   'Lo <b>sfruttamento indiscriminato delle risorse</b>, prima di tutto l’<b>acqua potabile</b> (l’«<b>oro blu</b>»).',
+   'Le <b>emissioni inquinanti</b>, la <b>contrazione della biodiversità</b>, la <b>deforestazione</b> e la <b>desertificazione</b>.',
+   'Serve lo sforzo di tutti i paesi, soprattutto di quelli che producono e consumano di più. Il <b>rapporto Brundtland</b> (<b>1987</b>), primo documento internazionale sullo sviluppo sostenibile, dice: «<b>il nostro futuro è comune</b>».'])),
+  card('ver','3 · Agenda 2030',stepsHtml([
+   'Il <b>25 settembre 2015</b> le Nazioni Unite hanno lanciato <b>Agenda 2030</b>: un programma sottoscritto da <b>193 paesi</b>, con <b>17 obiettivi</b> di sviluppo sostenibile.',
+   'Lega la <b>sostenibilità ambientale</b> allo <b>sviluppo economico e sociale</b>.',
+   'Obiettivi per l’ambiente: <b>energia</b> pulita; modelli di <b>produzione e consumo</b> sostenibili; <b>cambiamento climatico</b>; <b>oceani, mari e risorse marine</b>; <b>ecosistemi terrestri</b>; <b>foreste</b>, desertificazione, degradazione del territorio e <b>biodiversità</b>.',
+   'Nel 2018 un indice dell’ONU (punteggio da 0 a 100) ha valutato i paesi. Tra i <b>promossi</b>: <b>Svezia, Norvegia e Finlandia</b>. L’<b>Italia</b> è al <b>29° posto</b>, con 74,2.'])),
+  card('gia','4 · Perché serve agire',stepsHtml([
+   'Il <b>14 febbraio 2019</b> a Marina di Camerota è stata trovata una <b>tartaruga marina uccisa dai rifiuti</b>: aveva lo stomaco pieno di plastica.',
+   'È un piccolo episodio, ma si aggiunge alla lista dei danni all’ambiente (come la <b>Great Pacific Garbage Patch</b>, l’enorme isola di spazzatura nel Pacifico).',
+   'Le <b>dimensioni planetarie</b> della crisi ambientale richiedono una <b>risposta condivisa</b> da tutti gli Stati.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Quali sono le conseguenze positive dello sviluppo industriale?»</b> Demografiche (più popolazione, vita più lunga), economiche (più prodotto e più produttività, più tempo libero), sociali e politiche (democrazia, diritti, Welfare).</p>
+ <p><b>«Quali sono le conseguenze negative?»</b> Sfruttamento delle risorse (come l’acqua potabile), emissioni inquinanti, meno biodiversità, deforestazione e desertificazione.</p>
+ <p><b>«Che cos’è Agenda 2030?»</b> Un programma dell’ONU del 25 settembre 2015, sottoscritto da 193 paesi, con 17 obiettivi di sviluppo sostenibile.</p></div>`,
+ errori:['Le conseguenze dello sviluppo industriale sono <b>sia positive sia negative</b>, non solo positive.','Il rapporto <b>Brundtland</b> è del <b>1987</b>; <b>Agenda 2030</b> è del <b>2015</b>. Non scambiare le date.','Agenda 2030 ha <b>17 obiettivi</b> ed è sottoscritta da <b>193 paesi</b>: non confondere i due numeri.','La durata media della vita è passata da <b>35 anni</b> (primo Ottocento) a <b>oltre 80</b> (oggi), non il contrario.'],
+ orale:[
+  ['Elenca le conseguenze positive dello sviluppo industriale.','Sono demografiche (aumento della popolazione e vita media da 35 anni a oltre 80), economiche (aumento del prodotto interno e della produttività, giornata lavorativa più breve e tempo libero), sociali e politiche (democrazia, migliori condizioni dei lavoratori, diritti civili e sociali, Welfare).'],
+  ['Quali sono le conseguenze negative dello sviluppo industriale?','Riguardano l’ambiente: sfruttamento indiscriminato delle risorse (soprattutto l’acqua potabile, l’«oro blu»), emissioni inquinanti, contrazione della biodiversità, deforestazione e desertificazione.'],
+  ['Che cosa dice il rapporto Brundtland del 1987?','È il primo documento internazionale sullo sviluppo sostenibile. Dice che per consegnare alle generazioni future un mondo abitabile serve lo sforzo di tutti i paesi, soprattutto di quelli che producono e consumano di più, perché «il nostro futuro è comune».'],
+  ['Che cos’è Agenda 2030 e che cosa si propone?','È un programma delle Nazioni Unite lanciato il 25 settembre 2015 e sottoscritto da 193 paesi. Individua 17 obiettivi di sviluppo sostenibile e lega la sostenibilità ambientale allo sviluppo economico e sociale.'],
+  ['Che cosa è successo a Marina di Camerota nel febbraio 2019 e perché è importante?','Il 14 febbraio 2019 è stata trovata una tartaruga marina uccisa dai rifiuti, con lo stomaco pieno di plastica. È un piccolo episodio, ma si aggiunge alla lista dei danni all’ambiente e mostra che la crisi ambientale richiede una risposta condivisa.'],
+ ],
+ quiz:[
+  ['Di quanto è cambiata la durata media della vita con lo sviluppo industriale?','Dai 35 anni del primo Ottocento a oltre 80 anni oggi',['Da oltre 80 anni a 35 anni','Da 20 a 30 anni'],'È una conseguenza demografica.'],
+  ['Quale di queste è una conseguenza negativa dello sviluppo industriale?','L’inquinamento causato dalle emissioni',['Il suffragio universale','L’istruzione obbligatoria'],'Il suffragio e l’istruzione sono conseguenze positive.'],
+  ['Che cosa si intende per «oro blu»?','L’acqua potabile, che è sempre più scarsa',['Il petrolio','Il metallo più prezioso'],'Per la sua scarsità l’acqua potabile è chiamata così.'],
+  ['Quanti obiettivi ha Agenda 2030?','17',['7','193'],'193 sono i paesi che l’hanno sottoscritta.'],
+  ['In quale posizione si è classificata l’Italia nell’indice ONU del 2018?','Al 29° posto',['Al 1° posto','Al 74° posto'],'Con un punteggio di 74,2.']]
+};
+
+const GLOSS=Object.keys(DEFS).flatMap(u=>DEFS[u]).filter((d,i,a)=>a.findIndex(x=>x[0]===d[0])===i);
+const TL=[
+ ['circa 2 milioni di anni fa','Compare il genere umano'],
+ ['circa 13 000 anni fa','Fine dell’ultima glaciazione (prima causa della Rivoluzione neolitica)'],
+ ['circa 10 000 anni fa','Rivoluzione neolitica nel Vicino Oriente: agricoltura e allevamento'],
+ ['7500-2500 a.C.','L’agricoltura compare in altre regioni del mondo'],
+ ['Settecento','Prima Rivoluzione industriale (macchina a vapore)'],
+ ['1987','Rapporto Brundtland: «il nostro futuro è comune»'],
+ ['2011','Ad Hannover si parla per la prima volta di quarta Rivoluzione industriale'],
+ ['25 settembre 2015','Le Nazioni Unite lanciano Agenda 2030']];
+const FORMULARIO=`
+<div class="box blu"><h3>Le prime forme di economia</h3>${TAB(['Argomento','Da ricordare'],[
+ ['<b>Economia di acquisizione</b>','caccia, raccolta e pesca · si prende direttamente dalla natura (economia «di prelievo») · prima strategia di sopravvivenza · circa 2 milioni di anni fa · la raccolta è più antica della caccia · oggi i cacciatori-raccoglitori sono una esigua minoranza'],
+ ['<b>La raccolta</b>','savana africana, stagione umida e secca · bastone da scavo e radici · carcasse: strategia opportunistica · oggi circa il 70% del cibo · compito delle donne'],
+ ['<b>La caccia</b>','compare tardi (Homo habilis ed erectus non erano predatori) · cattura e uccisione · spartizione della carne · attività maschile, donne battitrici'],
+ ['<b>La pesca</b>','ambienti acquatici · fiocina, reti, esche · quasi sempre associata ad altre attività · Bajau, «nomadi del mare»']])}</div>
+<div class="box ver"><h3>Agricoltura e allevamento</h3>${TAB(['Argomento','Da ricordare'],[
+ ['<b>Rivoluzione neolitica</b>','circa 10 000 anni fa, Vicino Oriente · nome di Childe · domesticazione · Mezzaluna fertile · molto lenta e graduale · tre cause: clima, popolazione, progresso tecnologico · conseguenze: insediamenti fissi, più popolazione, divisione del lavoro e stratificazione sociale'],
+ ['<b>Agricoltura</b>','«vittoria» e modello base (aratro e irrigazione) · Medioevo: mediterranea (aratro leggero, rotazione biennale) e Europa nordica (aratro pesante, rotazione triennale) · cavallo al posto del bue, mulini · mais e patata · dal XIX secolo macchinari, energie, genetica e chimica · oggi biologica e GAS'],
+ ['<b>Allevamento</b>','domesticazione animale (cibo, trasporto, fibre, compagnia) · sei tratti di Diamond · società pastorali: patrilineari, instabili, acefale · nomadismo · intensivo ed estensivo']])}</div>
+<div class="box gia"><h3>Industria e ambiente</h3>${TAB(['Argomento','Da ricordare'],[
+ ['<b>Industria</b>','settore secondario · produzione di massa · Bairoch: due fratture (neolitica in meno di 2000 anni, industriale in 200 anni) · quattro fasi: vapore, elettricità-chimica-petrolio, elettronica-informatica, digitale-robotica (Industria 4.0)'],
+ ['<b>Conseguenze</b>','positive: demografiche, economiche, sociali e politiche · negative: sfruttamento delle risorse, inquinamento, biodiversità, deforestazione, desertificazione · Agenda 2030: 17 obiettivi, 193 paesi, Italia al 29° posto']])}</div>
+<h3 class="sec">La linea del tempo</h3>${TAB(['Quando','Che cosa succede'],TL.map(t=>[`<b>${t[0]}</b>`,t[1]]))}`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('su4_scritto_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('su4_scritto_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Domande aperte (verifica scritta)</h2><p>Queste sono domande che può fare l\'insegnante nella verifica scritta. Leggi la domanda e <b>scrivi la risposta</b> (3-5 righe) su un foglio. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai scrivere bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so scrivere bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  const N=Object.values(PROVA_PLAN).reduce((a,b)=>a+b,0);
+  el.innerHTML='<h2>Prova finale</h2><p>'+N+' esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        const n=list.length;
+        body.innerHTML=`<div class="box ${tot>=n-2?'ver':tot>=Math.round(n*0.6)?'gia':'ros'}"><h3>Risultato: ${tot} su ${n}</h3>${tot>=n-2?'Sei pronto per l\'interrogazione.':tot>=Math.round(n*0.6)?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Riepilogo</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["All’inizio gli esseri umani vivevano cacciando animali e raccogliendo piante e frutti.", "Non coltivavano e non allevavano: prendevano dalla natura quello che serviva.", "Oggi pochi popoli vivono ancora così, per esempio gli Hazda in Tanzania."], "u2": ["La raccolta è il modo più antico di procurarsi il cibo.", "Si raccoglievano frutti, foglie, radici, uova, insetti e piccoli animali.", "Oggi, presso questi popoli, di solito sono le donne a raccogliere."], "u3": ["La caccia è arrivata tardi: i primi uomini non erano cacciatori.", "Dopo la caccia la carne si divide con regole precise, per dare cibo a tutti.", "La pesca è simile alla caccia, ma si fa in acqua: i Bajau vivono sul mare."], "u4": ["Circa 10 000 anni fa gli uomini diventano agricoltori e allevatori.", "Non è un cambiamento improvviso: è lento e graduale.", "Nascono i villaggi fissi, la popolazione cresce e compaiono capi, soldati e sacerdoti."], "u5": ["Per migliaia di anni si è coltivato quasi allo stesso modo: con l’aratro e l’irrigazione.", "Poi sono arrivati i macchinari, le nuove energie e la scienza.", "Oggi c’è anche l’agricoltura biologica, che rispetta l’ambiente."], "u6": ["Gli uomini hanno addomesticato gli animali per il cibo, il trasporto, la lana e la compagnia.", "I pastori nomadi vivono con il loro bestiame, che per loro è ricchezza.", "Oggi ci sono due tipi di allevamento: intensivo ed estensivo."], "u7": ["L’industria trasforma le materie prime in prodotti.", "La Rivoluzione industriale ha cambiato il mondo in 200 anni.", "Ci sono quattro fasi: vapore, elettricità, elettronica e digitale."], "u8": ["Lo sviluppo industriale ha portato cose buone: si vive più a lungo.", "Ma ha fatto male all’ambiente: inquinamento, meno specie, meno foreste.", "Le Nazioni Unite hanno fatto Agenda 2030, con 17 obiettivi."]}, "es": false, "steps": false, "pics": [{"k": "caccia", "re": "caccia|cacciatore|cacciatori|cacciare", "id": 3010}, {"k": "raccolta", "re": "raccolta|raccogliere|raccoglitori", "id": 32663}, {"k": "pesca", "re": "pesca|pescare", "id": 4718}, {"k": "pesce", "re": "pesce", "id": 2520}, {"k": "agricoltura", "re": "agricoltura|agricola|agricole|agricolo", "id": 38079}, {"k": "campo", "re": "campo|campi|coltivazione", "id": 2683}, {"k": "grano", "re": "grano", "id": 7285}, {"k": "allevamento", "re": "allevamento|allevatori|allevare", "id": 38056}, {"k": "mucca", "re": "mucca|mucche", "id": 2609}, {"k": "pecora", "re": "pecora|pecore", "id": 2489}, {"k": "maiale", "re": "maiale|maiali", "id": 24972}, {"k": "fabbrica", "re": "fabbrica|fabbriche|industria|industriale|industriali", "id": 24507}, {"k": "citta", "re": "città", "id": 2704}, {"k": "donna", "re": "donna|donne", "id": 24621}, {"k": "uomo", "re": "uomo|uomini", "id": 4665}, {"k": "frutta", "re": "frutta|frutti", "id": 28339}, {"k": "computer", "re": "computer", "id": 7190}, {"k": "cavallo", "re": "cavallo|cavalli", "id": 2294}, {"k": "albero", "re": "albero|alberi", "id": 3057}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  /* testo con parti in inglese: ogni parte con la sua voce */
+  function segs(el,dl){
+    var out=[],buf='';
+    function flush(){var t=say(buf);if(t.length>1)out.push({t:t,l:dl});buf=''}
+    (function walk(n){
+      if(n.nodeType===3){buf+=n.nodeValue;return}
+      if(n.nodeType!==1)return;
+      if(n.classList&&n.classList.contains('a11y-ui'))return;
+      var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return;
+      if(n.getAttribute('lang')==='en'){flush();var t=say(nodeText(n));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      if(n.classList.contains('fr')||tg==='SUP'){buf+=nodeText(n);return}
+      n.childNodes.forEach(walk);
+    })(el);
+    flush();return out;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    var out=[];
+    els.forEach(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      if(e.closest('[lang="en"]')){var t=say(nodeText(e));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      segs(e,es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    return out;
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=c.l==='en-GB'?0.8:0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     (CFG.steps?'<div class="step"><b class="n">★</b><div>Gli <b>esempi svolti</b> si aprono <b>un passo alla volta</b>: tocca <b>▶ Prossimo passo</b> e leggi con calma. Se preferisci vedere tutto, tocca <b>Mostra tutto</b>.</div></div>':'')+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)segs(qt,'it-IT').forEach(function(c){out.push(c)});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'.',l:'it-IT'});
+      segs(sp||o,CFG.es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  /* ===== ESEMPI SVOLTI UN PASSO ALLA VOLTA ===== */
+  if(CFG.steps&&location.hash!=='#stampa'){
+    var stOn=true;try{stOn=localStorage.getItem('a11y_steps')!=='0'}catch(e){}
+    var st4=document.createElement('style');
+    st4.textContent='section.tab .box.bia [hidden]{display:none!important}'+
+     '.a11y-newstep{background:#fff8dc;border-left:6px solid #d1b24a;padding:4px 8px;border-radius:6px}'+
+     '.a11y-stepper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 2px}'+
+     '.a11y-sc{font-weight:bold;font-size:.95rem;color:#22314d}'+
+     '.a11y-stepper .a11y-btn{margin:0}'+
+     '@media print{.a11y-stepper{display:none!important}section.tab .box.bia [hidden]{display:revert!important}.a11y-newstep{background:none;border:0;padding:0}}';
+    document.head.appendChild(st4);
+    var stGroups=[];
+    document.querySelectorAll('section.tab .stat .box.bia').forEach(function(box){
+      var h=box.querySelector(':scope>h3');if(!h||!/^Esempio/i.test(h.textContent))return;
+      var kids=[].slice.call(box.children).filter(function(c){return c!==h});
+      if(kids.length<3)return;
+      var isNum=function(e){return /^\s*\d+\./.test(e.textContent)};
+      var rest=kids.slice(1),groups=[];
+      if(rest.some(isNum)){
+        var started=false;
+        rest.forEach(function(e){
+          if(isNum(e)){groups.push([e]);started=true}
+          else if(started)groups[groups.length-1].push(e);
+        });
+      }else{rest.forEach(function(e){groups.push([e])})}
+      if(groups.length<2)return;
+      var idx=0,bx=mk('div','a11y-ui a11y-stepper'),go=mk('button','a11y-btn',null),all=mk('button','a11y-btn',null),cnt=mk('span','a11y-sc',null);
+      go.type='button';all.type='button';all.textContent='Mostra tutto';
+      bx.appendChild(go);bx.appendChild(cnt);bx.appendChild(all);box.appendChild(bx);
+      function paint(){
+        groups.forEach(function(g,i){g.forEach(function(e){e.hidden=stOn&&i>=idx;e.classList.toggle('a11y-newstep',stOn&&idx>0&&i===idx-1&&idx<groups.length+1)})});
+        bx.style.display=stOn?'':'none';
+        cnt.textContent='Passo '+idx+' di '+groups.length;
+        go.textContent=idx===0?'▶ Mostrami il primo passo':idx<groups.length?'▶ Prossimo passo':'↺ Ricomincia';
+        all.hidden=idx>=groups.length;
+      }
+      go.addEventListener('click',function(){
+        if(idx>=groups.length)idx=0;else idx++;
+        paint();
+        var t=idx>0?groups[idx-1][0]:box;try{t.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+      });
+      all.addEventListener('click',function(){idx=groups.length;paint()});
+      stGroups.push({paint:paint,reset:function(){idx=0}});
+      paint();
+    });
+    if(stGroups.length){
+      var sb=mk('button','a11y-btn a11y-ui',null);sb.type='button';
+      var paintSb=function(){sb.textContent='👣 Esempi un passo alla volta: '+(stOn?'SÌ':'NO');sb.classList.toggle('on',stOn);sb.setAttribute('aria-pressed',stOn?'true':'false')};
+      sb.addEventListener('click',function(){stOn=!stOn;try{localStorage.setItem('a11y_steps',stOn?'1':'0')}catch(e){};stGroups.forEach(function(g){g.reset();g.paint()});paintSb()});
+      paintSb();bar.appendChild(sb);
+    }
+  }
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261103113444",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
