@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diritto: i contratti</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Diritto</a></p><h1>Diritto: i contratti</h1><p>4 ES · il contratto, i requisiti, la nullità, l’annullabilità, la rescissione e la risoluzione · un passo alla volta</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Che cos’è</button>
+<button data-t="u2">2 Requisiti</button>
+<button data-t="u3">3 Proposta e accettazione</button>
+<button data-t="u4">4 Effetti e tipi</button>
+<button data-t="u5">5 Nullità</button>
+<button data-t="u6">6 Annullabilità</button>
+<button data-t="u7">7 Rescissione e risoluzione</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Riepilogo</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo all’interrogazione di <b>Diritto</b> sui <b>contratti</b>. Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti. Ogni argomento ha sempre lo stesso ordine.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>Che cos’è il contratto</b> (unità 1) e <b>i requisiti</b> (unità 2)</li><li><b>Come nasce</b>: proposta e accettazione (unità 3)</li><li><b>Effetti e tipi di contratto</b> (unità 4)</li><li><b>Quando il contratto non regge</b>: nullità (unità 5), annullabilità (unità 6), rescissione e risoluzione (unità 7)</li></ul></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos’è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema, passo per passo.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi da ripetere a voce.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande e casi sempre nuovi. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (6 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 e 2 · <b>Giorno 2</b>: unità 3 (proposta e accettazione)</li><li><b>Giorno 3</b>: unità 4 (effetti e tipi) · <b>Giorno 4</b>: unità 5 (nullità)</li><li><b>Giorno 5</b>: unità 6 (annullabilità) · <b>Giorno 6</b>: unità 7 (rescissione e risoluzione), Prova finale, Orale e Riepilogo</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c’è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti <b>a voce alta</b> le risposte dell’Orale: l’interrogazione è parlata.</li><li>Impara bene la differenza tra i rimedi: <b>nullità</b> (la più grave), <b>annullabilità</b> (incapacità e vizi del consenso), <b>rescissione</b> (stato di bisogno), <b>risoluzione</b> (inadempimento).</li><li>Ricorda i numeri: <b>18 anni</b> (maggiore età), <b>5 anni</b> per l’annullamento, <b>1 anno</b> per la rescissione, lesione <b>oltre la metà</b>.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un’altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section><section class="tab" id="u7"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+
+/* ========== DIRITTO 4 ES: I CONTRATTI - GENERATORI ========== */
+const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+function mapGroup(tag,pairs){
+  return ()=>{
+    const p=pairs[rnd(0,pairs.length-1)];
+    return mkEx(`<b>${p[0]}</b>`,p[1],p[3],wy(p[2],p[1]),tag);
+  };
+}
+/* unità 1: che cos'è il contratto */
+const exNozione=mapGroup('Che cos’è il contratto',[
+ ['Che cos’è il contratto?','L’accordo di due o più parti per costituire, regolare o estinguere un rapporto giuridico patrimoniale','Definizione dell’art. 1321 c.c.',['Una decisione presa da una sola persona','Una regola imposta dallo Stato']],
+ ['Quante parti servono almeno per fare un contratto?','Due','Il codice dice «due o più parti».',['Una','Tre']],
+ ['Che cosa possono fare le parti con il contratto?','Costituire, regolare o estinguere un rapporto giuridico','Creare, regolare o chiudere un rapporto.',['Solo creare un rapporto giuridico','Solo cambiare una legge']],
+ ['Di che natura è il rapporto giuridico del contratto?','Patrimoniale, cioè con un valore economico','Il contratto riguarda rapporti patrimoniali.',['Familiare','Solo di amicizia']],
+ ['Che cos’è l’autonomia contrattuale?','La libertà di decidere il contenuto del contratto, nei limiti imposti dalla legge','Art. 1322 c.c., 1° comma.',['La libertà di fare qualsiasi contratto senza limiti','Il dovere di usare solo i contratti previsti dalla legge']],
+ ['Le parti possono fare contratti che la legge non disciplina in modo particolare?','Sì, se realizzano interessi meritevoli di tutela','Contratti atipici: art. 1322, 2° comma.',['No, mai','Sì, sempre e senza condizioni']],
+ ['Come si chiama un contratto che non rientra nei tipi previsti dalla legge?','Contratto atipico','«Tipico» = previsto dalla legge; «atipico» = non previsto.',['Contratto nullo','Contratto preliminare']],
+ ['Marco vende il motorino a Sara per 800 euro. Chi sono le parti?','Marco e Sara','Le parti sono le persone che fanno il contratto.',['Solo Marco','Il motorino e i soldi']]]);
+/* unità 2: i requisiti */
+const exRequisiti=mapGroup('I requisiti del contratto',[
+ ['Quali sono i requisiti del contratto (art. 1325)?','Accordo, causa, oggetto e forma (quando la legge la richiede a pena di nullità)','I quattro requisiti.',['Prezzo, data e firma','Accordo, prezzo, durata e garanzia']],
+ ['Che cos’è la causa del contratto?','La funzione economico-sociale: lo scopo pratico per cui si fa il contratto','Per esempio, nella compravendita: cosa contro prezzo.',['La ragione personale nascosta di una parte','La data della firma']],
+ ['Qual è la causa di una compravendita?','Lo scambio di una cosa con un prezzo','Cosa contro prezzo.',['Il regalo di una cosa','Il prestito di una cosa']],
+ ['Quali requisiti deve avere l’oggetto (art. 1346)?','Possibile, lecito, determinato o determinabile','I quattro aggettivi dell’oggetto.',['Costoso, raro e nuovo','Scritto, firmato e registrato']],
+ ['Che cosa vuol dire che l’oggetto è «lecito»?','Non è contrario a leggi, ordine pubblico o buon costume','Liceità dell’oggetto.',['È molto costoso','È già stato usato']],
+ ['Che cosa vuol dire che l’oggetto è «determinabile»?','Si può individuare con criteri stabiliti, senza lasciare la scelta a una sola parte','Non deve dipendere dall’arbitrio di una parte.',['Può essere deciso da una parte sola quando vuole','Non serve individuarlo']],
+ ['Quando la forma è un requisito del contratto?','Quando la legge la prescrive sotto pena di nullità','Art. 1325, n. 4.',['Sempre, per ogni contratto','Mai']],
+ ['Quale contratto deve farsi per atto pubblico o scrittura privata?','Il contratto che trasferisce la proprietà di un immobile','Art. 1350, n. 1.',['L’acquisto di un quaderno','Un prestito di una matita']],
+ ['La locazione di un immobile per più di nove anni quale forma richiede?','L’atto pubblico o la scrittura privata','Art. 1350, n. 8.',['Basta l’accordo a voce','Basta un messaggio']]]);
+/* unità 3: come nasce */
+const exFormazione=mapGroup('Proposta e accettazione',[
+ ['Quando il contratto è concluso (art. 1326)?','Quando chi ha fatto la proposta ha conoscenza dell’accettazione','Conta la conoscenza, non l’invio.',['Quando si spedisce la proposta','Quando il giudice lo autorizza']],
+ ['Che cos’è la proposta?','La dichiarazione con cui una parte propone di concludere un contratto','Il primo passo.',['La risposta positiva dell’altra parte','Il rifiuto di una parte']],
+ ['Che cos’è l’accettazione?','La risposta positiva dell’altra parte alla proposta','Il secondo passo.',['La prima offerta','La firma dei testimoni']],
+ ['Entro quando deve arrivare l’accettazione?','Nel termine stabilito dal proponente, o nel tempo ordinariamente necessario','Art. 1326, 2° comma.',['Entro un anno da quando si firma','Quando l’accettante vuole']],
+ ['Che cosa succede se l’accettazione arriva in ritardo?','Di regola non vale; il proponente può considerarla valida se avvisa subito','Art. 1326, 3° comma.',['Vale sempre','Annulla la proposta per sempre']],
+ ['Che cosa succede se rispondo con un prezzo diverso da quello proposto?','Il contratto non è concluso: la risposta è una nuova proposta','Art. 1326, 5° comma.',['Il contratto è concluso al nuovo prezzo','Il contratto è concluso al vecchio prezzo']],
+ ['Il proponente chiede una forma precisa per l’accettazione e io rispondo in un’altra forma. Che cosa succede?','L’accettazione non ha effetto','Art. 1326, 4° comma.',['L’accettazione vale lo stesso','Il contratto è nullo per sempre']],
+ ['Quando una dichiarazione si considera conosciuta (art. 1335)?','Quando arriva all’indirizzo del destinatario','Si presume conosciuta all’arrivo.',['Quando il destinatario la legge davvero','Quando viene scritta']]]);
+/* unità 4: effetti e tipi */
+const exEffetti=mapGroup('Effetti e tipi di contratto',[
+ ['Che cosa vuol dire «forza di legge tra le parti»?','Le parti devono rispettare il contratto come una legge','Art. 1372, 1° comma.',['Il contratto vale per tutti','Il contratto si può cambiare quando una parte vuole']],
+ ['Come si scioglie di regola un contratto?','Per mutuo consenso o per cause ammesse dalla legge','Non basta la volontà di una sola parte.',['Quando una parte cambia idea','Dopo un mese, da solo']],
+ ['Di regola il contratto produce effetti per i terzi?','No, salvo i casi previsti dalla legge','Art. 1372, 2° comma.',['Sì, sempre','Sì, per tutti i parenti']],
+ ['Che cos’è un contratto oneroso?','Ogni parte ha un vantaggio e un sacrificio','Per esempio la compravendita.',['Una parte dà senza ricevere nulla','Un contratto senza parti']],
+ ['Che cos’è un contratto gratuito?','Una parte dà un vantaggio all’altra senza ricevere nulla in cambio','Per esempio la donazione.',['Ogni parte ha un vantaggio e un sacrificio','Un contratto senza firma']],
+ ['Che cos’è la compravendita (art. 1470)?','Il contratto che trasferisce la proprietà di una cosa in cambio di un prezzo','Cosa contro prezzo.',['Il contratto che regala una cosa','Il contratto che presta una cosa']],
+ ['Che cos’è la donazione (art. 769)?','Il contratto con cui, per spirito di liberalità, una parte arricchisce l’altra','Contratto gratuito.',['Il contratto in cui si scambiano due beni','Il contratto che trasferisce una cosa per un prezzo']],
+ ['Qual è la differenza tra vendita e permuta?','Nella vendita il corrispettivo è un prezzo; nella permuta si scambiano due beni','Prezzo contro scambio di beni.',['Nessuna differenza','Nella permuta si paga sempre in denaro']]]);
+/* unità 5: nullità (con casi) */
+const exNullita=mapGroup('La nullità',[
+ ['Che cos’è la nullità?','L’invalidità più grave: il contratto non può produrre i suoi effetti','Art. 1418 c.c.',['Un modo di sciogliere il contratto per accordo','Una multa']],
+ ['Un contratto è contrario a una norma imperativa. Come è?','Nullo','Art. 1418, 1° comma.',['Annullabile','Rescindibile']],
+ ['In un contratto manca l’accordo delle parti. Come è?','Nullo','Manca un requisito dell’art. 1325.',['Annullabile','Valido']],
+ ['Una casa è venduta solo a voce, senza atto scritto. Come è il contratto?','Nullo, per mancanza della forma','Art. 1350, n. 1.',['Valido','Annullabile']],
+ ['Un contratto ha per oggetto una cosa vietata dalla legge. Come è?','Nullo, perché l’oggetto è illecito','Mancano i requisiti dell’art. 1346.',['Valido','Risolvibile']],
+ ['Una causa contraria al buon costume rende il contratto…','Nullo','Causa illecita: art. 1343 e 1418.',['Annullabile','Rescindibile']],
+ ['Chi può far valere la nullità?','Chiunque vi abbia interesse','Art. 1421.',['Solo il giudice','Solo la parte più debole']],
+ ['L’azione di nullità si prescrive?','No, è imprescrittibile','Art. 1422.',['Sì, dopo un anno','Sì, dopo cinque anni']]]);
+/* unità 6: annullabilità (con casi) */
+const exAnnullabilita=mapGroup('L’annullabilità',[
+ ['Quali sono i vizi del consenso?','Errore, violenza e dolo','Art. 1427.',['Nullità, rescissione e risoluzione','Proposta, accettazione e forma']],
+ ['Un minorenne firma da solo la vendita di un appartamento. Il contratto è…','Annullabile per incapacità legale','Art. 1425, 1° comma.',['Nullo per mancanza dell’oggetto','Valido a ogni effetto']],
+ ['Compro un quadro credendolo d’autore, ma è una copia: sbaglio sulla qualità decisiva. Il contratto è…','Annullabile per errore essenziale','Art. 1429: errore sulle qualità dell’oggetto.',['Nullo','Rescindibile']],
+ ['Il venditore usa raggiri e senza di essi non avrei comprato. Il contratto è…','Annullabile per dolo','Art. 1439.',['Nullo per forma','Valido']],
+ ['Mi minacciano di un male ingiusto e notevole per farmi firmare. Il contratto è…','Annullabile per violenza','Artt. 1427 e 1435.',['Nullo per oggetto illecito','Rescindibile']],
+ ['Che cos’è il dolo?','I raggiri di una parte, senza i quali l’altra non avrebbe contrattato','Art. 1439.',['La minaccia di un male ingiusto','Una falsa idea della realtà']],
+ ['Come deve essere la minaccia per essere violenza (art. 1435)?','Di un male ingiusto e notevole, tale da fare impressione su una persona sensata','Non basta una paura interna.',['Qualsiasi paura','Solo una minaccia con armi']],
+ ['Entro quanti anni si può chiedere l’annullamento?','Cinque anni','Art. 1442.',['Un anno','Dieci anni']],
+ ['Da quando decorre il termine per un minorenne?','Da quando diventa maggiorenne, a 18 anni','Art. 1442 e art. 2.',['Dal giorno della firma','Dai 16 anni']]]);
+/* unità 7: rescissione e risoluzione (con casi) */
+const exRimedi=mapGroup('Rescissione e risoluzione',[
+ ['Che cosa serve per la rescissione (art. 1448)?','Sproporzione, stato di bisogno e approfittamento dell’altra parte','Le tre condizioni.',['Un inadempimento grave','L’incapacità di una parte']],
+ ['Quanto deve essere la lesione per rescindere?','Oltre la metà del valore della prestazione','Art. 1448, 2° comma.',['Almeno il doppio','Anche solo il 10 per cento']],
+ ['In quanto tempo si prescrive l’azione di rescissione?','In un anno dalla conclusione del contratto','Art. 1449.',['In cinque anni','Non si prescrive']],
+ ['I contratti aleatori si possono rescindere per lesione?','No','Art. 1448, 4° comma.',['Sì, sempre','Solo se c’è dolo']],
+ ['A che cosa serve la risoluzione (art. 1453)?','A sciogliere un contratto con prestazioni corrispettive se una parte non adempie','Rimedio per l’inadempimento.',['A far annullare un contratto per un errore','A rendere valida una forma mancante']],
+ ['Il venditore non consegna la bici già pagata. Che cosa posso chiedere?','L’adempimento o la risoluzione, e il risarcimento del danno','Art. 1453, 1° comma.',['Solo che il contratto sia nullo','Niente, devo aspettare cinque anni']],
+ ['Ho chiesto la risoluzione. Posso ancora chiedere l’adempimento?','No','Art. 1453, 2° comma.',['Sì, sempre','Sì, ma solo per metà']],
+ ['Si può risolvere un contratto per un inadempimento di scarsa importanza?','No','Art. 1455.',['Sì, sempre','Sì, ma solo dopo un anno']],
+ ['Una persona in grave bisogno vende per metà prezzo; l’acquirente ne ha approfittato. Quale rimedio è possibile?','La rescissione','Art. 1448: bisogno + approfittamento + lesione oltre la metà.',['La risoluzione','La nullità per forma']]]);
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const GENS={
+ u1:[exNozione,exNozione,exNozione,exDef('u1')],
+ u2:[exRequisiti,exRequisiti,exRequisiti,exDef('u2')],
+ u3:[exFormazione,exFormazione,exFormazione,exDef('u3')],
+ u4:[exEffetti,exEffetti,exEffetti,exDef('u4')],
+ u5:[exNullita,exNullita,exNullita,exDef('u5')],
+ u6:[exAnnullabilita,exAnnullabilita,exAnnullabilita,exDef('u6')],
+ u7:[exRimedi,exRimedi,exRimedi,exDef('u7')]
+};
+const UNITS={u1:'1 · Che cos’è il contratto',u2:'2 · I requisiti del contratto',u3:'3 · Come nasce: proposta e accettazione',u4:'4 · Effetti e tipi di contratto',u5:'5 · La nullità',u6:'6 · L’annullabilità',u7:'7 · Rescissione e risoluzione'};
+const PROVA_PLAN={u1:2,u2:2,u3:2,u4:2,u5:2,u6:2,u7:2};
+
+/* ========== CONTENUTI FISSI (Diritto 4 ES: i contratti) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const DEFS={
+u1:[
+ ['Contratto','L’accordo di due o più parti per costituire, regolare o estinguere tra loro un rapporto giuridico patrimoniale (art. 1321 c.c.).'],
+ ['Parte','Ogni persona che partecipa al contratto. Nella compravendita le parti sono il venditore e il compratore.'],
+ ['Autonomia contrattuale','La libertà delle parti di decidere il contenuto del contratto, nei limiti imposti dalla legge (art. 1322 c.c.).'],
+ ['Contratto atipico','Contratto che non appartiene ai tipi che la legge disciplina in modo particolare. È valido se realizza interessi meritevoli di tutela.']],
+u2:[
+ ['Requisiti del contratto','Gli elementi che servono per un contratto valido: accordo, causa, oggetto e, quando la legge lo richiede, la forma (art. 1325 c.c.).'],
+ ['Causa','La funzione economico-sociale del contratto: lo scopo pratico per cui si fa. Nella compravendita è lo scambio di una cosa con un prezzo.'],
+ ['Oggetto','Ciò su cui riguarda il contratto. Deve essere possibile, lecito, determinato o determinabile (art. 1346 c.c.).'],
+ ['Forma','Il modo in cui il contratto si esprime. Per alcuni contratti la legge richiede l’atto pubblico o la scrittura privata, a pena di nullità (art. 1350 c.c.).']],
+u3:[
+ ['Proposta','La dichiarazione con cui una parte propone all’altra di concludere un contratto.'],
+ ['Accettazione','La risposta positiva dell’altra parte alla proposta.'],
+ ['Contratto concluso','Il contratto è concluso quando chi ha fatto la proposta ha conoscenza dell’accettazione dell’altra parte (art. 1326 c.c.).'],
+ ['Controproposta','Una risposta che non corrisponde alla proposta (ad esempio con un prezzo diverso): non conclude il contratto, vale come nuova proposta.']],
+u4:[
+ ['Forza di legge tra le parti','Il contratto va rispettato dalle parti come una legge (art. 1372 c.c.).'],
+ ['Mutuo consenso','L’accordo con cui le parti decidono insieme di sciogliere il contratto.'],
+ ['Contratto oneroso','Contratto in cui ogni parte ha un vantaggio ma anche un sacrificio. Esempio: la compravendita.'],
+ ['Contratto gratuito','Contratto in cui una parte dà un vantaggio all’altra senza ricevere nulla in cambio. Esempio: la donazione.'],
+ ['Compravendita','Contratto che trasferisce la proprietà di una cosa, o un altro diritto, in cambio di un prezzo (art. 1470 c.c.).']],
+u5:[
+ ['Nullità','Invalidità grave: il contratto non può produrre i suoi effetti. Può farla valere chiunque vi abbia interesse (art. 1421 c.c.).'],
+ ['Norma imperativa','Regola di legge che le parti non possono cambiare con un loro accordo. Un contratto contrario a una norma imperativa è nullo (art. 1418 c.c.).'],
+ ['Causa illecita','Causa contraria a norme imperative, all’ordine pubblico o al buon costume (art. 1343 c.c.).'],
+ ['Azione imprescrittibile','L’azione di nullità non si prescrive: si può proporre in qualsiasi momento (art. 1422 c.c.).']],
+u6:[
+ ['Annullabilità','Il contratto può essere annullato se una parte era incapace o se il suo consenso era viziato (artt. 1425 e 1427 c.c.).'],
+ ['Incapacità legale','La condizione di chi non può fare da solo gli atti giuridici: il minorenne (sotto i 18 anni), l’interdetto, l’inabilitato.'],
+ ['Vizi del consenso','Sono tre: errore, violenza e dolo. Il consenso non è stato dato in modo libero o consapevole (art. 1427 c.c.).'],
+ ['Errore','Una falsa idea della realtà. È essenziale se riguarda la natura o l’oggetto del contratto, l’identità o le qualità dell’oggetto o della persona, oppure una norma di diritto (art. 1429 c.c.).'],
+ ['Violenza','Minaccia di un male ingiusto e notevole, tale da fare impressione su una persona sensata (art. 1435 c.c.).'],
+ ['Dolo','Raggiri usati da una parte: annullano il contratto se, senza di essi, l’altra parte non avrebbe contrattato (art. 1439 c.c.).']],
+u7:[
+ ['Rescissione','Rimedio per il contratto molto sproporzionato, concluso da chi era in stato di bisogno e di cui l’altra parte ha approfittato (art. 1448 c.c.).'],
+ ['Lesione oltre la metà','La rescissione è possibile solo se la lesione supera la metà del valore della prestazione (art. 1448 c.c.).'],
+ ['Risoluzione','Scioglimento del contratto con prestazioni corrispettive quando una parte non adempie (art. 1453 c.c.).'],
+ ['Inadempimento','Non fare ciò che si è promesso con il contratto.'],
+ ['Prestazioni corrispettive','Nel contratto l’obbligo di una parte dipende dall’obbligo dell’altra. Esempio: la compravendita (cosa contro prezzo).']]
+};
+const CONT={};
+CONT.u1={
+ cose:`<div class="box bia"><p>Il <b>contratto</b> è l’<b>accordo di due o più parti</b> per <b>costituire, regolare o estinguere</b> un rapporto giuridico <b>patrimoniale</b> (art. 1321 c.c.). Le parti sono libere di decidere che cosa scrivere nel contratto (<b>autonomia contrattuale</b>), ma sempre <b>nei limiti imposti dalla legge</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · La definizione',stepsHtml([
+   'Il contratto è un <b>accordo</b>: servono <b>almeno due parti</b> («due o più»).',
+   'Con il contratto le parti possono <b>costituire</b> (creare), <b>regolare</b> (decidere le regole di) o <b>estinguere</b> (chiudere) un <b>rapporto giuridico</b>.',
+   'Il rapporto è <b>patrimoniale</b>: ha un valore economico.'])),
+  card('ver','2 · L’autonomia contrattuale',stepsHtml([
+   'Le parti possono <b>decidere liberamente</b> il contenuto del contratto, <b>nei limiti imposti dalla legge</b> (art. 1322, 1° comma).',
+   'Possono anche fare <b>contratti che la legge non disciplina in modo particolare</b>: i contratti <b>atipici</b> (2° comma).',
+   'Un contratto atipico è valido solo se è diretto a realizzare <b>interessi meritevoli di tutela</b>.'])),
+  card('gia','3 · Un esempio',stepsHtml([
+   'Marco vende il suo motorino a Sara e Sara gli dà 800 euro: Marco e Sara sono le <b>due parti</b>.',
+   'Si sono messi <b>d’accordo</b> e hanno creato (<b>costituito</b>) un rapporto giuridico di natura <b>patrimoniale</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è il contratto?»</b> È l’accordo di due o più parti per costituire, regolare o estinguere tra loro un rapporto giuridico patrimoniale.</p>
+ <p><b>«Che cos’è l’autonomia contrattuale?»</b> È la libertà delle parti di decidere il contenuto del contratto, nei limiti imposti dalla legge.</p>
+ <p><b>«Che cos’è un contratto atipico?»</b> Un contratto che la legge non disciplina in modo particolare: è valido se realizza interessi meritevoli di tutela.</p></div>`,
+ errori:['Il contratto non è un atto di una persona sola: servono <b>due o più parti</b>.','Autonomia contrattuale <b>non</b> vuol dire fare tutto: ci sono sempre i <b>limiti imposti dalla legge</b>.','Un contratto <b>atipico</b> non è illegale: la legge non lo disciplina in modo particolare, ma deve realizzare interessi <b>meritevoli di tutela</b>.','Il rapporto giuridico del contratto è <b>patrimoniale</b>: ha un valore economico.'],
+ orale:[
+  ['Che cos’è il contratto?','Il contratto è l’accordo di due o più parti per costituire, regolare o estinguere tra loro un rapporto giuridico patrimoniale. La definizione è nell’articolo 1321 del Codice civile.'],
+  ['Che cos’è l’autonomia contrattuale?','È la libertà delle parti di decidere liberamente il contenuto del contratto, ma nei limiti imposti dalla legge (art. 1322 c.c.).'],
+  ['Che cos’è un contratto atipico?','È un contratto che non appartiene ai tipi che la legge disciplina in modo particolare. Le parti possono farlo, purché sia diretto a realizzare interessi meritevoli di tutela.'],
+ ],
+ quiz:[
+  ['Che cos’è il contratto?','L’accordo di due o più parti per costituire, regolare o estinguere un rapporto giuridico patrimoniale',['Una decisione presa da una sola persona','Una legge dello Stato'],'Definizione dell’art. 1321 c.c.'],
+  ['Quante parti servono almeno per fare un contratto?','Due',['Una','Tre'],'«Due o più parti».'],
+  ['Che cos’è l’autonomia contrattuale?','La libertà di decidere il contenuto del contratto, nei limiti imposti dalla legge',['La libertà di fare qualsiasi contratto senza limiti','Il dovere di usare solo contratti previsti dalla legge'],'Art. 1322 c.c., 1° comma.'],
+  ['Quando un contratto atipico è valido?','Quando realizza interessi meritevoli di tutela',['Quando è firmato davanti a un giudice','Quando ha un prezzo molto alto'],'Art. 1322 c.c., 2° comma.']]
+};
+CONT.u2={
+ cose:`<div class="box bia"><p>Un contratto, per essere valido, deve avere i <b>quattro requisiti</b> dell’art. 1325: l’<b>accordo</b> delle parti, la <b>causa</b>, l’<b>oggetto</b> e la <b>forma</b>, quando la legge la prescrive a pena di nullità. L’oggetto deve essere <b>possibile, lecito, determinato o determinabile</b> (art. 1346).</p></div>`,
+ ricette:[
+  card('blu','1 · I quattro requisiti (art. 1325)',stepsHtml([
+   '<b>L’accordo</b> delle parti.',
+   '<b>La causa</b>: la funzione economico-sociale del contratto, cioè lo scopo pratico per cui si fa. Nella compravendita è lo scambio di una cosa con un prezzo.',
+   '<b>L’oggetto</b>: ciò su cui riguarda il contratto.',
+   '<b>La forma</b>: serve come requisito quando la legge la prescrive <b>sotto pena di nullità</b>.'])),
+  card('ver','2 · Come deve essere l’oggetto (art. 1346)',stepsHtml([
+   '<b>Possibile</b>: si può realizzare davvero.',
+   '<b>Lecito</b>: non è contrario a leggi, ordine pubblico o buon costume.',
+   '<b>Determinato o determinabile</b>: è già individuato, oppure si può individuare con criteri stabiliti dalle parti, senza lasciare la scelta a una sola parte.'])),
+  card('gia','3 · La forma (art. 1350)',stepsHtml([
+   'Per alcuni contratti la legge richiede l’<b>atto pubblico</b> o la <b>scrittura privata</b>, <b>a pena di nullità</b>.',
+   'Esempio: i contratti che <b>trasferiscono la proprietà di beni immobili</b> (come la vendita di una casa).',
+   'Altro esempio: la <b>locazione di immobili per più di nove anni</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Quali sono i requisiti del contratto?»</b> Accordo delle parti, causa, oggetto e forma (quando la legge la richiede a pena di nullità).</p>
+ <p><b>«Come deve essere l’oggetto?»</b> Possibile, lecito, determinato o determinabile.</p>
+ <p><b>«Quando serve la forma scritta?»</b> Quando la legge la prescrive a pena di nullità: per esempio nei contratti che trasferiscono la proprietà di beni immobili.</p></div>`,
+ errori:['I requisiti sono <b>quattro</b>: accordo, causa, oggetto, forma. La forma, però, è un requisito solo quando la legge la prescrive a pena di nullità.','L’oggetto deve essere <b>lecito</b>: non basta che sia possibile.','Determinabile <b>non</b> vuol dire lasciare decidere a una sola parte: i criteri devono essere stabiliti insieme.','Una casa non si vende con una semplice stretta di mano: serve l’atto pubblico o la scrittura privata, a pena di nullità.'],
+ orale:[
+  ['Quali sono i requisiti del contratto?','Secondo l’articolo 1325 sono quattro: l’accordo delle parti, la causa, l’oggetto e la forma, quando risulta che è prescritta dalla legge sotto pena di nullità.'],
+  ['Che cos’è la causa del contratto?','È la funzione economico-sociale del contratto, cioè lo scopo pratico per cui viene fatto. Per esempio, nella compravendita la causa è lo scambio di una cosa con un prezzo.'],
+  ['Quali requisiti deve avere l’oggetto del contratto?','Secondo l’articolo 1346 l’oggetto deve essere possibile, lecito, determinato o determinabile.'],
+  ['Quando serve la forma scritta? Fai un esempio.','Serve quando la legge la prescrive a pena di nullità. Per esempio, i contratti che trasferiscono la proprietà di beni immobili devono essere fatti per atto pubblico o scrittura privata (art. 1350).'],
+ ],
+ quiz:[
+  ['Quali sono i quattro requisiti del contratto?','Accordo, causa, oggetto e forma (se la legge la richiede)',['Prezzo, data, testimoni e firma','Accordo, prezzo, durata e garanzia'],'Art. 1325 c.c.'],
+  ['Che cos’è la causa?','La funzione economico-sociale del contratto, lo scopo pratico',['La ragione personale nascosta di una parte','La data in cui si firma'],'Nella compravendita: cosa contro prezzo.'],
+  ['Quale di questi NON è un requisito dell’oggetto?','Che sia molto costoso',['Che sia possibile','Che sia lecito'],'Possibile, lecito, determinato o determinabile.'],
+  ['Per vendere una casa, che forma serve?','Atto pubblico o scrittura privata, a pena di nullità',['Basta un accordo a voce','Basta un messaggio sul telefono'],'Art. 1350 c.c., n. 1.']]
+};
+CONT.u3={
+ cose:`<div class="box bia"><p>Il contratto nasce con la <b>proposta</b> di una parte e l’<b>accettazione</b> dell’altra. Secondo l’art. 1326 è <b>concluso</b> quando <b>chi ha fatto la proposta ha conoscenza dell’accettazione</b>. Se la risposta cambia le condizioni, <b>non</b> chiude il contratto: è una <b>nuova proposta</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Proposta e accettazione',stepsHtml([
+   'Una parte fa la <b>proposta</b> (il proponente).',
+   'L’altra parte risponde con l’<b>accettazione</b>.',
+   'Il contratto è <b>concluso</b> quando chi ha fatto la proposta <b>ha conoscenza</b> dell’accettazione (art. 1326, 1° comma).',
+   'Una dichiarazione si considera conosciuta quando <b>arriva all’indirizzo</b> del destinatario (art. 1335).'])),
+  card('ver','2 · Il termine e il ritardo',stepsHtml([
+   'L’accettazione deve arrivare <b>nel termine</b> stabilito dal proponente; se non c’è un termine, nel tempo ordinariamente necessario secondo la natura dell’affare o gli usi (2° comma).',
+   'Se arriva <b>in ritardo</b>, di regola <b>non vale</b>. Il proponente la può considerare valida solo se <b>avvisa subito</b> l’altra parte (3° comma).'])),
+  card('gia','3 · Se la risposta è diversa',stepsHtml([
+   'Se il proponente chiede una <b>forma precisa</b> per l’accettazione, una risposta in un’altra forma <b>non ha effetto</b> (4° comma).',
+   'Se l’accettazione <b>non corrisponde alla proposta</b> (per esempio cambia il prezzo), <b>non conclude</b> il contratto: vale come <b>nuova proposta</b> (5° comma).'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Quando è concluso il contratto?»</b> Quando chi ha fatto la proposta ha conoscenza dell’accettazione dell’altra parte.</p>
+ <p><b>«Che cosa succede se l’accettazione arriva in ritardo?»</b> Di regola non vale; il proponente può considerarla valida se avvisa subito l’altra parte.</p>
+ <p><b>«E se rispondo con un prezzo diverso?»</b> Non concludo il contratto: la mia risposta è una nuova proposta, che l’altro deve accettare.</p></div>`,
+ errori:['Il contratto non è concluso quando <b>spedisci</b> la risposta, ma quando chi ha fatto la proposta <b>ne ha conoscenza</b>.','Un’accettazione <b>diversa</b> dalla proposta <b>non</b> conclude il contratto: è una <b>nuova proposta</b>.','L’accettazione <b>in ritardo</b> di regola non vale: serve l’avviso immediato del proponente.','Se il proponente chiede una forma precisa, rispondere in un’altra forma <b>non</b> produce effetti.'],
+ orale:[
+  ['Come nasce il contratto?','Nasce dall’incontro tra la proposta di una parte e l’accettazione dell’altra. Secondo l’articolo 1326 il contratto è concluso quando chi ha fatto la proposta ha conoscenza dell’accettazione dell’altra parte.'],
+  ['Che cosa succede se l’accettazione arriva in ritardo?','Di regola non è efficace. Il proponente può però considerarla valida, a condizione di avvisare subito l’altra parte.'],
+  ['Che cosa succede se l’accettazione non corrisponde alla proposta?','Non conclude il contratto: vale come una nuova proposta, che l’originario proponente dovrà a sua volta accettare.'],
+ ],
+ quiz:[
+  ['Quando è concluso il contratto?','Quando chi ha fatto la proposta ha conoscenza dell’accettazione',['Quando si spedisce la proposta','Quando si firma davanti a un testimone'],'Art. 1326 c.c., 1° comma.'],
+  ['Che cos’è l’accettazione?','La risposta positiva dell’altra parte alla proposta',['La proposta iniziale','Un rifiuto motivato'],'Risposta che accetta la proposta.'],
+  ['Che cosa succede a un’accettazione con un prezzo diverso?','Vale come nuova proposta',['Conclude comunque il contratto','Annulla la proposta per sempre'],'Art. 1326 c.c., 5° comma.'],
+  ['Quando una dichiarazione si considera conosciuta?','Quando arriva all’indirizzo del destinatario',['Quando il destinatario la legge','Quando viene scritta'],'Art. 1335 c.c.']]
+};
+CONT.u4={
+ cose:`<div class="box bia"><p>Il contratto ha <b>forza di legge tra le parti</b>: va rispettato e si scioglie solo per <b>mutuo consenso</b> o per le cause previste dalla legge (art. 1372). I contratti possono essere <b>onerosi</b> (vantaggio e sacrificio per tutti, come la <b>compravendita</b>) o <b>gratuiti</b> (come la <b>donazione</b>).</p></div>`,
+ ricette:[
+  card('blu','1 · Gli effetti del contratto (art. 1372)',stepsHtml([
+   'Il contratto ha <b>forza di legge tra le parti</b>: devono rispettarlo.',
+   'Si può sciogliere solo per <b>mutuo consenso</b> (le parti decidono insieme) o per <b>cause ammesse dalla legge</b>.',
+   'Di regola <b>non produce effetti per i terzi</b>, cioè per chi non è parte, salvo i casi previsti dalla legge.'])),
+  card('ver','2 · Oneroso o gratuito',TAB(['Tipo','Che cosa vuol dire'],[
+   ['<b>Contratto oneroso</b>','ogni parte ha un vantaggio e un sacrificio (esempio: la compravendita)'],
+   ['<b>Contratto gratuito</b>','una parte dà all’altra senza ricevere nulla in cambio (esempio: la donazione)']])),
+  card('gia','3 · Due contratti tipici',stepsHtml([
+   '<b>Compravendita</b> (art. 1470): trasferisce la proprietà di una cosa, o un altro diritto, <b>in cambio di un prezzo</b>.',
+   '<b>Donazione</b> (art. 769): una parte, <b>per spirito di liberalità</b>, arricchisce l’altra, trasferendole un suo diritto o assumendo verso di lei un’obbligazione.',
+   'Nella <b>permuta</b> si scambiano due beni; nella <b>vendita</b>, invece, il corrispettivo è un prezzo.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cosa vuol dire che il contratto ha forza di legge tra le parti?»</b> Che le parti devono rispettarlo come una legge; si può sciogliere solo per mutuo consenso o per cause ammesse dalla legge.</p>
+ <p><b>«Che differenza c’è tra contratto oneroso e gratuito?»</b> Nell’oneroso ogni parte ha un vantaggio e un sacrificio (la compravendita); nel gratuito una parte dà senza ricevere nulla (la donazione).</p>
+ <p><b>«Che cos’è la compravendita?»</b> Il contratto che trasferisce la proprietà di una cosa, o un altro diritto, in cambio di un prezzo.</p></div>`,
+ errori:['Il contratto vincola le <b>parti</b>: di regola <b>non</b> i terzi.','Non basta la volontà di <b>una</b> parte per sciogliere il contratto: serve il <b>mutuo consenso</b> o una causa prevista dalla legge.','Nella <b>donazione</b> manca il corrispettivo: è un contratto <b>gratuito</b>, non oneroso.','Nella <b>vendita</b> il corrispettivo è un <b>prezzo</b>; se si scambiano due beni è una <b>permuta</b>.'],
+ orale:[
+  ['Che cosa significa che il contratto ha forza di legge tra le parti?','Significa che le parti devono rispettarlo come una legge. Secondo l’articolo 1372 si può sciogliere solo per mutuo consenso o per cause ammesse dalla legge, e di regola non produce effetti per i terzi.'],
+  ['Qual è la differenza tra contratto oneroso e contratto gratuito?','Nel contratto oneroso ogni parte ha un vantaggio ma anche un sacrificio, per esempio nella compravendita. Nel contratto gratuito una parte dà un vantaggio all’altra senza ricevere nulla in cambio, per esempio nella donazione.'],
+  ['Che cos’è la compravendita?','Secondo l’articolo 1470 è il contratto che ha per oggetto il trasferimento della proprietà di una cosa, o di un altro diritto, in cambio di un prezzo.'],
+ ],
+ quiz:[
+  ['Che cosa vuol dire «forza di legge tra le parti»?','Le parti devono rispettare il contratto come una legge',['Il contratto vale per tutti, anche per i terzi','Il contratto si può cambiare quando una parte vuole'],'Art. 1372 c.c., 1° comma.'],
+  ['Come si scioglie di regola un contratto?','Per mutuo consenso o per cause ammesse dalla legge',['Quando una sola parte cambia idea','Dopo un anno, automaticamente'],'Art. 1372 c.c.'],
+  ['Qual è un esempio di contratto gratuito?','La donazione',['La compravendita','La locazione con affitto'],'Una parte dà senza ricevere nulla.'],
+  ['Che cosa trasferisce la compravendita?','La proprietà di una cosa in cambio di un prezzo',['Solo il possesso temporaneo di una cosa','Una cosa in cambio di un’altra cosa'],'Art. 1470 c.c.']]
+};
+CONT.u5={
+ cose:`<div class="box bia"><p>La <b>nullità</b> è l’invalidità più grave: il contratto non può produrre i suoi effetti. È nullo se è <b>contrario a norme imperative</b>, se manca uno dei <b>requisiti</b> (accordo, causa, oggetto, forma), se la <b>causa</b> o i <b>motivi</b> sono illeciti, o se l’oggetto non è possibile, lecito, determinato o determinabile (art. 1418).</p></div>`,
+ ricette:[
+  card('blu','1 · Quando il contratto è nullo (art. 1418)',stepsHtml([
+   'Se è <b>contrario a norme imperative</b>, cioè a regole di legge che le parti non possono cambiare.',
+   'Se <b>manca</b> uno dei requisiti dell’art. 1325: <b>accordo, causa, oggetto</b> e, quando serve, la <b>forma</b>.',
+   'Se la <b>causa è illecita</b>: contraria a norme imperative, all’<b>ordine pubblico</b> o al <b>buon costume</b>.',
+   'Se l’<b>oggetto</b> non è possibile, lecito, determinato o determinabile.'])),
+  card('ver','2 · Chi e quando',stepsHtml([
+   'La nullità la può far valere <b>chiunque vi abbia interesse</b> (art. 1421).',
+   'L’azione è <b>imprescrittibile</b>: non si prescrive, si può proporre in qualsiasi momento (art. 1422).'])),
+  card('gia','3 · Esempi',stepsHtml([
+   'Una <b>casa venduta con un accordo solo a voce</b>: manca la forma richiesta dall’art. 1350, quindi il contratto è <b>nullo</b>.',
+   'Un contratto per comprare e vendere una cosa <b>vietata dalla legge</b>: l’oggetto è <b>illecito</b>, quindi è <b>nullo</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è la nullità?»</b> È l’invalidità più grave del contratto: il contratto non può produrre i suoi effetti.</p>
+ <p><b>«Quando un contratto è nullo?»</b> Quando è contrario a norme imperative, quando manca un requisito (accordo, causa, oggetto, forma), quando la causa o i motivi sono illeciti, o quando l’oggetto non ha i requisiti dell’art. 1346.</p>
+ <p><b>«Chi può far valere la nullità e per quanto tempo?»</b> Chiunque vi abbia interesse, senza limiti di tempo: l’azione è imprescrittibile.</p></div>`,
+ errori:['Un contratto <b>nullo</b> e uno <b>annullabile</b> non sono la stessa cosa: la nullità è l’invalidità <b>più grave</b>.','La nullità può essere fatta valere da <b>chiunque vi abbia interesse</b>, non solo da una parte.','L’azione di nullità <b>non si prescrive</b>: l’annullamento invece sì (5 anni).','Per vendere una casa non basta l’accordo a voce: manca la forma e il contratto è <b>nullo</b>.'],
+ orale:[
+  ['Che cos’è la nullità del contratto?','È l’invalidità più grave: il contratto non può produrre i suoi effetti.'],
+  ['In quali casi il contratto è nullo?','Secondo l’articolo 1418 il contratto è nullo se è contrario a norme imperative; se manca uno dei requisiti dell’articolo 1325, cioè accordo, causa, oggetto e, quando serve, forma; se la causa è illecita; se i motivi sono illeciti nei casi previsti; e se l’oggetto non è possibile, lecito, determinato o determinabile.'],
+  ['Chi può far valere la nullità e entro quanto tempo?','Può farla valere chiunque vi abbia interesse. L’azione di nullità è imprescrittibile: non si prescrive.'],
+ ],
+ quiz:[
+  ['Che cos’è la nullità?','L’invalidità più grave: il contratto non produce i suoi effetti',['Un modo di sciogliere il contratto per accordo','Una multa per chi non rispetta il contratto'],'Art. 1418 c.c.'],
+  ['Quando è nullo un contratto?','Quando manca uno dei requisiti o è contrario a norme imperative',['Quando il prezzo è alto','Quando le parti sono lontane'],'Art. 1418 c.c.'],
+  ['Chi può far valere la nullità?','Chiunque vi abbia interesse',['Solo il giudice, d’ufficio','Solo la parte più debole'],'Art. 1421 c.c.'],
+  ['L’azione di nullità si prescrive?','No, è imprescrittibile',['Sì, dopo un anno','Sì, dopo cinque anni'],'Art. 1422 c.c.']]
+};
+CONT.u6={
+ cose:`<div class="box bia"><p>Il contratto è <b>annullabile</b> se una parte è <b>legalmente incapace</b> (per esempio un minorenne) o se il suo consenso è viziato da <b>errore, violenza o dolo</b> (artt. 1425 e 1427). L’azione di annullamento si <b>prescrive in cinque anni</b> (art. 1442).</p></div>`,
+ ricette:[
+  card('blu','1 · L’incapacità',stepsHtml([
+   'È annullabile il contratto fatto da una parte <b>legalmente incapace</b>: per esempio il <b>minorenne</b> (la maggiore età è a <b>18 anni</b>), l’interdetto, l’inabilitato.',
+   'È annullabile anche il contratto fatto da chi è <b>incapace di intendere o di volere</b>, ma solo quando ricorrono le condizioni dell’art. 428 (art. 1425, 2° comma).'])),
+  card('ver','2 · I tre vizi del consenso (art. 1427)',stepsHtml([
+   '<b>Errore</b>: una falsa idea della realtà. È <b>essenziale</b> se riguarda la <b>natura o l’oggetto</b> del contratto, l’<b>identità o le qualità</b> dell’oggetto o della persona, o una norma di diritto (art. 1429).',
+   '<b>Violenza</b>: la minaccia di un <b>male ingiusto e notevole</b>, tale da fare impressione su una persona sensata (art. 1435).',
+   '<b>Dolo</b>: i <b>raggiri</b> di una parte, tali che <b>senza di essi l’altra parte non avrebbe contrattato</b> (art. 1439).'])),
+  card('gia','3 · Il tempo per chiedere l’annullamento',stepsHtml([
+   'L’azione di annullamento si <b>prescrive in cinque anni</b> (art. 1442).',
+   'Il termine parte da quando <b>cessa la violenza</b>, da quando si <b>scopre l’errore o il dolo</b>, o da quando il minore compie <b>18 anni</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«In quali casi il contratto è annullabile?»</b> Quando una parte è legalmente incapace (per esempio un minorenne) o quando il suo consenso è viziato da errore, violenza o dolo.</p>
+ <p><b>«Che cos’è il dolo?»</b> Sono i raggiri di una parte: il contratto è annullabile se, senza di essi, l’altra parte non avrebbe contrattato.</p>
+ <p><b>«Entro quanto tempo si può chiedere l’annullamento?»</b> Entro cinque anni, a partire dal momento che dipende dal caso (art. 1442).</p></div>`,
+ errori:['I vizi del consenso sono <b>tre</b>: errore, violenza, dolo. Non confonderli con la nullità.','La violenza è la <b>minaccia di un male ingiusto e notevole</b>, non una semplice paura interna.','Il <b>dolo</b> annulla il contratto solo se <b>determinante</b>: senza i raggiri l’altra parte non avrebbe contrattato.','L’annullamento si chiede <b>entro cinque anni</b>; la nullità non si prescrive.'],
+ orale:[
+  ['Quando un contratto è annullabile?','È annullabile quando una delle parti è legalmente incapace di contrarre, per esempio un minorenne, oppure quando il consenso è stato dato per errore, estorto con violenza o carpito con dolo.'],
+  ['Quali sono i vizi del consenso?','Sono tre: l’errore, la violenza e il dolo. Il contraente il cui consenso è viziato può chiedere l’annullamento del contratto (art. 1427).'],
+  ['Che cosa sono la violenza e il dolo?','La violenza è la minaccia di un male ingiusto e notevole, tale da fare impressione su una persona sensata. Il dolo sono i raggiri di una parte, determinanti: senza di essi l’altra parte non avrebbe contrattato.'],
+  ['Entro quanto tempo si può chiedere l’annullamento?','L’azione di annullamento si prescrive in cinque anni. Il termine decorre, per esempio, dal giorno in cui cessa la violenza, o in cui si scopre l’errore o il dolo, o in cui il minore diventa maggiorenne.'],
+ ],
+ quiz:[
+  ['Quali sono i vizi del consenso?','Errore, violenza e dolo',['Nullità, rescissione e risoluzione','Proposta, accettazione e forma'],'Art. 1427 c.c.'],
+  ['Un minorenne firma da solo la vendita di un appartamento: il contratto è…','Annullabile per incapacità legale',['Nullo per mancanza dell’oggetto','Perfettamente valido'],'Art. 1425 c.c., 1° comma.'],
+  ['Che cos’è il dolo?','I raggiri di una parte, senza i quali l’altra non avrebbe contrattato',['Una minaccia di un male ingiusto','Una falsa idea della realtà senza colpa di nessuno'],'Art. 1439 c.c.'],
+  ['Entro quanti anni si può chiedere l’annullamento?','Cinque anni',['Un anno','Dieci anni'],'Art. 1442 c.c.']]
+};
+CONT.u7={
+ cose:`<div class="box bia"><p>Ci sono altri due rimedi. La <b>rescissione</b> serve per il contratto <b>molto sproporzionato</b> concluso da chi era in <b>stato di bisogno</b> (art. 1448). La <b>risoluzione</b> serve quando una parte <b>non adempie</b> in un contratto con <b>prestazioni corrispettive</b> (art. 1453).</p></div>`,
+ ricette:[
+  card('blu','1 · La rescissione (art. 1448)',stepsHtml([
+   'Serve una <b>sproporzione</b> tra le prestazioni delle parti.',
+   'Una parte era in <b>stato di bisogno</b> e l’altra ne ha <b>approfittato</b>.',
+   'La lesione deve <b>superare la metà</b> del valore della prestazione.',
+   'I <b>contratti aleatori</b> non si possono rescindere. L’azione si prescrive in <b>un anno</b> dalla conclusione del contratto (art. 1449).'])),
+  card('ver','2 · La risoluzione (art. 1453)',stepsHtml([
+   'Riguarda i contratti con <b>prestazioni corrispettive</b> (come la compravendita) quando una parte <b>non adempie</b>.',
+   'La parte che ha rispettato il contratto può chiedere l’<b>adempimento</b> oppure la <b>risoluzione</b>, e in ogni caso il <b>risarcimento del danno</b>.',
+   'Se ha già chiesto la risoluzione, <b>non può più chiedere l’adempimento</b>.'])),
+  card('gia','3 · L’inadempimento lieve (art. 1455)',stepsHtml([
+   'Il contratto <b>non si può risolvere</b> se l’inadempimento ha <b>scarsa importanza</b>.',
+   'Si guarda anche all’<b>interesse</b> dell’altra parte.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Quando si può rescindere un contratto?»</b> Quando c’è sproporzione tra le prestazioni, una parte era in stato di bisogno e l’altra ne ha approfittato, e la lesione supera la metà del valore.</p>
+ <p><b>«Che cos’è la risoluzione?»</b> Lo scioglimento di un contratto con prestazioni corrispettive quando una parte non adempie.</p>
+ <p><b>«Il venditore non consegna la merce già pagata: che cosa posso fare?»</b> Posso chiedere l’adempimento oppure la risoluzione, e in ogni caso il risarcimento del danno.</p></div>`,
+ errori:['<b>Rescissione</b> e <b>risoluzione</b> non sono la stessa cosa: la rescissione riguarda lo <b>stato di bisogno</b>, la risoluzione l’<b>inadempimento</b>.','La rescissione richiede una lesione <b>oltre la metà</b>, non la metà esatta.','Chiesta la risoluzione, <b>non si può più</b> chiedere l’adempimento.','Un inadempimento di <b>scarsa importanza</b> non permette la risoluzione.'],
+ orale:[
+  ['Che cos’è la rescissione?','È il rimedio per un contratto molto sproporzionato, concluso da una parte in stato di bisogno e di cui l’altra ha approfittato. Serve una lesione che superi la metà del valore della prestazione; l’azione si prescrive in un anno.'],
+  ['Che cos’è la risoluzione per inadempimento?','Nei contratti con prestazioni corrispettive, se una parte non adempie, l’altra può chiedere l’adempimento oppure la risoluzione del contratto, e in ogni caso il risarcimento del danno.'],
+  ['Si può risolvere il contratto se l’inadempimento è lieve?','No: secondo l’articolo 1455 il contratto non si può risolvere se l’inadempimento ha scarsa importanza, avendo riguardo all’interesse dell’altra parte.'],
+ ],
+ quiz:[
+  ['Che cosa serve per la rescissione?','Sproporzione, stato di bisogno e approfittamento dell’altra parte',['Un inadempimento grave','L’incapacità di una parte'],'Art. 1448 c.c., 1° comma.'],
+  ['Quanto deve essere la lesione per rescindere?','Oltre la metà del valore della prestazione',['Almeno il doppio del valore','Anche solo il 10 per cento'],'Art. 1448 c.c., 2° comma.'],
+  ['Che cosa può chiedere chi ha rispettato il contratto, se l’altro non adempie?','L’adempimento o la risoluzione, e il risarcimento del danno',['Solo la restituzione del prezzo, senza risarcimento','Nulla, deve aspettare un anno'],'Art. 1453 c.c.'],
+  ['Si può risolvere il contratto per un inadempimento di scarsa importanza?','No',['Sì, sempre','Sì, ma solo dopo cinque anni'],'Art. 1455 c.c.']]
+};
+const GLOSS=Object.keys(DEFS).flatMap(u=>DEFS[u]).filter((d,i,a)=>a.findIndex(x=>x[0]===d[0])===i);
+const FORMULARIO=`
+<div class="box blu"><h3>Il contratto in breve</h3>${TAB(['Argomento','Da ricordare'],[
+ ['<b>Che cos’è</b>','accordo di due o più parti per costituire, regolare o estinguere un rapporto giuridico patrimoniale (art. 1321) · autonomia contrattuale nei limiti della legge (art. 1322) · contratti atipici se meritevoli di tutela'],
+ ['<b>Requisiti</b>','accordo · causa · oggetto · forma (se la legge la prescrive a pena di nullità) (art. 1325) · oggetto: possibile, lecito, determinato o determinabile (art. 1346)'],
+ ['<b>Come nasce</b>','proposta + accettazione · concluso quando il proponente ha conoscenza dell’accettazione (art. 1326) · accettazione diversa = nuova proposta'],
+ ['<b>Effetti e tipi</b>','forza di legge tra le parti (art. 1372) · oneroso (compravendita, art. 1470) e gratuito (donazione, art. 769)']])}</div>
+<div class="box ros"><h3>Quando il contratto non regge</h3>${TAB(['Rimedio','Quando','Da ricordare'],[
+ ['<b>Nullità</b>','manca un requisito · contrario a norme imperative · causa o oggetto illeciti (art. 1418)','chiunque abbia interesse · imprescrittibile'],
+ ['<b>Annullabilità</b>','incapacità legale · errore, violenza o dolo (artt. 1425, 1427)','si prescrive in 5 anni (art. 1442)'],
+ ['<b>Rescissione</b>','sproporzione + stato di bisogno + approfittamento (art. 1448)','lesione oltre la metà · 1 anno (art. 1449)'],
+ ['<b>Risoluzione</b>','inadempimento nei contratti con prestazioni corrispettive (art. 1453)','non se l’inadempimento è di scarsa importanza (art. 1455)']])}</div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('dir4_contratti_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('dir4_contratti_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  const N=Object.values(PROVA_PLAN).reduce((a,b)=>a+b,0);
+  el.innerHTML='<h2>Prova finale</h2><p>'+N+' esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        const n=list.length;
+        body.innerHTML=`<div class="box ${tot>=n-2?'ver':tot>=Math.round(n*0.6)?'gia':'ros'}"><h3>Risultato: ${tot} su ${n}</h3>${tot>=n-2?'Sei pronto per l\'interrogazione.':tot>=Math.round(n*0.6)?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Riepilogo</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Il contratto è un accordo tra due o più persone.", "Con il contratto si crea, si cambia o si chiude un rapporto che riguarda i soldi o i beni.", "Le persone sono libere di scegliere cosa scrivere, ma devono rispettare la legge."], "u2": ["Un contratto per essere valido ha bisogno di quattro cose: accordo, causa, oggetto e forma.", "L'oggetto deve essere possibile, permesso dalla legge e ben individuato.", "Per vendere una casa serve un documento scritto."], "u3": ["Prima una persona fa la proposta, poi l'altra risponde di sì: è l'accettazione.", "Il contratto è concluso quando chi ha fatto la proposta viene a sapere che l'altro ha accettato.", "Se l'altro risponde con condizioni diverse, non è un sì: è una nuova proposta."], "u4": ["Il contratto è come una legge per chi lo firma: va rispettato.", "Nel contratto oneroso tutti danno e ricevono qualcosa, come nella vendita.", "Nel contratto gratuito uno dà e basta, come nella donazione."], "u5": ["Nullo vuol dire invalido in modo grave: il contratto non può funzionare.", "È nullo, per esempio, se manca un requisito o se è contro la legge.", "La nullità non scade mai e la può far valere chiunque ci sia interessato."], "u6": ["Annullabile vuol dire che il contratto si può cancellare se qualcosa non va.", "Succede se uno dei due è incapace, come un minorenne, oppure se è stato ingannato, minacciato o ha sbagliato.", "Per chiedere l'annullamento ci sono cinque anni."], "u7": ["Rescissione: un contratto troppo ingiusto, fatto da chi era in grande bisogno.", "Risoluzione: uno dei due non fa quello che aveva promesso.", "Se l'inadempimento è piccolo, il contratto non si scioglie."]}, "es": false, "steps": false, "pics": [{"k": "denaro", "re": "denaro|soldi", "id": 8506}, {"k": "moneta", "re": "moneta|monete", "id": 10279}, {"k": "banca", "re": "banca|banche|bancari|bancarie|bancaria", "id": 3062}, {"k": "documento", "re": "documento|documenti", "id": 21802}, {"k": "assegno", "re": "assegno", "id": 16605}, {"k": "pagare", "re": "pagare|pagamento", "id": 29070}, {"k": "giudice", "re": "giudice", "id": 2957}, {"k": "tribunale", "re": "tribunale", "id": 8147}, {"k": "casa", "re": "casa|case", "id": 6964}, {"k": "auto", "re": "auto|automobile", "id": 2339}, {"k": "firma", "re": "firma|firmare|firmato", "id": 12317}, {"k": "legge", "re": "legge|leggi", "id": 11473}, {"k": "famiglia", "re": "famiglia|familiari|familiare", "id": 38351}, {"k": "negozio", "re": "negozio|negozi", "id": 35695}, {"k": "libro", "re": "libro|libri", "id": 25191}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  /* testo con parti in inglese: ogni parte con la sua voce */
+  function segs(el,dl){
+    var out=[],buf='';
+    function flush(){var t=say(buf);if(t.length>1)out.push({t:t,l:dl});buf=''}
+    (function walk(n){
+      if(n.nodeType===3){buf+=n.nodeValue;return}
+      if(n.nodeType!==1)return;
+      if(n.classList&&n.classList.contains('a11y-ui'))return;
+      var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return;
+      if(n.getAttribute('lang')==='en'){flush();var t=say(nodeText(n));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      if(n.classList.contains('fr')||tg==='SUP'){buf+=nodeText(n);return}
+      n.childNodes.forEach(walk);
+    })(el);
+    flush();return out;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    var out=[];
+    els.forEach(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      if(e.closest('[lang="en"]')){var t=say(nodeText(e));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      segs(e,es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    return out;
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=c.l==='en-GB'?0.8:0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     (CFG.steps?'<div class="step"><b class="n">★</b><div>Gli <b>esempi svolti</b> si aprono <b>un passo alla volta</b>: tocca <b>▶ Prossimo passo</b> e leggi con calma. Se preferisci vedere tutto, tocca <b>Mostra tutto</b>.</div></div>':'')+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)segs(qt,'it-IT').forEach(function(c){out.push(c)});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'.',l:'it-IT'});
+      segs(sp||o,CFG.es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  /* ===== ESEMPI SVOLTI UN PASSO ALLA VOLTA ===== */
+  if(CFG.steps&&location.hash!=='#stampa'){
+    var stOn=true;try{stOn=localStorage.getItem('a11y_steps')!=='0'}catch(e){}
+    var st4=document.createElement('style');
+    st4.textContent='section.tab .box.bia [hidden]{display:none!important}'+
+     '.a11y-newstep{background:#fff8dc;border-left:6px solid #d1b24a;padding:4px 8px;border-radius:6px}'+
+     '.a11y-stepper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 2px}'+
+     '.a11y-sc{font-weight:bold;font-size:.95rem;color:#22314d}'+
+     '.a11y-stepper .a11y-btn{margin:0}'+
+     '@media print{.a11y-stepper{display:none!important}section.tab .box.bia [hidden]{display:revert!important}.a11y-newstep{background:none;border:0;padding:0}}';
+    document.head.appendChild(st4);
+    var stGroups=[];
+    document.querySelectorAll('section.tab .stat .box.bia').forEach(function(box){
+      var h=box.querySelector(':scope>h3');if(!h||!/^Esempio/i.test(h.textContent))return;
+      var kids=[].slice.call(box.children).filter(function(c){return c!==h});
+      if(kids.length<3)return;
+      var isNum=function(e){return /^\s*\d+\./.test(e.textContent)};
+      var rest=kids.slice(1),groups=[];
+      if(rest.some(isNum)){
+        var started=false;
+        rest.forEach(function(e){
+          if(isNum(e)){groups.push([e]);started=true}
+          else if(started)groups[groups.length-1].push(e);
+        });
+      }else{rest.forEach(function(e){groups.push([e])})}
+      if(groups.length<2)return;
+      var idx=0,bx=mk('div','a11y-ui a11y-stepper'),go=mk('button','a11y-btn',null),all=mk('button','a11y-btn',null),cnt=mk('span','a11y-sc',null);
+      go.type='button';all.type='button';all.textContent='Mostra tutto';
+      bx.appendChild(go);bx.appendChild(cnt);bx.appendChild(all);box.appendChild(bx);
+      function paint(){
+        groups.forEach(function(g,i){g.forEach(function(e){e.hidden=stOn&&i>=idx;e.classList.toggle('a11y-newstep',stOn&&idx>0&&i===idx-1&&idx<groups.length+1)})});
+        bx.style.display=stOn?'':'none';
+        cnt.textContent='Passo '+idx+' di '+groups.length;
+        go.textContent=idx===0?'▶ Mostrami il primo passo':idx<groups.length?'▶ Prossimo passo':'↺ Ricomincia';
+        all.hidden=idx>=groups.length;
+      }
+      go.addEventListener('click',function(){
+        if(idx>=groups.length)idx=0;else idx++;
+        paint();
+        var t=idx>0?groups[idx-1][0]:box;try{t.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+      });
+      all.addEventListener('click',function(){idx=groups.length;paint()});
+      stGroups.push({paint:paint,reset:function(){idx=0}});
+      paint();
+    });
+    if(stGroups.length){
+      var sb=mk('button','a11y-btn a11y-ui',null);sb.type='button';
+      var paintSb=function(){sb.textContent='👣 Esempi un passo alla volta: '+(stOn?'SÌ':'NO');sb.classList.toggle('on',stOn);sb.setAttribute('aria-pressed',stOn?'true':'false')};
+      sb.addEventListener('click',function(){stOn=!stOn;try{localStorage.setItem('a11y_steps',stOn?'1':'0')}catch(e){};stGroups.forEach(function(g){g.reset();g.paint()});paintSb()});
+      paintSb();bar.appendChild(sb);
+    }
+  }
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261103092809",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
