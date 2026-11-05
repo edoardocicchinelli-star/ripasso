@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arte: il Rinascimento e Donatello</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna ad Arte</a></p><h1>Arte: il Rinascimento e Donatello</h1><p>4 ES · l’introduzione al Rinascimento, Donatello, il David e il Banchetto di Erode · un passo alla volta</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Il Rinascimento</button>
+<button data-t="u2">2 Umanesimo</button>
+<button data-t="u3">3 Prospettiva</button>
+<button data-t="u4">4 I tre maestri</button>
+<button data-t="u5">5 Donatello</button>
+<button data-t="u6">6 Il David</button>
+<button data-t="u7">7 Banchetto di Erode</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Riepilogo</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo all’interrogazione di <b>Arte</b> sull’<b>introduzione al Rinascimento</b> e su <b>Donatello</b>. Vai con calma: <b>un argomento al giorno</b>, 30-40 minuti. Ogni argomento ha sempre lo stesso ordine.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>Che cos’è il Rinascimento</b> (unità 1) e <b>l’Umanesimo</b> (unità 2)</li><li><b>La prospettiva</b> e lo studio dell’antico (unità 3) e <b>i tre maestri di Firenze</b> (unità 4)</li><li><b>Donatello</b>: vita e stile (unità 5)</li><li>Le due opere: il <b>David</b> (unità 6) e il <b>Banchetto di Erode</b> (unità 7)</li></ul></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos’è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema, passo per passo.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi da ripetere a voce.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (5 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 e 2 (Rinascimento e Umanesimo)</li><li><b>Giorno 2</b>: unità 3 e 4 (prospettiva e i tre maestri)</li><li><b>Giorno 3</b>: unità 5 (Donatello) · <b>Giorno 4</b>: unità 6 (il David)</li><li><b>Giorno 5</b>: unità 7 (Banchetto di Erode), Prova finale, Orale e Riepilogo</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c’è fretta.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti <b>a voce alta</b> le risposte dell’Orale: l’interrogazione è parlata.</li><li>Mentre studi, guarda le <b>immagini delle due opere</b> sul libro o sulle slide. Per il David cerca: <b>nudo</b>, <b>cappello</b>, <b>stivali</b>, <b>testa di Golia</b> sotto il piede. Per il Banchetto cerca: <b>Erode che si ritrae</b>, la <b>testa sul vassoio</b>, gli <b>archi</b>.</li><li>Non confondere i <b>due David</b>: <b>marmo</b> (1408-1409) e <b>bronzo</b> (circa 1440).</li><li>Ricorda i numeri: <b>1386-1466</b> (Donatello), <b>1401</b> (concorso), <b>158 cm</b> (David di bronzo), <b>1423-1427</b> e <b>60 × 60 cm</b> (Banchetto di Erode).</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un’altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section><section class="tab" id="u7"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+
+/* ========== ARTE 4 ES: IL RINASCIMENTO E DONATELLO - GENERATORI ========== */
+const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+function mapGroup(tag,pairs){
+  return ()=>{
+    const p=pairs[rnd(0,pairs.length-1)];
+    return mkEx(`<b>${p[0]}</b>`,p[1],p[3],wy(p[2],p[1]),tag);
+  };
+}
+/* unità 1: che cos'è il Rinascimento */
+const exRinascimento=mapGroup('Che cos’è il Rinascimento',[
+ ['In quale città nasce il Rinascimento?','A Firenze','È la città dei Medici, di Brunelleschi e di Donatello.',['A Parigi','A Madrid']],
+ ['In quale secolo nasce il Rinascimento?','Nel Quattrocento','Quattrocento = anni 1400.',['Nel Duecento','Nell’Ottocento']],
+ ['Che cosa vuol dire la parola «Rinascimento»?','Rinascita','Gli artisti pensano che l’arte antica rinasca.',['Guerra','Costruzione di chiese']],
+ ['Quale arte antica guardano gli artisti del Rinascimento?','Quella dei Greci e dei Romani','È l’antichità classica.',['Quella degli Egizi soltanto','Quella dei Vichinghi']],
+ ['Chi viene messo al centro nel Rinascimento?','L’uomo','L’attenzione all’uomo come individuo è una delle novità.',['Il re','Il cavaliere']],
+ ['Quale di queste è una novità dell’arte rinascimentale?','La prospettiva lineare','Si usa per disegnare lo spazio in profondità.',['L’arco a sesto acuto','La facciata a salienti']],
+ ['A quale periodo appartengono il Romanico e il Gotico?','Al Medioevo','Vengono prima del Rinascimento.',['Al Rinascimento','All’antichità classica']],
+ ['Quale pittore anticipa il Rinascimento con figure più realistiche?','Giotto','Giotto di Bondone (1267-1337).',['Masaccio','Donatello']]]);
+/* unità 2: umanesimo */
+const exUmanesimo=mapGroup('L’Umanesimo',[
+ ['Chi è il grande protagonista dell’Umanesimo del Trecento?','Francesco Petrarca','Con lui nasce il movimento.',['Cosimo de’ Medici','Donatello']],
+ ['In quale secolo nasce l’Umanesimo?','Nel Trecento','Prima del Rinascimento.',['Nell’Ottocento','Nel Duecento']],
+ ['Che cosa studiano gli umanisti?','I libri dei Greci e dei Romani','I classici greci e latini.',['Solo i libri di cucina','Solo le leggi dei re']],
+ ['Che cos’è un umanista?','Uno studioso dei libri greci e latini antichi','Cerca di capire l’antico nel modo più vero.',['Un pittore di chiese','Un soldato']],
+ ['Che cosa vuol dire antropocentrismo?','L’uomo è al centro del mondo','«Antropo» vuol dire uomo.',['La natura è al centro del mondo','Il re è al centro del mondo']],
+ ['Come Pico della Mirandola chiama l’uomo?','Artefice di se stesso','Capace di costruire il proprio destino.',['Servo del destino','Nemico della natura']],
+ ['Che cos’è un mecenate?','Chi paga e protegge gli artisti','È il committente.',['Un artista che dipinge affreschi','Un maestro di scuola']],
+ ['Quale famiglia di banchieri protegge gli artisti a Firenze?','I Medici','Cosimo de’ Medici sale al potere nel 1434.',['I Gonzaga','Gli Sforza']]]);
+/* unità 3: prospettiva */
+const exProspettiva=mapGroup('La prospettiva e l’antico',[
+ ['Che cos’è la prospettiva lineare?','Un metodo matematico per disegnare lo spazio in profondità','Serve a rappresentare la profondità.',['Un tipo di pittura a olio','Un modo di cantare']],
+ ['Come si chiama il punto in cui si incontrano le linee di fuga?','Punto di fuga','Le linee convergono lì.',['Punto di vista','Punto d’arrivo']],
+ ['Quanti punti di fuga ha la prospettiva frontale?','Uno','Le linee verso il fondo si incontrano in un solo punto.',['Quattro','Dieci']],
+ ['Cosa succede agli oggetti più lontani, nella prospettiva?','Sembrano più piccoli','È l’effetto della profondità.',['Sembrano più grandi','Spariscono']],
+ ['Chi fa gli esperimenti sulla prospettiva intorno al 1416?','Brunelleschi','Con due tavolette dipinte, oggi perdute.',['Giotto','Alberti']],
+ ['Chi scrive il trattato «De pictura» (1434-1436)?','Leon Battista Alberti','È il primo scritto sulla prospettiva.',['Pico della Mirandola','Masaccio']],
+ ['Quale pittore usa la prospettiva negli affreschi, come nella Trinità?','Masaccio','Dipinge anche il Pagamento del tributo.',['Ghiberti','Donatello']],
+ ['Perché Brunelleschi e Donatello vanno a Roma (1402)?','Per studiare le rovine antiche','Copiano capitelli, colonne e cornici.',['Per vendere le loro opere','Per fuggire da Firenze']]]);
+/* unità 4: i tre maestri */
+const exMaestri=mapGroup('I tre maestri e il 1401',[
+ ['Chi è il maestro dell’architettura nel primo Rinascimento?','Brunelleschi','Fa la cupola del Duomo di Firenze.',['Masaccio','Donatello']],
+ ['Chi è il maestro della pittura nel primo Rinascimento?','Masaccio','Dipinge la Trinità.',['Brunelleschi','Donatello']],
+ ['Chi è il maestro della scultura nel primo Rinascimento?','Donatello','Fa i due David.',['Masaccio','Brunelleschi']],
+ ['Chi vince il concorso del 1401?','Ghiberti','Firma il contratto nel 1403.',['Brunelleschi','Donatello']],
+ ['Per quale opera è il concorso del 1401?','Per la porta nord del Battistero di Firenze','Il tema è il Sacrificio di Isacco.',['Per la facciata di Santa Maria del Fiore','Per il campanile di Giotto']],
+ ['Chi organizza il concorso del 1401?','L’Arte di Calimala','È la corporazione dei mercanti di stoffe.',['La famiglia Gonzaga','Il Papa']],
+ ['Quando iniziano i lavori della cupola di Santa Maria del Fiore?','Nel 1420','Viene inaugurata nel 1436.',['Nel 1220','Nel 1520']],
+ ['In quale anno muore Masaccio?','Nel 1428','Muore a Roma a soli 26 anni.',['Nel 1328','Nel 1528']]]);
+/* unità 5: Donatello */
+const exDonatello=mapGroup('Donatello: vita e stile',[
+ ['In quale anno nasce Donatello?','Nel 1386','Nasce a Firenze.',['Nel 1286','Nel 1486']],
+ ['In quale anno muore Donatello?','Nel 1466','Il 13 dicembre, a Firenze.',['Nel 1366','Nel 1566']],
+ ['Qual è il nome vero di Donatello?','Donato di Niccolò di Betto Bardi','«Donatello» è un soprannome.',['Donato Bramante','Donato Giotto']],
+ ['Di quale arte è maestro Donatello?','Della scultura','È il primo grande scultore del Rinascimento.',['Della pittura','Dell’architettura']],
+ ['Con quale amico va a Roma a studiare l’antico?','Con Brunelleschi','Sono amici.',['Con Masaccio','Con Giotto']],
+ ['In quale bottega lavora Donatello, dal 1404 al 1407?','In quella di Ghiberti','Prepara i modelli per la porta nord del Battistero.',['In quella di Giotto','In quella di Masaccio']],
+ ['Che cos’è lo stiacciato?','Un rilievo molto basso, quasi piatto','Crea profondità.',['Una statua da guardare da tutti i lati','Un dipinto su tavola']],
+ ['Come si chiama una statua che si guarda da tutti i lati?','A tutto tondo','Ci si può girare intorno.',['A bassorilievo','A stiacciato']]]);
+/* unità 6: il David */
+const exDavid=mapGroup('Il David di Donatello',[
+ ['Di che materiale è il David più famoso di Donatello?','Di bronzo','Quello di marmo è la prima opera.',['Di legno','Di argilla']],
+ ['Quanto è alto il David di bronzo?','158 cm','Più o meno a grandezza naturale.',['35 cm','5 metri']],
+ ['In quale museo si trova il David di bronzo?','Nel Museo Nazionale del Bargello, a Firenze','Dal 1865.',['Nel Louvre, a Parigi','Nel Vaticano, a Roma']],
+ ['Che cosa indossa il David di bronzo?','Solo un cappello con alloro e gli stivali','È nudo.',['Un’armatura completa','Una lunga tunica']],
+ ['Che cosa ha sotto il piede David?','La testa di Golia','Golia è il gigante ucciso.',['Un sasso','Una pecora']],
+ ['Perché il David di bronzo è importante?','È il primo nudo a tutto tondo dai tempi dell’arte classica','Si guarda da tutti i lati.',['È la prima statua di marmo','È la prima statua a cavallo']],
+ ['Quando fu fatto il David di marmo?','Nel 1408-1409','È una delle prime opere di Donatello.',['Nel 1508-1509','Nel 1308-1309']],
+ ['Per quale edificio fu fatto il David di marmo?','Per il Duomo di Firenze','Lo commissionò l’Opera del Duomo.',['Per il Battistero di Siena','Per il Palazzo Medici']]]);
+/* unità 7: il Banchetto di Erode */
+const exBanchetto=mapGroup('Il Banchetto di Erode',[
+ ['Dove si trova il Banchetto di Erode?','Nel fonte battesimale del Battistero di Siena','È la sesta formella del fonte.',['Nel Duomo di Padova','Nel Bargello di Firenze']],
+ ['In quali anni fa Donatello il Banchetto di Erode?','Tra il 1423 e il 1427','Il pannello è consegnato entro il 1427.',['Tra il 1323 e il 1327','Tra il 1523 e il 1527']],
+ ['Di che materiale è il Banchetto di Erode?','Di bronzo dorato','Il bronzo è coperto d’oro.',['Di marmo bianco','Di legno dipinto']],
+ ['Quali sono le misure della formella?','60 × 60 cm','È quadrata.',['6 × 6 metri','20 × 40 cm']],
+ ['Che cosa mostra un servitore in primo piano?','La testa di Giovanni Battista','La mostra a Erode.',['Una spada di Golia','Una corona']],
+ ['Che cosa fa Erode davanti alla testa?','Si ritrae inorridito','Una reazione di orrore.',['La prende in mano sorridendo','Si mette a ballare']],
+ ['Come sono separati i tre piani della scena?','Da archi, aperti uno dietro l’altro','Le aperture sono «a cannocchiale».',['Da alberi','Da tende']],
+ ['Che cosa succede alle figure in primo piano, nello stiacciato?','Sono in alto rilievo','Quelle sul fondo sono molto più basse.',['Sono quasi piatte','Sono dipinte']]]);
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const GENS={
+ u1:[exRinascimento,exRinascimento,exRinascimento,exDef('u1')],
+ u2:[exUmanesimo,exUmanesimo,exUmanesimo,exDef('u2')],
+ u3:[exProspettiva,exProspettiva,exProspettiva,exDef('u3')],
+ u4:[exMaestri,exMaestri,exMaestri,exDef('u4')],
+ u5:[exDonatello,exDonatello,exDonatello,exDef('u5')],
+ u6:[exDavid,exDavid,exDavid,exDef('u6')],
+ u7:[exBanchetto,exBanchetto,exBanchetto,exDef('u7')]
+};
+const UNITS={u1:'1 · Che cos’è il Rinascimento',u2:'2 · L’Umanesimo: l’uomo al centro',u3:'3 · La prospettiva e lo studio dell’antico',u4:'4 · Firenze e i tre maestri',u5:'5 · Donatello: vita e stile',u6:'6 · Il David di Donatello',u7:'7 · Il Banchetto di Erode'};
+const PROVA_PLAN={u1:2,u2:2,u3:2,u4:2,u5:2,u6:2,u7:2};
+
+/* ========== ARTE 4 ES: IL RINASCIMENTO E DONATELLO ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const DEFS={
+u1:[
+ ['Rinascimento','Periodo di grande rinnovamento della cultura e dell’arte, nato a Firenze nel Quattrocento. Il nome vuol dire «rinascita».'],
+ ['Quattrocento','Il secolo XV, cioè gli anni dal 1400 al 1499.'],
+ ['Antichità classica','Il mondo dei Greci e dei Romani: gli artisti del Rinascimento lo studiano e lo prendono come esempio.'],
+ ['Medioevo','Il periodo prima del Rinascimento. In arte ne fanno parte il Romanico e il Gotico.'],
+ ['Giotto','Il pittore che anticipa il Rinascimento: dipinge figure più realistiche (1267-1337).']],
+u2:[
+ ['Umanesimo','Movimento culturale nato nel Trecento, soprattutto con Francesco Petrarca. Studia i libri dei Greci e dei Romani e mette al centro l’uomo.'],
+ ['Umanista','Studioso dei libri greci e latini antichi. Cerca di capirli nel modo più vero possibile.'],
+ ['Antropocentrismo','Idea che l’uomo sia al centro del mondo. L’uomo è capace di decidere e di costruire il proprio destino.'],
+ ['Mecenate','Chi paga gli artisti e li protegge. A Firenze è la famiglia Medici.'],
+ ['Medici','Famiglia di banchieri ricchissima che a Firenze protegge artisti e studiosi. Cosimo de’ Medici sale al potere nel 1434.']],
+u3:[
+ ['Prospettiva lineare','Metodo matematico per disegnare su una superficie piana lo spazio in profondità, come lo vede l’occhio.'],
+ ['Punto di fuga','Il punto in cui sembrano incontrarsi le linee che vanno verso il fondo del disegno.'],
+ ['Linea d’orizzonte','La linea all’altezza degli occhi di chi guarda: sopra c’è il cielo, sotto c’è il suolo.'],
+ ['Linee di fuga','Le linee che nel disegno vanno verso il fondo e convergono nel punto di fuga.'],
+ ['De pictura','Trattato di Leon Battista Alberti (1434-1436): è il primo scritto che spiega la prospettiva.']],
+u4:[
+ ['Concorso del 1401','Gara per la porta nord del Battistero di Firenze, organizzata dall’Arte di Calimala. Il tema era il Sacrificio di Isacco. Vinse Ghiberti.'],
+ ['Battistero','L’edificio di Firenze dove si battezzano i bambini. La porta nord è in bronzo.'],
+ ['Brunelleschi','Architetto fiorentino (1377-1446): fa la cupola del Duomo e lo Spedale degli Innocenti.'],
+ ['Masaccio','Pittore (1401-1428) che dipinge figure solide e usa la prospettiva: la Trinità, la Cappella Brancacci.'],
+ ['Cupola di Santa Maria del Fiore','Grande cupola del Duomo di Firenze: i lavori iniziano nel 1420 e la cupola è inaugurata nel 1436.']],
+u5:[
+ ['Donatello','Scultore fiorentino: nome vero Donato di Niccolò di Betto Bardi, nato a Firenze nel 1386 e morto a Firenze il 13 dicembre 1466.'],
+ ['Stiacciato','Rilievo molto basso, quasi piatto: le figure si «schiacciano» man mano che vanno verso il fondo, e così si crea la profondità.'],
+ ['Alto rilievo','Figure che sporgono molto dallo sfondo.'],
+ ['Tutto tondo','Statua che si può guardare da tutti i lati, girandoci intorno.'],
+ ['Bottega','Il laboratorio di un artista maestro, dove lavorano anche gli allievi.']],
+u6:[
+ ['David','Il giovane pastore della Bibbia che sconfigge il gigante Golia.'],
+ ['Golia','Il gigante nemico che David uccide.'],
+ ['Nudo a tutto tondo','Statua di un corpo nudo che non è appoggiata a una parete e si guarda da tutti i lati.'],
+ ['Bargello','Il Museo Nazionale di Firenze dove oggi si trovano i due David di Donatello.'],
+ ['Bronzo','Metallo che si fonde e si versa in uno stampo per fare le statue.']],
+u7:[
+ ['Fonte battesimale','Grande vasca dove si battezzano le persone. Quello di Siena è nel Battistero e ha sei formelle di bronzo dorato.'],
+ ['Formella','Pannello decorato con una scena. Il Banchetto di Erode è una formella quadrata di 60 × 60 cm.'],
+ ['Bronzo dorato','Bronzo coperto con uno strato d’oro: brilla come se fosse tutto d’oro.'],
+ ['Erode','Il re che, al banchetto, fa uccidere Giovanni Battista (Vangelo di Marco, capitolo 6).'],
+ ['Erodiade','La moglie di Erode: nella storia è lei a volere la morte di Giovanni Battista.']]
+};
+const CONT={};
+CONT.u1={
+ cose:`<div class="box bia"><p>Il <b>Rinascimento</b> è un periodo di grande <b>rinnovamento</b> della cultura e dell’arte. Nasce a <b>Firenze</b> all’inizio del <b>Quattrocento</b> (anni 1400). Gli artisti guardano all’<b>arte antica</b> dei Greci e dei Romani e mettono al centro l’<b>uomo</b>. Il nome vuol dire <b>«rinascita»</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Dove e quando',stepsHtml([
+   'Il Rinascimento <b>nasce a Firenze</b>, nel <b>Quattrocento</b>.',
+   'Si fa iniziare <b>per convenzione</b> nel <b>1401</b>, con il <b>concorso</b> per la porta del Battistero di Firenze.',
+   'Poi si diffonde in altre città italiane: <b>Venezia, Roma, Ferrara, Urbino, Milano, Napoli</b>.'])),
+  card('ver','2 · Le tre novità dello stile',stepsHtml([
+   'La <b>prospettiva lineare</b>: lo spazio in profondità disegnato con regole matematiche.',
+   'L’attenzione all’<b>uomo come individuo</b>: ogni persona ha il suo carattere.',
+   'Il ritorno all’<b>essenzialità</b>: forme semplici e chiare, come nell’arte antica.'])),
+  card('gia','3 · Che cosa cambia rispetto al Medioevo',stepsHtml([
+   'Nel <b>Medioevo</b> (Romanico e Gotico) l’arte serve soprattutto a insegnare la religione.',
+   'Nel Rinascimento si studiano l’<b>arte antica</b> e la <b>natura</b>, e l’<b>uomo</b> diventa importante.',
+   '<b>Giotto</b> (1267-1337) è un <b>anticipatore</b>: dipinge figure già più realistiche.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è il Rinascimento?»</b> È un periodo di grande rinnovamento della cultura e dell’arte, nato a Firenze nel Quattrocento. Gli artisti studiano l’arte antica e mettono l’uomo al centro.</p>
+ <p><b>«Dove e quando nasce?»</b> A Firenze, all’inizio del Quattrocento: si fa iniziare per convenzione nel 1401, con il concorso per la porta del Battistero.</p>
+ <p><b>«Quali sono le novità?»</b> La prospettiva lineare, l’attenzione all’uomo come individuo e il ritorno all’essenzialità.</p></div>`,
+ errori:['Il Rinascimento <b>non</b> nasce a Roma o a Venezia: nasce a <b>Firenze</b>. Le altre città vengono dopo.','<b>Quattrocento</b> vuol dire gli anni <b>1400</b>, non gli anni 400.','Gli artisti <b>non copiano</b> l’arte antica: la studiano e fanno opere nuove.','Il <b>Romanico</b> e il <b>Gotico</b> appartengono al Medioevo, non al Rinascimento.'],
+ orale:[
+  ['Che cos’è il Rinascimento e dove nasce?','È un periodo di grande rinnovamento della cultura e dell’arte. Nasce a Firenze nel Quattrocento e poi si diffonde in altre città italiane, come Venezia, Roma, Ferrara, Urbino, Milano e Napoli.'],
+  ['Quali sono le novità dell’arte rinascimentale?','Sono tre: la prospettiva lineare, l’attenzione all’uomo come individuo e il ritorno all’essenzialità.'],
+  ['Perché Giotto è considerato un anticipatore?','Perché dipinge figure più realistiche di quelle medievali, e così prepara il cambiamento del Rinascimento.'],
+ ],
+ quiz:[
+  ['Dove nasce il Rinascimento?','A Firenze',['A Parigi','A Londra'],'Il Rinascimento nasce a Firenze.'],
+  ['In quale secolo nasce il Rinascimento?','Nel Quattrocento',['Nel Mille','Nell’Ottocento'],'Quattrocento = anni 1400.'],
+  ['Che cosa vuol dire «Rinascimento»?','Rinascita',['Guerra','Silenzio'],'Il nome vuol dire «rinascita».'],
+  ['Quale di queste è una novità del Rinascimento?','La prospettiva lineare',['L’arco a sesto acuto','La facciata a capanna'],'L’arco a sesto acuto è del Gotico; la facciata a capanna è del Romanico.']]
+};
+CONT.u2={
+ cose:`<div class="box bia"><p>L’<b>Umanesimo</b> è il movimento culturale che prepara il Rinascimento. Nasce nel <b>Trecento</b>, soprattutto con <b>Francesco Petrarca</b>. Gli <b>umanisti</b> recuperano i libri dei <b>Greci e dei Romani</b> e mettono l’<b>uomo al centro</b> (<b>antropocentrismo</b>). A Firenze gli artisti sono pagati da <b>mecenati</b>, come la famiglia <b>Medici</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Che cos’è l’Umanesimo',stepsHtml([
+   'Nasce nel <b>Trecento</b>, in ambito <b>letterario</b>, soprattutto grazie a <b>Francesco Petrarca</b>.',
+   'Gli <b>umanisti</b> cercano e studiano i <b>libri greci e latini</b> antichi.',
+   'Vogliono capire l’antico nel modo più <b>vero</b>, e poi usarlo per fare cose <b>nuove</b>.'])),
+  card('ver','2 · L’uomo al centro',stepsHtml([
+   'Il Medioevo guarda soprattutto a Dio; l’Umanesimo guarda anche all’<b>uomo</b> e alle sue capacità.',
+   'Si chiama <b>antropocentrismo</b>: l’uomo è al <b>centro</b>.',
+   'Pico della Mirandola scrive che l’uomo è <b>«artefice di se stesso»</b> (<i>De hominis dignitate</i>).'])),
+  card('gia','3 · Chi paga gli artisti',stepsHtml([
+   'Gli artisti lavorano per i <b>committenti</b>: chi ordina e paga l’opera.',
+   'A Firenze sono molto importanti i <b>Medici</b>, famiglia di banchieri. <b>Cosimo de’ Medici</b> sale al potere nel <b>1434</b>.',
+   'Altre famiglie importanti: <b>Gonzaga, Este, Sforza, Montefeltro</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’Umanesimo?»</b> È un movimento culturale nato nel Trecento, soprattutto con Petrarca. Gli umanisti studiano i classici greci e latini e mettono l’uomo al centro.</p>
+ <p><b>«Che cos’è l’antropocentrismo?»</b> L’idea che l’uomo sia al centro del mondo e che sia capace di costruire il proprio destino.</p>
+ <p><b>«Chi sono i Medici?»</b> Una famiglia di banchieri di Firenze che protegge gli artisti e gli studiosi.</p></div>`,
+ errori:['L’Umanesimo nasce <b>prima</b> del Rinascimento: nel <b>Trecento</b>, con Petrarca.','Gli umanisti sono <b>studiosi di libri</b>, non pittori: l’Umanesimo nasce in ambito <b>letterario</b>.','«L’uomo al centro» <b>non</b> vuol dire che Dio non c’è più: vuol dire che l’uomo e le sue capacità diventano importanti.','Il <b>mecenate</b> è chi <b>paga</b> l’artista, non chi fa l’opera.'],
+ orale:[
+  ['Che cos’è l’Umanesimo?','È il movimento culturale che prepara il Rinascimento. Nasce nel Trecento in ambito letterario, soprattutto con Francesco Petrarca. Gli umanisti recuperano i classici greci e latini.'],
+  ['Che cosa vuol dire «uomo al centro»?','Vuol dire antropocentrismo: l’uomo è capace di decidere e di costruire il proprio destino. Pico della Mirandola lo chiama «artefice di se stesso».'],
+  ['Chi sono i committenti degli artisti rinascimentali?','Sono le famiglie ricche e potenti che ordinano e pagano le opere. A Firenze sono i Medici; altrove i Gonzaga, gli Este, gli Sforza e i Montefeltro.'],
+ ],
+ quiz:[
+  ['Chi è il primo grande protagonista dell’Umanesimo?','Francesco Petrarca',['Giotto','Cosimo de’ Medici'],'L’Umanesimo nasce con Petrarca nel Trecento.'],
+  ['Che cosa studiano gli umanisti?','I libri dei Greci e dei Romani',['Solo i libri di preghiere','Solo la musica'],'Recuperano i classici greci e latini.'],
+  ['Che cosa vuol dire antropocentrismo?','L’uomo è al centro',['Dio non esiste','La natura è nemica'],'«Antropo» = uomo.'],
+  ['Qual è la famiglia di banchieri che protegge gli artisti a Firenze?','I Medici',['I Gonzaga','I Montefeltro'],'Gonzaga e Montefeltro proteggevano gli artisti in altre città, non a Firenze.']]
+};
+CONT.u3={
+ cose:`<div class="box bia"><p>La <b>prospettiva lineare</b> è la grande novità dell’arte del Quattrocento. È un metodo <b>matematico</b> per disegnare lo spazio in <b>profondità</b>. Le linee che vanno verso il fondo si incontrano in un <b>punto di fuga</b>. La studia <b>Brunelleschi</b>, la spiega per iscritto <b>Alberti</b> e la usa <b>Masaccio</b> in pittura.</p></div>`,
+ ricette:[
+  card('blu','1 · Come funziona la prospettiva',stepsHtml([
+   'Si sceglie la <b>linea d’orizzonte</b>: è all’altezza degli occhi di chi guarda.',
+   'Le <b>linee di fuga</b> vanno verso il fondo e <b>convergono</b> in un solo punto: il <b>punto di fuga</b>.',
+   'Più gli oggetti sono lontani, più sembrano <b>piccoli</b>: così nel disegno si vede la <b>profondità</b>.'])),
+  card('ver','2 · Chi la inventa e chi la usa',stepsHtml([
+   '<b>Brunelleschi</b> fa gli esperimenti intorno al <b>1416</b>, con due tavolette dipinte (oggi perdute).',
+   '<b>Leon Battista Alberti</b> scrive il <i>De pictura</i> (<b>1434-1436</b>): è il primo scritto che spiega la prospettiva.',
+   '<b>Masaccio</b> la usa negli affreschi, per esempio nella <b>Trinità</b> (Santa Maria Novella, Firenze) e nel <b>Pagamento del tributo</b>.'])),
+  card('gia','3 · Lo studio dell’antico',stepsHtml([
+   'Nel <b>1402</b> Brunelleschi e <b>Donatello</b> vanno a <b>Roma</b> e restano fino al 1404 circa.',
+   'Studiano e copiano le <b>rovine antiche</b>: capitelli, colonne, cornici.',
+   'Brunelleschi riprende gli <b>ordini classici</b> e l’<b>arco a tutto sesto</b>: lo Spedale degli Innocenti è considerato il primo edificio costruito secondo i canoni classici.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è la prospettiva lineare?»</b> È un metodo matematico per rappresentare lo spazio in profondità. Le linee di fuga convergono nel punto di fuga.</p>
+ <p><b>«Chi la inventa?»</b> Brunelleschi, intorno al 1416. Poi la spiega Alberti nel <i>De pictura</i> e la usa Masaccio negli affreschi.</p>
+ <p><b>«Perché Donatello e Brunelleschi vanno a Roma?»</b> Per studiare le rovine dell’arte antica.</p></div>`,
+ errori:['Il <b>punto di fuga</b> è uno solo, nella prospettiva frontale: non ce ne sono tanti.','La prospettiva non è una «invenzione di Giotto»: la studia <b>Brunelleschi</b>, nel Quattrocento.','Alberti la <b>spiega per iscritto</b>; non è lui a fare gli esperimenti con le tavolette.','Le <b>tavolette</b> di Brunelleschi oggi sono <b>perdute</b>: le conosciamo dal racconto di Alberti.'],
+ orale:[
+  ['Che cos’è la prospettiva lineare?','È un metodo matematico per rappresentare lo spazio in profondità su una superficie piana. Le linee di fuga convergono nel punto di fuga e gli oggetti lontani sembrano più piccoli.'],
+  ['Chi sono i protagonisti della prospettiva?','Brunelleschi fa gli esperimenti intorno al 1416, Leon Battista Alberti la spiega nel De pictura (1434-1436) e Masaccio la applica negli affreschi.'],
+  ['Perché Brunelleschi e Donatello vanno a Roma?','Per studiare le rovine antiche: copiano capitelli, colonne e cornici. Il viaggio inizia nel 1402.'],
+ ],
+ quiz:[
+  ['Come si chiama il punto in cui si incontrano le linee di fuga?','Punto di fuga',['Punto di vista','Punto d’orizzonte'],'Le linee di fuga convergono nel punto di fuga.'],
+  ['Chi fa gli esperimenti sulla prospettiva intorno al 1416?','Brunelleschi',['Giotto','Alberti'],'Alberti la spiega per iscritto più tardi.'],
+  ['Come si chiama il trattato di Alberti sulla prospettiva?','De pictura',['De hominis dignitate','Divina Commedia'],'<i>De hominis dignitate</i> è di Pico della Mirandola.'],
+  ['Perché Brunelleschi e Donatello vanno a Roma?','Per studiare le rovine antiche',['Per vendere le loro statue','Per imparare a dipingere con l’olio'],'Il viaggio è del 1402-1404 circa.']]
+};
+CONT.u4={
+ cose:`<div class="box bia"><p>A <b>Firenze</b>, all’inizio del Quattrocento, tre maestri rinnovano le tre arti: <b>Brunelleschi</b> l’<b>architettura</b>, <b>Masaccio</b> la <b>pittura</b>, <b>Donatello</b> la <b>scultura</b>. Per convenzione tutto parte dal <b>concorso del 1401</b> per la porta nord del Battistero.</p></div>`,
+ ricette:[
+  card('blu','1 · Il concorso del 1401',stepsHtml([
+   'L’<b>Arte di Calimala</b> (la corporazione dei mercanti di stoffe) organizza una <b>gara</b> per la porta nord del <b>Battistero</b> di Firenze.',
+   'Il tema è il <b>Sacrificio di Isacco</b>. Partecipano <b>sette</b> artisti, tra cui <b>Brunelleschi</b> e <b>Ghiberti</b>.',
+   'L’incarico va a <b>Ghiberti</b>: nel <b>1403</b> firma il contratto.'])),
+  card('ver','2 · Brunelleschi, architetto (1377-1446)',stepsHtml([
+   'Lo <b>Spedale degli Innocenti</b>: i lavori iniziano nel <b>1419</b>.',
+   'La <b>cupola di Santa Maria del Fiore</b>: i lavori iniziano nel <b>1420</b> e la cupola è inaugurata nel <b>1436</b>.',
+   'Usa gli <b>ordini classici</b> e l’<b>arco a tutto sesto</b>, dopo lo studio delle rovine di Roma.'])),
+  card('gia','3 · Masaccio, pittore (1401-1428)',stepsHtml([
+   'Muore giovanissimo, a Roma, nel <b>1428</b>.',
+   'Dipinge figure <b>solide e reali</b>, con luce e ombre, dentro uno spazio in <b>prospettiva</b>.',
+   'Opere: la <b>Trinità</b> (Santa Maria Novella) e gli affreschi della <b>Cappella Brancacci</b>, con il <b>Pagamento del tributo</b>.',
+   'Il terzo maestro è <b>Donatello</b>, lo scultore: ne parliamo nelle prossime unità.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Chi sono i tre maestri del primo Rinascimento?»</b> Brunelleschi per l’architettura, Masaccio per la pittura, Donatello per la scultura. Lavorano tutti a Firenze.</p>
+ <p><b>«Che cos’è il concorso del 1401?»</b> Una gara per la porta nord del Battistero di Firenze, sul tema del Sacrificio di Isacco. Vince Ghiberti.</p>
+ <p><b>«Che cosa ha costruito Brunelleschi?»</b> La cupola di Santa Maria del Fiore (1420-1436) e lo Spedale degli Innocenti (dal 1419).</p></div>`,
+ errori:['<b>Brunelleschi</b> è l’architetto, <b>Masaccio</b> il pittore, <b>Donatello</b> lo scultore: non scambiarli.','Il concorso del 1401 lo <b>vince Ghiberti</b>, non Brunelleschi.','La cupola è di <b>Santa Maria del Fiore</b>, il Duomo di Firenze: i lavori iniziano nel <b>1420</b>.','Masaccio muore a soli <b>26 anni</b>, nel 1428: ha dipinto per pochissimi anni.'],
+ orale:[
+  ['Che cos’è stato il concorso del 1401?','È stata una gara organizzata dall’Arte di Calimala per la porta nord del Battistero di Firenze. Il tema era il Sacrificio di Isacco. Parteciparono sette artisti e vinse Ghiberti. Per convenzione si fa iniziare il Rinascimento da qui.'],
+  ['Chi sono i tre maestri del primo Rinascimento fiorentino?','Brunelleschi, Masaccio e Donatello: rinnovano l’architettura, la pittura e la scultura.'],
+  ['Quali sono le opere principali di Brunelleschi?','Lo Spedale degli Innocenti, iniziato nel 1419, e la cupola di Santa Maria del Fiore, iniziata nel 1420 e inaugurata nel 1436.'],
+ ],
+ quiz:[
+  ['Chi vince il concorso del 1401?','Ghiberti',['Brunelleschi','Donatello'],'Brunelleschi partecipa ma non ottiene l’incarico.'],
+  ['Qual era il tema del concorso del 1401?','Il Sacrificio di Isacco',['Il David e Golia','Il Banchetto di Erode'],'Il tema era un episodio biblico: Abramo e Isacco.'],
+  ['Chi costruisce la cupola di Santa Maria del Fiore?','Brunelleschi',['Masaccio','Donatello'],'Masaccio è pittore, Donatello è scultore.'],
+  ['Di quale arte è maestro Masaccio?','Della pittura',['Della scultura','Dell’architettura'],'Brunelleschi = architettura; Donatello = scultura.']]
+};
+CONT.u5={
+ cose:`<div class="box bia"><p><b>Donatello</b> è il primo grande <b>scultore del Rinascimento</b>. Nasce a <b>Firenze</b> nel <b>1386</b> e muore a Firenze il <b>13 dicembre 1466</b>. Il suo nome vero è <b>Donato di Niccolò di Betto Bardi</b>. Usa la prospettiva di Brunelleschi, studia il corpo umano e dà alle sue figure sentimenti molto veri.</p></div>`,
+ ricette:[
+  card('blu','1 · La vita',stepsHtml([
+   'Nasce a <b>Firenze</b> nel <b>1386</b> e muore a Firenze il <b>13 dicembre 1466</b>.',
+   'Nel <b>1402-1404 circa</b> va a <b>Roma</b> con l’amico <b>Brunelleschi</b> a studiare le rovine antiche.',
+   'Lavora nella <b>bottega di Ghiberti</b> (1404-1407), ai modelli per la porta nord del Battistero.'])),
+  card('ver','2 · Lo stile',stepsHtml([
+   'Usa lo <b>stiacciato</b>: un rilievo bassissimo, in cui le figure si «schiacciano» verso il fondo e nasce la <b>profondità</b>.',
+   'Applica la <b>prospettiva lineare</b> di Brunelleschi.',
+   'Studia l’<b>anatomia</b> e il <b>naturalismo</b>; le sue figure hanno <b>espressioni</b> e sentimenti individuali.',
+   'Riprende l’<b>antico</b> senza copiarlo.'])),
+  card('gia','3 · Le opere da ricordare',stepsHtml([
+   '<b>David marmoreo</b> (1408-1409), oggi al Bargello.',
+   '<b>Banchetto di Erode</b> (1423-1427), formella in bronzo dorato per il fonte battesimale di Siena.',
+   '<b>David bronzeo</b> (intorno al 1440), oggi al Bargello.',
+   '<b>Monumento equestre al Gattamelata</b> (completato nel 1453), a Padova.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Chi è Donatello?»</b> È un grande scultore fiorentino, nato nel 1386 e morto nel 1466. È considerato il primo scultore del Rinascimento.</p>
+ <p><b>«Che cos’è lo stiacciato?»</b> Un rilievo molto basso, quasi piatto: le figure si schiacciano man mano che vanno verso il fondo, e così si crea la profondità.</p>
+ <p><b>«Quali sono le opere principali?»</b> I due David (di marmo e di bronzo), il Banchetto di Erode e il Gattamelata.</p></div>`,
+ errori:['Donatello è uno <b>scultore</b>, non un pittore e non un architetto.','Lo <b>stiacciato</b> è un rilievo <b>molto basso</b>, non una statua a tutto tondo.','I <b>David</b> di Donatello sono <b>due</b>: uno di marmo (1408-1409) e uno di bronzo (circa 1440).','Il <b>Gattamelata</b> è a <b>Padova</b>, non a Firenze.'],
+ orale:[
+  ['Chi è Donatello?','È uno scultore fiorentino, nato a Firenze nel 1386 e morto nel 1466. Il suo nome vero è Donato di Niccolò di Betto Bardi. È considerato il primo grande scultore del Rinascimento.'],
+  ['Che cos’è lo stiacciato?','È una tecnica di rilievo molto basso: le figure si schiacciano man mano che vanno verso il fondo e così nasce l’effetto di profondità. Donatello la usa nel Banchetto di Erode.'],
+  ['Quali sono le caratteristiche dello stile di Donatello?','Usa la prospettiva di Brunelleschi, studia l’anatomia e il naturalismo, riprende l’antico senza copiarlo e dà alle figure espressioni e sentimenti molto veri.'],
+ ],
+ quiz:[
+  ['Di che arte è maestro Donatello?','Della scultura',['Della pittura','Dell’architettura'],'Donatello è lo scultore dei tre maestri.'],
+  ['In quale anno nasce Donatello?','Nel 1386',['Nel 1266','Nel 1486'],'Donatello nasce a Firenze nel 1386.'],
+  ['Che cos’è lo stiacciato?','Un rilievo molto basso, quasi piatto',['Una statua da vedere da tutti i lati','Un affresco su muro bagnato'],'La statua da tutti i lati si chiama «a tutto tondo».'],
+  ['Dove si trova il Gattamelata di Donatello?','A Padova',['A Siena','A Roma'],'Il monumento è stato completato nel 1453.']]
+};
+CONT.u6={
+ cose:`<div class="box bia"><p>Il <b>David di bronzo</b> è il capolavoro più famoso di <b>Donatello</b>. È alto <b>158 cm</b> e oggi si trova al <b>Bargello</b> di Firenze. È considerato il <b>primo nudo a tutto tondo</b> dai tempi dell’arte classica. Fu fatto intorno al <b>1440</b>, probabilmente per i <b>Medici</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · I dati dell’opera',stepsHtml([
+   '<b>Chi:</b> Donatello. <b>Materiale:</b> <b>bronzo</b>. <b>Altezza:</b> <b>158 cm</b>.',
+   '<b>Quando:</b> intorno al <b>1440</b>. La data non è documentata: gli studiosi propongono anni diversi, ma i più scelgono gli anni Quaranta del Quattrocento.',
+   '<b>Per chi:</b> probabilmente per <b>Cosimo de’ Medici</b>, nel cortile del <b>Palazzo Medici</b> di Firenze (la committenza non è sicura).',
+   '<b>Dove oggi:</b> <b>Museo Nazionale del Bargello</b>, Firenze (dal <b>1865</b>).'])),
+  card('ver','2 · Com’è fatto',stepsHtml([
+   'David è un <b>giovane pastore</b>, <b>nudo</b>: ha solo un <b>cappello</b> con una corona d’alloro e gli <b>stivali</b>.',
+   'Tiene in mano la <b>spada di Golia</b>, con cui ha tagliato la testa al gigante. Un <b>piede</b> è appoggiato sulla <b>testa di Golia</b>.',
+   'L’<b>elmo di Golia</b> ha un’<b>ala</b> che arriva fino alla gamba di David.',
+   'Il <b>corpo</b> è giovane, snello ed elegante; il <b>volto</b> è <b>assorto</b>, quasi stupito per la vittoria.'])),
+  card('gia','3 · Perché è importante, e il David di marmo',stepsHtml([
+   'È il <b>primo nudo a tutto tondo</b> dopo la statuaria classica: si può girare intorno e guardare da ogni lato (pensato per stare in alto, su una colonna).',
+   'Il restauro del <b>2007-2008</b> ha scoperto tracce di <b>doratura</b> sulla spada, sul cappello e sulle ali dell’elmo.',
+   'Il <b>David di marmo</b> (<b>1408-1409</b>, alto <b>191 cm</b>) è la <b>prima opera</b>: fatto per il <b>Duomo</b> di Firenze, ha ancora una <b>posa gotica</b>. Dal <b>1416</b> sta a Palazzo Vecchio.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Descrivi il David di Donatello.»</b> È una statua di bronzo alta 158 cm, fatta intorno al 1440. Rappresenta David, giovane pastore nudo, con cappello e stivali. Ha in mano la spada e un piede sulla testa di Golia. Il volto è assorto.</p>
+ <p><b>«Perché è importante?»</b> È il primo nudo a tutto tondo dai tempi dell’arte classica.</p>
+ <p><b>«Dove si trova?»</b> Al Museo Nazionale del Bargello di Firenze.</p></div>`,
+ errori:['Il David di <b>bronzo</b> (circa 1440) non è quello di <b>marmo</b> (1408-1409): sono <b>due statue diverse</b>.','Il David di Donatello è alto <b>158 cm</b>: non è il David di Michelangelo, che è un’altra statua, di un altro scultore.','David <b>non</b> è vestito da guerriero: è <b>nudo</b>, con solo cappello e stivali.','La testa sotto il piede è quella di <b>Golia</b>, il gigante, non quella di David.'],
+ orale:[
+  ['Descrivi il David di bronzo di Donatello.','È una statua di bronzo alta 158 cm, fatta intorno al 1440 e oggi al Museo del Bargello. David è un giovane pastore nudo, con un cappello e gli stivali. Tiene la spada di Golia e ha un piede sulla testa del gigante. Il corpo è elegante e il volto è assorto.'],
+  ['Perché il David è un’opera importante?','Perché è il primo nudo a tutto tondo dai tempi dell’arte classica: una statua che non è appoggiata a una parete e si guarda da ogni lato. Per questo è l’icona del primo Rinascimento.'],
+  ['Qual è la differenza tra il David di marmo e quello di bronzo?','Quello di marmo (1408-1409, alto 191 cm) è la prima opera di Donatello, fatta per il Duomo, e ha ancora una posa gotica. Quello di bronzo (circa 1440, alto 158 cm) è un nudo a tutto tondo ed è un’opera della maturità, forse per i Medici.'],
+ ],
+ quiz:[
+  ['Di quale materiale è il David più famoso di Donatello?','Di bronzo',['Di legno','Di argilla cruda'],'Il David di marmo è l’opera giovanile.'],
+  ['Quanto è alto il David di bronzo?','158 cm',['35 cm','5 metri'],'È una statua a grandezza naturale.'],
+  ['Che cosa ha sotto il piede David?','La testa di Golia',['Un sasso','Una corona'],'Golia è il gigante sconfitto.'],
+  ['Perché il David di bronzo è importante?','È il primo nudo a tutto tondo dai tempi dell’arte classica',['È la prima statua di marmo','È il primo dipinto a olio'],'Il museo che lo conserva lo ricorda proprio così.']]
+};
+CONT.u7={
+ cose:`<div class="box bia"><p>Il <b>Banchetto di Erode</b> è una <b>formella</b> di <b>bronzo dorato</b> di <b>60 × 60 cm</b>, fatta da Donatello tra il <b>1423 e il 1427</b> per il <b>fonte battesimale del Battistero di Siena</b>. Racconta la <b>testa del Battista</b> portata al banchetto. È un capolavoro di <b>prospettiva</b> e di <b>stiacciato</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · I dati dell’opera',stepsHtml([
+   '<b>Chi:</b> Donatello. <b>Quando:</b> <b>1423-1427</b>. <b>Dove:</b> nel <b>fonte battesimale</b> del <b>Battistero di Siena</b>, dove si trova ancora.',
+   '<b>Materiale:</b> <b>bronzo dorato</b>. <b>Misure:</b> formella quadrata di <b>60 × 60 cm</b>.',
+   'Donatello è chiamato nel <b>1423</b>: è la sua <b>prima grande commissione fuori Firenze</b>.',
+   'Al fonte lavorano anche <b>Ghiberti</b>, <b>Jacopo della Quercia</b> e <b>Turino di Sano</b>.'])),
+  card('ver','2 · La scena (Vangelo di Marco, 6, 21-29)',stepsHtml([
+   'Il re <b>Erode</b> dà un banchetto. <b>Salomè</b> balla. La madre <b>Erodiade</b> fa chiedere la <b>testa di Giovanni Battista</b>.',
+   '<b>Primo piano:</b> un servitore mostra la testa a Erode, che si <b>ritrae inorridito</b>. Gli ospiti reagiscono: uno si <b>copre gli occhi</b>. Erodiade si avvicina al marito.',
+   '<b>Piano intermedio:</b> i <b>musici</b>, appena finita la danza di Salomè.',
+   '<b>Sul fondo:</b> un servitore porta la testa su un <b>vassoio</b> a Salomè e a Erodiade, davanti a una <b>scalinata</b>.'])),
+  card('gia','3 · Come è costruita',stepsHtml([
+   '<b>Prospettiva lineare</b> con il <b>punto di fuga al centro</b>, ma il centro resta vuoto e le figure si dispongono in <b>diagonale</b>.',
+   '<b>Tre piani</b> separati da <b>archi</b>, che creano aperture una dietro l’altra, «a cannocchiale». Il <b>pavimento a mattonelle</b> aiuta a vedere la profondità.',
+   'Lo <b>stiacciato</b>: le figure del <b>primo piano</b> sono in <b>alto rilievo</b>; quelle del <b>fondo</b> sono quasi <b>piatte</b>. La testa sul vassoio sporge quasi a <b>tutto tondo</b>.',
+   'È pensata per essere vista <b>dal basso</b>.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Descrivi il Banchetto di Erode.»</b> È una formella di bronzo dorato di 60 × 60 cm, fatta tra il 1423 e il 1427 per il fonte battesimale di Siena. Mostra la testa di Giovanni Battista portata a Erode, che si ritrae inorridito. Gli ospiti reagiscono, e uno si copre gli occhi.</p>
+ <p><b>«Com’è costruita?»</b> Con la prospettiva lineare e lo stiacciato. Tre piani separati da archi creano profondità.</p>
+ <p><b>«Dove si trova?»</b> Nel Battistero di Siena, nel fonte battesimale.</p></div>`,
+ errori:['Il Banchetto di Erode è a <b>Siena</b>, non a Firenze.','È un <b>rilievo di bronzo dorato</b>, non un dipinto e non una statua a tutto tondo.','Il <b>re</b> che si ritrae è <b>Erode</b>; la testa sul vassoio è quella di <b>Giovanni Battista</b>.','Lo <b>stiacciato</b> non vuol dire «senza profondità»: serve proprio a creare la profondità.'],
+ orale:[
+  ['Descrivi il Banchetto di Erode di Donatello.','È una formella di bronzo dorato, quadrata, di 60 per 60 cm, fatta tra il 1423 e il 1427 per il fonte battesimale del Battistero di Siena. Racconta l’episodio del Vangelo di Marco: la testa di Giovanni Battista portata al banchetto. In primo piano un servitore la mostra a Erode, che si ritrae inorridito; un ospite si copre gli occhi.'],
+  ['Come Donatello crea la profondità in quest’opera?','Con la prospettiva lineare, con tre piani separati da archi «a cannocchiale» e con lo stiacciato: le figure in primo piano sono in alto rilievo, quelle sul fondo sono molto più basse.'],
+  ['Perché il Banchetto di Erode è importante nella vita di Donatello?','Perché è la sua prima grande commissione fuori Firenze: nel 1423 è chiamato a Siena, dove lavora anche Ghiberti. I committenti furono molto soddisfatti.'],
+ ],
+ quiz:[
+  ['Dove si trova il Banchetto di Erode?','Nel fonte battesimale del Battistero di Siena',['Nel Duomo di Firenze','Nel Museo del Bargello'],'Il Bargello conserva i due David, non il Banchetto.'],
+  ['Di che materiale è il Banchetto di Erode?','Bronzo dorato',['Marmo bianco','Affresco'],'È una formella di bronzo coperta d’oro.'],
+  ['Che cosa porta il servitore in primo piano?','La testa di Giovanni Battista',['Una corona d’alloro','Una spada'],'La mostra a Erode, che si ritrae.'],
+  ['Quale tecnica usa Donatello per creare profondità?','Lo stiacciato e la prospettiva',['Il colore ad olio','La vetrata colorata'],'Figure alte in primo piano, quasi piatte sul fondo.']]
+};
+const GLOSS=Object.keys(DEFS).flatMap(u=>DEFS[u]).filter((d,i,a)=>a.findIndex(x=>x[0]===d[0])===i);
+const FORMULARIO=`
+<div class="box blu"><h3>Il Rinascimento in breve</h3>${TAB(['Argomento','Da ricordare'],[
+ ['<b>Dove e quando</b>','Firenze · Quattrocento · inizio per convenzione nel 1401 (concorso per la porta del Battistero, vinto da Ghiberti)'],
+ ['<b>Tre novità</b>','prospettiva lineare · uomo come individuo · ritorno all’essenzialità'],
+ ['<b>Umanesimo</b>','Trecento, Petrarca · studio dei classici greci e latini · antropocentrismo · mecenati: i Medici'],
+ ['<b>Prospettiva</b>','Brunelleschi (circa 1416) · Alberti, <i>De pictura</i> (1434-1436) · Masaccio, Trinità e Pagamento del tributo'],
+ ['<b>Tre maestri</b>','Brunelleschi (architettura, cupola 1420-1436) · Masaccio (pittura, 1401-1428) · Donatello (scultura)']])}</div>
+<div class="box ver"><h3>Donatello e le sue opere</h3>${TAB(['Opera','Dati'],[
+ ['<b>Donatello</b>','Firenze 1386 · Firenze 13 dicembre 1466 · stiacciato, prospettiva, espressività'],
+ ['<b>David di marmo</b>','1408-1409 · 191 cm · per il Duomo · posa ancora gotica · dal 1416 a Palazzo Vecchio · oggi al Bargello'],
+ ['<b>Banchetto di Erode</b>','1423-1427 · bronzo dorato, 60 × 60 cm · fonte battesimale di Siena · prospettiva, tre piani, stiacciato'],
+ ['<b>David di bronzo</b>','circa 1440 · 158 cm · forse per i Medici · primo nudo a tutto tondo dall’antichità · oggi al Bargello'],
+ ['<b>Gattamelata</b>','completato nel 1453 · Padova']])}</div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('arte4_rinascimento_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('arte4_rinascimento_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  const N=Object.values(PROVA_PLAN).reduce((a,b)=>a+b,0);
+  el.innerHTML='<h2>Prova finale</h2><p>'+N+' esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        const n=list.length;
+        body.innerHTML=`<div class="box ${tot>=n-2?'ver':tot>=Math.round(n*0.6)?'gia':'ros'}"><h3>Risultato: ${tot} su ${n}</h3>${tot>=n-2?'Sei pronto per l\'interrogazione.':tot>=Math.round(n*0.6)?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Riepilogo</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Il Rinascimento è un periodo in cui l'arte e la cultura rinascono.", "Nasce a Firenze, nel Quattrocento, cioè negli anni 1400.", "Gli artisti guardano l'arte dei Greci e dei Romani e mettono l'uomo al centro."], "u2": ["L'Umanesimo nasce prima, nel Trecento, con lo scrittore Petrarca.", "Gli umanisti studiano i libri antichi dei Greci e dei Romani.", "Gli artisti sono pagati da famiglie ricche, come i Medici di Firenze."], "u3": ["La prospettiva è un metodo per disegnare la profondità, come la vede l'occhio.", "Le linee che vanno verso il fondo si incontrano in un punto: il punto di fuga.", "La studia Brunelleschi, la spiega Alberti, la usa Masaccio."], "u4": ["A Firenze, nel 1401, c'è una gara per la porta del Battistero: vince Ghiberti.", "Poi tre maestri cambiano l'arte: Brunelleschi costruisce, Masaccio dipinge, Donatello scolpisce.", "Brunelleschi fa la grande cupola del Duomo di Firenze."], "u5": ["Donatello è uno scultore di Firenze: nasce nel 1386 e muore nel 1466.", "Usa lo stiacciato: un rilievo bassissimo che dà l'idea della profondità.", "Le sue figure hanno sentimenti veri, come le persone."], "u6": ["Il David è un giovane pastore che ha sconfitto il gigante Golia.", "La statua di bronzo è nuda, con cappello e stivali, e ha un piede sulla testa di Golia.", "È il primo nudo a tutto tondo dopo l'arte dei Greci e dei Romani."], "u7": ["Il Banchetto di Erode è un pannello di bronzo dorato, a Siena.", "Racconta quando portano a Erode la testa di Giovanni Battista: lui si ritrae inorridito.", "Donatello usa la prospettiva, gli archi e lo stiacciato per far vedere la profondità."]}, "es": false, "steps": false, "pics": [{"k": "chiesa", "re": "chiesa|duomo|battistero|campanile", "id": 3118}, {"k": "re", "re": "re|erode", "id": 5563}, {"k": "citta", "re": "firenze|città|siena|padova|roma", "id": 2704}, {"k": "palazzo", "re": "palazzo|palazzi|bargello|museo", "id": 5421}, {"k": "studio", "re": "studiare|studiano|studio|studiosi|umanisti|umanista|umanesimo", "id": 7141}, {"k": "libro", "re": "libro|libri|trattato|scritto|vangelo", "id": 25191}, {"k": "uomo", "re": "uomo|pastore", "id": 4665}, {"k": "donna", "re": "salomè|erodiade", "id": 24621}, {"k": "cavallo", "re": "cavallo|equestre|gattamelata", "id": 2294}, {"k": "soldi", "re": "banchieri|banchiere|medici|mecenate|mecenati", "id": 10279}, {"k": "pensare", "re": "pensare|antropocentrismo|rinascimento", "id": 38796}, {"k": "disegno", "re": "disegnare|disegno|prospettiva|dipinge|pittura|pittore", "id": 2380}, {"k": "attrezzi", "re": "scultore|scultura|bottega|architetto|architettura", "id": 20113}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  /* testo con parti in inglese: ogni parte con la sua voce */
+  function segs(el,dl){
+    var out=[],buf='';
+    function flush(){var t=say(buf);if(t.length>1)out.push({t:t,l:dl});buf=''}
+    (function walk(n){
+      if(n.nodeType===3){buf+=n.nodeValue;return}
+      if(n.nodeType!==1)return;
+      if(n.classList&&n.classList.contains('a11y-ui'))return;
+      var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return;
+      if(n.getAttribute('lang')==='en'){flush();var t=say(nodeText(n));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      if(n.classList.contains('fr')||tg==='SUP'){buf+=nodeText(n);return}
+      n.childNodes.forEach(walk);
+    })(el);
+    flush();return out;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    var out=[];
+    els.forEach(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      if(e.closest('[lang="en"]')){var t=say(nodeText(e));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      segs(e,es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    return out;
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=c.l==='en-GB'?0.8:0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     (CFG.steps?'<div class="step"><b class="n">★</b><div>Gli <b>esempi svolti</b> si aprono <b>un passo alla volta</b>: tocca <b>▶ Prossimo passo</b> e leggi con calma. Se preferisci vedere tutto, tocca <b>Mostra tutto</b>.</div></div>':'')+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)segs(qt,'it-IT').forEach(function(c){out.push(c)});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'.',l:'it-IT'});
+      segs(sp||o,CFG.es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  /* ===== ESEMPI SVOLTI UN PASSO ALLA VOLTA ===== */
+  if(CFG.steps&&location.hash!=='#stampa'){
+    var stOn=true;try{stOn=localStorage.getItem('a11y_steps')!=='0'}catch(e){}
+    var st4=document.createElement('style');
+    st4.textContent='section.tab .box.bia [hidden]{display:none!important}'+
+     '.a11y-newstep{background:#fff8dc;border-left:6px solid #d1b24a;padding:4px 8px;border-radius:6px}'+
+     '.a11y-stepper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 2px}'+
+     '.a11y-sc{font-weight:bold;font-size:.95rem;color:#22314d}'+
+     '.a11y-stepper .a11y-btn{margin:0}'+
+     '@media print{.a11y-stepper{display:none!important}section.tab .box.bia [hidden]{display:revert!important}.a11y-newstep{background:none;border:0;padding:0}}';
+    document.head.appendChild(st4);
+    var stGroups=[];
+    document.querySelectorAll('section.tab .stat .box.bia').forEach(function(box){
+      var h=box.querySelector(':scope>h3');if(!h||!/^Esempio/i.test(h.textContent))return;
+      var kids=[].slice.call(box.children).filter(function(c){return c!==h});
+      if(kids.length<3)return;
+      var isNum=function(e){return /^\s*\d+\./.test(e.textContent)};
+      var rest=kids.slice(1),groups=[];
+      if(rest.some(isNum)){
+        var started=false;
+        rest.forEach(function(e){
+          if(isNum(e)){groups.push([e]);started=true}
+          else if(started)groups[groups.length-1].push(e);
+        });
+      }else{rest.forEach(function(e){groups.push([e])})}
+      if(groups.length<2)return;
+      var idx=0,bx=mk('div','a11y-ui a11y-stepper'),go=mk('button','a11y-btn',null),all=mk('button','a11y-btn',null),cnt=mk('span','a11y-sc',null);
+      go.type='button';all.type='button';all.textContent='Mostra tutto';
+      bx.appendChild(go);bx.appendChild(cnt);bx.appendChild(all);box.appendChild(bx);
+      function paint(){
+        groups.forEach(function(g,i){g.forEach(function(e){e.hidden=stOn&&i>=idx;e.classList.toggle('a11y-newstep',stOn&&idx>0&&i===idx-1&&idx<groups.length+1)})});
+        bx.style.display=stOn?'':'none';
+        cnt.textContent='Passo '+idx+' di '+groups.length;
+        go.textContent=idx===0?'▶ Mostrami il primo passo':idx<groups.length?'▶ Prossimo passo':'↺ Ricomincia';
+        all.hidden=idx>=groups.length;
+      }
+      go.addEventListener('click',function(){
+        if(idx>=groups.length)idx=0;else idx++;
+        paint();
+        var t=idx>0?groups[idx-1][0]:box;try{t.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+      });
+      all.addEventListener('click',function(){idx=groups.length;paint()});
+      stGroups.push({paint:paint,reset:function(){idx=0}});
+      paint();
+    });
+    if(stGroups.length){
+      var sb=mk('button','a11y-btn a11y-ui',null);sb.type='button';
+      var paintSb=function(){sb.textContent='👣 Esempi un passo alla volta: '+(stOn?'SÌ':'NO');sb.classList.toggle('on',stOn);sb.setAttribute('aria-pressed',stOn?'true':'false')};
+      sb.addEventListener('click',function(){stOn=!stOn;try{localStorage.setItem('a11y_steps',stOn?'1':'0')}catch(e){};stGroups.forEach(function(g){g.reset();g.paint()});paintSb()});
+      paintSb();bar.appendChild(sb);
+    }
+  }
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261105090441",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
