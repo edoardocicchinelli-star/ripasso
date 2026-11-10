@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antropologia: dai classici alla globalizzazione</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Scienze Umane</a></p><h1>Antropologia: dai classici alla globalizzazione</h1><p>3 ES · verifica scritta · Malinowski, Lévi-Strauss e le correnti del Novecento · un passo alla volta</p></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 Evoluzionismo</button>
+<button data-t="u2">2 Boas e Malinowski</button>
+<button data-t="u3">3 Lévi-Strauss</button>
+<button data-t="u4">4 Parentela</button>
+<button data-t="u5">5 Neoevoluzionismo</button>
+<button data-t="u6">6 Harris</button>
+<button data-t="u7">7 Geertz</button>
+<button data-t="u8">8 Postmoderna</button>
+<button data-t="orale">Domande aperte</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Riepilogo</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo alla <b>verifica scritta di Scienze Umane</b> (antropologia): dall’<b>evoluzionismo</b> fino alla <b>globalizzazione</b>. Vai con calma, <b>un paio di unità al giorno</b>. Ogni unità ha sempre lo stesso ordine.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li><b>L’atteggiamento antropologico</b> e l’<b>evoluzionismo</b> (unità 1)</li><li><b>Boas</b> e <b>Malinowski</b> (unità 2)</li><li><b>Lévi-Strauss</b> (unità 3) e la <b>parentela</b> (unità 4)</li><li>Le correnti del secondo Novecento: <b>neoevoluzionismo</b> (unità 5), <b>Harris</b> (unità 6), <b>Geertz</b> (unità 7), <b>postmoderna</b> e <b>globalizzazione</b> (unità 8)</li></ul></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos’è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema, passo per passo.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi da ripetere e da scrivere.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (4 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 e 2 (evoluzionismo, Boas e Malinowski)</li><li><b>Giorno 2</b>: unità 3 e 4 (Lévi-Strauss e la parentela)</li><li><b>Giorno 3</b>: unità 5 e 6 (neoevoluzionismo e Harris)</li><li><b>Giorno 4</b>: unità 7 e 8 (Geertz, postmoderna, globalizzazione), poi Prova finale, Domande aperte e Riepilogo</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c’è fretta.</p></div>
+<div class="box bia"><h3>Consigli per lo scritto</h3><ul><li>Nelle <b>Domande aperte</b> scrivi la risposta con parole tue (3-5 righe) e poi confrontala con la risposta modello.</li><li>Impara bene <b>chi ha detto che cosa</b>: <b>Boas</b> = particolarismo culturale; <b>Malinowski</b> = funzionalismo; <b>Lévi-Strauss</b> = antropologia strutturale; <b>Harris</b> = materialismo culturale; <b>Geertz</b> = antropologia interpretativa.</li><li>Il neoevoluzionismo ha <b>tre esponenti</b>: <b>Childe</b> (sistema produttivo), <b>White</b> (tecnologia), <b>Steward</b> (evoluzione multilineare).</li><li>Ricorda i numeri: <b>3 legami</b> nell’atomo di parentela, <b>3 fasi</b> di Childe, <b>3 sistemi</b> di White.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un’altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section><section class="tab" id="u7"></section><section class="tab" id="u8"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+
+
+/* ========== SCIENZE UMANE 3 ES: ANTROPOLOGIA, DAI CLASSICI ALLA GLOBALIZZAZIONE - GENERATORI ========== */
+const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+function mapGroup(tag,pairs){
+  return ()=>{
+    const p=pairs[rnd(0,pairs.length-1)];
+    return mkEx(`<b>${p[0]}</b>`,p[1],p[3],wy(p[2],p[1]),tag);
+  };
+}
+const exU1=mapGroup('Atteggiamento antropologico ed evoluzionismo',[
+ ['Che cosa vuol dire decentramento culturale?','Uscire dal proprio punto di vista per capire quello degli altri','È una parte dell’atteggiamento antropologico.',['Pensare che la propria cultura sia migliore','Andare a vivere in periferia']],
+ ['Che cos’è l’eurocentrismo?','Considerare la cultura europea il modello per giudicare le altre','L’antropologo lo mette in discussione.',['Rispettare tutte le culture','Studiare solo le città europee']],
+ ['Che cosa fa l’antropologo con l’eurocentrismo?','Lo mette in discussione','Atteggiamento antropologico: distacco critico, rispetto per ogni cultura.',['Lo difende','Lo insegna ai bambini']],
+ ['Quali sono i tre esponenti dell’evoluzionismo antropologico?','Morgan, Tylor e Frazer','Sono i tre autori dell’Ottocento.',['Boas, Malinowski e Lévi-Strauss','Childe, White e Steward']],
+ ['Chi parla del cammino dalla vita selvaggia alla barbarie e alla civiltà?','Morgan','Selvaggia, barbarie, civiltà.',['Tylor','Frazer']],
+ ['Secondo Tylor, la religione va…','dall’animismo al politeismo al monoteismo','Animismo, politeismo, monoteismo.',['dalla scienza alla magia','dal monoteismo al politeismo']],
+ ['Secondo Frazer, la conoscenza dell’uomo va…','dalla magia alla religione alla scienza','Magia, religione, scienza.',['dalla scienza alla religione','dalla religione alla magia']],
+ ['Che cosa dice l’evoluzionismo sul cammino delle società?','È uno solo, a tappe, per tutti','Dal semplice al complesso.',['Ogni società ha il proprio cammino','Le società non cambiano']]]);
+const exU2=mapGroup('Boas e Malinowski',[
+ ['Chi è il promotore del particolarismo culturale?','Boas','Franz Boas (1858-1942).',['Malinowski','Frazer']],
+ ['Che cosa dice il particolarismo culturale?','Ogni cultura ha peculiarità che non si riducono a schemi universali','Va studiata nel suo ambiente.',['Tutte le culture sono uguali','Esiste una sola cultura giusta']],
+ ['In relazione a che cosa Boas studia ogni cultura?','All’ambiente in cui si sviluppa','Particolarismo = ogni cultura è unica.',['All’età dei suoi abitanti','Al numero di abitanti']],
+ ['Chi è l’esponente del funzionalismo antropologico?','Malinowski','Bronisław Malinowski (1884-1942).',['Boas','Lévi-Strauss']],
+ ['Che cosa dice il funzionalismo?','Ogni elemento culturale ha una funzione nel sistema sociale','Per capire la cultura bisogna capire la funzione.',['Ogni elemento è inutile','Le culture non cambiano mai']],
+ ['In relazione a che cosa si capisce la funzione, per Malinowski?','Ai bisogni biologici dell’essere umano','Nutrirsi, riprodursi, proteggersi, comunicare.',['Ai gusti dei turisti','Alle leggi dello Stato']],
+ ['Per Malinowski che cos’è la cultura?','L’insieme delle risposte organizzate ai bisogni umani','Per esempio il cibo e il linguaggio.',['Un insieme di oggetti antichi','Solo l’arte']],
+ ['Che cosa mostra l’esempio del bastone da scavo?','Lo stesso oggetto ha funzioni diverse nelle diverse culture','Per questo non basta descrivere l’oggetto.',['Il bastone serve solo a scavare','Il bastone è uguale ovunque']],
+ ['Che cosa bisogna chiedersi su un oggetto?','Chi lo produce, chi lo usa, in che situazione, con quale scopo, che significato ha','Un oggetto prende significato nel sistema culturale in cui è usato.',['Solo quanto costa','Solo di che colore è']]]);
+const exU3=mapGroup('Lévi-Strauss e l’antropologia strutturale',[
+ ['Chi è il fondatore dell’antropologia strutturale?','Lévi-Strauss','Claude Lévi-Strauss (1908-2009).',['Boas','Harris']],
+ ['Che cosa sono le strutture per Lévi-Strauss?','Elementi ricorrenti e universali che condizionano i comportamenti','Si ritrovano in tutte le culture.',['Gli edifici di una città','Le leggi scritte di uno Stato']],
+ ['Che cosa c’è dietro la varietà delle culture?','Strutture profonde e ricorrenti','Questa è l’idea centrale.',['Una sola cultura giusta','Il caso']],
+ ['Che rapporti vivono gli animali, secondo Lévi-Strauss?','Rapporti naturali','Gli uomini, invece, rapporti regolati da norme.',['Rapporti regolati da norme','Rapporti economici']],
+ ['Che rapporti vivono gli uomini, secondo Lévi-Strauss?','Rapporti regolati da norme','È il confine tra natura e cultura.',['Solo rapporti naturali','Solo rapporti di forza']],
+ ['Con che cosa Lévi-Strauss paragona la cultura?','Con la lingua','Parole diverse, strutture comuni.',['Con la musica','Con la moda']],
+ ['Che cosa hanno in comune lingue e culture?','Strutture comuni, anche se le parole sono diverse','È l’analogia con la lingua.',['Gli stessi suoni','La stessa storia']],
+ ['Quale di questi autori è strutturalista?','Lévi-Strauss','Gli altri sono Boas (particolarismo) e Malinowski (funzionalismo).',['Boas','Malinowski']]]);
+const exU4=mapGroup('La parentela secondo Lévi-Strauss',[
+ ['Che cos’è l’atomo di parentela?','L’unità minima di parentela, con tre tipi di legame','Filiazione, consanguineità, affinità.',['Il nome di una famiglia','Una famiglia molto numerosa']],
+ ['La filiazione è il legame tra…','genitori e figli','Filiazione = genitori e figli.',['fratelli e sorelle','marito e moglie']],
+ ['La consanguineità è il legame tra…','fratelli e sorelle','Hanno lo stesso sangue.',['genitori e figli','suoceri e generi']],
+ ['L’affinità è il legame che nasce…','dal matrimonio','Per esempio tra cognati.',['dalla nascita','dall’amicizia']],
+ ['Che cos’è il tabù dell’incesto?','Il divieto di rapporti tra parenti stretti','È una regola universale.',['L’obbligo di sposare un cugino','Il divieto di sposarsi']],
+ ['Che cos’è l’esogamia?','Sposarsi fuori dal proprio gruppo','Endogamia = dentro il gruppo.',['Sposarsi dentro il proprio gruppo','Non sposarsi mai']],
+ ['Che cos’è l’alleanza?','Il legame tra gruppi che diventano parenti acquisiti','Il matrimonio non è solo un affare privato.',['Un accordo tra due Stati','Una lite tra famiglie']],
+ ['Che cosa fanno le parole, secondo Lévi-Strauss?','Fanno comunicare gli individui','Le merci creano relazioni economiche; il matrimonio relazioni sociali tra gruppi.',['Creano relazioni economiche','Creano relazioni tra gruppi']],
+ ['Che cosa crea il matrimonio come scambio?','Relazioni sociali tra gruppi','È un sistema di scambio.',['Solo relazioni economiche','Solo relazioni tra individui']]]);
+const exU5=mapGroup('Il neoevoluzionismo',[
+ ['Chi sono gli esponenti del neoevoluzionismo?','Childe, White e Steward','Corrente di metà Novecento.',['Morgan, Tylor e Frazer','Boas, Harris e Geertz']],
+ ['Che cosa cerca il neoevoluzionismo?','Processi generali di cambiamento, non un percorso obbligato','Non c’è un solo cammino uguale per tutti.',['Un unico cammino uguale per tutti','Le differenze tra le lingue']],
+ ['A che cosa lega l’evoluzione Gordon Childe?','Al sistema produttivo','Sono tre fasi: Paleolitico, Neolitico, civiltà.',['Alla religione','Al clima soltanto']],
+ ['Quali sono le 3 fasi di Childe?','Paleolitico, Neolitico, civiltà','Quelle di Morgan sono selvaggia, barbarie, civiltà.',['Selvaggia, barbarie, civiltà','Magia, religione, scienza']],
+ ['Che cosa è la svolta decisiva per Childe?','La rivoluzione neolitica','Nascono agricoltura e domesticazione.',['La rivoluzione industriale','L’invenzione della stampa']],
+ ['Dopo il surplus alimentare che cosa nasce, secondo Childe?','La divisione del lavoro e le città','Poi stratificazione sociale e Stato.',['La caccia e la raccolta','Il nomadismo']],
+ ['Che cosa determina l’uso di energia e di risorse, per White?','La tecnologia','Il sistema tecnologico è la base.',['La religione','La lingua']],
+ ['Quali sono i 3 sistemi di White?','Tecnologico, sociologico, ideologico','Il tecnologico influenza gli altri.',['Biologico, chimico, fisico','Politico, economico, religioso']],
+ ['Che cosa critica Julian Steward?','Un’unica evoluzione universale','Ambienti diversi danno percorsi diversi.',['L’agricoltura','Il particolarismo di Boas']],
+ ['Come si chiama l’idea di Steward?','Evoluzione multilineare','Più percorsi, non uno solo.',['Evoluzione unilineare','Rivoluzione neolitica']]]);
+const exU6=mapGroup('Il materialismo culturale',[
+ ['Chi è l’esponente del materialismo culturale?','Marvin Harris','Marvin Harris (1927-2001).',['Clifford Geertz','Gordon Childe']],
+ ['Da che cosa parte Harris per spiegare i comportamenti?','Dalle condizioni materiali','Cibo, risorse, lavoro, ordine sociale.',['Dalle credenze religiose','Dai sogni']],
+ ['Per Harris la cultura è…','una risposta a esigenze concrete','Cibo, risorse, lavoro, ordine sociale.',['solo una questione di gusto','un insieme di miti senza ragione']],
+ ['Come studia l’uomo il materialismo culturale?','Come essere biologico, con pulsioni e tendenze naturali','Così dice il libro.',['Come puro spirito','Come macchina']],
+ ['Che cosa porta Marx a Harris?','La produzione materiale','Marx = produzione materiale.',['L’adattamento','Popolazione e risorse']],
+ ['Che cosa porta Darwin a Harris?','L’adattamento','Darwin = adattamento.',['La produzione materiale','Popolazione e risorse']],
+ ['Che cosa porta Malthus a Harris?','Popolazione e risorse','Malthus = popolazione e risorse.',['L’adattamento','La produzione materiale']],
+ ['Perché il maiale è vietato in ebraismo e islam, secondo Harris?','Richiede acqua ed è mal adattato al caldo','Ragione materiale, non solo religiosa.',['Perché è un animale sacro','Perché è un animale feroce']],
+ ['Perché in India la vacca è sacra, secondo Harris?','Dà latte e serve per aratura e trasporto','Ha una funzione economica.',['Perché è un animale feroce','Perché non serve a nulla']]]);
+const exU7=mapGroup('L’antropologia interpretativa',[
+ ['Chi è il padre dell’antropologia interpretativa?','Clifford Geertz','Clifford Geertz (1926-2006).',['Marvin Harris','Julian Steward']],
+ ['Che cosa fa l’uomo, secondo Geertz?','Attribuisce significati alle sue azioni','Non deve solo sopravvivere.',['Pensa solo a sopravvivere','Imita gli animali']],
+ ['Che cosa bisogna capire di un comportamento?','Che cosa significa per chi lo compie','Non basta chiedere a che cosa serve.',['A che cosa serve soltanto','Quanto costa']],
+ ['Che cos’è la descrizione densa?','Interpretare il significato di un comportamento nel suo contesto culturale','Una descrizione piena di significato.',['Un elenco di numeri','Una lunga lista di nomi']],
+ ['Che cosa succede allo stesso gesto in culture diverse?','Ha significati diversi','Per questo serve la descrizione densa.',['Ha sempre lo stesso significato','Non ha nessun significato']],
+ ['Che cosa vuol dire interpretare interpretazioni?','L’antropologo interpreta come le persone comprendono la propria realtà','Le persone interpretano già la propria realtà.',['L’antropologo misura i fatti','L’antropologo giudica le persone']],
+ ['Quale domanda fa Geertz?','Che cosa significa?','Harris, invece: a che cosa serve?',['A che cosa serve?','Quanto costa?']],
+ ['Che differenza c’è tra Harris e Geertz?','Harris parte dalle condizioni materiali, Geertz dai significati','Due correnti diverse.',['Nessuna differenza','Harris studia le lingue, Geertz il cibo']]]);
+const exU8=mapGroup('Postmoderna e globalizzazione',[
+ ['Da quando esiste l’antropologia postmoderna?','Dagli anni Ottanta','Mette in dubbio la neutralità del ricercatore.',['Dall’Ottocento','Dagli anni Venti']],
+ ['Che cosa mette in dubbio l’antropologia postmoderna?','La neutralità e l’oggettività del ricercatore','Il ricercatore porta con sé la sua cultura.',['L’esistenza delle culture','Le lingue']],
+ ['Che cosa porta con sé il ricercatore?','Cultura, educazione, lingua, aspettative e categorie mentali','Per questo non è neutrale.',['Niente','Solo il quaderno']],
+ ['Che cosa fanno anche gli studiati?','Interpretano la propria cultura e scelgono cosa raccontare','Non sono solo «oggetti» di studio.',['Non dicono mai nulla','Dicono sempre tutto']],
+ ['Che cosa vuol dire conoscenza culturalmente situata?','Chi scrive seleziona e organizza partendo dalla sua cultura','Vale anche per i media.',['Si impara solo in un luogo','È sempre oggettiva']],
+ ['Che cosa vuole comprendere l’antropologia contemporanea?','I processi di globalizzazione e le reazioni che suscitano','Si rivolge a nuovi oggetti di studio.',['Solo la caccia e la raccolta','Solo i villaggi isolati']],
+ ['Che cosa sono i non-luoghi?','Spazi anonimi di transito e comunicazione','Per esempio aeroporti e stazioni.',['Luoghi molto antichi','Case di famiglia']],
+ ['Quale di questi è un nuovo oggetto di studio?','I mass media e i mercati finanziari','Insieme a contesti metropolitani e non-luoghi.',['La caccia con l’arco','Le società tribali isolate']],
+ ['Chi ha elaborato il concetto di non-luogo?','Marc Augé','Nel 1992, nel libro Non-lieux.',['Boas','Morgan']]]);
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const GENS={
+ u1:[exU1,exU1,exU1,exDef('u1')],
+ u2:[exU2,exU2,exU2,exDef('u2')],
+ u3:[exU3,exU3,exU3,exDef('u3')],
+ u4:[exU4,exU4,exU4,exDef('u4')],
+ u5:[exU5,exU5,exU5,exDef('u5')],
+ u6:[exU6,exU6,exU6,exDef('u6')],
+ u7:[exU7,exU7,exU7,exDef('u7')],
+ u8:[exU8,exU8,exU8,exDef('u8')]
+};
+const UNITS={u1:'1 · Atteggiamento antropologico ed evoluzionismo',u2:'2 · I classici: Boas e Malinowski',u3:'3 · Lévi-Strauss e l’antropologia strutturale',u4:'4 · La parentela secondo Lévi-Strauss',u5:'5 · Il neoevoluzionismo',u6:'6 · Il materialismo culturale (Harris)',u7:'7 · L’antropologia interpretativa (Geertz)',u8:'8 · Antropologia postmoderna e globalizzazione'};
+const PROVA_PLAN={u1:2,u2:2,u3:2,u4:2,u5:2,u6:2,u7:2,u8:2};
+
+/* ========== SCIENZE UMANE 3 ES: ANTROPOLOGIA, DAI CLASSICI ALLA GLOBALIZZAZIONE ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const DEFS={};
+const CONT={};
+DEFS.u1=[
+ ['Atteggiamento antropologico','Guardare le altre culture con distacco critico e decentramento culturale, senza pregiudizi.'],
+ ['Decentramento culturale','Uscire dal proprio punto di vista per capire quello degli altri.'],
+ ['Eurocentrismo','Idea che la cultura europea sia la migliore e il modello per giudicare tutte le altre. L’antropologo la mette in discussione.'],
+ ['Evoluzionismo','Teoria dell’Ottocento: tutte le società seguono lo stesso cammino, per tappe, dal semplice al complesso. Esponenti: Morgan, Tylor, Frazer.'],
+ ['Animismo','Credenza che anche le cose e la natura abbiano un’anima. Secondo Tylor è la prima forma di religione.']];
+CONT.u1={
+ cose:`<div class="box bia"><p>Per studiare le culture serve un <b>atteggiamento antropologico</b>: guardare gli altri con <b>distacco critico</b>, <b>mettere in discussione l’eurocentrismo</b> e <b>rispettare il valore di ogni cultura</b>. Le prime teorie, nell’Ottocento, sono <b>evoluzioniste</b>: i tre esponenti sono <b>Morgan</b>, <b>Tylor</b> e <b>Frazer</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · L’atteggiamento antropologico',stepsHtml([
+   '<b>Distacco critico</b> e <b>decentramento culturale</b>: osservare senza giudicare e capire il punto di vista degli altri.',
+   '<b>Mettere in discussione l’eurocentrismo</b>: la cultura europea non è il metro per giudicare le altre.',
+   '<b>Rispetto</b> per le <b>peculiarità</b> (le caratteristiche proprie) e per il <b>valore di ogni cultura</b>.'])),
+  card('ver','2 · L’evoluzionismo antropologico',stepsHtml([
+   'È la <b>prima teoria</b> dell’antropologia (Ottocento).',
+   'Dice che l’umanità <b>segue un solo cammino</b>, a tappe, dal semplice al complesso.',
+   'Ha <b>tre principali esponenti</b>: <b>Morgan</b>, <b>Tylor</b> e <b>Frazer</b>.'])),
+  card('gia','3 · I tre esponenti',TAB(['Autore','Secondo lui…'],[
+   ['<b>Morgan</b>','il cammino dell’umanità va <b>dalla vita selvaggia</b>, alla <b>barbarie</b>, alla <b>civiltà</b>'],
+   ['<b>Tylor</b>','la coscienza religiosa va <b>dall’animismo</b>, al <b>politeismo</b>, al <b>monoteismo</b>'],
+   ['<b>Frazer</b>','la conoscenza dell’uomo va <b>dalla magia</b>, alla <b>religione</b>, alla <b>scienza</b>']])+'<p class="note">Tre autori, tre cammini: ognuno ha tre tappe.</p>')],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’atteggiamento antropologico?»</b> È il modo di guardare le altre culture con distacco critico e decentramento culturale, mettendo in discussione l’eurocentrismo e rispettando il valore di ogni cultura.</p>
+ <p><b>«Che cos’è l’evoluzionismo antropologico?»</b> È la prima teoria dell’antropologia: dice che tutte le società seguono lo stesso cammino, per tappe. I principali esponenti sono Morgan, Tylor e Frazer.</p>
+ <p><b>«Che cosa sostiene Tylor?»</b> Che la coscienza religiosa si evolve dall’animismo al politeismo e poi al monoteismo.</p></div>`,
+ errori:['<b>Morgan</b> parla del cammino <b>selvaggio → barbarie → civiltà</b>; <b>Tylor</b> della <b>religione</b>; <b>Frazer</b> di <b>magia → religione → scienza</b>: non scambiarli.','Per l’evoluzionismo il cammino è <b>uno solo</b> per tutti: lo contesterà Boas (unità 2).','<b>Eurocentrismo</b> vuol dire considerare <b>migliore la cultura europea</b>: l’antropologo lo mette in discussione.','L’atteggiamento antropologico non è <b>giudicare</b>: è <b>osservare con distacco</b> e rispetto.'],
+ orale:[
+  ['Che cos’è l’atteggiamento antropologico?','È il modo di guardare le altre culture con distacco critico e decentramento culturale. Comporta anche l’attitudine a mettere in discussione l’eurocentrismo e il rispetto per le peculiarità e il valore di ogni cultura.'],
+  ['Che cos’è l’evoluzionismo antropologico? Chi sono i principali esponenti?','È la teoria secondo cui l’umanità segue un unico cammino, a tappe, dal semplice al complesso. I principali esponenti sono Morgan, Tylor e Frazer.'],
+  ['Che cosa sostengono Morgan, Tylor e Frazer?','Secondo Morgan l’umanità evolve dalla vita selvaggia alla barbarie e poi alla civiltà. Secondo Tylor la coscienza religiosa evolve dall’animismo al politeismo e poi al monoteismo. Secondo Frazer la conoscenza dell’uomo evolve dalla magia alla religione e poi alla scienza.']],
+ quiz:[
+  ['Che cosa vuol dire eurocentrismo?','Considerare migliore la cultura europea',['Rispettare tutte le culture','Studiare solo l’Europa'],'L’antropologo mette in discussione l’eurocentrismo.'],
+  ['Chi parla del cammino dalla vita selvaggia alla barbarie e alla civiltà?','Morgan',['Tylor','Frazer'],'Morgan: selvaggia, barbarie, civiltà.'],
+  ['Tylor sostiene che la religione va…','dall’animismo al politeismo al monoteismo',['dalla scienza alla magia','dal monoteismo all’animismo'],'Animismo, politeismo, monoteismo.'],
+  ['Frazer sostiene che la conoscenza va…','dalla magia alla religione alla scienza',['dalla scienza alla magia','dalla religione alla magia'],'Magia, religione, scienza.']]
+};
+
+DEFS.u2=[
+ ['Particolarismo culturale','Idea di Boas: ogni cultura ha caratteristiche proprie, che non si possono ridurre a schemi universali. Va studiata nell’ambiente in cui vive.'],
+ ['Funzionalismo','Idea di Malinowski: ogni elemento della cultura ha una funzione nel sistema sociale.'],
+ ['Bisogni biologici','Cose di cui ogni essere umano ha bisogno: nutrirsi, riprodursi, proteggersi, comunicare.'],
+ ['Cultura (per Malinowski)','L’insieme delle risposte organizzate ai bisogni umani, come il cibo e il linguaggio.'],
+ ['Bastone da scavo','Esempio classico: lo stesso oggetto ha funzioni diverse nelle diverse culture.']];
+CONT.u2={
+ cose:`<div class="box bia"><p>Due maestri dell’antropologia del Novecento. <b>Boas</b> promuove il <b>particolarismo culturale</b>: ogni cultura è unica. <b>Malinowski</b> è l’esponente del <b>funzionalismo</b>: per capire una cultura bisogna capire la <b>funzione</b> di ogni suo elemento, in relazione ai <b>bisogni biologici</b> dell’uomo.</p></div>`,
+ ricette:[
+  card('blu','1 · Boas: il particolarismo culturale',stepsHtml([
+   '<b>Franz Boas</b> (1858-1942) è il <b>promotore del particolarismo culturale</b>.',
+   'Secondo lui <b>ogni cultura ha peculiarità</b> (caratteristiche proprie) che <b>non si possono ridurre a schemi universali</b>.',
+   'Per questo ogni cultura va <b>studiata in relazione all’ambiente</b> in cui si sviluppa.',
+   'Boas <b>respinge l’evoluzionismo</b>: non esiste un solo cammino uguale per tutti.'])),
+  card('ver','2 · Malinowski: il funzionalismo',stepsHtml([
+   '<b>Bronisław Malinowski</b> (1884-1942) è l’<b>esponente del funzionalismo antropologico</b>.',
+   '<b>Ogni elemento culturale ha una funzione</b> nel sistema sociale.',
+   'Per capire una cultura bisogna capire la sua <b>funzione</b> in relazione ai <b>bisogni biologici</b>: <b>nutrirsi, riprodursi, proteggersi, comunicare</b>.',
+   'La <b>cultura</b> è l’insieme delle <b>risposte organizzate</b> a questi bisogni: per esempio il <b>cibo</b> e il <b>linguaggio</b>.'])),
+  card('gia','3 · L’esempio del bastone da scavo',stepsHtml([
+   'Il <b>bastone da scavo</b> è <b>lo stesso oggetto</b>, ma ha <b>funzioni diverse</b> nelle diverse culture.',
+   'Non basta <b>descrivere l’oggetto</b>: bisogna chiedersi <b>chi lo produce</b>, <b>chi può usarlo</b>, <b>in quale situazione</b>, <b>con quale scopo</b> e <b>che significato ha</b>.',
+   'Un oggetto <b>prende significato</b> nel <b>sistema culturale</b> in cui è usato.'])),
+  card('ros','4 · Boas e Malinowski a confronto',TAB(['','Boas','Malinowski'],[
+   ['<b>Corrente</b>','particolarismo culturale','funzionalismo'],
+   ['<b>Idea</b>','ogni cultura è unica e va studiata nel suo ambiente','ogni elemento ha una funzione legata ai bisogni umani']]))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è il particolarismo culturale?»</b> È l’idea di Boas: ogni cultura possiede peculiarità che non si possono ridurre a schemi universali, e va studiata in relazione all’ambiente in cui si sviluppa.</p>
+ <p><b>«Che cos’è il funzionalismo di Malinowski?»</b> È l’idea che ogni elemento culturale abbia una funzione nel sistema sociale. Per capire una cultura bisogna capire la sua funzione in relazione ai bisogni biologici dell’uomo.</p>
+ <p><b>«Che cosa dimostra il bastone da scavo?»</b> Che lo stesso oggetto può avere funzioni e significati diversi nelle diverse culture: per questo non basta descriverlo.</p></div>`,
+ errori:['Il <b>particolarismo</b> è di <b>Boas</b>; il <b>funzionalismo</b> è di <b>Malinowski</b>.','Per Malinowski la <b>funzione</b> è legata ai <b>bisogni biologici</b> dell’uomo, non al solo capriccio di un popolo.','Il bastone da scavo <b>non</b> ha la stessa funzione ovunque: ha <b>funzioni diverse</b> nelle diverse culture.','Boas <b>non</b> è evoluzionista: <b>respinge</b> lo schema unico per tutti.'],
+ orale:[
+  ['Che cos’è il particolarismo culturale? Chi lo promuove?','È promosso da Boas. Secondo lui ogni cultura possiede peculiarità irriducibili a schemi universali e va studiata in relazione all’ambiente in cui si sviluppa.'],
+  ['Spiega il funzionalismo di Malinowski.','Malinowski è l’esponente del funzionalismo antropologico. Secondo lui ogni elemento culturale ha una funzione nel sistema sociale; per capire la cultura bisogna capire la sua funzione in relazione ai bisogni biologici dell’essere umano (nutrirsi, riprodursi, proteggersi, comunicare). La cultura è l’insieme delle risposte organizzate a questi bisogni.'],
+  ['Che cosa dimostra l’esempio del bastone da scavo?','Che lo stesso oggetto ha funzioni diverse nelle diverse culture. Per questo non basta descrivere l’oggetto: bisogna chiedersi chi lo produce, chi può usarlo, in quale situazione, con quale scopo e che significato ha. Un oggetto prende significato nel sistema culturale in cui è usato.']],
+ quiz:[
+  ['Chi è il promotore del particolarismo culturale?','Boas',['Malinowski','Lévi-Strauss'],'Franz Boas.'],
+  ['Il funzionalismo antropologico è di…','Malinowski',['Boas','Morgan'],'Bronisław Malinowski.'],
+  ['Per Malinowski la funzione di un elemento culturale è legata ai…','bisogni biologici dell’uomo',['gusti dei turisti','soldi dello Stato'],'Nutrirsi, riprodursi, proteggersi, comunicare.'],
+  ['Che cosa mostra il bastone da scavo?','Lo stesso oggetto ha funzioni diverse nelle diverse culture',['Tutte le culture usano gli oggetti allo stesso modo','Il bastone serve solo a scavare'],'Per questo bisogna chiedersi anche il significato.']]
+};
+
+DEFS.u3=[
+ ['Antropologia strutturale','Corrente fondata da Lévi-Strauss: dietro la varietà delle culture ci sono strutture profonde e ricorrenti.'],
+ ['Struttura','Elemento ricorrente e universale della società, che condiziona i comportamenti.'],
+ ['Natura e cultura','Due mondi che Lévi-Strauss mette a confronto: gli animali vivono rapporti naturali, gli uomini rapporti regolati da norme.'],
+ ['Analogia con la lingua','Come nelle lingue: parole diverse, ma strutture comuni. Lo stesso vale per le culture.'],
+ ['Lévi-Strauss','Antropologo francese (1908-2009), fondatore dell’antropologia strutturale.']];
+CONT.u3={
+ cose:`<div class="box bia"><p><b>Claude Lévi-Strauss</b> (1908-2009) è il <b>fondatore dell’antropologia strutturale</b>. Secondo lui, <b>dietro la varietà delle culture</b> ci sono <b>strutture profonde e ricorrenti</b>: elementi <b>universali</b> che condizionano i comportamenti.</p></div>`,
+ ricette:[
+  card('blu','1 · L’idea di Lévi-Strauss',stepsHtml([
+   '<b>Lévi-Strauss</b> è il <b>fondatore dell’antropologia strutturale</b>.',
+   '<b>Ogni cultura presenta strutture sociali</b>: cioè <b>elementi ricorrenti e universali</b>.',
+   'Queste strutture <b>condizionano i comportamenti</b> delle persone.',
+   'Dietro la <b>varietà</b> delle culture ci sono quindi <b>strutture profonde e uguali</b>.'])),
+  card('ver','2 · Natura e cultura',stepsHtml([
+   'Una domanda: <b>dove passa il confine</b> tra natura e cultura?',
+   '<b>Animali</b>: vivono <b>rapporti naturali</b>.',
+   '<b>Uomini</b>: vivono <b>rapporti regolati da norme</b>.'])),
+  card('gia','3 · L’analogia con la lingua',stepsHtml([
+   'Nelle lingue ci sono <b>parole diverse</b>, ma <b>strutture comuni</b>.',
+   'Nella <b>cultura</b> succede lo stesso: dietro i <b>rapporti sociali</b>, i <b>miti</b>, la <b>parentela</b> e le <b>opposizioni</b> ci sono strutture comuni.'])),
+  card('ros','4 · Tre classici a confronto',TAB(['Autore','Idea'],[
+   ['<b>Boas</b>','ogni cultura è unica (particolarismo)'],
+   ['<b>Malinowski</b>','ogni elemento ha una funzione (funzionalismo)'],
+   ['<b>Lévi-Strauss</b>','ci sono strutture ricorrenti e universali (strutturalismo)']]))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Chi è Lévi-Strauss?»</b> È il fondatore dell’antropologia strutturale, antropologo francese (1908-2009).</p>
+ <p><b>«Che cos’è l’antropologia strutturale?»</b> Secondo Lévi-Strauss ogni cultura presenta strutture sociali, cioè elementi ricorrenti e universali che condizionano i comportamenti. Dietro la varietà delle culture ci sono strutture profonde.</p>
+ <p><b>«Che cosa c’entra la lingua?»</b> Come le lingue hanno parole diverse ma strutture comuni, così le culture hanno strutture comuni.</p></div>`,
+ errori:['La corrente di Lévi-Strauss si chiama <b>antropologia strutturale</b> (non funzionalismo).','Le strutture sono <b>ricorrenti e universali</b>: ci sono in <b>tutte</b> le culture.','Per Lévi-Strauss <b>animali</b> = rapporti <b>naturali</b>; <b>uomini</b> = rapporti <b>regolati da norme</b>.','Lévi-Strauss non è il fondatore del particolarismo: è di <b>Boas</b>.'],
+ orale:[
+  ['Chi è Lévi-Strauss e che cosa sostiene?','È il fondatore dell’antropologia strutturale. Sostiene che ogni cultura presenta strutture sociali, cioè elementi ricorrenti e universali che condizionano i comportamenti: dietro la varietà delle culture ci sono strutture profonde e ricorrenti.'],
+  ['Che differenza c’è tra natura e cultura per Lévi-Strauss?','Gli animali vivono rapporti naturali; gli uomini vivono rapporti regolati da norme. Lévi-Strauss si chiede dove passi il confine tra i due.'],
+  ['Spiega l’analogia tra cultura e lingua.','Nelle lingue ci sono parole diverse ma strutture comuni. Nella cultura succede lo stesso: i rapporti sociali, i miti, la parentela e le opposizioni hanno strutture comuni.']],
+ quiz:[
+  ['Chi è il fondatore dell’antropologia strutturale?','Lévi-Strauss',['Boas','Malinowski'],'Claude Lévi-Strauss (1908-2009).'],
+  ['Le strutture di cui parla Lévi-Strauss sono…','ricorrenti e universali',['diverse in ogni cultura','solo dell’Europa'],'Si ritrovano in tutte le culture.'],
+  ['Per Lévi-Strauss gli uomini vivono rapporti…','regolati da norme',['solo naturali','senza regole'],'Gli animali, invece, rapporti naturali.'],
+  ['Con quale cosa Lévi-Strauss paragona la cultura?','Con la lingua',['Con la moda','Con il cibo'],'Parole diverse, strutture comuni.']]
+};
+
+DEFS.u4=[
+ ['Atomo di parentela','L’unità minima di parentela. Contiene tre tipi di legame: filiazione, consanguineità e affinità.'],
+ ['Filiazione','Il legame tra genitori e figli.'],
+ ['Consanguineità','Il legame di sangue tra fratelli e sorelle.'],
+ ['Affinità','Il legame che nasce dal matrimonio.'],
+ ['Tabù dell’incesto','Divieto di rapporti tra parenti stretti. È una regola universale.'],
+ ['Esogamia','Sposarsi fuori dal proprio gruppo. Il contrario è l’endogamia: sposarsi dentro il gruppo.'],
+ ['Alleanza','Con il matrimonio due gruppi diventano parenti acquisiti: non è solo un affare privato.'],
+ ['Matrimonio come scambio','Secondo Lévi-Strauss il matrimonio è uno scambio tra gruppi, come le parole e le merci.']];
+CONT.u4={
+ cose:`<div class="box bia"><p>Per <b>Lévi-Strauss</b> la <b>parentela</b> si capisce con l’<b>atomo di parentela</b>: <b>tre tipi di legame</b> (filiazione, consanguineità, affinità). Il <b>tabù dell’incesto</b> porta all’<b>esogamia</b> e questa all’<b>alleanza</b> tra gruppi: il matrimonio è un <b>sistema di scambio</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · L’atomo di parentela: tre legami',TAB(['Legame','Che cos’è'],[
+   ['<b>Filiazione</b>','genitori e figli'],
+   ['<b>Consanguineità</b>','fratelli e sorelle'],
+   ['<b>Affinità</b>','nasce dal matrimonio']])+'<p class="note">L’atomo di parentela è l’unità più piccola della parentela.</p>'),
+  card('ver','2 · Dal divieto all’alleanza',stepsHtml([
+   '<b>Tabù dell’incesto</b>: divieto di rapporti tra <b>parenti stretti</b>. È una <b>regola universale</b>.',
+   '<b>Esogamia</b>: ci si sposa <b>fuori</b> dal proprio gruppo. (<b>Endogamia</b> = dentro il gruppo.)',
+   '<b>Alleanza</b>: i gruppi diventano <b>parenti acquisiti</b>. Il matrimonio non è solo un <b>affare privato</b>.'])),
+  card('gia','3 · Il matrimonio come sistema di scambio',TAB(['Che cosa si scambia','Che relazione nasce'],[
+   ['<b>Parole</b>','comunicano gli <b>individui</b>'],
+   ['<b>Merci</b>','relazioni <b>economiche</b>'],
+   ['<b>Matrimonio</b>','relazioni <b>sociali tra gruppi</b>']])+stepsHtml([
+   'Si parla di <b>«scambio delle donne»</b>: è un’espressione <b>storica</b>, non una norma di oggi.'])),
+ ],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’atomo di parentela?»</b> È l’unità minima di parentela secondo Lévi-Strauss. Contiene tre tipi di legame: filiazione (genitori e figli), consanguineità (fratelli e sorelle) e affinità (che nasce dal matrimonio).</p>
+ <p><b>«Che cos’è il tabù dell’incesto?»</b> È il divieto di rapporti tra parenti stretti. È una regola universale. Porta all’esogamia, cioè a sposarsi fuori dal proprio gruppo.</p>
+ <p><b>«Perché il matrimonio è un sistema di scambio?»</b> Perché con il matrimonio due gruppi diventano alleati: le parole fanno comunicare gli individui, le merci creano relazioni economiche, il matrimonio crea relazioni sociali tra gruppi.</p></div>`,
+ errori:['<b>Consanguineità</b> = fratelli e sorelle; <b>filiazione</b> = genitori e figli; <b>affinità</b> = <b>dal matrimonio</b>.','<b>Esogamia</b> = sposarsi <b>fuori</b> dal gruppo; <b>endogamia</b> = <b>dentro</b>.','Il tabù dell’incesto è una regola <b>universale</b>.','«Scambio delle donne» è un’espressione <b>storica</b>, non una regola attuale.'],
+ orale:[
+  ['Che cos’è l’atomo di parentela?','È l’unità minima di parentela secondo Lévi-Strauss. Comprende tre tipi di legame: la filiazione (genitori e figli), la consanguineità (fratelli e sorelle) e l’affinità, che nasce dal matrimonio.'],
+  ['Spiega tabù dell’incesto, esogamia e alleanza.','Il tabù dell’incesto è il divieto di rapporti tra parenti stretti ed è una regola universale. L’esogamia è sposarsi fuori dal proprio gruppo (l’endogamia è sposarsi dentro il gruppo). L’alleanza è il legame che nasce quando i gruppi diventano parenti acquisiti: il matrimonio non è solo un affare privato.'],
+  ['In che senso il matrimonio è un sistema di scambio?','Per Lévi-Strauss si scambiano le parole, che fanno comunicare gli individui, le merci, che creano relazioni economiche, e i matrimoni, che creano relazioni sociali tra gruppi. L’espressione «scambio delle donne» è un’espressione storica, non una norma attuale.']],
+ quiz:[
+  ['La filiazione è il legame tra…','genitori e figli',['fratelli e sorelle','marito e moglie'],'Filiazione = genitori e figli.'],
+  ['Quale legame nasce dal matrimonio?','L’affinità',['La consanguineità','La filiazione'],'Affinità = dal matrimonio.'],
+  ['L’esogamia è…','sposarsi fuori dal proprio gruppo',['sposarsi dentro il gruppo','non sposarsi mai'],'Endogamia = dentro.'],
+  ['Il tabù dell’incesto vieta rapporti tra…','parenti stretti',['amici','vicini di casa'],'È una regola universale.']]
+};
+
+DEFS.u5=[
+ ['Neoevoluzionismo','Corrente di metà Novecento: non c’è un unico percorso obbligato, ma si cercano processi generali di cambiamento. Esponenti: Childe, White, Steward.'],
+ ['Rivoluzione neolitica','Svolta decisiva (Childe): nascono l’agricoltura e la domesticazione, e le società diventano sedentarie.'],
+ ['Surplus alimentare','Cibo in più del necessario: permette la divisione del lavoro e la nascita delle città.'],
+ ['Evoluzione multilineare','Idea di Steward: ambienti diversi danno percorsi diversi. Non c’è una sola evoluzione universale.'],
+ ['Adattamento culturale','Il modo in cui una cultura si adatta all’ambiente in cui vive (Steward).'],
+ ['Sistema tecnologico','Per White: è la base della cultura e influenza il sistema sociologico e quello ideologico.']];
+CONT.u5={
+ cose:`<div class="box bia"><p>A <b>metà Novecento</b> il <b>neoevoluzionismo</b> riprende l’evoluzione, ma <b>senza un unico percorso obbligato</b>: cerca <b>processi generali di cambiamento</b>. I tre esponenti sono <b>Gordon Childe</b>, <b>Leslie White</b> e <b>Julian Steward</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Gordon Childe (1892-1957)',stepsHtml([
+   'Per Childe l’<b>evoluzione è legata al sistema produttivo</b>.',
+   'Le <b>3 fasi</b> sono: <b>Paleolitico</b>, <b>Neolitico</b>, <b>civiltà</b>.',
+   'La <b>rivoluzione neolitica</b> è la <b>svolta decisiva</b>.'])),
+  card('ros','2 · Gli effetti della rivoluzione neolitica',stepsHtml([
+   '<b>Agricoltura</b> e <b>domesticazione</b> → <b>sedentarizzazione</b> → <b>villaggi</b>.',
+   '<b>Surplus alimentare</b> → <b>divisione del lavoro</b> → <b>città</b>.',
+   '<b>Stratificazione sociale</b> (classi diverse) → <b>Stato</b>.'])),
+  card('ver','3 · Leslie White (1900-1975)',stepsHtml([
+   'Per White la <b>tecnologia</b> determina l’<b>uso di energia e di risorse</b>.',
+   'La cultura ha <b>3 sistemi</b>: <b>tecnologico</b>, <b>sociologico</b>, <b>ideologico</b>.',
+   'Il <b>sistema tecnologico è la base</b> e <b>influenza gli altri due</b>.'])),
+  card('gia','4 · Julian Steward (1902-1972)',stepsHtml([
+   '<b>Critica</b> l’idea di <b>un’unica evoluzione universale</b>.',
+   '<b>Ambienti diversi</b> danno <b>percorsi diversi</b>.',
+   'Per questo parla di <b>evoluzione multilineare</b> e di <b>adattamento culturale</b>.']))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è il neoevoluzionismo?»</b> È una corrente di metà Novecento: non c’è un unico percorso obbligato, ma si cercano processi generali di cambiamento. Gli esponenti sono Childe, White e Steward.</p>
+ <p><b>«Che cosa sostiene Childe?»</b> Che l’evoluzione è legata al sistema produttivo. Ha tre fasi (Paleolitico, Neolitico, civiltà) e la rivoluzione neolitica è la svolta decisiva.</p>
+ <p><b>«Che cosa dice Steward?»</b> Critica un’unica evoluzione universale: ambienti diversi danno percorsi diversi. È l’evoluzione multilineare.</p></div>`,
+ errori:['<b>Childe</b> = sistema produttivo; <b>White</b> = tecnologia ed energia; <b>Steward</b> = evoluzione multilineare.','Le <b>3 fasi</b> di Childe sono <b>Paleolitico, Neolitico, civiltà</b>.','Steward <b>critica</b> l’evoluzione universale: parla di percorsi <b>diversi</b>.','Per White il sistema <b>tecnologico</b> è la <b>base</b> (non l’ideologico).'],
+ orale:[
+  ['Che cos’è il neoevoluzionismo? Chi sono gli esponenti?','È una corrente di metà Novecento: non un unico percorso obbligato, ma la ricerca di processi generali di cambiamento. Gli esponenti sono Gordon Childe, Leslie White e Julian Steward.'],
+  ['Che cosa sostiene Childe? Quali sono gli effetti della rivoluzione neolitica?','Per Childe l’evoluzione è legata al sistema produttivo, con tre fasi: Paleolitico, Neolitico e civiltà. La rivoluzione neolitica è la svolta decisiva: agricoltura e domesticazione portano alla sedentarizzazione e ai villaggi; il surplus alimentare porta alla divisione del lavoro, alle città, alla stratificazione sociale e allo Stato.'],
+  ['Confronta White e Steward.','Per White la tecnologia determina l’uso di energia e di risorse; la cultura ha tre sistemi (tecnologico, sociologico, ideologico) e il tecnologico è la base che influenza gli altri. Steward critica un’unica evoluzione universale: ambienti diversi danno percorsi diversi, cioè evoluzione multilineare e adattamento culturale.']],
+ quiz:[
+  ['Chi lega l’evoluzione al sistema produttivo?','Childe',['White','Steward'],'Gordon Childe.'],
+  ['Quali sono le 3 fasi di Childe?','Paleolitico, Neolitico, civiltà',['Passato, presente, futuro','Selvaggia, barbarie, civiltà'],'La seconda lista è di Morgan.'],
+  ['Quale esponente parla di tre sistemi: tecnologico, sociologico, ideologico?','White',['Childe','Steward'],'Leslie White.'],
+  ['Che cosa vuol dire evoluzione multilineare?','Ambienti diversi danno percorsi diversi',['Tutti seguono lo stesso percorso','Non c’è nessuna evoluzione'],'È l’idea di Steward.']]
+};
+
+DEFS.u6=[
+ ['Materialismo culturale','Corrente di Marvin Harris: spiega comportamenti e istituzioni partendo dalle condizioni materiali (cibo, risorse, lavoro).'],
+ ['Condizioni materiali','Le cose concrete della vita: cibo, risorse, lavoro, ordine sociale.'],
+ ['Pulsioni e tendenze naturali','Per il libro il materialismo culturale studia l’uomo come essere biologico, con pulsioni e tendenze naturali.'],
+ ['Funzione economica','Utilità concreta di un’abitudine: per esempio la vacca in India dà latte e aiuta nell’aratura e nel trasporto.'],
+ ['Marvin Harris','Antropologo americano (1927-2001), esponente del materialismo culturale.']];
+CONT.u6={
+ cose:`<div class="box bia"><p><b>Marvin Harris</b> (1927-2001) è l’esponente del <b>materialismo culturale</b>. Spiega i <b>comportamenti</b> e le <b>istituzioni</b> partendo dalle <b>condizioni materiali</b>. Per lui la <b>cultura</b> è la <b>risposta a esigenze concrete</b>: cibo, risorse, lavoro, ordine sociale.</p></div>`,
+ ricette:[
+  card('blu','1 · L’idea di Harris',stepsHtml([
+   'Spiega <b>comportamenti e istituzioni</b> partendo dalle <b>condizioni materiali</b>.',
+   'La <b>cultura</b> è la <b>risposta a esigenze concrete</b>: <b>cibo</b>, <b>risorse</b>, <b>lavoro</b>, <b>ordine sociale</b>.',
+   'Studia l’uomo come <b>essere biologico</b>, con <b>pulsioni e tendenze naturali</b>.'])),
+  card('ver','2 · Le influenze',TAB(['Autore','Che cosa riprende Harris'],[
+   ['<b>Marx</b>','la produzione materiale'],
+   ['<b>Darwin</b>','l’adattamento'],
+   ['<b>Malthus</b>','popolazione e risorse']])),
+  card('gia','3 · Gli esempi di Harris',TAB(['Esempio','Spiegazione materiale'],[
+   ['<b>Il maiale vietato</b> (ebraismo, islam)','il maiale richiede acqua ed è mal adattato al caldo: non conviene allevarlo'],
+   ['<b>La vacca sacra</b> in India','dà latte, serve per l’aratura e per il trasporto: ha una funzione economica']])+'<p class="note">Il divieto religioso ha una ragione materiale.</p>')],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è il materialismo culturale?»</b> È la corrente di Harris: spiega comportamenti e istituzioni partendo dalle condizioni materiali. La cultura è una risposta a esigenze concrete come cibo, risorse, lavoro e ordine sociale.</p>
+ <p><b>«Da chi è influenzato Harris?»</b> Da Marx (la produzione materiale), da Darwin (l’adattamento) e da Malthus (popolazione e risorse).</p>
+ <p><b>«Fai un esempio.»</b> La vacca sacra in India: dà latte, serve per l’aratura e per il trasporto. Ha quindi una funzione economica.</p></div>`,
+ errori:['Il <b>materialismo culturale</b> è di <b>Harris</b>.','Per Harris la cultura è <b>risposta a esigenze concrete</b>, non solo credenza religiosa.','<b>Marx</b> = produzione materiale; <b>Darwin</b> = adattamento; <b>Malthus</b> = popolazione e risorse.','Il <b>maiale</b> è vietato in <b>ebraismo e islam</b>; la <b>vacca</b> è sacra in <b>India</b>.'],
+ orale:[
+  ['Che cos’è il materialismo culturale?','È la corrente di Marvin Harris. Spiega comportamenti e istituzioni partendo dalle condizioni materiali: la cultura è la risposta a esigenze concrete come cibo, risorse, lavoro e ordine sociale. Studia l’uomo come essere biologico con pulsioni e tendenze naturali.'],
+  ['Quali sono le influenze di Harris?','Marx, con la produzione materiale; Darwin, con l’adattamento; Malthus, con il rapporto tra popolazione e risorse.'],
+  ['Spiega i due esempi di Harris: il maiale e la vacca.','Il maiale è vietato nell’ebraismo e nell’islam perché richiede acqua ed è mal adattato al caldo. La vacca è sacra in India perché dà latte e serve per l’aratura e per il trasporto: ha una funzione economica.']],
+ quiz:[
+  ['Chi è l’esponente del materialismo culturale?','Harris',['Geertz','Steward'],'Marvin Harris.'],
+  ['Per Harris la cultura è…','una risposta a esigenze concrete',['solo un gioco','solo una religione'],'Cibo, risorse, lavoro, ordine sociale.'],
+  ['Quale studioso porta a Harris l’idea di popolazione e risorse?','Malthus',['Darwin','Marx'],'Darwin = adattamento; Marx = produzione.'],
+  ['Perché in India la vacca è sacra, secondo Harris?','Ha una funzione economica',['È un animale feroce','È un’usanza senza ragioni'],'Latte, aratura, trasporto.']]
+};
+
+DEFS.u7=[
+ ['Antropologia interpretativa','Corrente di Clifford Geertz: l’uomo è capace di elaborare significati e valori, che vanno interpretati.'],
+ ['Significato','Che cosa vuol dire un gesto o un’usanza per chi li compie. Non basta sapere a che cosa servono.'],
+ ['Descrizione densa','Descrizione che interpreta il significato di un comportamento nel suo contesto culturale.'],
+ ['Interpretare interpretazioni','Le persone interpretano la propria realtà; l’antropologo interpreta come la comprendono.'],
+ ['Clifford Geertz','Antropologo americano (1926-2006), considerato il padre dell’antropologia interpretativa.']];
+CONT.u7={
+ cose:`<div class="box bia"><p><b>Clifford Geertz</b> (1926-2006) è il padre dell’<b>antropologia interpretativa</b>. L’uomo <b>non deve solo sopravvivere</b>: <b>attribuisce significati</b> alle sue azioni. Per questo non basta chiedere <b>a che cosa serve</b> un comportamento: bisogna capire <b>che cosa significa</b> per chi lo compie.</p></div>`,
+ ricette:[
+  card('blu','1 · L’idea di Geertz',stepsHtml([
+   'L’uomo <b>non deve solo sopravvivere</b>: <b>attribuisce significati</b> alle sue azioni.',
+   'Non basta chiedere <b>a che cosa serve</b> un comportamento.',
+   'Bisogna capire <b>che cosa significa</b> per <b>chi lo compie</b>.'])),
+  card('ver','2 · La descrizione densa',stepsHtml([
+   'La <b>descrizione densa</b> serve a <b>interpretare il significato</b> di un comportamento <b>nel suo contesto culturale</b>.',
+   '<b>Lo stesso gesto</b> può avere <b>significati diversi</b> in culture diverse.',
+   'Esempio famoso di Geertz: un movimento dell’occhio può essere un <b>tic</b> involontario oppure un <b>ammiccamento</b> che vuol dire qualcosa.'])),
+  card('gia','3 · Interpretare interpretazioni',stepsHtml([
+   '<b>Le persone</b> interpretano la <b>propria realtà</b>.',
+   '<b>L’antropologo</b> interpreta <b>come la comprendono</b>.',
+   'Quindi il suo è un lavoro di <b>interpretazione</b>, non di misure e leggi.'])),
+  card('ros','4 · Harris e Geertz a confronto',TAB(['','Harris','Geertz'],[
+   ['<b>Corrente</b>','materialismo culturale','antropologia interpretativa'],
+   ['<b>Domanda</b>','a che cosa serve?','che cosa significa?'],
+   ['<b>Parte da</b>','condizioni materiali','significati dati dalle persone']]))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’antropologia interpretativa?»</b> È la corrente di Geertz: l’uomo attribuisce significati alle sue azioni, e questi significati vanno interpretati nel contesto culturale.</p>
+ <p><b>«Che cos’è la descrizione densa?»</b> È una descrizione che interpreta il significato di un comportamento nel suo contesto culturale. Lo stesso gesto può avere significati diversi in culture diverse.</p>
+ <p><b>«Che cosa vuol dire interpretare interpretazioni?»</b> Le persone interpretano la propria realtà e l’antropologo interpreta come la comprendono.</p></div>`,
+ errori:['L’antropologia <b>interpretativa</b> è di <b>Geertz</b>; il materialismo culturale è di <b>Harris</b>.','Per Geertz non basta dire <b>a che cosa serve</b>: bisogna capire <b>che cosa significa</b>.','<b>Lo stesso gesto</b> ha <b>significati diversi</b> in culture diverse.','L’antropologo <b>interpreta</b> come le persone comprendono la loro realtà: non è solo un cronista.'],
+ orale:[
+  ['Che cos’è l’antropologia interpretativa?','È la corrente di Clifford Geertz. Considera l’uomo capace di elaborare significati e valori, che devono essere interpretati. L’uomo non deve solo sopravvivere: attribuisce significati alle sue azioni. Non basta chiedere a che cosa serve un comportamento, bisogna capire che cosa significa per chi lo compie.'],
+  ['Che cos’è la descrizione densa?','È la descrizione che interpreta il significato di un comportamento nel suo contesto culturale. Lo stesso gesto può avere significati diversi in culture diverse.'],
+  ['Che cosa vuol dire «interpretare interpretazioni»?','Che le persone interpretano la propria realtà e che l’antropologo interpreta come la comprendono.']],
+ quiz:[
+  ['Chi è il padre dell’antropologia interpretativa?','Geertz',['Harris','Childe'],'Clifford Geertz (1926-2006).'],
+  ['Secondo Geertz, che cosa bisogna capire di un comportamento?','Che cosa significa per chi lo compie',['Quanto costa','Chi lo ha inventato'],'Non solo a che cosa serve.'],
+  ['Lo stesso gesto, in culture diverse…','può avere significati diversi',['ha sempre lo stesso significato','non ha mai significato'],'Per questo serve la descrizione densa.'],
+  ['L’antropologo, per Geertz…','interpreta come le persone comprendono la loro realtà',['misura soltanto i fatti','giudica le culture'],'Interpretare interpretazioni.']]
+};
+
+DEFS.u8=[
+ ['Antropologia postmoderna','Corrente degli anni Ottanta: mette in dubbio la neutralità e l’oggettività del ricercatore.'],
+ ['Conoscenza culturalmente situata','Chi scrive porta con sé la sua cultura, e seleziona e organizza ciò che racconta.'],
+ ['Narrazione etnografica','Il racconto scritto dall’antropologo sulla cultura che ha studiato. Secondo i postmoderni è interpretativo e culturalmente situato.'],
+ ['Globalizzazione','Processo per cui il mondo è sempre più collegato: persone, notizie, merci e denaro circolano ovunque. L’antropologia contemporanea studia anche le reazioni che suscita.'],
+ ['Non-luoghi','Spazi anonimi di transito e comunicazione, come aeroporti e stazioni. Il concetto è dell’antropologo Marc Augé (1992).'],
+ ['Antropologia contemporanea','Antropologia di oggi: capisce i processi di globalizzazione e si rivolge a nuovi oggetti di studio.']];
+CONT.u8={
+ cose:`<div class="box bia"><p>L’<b>antropologia postmoderna</b> (dagli <b>anni Ottanta</b>) <b>mette in dubbio</b> la neutralità del ricercatore: ogni <b>racconto</b> sulle culture è <b>interpretativo</b> e <b>culturalmente situato</b>. L’<b>antropologia contemporanea</b> studia la <b>globalizzazione</b> e i <b>nuovi oggetti</b>: i contesti metropolitani, i <b>non-luoghi</b>, i <b>mass media</b> e i <b>mercati finanziari</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · L’antropologia postmoderna (dagli anni Ottanta)',stepsHtml([
+   '<b>Mette in dubbio</b> la <b>neutralità</b> e l’<b>oggettività</b> del ricercatore.',
+   'Il ricercatore <b>porta con sé</b> cultura, educazione, lingua, aspettative e categorie mentali.',
+   'Anche <b>gli studiati</b> interpretano la propria cultura e <b>scelgono che cosa raccontare</b>.'])),
+  card('ver','2 · Una conoscenza «situata»',stepsHtml([
+   'La conoscenza è <b>culturalmente situata</b>: <b>chi scrive seleziona e organizza</b> ciò che racconta.',
+   'Ogni <b>narrazione etnografica</b> ha quindi un carattere <b>interpretativo</b>.',
+   'Vale <b>anche per i media</b>: ogni rappresentazione è <b>selezionata</b>.'])),
+  card('gia','3 · L’antropologia di fronte alla globalizzazione',stepsHtml([
+   'L’<b>antropologia contemporanea</b> vuole <b>comprendere i processi di globalizzazione</b> e le <b>reazioni</b> che questi suscitano.',
+   'Si rivolge a <b>nuovi oggetti</b>.'])+TAB(['Nuovo oggetto di studio','Che cos’è'],[
+   ['<b>Contesti metropolitani</b>','la vita nelle grandi città contemporanee'],
+   ['<b>Non-luoghi</b>','spazi anonimi di transito e comunicazione'],
+   ['<b>Mass media e mercati finanziari</b>','comunicazione e denaro che circolano nel mondo']])),
+  card('ros','4 · Le quattro correnti del secondo Novecento',TAB(['Corrente','Che cosa afferma'],[
+   ['<b>Neoevoluzionismo</b>','traccia linee di sviluppo comuni'],
+   ['<b>Materialismo culturale</b>','l’uomo come essere biologico, con pulsioni e tendenze naturali'],
+   ['<b>Antropologia interpretativa</b>','l’uomo elabora significati e valori, che vanno interpretati'],
+   ['<b>Antropologia postmoderna</b>','ogni racconto etnografico è interpretativo e culturalmente situato']]))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è l’antropologia postmoderna?»</b> È la corrente che dagli anni Ottanta mette in dubbio la neutralità e l’oggettività del ricercatore. Ogni narrazione etnografica è interpretativa e culturalmente situata.</p>
+ <p><b>«Che cosa studia l’antropologia contemporanea?»</b> I processi di globalizzazione e le reazioni che suscitano. Si rivolge a nuovi oggetti: i contesti metropolitani, i non-luoghi, i mass media e i mercati finanziari.</p>
+ <p><b>«Che cosa sono i non-luoghi?»</b> Sono spazi anonimi di transito e comunicazione, come aeroporti e stazioni.</p></div>`,
+ errori:['L’antropologia <b>postmoderna</b> mette in dubbio la <b>neutralità</b> del ricercatore: non dice che sia perfettamente oggettivo.','I <b>non-luoghi</b> sono spazi <b>anonimi di transito e comunicazione</b>.','I nuovi oggetti sono <b>tre</b>: contesti metropolitani, <b>non-luoghi</b>, <b>mass media e mercati finanziari</b>.','La conoscenza è <b>culturalmente situata</b>: <b>chi scrive</b> seleziona e organizza.'],
+ orale:[
+  ['Che cos’è l’antropologia postmoderna?','È la corrente degli anni Ottanta che mette in dubbio la neutralità e l’oggettività del ricercatore. Il ricercatore porta con sé cultura, educazione, lingua, aspettative e categorie mentali; anche gli studiati interpretano la propria cultura e scelgono che cosa raccontare. La conoscenza è culturalmente situata: chi scrive seleziona e organizza. Vale anche per i media.'],
+  ['Che cosa vuole comprendere l’antropologia contemporanea?','I processi di globalizzazione e le reazioni che questi suscitano. Si rivolge a nuovi oggetti di studio.'],
+  ['Quali sono i nuovi oggetti dell’antropologia contemporanea?','I contesti metropolitani contemporanei, i non-luoghi (spazi anonimi di transito e comunicazione) e i mass media e i mercati finanziari.']],
+ quiz:[
+  ['L’antropologia postmoderna mette in dubbio…','la neutralità del ricercatore',['l’esistenza delle culture','la scrittura'],'Dagli anni Ottanta.'],
+  ['Che cosa vuol dire conoscenza culturalmente situata?','Chi scrive seleziona e organizza, partendo dalla sua cultura',['Si impara solo in un luogo','È vera in ogni epoca'],'Vale anche per i media.'],
+  ['Che cosa sono i non-luoghi?','Spazi anonimi di transito e comunicazione',['Luoghi molto antichi','Case di famiglia'],'Per esempio aeroporti e stazioni.'],
+  ['Quale dei seguenti è un nuovo oggetto di studio?','I mass media e i mercati finanziari',['Solo i villaggi isolati','Solo la caccia e la raccolta'],'Insieme a contesti metropolitani e non-luoghi.']]
+};
+
+const GLOSS=Object.keys(DEFS).flatMap(u=>DEFS[u]).filter((d,i,a)=>a.findIndex(x=>x[0]===d[0])===i);
+const FORMULARIO=`
+<div class="box blu"><h3>Dalle origini ai classici</h3>${TAB(['Argomento','Da ricordare'],[
+ ['<b>Atteggiamento antropologico</b>','distacco critico e decentramento culturale · mettere in discussione l’eurocentrismo · rispetto per il valore di ogni cultura'],
+ ['<b>Evoluzionismo</b>','Morgan: vita selvaggia → barbarie → civiltà · Tylor: animismo → politeismo → monoteismo · Frazer: magia → religione → scienza'],
+ ['<b>Boas</b>','particolarismo culturale: ogni cultura ha peculiarità, va studiata nel suo ambiente'],
+ ['<b>Malinowski</b>','funzionalismo: ogni elemento ha una funzione · bisogni biologici (nutrirsi, riprodursi, proteggersi, comunicare) · bastone da scavo'],
+ ['<b>Lévi-Strauss</b>','antropologia strutturale: strutture ricorrenti e universali · natura e cultura · analogia con la lingua']])}</div>
+<div class="box ver"><h3>La parentela secondo Lévi-Strauss</h3>${TAB(['Parola','Da ricordare'],[
+ ['<b>Atomo di parentela</b>','tre legami: filiazione (genitori e figli), consanguineità (fratelli e sorelle), affinità (dal matrimonio)'],
+ ['<b>Tabù dell’incesto</b>','divieto di rapporti tra parenti stretti · regola universale'],
+ ['<b>Esogamia / endogamia</b>','sposarsi fuori / dentro il proprio gruppo'],
+ ['<b>Alleanza</b>','i gruppi diventano parenti acquisiti · il matrimonio come sistema di scambio']])}</div>
+<div class="box gia"><h3>Le correnti del secondo Novecento</h3>${TAB(['Corrente','Da ricordare'],[
+ ['<b>Neoevoluzionismo</b>','Childe (sistema produttivo, 3 fasi, rivoluzione neolitica) · White (tecnologia, 3 sistemi) · Steward (evoluzione multilineare)'],
+ ['<b>Materialismo culturale</b>','Harris · condizioni materiali · Marx, Darwin, Malthus · maiale e vacca sacra'],
+ ['<b>Antropologia interpretativa</b>','Geertz · significati · descrizione densa · interpretare interpretazioni'],
+ ['<b>Antropologia postmoderna</b>','dagli anni Ottanta · neutralità del ricercatore messa in dubbio · conoscenza culturalmente situata'],
+ ['<b>Globalizzazione</b>','contesti metropolitani · non-luoghi · mass media e mercati finanziari']])}</div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('su3_antropologia2_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('su3_antropologia2_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Domande aperte (verifica scritta)</h2><p>Queste sono domande che può fare l\'insegnante nella verifica scritta. Leggi la domanda e <b>scrivi la risposta</b> (3-5 righe) su un foglio. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai scrivere bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so scrivere bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  const N=Object.values(PROVA_PLAN).reduce((a,b)=>a+b,0);
+  el.innerHTML='<h2>Prova finale</h2><p>'+N+' esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        const n=list.length;
+        body.innerHTML=`<div class="box ${tot>=n-2?'ver':tot>=Math.round(n*0.6)?'gia':'ros'}"><h3>Risultato: ${tot} su ${n}</h3>${tot>=n-2?'Sei pronto per l\'interrogazione.':tot>=Math.round(n*0.6)?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Riepilogo</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["L’antropologo guarda le altre culture senza giudicare.", "Non pensa che la cultura europea sia la migliore: questo si chiama eurocentrismo, e lui lo mette in discussione.", "L’evoluzionismo è la prima teoria: dice che tutte le società fanno lo stesso cammino, a tappe.", "Gli autori sono tre: Morgan, Tylor e Frazer. Ognuno ha un cammino con tre tappe."], "u2": ["Boas dice: ogni cultura è unica e va studiata nel suo ambiente. Si chiama particolarismo culturale.", "Malinowski dice: ogni cosa della cultura ha uno scopo, cioè una funzione. Si chiama funzionalismo.", "La funzione serve a rispondere ai bisogni delle persone: mangiare, riprodursi, proteggersi, comunicare.", "Il bastone da scavo è lo stesso oggetto, ma in culture diverse serve a cose diverse."], "u3": ["Lévi-Strauss è il fondatore dell’antropologia strutturale.", "Dice che sotto le differenze tra le culture ci sono strutture che tornano sempre uguali.", "Gli animali hanno rapporti naturali. Gli uomini hanno rapporti con regole.", "Come le lingue: parole diverse, ma regole comuni."], "u4": ["L’atomo di parentela è la parentela più piccola. Ha tre legami.", "Filiazione: genitori e figli. Consanguineità: fratelli e sorelle. Affinità: nasce dal matrimonio.", "Il tabù dell’incesto vieta i rapporti tra parenti stretti. Vale per tutti.", "Esogamia: ci si sposa fuori dal proprio gruppo. Così due gruppi diventano alleati.", "Il matrimonio è uno scambio tra gruppi, come le parole e le merci."], "u5": ["Il neoevoluzionismo è di metà Novecento: non c’è un solo cammino obbligato.", "Childe: l’evoluzione dipende dal modo di produrre. La svolta decisiva è la rivoluzione neolitica.", "White: la tecnologia è la base della cultura.", "Steward: ambienti diversi, strade diverse. Si chiama evoluzione multilineare."], "u6": ["Harris spiega i comportamenti partendo da cose concrete: cibo, risorse, lavoro.", "Riprende idee di Marx, di Darwin e di Malthus.", "Il maiale è vietato perché ha bisogno di acqua ed è poco adatto al caldo.", "La vacca in India è sacra perché dà latte e aiuta a lavorare i campi."], "u7": ["Geertz dice: l’uomo dà significato a quello che fa.", "Non basta chiedere a che cosa serve un gesto. Bisogna capire che cosa vuol dire per chi lo fa.", "Lo stesso gesto può voler dire cose diverse in culture diverse.", "Descrizione densa: spiegare un gesto dentro la sua cultura."], "u8": ["I postmoderni dicono: il ricercatore non è neutrale. Porta con sé la sua cultura.", "Chi scrive sceglie che cosa raccontare. Succede anche con i giornali e la televisione.", "Oggi l’antropologia studia la globalizzazione.", "Nuovi oggetti: grandi città, non-luoghi, mass media e mercati finanziari.", "Non-luoghi: aeroporti e stazioni, posti dove si passa e basta."]}, "es": false, "steps": false, "pics": [{"k": "famiglia", "re": "famiglia|familiari|familiare|parentela", "id": 38351}, {"k": "religione", "re": "religione|religiosa|religiose|religioso|religiosi", "id": 27059}, {"k": "citta", "re": "città|metropolitani|metropolitana", "id": 2704}, {"k": "uomo", "re": "uomo|uomini", "id": 4665}, {"k": "donna", "re": "donna|donne", "id": 24621}, {"k": "maiale", "re": "maiale|maiali", "id": 24972}, {"k": "mucca", "re": "mucca|mucche|vacca|vacche", "id": 2609}, {"k": "agricoltura", "re": "agricoltura|agricola|agricole|agricolo", "id": 38079}, {"k": "fabbrica", "re": "industria|industriale", "id": 24507}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  /* testo con parti in inglese: ogni parte con la sua voce */
+  function segs(el,dl){
+    var out=[],buf='';
+    function flush(){var t=say(buf);if(t.length>1)out.push({t:t,l:dl});buf=''}
+    (function walk(n){
+      if(n.nodeType===3){buf+=n.nodeValue;return}
+      if(n.nodeType!==1)return;
+      if(n.classList&&n.classList.contains('a11y-ui'))return;
+      var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return;
+      if(n.getAttribute('lang')==='en'){flush();var t=say(nodeText(n));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      if(n.classList.contains('fr')||tg==='SUP'){buf+=nodeText(n);return}
+      n.childNodes.forEach(walk);
+    })(el);
+    flush();return out;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    var out=[];
+    els.forEach(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      if(e.closest('[lang="en"]')){var t=say(nodeText(e));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      segs(e,es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    return out;
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=c.l==='en-GB'?0.8:0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     (CFG.steps?'<div class="step"><b class="n">★</b><div>Gli <b>esempi svolti</b> si aprono <b>un passo alla volta</b>: tocca <b>▶ Prossimo passo</b> e leggi con calma. Se preferisci vedere tutto, tocca <b>Mostra tutto</b>.</div></div>':'')+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)segs(qt,'it-IT').forEach(function(c){out.push(c)});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'.',l:'it-IT'});
+      segs(sp||o,CFG.es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  /* ===== ESEMPI SVOLTI UN PASSO ALLA VOLTA ===== */
+  if(CFG.steps&&location.hash!=='#stampa'){
+    var stOn=true;try{stOn=localStorage.getItem('a11y_steps')!=='0'}catch(e){}
+    var st4=document.createElement('style');
+    st4.textContent='section.tab .box.bia [hidden]{display:none!important}'+
+     '.a11y-newstep{background:#fff8dc;border-left:6px solid #d1b24a;padding:4px 8px;border-radius:6px}'+
+     '.a11y-stepper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 2px}'+
+     '.a11y-sc{font-weight:bold;font-size:.95rem;color:#22314d}'+
+     '.a11y-stepper .a11y-btn{margin:0}'+
+     '@media print{.a11y-stepper{display:none!important}section.tab .box.bia [hidden]{display:revert!important}.a11y-newstep{background:none;border:0;padding:0}}';
+    document.head.appendChild(st4);
+    var stGroups=[];
+    document.querySelectorAll('section.tab .stat .box.bia').forEach(function(box){
+      var h=box.querySelector(':scope>h3');if(!h||!/^Esempio/i.test(h.textContent))return;
+      var kids=[].slice.call(box.children).filter(function(c){return c!==h});
+      if(kids.length<3)return;
+      var isNum=function(e){return /^\s*\d+\./.test(e.textContent)};
+      var rest=kids.slice(1),groups=[];
+      if(rest.some(isNum)){
+        var started=false;
+        rest.forEach(function(e){
+          if(isNum(e)){groups.push([e]);started=true}
+          else if(started)groups[groups.length-1].push(e);
+        });
+      }else{rest.forEach(function(e){groups.push([e])})}
+      if(groups.length<2)return;
+      var idx=0,bx=mk('div','a11y-ui a11y-stepper'),go=mk('button','a11y-btn',null),all=mk('button','a11y-btn',null),cnt=mk('span','a11y-sc',null);
+      go.type='button';all.type='button';all.textContent='Mostra tutto';
+      bx.appendChild(go);bx.appendChild(cnt);bx.appendChild(all);box.appendChild(bx);
+      function paint(){
+        groups.forEach(function(g,i){g.forEach(function(e){e.hidden=stOn&&i>=idx;e.classList.toggle('a11y-newstep',stOn&&idx>0&&i===idx-1&&idx<groups.length+1)})});
+        bx.style.display=stOn?'':'none';
+        cnt.textContent='Passo '+idx+' di '+groups.length;
+        go.textContent=idx===0?'▶ Mostrami il primo passo':idx<groups.length?'▶ Prossimo passo':'↺ Ricomincia';
+        all.hidden=idx>=groups.length;
+      }
+      go.addEventListener('click',function(){
+        if(idx>=groups.length)idx=0;else idx++;
+        paint();
+        var t=idx>0?groups[idx-1][0]:box;try{t.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+      });
+      all.addEventListener('click',function(){idx=groups.length;paint()});
+      stGroups.push({paint:paint,reset:function(){idx=0}});
+      paint();
+    });
+    if(stGroups.length){
+      var sb=mk('button','a11y-btn a11y-ui',null);sb.type='button';
+      var paintSb=function(){sb.textContent='👣 Esempi un passo alla volta: '+(stOn?'SÌ':'NO');sb.classList.toggle('on',stOn);sb.setAttribute('aria-pressed',stOn?'true':'false')};
+      sb.addEventListener('click',function(){stOn=!stOn;try{localStorage.setItem('a11y_steps',stOn?'1':'0')}catch(e){};stGroups.forEach(function(g){g.reset();g.paint()});paintSb()});
+      paintSb();bar.appendChild(sb);
+    }
+  }
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261110111641",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
