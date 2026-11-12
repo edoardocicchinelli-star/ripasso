@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diritto: le società, la concorrenza e l’antitrust</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Diritto</a></p><h1>Le società, la concorrenza e l’antitrust</h1><p>3 ES · interrogazione · società, cooperative, concorrenza e legge antitrust · un passo alla volta</p></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u1">1 La società</button>
+<button data-t="u2">2 Società di persone</button>
+<button data-t="u3">3 Società di capitali</button>
+<button data-t="u4">4 Persone e capitali</button>
+<button data-t="u5">5 Cooperative</button>
+<button data-t="u6">6 Responsabilità sociale</button>
+<button data-t="u7">7 Concorrenza</button>
+<button data-t="u8">8 Antitrust</button>
+<button data-t="orale">Domande orali</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Riepilogo</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come si studia con questo kit</h2>
+<p>Qui trovi tutto per prepararti da solo all’<b>interrogazione di Diritto</b>: le <b>società</b>, la <b>concorrenza</b> e la <b>legge antitrust</b>. Vai con calma, <b>un paio di unità al giorno</b>. Ogni unità ha sempre lo stesso ordine.</p>
+<div class="box gia"><h3>Gli argomenti</h3>
+<ul><li>La <b>società</b> e la <b>tipicità</b> (unità 1)</li><li><b>Società di persone</b> (unità 2), <b>società di capitali</b> (unità 3) e il loro <b>confronto</b> (unità 4)</li><li><b>Cooperative</b> (unità 5) e <b>responsabilità sociale d’impresa</b> (unità 6)</li><li><b>Concorrenza</b> e <b>concorrenza sleale</b> (unità 7)</li><li><b>Cartelli, consorzi, trust</b> e <b>normativa antitrust</b> (unità 8)</li></ul></div>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos’è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema, passo per passo.</div></div>
+<div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi da ripetere a voce.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz</b>: poche domande sulle idee principali.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (4 giorni)</h3><ul><li><b>Giorno 1</b>: unità 1 e 2 (la società e le società di persone)</li><li><b>Giorno 2</b>: unità 3 e 4 (società di capitali e confronto)</li><li><b>Giorno 3</b>: unità 5, 6 e 7 (cooperative, responsabilità sociale, concorrenza)</li><li><b>Giorno 4</b>: unità 8 (antitrust), poi Prova finale, Domande orali e Riepilogo</li></ul><p class="note">Se una unità ti sembra difficile, falla in due giorni. Non c’è fretta.</p></div>
+<div class="box bia"><h3>Consigli per l’interrogazione</h3><ul><li>Nelle <b>Domande orali</b> prova a rispondere <b>ad alta voce</b>, con parole tue, e poi confronta con la risposta modello.</li><li>Ricorda i <b>6 tipi</b> di società: <b>ss, snc, sas</b> (persone) e <b>spa, sapa, srl</b> (capitali).</li><li><b>Persone</b>: contano i soci e rispondono i soci. <b>Capitali</b>: conta il capitale e risponde la società.</li><li>La concorrenza è nell’articolo <b>41</b> della Costituzione; la concorrenza sleale nell’art. <b>2598</b> del codice civile; la legge antitrust è la <b>287 del 1990</b>.</li><li>Se sbagli non è un problema: leggi la spiegazione e prova con un’altra domanda.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section><section class="tab" id="u7"></section><section class="tab" id="u8"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== DIRITTO: UTILITÀ ========== */
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&x!==''&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,tag)=>({q,...mkOpts(correct,wrongs),steps,tag});
+const B=s=>`<b>${s}</b>`;
+
+
+/* ========== DIRITTO 3 ES: GENERATORI ========== */
+const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
+function mapGroup(tag,pairs){
+  return ()=>{
+    const p=pairs[rnd(0,pairs.length-1)];
+    return mkEx(`<b>${p[0]}</b>`,p[1],p[3],wy(p[2],p[1]),tag);
+  };
+}
+const exU1=mapGroup('La società e la tipicità',[
+ ['Che cos’è una società?','Un contratto per esercitare in comune un’attività economica e dividerne gli utili','Art. 2247 del codice civile.',['Un’associazione che non guadagna','Un’impresa individuale']],
+ ['Che cosa fanno i soci con il conferimento?','Mettono nella società beni o servizi','Conferire = mettere beni o servizi.',['Ritirano i guadagni','Sciolgono la società']],
+ ['Qual è lo scopo delle società lucrative?','Dividere gli utili tra i soci','Utili = guadagni.',['Dare vantaggi ai clienti','Fare beneficenza']],
+ ['Che cosa vuol dire tipicità?','I soci devono scegliere uno dei tipi di società previsti dalla legge','Non possono inventare un tipo nuovo.',['I soci possono inventare nuovi tipi','La società non ha regole']],
+ ['Quanti sono i tipi di società lucrative?','Sei','ss, snc, sas, spa, sapa, srl.',['Tre','Dodici']],
+ ['Quale di questi è un tipo di società?','La società in nome collettivo','Snc: società in nome collettivo.',['La società in nome individuale','La società a responsabilità illimitata per tutti']],
+ ['Quali sono le società di persone?','ss, snc e sas','Le altre sono di capitali.',['spa, sapa e srl','snc, spa e srl']],
+ ['Quali sono le società di capitali?','spa, sapa e srl','Le altre sono di persone.',['ss, snc e sas','ss, sas e spa']],
+ ['Quale società non può fare attività commerciale?','La società semplice','È per attività come quella agricola.',['La snc','La spa']],
+ ['Che cosa significa sas?','Società in accomandita semplice','Ha accomandatari e accomandanti.',['Società a socio unico','Società anonima semplice']]]);
+const exU2=mapGroup('Le società di persone',[
+ ['Che cosa prevale nelle società di persone?','L’elemento personale, cioè i soci','Contano le persone.',['L’elemento patrimoniale','Il capitale minimo']],
+ ['Come è l’autonomia patrimoniale delle società di persone?','Imperfetta','Il patrimonio non è del tutto separato da quello dei soci.',['Perfetta','Non esiste']],
+ ['Se il patrimonio della società di persone non basta, chi risponde?','I soci, con i beni personali','Autonomia imperfetta.',['Nessuno','Solo i creditori']],
+ ['Hanno la personalità giuridica le società di persone?','No','È una caratteristica delle società di capitali.',['Sì, sempre','Solo la snc']],
+ ['Nella snc come rispondono i soci?','Tutti in modo solidale e illimitato','Art. 2291.',['Solo fino alla quota','Solo gli amministratori']],
+ ['Che cosa vuol dire «illimitata»?','Si risponde con tutto il patrimonio personale','Non solo con quanto si è conferito.',['Si risponde solo con la quota','Non si risponde']],
+ ['Che cosa vuol dire «solidale»?','Il creditore può chiedere tutto a un solo socio','A sua scelta.',['Ogni socio paga solo la sua parte','Paga solo l’amministratore']],
+ ['Chi amministra nella sas?','Gli accomandatari','Gli accomandanti non amministrano.',['Gli accomandanti','Tutti i creditori']],
+ ['Come risponde l’accomandante della sas?','Solo fino alla quota conferita','Art. 2313.',['In modo illimitato','Non risponde mai']],
+ ['Come risponde l’accomandatario della sas?','In modo solidale e illimitato','Art. 2313.',['Solo fino alla quota','Non risponde']],
+ ['Nella sas la quota può essere rappresentata da azioni?','No','Le azioni sono nelle società di capitali.',['Sì, sempre','Solo per gli accomandanti']]]);
+const exU3=mapGroup('Le società di capitali',[
+ ['Che cosa prevale nelle società di capitali?','L’elemento patrimoniale, cioè il capitale','Conta il capitale.',['L’elemento personale','Il rapporto di parentela']],
+ ['Come è l’autonomia patrimoniale delle società di capitali?','Perfetta','Il patrimonio della società è separato da quello dei soci.',['Imperfetta','Assente']],
+ ['Hanno la personalità giuridica le società di capitali?','Sì','Sono soggetti distinti dai soci.',['No','Solo la sapa']],
+ ['Chi risponde dei debiti della spa?','Solo la società con il suo patrimonio','Art. 2325.',['Tutti i soci con i beni personali','Il solo amministratore']],
+ ['In quale società il capitale è diviso in quote?','Nella srl','Spa e sapa hanno le azioni.',['Nella spa','Nella sapa']],
+ ['In quale società il capitale è diviso in azioni?','Nella spa','Anche nella sapa.',['Nella srl','Nella snc']],
+ ['Chi risponde in modo illimitato nella sapa?','I soci accomandatari','Sono anche gli amministratori (art. 2452).',['I soci accomandanti','Nessun socio']],
+ ['Chi risponde solo fino alla quota sottoscritta nella sapa?','I soci accomandanti','Art. 2452.',['I soci accomandatari','Tutti i soci']],
+ ['Qual è il capitale minimo della spa?','50.000 euro','Art. 2327.',['10.000 euro','1 euro']],
+ ['Qual è il capitale minimo della srl?','10.000 euro','Art. 2463; la srl semplificata va da 1 a 9.999 euro.',['50.000 euro','100.000 euro']],
+ ['Quali sono gli organi della spa?','Assemblea, amministratori e collegio sindacale','Il collegio sindacale controlla.',['Solo il notaio','Assemblea e tribunale']]]);
+const exU4=mapGroup('Persone e capitali a confronto',[
+ ['Quale società ha l’autonomia patrimoniale imperfetta?','La società di persone','Rispondono anche i soci.',['La società di capitali','La cooperativa soltanto']],
+ ['Quale società ha la personalità giuridica?','La società di capitali','La società di persone non ce l’ha.',['La società di persone','Nessuna società']],
+ ['Dove conta di più il capitale?','Nelle società di capitali','Elemento patrimoniale.',['Nelle società di persone','Nella società semplice']],
+ ['Dove contano di più i soci come persone?','Nelle società di persone','Elemento personale.',['Nelle società di capitali','Nella spa']],
+ ['Per cedere la quota in una società di persone di regola serve…','il consenso di tutti i soci','Il socio è importante per la società.',['nessun consenso','il solo consenso del notaio']],
+ ['Nelle società di capitali la partecipazione è di regola…','liberamente trasferibile','Ma lo statuto può mettere limiti.',['mai trasferibile','trasferibile solo agli eredi']],
+ ['Che cos’è la clausola di gradimento?','Un limite alla cessione previsto dallo statuto','Serve l’approvazione di un organo o dei soci.',['Un aumento di capitale','Un tipo di cooperativa']],
+ ['Come decidono i soci nelle società di capitali?','A maggioranza, in proporzione a quote o azioni','Conta il capitale.',['Sempre all’unanimità','Decide il notaio']],
+ ['Il capitale minimo è obbligatorio…','nelle società di capitali','Nelle società di persone non c’è questo obbligo.',['nelle società di persone','in tutte le società']],
+ ['Chi risponde dei debiti in una società di capitali?','La società con il suo patrimonio','Autonomia perfetta.',['I soci con i beni personali','Gli amministratori sempre']]]);
+const exU5=mapGroup('Società mutualistiche e cooperative',[
+ ['Quali sono le società mutualistiche?','Le cooperative','Hanno scopo mutualistico.',['La snc','La spa']],
+ ['Qual è lo scopo mutualistico?','Dare ai soci vantaggi: beni, servizi o lavoro a condizioni migliori del mercato','Art. 2511.',['Dividere gli utili tra i soci','Vendere al prezzo più alto']],
+ ['Come è il capitale delle cooperative?','Variabile','Cambia quando i soci entrano o escono.',['Fisso a 50.000 euro','Sempre uguale']],
+ ['Che cosa vuol dire porta aperta?','Possono entrare nuovi soci se hanno i requisiti','Ammissione libera di nuovi soci.',['Nessun socio può uscire','Solo i parenti possono entrare']],
+ ['Quanti voti ha ogni socio di una cooperativa?','Uno, qualunque sia la sua quota','Un socio, un voto (art. 2538).',['Uno per ogni quota','Dipende dal capitale']],
+ ['Quanti soci servono di regola per costituire una cooperativa?','Nove','Art. 2522; tre persone fisiche per le piccole.',['Due','Cento']],
+ ['In quale articolo della Costituzione si parla di cooperazione?','Nell’articolo 45','Funzione sociale della cooperazione.',['Nell’articolo 41','Nell’articolo 2598']],
+ ['Una cooperativa che dà lavoro ai soci è…','una cooperativa di lavoro','Occasioni di lavoro per i soci.',['una cooperativa di consumo','una società di capitali']],
+ ['Una cooperativa che vende beni ai soci-clienti è…','una cooperativa di consumo','Beni e servizi ai soci.',['una cooperativa di lavoro','una sapa']]]);
+const exU6=mapGroup('Responsabilità sociale d’impresa',[
+ ['Che cos’è la responsabilità sociale d’impresa?','L’attenzione dell’impresa a persone e ambiente, oltre al profitto','Manifestazione di volontà dell’impresa.',['Un tipo di società','Un obbligo di pagare le tasse']],
+ ['Come la definisce la Commissione europea nel 2011?','Responsabilità delle imprese per il loro impatto sulla società','COM(2011) 681.',['Divieto di guadagnare','Obbligo di fare beneficenza']],
+ ['Nella definizione del 2001 la responsabilità sociale è…','un’integrazione volontaria di preoccupazioni sociali ed ecologiche','Era detta volontaria.',['un obbligo di legge','un tipo di imposta']],
+ ['Chi sono gli stakeholder?','Le parti interessate dall’attività dell’impresa','Lavoratori, clienti, comunità.',['Solo i soci','Solo i concorrenti']],
+ ['A che cosa fa attenzione un’impresa socialmente responsabile?','A lavoratori, consumatori, comunità e ambiente','Non solo al guadagno.',['Solo al guadagno','Solo alla pubblicità']],
+ ['La responsabilità sociale è solo beneficenza?','No, riguarda l’attenzione agli effetti di tutta l’attività','Impatto sulla società.',['Sì, solo beneficenza','Sì, solo donazioni']]]);
+const exU7=mapGroup('La concorrenza e la concorrenza sleale',[
+ ['Quale articolo della Costituzione regola la concorrenza?','L’articolo 41','Iniziativa economica privata libera.',['L’articolo 1','L’articolo 2598']],
+ ['Che cosa dice l’art. 41 sull’iniziativa economica privata?','È libera','Ma non può andare contro l’utilità sociale.',['È vietata','Appartiene solo allo Stato']],
+ ['L’iniziativa economica privata può andare contro l’utilità sociale?','No','Art. 41, secondo comma.',['Sì, sempre','Sì, se è più conveniente']],
+ ['Che vantaggio ha il consumatore dalla concorrenza?','Può scegliere tra più imprese','Possibilità di scegliere.',['Deve comprare da una sola impresa','Non ha nessun vantaggio']],
+ ['Quale articolo del codice civile regola la concorrenza sleale?','Il 2598','Atti di concorrenza sleale.',['Il 2247','Il 2511']],
+ ['La concorrenza sleale in Italia è…','vietata','Gara scorretta.',['permessa','obbligatoria']],
+ ['Che cos’è l’imitazione servile?','Copiare prodotto, confezione o marchio del concorrente','Crea confusione.',['Fare pubblicità onesta','Abbassare i prezzi']],
+ ['Che cos’è la denigrazione?','Diffondere notizie che screditano un concorrente','Danneggia la sua reputazione.',['Imitare il suo marchio','Fondersi con lui']],
+ ['Che cos’è l’appropriazione di pregi?','Attribuirsi le qualità del prodotto del concorrente','Prendersi meriti altrui.',['Copiare la confezione','Parlare male del concorrente']],
+ ['Che cosa succede a chi commette concorrenza sleale?','Deve smettere e, se c’è dolo o colpa, risarcire i danni','Sentenza che inibisce e risarcimento.',['Non succede nulla','Chiude subito l’impresa']],
+ ['Quale organo si può chiamare per una pubblicità ingannevole?','L’Autorità garante della concorrenza e del mercato','Può vietarla e dare sanzioni.',['La Borsa','Il Comune']]]);
+const exU8=mapGroup('Intese tra imprese e antitrust',[
+ ['Che cos’è un cartello?','Un accordo tra imprese concorrenti','Fissano prezzi o dividono i mercati.',['Una società cooperativa','Un tipo di marchio']],
+ ['Che cos’è un consorzio?','Un’organizzazione comune creata da più imprenditori','Art. 2602.',['Un cartello sempre vietato','Un tipo di srl']],
+ ['Che cos’è un trust?','Più imprese concorrenti sotto una direzione unica','Esempio: Standard Oil.',['Una cooperativa','Un’autorità']],
+ ['Qual è la legge antitrust italiana?','La legge 287 del 1990','Istituisce anche l’AGCM.',['L’articolo 41','L’articolo 2598']],
+ ['Che cosa è vietato dalla legge 287?','Le intese restrittive e l’abuso di posizione dominante','E controlla le concentrazioni.',['Qualsiasi impresa grande','Qualsiasi accordo tra amici']],
+ ['La posizione dominante è vietata?','No, è vietato l’abuso','Lo dice la legge 287.',['Sì, sempre','Solo nei trust']],
+ ['Che cosa sono le concentrazioni?','Fusioni, acquisto del controllo o impresa comune','Art. 5 della legge 287.',['Accordi sui prezzi','Gare di pubblicità']],
+ ['Chi fa rispettare la legge antitrust?','L’Autorità garante della concorrenza e del mercato','AGCM, con sede a Roma.',['La Borsa','Il Comune']],
+ ['Un esempio di intesa vietata è…','fissare i prezzi insieme ai concorrenti','Art. 2, lettera a.',['fare uno sconto','aprire un negozio']],
+ ['Quanto può essere la sanzione antitrust?','Fino al 10% del fatturato','Per le infrazioni degli artt. 2 e 3.',['Solo 10 euro','Sempre il 50%']]]);
+const exDef=u=>()=>{
+  const L=DEFS[u],i=rnd(0,L.length-1),rev=Math.random()<0.5;
+  const others=shuffle(L.filter((_,k)=>k!==i));
+  if(rev)return mkEx(`Quale termine corrisponde a questa definizione? <br><i>${L[i][1]}</i>`,L[i][0],others.slice(0,2).map(x=>x[0]),`<p>La definizione dice: ${L[i][1]}</p><p>Risposta: ${B(L[i][0])}.</p>`,'Termini e definizioni');
+  return mkEx(`Che cosa significa <b>${L[i][0]}</b>?`,L[i][1],others.slice(0,2).map(x=>x[1]),`<p>${B(L[i][0])}: ${L[i][1]}</p>`,'Termini e definizioni');
+};
+const GENS={
+ u1:[exU1,exU1,exU1,exDef('u1')],
+ u2:[exU2,exU2,exU2,exDef('u2')],
+ u3:[exU3,exU3,exU3,exDef('u3')],
+ u4:[exU4,exU4,exU4,exDef('u4')],
+ u5:[exU5,exU5,exU5,exDef('u5')],
+ u6:[exU6,exU6,exU6,exDef('u6')],
+ u7:[exU7,exU7,exU7,exDef('u7')],
+ u8:[exU8,exU8,exU8,exDef('u8')]
+};
+const UNITS={u1:'1 · La società e la tipicità',u2:'2 · Le società di persone',u3:'3 · Le società di capitali',u4:'4 · Persone e capitali a confronto',u5:'5 · Società mutualistiche e cooperative',u6:'6 · La responsabilità sociale d’impresa',u7:'7 · La concorrenza e la concorrenza sleale',u8:'8 · Intese tra imprese e antitrust'};
+const PROVA_PLAN={u1:2,u2:2,u3:2,u4:2,u5:2,u6:1,u7:2,u8:2};
+
+/* ========== DIRITTO 3 ES: LE SOCIETÀ, LA CONCORRENZA, L'ANTITRUST ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const DEFS={};
+const CONT={};
+DEFS.u1=[
+ ['Società','Contratto con cui due o più persone conferiscono beni o servizi per esercitare in comune un’attività economica e dividerne gli utili (art. 2247 del codice civile).'],
+ ['Conferimento','Ciò che ogni socio mette nella società: beni (per esempio denaro) o servizi (per esempio il proprio lavoro).'],
+ ['Utili','I guadagni dell’attività. Nelle società lucrative i soci se li dividono.'],
+ ['Tipicità','Regola per cui i soci devono scegliere uno dei tipi di società previsti dalla legge: non possono inventarne uno nuovo.'],
+ ['Socio','Persona che partecipa a una società, perché ha fatto un conferimento.'],
+ ['Società lucrativa','Società che ha lo scopo di dividere gli utili tra i soci. I tipi sono sei.']];
+CONT.u1={
+ cose:`<div class="box bia"><p>Una <b>società</b> nasce da un <b>contratto</b> (art. <b>2247</b> del codice civile): <b>due o più persone</b> mettono insieme <b>beni o servizi</b> per fare <b>insieme</b> un’<b>attività economica</b> e per <b>dividersi i guadagni</b> (gli <b>utili</b>). La legge permette di scegliere solo tra <b>6 tipi</b> di società: è la <b>tipicità</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Che cos’è una società',stepsHtml([
+   '<b>Due o più persone</b> firmano un contratto (il <b>contratto di società</b>).',
+   'Ognuna fa un <b>conferimento</b>: mette <b>beni</b> (per esempio denaro) o <b>servizi</b> (per esempio il suo lavoro).',
+   'Insieme esercitano <b>in comune</b> un’<b>attività economica</b>.',
+   'Lo <b>scopo</b> è <b>dividersi gli utili</b>, cioè i guadagni.'])),
+  card('ver','2 · Le caratteristiche (i quattro elementi)',TAB(['Elemento','Che cosa vuol dire'],[
+   ['<b>Soci</b>','di regola due o più persone (SpA e SRL possono avere anche un solo socio)'],
+   ['<b>Conferimenti</b>','ogni socio mette beni o servizi'],
+   ['<b>Attività economica in comune</b>','i soci lavorano insieme per produrre o scambiare'],
+   ['<b>Scopo di lucro</b>','dividere gli utili tra i soci']])),
+  card('gia','3 · La tipicità: solo 6 tipi',stepsHtml([
+   '<b>Tipicità</b> vuol dire che i soci <b>devono scegliere</b> uno dei tipi previsti dalla legge (art. <b>2249</b>).',
+   'Chi vuole fare un’<b>attività commerciale</b> deve usare uno di questi tipi: non può inventare un tipo nuovo.',
+   'I tipi sono <b>sei</b>: <b>società semplice</b> (ss), <b>società in nome collettivo</b> (snc), <b>società in accomandita semplice</b> (sas), <b>società per azioni</b> (spa), <b>società in accomandita per azioni</b> (sapa), <b>società a responsabilità limitata</b> (srl).',
+   'La <b>società semplice</b> non può fare attività commerciale (è per attività come quella agricola).'])),
+  card('ros','4 · Due famiglie',TAB(['Famiglia','Tipi'],[
+   ['<b>Società di persone</b>','ss · snc · sas'],
+   ['<b>Società di capitali</b>','spa · sapa · srl']])+'<p class="note">Le <b>cooperative</b> sono un’altra cosa: hanno scopo mutualistico (unità 5).</p>')],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è una società?»</b> È un contratto con cui due o più persone conferiscono beni o servizi per esercitare in comune un’attività economica allo scopo di dividerne gli utili (art. 2247 del codice civile).</p>
+ <p><b>«Che cos’è la tipicità?»</b> Vuol dire che i soci devono scegliere uno dei tipi di società previsti dalla legge e non possono inventarne uno nuovo.</p>
+ <p><b>«Quali sono i tipi di società?»</b> Sono sei: società semplice, società in nome collettivo e società in accomandita semplice (società di persone); società per azioni, società in accomandita per azioni e società a responsabilità limitata (società di capitali).</p></div>`,
+ errori:['I tipi di società sono <b>6</b>: non 5, non 7.','Lo scopo della società è <b>dividere gli utili</b>: non basta stare insieme.','I soci <b>non possono inventare</b> un tipo nuovo: questo è la <b>tipicità</b>.','La <b>società semplice</b> non fa attività commerciale; <b>snc</b> e <b>sas</b> sì.'],
+ orale:[
+  ['Che cos’è una società? Dai la definizione.','La società è un contratto con cui due o più persone conferiscono beni o servizi per esercitare in comune un’attività economica allo scopo di dividerne gli utili (art. 2247 c.c.).'],
+  ['Quali sono le caratteristiche di una società?','I soci (di regola due o più), i conferimenti di beni o servizi, l’esercizio in comune di un’attività economica e lo scopo di dividere gli utili.'],
+  ['Che cos’è la tipicità di una società? Quanti sono i tipi?','Tipicità vuol dire che i soci devono scegliere uno dei tipi previsti dalla legge: non possono crearne uno nuovo. I tipi sono sei: ss, snc, sas, spa, sapa, srl.'],
+  ['Elenca le società di persone e le società di capitali.','Società di persone: società semplice, società in nome collettivo, società in accomandita semplice. Società di capitali: società per azioni, società in accomandita per azioni, società a responsabilità limitata.']],
+ quiz:[
+  ['Che cosa fanno i soci con il conferimento?','Mettono beni o servizi nella società',['Ritirano i guadagni','Chiudono la società'],'Conferire = mettere beni o servizi.'],
+  ['Qual è lo scopo di una società lucrativa?','Dividere gli utili',['Aiutare i clienti','Pagare le tasse'],'Utili = guadagni.'],
+  ['Quanti sono i tipi di società lucrative?','Sei',['Tre','Dieci'],'ss, snc, sas, spa, sapa, srl.'],
+  ['Che cosa vuol dire tipicità?','I soci scelgono un tipo previsto dalla legge',['I soci inventano un tipo nuovo','La società non ha regole'],'È il numero chiuso dei tipi.'],
+  ['Quale di questi è una società di capitali?','La srl',['La snc','La sas'],'Capitali: spa, sapa, srl.']]
+};
+
+DEFS.u2=[
+ ['Società di persone','Società (ss, snc, sas) in cui conta soprattutto chi sono i soci. Non hanno personalità giuridica e i soci rispondono con i beni personali.'],
+ ['Autonomia patrimoniale imperfetta','Il patrimonio della società non è del tutto separato da quello dei soci: se non basta, i creditori possono rivalersi sui soci.'],
+ ['Responsabilità illimitata','Il socio risponde dei debiti della società con tutto il suo patrimonio personale.'],
+ ['Responsabilità solidale','Il creditore può chiedere tutto il pagamento a ciascun socio, a sua scelta.'],
+ ['Accomandatario','Socio della sas (e della sapa) che amministra e risponde in modo illimitato e solidale.'],
+ ['Accomandante','Socio della sas (e della sapa) che non amministra e risponde solo fino alla quota conferita.'],
+ ['Ragione sociale','Il nome della società di persone: contiene il nome di almeno un socio e la sigla del tipo (per esempio snc).']];
+CONT.u2={
+ cose:`<div class="box bia"><p>Le <b>società di persone</b> sono <b>tre</b>: <b>società semplice</b>, <b>società in nome collettivo</b> e <b>società in accomandita semplice</b>. Qui <b>contano le persone</b>, cioè i soci. Hanno l’<b>autonomia patrimoniale imperfetta</b>: se la società non riesce a pagare i debiti, rispondono <b>i soci</b> con i loro beni personali.</p></div>`,
+ ricette:[
+  card('blu','1 · Le caratteristiche comuni',stepsHtml([
+   'Prevale l’<b>elemento personale</b>: contano i <b>soci</b>.',
+   '<b>Non hanno personalità giuridica</b>: la società non è un soggetto del tutto distinto dai soci.',
+   '<b>Autonomia patrimoniale imperfetta</b>: il patrimonio della società <b>non è separato del tutto</b> da quello dei soci.',
+   'Se il patrimonio della società non basta, i <b>creditori</b> possono rivalersi sul <b>patrimonio dei soci</b>.'])),
+  card('ver','2 · I tre tipi',TAB(['Tipo','Chi risponde dei debiti','Chi amministra'],[
+   ['<b>Società semplice</b> (ss) · artt. 2251-2290','i soci, con i beni personali (di regola)','i soci; per attività <b>non commerciali</b> (per esempio agricole)'],
+   ['<b>Società in nome collettivo</b> (snc) · art. 2291','<b>tutti</b> i soci, in modo <b>solidale e illimitato</b>','i soci; per attività <b>commerciali</b>'],
+   ['<b>Società in accomandita semplice</b> (sas) · art. 2313','<b>accomandatari</b>: solidale e illimitato · <b>accomandanti</b>: solo fino alla quota conferita','gli <b>accomandatari</b>; gli accomandanti non amministrano']])),
+  card('gia','3 · «Solidale» e «illimitata»',stepsHtml([
+   '<b>Illimitata</b> = si risponde con <b>tutto</b> il patrimonio personale, non solo con quanto si è messo nella società.',
+   '<b>Solidale</b> = il creditore può chiedere <b>tutto</b> a <b>un solo socio</b>, a sua scelta.',
+   'Nella <b>snc</b> un accordo tra soci che limita la responsabilità <b>non vale verso i creditori</b> (art. 2291).'])),
+  card('ros','4 · Il nome della società',stepsHtml([
+   'Il nome si chiama <b>ragione sociale</b>.',
+   'Nella <b>snc</b> contiene il <b>nome di almeno un socio</b> e la sigla <b>snc</b>.',
+   'Nella <b>sas</b> contiene il nome di almeno un <b>accomandatario</b> e la sigla <b>sas</b>.'])),
+  card('gia','5 · Come si partecipa',stepsHtml([
+   'Nella <b>sas</b> la partecipazione si chiama <b>quota</b> e non può essere rappresentata da <b>azioni</b> (art. 2313).',
+   'Cedere la quota a un’altra persona è difficile: serve di regola il <b>consenso di tutti i soci</b> (unità 4).']))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Quali sono le caratteristiche delle società di persone?»</b> Sono la società semplice, la snc e la sas. Prevale l’elemento personale, non hanno personalità giuridica e hanno l’autonomia patrimoniale imperfetta: se il patrimonio della società non basta, rispondono i soci con i loro beni personali.</p>
+ <p><b>«Come rispondono i soci della snc?»</b> Tutti i soci rispondono in modo solidale e illimitato per i debiti della società (art. 2291).</p>
+ <p><b>«Che differenza c’è tra accomandatari e accomandanti nella sas?»</b> Gli accomandatari amministrano e rispondono in modo solidale e illimitato; gli accomandanti non amministrano e rispondono solo fino alla quota che hanno conferito.</p></div>`,
+ errori:['Nella <b>snc</b> rispondono <b>tutti</b> i soci in modo illimitato; solo nella <b>sas</b> ci sono due categorie di soci.','Gli <b>accomandanti</b> sono quelli con responsabilità <b>limitata</b>; gli <b>accomandatari</b> amministrano.','Le società di persone <b>non</b> hanno la <b>personalità giuridica</b>: ce l’hanno le società di capitali.','«Illimitata» e «solidale» sono due parole diverse: non vanno confuse.'],
+ orale:[
+  ['Quali sono le società di persone? Quali sono le loro caratteristiche?','Sono la società semplice, la società in nome collettivo e la società in accomandita semplice. Prevale l’elemento personale, cioè i soci; non hanno personalità giuridica e l’autonomia patrimoniale è imperfetta: se il patrimonio della società non basta, i creditori possono rivalersi sui soci.'],
+  ['Come rispondono i soci nella società in nome collettivo?','Nella snc tutti i soci rispondono solidalmente e illimitatamente per le obbligazioni sociali. Un patto contrario non vale verso i terzi (art. 2291 c.c.).'],
+  ['Che cos’è la società in accomandita semplice?','È una società di persone con due categorie di soci: gli accomandatari, che amministrano e rispondono solidalmente e illimitatamente, e gli accomandanti, che rispondono solo fino alla quota conferita (art. 2313 c.c.).'],
+  ['Che cosa vuol dire autonomia patrimoniale imperfetta?','Vuol dire che il patrimonio della società non è completamente separato da quello dei soci: se non basta a pagare i debiti, i creditori possono rivalersi sul patrimonio personale dei soci.']],
+ quiz:[
+  ['Quali sono le società di persone?','ss, snc e sas',['spa, sapa e srl','Solo la srl'],'Le altre tre sono di capitali.'],
+  ['Nella snc come rispondono i soci?','Tutti in modo solidale e illimitato',['Solo fino alla quota','Non rispondono'],'Art. 2291.'],
+  ['Chi amministra nella sas?','Gli accomandatari',['Gli accomandanti','Nessuno'],'Gli accomandanti non amministrano.'],
+  ['Chi risponde solo fino alla quota conferita nella sas?','Gli accomandanti',['Gli accomandatari','Tutti i soci'],'Art. 2313.'],
+  ['Le società di persone hanno personalità giuridica?','No',['Sì, sempre','Solo la sas'],'Sono le società di capitali ad averla.']]
+};
+
+DEFS.u3=[
+ ['Società di capitali','Società (spa, sapa, srl) in cui conta soprattutto il capitale. Hanno la personalità giuridica e l’autonomia patrimoniale perfetta.'],
+ ['Autonomia patrimoniale perfetta','Il patrimonio della società è del tutto separato da quello dei soci: dei debiti risponde solo la società con il suo patrimonio.'],
+ ['Personalità giuridica','La società è un soggetto di diritto autonomo, distinto dai soci.'],
+ ['Azione','Parte del capitale di una spa o di una sapa; dà al socio diritto di voto e ai guadagni.'],
+ ['Quota','Parte del capitale di una srl (non è divisa in azioni).'],
+ ['Capitale sociale','L’insieme dei conferimenti dei soci. Nelle società di capitali la legge fissa un minimo.'],
+ ['Collegio sindacale','Organo che controlla l’amministrazione della società.']];
+CONT.u3={
+ cose:`<div class="box bia"><p>Le <b>società di capitali</b> sono <b>tre</b>: <b>società per azioni</b> (spa), <b>società in accomandita per azioni</b> (sapa) e <b>società a responsabilità limitata</b> (srl). Qui <b>conta il capitale</b>. Hanno la <b>personalità giuridica</b> e l’<b>autonomia patrimoniale perfetta</b>: dei debiti risponde <b>solo la società</b>, con il suo patrimonio.</p></div>`,
+ ricette:[
+  card('blu','1 · Le caratteristiche comuni',stepsHtml([
+   'Prevale l’<b>elemento patrimoniale</b>: conta il <b>capitale</b>.',
+   'Hanno la <b>personalità giuridica</b>: sono un soggetto distinto dai soci.',
+   '<b>Autonomia patrimoniale perfetta</b>: il patrimonio della società è <b>separato</b> da quello dei soci.',
+   'I soci rischiano <b>solo</b> quello che hanno conferito. Unica eccezione: gli <b>accomandatari</b> della sapa.'])),
+  card('ver','2 · I tre tipi',TAB(['Tipo','Capitale','Chi risponde dei debiti'],[
+   ['<b>Spa</b> · artt. 2325-2451','diviso in <b>azioni</b> · minimo <b>50.000 euro</b> (art. 2327)','<b>solo la società</b> con il suo patrimonio (art. 2325)'],
+   ['<b>Sapa</b> · artt. 2452-2461','diviso in <b>azioni</b>','<b>accomandatari</b>: solidale e illimitato · <b>accomandanti</b>: fino alla quota sottoscritta'],
+   ['<b>Srl</b> · artt. 2462-2483','diviso in <b>quote</b> · minimo <b>10.000 euro</b> (art. 2463)','<b>solo la società</b> con il suo patrimonio (art. 2462)']])),
+  card('gia','3 · Come funzionano',stepsHtml([
+   'Gli <b>organi</b> della spa sono l’<b>assemblea</b> dei soci, gli <b>amministratori</b> e il <b>collegio sindacale</b>.',
+   'Le decisioni dei soci si prendono <b>a maggioranza</b>, in proporzione a <b>quote o azioni</b> possedute.',
+   'Nella spa e nella srl chi <b>amministra</b> può anche <b>non essere socio</b>.',
+   'Spa e srl possono avere anche <b>un solo socio</b> (società unipersonale).'])),
+  card('ros','4 · La sapa e la srl semplificata',stepsHtml([
+   'Nella <b>sapa</b> i soci <b>accomandatari</b> sono gli <b>amministratori</b> e rispondono in modo <b>illimitato</b>: sono l’<b>unica eccezione</b> all’autonomia perfetta (art. 2452).',
+   'Gli <b>accomandanti</b> della sapa rispondono solo fino alla <b>quota di capitale sottoscritta</b>.',
+   'La <b>srl semplificata</b> (srls) può avere un capitale da <b>1 a 9.999 euro</b> (art. 2463-bis).'])),
+  card('gia','5 · Per ricordare',TAB(['','Spa','Sapa','Srl'],[
+   ['<b>Capitale in…</b>','azioni','azioni','quote'],
+   ['<b>Responsabilità illimitata</b>','nessuno','accomandatari','nessuno']]))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cosa sono le società di capitali?»</b> Sono la spa, la sapa e la srl. Prevale l’elemento patrimoniale, hanno la personalità giuridica e l’autonomia patrimoniale perfetta: dei debiti risponde solo la società con il suo patrimonio.</p>
+ <p><b>«Che cos’è la srl?»</b> È una società di capitali in cui il capitale è diviso in quote e non in azioni. Dei debiti risponde solo la società con il suo patrimonio (art. 2462).</p>
+ <p><b>«Che cos’è la sapa?»</b> È una società di capitali in cui i soci accomandatari, che sono amministratori, rispondono in modo solidale e illimitato; gli accomandanti rispondono fino alla quota sottoscritta. Il capitale è diviso in azioni.</p></div>`,
+ errori:['La <b>spa</b> ha capitale in <b>azioni</b>; la <b>srl</b> in <b>quote</b>.','Nella <b>sapa</b> gli <b>accomandatari</b> rispondono in modo <b>illimitato</b>: è l’<b>unica eccezione</b>.','Le società di capitali hanno la <b>personalità giuridica</b>; quelle di persone no.','Il capitale minimo è <b>50.000</b> per la spa e <b>10.000</b> per la srl: non vanno scambiati.'],
+ orale:[
+  ['Quali sono le società di capitali? Quali caratteristiche hanno?','Sono la società per azioni, la società in accomandita per azioni e la società a responsabilità limitata. Prevale l’elemento patrimoniale; hanno la personalità giuridica e l’autonomia patrimoniale perfetta, perché dei debiti risponde solo la società con il suo patrimonio.'],
+  ['Che cos’è la società per azioni?','È una società di capitali in cui il capitale è diviso in azioni e delle obbligazioni sociali risponde soltanto la società con il suo patrimonio (art. 2325). Gli organi sono l’assemblea, gli amministratori e il collegio sindacale. Il capitale minimo è 50.000 euro.'],
+  ['Che cos’è la società in accomandita per azioni?','È una società di capitali in cui il capitale è diviso in azioni. I soci accomandatari, che sono gli amministratori, rispondono solidalmente e illimitatamente; gli accomandanti rispondono solo nei limiti della quota di capitale sottoscritta (art. 2452).'],
+  ['Che cos’è la società a responsabilità limitata?','È una società di capitali in cui il capitale è diviso in quote e non in azioni. Delle obbligazioni sociali risponde soltanto la società con il suo patrimonio (art. 2462). Il capitale minimo è di 10.000 euro; la srl semplificata può averne da 1 a 9.999.']],
+ quiz:[
+  ['In quale società il capitale è diviso in quote?','Nella srl',['Nella spa','Nella sapa'],'Spa e sapa hanno le azioni.'],
+  ['Chi risponde dei debiti della spa?','Solo la società con il suo patrimonio',['Tutti i soci con i beni personali','Solo gli amministratori'],'Art. 2325.'],
+  ['Chi risponde in modo illimitato nella sapa?','I soci accomandatari',['I soci accomandanti','Nessuno'],'Art. 2452.'],
+  ['Le società di capitali hanno la personalità giuridica?','Sì',['No','Solo la srl'],'È una differenza con le società di persone.'],
+  ['Qual è il capitale minimo della spa?','50.000 euro',['10.000 euro','1 euro'],'Art. 2327.']]
+};
+
+DEFS.u4=[
+ ['Elemento personale','Nelle società di persone conta chi sono i soci: ogni socio è importante.'],
+ ['Elemento patrimoniale','Nelle società di capitali conta il capitale conferito più che le persone.'],
+ ['Trasferibilità della partecipazione','Possibilità del socio di cedere a un altro la propria quota o le proprie azioni.'],
+ ['Clausola di gradimento','Regola dello statuto: per cedere la partecipazione serve l’approvazione di un organo della società o degli altri soci.'],
+ ['Statuto','Insieme delle regole di funzionamento di una società di capitali.']];
+CONT.u4={
+ cose:`<div class="box bia"><p><b>Persone o capitali?</b> Nelle <b>società di persone</b> contano i <b>soci</b>, rispondono con i <b>beni personali</b> e <b>cambiare socio è difficile</b>. Nelle <b>società di capitali</b> conta il <b>capitale</b>, risponde <b>solo la società</b> e le <b>quote o azioni</b> si possono di regola <b>cedere più facilmente</b>.</p></div>`,
+ ricette:[
+  card('blu','1 · Il confronto in una tabella',TAB(['','Società di persone','Società di capitali'],[
+   ['<b>Tipi</b>','ss · snc · sas','spa · sapa · srl'],
+   ['<b>Che cosa conta</b>','le <b>persone</b> (soci)','il <b>capitale</b>'],
+   ['<b>Autonomia patrimoniale</b>','<b>imperfetta</b>','<b>perfetta</b>'],
+   ['<b>Chi risponde dei debiti</b>','i soci, con i beni personali','la società, con il suo patrimonio'],
+   ['<b>Personalità giuridica</b>','<b>no</b>','<b>sì</b>'],
+   ['<b>Partecipazione dei soci</b>','quote','azioni (spa, sapa) o quote (srl)'],
+   ['<b>Capitale minimo</b>','nessun obbligo','obbligatorio (spa 50.000 · srl 10.000)']])),
+  card('ver','2 · La partecipazione dei soci è diversa',stepsHtml([
+   'Nelle <b>società di persone</b> conta <b>chi è il socio</b>: i soci rispondono con i loro beni e di solito si conoscono bene.',
+   'Nelle <b>società di capitali</b> conta <b>quanto capitale</b> conferisce ciascuno: le decisioni si prendono <b>a maggioranza</b>, in proporzione a <b>quote o azioni</b>.',
+   'Per questo nelle società di capitali anche chi <b>amministra</b> può non essere socio.'])),
+  card('gia','3 · La trasferibilità della qualità di socio',stepsHtml([
+   'Domanda: <b>un socio può cedere la sua partecipazione</b> a un altro?',
+   '<b>Società di persone</b>: di regola serve il <b>consenso di tutti gli altri soci</b>, perché quel socio è importante per la società.',
+   '<b>Società di capitali</b>: la regola è la <b>libera trasferibilità</b> di azioni e quote. La <b>srl</b> (art. 2469) può avere regole diverse nell’atto costitutivo.',
+   'Lo <b>statuto</b> può mettere dei <b>limiti</b>, per esempio la <b>clausola di gradimento</b>: la cessione ha effetto solo se la approva un organo della società o gli altri soci.'])),
+  card('ros','4 · Per ricordare',stepsHtml([
+   '<b>P</b>ersone = <b>P</b>ersonale: contano i soci, rispondono i soci.',
+   '<b>C</b>apitali = <b>C</b>apitale: conta il capitale, risponde la società.']))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Qual è la differenza tra società di persone e società di capitali?»</b> Nelle società di persone prevale l’elemento personale: i soci rispondono con i loro beni (autonomia patrimoniale imperfetta) e non c’è la personalità giuridica. Nelle società di capitali prevale l’elemento patrimoniale: risponde solo la società con il suo patrimonio (autonomia perfetta) e c’è la personalità giuridica.</p>
+ <p><b>«È possibile trasferire la qualità di socio?»</b> Nelle società di persone di regola serve il consenso di tutti i soci. Nelle società di capitali la regola è la libera trasferibilità di azioni e quote, ma lo statuto può mettere dei limiti, per esempio la clausola di gradimento.</p></div>`,
+ errori:['Autonomia patrimoniale <b>imperfetta</b> = società di <b>persone</b>; <b>perfetta</b> = società di <b>capitali</b>.','Le società di capitali <b>non</b> hanno responsabilità illimitata (tranne gli accomandatari della sapa).','Nelle società di persone cedere la quota è <b>più difficile</b>, non più facile.','Il <b>capitale minimo</b> riguarda le società di <b>capitali</b>, non quelle di persone.'],
+ orale:[
+  ['Qual è la differenza tra società di persone e società di capitali?','Nelle società di persone (ss, snc, sas) prevale l’elemento personale, l’autonomia patrimoniale è imperfetta e non c’è la personalità giuridica: se il patrimonio sociale non basta, rispondono i soci. Nelle società di capitali (spa, sapa, srl) prevale l’elemento patrimoniale, l’autonomia è perfetta, c’è la personalità giuridica e dei debiti risponde la società.'],
+  ['Com’è diversa la partecipazione dei soci nei due gruppi di società?','Nelle società di persone contano le persone dei soci; nelle società di capitali conta il capitale conferito e le decisioni si prendono a maggioranza in proporzione a quote o azioni. Per questo nelle società di capitali l’amministratore può anche non essere socio.'],
+  ['È possibile trasferire la qualità di socio?','Nelle società di persone di regola serve il consenso di tutti i soci. Nelle società di capitali la regola è la libera trasferibilità delle azioni e delle quote, ma lo statuto può introdurre limiti, per esempio le clausole di gradimento.']],
+ quiz:[
+  ['Quale società ha l’autonomia patrimoniale perfetta?','La società di capitali',['La società di persone','La società semplice'],'Perfetta = patrimonio separato.'],
+  ['In una società di persone, se il patrimonio della società non basta, chi risponde?','I soci',['Nessuno','Solo lo Stato'],'Autonomia imperfetta.'],
+  ['Per cedere la quota in una società di persone di regola serve…','il consenso di tutti i soci',['nessun consenso','solo un notaio'],'Il socio è importante.'],
+  ['Che cos’è la clausola di gradimento?','Un limite alla cessione, previsto dallo statuto',['Un aumento di capitale','Un tipo di società'],'Serve l’approvazione di un organo o dei soci.'],
+  ['Che cosa prevale nelle società di capitali?','L’elemento patrimoniale',['L’elemento personale','Nessun elemento'],'Conta il capitale.']]
+};
+
+DEFS.u5=[
+ ['Società mutualistica','Società che non ha lo scopo di dividere gli utili, ma di dare vantaggi ai soci: beni, servizi o lavoro a condizioni migliori del mercato.'],
+ ['Cooperativa','Società a capitale variabile con scopo mutualistico (art. 2511 del codice civile).'],
+ ['Scopo mutualistico','Fornire ai soci beni, servizi o occasioni di lavoro a condizioni più vantaggiose di quelle di mercato.'],
+ ['Capitale variabile','Il capitale non è fissato in anticipo: aumenta o diminuisce quando i soci entrano o escono.'],
+ ['Porta aperta','Principio per cui nuovi soci possono entrare nella cooperativa quando hanno i requisiti richiesti.'],
+ ['Voto per testa','Ogni socio ha un solo voto, qualunque sia il valore della sua quota.']];
+CONT.u5={
+ cose:`<div class="box bia"><p>Le <b>società mutualistiche</b> sono le <b>cooperative</b>. Non servono a <b>dividere gli utili</b>: servono a dare ai <b>soci</b> <b>beni, servizi o lavoro</b> a <b>condizioni migliori</b> di quelle del mercato. Sono <b>società a capitale variabile con scopo mutualistico</b> (art. <b>2511</b> del codice civile).</p></div>`,
+ ricette:[
+  card('blu','1 · Lucrative e mutualistiche',TAB(['','Società lucrative','Società mutualistiche'],[
+   ['<b>Quali sono</b>','ss, snc, sas, spa, sapa, srl','le <b>cooperative</b>'],
+   ['<b>Scopo</b>','dividere gli <b>utili</b>','dare ai soci <b>vantaggi</b> (scopo mutualistico)'],
+   ['<b>Capitale</b>','di solito fisso','<b>variabile</b>']])),
+  card('ver','2 · Che cosa fa la cooperativa per i soci',stepsHtml([
+   'Dà ai soci <b>beni</b> (per esempio prodotti a prezzi più bassi), <b>servizi</b> o <b>occasioni di lavoro</b>.',
+   'Lo fa a <b>condizioni più vantaggiose</b> di quelle del mercato.',
+   'Il <b>vantaggio</b> va ai <b>soci</b>: questo è lo <b>scopo mutualistico</b>.'])),
+  card('gia','3 · Le regole speciali',stepsHtml([
+   '<b>Capitale variabile</b>: cresce e cala quando i soci entrano e escono, senza cambiare ogni volta l’atto costitutivo.',
+   '<b>Porta aperta</b>: possono entrare nuovi soci, se hanno i requisiti.',
+   '<b>Un socio, un voto</b> (art. 2538): ogni socio ha un voto, <b>qualunque sia il valore della quota</b>.',
+   'Per costituirla servono di regola <b>almeno 9 soci</b> (art. 2522); le piccole cooperative possono avere <b>3 soci</b> persone fisiche.'])),
+  card('ros','4 · I tipi di cooperativa',TAB(['Tipo','Che cosa dà ai soci'],[
+   ['<b>Di consumo</b>','beni e servizi ai soci-clienti'],
+   ['<b>Di lavoro</b>','occasioni di lavoro meglio retribuite'],
+   ['<b>Di conferimento</b>','valorizzazione dei beni o dei prodotti dei soci (per esempio agricole)']])+'<p class="note">Esistono anche le cooperative di <b>credito</b>, <b>edilizie</b> e <b>sociali</b>.</p>'),
+  card('gia','5 · La Costituzione',stepsHtml([
+   'L’art. <b>45</b> della Costituzione riconosce la <b>funzione sociale della cooperazione</b> a carattere di <b>mutualità</b> e <b>senza fini di speculazione privata</b>.']))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cosa sono le società mutualistiche?»</b> Sono le cooperative: società a capitale variabile con scopo mutualistico. Non hanno lo scopo di dividere gli utili, ma di dare ai soci beni, servizi o lavoro a condizioni più vantaggiose di quelle del mercato.</p>
+ <p><b>«Che cosa sono le cooperative?»</b> Sono società a capitale variabile con scopo mutualistico (art. 2511). Valgono la porta aperta e il voto per testa: ogni socio ha un voto, qualunque sia la sua quota.</p></div>`,
+ errori:['Le cooperative non servono a <b>dividere gli utili</b>: lo scopo è <b>mutualistico</b>.','Il capitale delle cooperative è <b>variabile</b>, non fisso.','Nella cooperativa <b>vale un voto per socio</b>, non un voto per ogni quota.','Le cooperative <b>non</b> sono tra i <b>6 tipi</b> di società lucrative.'],
+ orale:[
+  ['Che cosa sono le società mutualistiche?','Sono le società che non hanno scopo di lucro ma scopo mutualistico: danno ai soci beni, servizi o occasioni di lavoro a condizioni più vantaggiose di quelle di mercato. Le principali sono le cooperative.'],
+  ['Che cosa sono le cooperative? Quali caratteristiche hanno?','Sono società a capitale variabile con scopo mutualistico (art. 2511 c.c.). Hanno il capitale variabile, la porta aperta per i nuovi soci e il voto per testa: ogni socio ha un voto, qualunque sia il valore della quota.'],
+  ['Quanti soci servono per fare una cooperativa e quali tipi esistono?','Di regola servono almeno nove soci (tre persone fisiche per le piccole cooperative). I tipi sono, per esempio, di consumo, di lavoro, di conferimento, ma anche di credito, edilizie e sociali.']],
+ quiz:[
+  ['Qual è lo scopo delle cooperative?','Dare vantaggi ai soci (scopo mutualistico)',['Dividere gli utili','Fare concorrenza sleale'],'Art. 2511.'],
+  ['Come è il capitale di una cooperativa?','Variabile',['Sempre uguale','Sempre di 50.000 euro'],'Cambia con l’entrata e l’uscita dei soci.'],
+  ['Quanti voti ha ogni socio di una cooperativa?','Uno',['Uno per ogni quota','Dipende dal capitale'],'Un socio, un voto (art. 2538).'],
+  ['Quali sono le società mutualistiche?','Le cooperative',['La snc','La spa'],'Le altre sono lucrative.'],
+  ['Quanti soci servono di regola per costituire una cooperativa?','Nove',['Due','Cento'],'Art. 2522.']]
+};
+
+DEFS.u6=[
+ ['Responsabilità sociale d’impresa','Scelta dell’impresa di fare attenzione, oltre al guadagno, alle persone e all’ambiente: lavoratori, clienti, comunità, natura.'],
+ ['Stakeholder','Le parti interessate: tutte le persone e i gruppi toccati dall’attività dell’impresa (lavoratori, clienti, fornitori, comunità).'],
+ ['Impatto sulla società','Gli effetti che l’attività dell’impresa ha sulle persone e sull’ambiente.'],
+ ['Volontaria','Fatta per scelta dell’impresa, non perché la legge la obbliga.'],
+ ['Commissione europea','Organo dell’Unione europea che propone le leggi; ha dato una definizione di responsabilità sociale.']];
+CONT.u6={
+ cose:`<div class="box bia"><p>La <b>responsabilità sociale d’impresa</b> è la <b>manifestazione di volontà</b> dell’impresa di <b>fare attenzione</b> agli <b>effetti della sua attività</b> sulle <b>persone</b> e sull’<b>ambiente</b>, non solo al guadagno. In inglese si dice <b>CSR</b> (<i>Corporate Social Responsibility</i>).</p></div>`,
+ ricette:[
+  card('blu','1 · Che cos’è',stepsHtml([
+   'L’impresa <b>non pensa solo al profitto</b>.',
+   'Per <b>sua scelta</b> (manifestazione di volontà) presta <b>attenzione</b> a <b>lavoratori, clienti, comunità e ambiente</b>.',
+   'Queste persone e questi gruppi si chiamano <b>stakeholder</b> (parti interessate).'])),
+  card('ver','2 · La definizione della Commissione europea',TAB(['Anno','Definizione'],[
+   ['<b>2001</b>','<b>integrazione volontaria</b> delle preoccupazioni <b>sociali ed ecologiche</b> nelle operazioni commerciali e nei rapporti con le parti interessate'],
+   ['<b>2011</b>','«la <b>responsabilità delle imprese per il loro impatto sulla società</b>»']])+'<p class="note">Nel 2011 si aggiunge che le imprese devono integrare preoccupazioni <b>sociali, ambientali, etiche, di diritti umani e dei consumatori</b>, in stretta cooperazione con gli stakeholder.</p>'),
+  card('gia','3 · A che cosa fa attenzione l’impresa',stepsHtml([
+   'Alle <b>condizioni dei lavoratori</b>.',
+   'All’<b>ambiente</b>.',
+   'Ai <b>diritti umani</b> e ai <b>consumatori</b>.',
+   'Alla <b>comunità</b> in cui opera.'])),
+  card('ros','4 · Per ricordare',stepsHtml([
+   'CSR = <b>attenzione volontaria</b> dell’impresa a <b>persone e ambiente</b>.',
+   'La Commissione europea nel 2011 la definisce <b>responsabilità</b> per l’<b>impatto sulla società</b>.']))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Che cos’è la responsabilità sociale d’impresa?»</b> È la manifestazione di volontà dell’impresa di prestare attenzione, oltre al profitto, agli effetti della sua attività su lavoratori, consumatori, comunità e ambiente.</p>
+ <p><b>«Come la definisce la Commissione europea?»</b> Nel 2011 come «la responsabilità delle imprese per il loro impatto sulla società». Nel 2001 come integrazione volontaria delle preoccupazioni sociali ed ecologiche nelle attività dell’impresa.</p></div>`,
+ errori:['La responsabilità sociale <b>non</b> è solo fare <b>beneficenza</b>: è fare attenzione agli effetti di <b>tutta</b> l’attività.','Nella definizione del <b>2001</b> è <b>volontaria</b>; quella del <b>2011</b> parla di <b>responsabilità</b> per l’impatto sulla società.','Non riguarda solo l’<b>ambiente</b>: anche <b>lavoratori, consumatori, diritti umani</b>.','Gli <b>stakeholder</b> non sono solo i soci: sono tutte le <b>parti interessate</b>.'],
+ orale:[
+  ['Che cos’è la responsabilità sociale d’impresa?','È la manifestazione di volontà dell’impresa di fare attenzione, oltre che al profitto, agli effetti della sua attività sulla società e sull’ambiente: lavoratori, consumatori, comunità, diritti umani.'],
+  ['Come definisce la responsabilità sociale la Commissione europea?','Nel 2001 la definiva come integrazione volontaria delle preoccupazioni sociali ed ecologiche nelle operazioni commerciali e nei rapporti con le parti interessate. Nel 2011 la definisce come la responsabilità delle imprese per il loro impatto sulla società.']],
+ quiz:[
+  ['Che cos’è la responsabilità sociale d’impresa?','Attenzione dell’impresa a persone e ambiente',['Un tipo di società','Un’imposta'],'Oltre al profitto.'],
+  ['Come la definisce la Commissione europea nel 2011?','Responsabilità delle imprese per il loro impatto sulla società',['Obbligo di fare beneficenza','Divieto di fare profitto'],'COM(2011) 681.'],
+  ['Chi sono gli stakeholder?','Le parti interessate dall’attività dell’impresa',['Solo i soci','Solo i clienti'],'Anche lavoratori e comunità.'],
+  ['A che cosa fa attenzione l’impresa socialmente responsabile?','A persone e ambiente',['Solo al guadagno','Solo alla pubblicità'],'Lavoratori, clienti, comunità, natura.']]
+};
+
+DEFS.u7=[
+ ['Concorrenza','Gara tra imprese che cercano di aumentare la propria quota di mercato, cioè di vendere di più ai consumatori.'],
+ ['Iniziativa economica privata','Libertà di ogni persona di avviare e fare un’attività economica (art. 41 della Costituzione).'],
+ ['Utilità sociale','Interesse di tutta la società. L’iniziativa economica non può andare contro di esso.'],
+ ['Concorrenza sleale','Gara scorretta tra imprenditori, vietata dall’art. 2598 del codice civile.'],
+ ['Imitazione servile','Copiare il prodotto, la confezione o il marchio di un concorrente in modo da creare confusione.'],
+ ['Denigrazione','Diffondere notizie false o cattive sui prodotti o sull’attività di un concorrente per danneggiarlo.'],
+ ['Appropriazione di pregi','Attribuirsi le qualità dei prodotti o dell’impresa di un concorrente.'],
+ ['Correttezza professionale','Comportarsi onestamente con i concorrenti. Il suo contrario è un atto di concorrenza sleale.']];
+CONT.u7={
+ cose:`<div class="box bia"><p>La <b>concorrenza</b> è la <b>gara tra imprese</b> per vendere di più. In Italia l’<b>art. 41 della Costituzione</b> dice che l’<b>iniziativa economica privata è libera</b>, ma <b>non può andare contro l’utilità sociale</b>. La concorrenza fa bene ai <b>consumatori</b>, perché possono <b>scegliere</b>, ma <b>non deve essere sleale</b>: la <b>concorrenza sleale</b> è <b>vietata</b> (art. 2598 del codice civile).</p></div>`,
+ ricette:[
+  card('blu','1 · L’articolo 41 della Costituzione',stepsHtml([
+   '<b>1° comma</b>: l’<b>iniziativa economica privata è libera</b>. Chiunque può avviare un’impresa.',
+   '<b>2° comma</b>: non può svolgersi <b>in contrasto con l’utilità sociale</b> o in modo da recare danno a <b>salute, ambiente, sicurezza, libertà, dignità umana</b>.',
+   '<b>3° comma</b>: la <b>legge</b> stabilisce programmi e controlli perché l’attività economica sia indirizzata a <b>fini sociali e ambientali</b>.'])),
+  card('ver','2 · Perché la concorrenza è utile',stepsHtml([
+   '<b>Per i consumatori</b>: c’è la <b>possibilità di scegliere</b> tra più imprese.',
+   'Si <b>tutelano gli interessi dei consumatori</b>.',
+   'Fa bene allo <b>sviluppo economico</b> generale.'])),
+  card('gia','3 · La concorrenza sleale (art. 2598)',TAB(['Che cosa fa l’impresa','Esempio'],[
+   ['<b>Atti confusori</b>: crea <b>confusione</b> con i prodotti o l’attività di un concorrente','<b>imitazione servile</b> di prodotto, confezione o marchio'],
+   ['<b>Denigrazione</b>: diffonde notizie che <b>screditano</b> il concorrente','dire in giro che i prodotti del concorrente sono pericolosi, senza motivo'],
+   ['<b>Appropriazione di pregi</b>: si attribuisce le <b>qualità</b> del concorrente','dire che il proprio prodotto ha un premio vinto da un altro'],
+   ['<b>Ogni altro atto contrario alla correttezza professionale</b> e idoneo a danneggiare l’azienda altrui','comportamenti scorretti non elencati sopra']])+'<p class="note">Gli esempi sono semplici esempi per capire.</p>'),
+  card('ros','4 · Che cosa succede a chi la commette',stepsHtml([
+   'Il giudice <b>vieta di continuare</b> (inibisce) e dispone che siano <b>eliminati gli effetti</b>.',
+   'Se l’atto è stato commesso con <b>dolo o colpa</b>, c’è anche il <b>risarcimento dei danni</b>.',
+   'Per la <b>pubblicità ingannevole</b> ci si può rivolgere anche all’<b>Autorità garante della concorrenza e del mercato</b>.'])),
+  card('gia','5 · Per ricordare',stepsHtml([
+   '<b>Concorrenza</b> = libera ma <b>onesta</b>.',
+   '<b>Tre gruppi</b> di concorrenza sleale: <b>confusione</b>, <b>denigrazione e appropriazione di pregi</b>, <b>scorrettezza</b> in generale.']))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Come è regolata la concorrenza in Italia?»</b> Dall’articolo 41 della Costituzione: l’iniziativa economica privata è libera, ma non può svolgersi in contrasto con l’utilità sociale o in modo da recare danno alla salute, all’ambiente, alla sicurezza, alla libertà e alla dignità umana.</p>
+ <p><b>«Che cos’è la concorrenza sleale?»</b> È una gara scorretta tra imprenditori ed è vietata (art. 2598 c.c.). Rientrano nella concorrenza sleale gli atti idonei a creare confusione con i prodotti di un concorrente, la denigrazione e l’appropriazione di pregi, e ogni altro atto contrario alla correttezza professionale.</p></div>`,
+ errori:['L’iniziativa economica è <b>libera</b>, ma <b>non senza limiti</b>: c’è l’<b>utilità sociale</b>.','La concorrenza <b>è utile</b>; è <b>vietata</b> solo quella <b>sleale</b>.','La concorrenza è regolata dall’art. <b>41</b> della Costituzione; quella sleale dall’art. <b>2598</b> del codice civile.','<b>Denigrazione</b> = parlare male del concorrente; <b>appropriazione di pregi</b> = prendersi le sue qualità.'],
+ orale:[
+  ['Che cos’è la concorrenza tra imprese? Come è regolata in Italia?','La concorrenza è la gara tra imprese per aumentare le proprie quote di mercato. In Italia è regolata dall’art. 41 della Costituzione, che dice che l’iniziativa economica privata è libera.'],
+  ['Che cosa dice l’articolo 41 della Costituzione?','Che l’iniziativa economica privata è libera; che non può svolgersi in contrasto con l’utilità sociale o in modo da recare danno a salute, ambiente, sicurezza, libertà e dignità umana; che la legge stabilisce programmi e controlli per indirizzare l’attività economica a fini sociali e ambientali.'],
+  ['Perché la concorrenza è utile ai consumatori?','Perché i consumatori hanno la possibilità di scegliere e i loro interessi sono tutelati.'],
+  ['Che cos’è la concorrenza sleale?','È una gara scorretta tra imprenditori, vietata in Italia (art. 2598 c.c.). Comprende gli atti che creano confusione con i prodotti o l’attività dei concorrenti, la denigrazione, l’appropriazione di pregi e ogni altro atto contrario alla correttezza professionale. Chi la commette deve smettere e, se c’è dolo o colpa, risarcire i danni.']],
+ quiz:[
+  ['Quale articolo della Costituzione regola la concorrenza?','L’articolo 41',['L’articolo 1','L’articolo 2598'],'L’art. 2598 è del codice civile.'],
+  ['Che cosa dice l’art. 41 sull’iniziativa economica privata?','È libera',['È vietata','È solo dello Stato'],'Ma non può andare contro l’utilità sociale.'],
+  ['Quale articolo del codice civile regola la concorrenza sleale?','Il 2598',['Il 2247','Il 2511'],'Atti di concorrenza sleale.'],
+  ['Che cos’è l’imitazione servile?','Copiare prodotto, confezione o marchio di un concorrente',['Vendere a prezzi bassi','Fare pubblicità'],'Crea confusione.'],
+  ['Che cos’è la denigrazione?','Diffondere notizie che screditano un concorrente',['Copiare il suo marchio','Fondersi con lui'],'Danneggia la sua reputazione.']]
+};
+
+DEFS.u8=[
+ ['Cartello','Accordo tra imprese concorrenti che, invece di competere, si mettono d’accordo, per esempio sui prezzi o sulla divisione dei mercati.'],
+ ['Intesa','Accordo o pratica concordata tra imprese. È vietata se limita in modo consistente la concorrenza.'],
+ ['Consorzio','Contratto con cui più imprenditori istituiscono un’organizzazione comune per disciplinare o svolgere alcune fasi delle loro imprese (art. 2602).'],
+ ['Trust','Insieme di imprese concorrenti messe sotto una direzione unica. Il nome nasce negli Stati Uniti.'],
+ ['Antitrust','Insieme di norme che difendono la concorrenza sul mercato. In Italia: legge n. 287 del 1990.'],
+ ['Posizione dominante','Situazione di un’impresa così forte da comportarsi in modo indipendente da concorrenti e consumatori. Non è vietata: è vietato l’abuso.'],
+ ['Concentrazione','Operazione con cui imprese si uniscono: fusione, acquisto del controllo, creazione di un’impresa comune.'],
+ ['Autorità garante della concorrenza e del mercato','Autorità indipendente, con sede a Roma, che vigila sul rispetto della legge antitrust.']];
+CONT.u8={
+ cose:`<div class="box bia"><p>Le imprese possono <b>mettersi d’accordo</b> tra loro: nei <b>cartelli</b>, nei <b>consorzi</b>, nei <b>trust</b>. Se l’accordo <b>limita la concorrenza</b>, è un problema per i consumatori. In Italia la <b>normativa antitrust</b> è la <b>legge 287 del 1990</b>: vieta le <b>intese restrittive</b> e l’<b>abuso di posizione dominante</b> e controlla le <b>concentrazioni</b>. La fa rispettare l’<b>Autorità garante della concorrenza e del mercato</b> (AGCM).</p></div>`,
+ ricette:[
+  card('blu','1 · Cartelli, consorzi e trust',TAB(['Che cos’è','Che cosa fa'],[
+   ['<b>Cartello</b>','accordo tra imprese concorrenti: <b>fissano i prezzi</b>, <b>limitano la produzione</b>, <b>si dividono i mercati</b>. È <b>vietato</b> se limita la concorrenza'],
+   ['<b>Consorzio</b> (art. 2602)','più imprenditori creano un’<b>organizzazione comune</b> per svolgere insieme <b>alcune fasi</b> delle loro imprese. Ogni impresa <b>resta indipendente</b>'],
+   ['<b>Trust</b>','più imprese concorrenti messe sotto una <b>direzione unica</b>. Esempio storico: la <b>Standard Oil</b> negli Stati Uniti']])),
+  card('ver','2 · La legge antitrust (legge 287 del 1990)',stepsHtml([
+   'Difende la <b>concorrenza</b>: tutela il diritto di <b>iniziativa economica</b> dell’art. 41 della Costituzione.',
+   '<b>Intese restrittive</b> (art. 2): <b>vietate</b> e <b>nulle</b> se limitano in modo consistente la concorrenza.',
+   '<b>Abuso di posizione dominante</b> (art. 3): <b>vietato</b>. Avere una posizione dominante <b>non è vietato</b>: lo è abusarne.',
+   '<b>Concentrazioni</b> (art. 5): fusione, acquisto del controllo di un’impresa, creazione di un’impresa comune. Sono <b>controllate</b>.'])),
+  card('gia','3 · Che cosa è vietato nelle intese (art. 2)',TAB(['Esempio di intesa vietata','Che cosa fanno le imprese'],[
+   ['a)','<b>fissano</b> direttamente o indirettamente i <b>prezzi</b> di acquisto o di vendita o altre condizioni contrattuali'],
+   ['b)','<b>limitano</b> la produzione, gli sbocchi o l’accesso al mercato'],
+   ['c)','<b>si dividono</b> i mercati o le fonti di approvvigionamento']])),
+  card('ros','4 · Chi controlla: l’AGCM',stepsHtml([
+   'Si chiama <b>Autorità garante della concorrenza e del mercato</b> e fu istituita dalla <b>legge 287 del 1990</b>.',
+   'Ha sede a <b>Roma</b>, opera in <b>piena autonomia</b> e indipendenza ed è formata da un <b>presidente</b> e <b>quattro componenti</b>, nominati per <b>sette anni</b>.',
+   'Vigila su <b>intese</b>, <b>abusi di posizione dominante</b> e <b>concentrazioni</b>.',
+   'Può dare <b>sanzioni</b>: fino al <b>10%</b> del fatturato dell’impresa.'])),
+  card('gia','5 · Per ricordare',stepsHtml([
+   'Il <b>consorzio</b> di per sé <b>non è vietato</b>; è vietato l’accordo che <b>limita la concorrenza</b> (cartello).',
+   'Il <b>trust</b> riduce la concorrenza perché i concorrenti sono sotto una <b>direzione unica</b>.']))],
+ esempio:`<div class="box bia"><h3>Come si risponde</h3>
+ <p><b>«Quali sono le principali collusioni tra imprese?»</b> I cartelli (accordi tra concorrenti su prezzi, produzione o mercati), i consorzi (organizzazioni comuni per svolgere alcune fasi delle imprese, art. 2602) e i trust (imprese concorrenti sotto una direzione unica).</p>
+ <p><b>«Qual è la normativa antitrust in Italia?»</b> È la legge 287 del 1990: vieta le intese che limitano la concorrenza e l’abuso di posizione dominante e controlla le concentrazioni. La fa rispettare l’Autorità garante della concorrenza e del mercato.</p></div>`,
+ errori:['La <b>posizione dominante</b> non è vietata: è vietato l’<b>abuso</b>.','Il <b>consorzio</b> non è un cartello: si guarda se <b>limita la concorrenza</b>.','La legge antitrust è la <b>287 del 1990</b>; l’<b>art. 41</b> è della <b>Costituzione</b>.','L’<b>AGCM</b> è un’autorità <b>indipendente</b>, non una società.'],
+ orale:[
+  ['Quali sono le principali forme di accordo tra imprese: cartelli, consorzi, trust?','Il cartello è un accordo tra imprese concorrenti che invece di competere fissano i prezzi, limitano la produzione o si dividono i mercati. Il consorzio è un’organizzazione comune per svolgere alcune fasi delle imprese (art. 2602). Il trust unisce più imprese concorrenti sotto una direzione unica.'],
+  ['Qual è la normativa antitrust in Italia?','È la legge 287 del 1990. Vieta le intese restrittive della concorrenza e l’abuso di posizione dominante e prevede il controllo delle concentrazioni.'],
+  ['Che cos’è l’Autorità garante della concorrenza e del mercato?','È l’autorità indipendente istituita con la legge 287 del 1990. Ha sede a Roma ed è formata da un presidente e quattro componenti. Vigila su intese, abusi di posizione dominante e concentrazioni e può dare sanzioni fino al 10% del fatturato.']],
+ quiz:[
+  ['Che cos’è un cartello?','Un accordo tra imprese concorrenti',['Una società cooperativa','Un tipo di marchio'],'Fissano prezzi o dividono i mercati.'],
+  ['Qual è la legge antitrust italiana?','La legge 287 del 1990',['L’art. 41','L’art. 2598'],'Istituisce anche l’AGCM.'],
+  ['Che cosa è vietato secondo la legge 287?','L’abuso di posizione dominante',['Avere un’impresa','Avere clienti fedeli'],'La posizione dominante da sola non è vietata.'],
+  ['Che cos’è un consorzio?','Un’organizzazione comune di imprenditori',['Un tipo di cooperativa','Un cartello vietato'],'Art. 2602.'],
+  ['Chi vigila sulla concorrenza in Italia?','L’AGCM',['La Borsa','Il Comune'],'Autorità garante della concorrenza e del mercato.']]
+};
+
+const GLOSS=Object.keys(DEFS).flatMap(u=>DEFS[u]).filter((d,i,a)=>a.findIndex(x=>x[0]===d[0])===i);
+const FORMULARIO=`
+<div class="box blu"><h3>Le società</h3>${TAB(['Argomento','Da ricordare'],[
+ ['<b>Società</b>','contratto: due o più persone · conferiscono beni o servizi · attività economica in comune · dividere gli utili (art. 2247)'],
+ ['<b>Tipicità</b>','solo 6 tipi: ss, snc, sas (persone) · spa, sapa, srl (capitali)'],
+ ['<b>Società di persone</b>','contano i soci · autonomia imperfetta · niente personalità giuridica · snc: tutti solidali e illimitati · sas: accomandatari (amministrano, illimitati) e accomandanti (fino alla quota)'],
+ ['<b>Società di capitali</b>','conta il capitale · autonomia perfetta · personalità giuridica · spa e sapa azioni, srl quote · capitale minimo spa 50.000, srl 10.000 · sapa: accomandatari illimitati'],
+ ['<b>Trasferire la qualità di socio</b>','persone: di regola serve il consenso di tutti · capitali: di regola libera, ma lo statuto può limitare (gradimento)'],
+ ['<b>Cooperative</b>','scopo mutualistico (art. 2511) · capitale variabile · porta aperta · un socio, un voto · di regola 9 soci']])}</div>
+<div class="box ver"><h3>Responsabilità sociale e concorrenza</h3>${TAB(['Argomento','Da ricordare'],[
+ ['<b>Responsabilità sociale d’impresa</b>','attenzione volontaria dell’impresa a persone e ambiente · UE 2011: responsabilità per l’impatto sulla società'],
+ ['<b>Concorrenza</b>','gara tra imprese · art. 41 Costituzione: iniziativa economica libera, non contro l’utilità sociale · vantaggio per i consumatori: possono scegliere'],
+ ['<b>Concorrenza sleale</b>','art. 2598 c.c. · confusione (imitazione servile) · denigrazione · appropriazione di pregi · scorrettezza · vietata; si smette e, con dolo o colpa, si risarcisce']])}</div>
+<div class="box gia"><h3>Antitrust</h3>${TAB(['Argomento','Da ricordare'],[
+ ['<b>Cartello</b>','accordo tra concorrenti su prezzi, produzione, mercati · vietato se limita la concorrenza'],
+ ['<b>Consorzio</b>','organizzazione comune di imprenditori (art. 2602)'],
+ ['<b>Trust</b>','imprese concorrenti sotto una direzione unica (Standard Oil)'],
+ ['<b>Legge 287/1990</b>','vieta intese restrittive e abuso di posizione dominante · controlla le concentrazioni'],
+ ['<b>AGCM</b>','autorità indipendente · sede a Roma · presidente e 4 componenti · sanzioni fino al 10% del fatturato']])}</div>`;
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('dir3_societa_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('dir3_societa_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Domande orali (interrogazione)</h2><p>Queste sono le domande che può fare il professore nell\'interrogazione. Leggi la domanda e <b>prova a rispondere ad alta voce</b>, con parole tue. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  const N=Object.values(PROVA_PLAN).reduce((a,b)=>a+b,0);
+  el.innerHTML='<h2>Prova finale</h2><p>'+N+' esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        const n=list.length;
+        body.innerHTML=`<div class="box ${tot>=n-2?'ver':tot>=Math.round(n*0.6)?'gia':'ros'}"><h3>Risultato: ${tot} su ${n}</h3>${tot>=n-2?'Sei pronto per l\'interrogazione.':tot>=Math.round(n*0.6)?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Riepilogo</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u1": ["Una società nasce da un contratto tra due o più persone.", "Ognuno mette qualcosa: soldi, beni o il proprio lavoro. Si chiama conferimento.", "Insieme fanno un’attività e si dividono i guadagni, che si chiamano utili.", "I tipi di società sono solo sei: i soci non possono inventarne uno nuovo."], "u2": ["Nelle società di persone contano i soci: sono ss, snc e sas.", "Se la società non ha soldi per pagare i debiti, pagano i soci con i loro beni.", "Nella snc rispondono tutti i soci. Nella sas rispondono tutti gli accomandatari.", "Gli accomandanti rischiano solo i soldi che hanno messo."], "u3": ["Nelle società di capitali conta il capitale: sono spa, sapa e srl.", "I debiti li paga la società con i suoi soldi, non i soci con i loro.", "La spa ha le azioni. La srl ha le quote.", "Nella sapa gli accomandatari rispondono con i loro beni: è l’unica eccezione."], "u4": ["Persone: contano i soci e rispondono i soci.", "Capitali: conta il capitale e risponde la società.", "Nelle società di persone cambiare socio è difficile: serve il sì di tutti.", "Nelle società di capitali di solito si può vendere la propria parte, ma lo statuto può mettere dei limiti."], "u5": ["Le cooperative non servono a guadagnare: servono ad aiutare i soci.", "Danno ai soci cose, servizi o lavoro a condizioni migliori del mercato.", "Ogni socio ha un solo voto, qualunque sia la sua quota.", "Il capitale cambia quando i soci entrano o escono."], "u6": ["La responsabilità sociale è una scelta dell’impresa.", "L’impresa non pensa solo ai soldi: fa attenzione a lavoratori, clienti, comunità e ambiente.", "La Commissione europea la chiama: responsabilità delle imprese per il loro impatto sulla società."], "u7": ["La concorrenza è la gara tra imprese per vendere di più.", "L’articolo 41 della Costituzione dice che l’iniziativa economica è libera, ma non può andare contro l’utilità sociale.", "Il consumatore ha un vantaggio: può scegliere.", "La concorrenza sleale è una gara scorretta ed è vietata."], "u8": ["Le imprese possono mettersi d’accordo: cartelli, consorzi e trust.", "Un accordo che limita la concorrenza è vietato: la legge è la 287 del 1990.", "Avere una posizione dominante non è vietato: è vietato abusarne.", "Chi controlla è l’Autorità garante della concorrenza e del mercato."]}, "es": false, "steps": false, "pics": [{"k": "denaro", "re": "denaro|soldi", "id": 8506}, {"k": "banca", "re": "banca|banche|bancari|bancarie|bancaria", "id": 3062}, {"k": "negozio", "re": "negozio|negozi", "id": 35695}, {"k": "fabbrica", "re": "fabbrica|fabbriche|industria|industriale|industriali", "id": 24507}, {"k": "operaio", "re": "operaio|operai|lavoratori", "id": 20113}, {"k": "documento", "re": "documento|documenti|contratto", "id": 21802}, {"k": "lavoro", "re": "lavoro", "id": 16087}, {"k": "agricoltura", "re": "agricoltura|agricola|agricole|agricolo", "id": 38079}, {"k": "bilancia", "re": "bilancia", "id": 2659}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  /* testo con parti in inglese: ogni parte con la sua voce */
+  function segs(el,dl){
+    var out=[],buf='';
+    function flush(){var t=say(buf);if(t.length>1)out.push({t:t,l:dl});buf=''}
+    (function walk(n){
+      if(n.nodeType===3){buf+=n.nodeValue;return}
+      if(n.nodeType!==1)return;
+      if(n.classList&&n.classList.contains('a11y-ui'))return;
+      var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return;
+      if(n.getAttribute('lang')==='en'){flush();var t=say(nodeText(n));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      if(n.classList.contains('fr')||tg==='SUP'){buf+=nodeText(n);return}
+      n.childNodes.forEach(walk);
+    })(el);
+    flush();return out;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    var out=[];
+    els.forEach(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      if(e.closest('[lang="en"]')){var t=say(nodeText(e));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      segs(e,es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    return out;
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=c.l==='en-GB'?0.8:0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     (CFG.steps?'<div class="step"><b class="n">★</b><div>Gli <b>esempi svolti</b> si aprono <b>un passo alla volta</b>: tocca <b>▶ Prossimo passo</b> e leggi con calma. Se preferisci vedere tutto, tocca <b>Mostra tutto</b>.</div></div>':'')+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)segs(qt,'it-IT').forEach(function(c){out.push(c)});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'.',l:'it-IT'});
+      segs(sp||o,CFG.es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  /* ===== ESEMPI SVOLTI UN PASSO ALLA VOLTA ===== */
+  if(CFG.steps&&location.hash!=='#stampa'){
+    var stOn=true;try{stOn=localStorage.getItem('a11y_steps')!=='0'}catch(e){}
+    var st4=document.createElement('style');
+    st4.textContent='section.tab .box.bia [hidden]{display:none!important}'+
+     '.a11y-newstep{background:#fff8dc;border-left:6px solid #d1b24a;padding:4px 8px;border-radius:6px}'+
+     '.a11y-stepper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 2px}'+
+     '.a11y-sc{font-weight:bold;font-size:.95rem;color:#22314d}'+
+     '.a11y-stepper .a11y-btn{margin:0}'+
+     '@media print{.a11y-stepper{display:none!important}section.tab .box.bia [hidden]{display:revert!important}.a11y-newstep{background:none;border:0;padding:0}}';
+    document.head.appendChild(st4);
+    var stGroups=[];
+    document.querySelectorAll('section.tab .stat .box.bia').forEach(function(box){
+      var h=box.querySelector(':scope>h3');if(!h||!/^Esempio/i.test(h.textContent))return;
+      var kids=[].slice.call(box.children).filter(function(c){return c!==h});
+      if(kids.length<3)return;
+      var isNum=function(e){return /^\s*\d+\./.test(e.textContent)};
+      var rest=kids.slice(1),groups=[];
+      if(rest.some(isNum)){
+        var started=false;
+        rest.forEach(function(e){
+          if(isNum(e)){groups.push([e]);started=true}
+          else if(started)groups[groups.length-1].push(e);
+        });
+      }else{rest.forEach(function(e){groups.push([e])})}
+      if(groups.length<2)return;
+      var idx=0,bx=mk('div','a11y-ui a11y-stepper'),go=mk('button','a11y-btn',null),all=mk('button','a11y-btn',null),cnt=mk('span','a11y-sc',null);
+      go.type='button';all.type='button';all.textContent='Mostra tutto';
+      bx.appendChild(go);bx.appendChild(cnt);bx.appendChild(all);box.appendChild(bx);
+      function paint(){
+        groups.forEach(function(g,i){g.forEach(function(e){e.hidden=stOn&&i>=idx;e.classList.toggle('a11y-newstep',stOn&&idx>0&&i===idx-1&&idx<groups.length+1)})});
+        bx.style.display=stOn?'':'none';
+        cnt.textContent='Passo '+idx+' di '+groups.length;
+        go.textContent=idx===0?'▶ Mostrami il primo passo':idx<groups.length?'▶ Prossimo passo':'↺ Ricomincia';
+        all.hidden=idx>=groups.length;
+      }
+      go.addEventListener('click',function(){
+        if(idx>=groups.length)idx=0;else idx++;
+        paint();
+        var t=idx>0?groups[idx-1][0]:box;try{t.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+      });
+      all.addEventListener('click',function(){idx=groups.length;paint()});
+      stGroups.push({paint:paint,reset:function(){idx=0}});
+      paint();
+    });
+    if(stGroups.length){
+      var sb=mk('button','a11y-btn a11y-ui',null);sb.type='button';
+      var paintSb=function(){sb.textContent='👣 Esempi un passo alla volta: '+(stOn?'SÌ':'NO');sb.classList.toggle('on',stOn);sb.setAttribute('aria-pressed',stOn?'true':'false')};
+      sb.addEventListener('click',function(){stOn=!stOn;try{localStorage.setItem('a11y_steps',stOn?'1':'0')}catch(e){};stGroups.forEach(function(g){g.reset();g.paint()});paintSb()});
+      paintSb();bar.appendChild(sb);
+    }
+  }
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261112134224",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
