@@ -97,7 +97,7 @@ body.print #u1{break-before:auto}
 <li>Non serve approfondire scomposizioni difficili né la parabola.</li></ul><p class="note">Il <b>grafico dei segni</b> per le disequazioni fratte e i <b>disegni dei sistemi</b> (parabola e retta) sono in più: aiutano a capire e a svolgere gli esercizi come in classe.</p></div>
 <div class="box blu"><h3>I passi di ogni unità</h3>
 <div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
-<div class="step"><b class="n">2</b><div><b>Ricetta</b>: i passaggi da fare, sempre uguali, come una ricetta di cucina.</div></div>
+<div class="step"><b class="n">2</b><div><b>Metodo</b>: i passaggi da fare, sempre uguali.</div></div>
 <div class="step"><b class="n">3</b><div><b>Esempi svolti</b>: ogni passaggio è spiegato. Poi rifalli a penna su un foglio senza guardare.</div></div>
 <div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni. Sono quelli che fanno perdere punti.</div></div>
 <div class="step"><b class="n">5</b><div><b>Allenati</b>: esercizi sempre nuovi. Fai i calcoli <b>su un foglio</b>, poi scegli la risposta. Se sbagli leggi i passaggi. Obiettivo: <b>4 giuste di fila</b>.</div></div>
@@ -971,7 +971,7 @@ u1:{
   card('ver','B · Equazione con le frazioni (numeri sotto)',stepsHtml([
    'Guarda tutti i denominatori (i numeri sotto le frazioni) e trova il <b>m.c.m.</b> Esempio: denominatori 4 e 6 → m.c.m. = 12.',
    '<b>Moltiplica TUTTI i termini</b> per il m.c.m., anche quelli senza frazione e quello dopo l\'uguale. Così le frazioni spariscono.',
-   'Ora hai un\'equazione senza frazioni: risolvi come la ricetta A (parentesi, x a sinistra, dividi).'])),
+   'Ora hai un\'equazione senza frazioni: risolvi come il metodo A (parentesi, x a sinistra, dividi).'])),
   card('gia','C · Equazione fratta (la x è nel denominatore)',
    `<p>Qui c'è una x sotto la frazione, per esempio ${F(4,'x − 1')}. Attenzione: <b>non si può dividere per zero</b>.</p>`+
    stepsHtml([
@@ -1279,7 +1279,7 @@ function theoryQuiz(cont,items){
   let i=0,s=0,order=shuffle(items);
   function draw(){
     if(i>=order.length){
-      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi il metodo e riprova.'}</div><button class="big">Ricomincia</button>`;
       cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
     }
     cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
@@ -1297,7 +1297,7 @@ function buildUnit(u){
   const c=CONT[u];
   const el=$('#'+u);
   el.innerHTML=`<h2>${UNITS[u]}</h2>
-  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. Il metodo</h3>${c.ricette.join('')}
   <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
   <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
   <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
@@ -1837,7 +1837,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 </script><!--/A11Y--><!--AGG--><script>
 (function(){
- var B="20261113094654",t0=Date.now(),touched=false,last=0;
+ var B="20261113103424",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;

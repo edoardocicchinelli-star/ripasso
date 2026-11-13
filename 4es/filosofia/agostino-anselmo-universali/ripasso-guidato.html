@@ -93,7 +93,7 @@ body.print #u1{break-before:auto}
 <p class="note">Le parti segnate <b>“in più”</b> vanno oltre le mappe del libro: studiale solo se le chiede l'insegnante.</p></div>
 <div class="box blu"><h3>I passi di ogni unità</h3>
 <div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
-<div class="step"><b class="n">2</b><div><b>Ricetta</b>: lo schema della mappa, passo per passo.</div></div>
+<div class="step"><b class="n">2</b><div><b>Schema</b>: i punti della mappa, passo per passo.</div></div>
 <div class="step"><b class="n">3</b><div><b>Come si risponde</b>: esempi di risposta da ripetere a voce.</div></div>
 <div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni.</div></div>
 <div class="step"><b class="n">5</b><div><b>Allenati</b>: domande sempre nuove. Rispondi, poi leggi la spiegazione. Obiettivo: <b>4 giuste di fila</b>.</div></div>
@@ -533,7 +533,7 @@ function theoryQuiz(cont,items){
   let i=0,s=0,order=shuffle(items);
   function draw(){
     if(i>=order.length){
-      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi la ricetta e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi lo schema e riprova.'}</div><button class="big">Ricomincia</button>`;
       cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
     }
     cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
@@ -551,7 +551,7 @@ function buildUnit(u){
   const c=CONT[u];
   const el=$('#'+u);
   el.innerHTML=`<h2>${UNITS[u]}</h2>
-  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. La ricetta</h3>${c.ricette.join('')}
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. Lo schema</h3>${c.ricette.join('')}
   <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
   <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
   <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
@@ -1052,7 +1052,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 </script><!--/A11Y--><!--AGG--><script>
 (function(){
- var B="20261113094654",t0=Date.now(),touched=false,last=0;
+ var B="20261113103424",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;
