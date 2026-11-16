@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fisica: calore, stati della materia e gas perfetto</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.sgf{display:block;width:100%;max-width:420px;height:auto;margin:8px 0}
+sub{font-size:.75em}
+ol{padding-left:22px;margin:.3em 0}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Fisica</a></p><h1>Fisica: calore, stati della materia e gas perfetto</h1><p>Interrogazione · un passo alla volta</p><p class="voto" style="font-weight:bold;opacity:1">Per chi ha 2 voti orali: è la 2ª</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u0">0 Da sapere</button>
+<button data-t="u1">1 Propagazione del calore</button>
+<button data-t="u2">2 Cambiamenti di stato</button>
+<button data-t="u3">3 Fusione</button>
+<button data-t="u4">4 Vaporizzazione</button>
+<button data-t="u5">5 Gas perfetto</button>
+<button data-t="u6">6 Trasformazioni</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come ti prepari all’interrogazione</h2>
+<div class="box gia"><h3>Gli argomenti</h3><p><b>1. Il calore</b>: propagazione (conduzione, convezione, irraggiamento) con le leggi di Fourier e di Stefan-Boltzmann.</p><p><b>2. I cambiamenti di stato</b>: i sei passaggi, fusione e solidificazione, vaporizzazione e condensazione, con i calori latenti.</p><p><b>3. Il gas perfetto</b>: mole, equazione di stato, trasformazioni isobara, isocora, isoterma (Gay-Lussac e Boyle).</p></div>
+<p>All'interrogazione si deve saper <b>dire</b> la teoria con parole proprie e saper usare le <b>formule</b>. Per questo qui trovi, per ogni argomento, le <b>domande dell'orale con la risposta modello</b> e gli <b>esercizi di calcolo</b> con i passaggi.</p>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Schema</b>: definizioni, formule e unità di misura.</div></div>
+<div class="step"><b class="n">3</b><div><b>Esempi svolti</b>: ogni passaggio è spiegato.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni, quelli che si notano all'orale.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: esercizi sempre nuovi. Fai i calcoli <b>su un foglio</b>. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz di teoria</b>: poche domande sulle definizioni.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (6 giorni)</h3><ul><li><b>Giorno 1</b>: unità 0 e 1 (calcoli di base, propagazione del calore)</li><li><b>Giorno 2</b>: unità 2 (cambiamenti di stato)</li><li><b>Giorno 3</b>: unità 3 e 4 (fusione e vaporizzazione)</li><li><b>Giorno 4</b>: unità 5 (gas perfetto)</li><li><b>Giorno 5</b>: unità 6 (trasformazioni del gas)</li><li><b>Giorno 6</b>: Prova finale, <b>Orale</b> a voce alta e Formulario</li></ul></div>
+<div class="box gia"><h3>Come rispondere all'orale: la scaletta</h3><ol><li><b>Definizione</b>: che cos'è, con parole tue.</li><li><b>Formula</b>: scrivila e dì che cosa vuol dire ogni lettera.</li><li><b>Unità di misura</b> di ogni grandezza.</li><li><b>Un esempio</b> pratico o un piccolo calcolo.</li></ol></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Ripeti le risposte dell'<b>Orale</b> <b>a voce alta</b>, come se parlassi al professore.</li><li>Scrivi <b>sempre l'unità di misura</b> dopo il numero.</li><li>La temperatura nelle formule va <b>in kelvin</b>: T = t + 273.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li><li>Prima dell'interrogazione leggi il <b>Formulario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u0"></section><section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section><section class="tab" id="u5"></section><section class="tab" id="u6"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== UTILITÀ (fisica) ========== */
+const MIN='−';
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+const SUPD={'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻'};
+const sup=n=>String(n).split('').map(c=>SUPD[c]).join('');
+const p10=n=>'10'+sup(n);
+const sh=(a,k)=>Number((a*Math.pow(10,k)).toFixed(9));
+/* numero in formato italiano: virgola decimale, punto per le migliaia (da 4 cifre) */
+function it(x){
+  let s=Number(x).toFixed(9).replace(/0+$/,'').replace(/\.$/,'');
+  let neg=s[0]==='-';if(neg)s=s.slice(1);
+  let [i,f]=s.split('.');
+  if(i.length>=4)i=i.replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  return (neg?MIN:'')+i+(f?','+f:'');
+}
+/* legge un numero scritto con it() (per i controlli) */
+function unit_(s){return parseFloat(String(s).replace(/\./g,'').replace(',','.').replace(MIN,'-'))}
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,ok,tag)=>({q,...mkOpts(correct,wrongs),steps,ok,tag});
+const near=(a,b)=>Math.abs(a-b)<=1e-9*Math.max(1,Math.abs(a),Math.abs(b));
+
+/* ========== ESERCIZI: FLUIDI, TEMPERATURA E CALORE ========== */
+const G=9.81,P0=101000;
+const U=(x,u)=>`${it(x)} ${u}`;
+const okW=v=>{if(!isFinite(v)||v<=0||v>2e7)return false;const t=Number(v).toFixed(9).replace(/0+$/,'');const f=t.split('.')[1]||'';return f.length<=7};
+const wd=(arr,u)=>arr.filter(okW).map(v=>U(v,u));
+
+/* ---------- Unità 0: da sapere prima ---------- */
+function exConv(){
+  const T=[
+   {f:'cm²',t:'m²',k:-4,why:'1 cm = 10⁻² m, quindi 1 cm² = (10⁻²)² m² = 10⁻⁴ m²: moltiplico per 10⁻⁴ (virgola a sinistra di 4 posti).'},
+   {f:'m²',t:'cm²',k:4,why:'1 m = 100 cm, quindi 1 m² = 100 · 100 cm² = 10⁴ cm²: moltiplico per 10⁴ (virgola a destra di 4 posti).'},
+   {f:'L',t:'m³',k:-3,why:'1 m³ = 1.000 L, quindi 1 L = 10⁻³ m³: moltiplico per 10⁻³.'},
+   {f:'cm³',t:'m³',k:-6,why:'1 cm = 10⁻² m, quindi 1 cm³ = (10⁻²)³ m³ = 10⁻⁶ m³: moltiplico per 10⁻⁶.'},
+   {f:'g',t:'kg',k:-3,why:'1 g = 10⁻³ kg: moltiplico per 10⁻³.'},
+   {f:'kg',t:'g',k:3,why:'1 kg = 1.000 g: moltiplico per 10³.'},
+   {f:'cm',t:'m',k:-2,why:'1 cm = 10⁻² m: moltiplico per 10⁻².'},
+   {f:'min',t:'s',m:60,why:'1 min = 60 s: moltiplico per 60.'},
+   {f:'h',t:'s',m:3600,why:'1 h = 60 min = 3.600 s: moltiplico per 3.600.'}
+  ];
+  const c=pick(T),a=pick([1,2,5,10,50,100,250,500,0.5,2.5,4,20]);
+  const res=c.m?a*c.m:sh(a,c.k);
+  const w=c.m?[a/c.m,a*c.m*10,a*c.m/10]:[sh(a,-c.k),sh(a,c.k+1),sh(a,c.k-1)];
+  return mkEx(`Converti <b>${it(a)} ${c.f}</b> in ${c.t}`,U(res,c.t),wd(w,c.t),`<p>${c.why}</p><p class="m">${it(a)} ${c.f} = <b>${U(res,c.t)}</b></p>`,()=>true,'Conversioni di unità');
+}
+function exPotDec(){
+  const a=pick([1.01,1.36,2.5,3,4.2,7.8,9.81,1.2]),n=pick([3,4,5,6,-1,-2,-3]),v=sh(a,n);
+  const un=pick(['Pa','m³','J','kg']);
+  return mkEx(`Scrivi come numero decimale: <b>${it(a)} × ${p10(n)} ${un}</b>`,U(v,un),wd([sh(a,-n),sh(a,n+1),sh(a,n-1),sh(a,n+2),sh(a,n-2)],un),
+   `<p>Esponente ${n>0?'positivo':'negativo'} (${n<0?MIN+(-n):n}): sposto la virgola a ${n>0?'destra':'sinistra'} di ${Math.abs(n)} ${Math.abs(n)===1?'posto':'posti'}.</p><p class="m">${it(a)} × ${p10(n)} ${un} = <b>${U(v,un)}</b></p>`,()=>true,'Potenze di 10');
+}
+function exProp(){
+  const C=[['la <b>forza raddoppia</b> (l\'area resta uguale)','raddoppia','F'],['l\'<b>area raddoppia</b> (la forza resta uguale)','si dimezza','S'],['la <b>forza triplica</b> (l\'area resta uguale)','triplica','F'],['l\'<b>area si dimezza</b> (la forza resta uguale)','raddoppia','S']];
+  const [t,corr]=pick(C);
+  return mkEx(`Nella formula p = F : S, se ${t}, la pressione...`,corr,['raddoppia','si dimezza','triplica','resta uguale'].filter(x=>x!==corr),
+   `<p>La pressione è <b>direttamente proporzionale alla forza</b> (se la forza cresce, cresce anche p) e <b>inversamente proporzionale all'area</b> (se l'area cresce, p diminuisce).</p><p class="m">p = ${F('F','S')}</p><p>Qui la pressione <b>${corr}</b>.</p>`,()=>true,'Proporzionalità');
+}
+
+
+
+/* ========== GENERATORI: CALORE, STATI DELLA MATERIA, GAS PERFETTO ========== */
+const SIGMA=5.67,KB=1.38,NAV=6.022,RG=8.31,LFA=334000,LVA=2258000;
+const tg=(tag,pairs)=>()=>{const p=pick(pairs);return mkEx(`<b>${p[0]}</b>`,p[1],p[3],`<p>${p[2]}</p><p>Risposta: <b>${p[1]}</b>.</p>`,()=>true,tag)};
+const ev=(x)=>Number(Number(x).toFixed(9));
+const wdl=(arr,u,c)=>[...new Set([...arr,...(c!=null?[c*2,c/2,c*10,c/10,c*3,c/3]:[])].map(ev))].filter(v=>okW(v)&&(c==null||ev(v)!==ev(c))).map(v=>U(v,u));
+
+/* ---------- Unità 1: propagazione del calore ---------- */
+function exFourier(){
+  const k=pick([0.2,50,400]),A=pick([0.01,0.02,0.05]),dT=pick([10,20,50]),t=pick([10,20,60,100]),L=pick([0.1,0.2,0.5,1]);
+  const Q=ev(k*A*dT*t/L),kind=pick(['Q','Q','P']);
+  const given=`k = ${it(k)} W/(m·K), A = ${it(A)} m², L = ${it(L)} m, ΔT = ${it(dT)} K`;
+  if(kind==='Q')return mkEx(`Una sbarra ha ${given}. Quanto calore passa in <b>${it(t)} s</b>?`,U(Q,'J'),wdl([Q*10,Q/10,k*A*dT*t*L,k*dT*t/L],'J',Q),
+   `<p>Legge di Fourier: <b>Q = k · A · ${F('ΔT','L')} · t</b>.</p><p class="m">Q = ${it(k)} · ${it(A)} · ${F(it(dT),it(L))} · ${it(t)} = <b>${U(Q,'J')}</b></p>`,()=>true,'Legge di Fourier');
+  const P=ev(k*A*dT/L);
+  return mkEx(`Una sbarra ha ${given}. Quanta <b>potenza termica</b> (calore al secondo) passa attraverso la sbarra?`,U(P,'W'),wdl([P*10,P/10,k*A*dT*L,P*t],'W',P),
+   `<p>La potenza è il calore diviso il tempo: <b>${F('Q','t')} = k · A · ${F('ΔT','L')}</b>.</p><p class="m">${F('Q','t')} = ${it(k)} · ${it(A)} · ${F(it(dT),it(L))} = <b>${U(P,'W')}</b></p>`,()=>true,'Legge di Fourier');
+}
+function exStefan(){
+  const e=pick([1,0.5,0.8]),A=pick([0.5,1,2]),T=pick([300,400,500,1000]);
+  const P=ev(e*SIGMA*1e-8*A*Math.pow(T,4));
+  const Tc=T-273;
+  const kind=pick(['K','K','C']);
+  const w=[ev(e*SIGMA*1e-8*A*T),P*10,P/10,ev(e*SIGMA*1e-8*A*Math.pow(Tc,4))];
+  if(kind==='K')return mkEx(`Un corpo con emissività <b>e = ${it(e)}</b> e superficie <b>A = ${it(A)} m²</b> ha temperatura <b>T = ${it(T)} K</b>. Quanta potenza irradia? (σ = 5,67 × 10⁻⁸ W/(m²·K⁴))`,U(P,'W'),wdl(w,'W',P),
+   `<p>Legge di Stefan-Boltzmann: <b>P = e · σ · A · T⁴</b>.</p><p class="m">P = ${it(e)} · 5,67 × 10⁻⁸ · ${it(A)} · ${it(T)}⁴ = <b>${U(P,'W')}</b></p><p class="note">T è già in kelvin: va elevata alla <b>quarta</b> potenza.</p>`,()=>true,'Legge di Stefan-Boltzmann');
+  return mkEx(`Un corpo con <b>e = ${it(e)}</b> e <b>A = ${it(A)} m²</b> è a <b>${it(Tc)} °C</b>. Quanta potenza irradia? (σ = 5,67 × 10⁻⁸ W/(m²·K⁴))`,U(P,'W'),wdl([ev(e*SIGMA*1e-8*A*Math.pow(Tc,4)),ev(e*SIGMA*1e-8*A*T),P*10,P/10],'W',P),
+   `<p>La temperatura va in <b>kelvin</b>: <span class="m">T = ${it(Tc)} + 273 = ${it(T)} K</span>.</p><p>Poi <b>P = e · σ · A · T⁴</b>.</p><p class="m">P = ${it(e)} · 5,67 × 10⁻⁸ · ${it(A)} · ${it(T)}⁴ = <b>${U(P,'W')}</b></p>`,()=>true,'Legge di Stefan-Boltzmann');
+}
+function exStefanRatio(){
+  const [f,r]=pick([[2,16],[3,81],[0.5,0.0625]]);
+  const word=f===2?'raddoppia':f===3?'triplica':'si dimezza';
+  const res=f===2?'16 volte più grande':f===3?'81 volte più grande':'16 volte più piccola';
+  const all=['16 volte più grande','81 volte più grande','16 volte più piccola','2 volte più grande','4 volte più grande','2 volte più piccola'];
+  return mkEx(`Se la temperatura (in kelvin) di un corpo <b>${word}</b>, la potenza irradiata diventa…`,res,all.filter(x=>x!==res).slice(0,3),
+   `<p>La potenza dipende da <b>T⁴</b>. Se T ${word}, T⁴ cambia di ${f===0.5?'(½)⁴ = 1/16':f+'⁴ = '+Math.pow(f,4)}.</p><p>La potenza diventa <b>${res}</b>.</p>`,()=>true,'Legge di Stefan-Boltzmann');
+}
+const exProp1=tg('Propagazione del calore',[
+ ['Come si propaga il calore nei solidi?','Per conduzione','Senza trasporto di materia.',['Per convezione','Per irraggiamento']],
+ ['Come si propaga il calore nei liquidi e nei gas?','Per convezione','Trasporto di energia e di materia.',['Per conduzione','Per irraggiamento']],
+ ['Come si trasmette l’energia attraverso il vuoto?','Per irraggiamento','Con radiazioni elettromagnetiche.',['Per conduzione','Per convezione']],
+ ['Che cosa misura la conducibilità termica k?','Quanto bene un materiale conduce il calore','Dipende dal materiale.',['La temperatura del materiale','Il peso del materiale']],
+ ['Quale materiale è un buon conduttore termico?','Un metallo','k molto grande.',['Il legno','L’aria secca']],
+ ['Quale materiale è un isolante termico?','Il legno','k piccolo.',['Il rame','L’alluminio']],
+ ['Perché nei fluidi si formano le correnti convettive?','Il fluido caldo è meno denso e sale','Principio di Archimede.',['Il fluido caldo è più denso e scende','Perché il fluido si ferma']],
+ ['Che cosa vale l’emissività e di un corpo nero?','1','Radiatore perfetto.',['0','0,5']],
+ ['Che cosa vale e per un corpo riflettente ideale?','0','Non assorbe né emette.',['1','10']],
+ ['Da che cosa dipende la potenza irradiata P?','Da A e dalla quarta potenza di T','P = e σ A T⁴.',['Solo da A','Da T alla prima potenza']],
+ ['Nella conduzione, se la sbarra è più lunga, Q…','diminuisce','L è al denominatore.',['aumenta','resta uguale']],
+ ['In quale unità si misura la costante σ?','W/(m²·K⁴)','Stefan-Boltzmann.',['W/(m·K)','J/kg']]]);
+
+/* ---------- Unità 2: cambiamenti di stato ---------- */
+const exStati=tg('Cambiamenti di stato',[
+ ['Come si chiama il passaggio da solido a liquido?','Fusione','Assorbe energia.',['Solidificazione','Condensazione']],
+ ['Come si chiama il passaggio da liquido a solido?','Solidificazione','Rilascia energia.',['Fusione','Brinamento']],
+ ['Come si chiama il passaggio da liquido ad aeriforme?','Vaporizzazione','Assorbe energia.',['Condensazione','Brinamento']],
+ ['Come si chiama il passaggio da aeriforme a liquido?','Condensazione','Rilascia energia.',['Vaporizzazione','Sublimazione']],
+ ['Come si chiama il passaggio da solido ad aeriforme?','Sublimazione','Assorbe energia.',['Brinamento','Fusione']],
+ ['Come si chiama il passaggio da aeriforme a solido?','Brinamento','Rilascia energia.',['Sublimazione','Solidificazione']],
+ ['Quale passaggio assorbe energia?','La fusione','Aumenta l’energia interna.',['La solidificazione','La condensazione']],
+ ['Quale passaggio rilascia energia?','La condensazione','Diminuisce l’energia interna.',['La fusione','La sublimazione']],
+ ['Che cosa succede all’energia interna nella solidificazione?','Diminuisce','Rilascio di energia.',['Aumenta','Resta uguale']],
+ ['In quale stato si trova soprattutto l’acqua sulla Terra?','Liquido','Temperatura tra fusione ed ebollizione.',['Solido','Aeriforme']],
+ ['In quale stato si trova il metano sulla Terra (bolle a −161 °C)?','Aeriforme','Bolle a bassissima temperatura.',['Liquido','Solido']],
+ ['Come si chiama lo stato della materia nelle stelle?','Plasma','Elettroni liberi e ioni positivi.',['Solido','Liquido']],
+ ['Che cosa contiene il plasma?','Elettroni liberi e ioni positivi','Atomi che hanno perso elettroni.',['Solo molecole d’acqua','Solo atomi neutri']]]);
+
+/* ---------- Unità 3: fusione e solidificazione ---------- */
+function exFusione(){
+  const m=pick([0.1,0.2,0.5,1,2,3]),Q=ev(LFA*m),kind=pick(['Q','Q','m','neg']);
+  if(kind==='Q')return mkEx(`Quanto calore serve per fondere <b>${it(m)} kg</b> di ghiaccio a 0 °C? (L<sub>f</sub> = 334 × 10³ J/kg)`,U(Q,'J'),wdl([Q*10,Q/10,LFA/m,Q*m],'J',Q),
+   `<p>La fusione: <b>Q<sub>f</sub> = L<sub>f</sub> · m</b>.</p><p class="m">Q<sub>f</sub> = ${it(LFA)} J/kg · ${it(m)} kg = <b>${U(Q,'J')}</b></p>`,()=>true,'Calore di fusione');
+  if(kind==='m')return mkEx(`Quanta massa di ghiaccio a 0 °C si fonde con <b>${it(Q)} J</b>? (L<sub>f</sub> = 334 × 10³ J/kg)`,U(m,'kg'),wdl([Q*LFA,m*10,m/10,LFA/Q],'kg',m),
+   `<p>Da Q<sub>f</sub> = L<sub>f</sub> · m si ricava <b>m = ${F('Q<sub>f</sub>','L<sub>f</sub>')}</b>.</p><p class="m">m = ${F(it(Q)+' J',it(LFA)+' J/kg')} = <b>${U(m,'kg')}</b></p>`,()=>true,'Calore di fusione');
+  return mkEx(`<b>${it(m)} kg</b> di acqua a 0 °C diventano ghiaccio. Quanto vale il calore scambiato Q<sub>s</sub>? (L<sub>f</sub> = 334 × 10³ J/kg)`,`${MIN}${it(Q)} J`,[U(Q,'J'),`${MIN}${it(Q/10)} J`],
+   `<p>Solidificazione: <b>Q<sub>s</sub> = −Q<sub>f</sub> = −L<sub>f</sub> · m</b>. Il calore viene <b>ceduto</b>, quindi è <b>negativo</b>.</p><p class="m">Q<sub>s</sub> = −${it(LFA)} · ${it(m)} = <b>${MIN}${it(Q)} J</b></p>`,()=>true,'Solidificazione');
+}
+const exFusT=tg('Leggi della fusione',[
+ ['Che cosa succede alla temperatura durante la fusione?','Resta costante','Il calore trasforma il solido in liquido.',['Aumenta','Diminuisce']],
+ ['Come si chiama la curva della temperatura di un solido scaldato a ritmo costante?','Curva di riscaldamento','Ha un tratto orizzontale.',['Curva di raffreddamento','Curva di Boyle']],
+ ['A che temperatura fonde lo stagno (secondo la dispensa)?','232 °C','Tratto orizzontale del grafico.',['100 °C','2.602 °C']],
+ ['Che cosa indica il tratto orizzontale nella curva di riscaldamento?','La fusione in corso','Solido + liquido.',['Il solido che si scalda','Il liquido che si scalda']],
+ ['Come si chiama il grafico della temperatura di un liquido che solidifica?','Curva di raffreddamento','Curva di riscaldamento all’indietro.',['Isoterma','Curva di Fourier']],
+ ['Che relazione c’è tra temperatura di solidificazione e di fusione?','Sono uguali','A pressione fissata.',['La solidificazione è più alta','La fusione è più alta']],
+ ['In quale unità si misura il calore latente di fusione?','J/kg','Calore per kg.',['J','kg']],
+ ['Il calore per fondere una massa m è…','proporzionale a m','Q = L m.',['inversamente proporzionale a m','indipendente da m']],
+ ['Quanto vale L<sub>f</sub> per l’acqua?','334 × 10³ J/kg','A pressione atmosferica.',['2,258 × 10⁶ J/kg','4.186 J/kg']],
+ ['Come sono il calore assorbito in fusione e quello ceduto in solidificazione?','Uguali in valore assoluto','Q<sub>s</sub> = −Q<sub>f</sub>.',['Diversi','Sempre nulli']]]);
+
+/* ---------- Unità 4: vaporizzazione e condensazione ---------- */
+function exVapore(){
+  const m=pick([0.1,0.2,0.5,1,2]),Q=ev(LVA*m),kind=pick(['Q','Q','m','neg']);
+  if(kind==='Q')return mkEx(`Quanto calore serve per vaporizzare <b>${it(m)} kg</b> di acqua a 100 °C? (L<sub>v</sub> = 2,258 × 10⁶ J/kg)`,U(Q,'J'),wdl([Q*10,Q/10,LVA/m,ev(LFA*m)],'J',Q),
+   `<p>La vaporizzazione: <b>Q<sub>v</sub> = L<sub>v</sub> · m</b>.</p><p class="m">Q<sub>v</sub> = ${it(LVA)} J/kg · ${it(m)} kg = <b>${U(Q,'J')}</b></p>`,()=>true,'Calore di vaporizzazione');
+  if(kind==='m')return mkEx(`Con <b>${it(Q)} J</b> quanta acqua a 100 °C si vaporizza? (L<sub>v</sub> = 2,258 × 10⁶ J/kg)`,U(m,'kg'),wdl([Q*LVA,m*10,m/10,LVA/Q],'kg',m),
+   `<p>Da Q<sub>v</sub> = L<sub>v</sub> · m si ricava <b>m = ${F('Q<sub>v</sub>','L<sub>v</sub>')}</b>.</p><p class="m">m = ${F(it(Q)+' J',it(LVA)+' J/kg')} = <b>${U(m,'kg')}</b></p>`,()=>true,'Calore di vaporizzazione');
+  return mkEx(`<b>${it(m)} kg</b> di vapore acqueo a 100 °C condensano. Quanto vale il calore scambiato Q<sub>c</sub>? (L<sub>v</sub> = 2,258 × 10⁶ J/kg)`,`${MIN}${it(Q)} J`,[U(Q,'J'),`${MIN}${it(Q/10)} J`],
+   `<p>Condensazione: <b>Q<sub>c</sub> = −Q<sub>v</sub> = −L<sub>v</sub> · m</b>. Il vapore <b>cede</b> energia all’ambiente, quindi Q è <b>negativo</b>.</p><p class="m">Q<sub>c</sub> = −${it(LVA)} · ${it(m)} = <b>${MIN}${it(Q)} J</b></p>`,()=>true,'Condensazione');
+}
+const exVapT=tg('Ebollizione e condensazione',[
+ ['Quale processo interessa tutto il volume del liquido ed è tumultuoso?','L’ebollizione','Bolle in tutto il liquido.',['L’evaporazione','La sublimazione']],
+ ['Quale processo è lento e avviene solo sulla superficie?','L’evaporazione','Anche sotto la temperatura di ebollizione.',['L’ebollizione','La fusione']],
+ ['Che cosa fa asciugare le pozzanghere e i panni stesi?','L’evaporazione','Vaporizzazione di un liquido che non bolle.',['L’ebollizione','La condensazione']],
+ ['Che cosa appanna gli occhiali davanti a una zuppa calda?','La condensazione','Il vapore diventa gocce.',['L’evaporazione','La fusione']],
+ ['Che cosa succede alla temperatura durante l’ebollizione?','Resta costante','L’energia allontana le molecole.',['Aumenta','Diminuisce']],
+ ['A che temperatura bolle lo stagno (secondo la dispensa)?','2.602 °C','Tratto orizzontale del grafico.',['232 °C','100 °C']],
+ ['Su che cosa viene spesa l’energia durante l’ebollizione?','Sulle forze di coesione tra le molecole','Aumenta l’energia potenziale.',['Sull’energia cinetica media','Sulla massa']],
+ ['Quanto vale L<sub>v</sub> per l’acqua?','2,258 × 10⁶ J/kg','A pressione atmosferica.',['334 × 10³ J/kg','4.186 J/kg']],
+ ['Quanto è maggiore L<sub>v</sub> di L<sub>f</sub> per l’acqua?','Quasi 7 volte','2.258 diviso 334 ≈ 6,8.',['Quasi 2 volte','Quasi 70 volte']],
+ ['Quando un liquido a contatto con l’aria bolle?','Quando la pressione di vapore saturo uguaglia la pressione atmosferica','Bollicine che possono crescere.',['Quando arriva a 100 °C sempre','Quando evapora']],
+ ['A che temperatura bolle l’acqua al livello del mare (101 kPa)?','100 °C','Pressione di vapore saturo = 101 kPa.',['0 °C','232 °C']],
+ ['Che segno ha il calore scambiato nella condensazione?','Negativo (ceduto)','Q<sub>c</sub> = −L<sub>v</sub> m.',['Positivo (assorbito)','Sempre nullo']]]);
+
+/* ---------- Unità 5: gas perfetto ---------- */
+function exMoli(){
+  const n=pick([0.5,1,2,3,4]),N=ev(n*NAV),kind=pick(['N','N','n']);
+  const fmt=x=>`${it(ev(x))} × 10²³`;
+  if(kind==='N')return mkEx(`Quante molecole ci sono in <b>${it(n)} mol</b> di gas? (N<sub>A</sub> = 6,022 × 10²³ mol⁻¹)`,fmt(N),[fmt(NAV/n),fmt(N*10),fmt(N/10)].filter(x=>x!==fmt(N)),
+   `<p>Il numero di molecole: <b>N = n · N<sub>A</sub></b>.</p><p class="m">N = ${it(n)} · 6,022 × 10²³ = <b>${fmt(N)}</b></p>`,()=>true,'Mole e numero di Avogadro');
+  return mkEx(`Un gas contiene <b>${fmt(N)}</b> molecole. Quante moli sono? (N<sub>A</sub> = 6,022 × 10²³ mol⁻¹)`,U(n,'mol'),wdl([n*10,n/10,n*2],'mol',n),
+   `<p>Da N = n · N<sub>A</sub> si ricava <b>n = ${F('N','N<sub>A</sub>')}</b>.</p><p class="m">n = ${F(fmt(N),'6,022 × 10²³')} = <b>${U(n,'mol')}</b></p>`,()=>true,'Mole e numero di Avogadro');
+}
+function exStatoGas(){
+  const n=pick([1,2,3]),T=pick([200,300,400,500]),V=pick([0.01,0.02,0.05,0.1,0.2]);
+  const kind=pick(['p','p','V','T','Tc']);
+  const p=ev(n*RG*T/V);
+  if(kind==='p')return mkEx(`Un gas ideale di <b>${it(n)} mol</b> è a <b>${it(T)} K</b> in un volume di <b>${it(V)} m³</b>. Quanto vale la pressione? (R = 8,31 J/(mol·K))`,U(p,'Pa'),wdl([ev(n*RG*V/T),p*10,p/10,ev(n*T/V)],'Pa',p),
+   `<p>Equazione di stato: <b>pV = nRT</b>, quindi <b>p = ${F('n · R · T','V')}</b>.</p><p class="m">p = ${F(it(n)+' · 8,31 · '+it(T),it(V))} = ${F(it(ev(n*RG*T)),it(V))} = <b>${U(p,'Pa')}</b></p>`,()=>true,'pV = nRT');
+  if(kind==='V')return mkEx(`Un gas ideale di <b>${it(n)} mol</b> a <b>${it(T)} K</b> ha pressione <b>${it(p)} Pa</b>. Quanto vale il volume? (R = 8,31 J/(mol·K))`,U(V,'m³'),wdl([ev(n*RG*p/T),V*10,V/10,ev(p/(n*RG*T))],'m³',V),
+   `<p>Da pV = nRT si ricava <b>V = ${F('n · R · T','p')}</b>.</p><p class="m">V = ${F(it(n)+' · 8,31 · '+it(T),it(p))} = ${F(it(ev(n*RG*T)),it(p))} = <b>${U(V,'m³')}</b></p>`,()=>true,'pV = nRT');
+  if(kind==='T')return mkEx(`Un gas ideale di <b>${it(n)} mol</b> occupa <b>${it(V)} m³</b> alla pressione di <b>${it(p)} Pa</b>. Qual è la temperatura? (R = 8,31 J/(mol·K))`,U(T,'K'),wdl([ev(p*V*n*RG),T*10,T/10,ev(p*V/RG)],'K',T),
+   `<p>Da pV = nRT si ricava <b>T = ${F('p · V','n · R')}</b>.</p><p class="m">T = ${F(it(p)+' · '+it(V),it(n)+' · 8,31')} = ${F(it(ev(p*V)),it(ev(n*RG)))} = <b>${U(T,'K')}</b></p>`,()=>true,'pV = nRT');
+  const tc=T-273;
+  return mkEx(`Un gas ideale di <b>${it(n)} mol</b> è a <b>${it(tc)} °C</b> in <b>${it(V)} m³</b>. Quanto vale la pressione? (R = 8,31 J/(mol·K))`,U(p,'Pa'),wdl([ev(n*RG*tc/V),p*10,p/10,ev(n*RG*(tc+373)/V)],'Pa',p),
+   `<p>Prima porto la temperatura in kelvin: <span class="m">T = ${it(tc)} + 273 = ${it(T)} K</span>.</p><p>Poi <b>p = ${F('n · R · T','V')}</b>.</p><p class="m">p = ${F(it(n)+' · 8,31 · '+it(T),it(V))} = <b>${U(p,'Pa')}</b></p>`,()=>true,'pV = nRT');
+}
+const exGasT=tg('Gas ideale e mole',[
+ ['Che cos’è il gas ideale?','Un modello di gas in cui l’interazione tra le molecole si trascura','Modello semplificato.',['Un gas che non esiste','Un liquido molto caldo']],
+ ['Che cos’è una mole?','La quantità di sostanza con tante molecole quanti sono gli atomi in 12 g di carbonio-12','Numero di Avogadro.',['La massa di un atomo','Un’unità di pressione']],
+ ['Quanto vale il numero di Avogadro?','6,022 × 10²³ mol⁻¹','Molecole in una mole.',['1,38 × 10⁻²³ J/K','8,31 J/(mol·K)']],
+ ['Quanto vale la costante di Boltzmann k?','1,38 × 10⁻²³ J/K','Costante dei gas per molecola.',['6,022 × 10²³ mol⁻¹','8,31 J/(mol·K)']],
+ ['Quanto vale la costante universale dei gas R?','8,31 J/(mol·K)','R = N<sub>A</sub> · k.',['1,38 × 10⁻²³ J/K','6,022 × 10²³ mol⁻¹']],
+ ['Come si ottiene R?','R = N<sub>A</sub> · k','Prodotto delle due costanti.',['R = N<sub>A</sub> / k','R = k / N<sub>A</sub>']],
+ ['Qual è l’equazione di stato del gas ideale?','pV = nRT','Pressione per volume.',['pV = nR/T','p = nRTV']],
+ ['Qual è la pressione di N molecole di gas ideale?','p = k N T / V','Con la costante di Boltzmann.',['p = k N V / T','p = N / (k T V)']],
+ ['In quale unità va la temperatura in pV = nRT?','kelvin','T = t + 273.',['gradi Celsius','joule']],
+ ['Che cos’è un elemento?','Una sostanza che non si può scomporre in sostanze più semplici','Per esempio elio, mercurio, rame.',['Un insieme di molecole','Una miscela di gas']],
+ ['Che cos’è un composto?','Una sostanza fatta di atomi di più elementi','Per esempio acqua, metano.',['Un atomo','Una sostanza semplice']],
+ ['Con quante molecole è una mole di qualsiasi sostanza?','Con 6,022 × 10²³ molecole','Cambia solo la massa.',['Con 12 molecole','Con 1,38 × 10⁻²³ molecole']]]);
+
+/* ---------- Unità 6: trasformazioni dei gas ---------- */
+function exBoyle(){
+  const p1=pick([50,100,150,200]),V1=pick([2,3,4,6]),V2=pick([1,2,3,4,6,8,12]);
+  if(V1===V2)return exBoyle();
+  const p2=ev(p1*V1/V2),kind=pick(['p','p','V']);
+  if(!okW(p2))return exBoyle();
+  if(kind==='p')return mkEx(`Un gas a temperatura costante ha <b>${it(p1)} kPa</b> e <b>${it(V1)} L</b>. Il volume diventa <b>${it(V2)} L</b>. Quanto vale la nuova pressione?`,U(p2,'kPa'),wdl([ev(p1*V2/V1),ev(p1+V1-V2),ev(p1*V1*V2)],'kPa',p2),
+   `<p>Isoterma: legge di Boyle <b>p · V = p<sub>i</sub> · V<sub>i</sub></b>, quindi <b>p<sub>2</sub> = ${F('p<sub>1</sub> · V<sub>1</sub>','V<sub>2</sub>')}</b>.</p><p class="m">p<sub>2</sub> = ${F(it(p1)+' · '+it(V1),it(V2))} = <b>${U(p2,'kPa')}</b></p><p class="note">Se il volume diminuisce, la pressione aumenta.</p>`,()=>true,'Legge di Boyle');
+  return mkEx(`Un gas a temperatura costante ha <b>${it(p1)} kPa</b> e <b>${it(V1)} L</b>. La pressione diventa <b>${it(p2)} kPa</b>. Quanto vale il nuovo volume?`,U(V2,'L'),wdl([ev(p1*p2/V1),ev(V1*p2/p1),V1+p2-p1],'L',V2),
+   `<p>Boyle: <b>p<sub>1</sub> · V<sub>1</sub> = p<sub>2</sub> · V<sub>2</sub></b>, quindi <b>V<sub>2</sub> = ${F('p<sub>1</sub> · V<sub>1</sub>','p<sub>2</sub>')}</b>.</p><p class="m">V<sub>2</sub> = ${F(it(p1)+' · '+it(V1),it(p2))} = <b>${U(V2,'L')}</b></p>`,()=>true,'Legge di Boyle');
+}
+function exGayLussac(){
+  const T1=pick([200,300,400]),T2=pick([100,150,300,450,600]);
+  if(T1===T2)return exGayLussac();
+  const X1=pick([2,3,4,6]),X2=ev(X1*T2/T1),iso=pick(['V','p']);
+  if(!okW(X2))return exGayLussac();
+  const useC=Math.random()<0.4&&T1>273;
+  const nm=iso==='V'?'volume':'pressione',un=iso==='V'?'L':'kPa';
+  const t1c=T1-273,t2c=T2-273;
+  const txt=useC?`temperatura iniziale <b>${it(t1c)} °C</b>, finale <b>${it(t2c)} °C</b>`:`temperatura iniziale <b>${it(T1)} K</b>, finale <b>${it(T2)} K</b>`;
+  const tr=iso==='V'?'a <b>pressione costante</b> (isobara)':'a <b>volume costante</b> (isocora)';
+  const leg=iso==='V'?'prima legge di Gay-Lussac':'seconda legge di Gay-Lussac';
+  const step=(useC?`<p>Prima porto le temperature in kelvin: <span class="m">${it(t1c)} + 273 = ${it(T1)} K</span> e <span class="m">${it(t2c)} + 273 = ${it(T2)} K</span>.</p>`:'');
+  const wrongs=useC?[ev(X1*t2c/t1c),ev(X1*T1/T2),ev(X1+T2-T1)]:[ev(X1*T1/T2),ev(X1+T2-T1),ev(X1*T2)];
+  return mkEx(`Un gas ${tr} ha ${nm} iniziale <b>${it(X1)} ${un}</b>, ${txt}. Quanto vale ${iso==='V'?'il volume':'la pressione'} finale?`,U(X2,un),wdl(wrongs,un,X2),
+   `<p>${leg[0].toUpperCase()+leg.slice(1)}: ${iso==='V'?'V':'p'} e T (in <b>kelvin</b>) sono direttamente proporzionali: <b>${F(iso+'<sub>1</sub>','T<sub>1</sub>')} = ${F(iso+'<sub>2</sub>','T<sub>2</sub>')}</b>.</p>${step}<p class="m">${iso}<sub>2</sub> = ${iso}<sub>1</sub> · ${F('T<sub>2</sub>','T<sub>1</sub>')} = ${it(X1)} · ${F(it(T2),it(T1))} = <b>${U(X2,un)}</b></p>`,()=>true,leg[0].toUpperCase()+leg.slice(1));
+}
+const exTrasfT=tg('Trasformazioni dei gas',[
+ ['Quale grandezza resta costante in una trasformazione isobara?','La pressione','Iso-bara.',['Il volume','La temperatura']],
+ ['Quale grandezza resta costante in una trasformazione isocora?','Il volume','Iso-cora.',['La pressione','La temperatura']],
+ ['Quale grandezza resta costante in una trasformazione isoterma?','La temperatura','Iso-terma.',['La pressione','Il volume']],
+ ['Quale legge descrive la trasformazione isobara?','La prima legge di Gay-Lussac','V proporzionale a T.',['La legge di Boyle','La seconda legge di Gay-Lussac']],
+ ['Quale legge descrive la trasformazione isocora?','La seconda legge di Gay-Lussac','p proporzionale a T.',['La legge di Boyle','La prima legge di Gay-Lussac']],
+ ['Quale legge descrive la trasformazione isoterma?','La legge di Boyle','p V = costante.',['La prima legge di Gay-Lussac','La seconda legge di Gay-Lussac']],
+ ['Un gas riscaldato a pressione costante…','si dilata','Il volume aumenta.',['si contrae','resta uguale']],
+ ['Un gas scaldato a volume costante…','aumenta di pressione','p e T direttamente proporzionali.',['diminuisce di pressione','resta alla stessa pressione']],
+ ['In Boyle pressione e volume sono…','inversamente proporzionali','Se uno sale, l’altro scende.',['direttamente proporzionali','indipendenti']],
+ ['Come si chiama il grafico p-V di una isoterma?','Ramo di iperbole equilatera','Isoterma del gas perfetto.',['Una retta','Una parabola']],
+ ['Che cosa fa da termostato in una isoterma?','L’acqua in cui è immerso il cilindro','Contrasta le variazioni di temperatura.',['I pesetti','Il manometro']],
+ ['Per applicare Gay-Lussac la temperatura va in…','kelvin','T = t + 273.',['gradi Celsius','joule']]]);
+
+const GENS={
+  u0:[exConv,exConv,exPotDec,exProp],
+  u1:[exFourier,exStefan,exStefanRatio,exProp1,exProp1],
+  u2:[exStati,exStati,exStati],
+  u3:[exFusione,exFusione,exFusT,exFusT],
+  u4:[exVapore,exVapore,exVapT,exVapT],
+  u5:[exMoli,exStatoGas,exStatoGas,exGasT,exGasT],
+  u6:[exBoyle,exGayLussac,exGayLussac,exTrasfT,exTrasfT]
+};
+const UNITS={u0:'0 · Da sapere prima',u1:'1 · La propagazione del calore',u2:'2 · I cambiamenti di stato',u3:'3 · Fusione e solidificazione',u4:'4 · Vaporizzazione e condensazione',u5:'5 · Il gas perfetto',u6:'6 · Le trasformazioni di un gas'};
+const PROVA_PLAN={u0:1,u1:3,u2:2,u3:2,u4:2,u5:3,u6:3};
+
+/* ========== CONTENUTI FISSI (Fisica 4 ES: fluidi, temperatura e calore) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const M=t=>`<span class="m">${t}</span>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const SC=`<div class="box gia"><h3>Come rispondere all'orale: la scaletta</h3><ol><li><b>Definizione</b>: che cos'è, con parole tue.</li><li><b>Formula</b>: scrivila e dì che cosa vuol dire ogni lettera.</li><li><b>Unità di misura</b> di ogni grandezza.</li><li><b>Un esempio</b> pratico o un piccolo calcolo.</li></ol></div>`;
+
+
+const CONT={
+u0:{
+ cose:`<div class="box bia"><p>In questa parte di fisica si fanno molti <b>calcoli con le formule</b>. Prima di cominciare ripassiamo quattro cose che servono sempre: le <b>conversioni di unità</b>, le <b>potenze di 10</b>, le <b>formule inverse</b> e la <b>proporzionalità</b> (diretta e inversa).</p></div>`,
+ ricette:[
+  card('blu','1 · Conversioni di unità',TAB(['Da','A','Come'],[['cm²','m²','× 10⁻⁴'],['cm³','m³','× 10⁻⁶'],['L','m³','× 10⁻³'],['g','kg','× 10⁻³'],['min','s','× 60'],['h','s','× 3.600']])+'<p class="note">Prima di usare una formula porta sempre le misure alle unità del SI (m, kg, s, K).</p>'),
+  card('ver','2 · Potenze di 10',stepsHtml(['Esponente <b>positivo</b>: la virgola si sposta a <b>destra</b>. 1,01 × 10⁵ = 101.000.','Esponente <b>negativo</b>: la virgola si sposta a <b>sinistra</b>. 4 × 10⁻² = 0,04.','Esempio della fisica: la pressione atmosferica è p₀ = 1,01 × 10⁵ Pa = <b>101.000 Pa</b>.'])),
+  card('gia','3 · Formule inverse',
+   '<p>Da una formula si ricavano le altre. Esempio: p = '+F('F','S')+'.</p><p class="m">F = p · S &nbsp;&nbsp; S = '+F('F','p')+'</p><p>Regola: <b>quello che moltiplica passa dividendo</b> dall\'altra parte, e viceversa.</p>'),
+  card('ros','4 · Proporzionalità',
+   '<p><b>Diretta</b>: se una grandezza raddoppia, anche l\'altra raddoppia (Q e ΔT; F e p).</p><p><b>Inversa</b>: se una raddoppia, l\'altra si dimezza (p e S, a F fissata).</p>'),
+ ],
+ esempio:`<div class="box bia"><h3>Esempi</h3><p>Converti 5.000 cm² in m²: 5.000 × 10⁻⁴ = <b>0,5 m²</b>.</p><p>Converti 20 L in m³: 20 × 10⁻³ = <b>0,02 m³</b>.</p><p>Da Q = c · m · ΔT: ΔT = ${F('Q','c · m')}.</p><p>Se la forza raddoppia (S uguale), la pressione <b>raddoppia</b>.</p></div>`,
+ errori:['Dimentichi di convertire le unità prima di calcolare (cm² invece di m²).','Sposti la virgola dalla parte sbagliata con l\'esponente negativo.','Nella formula inversa scambi moltiplicazione e divisione.'],
+ orale:[],
+ quiz:[
+  ['1 cm² in m² vale...','10⁻⁴ m²',['10⁻² m²','10² m²','10⁴ m²'],'Una lunghezza si converte con 10⁻², l\'area con (10⁻²)² = 10⁻⁴.'],
+  ['1,01 × 10⁵ Pa è uguale a...','101.000 Pa',['10.100 Pa','1.010 Pa','1.010.000 Pa'],'Esponente 5: la virgola va a destra di 5 posti.'],
+  ['Da p = F/S si ricava...',`F = p · S`,[`F = ${F('p','S')}`,`F = ${F('S','p')}`,'F = p + S'],'Quello che divide passa moltiplicando.'],
+ ]
+},
+u1:{
+ cose:`<div class="box bia"><p>Quando due corpi (o due parti dello stesso corpo) hanno <b>temperature diverse</b>, l’<b>energia</b> si trasmette dal più caldo al più freddo. La propagazione del calore avviene in <b>tre modi</b>: per <b>conduzione</b> (nei solidi), per <b>convezione</b> (nei fluidi), per <b>irraggiamento</b> (attraverso il vuoto).</p></div>`,
+ ricette:[
+  card('blu','A · Conduzione (nei solidi)',
+   '<p>Il calore passa da un punto all’altro <b>senza trasporto di materia</b>. Si studia con una <b>sbarra</b> di lunghezza <b>L</b> e sezione di area <b>A</b>, con gli estremi a temperature diverse. Il calore <b>Q</b> che passa:</p><ul><li><b>aumenta</b> con l’area <b>A</b>;</li><li><b>aumenta</b> con la differenza di temperatura <b>ΔT</b>;</li><li><b>aumenta</b> con il tempo <b>t</b>;</li><li><b>diminuisce</b> con la lunghezza <b>L</b>.</li></ul><p><b>Legge di Fourier</b>:</p><p class="m">Q = k · A · '+F('ΔT','L')+' · t</p><p><b>k</b> = conducibilità termica, in <b>W/(m·K)</b>: dipende dal <b>materiale</b>.</p>'),
+  card('ver','B · Conduttori e isolanti',
+   '<p>I <b>metalli</b> hanno k molto grande: sono <b>buoni conduttori termici</b>. Il <b>legno</b> e l’<b>aria secca</b> hanno k piccolo: sono <b>isolanti termici</b>.</p>'),
+  card('gia','C · Convezione (nei fluidi)',
+   '<p>Nei <b>liquidi</b> e nei <b>gas</b> il calore si trasmette con <b>trasporto di energia e di materia</b>. Si formano le <b>correnti convettive</b>, conseguenza del <b>principio di Archimede</b>: la parte di fluido più <b>calda</b> è <b>meno densa</b>, quindi <b>sale</b>; quella più fredda scende. Esempi: l’acqua in una pentola, l’aria sopra un calorifero.</p>'),
+  card('ros','D · Irraggiamento (attraverso il vuoto)',
+   '<p>Tutti i corpi <b>emettono</b> e <b>assorbono</b> <b>radiazioni elettromagnetiche</b> (onde fatte di campi elettrici e magnetici). La <b>potenza irradiata P</b> è proporzionale alla superficie <b>A</b> e alla <b>quarta potenza</b> della temperatura <b>T</b> in <b>kelvin</b>. <b>Legge di Stefan-Boltzmann</b>:</p><p class="m">P = e · σ · A · T⁴</p><p><b>e</b> = emissività (tra 0 e 1): corpo nero e = 1 (radiatore perfetto); corpo riflettente ideale e = 0. <b>σ</b> = 5,67 × 10⁻⁸ W/(m²·K⁴).</p>')
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · Fourier</h3><p>Sbarra con k = 400 W/(m·K), A = 0,01 m², L = 0,5 m, ΔT = 50 K, t = 10 s:</p><p class="m">Q = 400 · 0,01 · ${F('50','0,5')} · 10 = 400 · 0,01 · 100 · 10 = <b>4.000 J</b></p></div>
+ <div class="box bia"><h3>Esempio 2 · Stefan-Boltzmann</h3><p>Corpo nero (e = 1), A = 1 m², T = 300 K:</p><p class="m">P = 1 · 5,67 × 10⁻⁸ · 1 · 300⁴ = 5,67 × 10⁻⁸ · 8,1 × 10⁹ = <b>459,27 W</b></p></div>
+ <div class="box bia"><h3>Esempio 3 · T⁴</h3><p>Se la temperatura (in kelvin) <b>raddoppia</b>, la potenza irradiata diventa 2⁴ = <b>16 volte</b> più grande.</p></div>`,
+ errori:['Nella legge di Stefan-Boltzmann la temperatura va in <b>kelvin</b>, non in gradi Celsius.','La potenza dipende da <b>T⁴</b>, non da T.','Nella conduzione Q <b>diminuisce</b> se la sbarra è più lunga (L al denominatore).','La convezione c’è solo nei <b>fluidi</b>; la conduzione nei <b>solidi</b>; l’irraggiamento anche nel <b>vuoto</b>.'],
+ orale:[
+  ['In quali modi si propaga il calore?','Il calore si propaga in tre modi: per conduzione nei solidi, per convezione nei fluidi e per irraggiamento attraverso il vuoto.'],
+  ['Che cos’è la conduzione? Scrivi la legge di Fourier.','La conduzione è la propagazione dell’energia nei solidi per passaggio di calore, senza trasporto di materia. La legge di Fourier dice che Q è uguale a k per A per delta T diviso L per t. Il calore aumenta con l’area, con la differenza di temperatura e con il tempo, e diminuisce con la lunghezza della sbarra. La costante k è la conducibilità termica e si misura in watt su metro per kelvin.'],
+  ['Che differenza c’è tra conduttori e isolanti termici?','I metalli hanno una conducibilità k molto grande e sono buoni conduttori. Il legno e l’aria secca hanno k piccolo e sono isolanti termici.'],
+  ['Che cos’è la convezione?','È il trasferimento di energia e di materia che avviene nei liquidi e nei gas per differenze di temperatura. Per il principio di Archimede la parte di fluido più calda è meno densa e sale: si formano le correnti convettive.'],
+  ['Che cos’è l’irraggiamento? Scrivi la legge di Stefan-Boltzmann.','È la trasmissione di energia attraverso il vuoto mediante radiazioni elettromagnetiche. La potenza irradiata è P uguale e sigma A T alla quarta, con T in kelvin. L’emissività e vale 1 per il corpo nero e 0 per un corpo riflettente ideale; sigma è la costante di Stefan-Boltzmann, 5,67 per 10 alla meno 8 watt su metro quadro per kelvin alla quarta.']],
+ quiz:[
+  ['Come si propaga il calore nei solidi?','Per conduzione',['Per convezione','Per irraggiamento'],'Senza trasporto di materia.'],
+  ['Come si propaga il calore nei fluidi?','Per convezione',['Per conduzione','Per fusione'],'Correnti convettive.'],
+  ['Come passa l’energia attraverso il vuoto?','Per irraggiamento',['Per conduzione','Per convezione'],'Radiazioni elettromagnetiche.'],
+  ['In quale unità si misura la conducibilità termica k?','W/(m·K)',['J/kg','Pa'],'Watt su metro per kelvin.'],
+  ['Nella legge di Stefan-Boltzmann la temperatura va in…','kelvin',['gradi Celsius','joule'],'E compare alla quarta potenza.']]
+},
+u2:{
+ cose:`<div class="box bia"><p>Un corpo può essere <b>solido</b>, <b>liquido</b> o <b>aeriforme</b>. Il passaggio da uno stato all’altro è un <b>cambiamento di stato</b>. Alcuni passaggi <b>assorbono</b> energia (aumenta l’energia interna), altri la <b>rilasciano</b> (diminuisce).</p></div>`,
+ ricette:[
+  card('blu','A · I sei passaggi di stato',TAB(['Passaggio','Da → a','Energia'],[['<b>fusione</b>','solido → liquido','assorbita'],['<b>vaporizzazione</b>','liquido → aeriforme','assorbita'],['<b>sublimazione</b>','solido → aeriforme','assorbita'],['<b>solidificazione</b>','liquido → solido','rilasciata'],['<b>condensazione</b>','aeriforme → liquido','rilasciata'],['<b>brinamento</b>','aeriforme → solido','rilasciata']])),
+  card('ver','B · Assorbimento e rilascio',stepsHtml(['<b>Fusione, vaporizzazione, sublimazione</b>: <b>assorbono</b> energia (l’energia interna <b>aumenta</b>).','<b>Solidificazione, condensazione, brinamento</b> (le trasformazioni inverse): <b>rilasciano</b> energia (l’energia interna <b>diminuisce</b>).'])),
+  card('gia','C · Stati della materia e temperatura',stepsHtml(['Sulla Terra la temperatura media è <b>maggiore</b> di quella di fusione dell’acqua e <b>minore</b> di quella di ebollizione: l’acqua è soprattutto <b>liquida</b> (ma c’è anche nei ghiacciai e nell’atmosfera come vapore).','Il <b>metano</b> bolle a <b>−161 °C</b>: sulla Terra è presente solo <b>aeriforme</b>.','Nelle <b>stelle</b> (temperature di migliaia di kelvin) la materia è in uno stato diverso: il <b>plasma</b>, con <b>elettroni liberi</b> e <b>ioni positivi</b> (atomi che hanno perso elettroni).']))
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · quale passaggio?</h3><p>Il ghiaccio diventa acqua: da solido a liquido, è la <b>fusione</b>. L’energia viene <b>assorbita</b>.</p></div>
+ <div class="box bia"><h3>Esempio 2 · quale passaggio?</h3><p>Il vapore sugli occhiali diventa gocce: da aeriforme a liquido, è la <b>condensazione</b>. L’energia viene <b>rilasciata</b>.</p></div>`,
+ errori:['<b>Sublimazione</b> = da solido ad aeriforme; <b>brinamento</b> = da aeriforme a solido (non il contrario).','La <b>fusione</b> assorbe energia; la <b>solidificazione</b> la rilascia.','Il <b>plasma</b> non è un gas qualunque: contiene elettroni liberi e ioni positivi.','Il metano sulla Terra è solo <b>aeriforme</b> (bolle a −161 °C).'],
+ orale:[
+  ['Quali sono i cambiamenti di stato?','Sono sei: fusione (da solido a liquido), vaporizzazione (da liquido ad aeriforme), sublimazione (da solido ad aeriforme) e i passaggi inversi: solidificazione, condensazione e brinamento (da aeriforme a solido).'],
+  ['Quali passaggi assorbono energia e quali la rilasciano?','Fusione, vaporizzazione e sublimazione avvengono per assorbimento di energia: l’energia interna aumenta. Le trasformazioni inverse, solidificazione, condensazione e brinamento, rilasciano energia: l’energia interna diminuisce.'],
+  ['Che cos’è il plasma?','È lo stato della materia che si trova nelle stelle, dove la temperatura è di migliaia di kelvin. Contiene elettroni liberi e ioni positivi, cioè atomi che hanno perso elettroni e hanno carica elettrica positiva.']],
+ quiz:[
+  ['Come si chiama il passaggio da solido a liquido?','Fusione',['Condensazione','Brinamento'],'Assorbe energia.'],
+  ['Come si chiama il passaggio da aeriforme a liquido?','Condensazione',['Vaporizzazione','Sublimazione'],'Rilascia energia.'],
+  ['Come si chiama il passaggio da aeriforme a solido?','Brinamento',['Sublimazione','Fusione'],'Inverso della sublimazione.'],
+  ['Quale passaggio avviene per assorbimento di energia?','La vaporizzazione',['La condensazione','La solidificazione'],'Aumenta l’energia interna.'],
+  ['In che stato è la materia nelle stelle?','Plasma',['Solido','Liquido'],'Elettroni liberi e ioni positivi.']]
+},
+u3:{
+ cose:`<div class="box bia"><p>Quando si <b>scalda</b> un solido, a un certo punto <b>fonde</b>. Durante tutta la fusione la <b>temperatura resta costante</b>: il calore serve a trasformare il solido in liquido. Il calore necessario è <b>proporzionale alla massa</b>: <b>Q<sub>f</sub> = L<sub>f</sub> · m</b>.</p></div>`,
+ ricette:[
+  card('blu','A · La curva di riscaldamento',stepsHtml(['Scaldo dello <b>stagno</b> a ritmo costante e registro la <b>temperatura in funzione del tempo</b>: ottengo una spezzata, la <b>curva di riscaldamento</b>.','Il tratto <b>obliquo</b> (solido che si scalda): la temperatura sale.','Il tratto <b>orizzontale</b>: lo stagno <b>fonde</b> a <b>232 °C</b>. Il calore fa aumentare la parte liquida, ma la temperatura <b>non cambia</b>.','Quando è tutto liquido, la temperatura riprende a salire.'])),
+  card('ver','B · Le leggi della fusione',stepsHtml(['A pressione fissata, una sostanza fonde a una <b>temperatura di fusione</b> precisa, caratteristica della sostanza.','Durante la fusione la <b>temperatura resta costante</b>.','Se la sostanza è già alla temperatura di fusione, il calore per fondere una massa <b>m</b> è <b>proporzionale a m</b>.'])),
+  card('gia','C · La formula',
+   '<p class="m">Q<sub>f</sub> = L<sub>f</sub> · m</p><p><b>Q<sub>f</sub></b> = calore di fusione (<b>J</b>) · <b>L<sub>f</sub></b> = calore latente di fusione (<b>J/kg</b>) · <b>m</b> = massa (<b>kg</b>).</p><p>Per l’<b>acqua</b> (a pressione atmosferica): <b>L<sub>f</sub> = 334 × 10³ J/kg</b>. Formula inversa: m = '+F('Q<sub>f</sub>','L<sub>f</sub>')+'.</p>'),
+  card('ros','D · La solidificazione',stepsHtml(['La <b>curva di raffreddamento</b> è la curva di riscaldamento percorsa all’<b>indietro</b>.','La temperatura di <b>solidificazione</b> è <b>uguale</b> alla temperatura di fusione.','Il calore <b>assorbito</b> in fusione è uguale al calore <b>ceduto</b> in solidificazione: <b>Q<sub>s</sub> = −Q<sub>f</sub> = −L<sub>f</sub> · m</b>.']))
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · fusione del ghiaccio</h3><p>Quanto calore serve per fondere 2 kg di ghiaccio a 0 °C? (L<sub>f</sub> = 334 × 10³ J/kg)</p><p class="m">Q<sub>f</sub> = 334.000 · 2 = <b>668.000 J</b></p></div>
+ <div class="box bia"><h3>Esempio 2 · solidificazione</h3><p>2 kg di acqua a 0 °C diventano ghiaccio: il calore è negativo (ceduto).</p><p class="m">Q<sub>s</sub> = −334.000 · 2 = <b>−668.000 J</b></p></div>
+ <div class="box bia"><h3>Esempio 3 · la massa</h3><p>Con 167.000 J quanta massa di ghiaccio fonde?</p><p class="m">m = ${F('167.000 J','334.000 J/kg')} = <b>0,5 kg</b></p></div>`,
+ errori:['Durante la fusione la temperatura <b>non aumenta</b>: resta costante.','Il calore latente si misura in <b>J/kg</b>, non in J.','La solidificazione ha calore <b>negativo</b> (ceduto): Q<sub>s</sub> = −L<sub>f</sub> m.','Lo stagno fonde a <b>232 °C</b>, bolle a <b>2.602 °C</b>: non confonderli.'],
+ orale:[
+  ['Che cos’è la curva di riscaldamento?','È il grafico della temperatura in funzione del tempo di una sostanza scaldata a ritmo costante. Per lo stagno ha un tratto orizzontale a 232 gradi: lì lo stagno fonde e il calore fa aumentare la parte liquida senza far variare la temperatura.'],
+  ['Quali sono le leggi della fusione?','A pressione fissata una sostanza fonde a una temperatura determinata, caratteristica della sostanza. Durante la fusione la temperatura rimane costante. Se la sostanza è già alla temperatura di fusione, il calore Q f per fondere una massa m è direttamente proporzionale a m: Q f uguale L f per m.'],
+  ['Che cos’è il calore latente di fusione? Quanto vale per l’acqua?','È il calore che serve per fondere un chilogrammo di sostanza già alla temperatura di fusione. Si misura in joule su chilogrammo. Per l’acqua, a pressione atmosferica, vale 334 per 10 alla terza joule su chilogrammo.'],
+  ['Che cosa succede nella solidificazione?','La temperatura di solidificazione coincide con quella di fusione. Il calore assorbito in fusione è uguale a quello ceduto in solidificazione: Q s uguale meno Q f, cioè meno L f per m.']],
+ quiz:[
+  ['Durante la fusione la temperatura…','resta costante',['aumenta sempre','diminuisce'],'Il calore trasforma solido in liquido.'],
+  ['Qual è la formula del calore di fusione?','Q = L · m',['Q = L / m','Q = m / L'],'Proporzionale alla massa.'],
+  ['In quale unità si misura L<sub>f</sub>?','J/kg',['J','kg/J'],'Calore per kg.'],
+  ['A che temperatura fonde lo stagno (secondo la dispensa)?','232 °C',['100 °C','2.602 °C'],'Tratto orizzontale del grafico.'],
+  ['Il calore di solidificazione è…','negativo (ceduto)',['positivo (assorbito)','sempre nullo'],'Q<sub>s</sub> = −L<sub>f</sub> m.']]
+},
+u4:{
+ cose:`<div class="box bia"><p>I liquidi diventano <b>aeriformi</b> quando <b>bollono</b> (ebollizione) o più lentamente per <b>evaporazione</b>. Durante l’ebollizione la <b>temperatura resta costante</b> e il calore necessario è <b>proporzionale alla massa</b>: <b>Q<sub>v</sub> = L<sub>v</sub> · m</b>. Il passaggio inverso è la <b>condensazione</b>.</p></div>`,
+ ricette:[
+  card('blu','A · Ebollizione ed evaporazione',stepsHtml(['<b>Ebollizione</b>: processo <b>tumultuoso</b> che interessa <b>tutto il volume</b> del liquido.','<b>Evaporazione</b>: vaporizzazione di un liquido che non bolle, <b>più lenta</b>, solo sulla <b>superficie</b> (asciuga le pozzanghere e i panni).','<b>Condensazione</b>: il passaggio inverso (appanna gli occhiali davanti a una zuppa calda).'])),
+  card('ver','B · Le leggi della vaporizzazione',stepsHtml(['A pressione fissata un liquido bolle a una <b>temperatura di ebollizione</b> precisa, caratteristica della sostanza (lo stagno: <b>2.602 °C</b>).','Durante l’ebollizione la <b>temperatura rimane costante</b>.','Se la sostanza è già alla temperatura di ebollizione, il calore <b>Q<sub>v</sub></b> per vaporizzare una massa <b>m</b> è <b>proporzionale a m</b>.'])),
+  card('gia','C · La formula',
+   '<p class="m">Q<sub>v</sub> = L<sub>v</sub> · m</p><p><b>L<sub>v</sub></b> = calore latente di vaporizzazione (<b>J/kg</b>). Per l’<b>acqua</b>: <b>L<sub>v</sub> = 2,258 × 10⁶ J/kg</b>. Servono quasi <b>sette volte</b> più energia che per fondere la stessa massa di ghiaccio.</p><p>Condensazione: <b>Q<sub>c</sub> = −Q<sub>v</sub> = −L<sub>v</sub> · m</b>.</p>'),
+  card('ros','D · Perché la temperatura non sale',
+   '<p>Durante l’ebollizione l’energia assorbita serve a vincere le <b>forze di coesione</b> e ad <b>allontanare le molecole</b>: fa aumentare l’<b>energia potenziale</b>, ma <b>non</b> l’energia cinetica media (cioè la temperatura).</p>'),
+  card('blu','E · Il meccanismo dell’ebollizione',stepsHtml(['Nel liquido scaldato si formano <b>bollicine di vapore</b>, con pressione interna uguale alla <b>pressione di vapore saturo</b> a quella temperatura.','Finché la pressione interna è <b>minore</b> di quella esterna, le bollicine non possono crescere.','Un liquido a contatto con l’aria <b>bolle</b> quando la <b>pressione di vapore saturo è uguale alla pressione atmosferica</b>.','Esempio: al livello del mare (101 kPa) l’acqua bolle a <b>100 °C</b>.']))
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · vaporizzazione dell’acqua</h3><p>Quanto calore serve per vaporizzare 0,5 kg di acqua a 100 °C? (L<sub>v</sub> = 2,258 × 10⁶ J/kg)</p><p class="m">Q<sub>v</sub> = 2.258.000 · 0,5 = <b>1.129.000 J</b></p></div>
+ <div class="box bia"><h3>Esempio 2 · condensazione</h3><p>0,5 kg di vapore a 100 °C condensano:</p><p class="m">Q<sub>c</sub> = −2.258.000 · 0,5 = <b>−1.129.000 J</b> (ceduti all’ambiente)</p></div>
+ <div class="box bia"><h3>Esempio 3 · confronto con la fusione</h3><p class="m">${F('2.258','334')} ≈ <b>6,8</b>: quasi sette volte.</p></div>`,
+ errori:['<b>Evaporazione</b> (lenta, solo in superficie, anche sotto i 100 °C) e <b>ebollizione</b> (tumultuosa, in tutto il volume).','Durante l’ebollizione la temperatura <b>non sale</b>.','Il calore di condensazione è <b>negativo</b>: Q<sub>c</sub> = −L<sub>v</sub> m.','L<sub>v</sub> e L<sub>f</sub> non sono uguali: per l’acqua L<sub>v</sub> è quasi 7 volte L<sub>f</sub>.'],
+ orale:[
+  ['Che differenza c’è tra ebollizione ed evaporazione?','L’ebollizione è un processo tumultuoso che interessa tutto il volume del liquido. L’evaporazione è più lenta e avviene solo sulla superficie, anche a temperature inferiori a quella di ebollizione.'],
+  ['Quali sono le leggi della vaporizzazione?','A pressione fissata una sostanza liquida bolle a una temperatura determinata, caratteristica della sostanza. Durante l’ebollizione la temperatura rimane costante. Il calore Q v per vaporizzare una massa m, già alla temperatura di ebollizione, è proporzionale a m: Q v uguale L v per m.'],
+  ['Perché durante l’ebollizione la temperatura non aumenta?','Perché l’energia assorbita viene spesa contro le forze di coesione, per allontanare le molecole l’una dall’altra. Fa aumentare l’energia potenziale del sistema, ma non l’energia cinetica media di agitazione termica.'],
+  ['Che cos’è la condensazione?','È la trasformazione inversa della vaporizzazione. Il vapore che condensa cede energia all’ambiente: Q c uguale meno Q v, cioè meno L v per m.'],
+  ['Quando bolle un liquido?','Un liquido a contatto con l’aria bolle quando la pressione di vapore saturo diventa uguale alla pressione atmosferica. Al livello del mare la pressione è 101 chilopascal e l’acqua bolle a 100 gradi.']],
+ quiz:[
+  ['Quale processo è tumultuoso e interessa tutto il liquido?','L’ebollizione',['L’evaporazione','La sublimazione'],'Le bolle si formano ovunque.'],
+  ['Quale processo avviene solo in superficie?','L’evaporazione',['L’ebollizione','La fusione'],'Fa asciugare i panni.'],
+  ['Durante l’ebollizione la temperatura…','resta costante',['aumenta','diminuisce'],'L’energia allontana le molecole.'],
+  ['Quanto vale L<sub>v</sub> dell’acqua?','2,258 × 10⁶ J/kg',['334 × 10³ J/kg','4.186 J/kg'],'Quasi 7 volte L<sub>f</sub>.'],
+  ['Quando bolle un liquido?','Quando la pressione di vapore saturo è uguale alla pressione atmosferica',['Quando la temperatura è 100 °C sempre','Quando evapora'],'A 101 kPa l’acqua bolle a 100 °C.']]
+},
+u5:{
+ cose:`<div class="box bia"><p>La materia è fatta di <b>atomi</b>, che si aggregano in <b>molecole</b>. Per studiare i gas si usa un modello semplice, il <b>gas ideale</b> (o <b>perfetto</b>): le molecole interagiscono così poco che l’interazione si trascura. La sua <b>pressione</b> dipende da <b>temperatura</b>, <b>numero di molecole</b> e <b>volume</b>: <b>pV = nRT</b>.</p></div>`,
+ ricette:[
+  card('blu','A · Atomi, elementi, composti, molecole',stepsHtml(['La materia è fatta di <b>atomi</b>: in natura ce ne sono circa <b>novanta tipi</b> (altri, instabili, si producono in laboratorio).','A ogni tipo di atomo corrisponde un <b>elemento</b>: una sostanza che non si può scomporre in sostanze più semplici (elio, mercurio, rame).','Una sostanza con atomi di più elementi è un <b>composto</b> (acqua, metano, clorofilla).','Gli atomi si uniscono in <b>molecole</b> (acqua H₂O, glucosio C₆H₁₂O₆).'])),
+  card('ver','B · Pressione di un gas ideale',
+   '<p>La pressione di <b>N</b> molecole alla temperatura <b>T</b> in un volume <b>V</b>:</p><p class="m">p = k · '+F('N · T','V')+'</p><p><b>k</b> = costante di Boltzmann = <b>1,38 × 10⁻²³ J/K</b>.</p>'),
+  card('gia','C · La mole e il numero di Avogadro',stepsHtml(['Una <b>mole</b> è la quantità di sostanza con tante molecole (o atomi) quanti sono gli atomi in <b>12 g di carbonio-12</b>.','Questo numero è il <b>numero di Avogadro</b>: <b>N<sub>A</sub> = 6,022 × 10²³ mol⁻¹</b>.','Ogni mole di qualunque sostanza contiene N<sub>A</sub> molecole: cambia solo la <b>massa</b>.','Con <b>n</b> moli il numero di molecole è <b>N = n · N<sub>A</sub></b>.'])),
+  card('ros','D · Costante dei gas ed equazione di stato',
+   '<p>Sostituendo N = n N<sub>A</sub> si ottiene p = '+F('n · N<sub>A</sub> · k · T','V')+'. Il prodotto N<sub>A</sub> · k è la <b>costante universale dei gas</b>:</p><p class="m">R = N<sub>A</sub> · k = 8,31 J/(mol·K)</p><p><b>Equazione di stato del gas ideale</b>:</p><p class="m">p · V = n · R · T</p><p>Formule inverse: p = '+F('n R T','V')+' · V = '+F('n R T','p')+' · T = '+F('p V','n R')+'. Unità SI: <b>p</b> in Pa, <b>V</b> in m³, <b>T</b> in K.</p>')
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · numero di molecole</h3><p>In 2 mol di gas quante molecole?</p><p class="m">N = n · N<sub>A</sub> = 2 · 6,022 × 10²³ = <b>12,044 × 10²³</b> (cioè 1,2044 × 10²⁴)</p></div>
+ <div class="box bia"><h3>Esempio 2 · pV = nRT</h3><p>1 mol di gas a 300 K occupa 0,05 m³. Quanto vale p?</p><p class="m">p = ${F('n R T','V')} = ${F('1 · 8,31 · 300','0,05')} = ${F('2.493','0,05')} = <b>49.860 Pa</b></p></div>
+ <div class="box bia"><h3>Esempio 3 · la temperatura</h3><p>Da °C a K: <b>T = t + 273</b>. Per 27 °C: T = 27 + 273 = <b>300 K</b>.</p></div>`,
+ errori:['Nell’equazione di stato la temperatura va in <b>kelvin</b>: T = t + 273.','Il volume va in <b>m³</b> e la pressione in <b>Pa</b> se si usa R = 8,31 J/(mol·K).','Il numero di Avogadro vale <b>6,022 × 10²³</b> (non 10⁻²³: quello è l’esponente di k).','R = 8,31 J/(mol·K) non è la stessa cosa di k = 1,38 × 10⁻²³ J/K: R = N<sub>A</sub> · k.'],
+ orale:[
+  ['Che cosa sono atomi, elementi, composti e molecole?','Gli atomi sono i costituenti della materia: ne esistono circa novanta tipi. A ogni tipo di atomo corrisponde un elemento, una sostanza che non si può scomporre in sostanze più semplici. Un composto è una sostanza fatta di atomi di più elementi, come l’acqua. Le molecole sono aggregati di atomi.'],
+  ['Che cos’è il gas ideale?','È un modello semplificato di gas, nel quale l’interazione tra le molecole è così piccola da essere trascurata. La pressione dipende dalla temperatura, dal numero di molecole e dal volume: p uguale k N T diviso V.'],
+  ['Che cos’è una mole? Che cos’è il numero di Avogadro?','Una mole è la quantità di sostanza che contiene tante molecole o atomi quanti sono gli atomi in 12 grammi di carbonio-12. Questo numero è il numero di Avogadro: 6,022 per 10 alla 23 su mole. Con n moli le molecole sono N uguale n per N A.'],
+  ['Che cos’è la costante dei gas R? Scrivi l’equazione di stato.','R è il prodotto del numero di Avogadro per la costante di Boltzmann: vale 8,31 joule su mole per kelvin. L’equazione di stato del gas ideale è p V uguale n R T.']],
+ quiz:[
+  ['Quanto vale il numero di Avogadro?','6,022 × 10²³ mol⁻¹',['1,38 × 10⁻²³ J/K','8,31 J/(mol·K)'],'Molecole in una mole.'],
+  ['Quanto vale la costante universale dei gas R?','8,31 J/(mol·K)',['1,38 J/K','6,022 mol⁻¹'],'R = N<sub>A</sub> · k.'],
+  ['Qual è l’equazione di stato del gas ideale?','pV = nRT',['pV = nR/T','p = nRTV'],'Pressione per volume.'],
+  ['In quale unità va la temperatura in pV = nRT?','kelvin',['gradi Celsius','joule'],'T = t + 273.'],
+  ['Come si calcola il numero di molecole N da n moli?','N = n · N<sub>A</sub>',['N = n / N<sub>A</sub>','N = n + N<sub>A</sub>'],'Moltiplico per Avogadro.']]
+},
+u6:{
+ cose:`<div class="box bia"><p>Lo stato di un gas è descritto da <b>volume V</b>, <b>temperatura</b> e <b>pressione p</b>. Quando cambiano, il gas fa una <b>trasformazione</b>. Se una grandezza resta costante, la trasformazione ha un nome e una <b>legge</b>: <b>isobara</b> (p costante, 1ª legge di Gay-Lussac), <b>isocora</b> (V costante, 2ª legge di Gay-Lussac), <b>isoterma</b> (T costante, legge di Boyle).</p></div>`,
+ ricette:[
+  card('blu','A · Le tre trasformazioni',TAB(['Grandezze che variano','Resta costante','Nome'],[['V, T','p (pressione)','<b>isobara</b>'],['p, T','V (volume)','<b>isocora</b>'],['p, V','T (temperatura)','<b>isoterma</b>']])),
+  card('ver','B · Isobara: 1ª legge di Gay-Lussac',stepsHtml(['A pressione costante, un gas <b>riscaldato</b> si <b>dilata</b> (V aumenta); un gas <b>raffreddato</b> si <b>contrae</b>.','Volume e temperatura sono <b>direttamente proporzionali</b>: <b>V = costante · T</b>.','Per calcolare: '+F('V<sub>1</sub>','T<sub>1</sub>')+' = '+F('V<sub>2</sub>','T<sub>2</sub>')+' (con T in <b>kelvin</b>).'])),
+  card('gia','C · Isocora: 2ª legge di Gay-Lussac',stepsHtml(['A volume costante, un gas <b>riscaldato</b> aumenta la pressione; <b>raffreddato</b> la diminuisce.','Pressione e temperatura sono <b>direttamente proporzionali</b>: <b>p = costante · T</b>.','Per calcolare: '+F('p<sub>1</sub>','T<sub>1</sub>')+' = '+F('p<sub>2</sub>','T<sub>2</sub>')+' (T in kelvin).'])),
+  card('ros','D · Isoterma: legge di Boyle',stepsHtml(['A temperatura costante (il cilindro è in acqua che fa da <b>termostato</b>), aggiungendo pesetti il volume <b>diminuisce</b> e la pressione <b>aumenta</b>.','Pressione e volume sono <b>inversamente proporzionali</b>: <b>p · V = p<sub>i</sub> · V<sub>i</sub></b>.','Il grafico p-V è un ramo di <b>iperbole equilatera</b>, detto <b>isoterma</b> del gas perfetto.']))
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · Boyle</h3><p>p<sub>1</sub> = 100 kPa, V<sub>1</sub> = 6 L, V<sub>2</sub> = 2 L (T costante). Quanto vale p<sub>2</sub>?</p><p class="m">p<sub>2</sub> = ${F('p<sub>1</sub> · V<sub>1</sub>','V<sub>2</sub>')} = ${F('100 · 6','2')} = <b>300 kPa</b></p></div>
+ <div class="box bia"><h3>Esempio 2 · Gay-Lussac (isobara)</h3><p>V<sub>1</sub> = 2 L a T<sub>1</sub> = 300 K; il gas si scalda a T<sub>2</sub> = 600 K a pressione costante.</p><p class="m">V<sub>2</sub> = V<sub>1</sub> · ${F('T<sub>2</sub>','T<sub>1</sub>')} = 2 · ${F('600','300')} = <b>4 L</b></p></div>
+ <div class="box bia"><h3>Esempio 3 · Gay-Lussac (isocora)</h3><p>p<sub>1</sub> = 100 kPa a T<sub>1</sub> = 300 K; il gas si scalda a T<sub>2</sub> = 450 K a volume costante.</p><p class="m">p<sub>2</sub> = p<sub>1</sub> · ${F('T<sub>2</sub>','T<sub>1</sub>')} = 100 · ${F('450','300')} = <b>150 kPa</b></p></div>`,
+ errori:['Nelle leggi di Gay-Lussac la temperatura va in <b>kelvin</b>, non in °C.','Boyle: p e V sono <b>inversamente</b> proporzionali (se V diminuisce, p aumenta).','<b>Isobara</b> = pressione costante; <b>isocora</b> = volume costante; <b>isoterma</b> = temperatura costante.','Il grafico di Boyle non è una retta: è un ramo di <b>iperbole equilatera</b>.'],
+ orale:[
+  ['Quali sono le trasformazioni di un gas?','Sono tre. L’isobara cambia volume e temperatura mantenendo costante la pressione. L’isocora cambia pressione e temperatura mantenendo costante il volume. L’isoterma cambia pressione e volume mantenendo costante la temperatura.'],
+  ['Enuncia la prima legge di Gay-Lussac.','In una trasformazione isobara, cioè a pressione costante, volume e temperatura sono direttamente proporzionali: V uguale costante per T. Un gas riscaldato a pressione costante si dilata, un gas raffreddato si contrae.'],
+  ['Enuncia la seconda legge di Gay-Lussac.','In una trasformazione isocora, cioè a volume costante, pressione e temperatura sono direttamente proporzionali: p uguale costante per T. Se un gas è scaldato a volume costante la pressione aumenta, se è raffreddato diminuisce.'],
+  ['Enuncia la legge di Boyle. Com’è il suo grafico?','In una trasformazione isoterma, a temperatura costante, pressione e volume sono inversamente proporzionali: p V uguale p iniziale per V iniziale. Il grafico p-V è un ramo di iperbole equilatera, chiamato isoterma del gas perfetto.']],
+ quiz:[
+  ['Quale grandezza resta costante in una isobara?','La pressione',['Il volume','La temperatura'],'Iso-bara: stessa pressione.'],
+  ['Quale grandezza resta costante in una isocora?','Il volume',['La pressione','La temperatura'],'Iso-cora: stesso volume.'],
+  ['Quale legge segue una isoterma?','Legge di Boyle',['1ª legge di Gay-Lussac','2ª legge di Gay-Lussac'],'p V = costante.'],
+  ['In Boyle, se il volume si dimezza, la pressione…','raddoppia',['si dimezza','resta uguale'],'Inversamente proporzionali.'],
+  ['Com’è il grafico p-V di una isoterma?','Un ramo di iperbole equilatera',['Una retta','Una parabola'],'Isoterma del gas perfetto.']]
+}
+
+};
+
+const GLOSS=[
+['Conduzione','Propagazione del calore nei solidi, senza trasporto di materia.'],
+['Legge di Fourier','Q = k · A · (ΔT / L) · t: il calore che passa in una sbarra.'],
+['Conducibilità termica (k)','Dice quanto un materiale conduce il calore. Si misura in W/(m·K).'],
+['Isolante termico','Materiale con k piccolo, come il legno o l’aria secca.'],
+['Convezione','Propagazione del calore nei fluidi, con trasporto di energia e di materia.'],
+['Corrente convettiva','Movimento del fluido caldo (che sale) e freddo (che scende).'],
+['Irraggiamento','Trasmissione di energia con radiazioni elettromagnetiche, anche nel vuoto.'],
+['Legge di Stefan-Boltzmann','P = e · σ · A · T⁴, con T in kelvin.'],
+['Emissività (e)','Numero tra 0 e 1: vale 1 per il corpo nero, 0 per un corpo riflettente ideale.'],
+['Corpo nero','Radiatore perfetto: e = 1.'],
+['Fusione','Passaggio da solido a liquido: assorbe energia.'],
+['Solidificazione','Passaggio da liquido a solido: rilascia energia.'],
+['Vaporizzazione','Passaggio da liquido ad aeriforme: assorbe energia.'],
+['Condensazione','Passaggio da aeriforme a liquido: rilascia energia.'],
+['Sublimazione','Passaggio da solido ad aeriforme.'],
+['Brinamento','Passaggio da aeriforme a solido.'],
+['Plasma','Stato della materia nelle stelle: elettroni liberi e ioni positivi.'],
+['Curva di riscaldamento','Grafico della temperatura nel tempo di una sostanza scaldata: ha un tratto orizzontale durante la fusione.'],
+['Calore latente di fusione (L<sub>f</sub>)','Calore per fondere 1 kg di sostanza già alla temperatura di fusione. Per l’acqua 334 × 10³ J/kg.'],
+['Calore latente di vaporizzazione (L<sub>v</sub>)','Calore per vaporizzare 1 kg di sostanza già alla temperatura di ebollizione. Per l’acqua 2,258 × 10⁶ J/kg.'],
+['Ebollizione','Vaporizzazione tumultuosa in tutto il volume del liquido.'],
+['Evaporazione','Vaporizzazione lenta, solo sulla superficie del liquido.'],
+['Pressione di vapore saturo','Pressione del vapore in equilibrio con il liquido. Il liquido bolle quando è uguale alla pressione atmosferica.'],
+['Gas ideale (perfetto)','Modello di gas in cui l’interazione tra le molecole si trascura.'],
+['Mole','Quantità di sostanza con N<sub>A</sub> molecole (tante quanti gli atomi in 12 g di carbonio-12).'],
+['Numero di Avogadro','N<sub>A</sub> = 6,022 × 10²³ mol⁻¹.'],
+['Costante di Boltzmann (k)','k = 1,38 × 10⁻²³ J/K.'],
+['Costante universale dei gas (R)','R = N<sub>A</sub> · k = 8,31 J/(mol·K).'],
+['Equazione di stato','p V = n R T (T in kelvin).'],
+['Trasformazione isobara','A pressione costante: V e T direttamente proporzionali (1ª legge di Gay-Lussac).'],
+['Trasformazione isocora','A volume costante: p e T direttamente proporzionali (2ª legge di Gay-Lussac).'],
+['Trasformazione isoterma','A temperatura costante: p e V inversamente proporzionali (legge di Boyle).'],
+['Isoterma del gas perfetto','Il grafico p-V di una trasformazione isoterma: ramo di iperbole equilatera.'],
+['Calore','Energia trasferita tra due corpi per la differenza di temperatura. Si misura in joule.'],
+['Zero assoluto','Lo zero della scala Kelvin: 0 K = −273 °C.']];
+const FORMULARIO=
+ '<div class="box blu"><h3>Propagazione del calore</h3>'+TAB(['Modo','Dove','Formula'],[
+  ['<b>Conduzione</b>','solidi','Q = k · A · '+F('ΔT','L')+' · t (k in W/(m·K))'],
+  ['<b>Convezione</b>','liquidi e gas','correnti convettive: il fluido caldo è meno denso e sale'],
+  ['<b>Irraggiamento</b>','anche nel vuoto','P = e · σ · A · T⁴ (T in K; σ = 5,67 × 10⁻⁸ W/(m²·K⁴))']])+'</div>'+
+ '<div class="box ver"><h3>Cambiamenti di stato</h3>'+TAB(['Passaggio','Da → a','Energia','Formula'],[
+  ['<b>fusione</b>','solido → liquido','assorbita','Q<sub>f</sub> = L<sub>f</sub> · m (acqua: 334 × 10³ J/kg)'],
+  ['<b>solidificazione</b>','liquido → solido','rilasciata','Q<sub>s</sub> = −L<sub>f</sub> · m'],
+  ['<b>vaporizzazione</b>','liquido → aeriforme','assorbita','Q<sub>v</sub> = L<sub>v</sub> · m (acqua: 2,258 × 10⁶ J/kg)'],
+  ['<b>condensazione</b>','aeriforme → liquido','rilasciata','Q<sub>c</sub> = −L<sub>v</sub> · m'],
+  ['<b>sublimazione</b> / <b>brinamento</b>','solido → aeriforme / aeriforme → solido','assorbita / rilasciata','—']])+'<p class="note">Durante fusione ed ebollizione la temperatura resta costante. Stagno: fonde a 232 °C, bolle a 2.602 °C. L’acqua bolle a 100 °C a 101 kPa.</p></div>'+
+ '<div class="box gia"><h3>Gas perfetto</h3>'+TAB(['Argomento','Formula'],[
+  ['<b>Pressione</b>','p = k · '+F('N · T','V')+' (k = 1,38 × 10⁻²³ J/K)'],
+  ['<b>Moli e molecole</b>','N = n · N<sub>A</sub> (N<sub>A</sub> = 6,022 × 10²³ mol⁻¹)'],
+  ['<b>Costante dei gas</b>','R = N<sub>A</sub> · k = 8,31 J/(mol·K)'],
+  ['<b>Equazione di stato</b>','p · V = n · R · T (T in K)'],
+  ['<b>Isobara</b> (p costante)','V = costante · T → '+F('V<sub>1</sub>','T<sub>1</sub>')+' = '+F('V<sub>2</sub>','T<sub>2</sub>')],
+  ['<b>Isocora</b> (V costante)','p = costante · T → '+F('p<sub>1</sub>','T<sub>1</sub>')+' = '+F('p<sub>2</sub>','T<sub>2</sub>')],
+  ['<b>Isoterma</b> (T costante)','p · V = p<sub>i</sub> · V<sub>i</sub> (Boyle, iperbole equilatera)']])+'<p class="note">T in kelvin: T = t + 273.</p></div>';
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('fis4_calore_gas_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('fis4_calore_gas_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi lo schema e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. Lo schema</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h=(typeof SC!=='undefined'?SC:'')+'<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+/* ========== FRAZIONI IN VERTICALE: converte "a/b" in frazione verticale in tutto il testo ========== */
+(function(){
+  const UNITS=new Set(['N','J','kg','K','Pa','W','L','cal','min','mm','cm','km','cl','mL','Hz','V·s']);
+  const PAIRS=new Set(['m/s','g/s','s/m','m/h']);
+  const OP="(?:(?:sen|sin|cos|tan|cot)\\s?α|\\d+[A-Za-z]?π|[A-Za-z]?π|\\d+(?:[.,]\\d+)?|\\(−?\\d+\\)|[A-ZΔ][A-Za-zΔα⊥]?(?:_[A-Za-z0-9]+)?|[a-zα](?:_[A-Za-z0-9]+)?)";
+  const RE=new RegExp("(?<![\\w.,/⁄])("+OP+")\\s?\\/\\s?("+OP+")(?![\\w²³⁻/·])","g");
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const sub=s=>esc(s).replace(/_([A-Za-z0-9]+)/g,'<sub>$1</sub>');
+  const isNum=t=>/^\d/.test(t);
+  function conv(m,a,b){
+    const A=a.trim(),B=b.trim();
+    if(PAIRS.has(A+'/'+B))return m;
+    if(UNITS.has(A)||UNITS.has(B))return m;
+    if(/^[a-z]$/.test(A)&&/^[a-z]$/.test(B)&&!(A==='x'&&B==='y')&&!(A==='y'&&B==='x')&&A!=='d'&&A!=='m'&&A!=='p'&&A!=='q'&&A!=='c')return m;
+    return '<span class="fr"><span class="fn">'+sub(A)+'</span><span class="fd">'+sub(B)+'</span></span>';
+  }
+  function fixText(node){
+    const t=node.nodeValue;
+    if(!t||t.indexOf('/')<0)return;
+    RE.lastIndex=0;
+    if(!RE.test(t))return;
+    RE.lastIndex=0;
+    let out='',last=0,mm;
+    while((mm=RE.exec(t))){
+      const rep=conv(mm[0],mm[1],mm[2]);
+      out+=esc(t.slice(last,mm.index))+(rep===mm[0]?esc(mm[0]):rep);
+      last=mm.index+mm[0].length;
+    }
+    out+=esc(t.slice(last));
+    if(out===esc(t))return;
+    const span=document.createElement('span');span.innerHTML=out;
+    const f=document.createDocumentFragment();while(span.firstChild)f.appendChild(span.firstChild);
+    node.parentNode.replaceChild(f,node);
+  }
+  const SKIP=new Set(['SCRIPT','STYLE','SVG','TEXTAREA','TITLE','OPTION','svg','text']);
+  function walk(root){
+    if(!root)return;
+    if(root.nodeType===3){const p=root.parentNode;if(p&&!SKIP.has(p.nodeName)&&!(p.classList&&p.classList.contains('fr')))fixText(root);return}
+    if(root.nodeType!==1||SKIP.has(root.nodeName)||(root.classList&&(root.classList.contains('fr')||root.classList.contains('sgf'))))return;
+    const kids=Array.from(root.childNodes);
+    kids.forEach(walk);
+  }
+  window.vfWalk=walk;
+  function start(){
+    walk(document.body);
+    new MutationObserver(ms=>{ms.forEach(m=>{m.addedNodes.forEach(n=>walk(n))})}).observe(document.body,{childList:true,subtree:true});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u0": ["Prima di fare i calcoli servono quattro cose: convertire le unità, usare le potenze di 10, ricavare le formule inverse e capire le proporzioni.", "Le temperature, nelle formule, vanno in kelvin: T = t + 273."], "u1": ["Il calore passa dal corpo caldo al corpo freddo in tre modi: conduzione (nei solidi), convezione (nei liquidi e nei gas), irraggiamento (anche nel vuoto).", "Per la conduzione si usa la legge di Fourier. Per l’irraggiamento la legge di Stefan-Boltzmann, con la temperatura alla quarta potenza.", "I metalli conducono bene il calore. Il legno e l’aria secca no: sono isolanti."], "u2": ["Ci sono sei cambiamenti di stato.", "Fusione, vaporizzazione e sublimazione assorbono energia.", "Solidificazione, condensazione e brinamento rilasciano energia."], "u3": ["Quando un solido fonde, la temperatura resta costante: il calore serve per cambiare stato.", "Il calore per fondere una massa m è Qf = Lf · m. Per l’acqua Lf = 334 000 J/kg.", "Nella solidificazione il calore è ceduto, quindi negativo."], "u4": ["Quando un liquido bolle, la temperatura resta costante. L’ebollizione avviene in tutto il liquido, l’evaporazione solo in superficie.", "Il calore per vaporizzare una massa m è Qv = Lv · m. Per l’acqua Lv = 2 258 000 J/kg.", "Un liquido bolle quando la pressione di vapore saturo è uguale alla pressione atmosferica."], "u5": ["Il gas perfetto è un modello: le molecole non si influenzano.", "Una mole contiene 6,022 × 10²³ molecole (numero di Avogadro).", "L’equazione di stato è p V = n R T, con la temperatura in kelvin."], "u6": ["Isobara: la pressione resta uguale. Isocora: il volume resta uguale. Isoterma: la temperatura resta uguale.", "Isobara e isocora: la grandezza che cambia è proporzionale alla temperatura in kelvin (Gay-Lussac).", "Isoterma: pressione e volume sono inversamente proporzionali (Boyle)."]}, "es": false, "steps": false, "pics": [{"k": "acqua", "re": "acqua", "id": 32464}, {"k": "ghiaccio", "re": "ghiaccio", "id": 7128}, {"k": "fuoco", "re": "fuoco", "id": 4654}, {"k": "termometro", "re": "termometro", "id": 32051}, {"k": "caldo", "re": "caldo", "id": 4583}, {"k": "freddo", "re": "freddo", "id": 4652}, {"k": "nave", "re": "nave|navi|barca", "id": 6932}, {"k": "galleggiare", "re": "galleggiare|galleggia|galleggiamento", "id": 21876}, {"k": "olio", "re": "olio", "id": 2246}, {"k": "sole", "re": "sole", "id": 7252}, {"k": "bilancia", "re": "bilancia", "id": 2659}, {"k": "bottiglia", "re": "bottiglia|bottiglie", "id": 2288}, {"k": "misurare", "re": "misurare", "id": 5510}, {"k": "legno", "re": "legno", "id": 6143}, {"k": "pesare", "re": "pesare", "id": 4717}, {"k": "vento", "re": "vento", "id": 7259}, {"k": "luce", "re": "luce", "id": 8619}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  /* testo con parti in inglese: ogni parte con la sua voce */
+  function segs(el,dl){
+    var out=[],buf='';
+    function flush(){var t=say(buf);if(t.length>1)out.push({t:t,l:dl});buf=''}
+    (function walk(n){
+      if(n.nodeType===3){buf+=n.nodeValue;return}
+      if(n.nodeType!==1)return;
+      if(n.classList&&n.classList.contains('a11y-ui'))return;
+      var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return;
+      if(n.getAttribute('lang')==='en'){flush();var t=say(nodeText(n));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      if(n.classList.contains('fr')||tg==='SUP'){buf+=nodeText(n);return}
+      n.childNodes.forEach(walk);
+    })(el);
+    flush();return out;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    var out=[];
+    els.forEach(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      if(e.closest('[lang="en"]')){var t=say(nodeText(e));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      segs(e,es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    return out;
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=c.l==='en-GB'?0.8:0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     (CFG.steps?'<div class="step"><b class="n">★</b><div>Gli <b>esempi svolti</b> si aprono <b>un passo alla volta</b>: tocca <b>▶ Prossimo passo</b> e leggi con calma. Se preferisci vedere tutto, tocca <b>Mostra tutto</b>.</div></div>':'')+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)segs(qt,'it-IT').forEach(function(c){out.push(c)});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'.',l:'it-IT'});
+      segs(sp||o,CFG.es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  /* ===== ESEMPI SVOLTI UN PASSO ALLA VOLTA ===== */
+  if(CFG.steps&&location.hash!=='#stampa'){
+    var stOn=true;try{stOn=localStorage.getItem('a11y_steps')!=='0'}catch(e){}
+    var st4=document.createElement('style');
+    st4.textContent='section.tab .box.bia [hidden]{display:none!important}'+
+     '.a11y-newstep{background:#fff8dc;border-left:6px solid #d1b24a;padding:4px 8px;border-radius:6px}'+
+     '.a11y-stepper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 2px}'+
+     '.a11y-sc{font-weight:bold;font-size:.95rem;color:#22314d}'+
+     '.a11y-stepper .a11y-btn{margin:0}'+
+     '@media print{.a11y-stepper{display:none!important}section.tab .box.bia [hidden]{display:revert!important}.a11y-newstep{background:none;border:0;padding:0}}';
+    document.head.appendChild(st4);
+    var stGroups=[];
+    document.querySelectorAll('section.tab .stat .box.bia').forEach(function(box){
+      var h=box.querySelector(':scope>h3');if(!h||!/^Esempio/i.test(h.textContent))return;
+      var kids=[].slice.call(box.children).filter(function(c){return c!==h});
+      if(kids.length<3)return;
+      var isNum=function(e){return /^\s*\d+\./.test(e.textContent)};
+      var rest=kids.slice(1),groups=[];
+      if(rest.some(isNum)){
+        var started=false;
+        rest.forEach(function(e){
+          if(isNum(e)){groups.push([e]);started=true}
+          else if(started)groups[groups.length-1].push(e);
+        });
+      }else{rest.forEach(function(e){groups.push([e])})}
+      if(groups.length<2)return;
+      var idx=0,bx=mk('div','a11y-ui a11y-stepper'),go=mk('button','a11y-btn',null),all=mk('button','a11y-btn',null),cnt=mk('span','a11y-sc',null);
+      go.type='button';all.type='button';all.textContent='Mostra tutto';
+      bx.appendChild(go);bx.appendChild(cnt);bx.appendChild(all);box.appendChild(bx);
+      function paint(){
+        groups.forEach(function(g,i){g.forEach(function(e){e.hidden=stOn&&i>=idx;e.classList.toggle('a11y-newstep',stOn&&idx>0&&i===idx-1&&idx<groups.length+1)})});
+        bx.style.display=stOn?'':'none';
+        cnt.textContent='Passo '+idx+' di '+groups.length;
+        go.textContent=idx===0?'▶ Mostrami il primo passo':idx<groups.length?'▶ Prossimo passo':'↺ Ricomincia';
+        all.hidden=idx>=groups.length;
+      }
+      go.addEventListener('click',function(){
+        if(idx>=groups.length)idx=0;else idx++;
+        paint();
+        var t=idx>0?groups[idx-1][0]:box;try{t.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+      });
+      all.addEventListener('click',function(){idx=groups.length;paint()});
+      stGroups.push({paint:paint,reset:function(){idx=0}});
+      paint();
+    });
+    if(stGroups.length){
+      var sb=mk('button','a11y-btn a11y-ui',null);sb.type='button';
+      var paintSb=function(){sb.textContent='👣 Esempi un passo alla volta: '+(stOn?'SÌ':'NO');sb.classList.toggle('on',stOn);sb.setAttribute('aria-pressed',stOn?'true':'false')};
+      sb.addEventListener('click',function(){stOn=!stOn;try{localStorage.setItem('a11y_steps',stOn?'1':'0')}catch(e){};stGroups.forEach(function(g){g.reset();g.paint()});paintSb()});
+      paintSb();bar.appendChild(sb);
+    }
+  }
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261116104354",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
