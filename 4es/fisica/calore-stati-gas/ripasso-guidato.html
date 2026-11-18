@@ -838,17 +838,6 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 
 
-(function(){
-  if(location.hash==='#stampa')return;
-  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
-  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
-  apply();
-  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
-  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
-  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
-})();
-
-
 </script>
 <!--A11Y--><script>window.A11Y_CFG={"simple": {"u0": ["Prima di fare i calcoli servono quattro cose: convertire le unità, usare le potenze di 10, ricavare le formule inverse e capire le proporzioni.", "Le temperature, nelle formule, vanno in kelvin: T = t + 273."], "u1": ["Il calore passa dal corpo caldo al corpo freddo in tre modi: conduzione (nei solidi), convezione (nei liquidi e nei gas), irraggiamento (anche nel vuoto).", "Per la conduzione si usa la legge di Fourier. Per l’irraggiamento la legge di Stefan-Boltzmann, con la temperatura alla quarta potenza.", "I metalli conducono bene il calore. Il legno e l’aria secca no: sono isolanti."], "u2": ["Ci sono sei cambiamenti di stato.", "Fusione, vaporizzazione e sublimazione assorbono energia.", "Solidificazione, condensazione e brinamento rilasciano energia."], "u3": ["Quando un solido fonde, la temperatura resta costante: il calore serve per cambiare stato.", "Il calore per fondere una massa m è Qf = Lf · m. Per l’acqua Lf = 334 000 J/kg.", "Nella solidificazione il calore è ceduto, quindi negativo."], "u4": ["Quando un liquido bolle, la temperatura resta costante. L’ebollizione avviene in tutto il liquido, l’evaporazione solo in superficie.", "Il calore per vaporizzare una massa m è Qv = Lv · m. Per l’acqua Lv = 2 258 000 J/kg.", "Un liquido bolle quando la pressione di vapore saturo è uguale alla pressione atmosferica."], "u5": ["Il gas perfetto è un modello: le molecole non si influenzano.", "Una mole contiene 6,022 × 10²³ molecole (numero di Avogadro).", "L’equazione di stato è p V = n R T, con la temperatura in kelvin."], "u6": ["Isobara: la pressione resta uguale. Isocora: il volume resta uguale. Isoterma: la temperatura resta uguale.", "Isobara e isocora: la grandezza che cambia è proporzionale alla temperatura in kelvin (Gay-Lussac).", "Isoterma: pressione e volume sono inversamente proporzionali (Boyle)."]}, "es": false, "steps": false, "pics": [{"k": "acqua", "re": "acqua", "id": 32464}, {"k": "ghiaccio", "re": "ghiaccio", "id": 7128}, {"k": "fuoco", "re": "fuoco", "id": 4654}, {"k": "termometro", "re": "termometro", "id": 32051}, {"k": "caldo", "re": "caldo", "id": 4583}, {"k": "freddo", "re": "freddo", "id": 4652}, {"k": "nave", "re": "nave|navi|barca", "id": 6932}, {"k": "galleggiare", "re": "galleggiare|galleggia|galleggiamento", "id": 21876}, {"k": "olio", "re": "olio", "id": 2246}, {"k": "sole", "re": "sole", "id": 7252}, {"k": "bilancia", "re": "bilancia", "id": 2659}, {"k": "bottiglia", "re": "bottiglia|bottiglie", "id": 2288}, {"k": "misurare", "re": "misurare", "id": 5510}, {"k": "legno", "re": "legno", "id": 6143}, {"k": "pesare", "re": "pesare", "id": 4717}, {"k": "vento", "re": "vento", "id": 7259}, {"k": "luce", "re": "luce", "id": 8619}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
 (function(){
@@ -1268,7 +1257,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 </script><!--/A11Y--><!--AGG--><script>
 (function(){
- var B="20261116104354",t0=Date.now(),touched=false,last=0;
+ var B="20261118102959",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;
