@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matematica: angoli particolari e angoli associati</title>
+<style>
+:root{--bg:#fbf7ec;--ink:#1d1d1d;--line:#d9d2bf;--navy:#22314d;
+--blu:#cfe2fb;--blu-t:#1a4a8a;--ver:#cdeccb;--ver-t:#1b5e20;--gia:#f8dfa6;--gia-t:#7a4a00;--ros:#f9d3d3;--ros-t:#8e1f1f;--ok:#2e7d32;--no:#c62828}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Tahoma,Arial,sans-serif;font-size:17px;line-height:1.65;overflow-x:hidden;word-wrap:break-word}
+header{background:var(--navy);color:#fff;padding:16px}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+nav{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding:8px 16px;background:#efe7d0;position:sticky;top:0;z-index:5;border-bottom:2px solid var(--line)}
+nav button{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:8px 14px;font:inherit;font-size:.85rem;font-weight:bold;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;cursor:pointer}
+nav button.on{background:var(--navy);color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px}
+section.tab{display:none}section.tab.on{display:block}
+h2{font-size:1.3rem;margin:.2em 0 .6em}h3{font-size:1.05rem;margin:0 0 .3em}
+h3.sec{margin:1.4em 0 .5em;padding:6px 10px;background:#efe7d0;border-radius:8px;color:var(--navy)}
+.box{border-radius:14px;padding:12px 14px;margin:12px 0;border:2px solid transparent}
+.box p{margin:.4em 0}
+.blu{background:var(--blu);color:var(--blu-t);border-color:#9ec1ee}
+.ver{background:var(--ver);color:var(--ver-t);border-color:#98cf95}
+.gia{background:var(--gia);color:var(--gia-t);border-color:#e6bb60}
+.ros{background:var(--ros);color:var(--ros-t);border-color:#e59a9a}
+.bia{background:#fff;border-color:var(--line);color:var(--ink)}
+.blu b,.ver b,.gia b,.ros b{color:inherit}
+.step{display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.step div{flex:1;min-width:0}
+.note{font-size:.82rem;color:#555;margin:.5em 0}
+.blu .note,.ver .note,.gia .note,.ros .note{color:inherit;opacity:.85}
+.m{font-size:1.1rem;padding:2px 0}
+p.m{margin:.3em 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .2em}
+.fr .fn{border-bottom:2px solid currentColor;padding:0 .3em}.fr .fd{padding:0 .3em}
+.sys{display:inline-block;border-left:3px solid var(--navy);padding-left:10px;margin:8px 0;font-size:1.1rem}
+.sys div{margin:2px 0}
+.q{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.qt{font-size:1.02rem;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;min-height:48px;margin:8px 0;padding:10px 12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:12px;cursor:pointer}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:#efe7d0;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.opt span{flex:1;min-width:0}
+.opt.good{background:#c8e6c9;border-color:var(--ok)}.opt.bad{background:#ffcdd2;border-color:var(--no)}
+.fb{padding:8px 12px;border-radius:10px;margin:8px 0;font-weight:bold}
+.fb.okk{background:#c8e6c9;color:#1b5e20}.fb.nok{background:#ffcdd2;color:#8e1f1f}
+.how{background:#fff8dc;border:2px dashed #d1b24a;border-radius:12px;padding:8px 12px;margin:8px 0}
+.how p{margin:.4em 0}
+button.big{min-height:48px;padding:10px 18px;font:inherit;font-size:.95rem;font-weight:bold;border-radius:10px;border:2px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;margin:6px 6px 6px 0}
+button.big.sec{background:#fff;color:var(--navy)}
+.progress{height:12px;background:#e3dcc7;border-radius:8px;overflow:hidden;margin:6px 0}
+.progress i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.badge{background:var(--ok);color:#fff;border-radius:10px;padding:1px 8px;font-size:.8rem}
+.okk{color:var(--ok);font-weight:bold}
+.rowres{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}
+.rowres span:first-child{flex:1 1 180px}
+.chk{display:flex;gap:8px;align-items:center;min-height:44px;font-size:.9rem}
+.chk input{width:22px;height:22px}
+.tblwrap{overflow-x:auto;margin:8px 0}
+.sgf{display:block;width:100%;max-width:420px;height:auto;margin:8px 0;background:#fff;border:2px solid var(--line);border-radius:10px}
+.sgf.circ{max-width:300px}
+.sgf.circ.sm{display:inline-block;width:30%;min-width:105px;max-width:130px;margin:3px}
+.cl{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border:2px solid #222;border-radius:50%;font-weight:bold;font-size:.8em;background:#fff;margin-right:.3em}
+sub{font-size:.75em}
+.fz{margin:10px 0 0;display:flex;align-items:center;gap:8px;font-size:.9rem}.fz button{min-width:52px;min-height:44px;font:inherit;font-size:1.1rem;font-weight:bold;border-radius:10px;border:2px solid #fff;background:#fff;color:#22314d;cursor:pointer}
+.qt,.m{overflow-x:auto;max-width:100%}
+table.sg{border-collapse:collapse;font-size:.85rem;background:#fff;min-width:100%}
+table.sg td,table.sg th{border:1px solid #aaa;padding:4px 6px;text-align:center}
+table.sg th.pt{background:#efe7d0}table.sg td.lab{text-align:left;background:#f4efe0;white-space:nowrap}
+table.sg tr.res td{font-weight:bold}table.sg td.yes{background:#c8e6c9}
+ul{padding-left:20px;margin:.3em 0}li{margin:4px 0}
+.mini{display:grid;grid-template-columns:1fr;gap:8px}
+body.print .fz,body.print nav,body.print header p,body.print .dyn,body.print #guida,body.print #orale,body.print #prova{display:none!important}
+body.print section.tab{display:block!important;break-before:page}
+body.print #u1{break-before:auto}
+@page{size:110mm 196mm;margin:7mm}
+@media print{.fz,nav,button{display:none!important}.dyn{display:none!important}body{font-size:11pt}}
+</style></head><body>
+<header><p style="margin:0 0 6px"><a href="../" style="color:#fff;font-size:.85rem">← Torna a Matematica</a></p><h1>Matematica: angoli particolari e angoli associati</h1><p>Interrogazione · un passo alla volta</p><p class="voto" style="font-weight:bold;opacity:1">Per chi ha 2 voti: è la 2ª (la 1ª è lo scritto)</p><div class="fz"><span>Testo:</span><button type="button" id="fzm" aria-label="Riduci il testo">A−</button><button type="button" id="fzp" aria-label="Ingrandisci il testo">A+</button></div></header>
+<nav>
+<button data-t="guida" class="on">Guida</button>
+<button data-t="u0">0 Da sapere</button>
+<button data-t="u1">1 Valori particolari</button>
+<button data-t="u2">2 Espressioni</button>
+<button data-t="u3">3 Angoli associati</button>
+<button data-t="u4">4 Semplificare</button>
+<button data-t="orale">Orale</button>
+<button data-t="prova">Prova finale</button>
+<button data-t="formulario">Formulario</button>
+<button data-t="glossario">Glossario</button>
+</nav>
+<main>
+<section class="tab on" id="guida">
+<h2>Come ti prepari all’interrogazione</h2>
+<div class="box gia"><h3>Gli argomenti</h3><p><b>1. Gli angoli particolari</b> (30°, 45°, 60°): i valori di seno, coseno, tangente e cotangente e il calcolo di espressioni.</p><p><b>2. Gli angoli associati</b> (−α, 2π − α, π ± α, π/2 ± α, 3π/2 ± α): la griglia delle formule e la semplificazione di espressioni.</p></div>
+<p>Si prepara facendo <b>esercizi a mano</b>. Qui ne trovi di sempre nuovi, con i passaggi spiegati. Fai i calcoli <b>su un foglio</b>, poi scegli la risposta. Nell’<b>Orale</b> ci sono le domande di teoria con la risposta modello.</p>
+<div class="box blu"><h3>I passi di ogni unità</h3>
+<div class="step"><b class="n">1</b><div><b>Che cos'è</b>: una spiegazione con parole semplici.</div></div>
+<div class="step"><b class="n">2</b><div><b>Metodo</b>: i passaggi da fare, sempre uguali.</div></div>
+<div class="step"><b class="n">3</b><div><b>Esempi svolti</b>: rifalli a penna su un foglio senza guardare.</div></div>
+<div class="step"><b class="n">4</b><div><b>Errori</b>: gli sbagli più comuni, quelli che fanno perdere punti.</div></div>
+<div class="step"><b class="n">5</b><div><b>Allenati</b>: esercizi sempre nuovi. Se sbagli leggi i passaggi. Obiettivo: <b>4 giuste di fila</b>.</div></div>
+<div class="step"><b class="n">6</b><div><b>Quiz di teoria</b>: poche domande sulle definizioni.</div></div></div>
+<div class="box ver"><h3>Piano suggerito (5 giorni)</h3><ul><li><b>Giorno 1</b>: unità 0 e 1 (radicali, tabella dei valori)</li><li><b>Giorno 2</b>: unità 2 (espressioni con gli angoli particolari)</li><li><b>Giorno 3</b>: unità 3 (la griglia degli angoli associati)</li><li><b>Giorno 4</b>: unità 4 (semplificare con gli angoli associati)</li><li><b>Giorno 5</b>: Prova finale, <b>Orale</b> e Formulario</li></ul><p class="note">La tabella dei valori e la griglia vanno <b>imparate a memoria</b>.</p></div>
+<div class="box bia"><h3>Livello base e “in più”</h3><p>Il livello base è quello delle due pagine della guida della docente. Segnato <b>“in più”</b> c’è quello che nella guida non c’è: come ricordare la tabella, come ricordare il segno della griglia, il calcolo con gli angoli associati.</p><p class="note">Nell’esempio svolto della sezione 2 la pagina della guida si ferma al passaggio 1: i passaggi 2 e 3 li ho completati con le stesse regole.</p></div>
+<div class="box bia"><h3>Consigli</h3><ul><li>Scrivi <b>tutti i passaggi</b> e semplifica sempre le frazioni.</li><li>Ricorda: <b>√2 · √2 = 2</b> e <b>√3 · √3 = 3</b>.</li><li>Con <b>π/2</b> e <b>3π/2</b> la funzione <b>cambia</b>; con π, 2π e −α no.</li><li>Se una parola non la capisci, cercala nel <b>Glossario</b>.</li></ul></div>
+<h3 class="sec">I tuoi progressi</h3><div id="prog"></div>
+<p class="note">I progressi sono salvati su questo telefono.</p>
+</section>
+<section class="tab" id="u0"></section><section class="tab" id="u1"></section><section class="tab" id="u2"></section><section class="tab" id="u3"></section><section class="tab" id="u4"></section>
+<section class="tab" id="orale"></section>
+<section class="tab" id="prova"></section>
+<section class="tab" id="formulario"></section>
+<section class="tab" id="glossario"></section>
+</main>
+<script>
+/* ========== UTILITÀ (goniometria) ========== */
+const MIN='−';
+const rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rnd(0,a.length-1)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+const gcd=(a,b)=>b?gcd(b,a%b):Math.abs(a);
+const F=(n,d)=>`<span class="fr"><span class="fn">${n}</span><span class="fd">${d}</span></span>`;
+function mkOpts(correct,wrongs){
+  const seen=new Set([correct]),w=[];
+  for(const x of wrongs){if(x!=null&&!seen.has(x)){seen.add(x);w.push(x)}}
+  const opts=shuffle([correct,...w.slice(0,2)]);
+  return {opts,ans:opts.indexOf(correct)};
+}
+const mkEx=(q,correct,wrongs,steps,ok,tag)=>({q,...mkOpts(correct,wrongs),steps,ok,tag});
+const near=(a,b)=>Math.abs(a-b)<1e-9;
+const mod2=t=>((t%2)+2)%2;                         // t in unità di π, ridotto in [0,2)
+function rat(n,d){if(d<0){n=-n;d=-d}const g=gcd(n,d)||1;return [n/g,d/g]}
+/* frazione verticale (n/d) · sym, con segno meno davanti */
+function fh(n,d,sym=''){
+  [n,d]=rat(n,d);
+  if(n===0)return '0';
+  const neg=n<0,a=Math.abs(n);
+  const top=(a===1&&sym?'':String(a))+sym;
+  return (neg?MIN:'')+(d===1?top:F(top,String(d)));
+}
+const ang=(n,d)=>fh(n,d,'π');                      // angolo in radianti: (n/d)π
+const QL=['1° quadrante','2° quadrante','3° quadrante','4° quadrante'];
+const AXL=['asse x positivo','asse y positivo','asse x negativo','asse y negativo'];
+/* posizione di un angolo t (unità di π): ritorna etichetta */
+function posLabel(t){
+  const m=mod2(t);
+  const eq=(a,b)=>Math.abs(a-b)<1e-9;
+  if(eq(m,0))return AXL[0];if(eq(m,0.5))return AXL[1];if(eq(m,1))return AXL[2];if(eq(m,1.5))return AXL[3];
+  return QL[m<0.5?0:m<1?1:m<1.5?2:3];
+}
+const quadOf=t=>{const m=mod2(t);return m<0.5?0:m<1?1:m<1.5?2:3};
+
+/* ========== CIRCONFERENZA GONIOMETRICA (disegno) ========== */
+let _gn=0;
+function circGon(t,o){
+  o=o||{};
+  const W=300,H=268,cx=138,cy=134,R=92;
+  const th=t*Math.PI;
+  const bx=cx+R*Math.cos(th),by=cy-R*Math.sin(th);
+  let s=`<svg viewBox="0 0 ${W} ${H}" class="sgf circ${o.small?' sm':''}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Circonferenza goniometrica"><defs><marker id="ah${++_gn}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L9 5L1 9z" fill="#c62828"/></marker></defs>`;
+  s+=`<line x1="12" y1="${cy}" x2="${W-8}" y2="${cy}" stroke="#222" stroke-width="1.8"/><line x1="${cx}" y1="${H-8}" x2="${cx}" y2="10" stroke="#222" stroke-width="1.8"/>`;
+  s+=`<text x="${W-14}" y="${cy+14}" font-family="Arial" font-size="16" fill="#111">x</text><text x="${cx+6}" y="16" font-family="Arial" font-size="16" fill="#111">y</text>`;
+  s+=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="#222" stroke-width="2"/>`;
+  s+=`<text x="${cx-20}" y="${cy+16}" font-family="Arial" font-size="15" fill="#111">O</text>`;
+  s+=`<circle cx="${cx+R}" cy="${cy}" r="3.5" fill="#111"/><text x="${cx+R+4}" y="${cy+15}" font-family="Arial" font-size="15" fill="#111">E(1;0)</text>`;
+  [['1',cx+R,cy-5],['−1',cx-R-14,cy-5]].forEach(a=>{});
+  if(o.axesVals){
+    s+=`<text x="${cx+4}" y="${cy-R-3}" font-family="Arial" font-size="14" fill="#111">1</text><text x="${cx+4}" y="${cy+R+11}" font-family="Arial" font-size="14" fill="#111">${MIN}1</text><text x="${cx-R-12}" y="${cy+12}" font-family="Arial" font-size="14" fill="#111">${MIN}1</text>`;
+  }
+  const m=mod2(t),useNeg=t<0&&Math.abs(t)<2;
+  const arcR=24;
+  if(!o.noArc&&Math.abs(m)>1e-9){
+    const a1=useNeg?0:0,span=useNeg?-(mod2(-t))*Math.PI:m*Math.PI;
+    const ex=cx+arcR*Math.cos(span),ey=cy-arcR*Math.sin(span);
+    const large=Math.abs(span)>Math.PI?1:0,sweep=span>0?0:1;
+    s+=`<path d="M${cx+arcR},${cy} A${arcR},${arcR} 0 ${large} ${sweep} ${ex.toFixed(1)},${ey.toFixed(1)}" fill="none" stroke="#c62828" stroke-width="2" marker-end="url(#ah${_gn})"/>`;
+    const mid=span/2;s+=`<text x="${(cx+(arcR+11)*Math.cos(mid)-4).toFixed(1)}" y="${(cy-(arcR+11)*Math.sin(mid)+4).toFixed(1)}" font-family="Arial" font-size="18" font-style="italic" fill="#c62828">α</text>`;
+  }
+  s+=`<line x1="${cx}" y1="${cy}" x2="${bx.toFixed(1)}" y2="${by.toFixed(1)}" stroke="#c62828" stroke-width="2.4"/>`;
+  if(o.proj){
+    s+=`<line x1="${bx.toFixed(1)}" y1="${by.toFixed(1)}" x2="${bx.toFixed(1)}" y2="${cy}" stroke="#1a4a8a" stroke-width="1.6" stroke-dasharray="4 3"/><line x1="${bx.toFixed(1)}" y1="${by.toFixed(1)}" x2="${cx}" y2="${by.toFixed(1)}" stroke="#2e7d32" stroke-width="1.6" stroke-dasharray="4 3"/>`;
+    if(Math.abs(bx-cx)>16)s+=`<text x="${((bx+cx)/2).toFixed(1)}" y="${cy+(by<cy?14:-6)}" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#0d3b7a" stroke="#fff" stroke-width="3" paint-order="stroke">cos α</text>`;
+    if(Math.abs(by-cy)>16)s+=`<text x="${cx+(bx>cx?-4:4)}" y="${(by+((cy-by)>0?-6:14)).toFixed(1)}" text-anchor="${bx>cx?'end':'start'}" font-family="Arial" font-size="15" font-weight="700" fill="#145214" stroke="#fff" stroke-width="3" paint-order="stroke">sin α</text>`;
+  }
+  s+=`<circle cx="${bx.toFixed(1)}" cy="${by.toFixed(1)}" r="4.5" fill="#c62828" stroke="#fff" stroke-width="1.2"/>`;
+  const lx=bx+(bx>=cx?7:-15),ly=by+(by<=cy?-6:15);
+  s+=`<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" font-family="Arial" font-size="18" font-weight="700" fill="#8e1f1f">B</text>`;
+  return s+'</svg>';
+}
+
+/* ========== ESERCIZI DI GONIOMETRIA ========== */
+const TRIP=[[3,4,5],[5,12,13],[8,15,17],[7,24,25],[20,21,29]];
+const SSIGN=[1,1,-1,-1],CSIGN=[1,-1,-1,1];            // segno di seno e coseno nei 4 quadranti
+const lcm=(a,b)=>a*b/gcd(a,b);
+
+/* riduzione di un angolo (n/d)π all'intervallo [0, 2π) */
+function reduceStep(n,d){
+  const t=n/d,k=Math.floor(t/2);
+  const [bn,bd]=rat(n-2*k*d,d);
+  let h;
+  if(k===0)h=`<p>L'angolo ${ang(n,d)} è già tra 0 e 2π: non devo togliere nessun giro.</p>`;
+  else h=`<p>L'angolo ${k>0?'è più grande di un angolo giro (2π)':'è negativo'}. ${k>0?'Tolgo':'Aggiungo'} ${Math.abs(k)===1?'un giro intero':Math.abs(k)+' giri interi'} (2π per ogni giro) fino a stare tra 0 e 2π:</p><p class="m">${ang(n,d)} ${k>0?MIN:'+'} ${Math.abs(2*k)===2?'2π':Math.abs(2*k)+'π'} = ${ang(bn,bd)}</p>`;
+  return {html:h,bn,bd,k,base:bn/bd};
+}
+
+
+
+/* ========== ESERCIZI: ANGOLI PARTICOLARI E ANGOLI ASSOCIATI ========== */
+const radd=(x,y)=>rat(x[0]*y[1]+y[0]*x[1],x[1]*y[1]);
+const rmul=(x,y)=>rat(x[0]*y[0],x[1]*y[1]);
+const Z=[0,1];
+/* numeri della forma a + b√2 + c√3 + d√6 con a,b,c,d razionali */
+const BM=[[[0,1],[1,1],[2,1],[3,1]],[[1,1],[0,2],[3,1],[2,2]],[[2,1],[3,1],[0,3],[1,3]],[[3,1],[2,2],[1,3],[0,6]]];
+const V0=()=>[Z,Z,Z,Z];
+const vadd=(x,y)=>x.map((a,i)=>radd(a,y[i]));
+const vneg=x=>x.map(a=>[-a[0],a[1]]);
+const vsc=(x,c)=>x.map(a=>rmul(a,c));
+function vmul(x,y){
+  const r=V0();
+  for(let i=0;i<4;i++)for(let j=0;j<4;j++){
+    const p=rmul(x[i],y[j]);if(p[0]===0)continue;
+    const [k,f]=BM[i][j];r[k]=radd(r[k],rmul(p,[f,1]));
+  }
+  return r;
+}
+const vnum=x=>x[0][0]/x[0][1]+Math.SQRT2*x[1][0]/x[1][1]+Math.sqrt(3)*x[2][0]/x[2][1]+Math.sqrt(6)*x[3][0]/x[3][1];
+const SYM=['','√2','√3','√6'];
+const vnz=x=>x.filter(a=>a[0]!==0).length;
+function vfmt(x){
+  let s='',first=true;
+  for(let i=0;i<4;i++){
+    const [n,d]=x[i];if(n===0)continue;
+    const neg=n<0;
+    if(first){s+=fh(n,d,SYM[i]);first=false}
+    else s+=(neg?' '+MIN+' ':' + ')+fh(Math.abs(n),d,SYM[i]);
+  }
+  return first?'0':s;
+}
+const vpar=x=>vnz(x)>1||(vnz(x)===1&&(()=>{const k=x.findIndex(a=>a[0]!==0);return x[k][0]<0})())?'('+vfmt(x)+')':vfmt(x);
+const vsame=(a,b)=>a.every((p,i)=>p[0]===b[i][0]&&p[1]===b[i][1]);
+/* valori delle funzioni goniometriche per π/6, π/4, π/3 (k = 6, 4, 3) */
+const H=[1,2];
+const TV={
+ sin:{6:[H,Z,Z,Z],4:[Z,H,Z,Z],3:[Z,Z,H,Z]},
+ cos:{6:[Z,Z,H,Z],4:[Z,H,Z,Z],3:[H,Z,Z,Z]},
+ tan:{6:[Z,Z,[1,3],Z],4:[[1,1],Z,Z,Z],3:[Z,Z,[1,1],Z]},
+ cot:{6:[Z,Z,[1,1],Z],4:[[1,1],Z,Z,Z],3:[Z,Z,[1,3],Z]}
+};
+const FN=['sin','cos','tan','cot'];
+const DEG={6:30,4:45,3:60};
+const tv=(fn,k)=>TV[fn][k];
+const angK=k=>ang(1,k);
+const nmath=(fn,k)=>{const t=Math.PI/k;return fn==='sin'?Math.sin(t):fn==='cos'?Math.cos(t):fn==='tan'?Math.tan(t):1/Math.tan(t)};
+/* controllo numerico dei valori in tabella (vengono verificati ad ogni uso) */
+for(const fn of FN)for(const k of [6,4,3])if(Math.abs(vnum(tv(fn,k))-nmath(fn,k))>1e-9)throw new Error('tabella errata '+fn+k);
+
+/* ---------- Unità 0: frazioni e radicali ---------- */
+const RVALS=[[[1,2],Z,Z,Z],[Z,H,Z,Z],[Z,Z,H,Z],[Z,Z,[1,3],Z],[Z,Z,[1,1],Z],[[3,1],Z,Z,Z],[Z,[1,1],Z,Z],[[1,2],Z,Z,Z]];
+function exRadMul(){
+  for(let t=0;t<200;t++){
+    const a=pick(RVALS),b=pick(RVALS);
+    const p=vmul(a,b);
+    if(vnz(p)>1||vsame(a,b)&&Math.random()<0.5)continue;
+    const w=[];
+    w.push(vfmt(vadd(a,b)));
+    w.push(vfmt(vmul(vmul(a,b),[[2,1],Z,Z,Z])));
+    w.push(vfmt(vneg(p)));
+    w.push(vfmt(vsc(p,[1,2])));
+    const corr=vfmt(p);
+    const steps=`<p>Moltiplico i numeratori tra loro e i denominatori tra loro. Ricordo che <b>√2 · √2 = 2</b>, <b>√3 · √3 = 3</b> e <b>√2 · √3 = √6</b>.</p><p class="m">${vpar(a)} · ${vpar(b)} = <b>${corr}</b></p>`;
+    return mkEx(`Calcola: <b>${vpar(a)} · ${vpar(b)}</b>`,corr,w,steps,()=>near(vnum(a)*vnum(b),vnum(p)),'Prodotti con i radicali');
+  }
+}
+function exRadSum(){
+  for(let t=0;t<200;t++){
+    const a=pick(RVALS),b=pick(RVALS),c=pick([[1,1],[2,1],[3,1],[1,2]]);
+    const s=vadd(a,vsc(b,c));
+    if(vnz(s)>1)continue;
+    const cs=c[0]===1&&c[1]===1?'':(c[1]===1?String(c[0]):fh(c[0],c[1]));
+    const w=[vfmt(vadd(a,b)),vfmt(vsc(vadd(a,b),c)),vfmt(vadd(a,vneg(vsc(b,c)))),vfmt(vsc(s,[2,1])),vfmt(vsc(s,[1,2])),vfmt(vneg(s)),vfmt(vadd(s,a))];
+    const corr=vfmt(s);
+    return mkEx(`Calcola: <b>${vpar(a)} + ${cs}${cs?' · ':''}${vpar(b)}</b>`,corr,w,
+     `<p>Prima faccio la <b>moltiplicazione</b>, poi la somma. Si sommano solo termini con lo <b>stesso radicale</b> (o i numeri senza radicale).</p><p class="m">${vpar(a)} + ${cs}${cs?' · ':''}${vpar(b)} = ${vpar(a)} + ${vpar(vsc(b,c))} = <b>${corr}</b></p>`,()=>near(vnum(a)+vnum(b)*c[0]/c[1],vnum(s)),'Somme con i radicali');
+  }
+}
+
+/* ---------- Unità 1: valori degli angoli particolari ---------- */
+function exTabVal(){
+  const fn=pick(FN),k=pick([6,4,3]);
+  const corr=vfmt(tv(fn,k));
+  const others=[6,4,3].filter(x=>x!==k).map(x=>vfmt(tv(fn,x)));
+  const w=[...others,vfmt(tv(fn==='sin'?'cos':fn==='cos'?'sin':fn==='tan'?'cot':'tan',k)),vfmt(vneg(tv(fn,k)))];
+  return mkEx(`Quanto vale <b>${fn} ${angK(k)}</b>?`,corr,w,
+   `<p>Dalla tabella dei valori fondamentali: ${fn} ${angK(k)} (${DEG[k]}°).</p><p class="m">${fn} ${angK(k)} = <b>${corr}</b></p>`,()=>true,'Tabella dei valori');
+}
+function exTabInv(){
+  const fn=pick(FN),k=pick([6,4,3]);
+  const v=vfmt(tv(fn,k));
+  const cnt=[6,4,3].filter(x=>vfmt(tv(fn,x))===v).length;
+  if(cnt>1)return exTabInv();
+  const opts=[6,4,3];
+  return mkEx(`Se ${fn} α = <b>${v}</b> e α è uno degli angoli fondamentali (${angK(6)}, ${angK(4)}, ${angK(3)}), quanto vale α?`,angK(k),opts.filter(x=>x!==k).map(angK),
+   `<p>Cerco nella riga della ${fn} il valore ${v}: lo trovo per ${angK(k)} (${DEG[k]}°).</p><p class="m">α = <b>${angK(k)}</b></p>`,()=>true,'Tabella dei valori');
+}
+function exTabRel(){
+  const [a,b,w]=pick([
+   ['sin','cos','sin α = cos(π/2 − α): per α = π/6 uguale a cos π/3'],
+   ['tan','cot','tan e cot sono inversi: tan α · cot α = 1']]);
+  if(a==='tan'){
+    const k=pick([6,4,3]);
+    const p=vmul(tv('tan',k),tv('cot',k));
+    return mkEx(`Quanto vale il prodotto <b>tan ${angK(k)} · cot ${angK(k)}</b>?`,vfmt(p),[vfmt(tv('tan',k)),'0',vfmt(vneg(p))],
+     `<p>tan ${angK(k)} = ${vfmt(tv('tan',k))} e cot ${angK(k)} = ${vfmt(tv('cot',k))}. Sono uno l'inverso dell'altro:</p><p class="m">${vpar(tv('tan',k))} · ${vpar(tv('cot',k))} = <b>${vfmt(p)}</b></p>`,()=>near(vnum(p),1),'Tabella dei valori');
+  }
+  const k=pick([6,3]);
+  const k2=k===6?3:6;
+  return mkEx(`Quale funzione di <b>${angK(k2)}</b> ha lo stesso valore di <b>sin ${angK(k)}</b>?`,`cos ${angK(k2)}`,[`sin ${angK(k2)}`,`tan ${angK(k2)}`],
+   `<p>sin ${angK(k)} = ${vfmt(tv('sin',k))}. Guardo la riga del coseno: cos ${angK(k2)} = ${vfmt(tv('cos',k2))}, uguale.</p><p class="m">sin ${angK(k)} = cos ${angK(k2)} = <b>${vfmt(tv('sin',k))}</b></p>`,()=>vsame(tv('sin',k),tv('cos',k2)),'Tabella dei valori');
+}
+
+/* ---------- Unità 2: espressioni con angoli particolari ---------- */
+const COEF=[[1,1],[2,1],[3,1],[1,2],[1,3],[3,2],[2,3],[4,1]];
+const cht=c=>c[0]===1&&c[1]===1?'':(c[1]===1?String(c[0]):F(c[0],c[1]));
+function fac(){return {fn:pick(FN),k:pick([6,4,3])}}
+const facT=f=>`${f.fn} ${angK(f.k)}`;
+const facV=f=>tv(f.fn,f.k);
+function mkTerm(){
+  const kind=pick(['A','A','B','B','C']);
+  const c=pick(COEF);
+  if(kind==='A'){const f=fac();return {c,fs:[f],txt:cht(c)+(cht(c)?' ':'')+facT(f),val:vsc(facV(f),c),sub:(cht(c)?cht(c)+' · ':'')+vpar(facV(f))}}
+  if(kind==='B'){const f=fac(),g=fac();return {c,fs:[f,g],txt:cht(c)+(cht(c)?' ':'')+facT(f)+' '+facT(g),val:vsc(vmul(facV(f),facV(g)),c),sub:(cht(c)?cht(c)+' · ':'')+vpar(facV(f))+' · '+vpar(facV(g))}}
+  const f=fac(),g=fac(),h=fac(),op=pick(['+','−']);
+  const inner=op==='+'?vadd(facV(g),facV(h)):vadd(facV(g),vneg(facV(h)));
+  return {c,fs:[f,g,h],op,txt:(cht(c)?cht(c)+' ':'')+facT(f)+' ('+facT(g)+' '+op+' '+facT(h)+')',val:vsc(vmul(facV(f),inner),c),sub:(cht(c)?cht(c)+' · ':'')+vpar(facV(f))+' · ('+vfmt(facV(g))+' '+op+' '+vpar(facV(h))+')'};
+}
+function exEspPart(){
+  for(let t=0;t<300;t++){
+    const n=pick([2,3,3]),terms=[];
+    for(let i=0;i<n;i++){const T=mkTerm();T.neg=i>0&&Math.random()<0.35;terms.push(T)}
+    let tot=V0();terms.forEach(T=>{tot=vadd(tot,T.neg?vneg(T.val):T.val)});
+    if(vnz(tot)>2||vnz(tot)===0)continue;
+    if(tot[3][0]!==0||terms.some(T=>T.val[3][0]!==0))continue;
+    if(tot.some(a=>a[1]>24))continue;
+    const txt=terms.map((T,i)=>(i===0?'':(T.neg?' '+MIN+' ':' + '))+T.txt).join('');
+    const sub=terms.map((T,i)=>(i===0?'':(T.neg?' '+MIN+' ':' + '))+T.sub).join('');
+    const each=terms.map((T,i)=>(i===0?'':(T.neg?' '+MIN+' ':' + '))+vpar(T.val)).join('');
+    const corr=vfmt(tot);
+    // risposte sbagliate: segno di un termine, funzione scambiata, coefficiente dimenticato
+    const alt=[];
+    terms.forEach((T,i)=>{
+      let a=V0();terms.forEach((U2,j)=>{let v=U2.val;if(j===i)v=vneg(v);a=vadd(a,U2.neg?vneg(v):v)});alt.push(vfmt(a));
+      let b=V0();terms.forEach((U2,j)=>{let v=U2.val;if(j===i){const c=U2.c;v=vsc(v,[c[1],c[0]])}b=vadd(b,U2.neg?vneg(v):v)});alt.push(vfmt(b));
+    });
+    const wrong=[...new Set(alt)].filter(x=>x!==corr);
+    if(wrong.length<2)continue;
+    const chk=terms.reduce((s,T)=>s+(T.neg?-1:1)*vnum(T.val),0);
+    const steps=`<p><b>1.</b> Sostituisco i valori della tabella:</p><p class="m">${sub}</p><p><b>2.</b> Svolgo le moltiplicazioni (ricordo √2 · √2 = 2 e √3 · √3 = 3):</p><p class="m">${each}</p><p><b>3.</b> Sommo i termini simili e semplifico:</p><p class="m">E = <b>${corr}</b></p>`;
+    return mkEx(`Calcola il valore dell'espressione:<br><b>${txt}</b>`,corr,wrong,steps,()=>near(chk,vnum(tot)),'Espressioni con angoli particolari');
+  }
+}
+
+/* ---------- Unità 3 e 4: angoli associati ---------- */
+const FORMS={
+ 'm':{lab:'−α',arg:()=>MIN+'α',g:{sin:[-1,'sin'],cos:[1,'cos'],tan:[-1,'tan'],cot:[-1,'cot']},same:true,q:4},
+ '2p':{lab:'2π − α',arg:()=>'2π − α',g:{sin:[-1,'sin'],cos:[1,'cos'],tan:[-1,'tan'],cot:[-1,'cot']},same:true,q:4},
+ 'p-':{lab:'π − α',arg:()=>'π − α',g:{sin:[1,'sin'],cos:[-1,'cos'],tan:[-1,'tan'],cot:[-1,'cot']},same:true,q:2},
+ 'p+':{lab:'π + α',arg:()=>'π + α',g:{sin:[-1,'sin'],cos:[-1,'cos'],tan:[1,'tan'],cot:[1,'cot']},same:true,q:3},
+ 'h-':{lab:'π/2 − α',arg:()=>ang(1,2)+' − α',g:{sin:[1,'cos'],cos:[1,'sin'],tan:[1,'cot'],cot:[1,'tan']},same:false,q:1},
+ 'h+':{lab:'π/2 + α',arg:()=>ang(1,2)+' + α',g:{sin:[1,'cos'],cos:[-1,'sin'],tan:[-1,'cot'],cot:[-1,'tan']},same:false,q:2},
+ 'k-':{lab:'3π/2 − α',arg:()=>ang(3,2)+' − α',g:{sin:[-1,'cos'],cos:[-1,'sin'],tan:[1,'cot'],cot:[1,'tan']},same:false,q:3},
+ 'k+':{lab:'3π/2 + α',arg:()=>ang(3,2)+' + α',g:{sin:[-1,'cos'],cos:[1,'sin'],tan:[-1,'cot'],cot:[-1,'tan']},same:false,q:4}
+};
+const FK=Object.keys(FORMS);
+Object.values(FORMS).forEach(f=>{f.lab=f.arg()});
+const P2=ang(1,2),P32=ang(3,2);
+const callT=(fn,fk)=>`${fn}(${FORMS[fk].arg()})`;
+const sgnT=(s,fn)=>(s<0?MIN:'')+fn+' α';
+/* controllo numerico della griglia con α = 0,3 rad */
+(function(){
+  const a=0.3,f={sin:Math.sin,cos:Math.cos,tan:Math.tan,cot:x=>1/Math.tan(x)};
+  const base={'m':-a,'2p':2*Math.PI-a,'p-':Math.PI-a,'p+':Math.PI+a,'h-':Math.PI/2-a,'h+':Math.PI/2+a,'k-':3*Math.PI/2-a,'k+':3*Math.PI/2+a};
+  for(const k of FK)for(const fn of FN){const [s,g]=FORMS[k].g[fn];if(Math.abs(f[fn](base[k])-s*f[g](a))>1e-9)throw new Error('griglia errata '+k+fn)}
+})();
+function exAssoc(){
+  const fk=pick(FK),fn=pick(FN),[s,g]=FORMS[fk].g[fn];
+  const corr=sgnT(s,g);
+  const w=[sgnT(-s,g)];
+  const other=FN.filter(x=>x!==g&&((x==='sin'||x==='cos')===(g==='sin'||g==='cos')));
+  other.forEach(x=>{w.push(sgnT(s,x));w.push(sgnT(-s,x))});
+  FN.filter(x=>x!==g).forEach(x=>w.push(sgnT(s,x)));
+  const F2=FORMS[fk];
+  const regola=F2.same?`L'angolo ${F2.lab} <b>non cambia la funzione</b> (resta ${fn}).`:`L'angolo ${F2.lab} <b>cambia la funzione</b> (${fn} → ${g}).`;
+  return mkEx(`Semplifica con la griglia degli angoli associati: <b>${callT(fn,fk)}</b>`,corr,w,
+   `<p>Nella griglia, riga "Angolo: ${F2.lab}": <b>${callT(fn,fk)} = ${corr}</b>.</p><p>${regola} Il segno è ${s<0?'<b>meno</b>':'<b>più</b>'}.</p>`,()=>true,'Angoli associati');
+}
+/* calcolo di un valore con un angolo associato (α = π/6, π/4, π/3) */
+function exAssocNum(){
+  const fk=pick(['p-','p+','2p']),k=pick([6,4,3]),fn=pick(FN);
+  const F2=FORMS[fk],[s,g]=F2.g[fn];
+  // angolo θ come frazione di π
+  const t=fk==='p-'?[1,1]:fk==='p+'?[1,1]:[2,1];
+  const sign=fk==='p+'?1:-1;
+  const num=t[0]*k+sign*1,den=k;
+  const [tn,td]=rat(num,den);
+  const val=vsc(tv(g,k),[s,1]);
+  const corr=vfmt(val);
+  const w=[vfmt(vneg(val)),vfmt(tv(fn,k)),vfmt(tv(g==='sin'?'cos':g==='cos'?'sin':g==='tan'?'cot':'tan',k)),...[6,4,3].filter(x=>x!==k).map(x=>vfmt(vsc(tv(g,x),[s,1]))),'0'];
+  const th2=ang(tn,td);
+  const chkN=(()=>{const x=tn/td*Math.PI;const f={sin:Math.sin,cos:Math.cos,tan:Math.tan,cot:y=>1/Math.tan(y)};return f[fn](x)})();
+  return mkEx(`Calcola, usando gli angoli associati: <b>${fn} ${th2}</b>`,corr,w,
+   `<p><b>1.</b> Scrivo l'angolo come ${F2.lab.replace('α',angK(k))}: ${th2} = ${F2.lab==='2π − α'?'2π − ':F2.lab==='π − α'?'π − ':'π + '}${angK(k)}.</p><p><b>2.</b> Griglia: <span class="m">${callT(fn,fk)} = ${sgnT(s,g)}</span>, con α = ${angK(k)}.</p><p><b>3.</b> Sostituisco il valore: <span class="m">${g} ${angK(k)} = ${vfmt(tv(g,k))}</span>.</p><p class="m">${fn} ${th2} = ${(s<0?MIN:'')+vpar(tv(g,k))===corr?'<b>'+corr+'</b>':(s<0?MIN:'')+vpar(tv(g,k))+' = <b>'+corr+'</b>'}</p>`,()=>near(chkN,vnum(val)),'Angoli associati con valori');
+}
+/* espressioni con angoli associati: monomi in sin e cos */
+const EXPO={sin:[1,0],cos:[0,1],tan:[1,-1],cot:[-1,1]};
+function monoT(c,a,b){
+  const n=Math.abs(c);
+  const pw=(f,e)=>f+(e===1?'':e===2?'²':sup(e));
+  let body;
+  if(a===0&&b===0)body='1';
+  else if(a===-b){body=a>0?pw('tan',a)+' α':pw('cot',-a)+' α'}
+  else{
+    const nu=[],de=[];
+    if(a>0)nu.push(pw('sin',a)+' α');else if(a<0)de.push(pw('sin',-a)+' α');
+    if(b>0)nu.push(pw('cos',b)+' α');else if(b<0)de.push(pw('cos',-b)+' α');
+    body=de.length?F(nu.join(' ')||'1',de.join(' ')):nu.join(' ');
+  }
+  return body==='1'?String(n):(n===1?'':n+' ')+body;
+}
+function polyT(map){
+  const keys=Object.keys(map).filter(k=>map[k]!==0).sort((x,y)=>{
+    const [a1,b1]=x.split(',').map(Number),[a2,b2]=y.split(',').map(Number);
+    return (b2-b1)||(a2-a1);
+  });
+  if(!keys.length)return '0';
+  let s='';
+  keys.forEach((k,i)=>{
+    const [a,b]=k.split(',').map(Number),c=map[k];
+    const body=monoT(Math.abs(c),a,b);
+    if(i===0)s+=(c<0?MIN:'')+body;else s+=(c<0?' '+MIN+' ':' + ')+body;
+  });
+  return s;
+}
+function exAssocExpr(){
+  for(let t=0;t<400;t++){
+    const n=pick([2,3,3]),terms=[];
+    for(let i=0;i<n;i++){
+      const f1={fk:pick(FK),fn:pick(FN)},f2={fk:pick(FK),fn:pick(FN)};
+      const g1=FORMS[f1.fk].g[f1.fn],g2=FORMS[f2.fk].g[f2.fn];
+      const e1=EXPO[g1[1]],e2=EXPO[g2[1]];
+      terms.push({f1,f2,g1,g2,neg:i>0&&Math.random()<0.4,s:g1[0]*g2[0],a:e1[0]+e2[0],b:e1[1]+e2[1]});
+    }
+    const map={};
+    terms.forEach(T=>{const k=T.a+','+T.b;map[k]=(map[k]||0)+(T.neg?-T.s:T.s)});
+    const keys=Object.keys(map).filter(k=>map[k]!==0);
+    if(!keys.length||keys.length>3)continue;
+    const okK=k=>{const [a,b]=k.split(',').map(Number);return (a>=0&&b>=0)||a===-b};
+    if(!keys.every(okK)||terms.some(T=>!okK(T.a+','+T.b)))continue;
+    if(keys.some(k=>{const [a,b]=k.split(',').map(Number);return Math.abs(a)>2||Math.abs(b)>2||(a<0&&b<0)}))continue;
+    if(terms.some(T=>Math.abs(T.a)>2||Math.abs(T.b)>2))continue;
+    if(new Set(terms.map(T=>T.f1.fk+T.f1.fn+T.f2.fk+T.f2.fn)).size<terms.length)continue;
+    const txt=terms.map((T,i)=>(i===0?'':(T.neg?' '+MIN+' ':' + '))+callT(T.f1.fn,T.f1.fk)+' '+callT(T.f2.fn,T.f2.fk)).join('');
+    const par=(s,g)=>s<0?'('+MIN+g+' α)':g+' α';
+    const st1=terms.map((T,i)=>(i===0?'':(T.neg?' '+MIN+' ':' + '))+par(T.g1[0],T.g1[1])+' · '+par(T.g2[0],T.g2[1])).join('');
+    const st2b=terms.map((T,i)=>{const c=T.neg?-T.s:T.s;return (i===0?(c<0?MIN:''):(c<0?' '+MIN+' ':' + '))+monoT(1,T.a,T.b)}).join('');
+    const corr=polyT(map);
+    const alt=[];
+    terms.forEach((T,i)=>{
+      const m2={};terms.forEach((U2,j)=>{const k=U2.a+','+U2.b;let c=U2.neg?-U2.s:U2.s;if(j===i)c=-c;m2[k]=(m2[k]||0)+c});alt.push(polyT(m2));
+    });
+    const wrong=[...new Set(alt)].filter(x=>x!==corr);
+    if(wrong.length<2)continue;
+    const steps=`<p><b>1.</b> Applico le formule della griglia a ogni fattore:</p><p class="m">${st1}</p><p><b>2.</b> Sistemo i segni e semplifico i prodotti (ricordo: <b>tan α = ${F('sin α','cos α')}</b>, <b>cot α = ${F('cos α','sin α')}</b>):</p><p class="m">${st2b}</p><p><b>3.</b> Sommo i termini simili:</p><p class="m">E = <b>${corr}</b></p>`;
+    return mkEx(`Semplifica l'espressione:<br><b>${txt}</b>`,corr,wrong,steps,()=>{
+      const a=0.37,f={sin:Math.sin,cos:Math.cos,tan:Math.tan,cot:x=>1/Math.tan(x)};
+      const base={'m':-a,'2p':2*Math.PI-a,'p-':Math.PI-a,'p+':Math.PI+a,'h-':Math.PI/2-a,'h+':Math.PI/2+a,'k-':3*Math.PI/2-a,'k+':3*Math.PI/2+a};
+      const lhs=terms.reduce((s,T)=>s+(T.neg?-1:1)*f[T.f1.fn](base[T.f1.fk])*f[T.f2.fn](base[T.f2.fk]),0);
+      const rhs=Object.keys(map).reduce((s,k)=>{const [p,q]=k.split(',').map(Number);return s+map[k]*Math.pow(Math.sin(a),p)*Math.pow(Math.cos(a),q)},0);
+      return Math.abs(lhs-rhs)<1e-9;
+    },'Espressioni con angoli associati');
+  }
+}
+const tgm=(tag,pairs)=>()=>{const p=pick(pairs);return mkEx(`<b>${p[0]}</b>`,p[1],p[3],`<p>${p[2]}</p><p>Risposta: <b>${p[1]}</b>.</p>`,()=>true,tag)};
+const exAssocTeo=tgm('Angoli associati: teoria',[
+ ['Quale funzione si ottiene da sin(π − α)?','sin α','Griglia: sin(π − α) = sin α.',['−sin α','cos α']],
+ ['Quanto vale cos(π − α)?','−cos α','Il coseno cambia segno.',['cos α','sin α']],
+ ['Quanto vale sin(π + α)?','−sin α','Griglia: π + α.',['sin α','−cos α']],
+ ['Quanto vale tan(π + α)?','tan α','La tangente non cambia con π + α.',['−tan α','cot α']],
+ ['Quanto vale sin(−α)?','−sin α','Il seno è dispari.',['sin α','cos α']],
+ ['Quanto vale cos(−α)?','cos α','Il coseno è pari.',['−cos α','sin α']],
+ ['Quanto vale sin('+P2+' − α)?','cos α',''+P2+' cambia la funzione.',['sin α','−cos α']],
+ ['Quanto vale cos('+P2+' + α)?','−sin α','Griglia: '+P2+' + α.',['sin α','cos α']],
+ ['Quanto vale tan('+P2+' − α)?','cot α','Cambia tan in cot.',['tan α','−cot α']],
+ ['Quanto vale sin('+P32+' − α)?','−cos α','Griglia: '+P32+' − α.',['cos α','sin α']],
+ ['Quanto vale cos('+P32+' + α)?','sin α','Griglia: '+P32+' + α.',['−sin α','−cos α']],
+ ['Quanto vale tan('+P32+' + α)?','−cot α','Griglia: '+P32+' + α.',['cot α','−tan α']],
+ ['Con quali angoli la funzione cambia (sin ↔ cos, tan ↔ cot)?','Con '+P2+' ± α e '+P32+' ± α','Gli altri angoli non cambiano la funzione.',['Con π ± α e 2π − α','Con −α e π − α']],
+ ['Con quali angoli la funzione NON cambia?','−α, 2π − α, π − α, π + α','Cambia solo il segno.',[''+P2+' ± α',''+P32+' ± α']]
+].map(p=>p));
+const GENS={
+  u0:[exRadMul,exRadMul,exRadSum],
+  u1:[exTabVal,exTabVal,exTabInv,exTabRel],
+  u2:[exEspPart,exEspPart,exEspPart,exTabVal],
+  u3:[exAssoc,exAssoc,exAssoc,exAssocNum,exAssocTeo],
+  u4:[exAssocExpr,exAssocExpr,exAssocExpr,exAssocNum,exAssoc]
+};
+const UNITS={u0:'0 · Da sapere prima: frazioni e radicali',u1:'1 · I valori degli angoli particolari',u2:'2 · Espressioni con gli angoli particolari',u3:'3 · Gli angoli associati: la griglia',u4:'4 · Semplificare con gli angoli associati'};
+const PROVA_PLAN={u0:2,u1:3,u2:3,u3:4,u4:3};
+
+/* ========== CONTENUTI FISSI (Goniometria 4 ES: prima parte) ========== */
+const stepsHtml=list=>list.map((t,i)=>`<div class="step"><b class="n">${i+1}</b><div>${t}</div></div>`).join('');
+const card=(cls,title,body)=>`<div class="box ${cls}"><h3>${title}</h3>${body}</div>`;
+const M=t=>`<span class="m">${t}</span>`;
+const TAB=(head,rows)=>`<div class="tblwrap"><table class="sg"><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const PI=(n,d)=>ang(n,d);
+
+
+const CONT={
+u0:{
+ cose:`<div class="box bia"><p>In questa parte si calcolano <b>espressioni</b> con <b>frazioni</b> e <b>radicali</b> (√2, √3). Prima di cominciare ripassiamo le <b>regole</b> che servono sempre: come si moltiplicano e si sommano le frazioni con i radicali.</p></div>`,
+ ricette:[
+  card('blu','1 · Moltiplicare i radicali',stepsHtml(['<b>√2 · √2 = 2</b> e <b>√3 · √3 = 3</b> (un radicale per se stesso dà il numero sotto radice).','<b>√2 · √3 = √6</b> (radicali diversi: si moltiplicano i numeri sotto radice).','Esempio: '+F('√3','2')+' · '+F('√3','2')+' = '+F('3','4')+'.'])),
+  card('ver','2 · Moltiplicare le frazioni',stepsHtml(['Si moltiplicano i <b>numeratori</b> tra loro e i <b>denominatori</b> tra loro.','Poi si <b>semplifica</b> (si divide sopra e sotto per lo stesso numero).','Esempio: 3 · '+F('√3','3')+' = '+F('3√3','3')+' = √3.'])),
+  card('gia','3 · Sommare',stepsHtml(['Si sommano solo termini <b>simili</b>: numeri con numeri, √3 con √3, √2 con √2.','Per le frazioni serve lo <b>stesso denominatore</b>.','Esempio: '+F('1','4')+' + '+F('3','4')+' = '+F('4','4')+' = 1. Ma 1 + √3 resta 1 + √3.'])),
+  card('ros','4 · Ordine delle operazioni',stepsHtml(['Prima le <b>parentesi</b>.','Poi le <b>moltiplicazioni</b>.','Infine le <b>somme</b> e le <b>differenze</b>.']))
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1 · radicali</h3><p class="m">${F('√2','2')} · √2 = ${F('√2 · √2','2')} = ${F('2','2')} = <b>1</b></p></div>
+ <div class="box bia"><h3>Esempio 2 · somma</h3><p class="m">${F('√3','2')} + ${F('√3','2')} = ${F('2√3','2')} = <b>√3</b></p></div>
+ <div class="box bia"><h3>Esempio 3 · somma di frazioni</h3><p class="m">${F('1','2')} + ${F('1','3')} = ${F('3','6')} + ${F('2','6')} = <b>${F('5','6')}</b></p></div>`,
+ errori:['<b>√3 · √3 = 3</b> (non √9 e non 3√3).','<b>√2 + √3</b> non si può sommare: radicali diversi.','Non sommare i denominatori: '+F('1','2')+' + '+F('1','2')+' = 1, non '+F('2','4')+'.','Prima le moltiplicazioni, poi le somme.'],
+ orale:[
+  ['Quanto fa √3 · √3? E √2 · √2?','√3 per √3 fa 3, e √2 per √2 fa 2: un radicale moltiplicato per se stesso dà il numero sotto radice.'],
+  ['Quando si possono sommare due radicali?','Solo se sono simili, cioè hanno lo stesso numero sotto radice: √3 + √3 = 2√3, mentre √2 + √3 non si può semplificare.']],
+ quiz:[
+  ['√3 · √3 vale…','3',['√9','3√3'],'Radicale per se stesso.'],
+  ['√2 · √2 vale…','2',['4','√4'],'Il numero sotto radice.'],
+  [F('√3','2')+' · '+F('√3','2')+' vale…',F('3','4'),[F('√3','4'),F('3','2')],'Numeratori e denominatori.'],
+  [F('1','4')+' + '+F('3','4')+' vale…','1',[F('4','8'),F('3','16')],'Stesso denominatore: si sommano i numeratori.'],
+  ['Si possono sommare √2 e √3?','No',['Sì, fa √5','Sì, fa 2√3'],'Radicali diversi.']]
+},
+u1:{
+ cose:`<div class="box bia"><p>Per calcolare le espressioni con <b>seno</b>, <b>coseno</b>, <b>tangente</b> e <b>cotangente</b> degli <b>angoli particolari</b> bisogna ricordare i <b>valori fondamentali</b>. Gli angoli particolari sono <b>${ang(1,6)}</b> (30°), <b>${ang(1,4)}</b> (45°) e <b>${ang(1,3)}</b> (60°).</p></div>`,
+ ricette:[
+  card('blu','A · La tabella dei valori fondamentali',TAB(['α','sin α','cos α','tan α','cot α'],[
+   [ang(1,6)+' (30°)',F('1','2'),F('√3','2'),F('√3','3'),'√3'],
+   [ang(1,4)+' (45°)',F('√2','2'),F('√2','2'),'1','1'],
+   [ang(1,3)+' (60°)',F('√3','2'),F('1','2'),'√3',F('√3','3')]])+'<p class="note">Va imparata a memoria: è la base di tutti gli esercizi.</p>'),
+  card('ver','B · In più · Come ricordarla',stepsHtml(['<b>Seno</b>: i numeratori sono √1, √2, √3 (cioè 1, √2, √3) tutti diviso 2: '+F('1','2')+', '+F('√2','2')+', '+F('√3','2')+'.','<b>Coseno</b>: gli stessi valori, ma in ordine inverso (per '+ang(1,6)+' vale '+F('√3','2')+', per '+ang(1,3)+' vale '+F('1','2')+').','<b>Tangente</b> = seno diviso coseno. <b>Cotangente</b> = l’inverso della tangente (cot α = '+F('1','tan α')+').','<b>'+F('√3','3')+'</b> è lo stesso numero di '+F('1','√3')+' (razionalizzando).'])),
+  card('gia','C · Gradi e radianti',stepsHtml([''+ang(1,6)+' = 30° · '+ang(1,4)+' = 45° · '+ang(1,3)+' = 60°.','La tabella usa i radianti: se l’angolo è in gradi, prima convertilo.']))
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1</h3><p class="m">sin ${ang(1,6)} = <b>${F('1','2')}</b> &nbsp; cos ${ang(1,6)} = <b>${F('√3','2')}</b></p></div>
+ <div class="box bia"><h3>Esempio 2</h3><p>tan ${ang(1,4)} = <b>1</b> e cot ${ang(1,4)} = <b>1</b>: a 45° tangente e cotangente valgono 1.</p></div>
+ <div class="box bia"><h3>Esempio 3</h3><p class="m">tan ${ang(1,3)} = <b>√3</b> &nbsp; cot ${ang(1,3)} = <b>${F('√3','3')}</b></p></div>`,
+ errori:['<b>sin '+ang(1,6)+' = '+F('1','2')+'</b> e <b>cos '+ang(1,6)+' = '+F('√3','2')+'</b>: non scambiarli.','A <b>'+ang(1,4)+'</b> seno e coseno sono uguali ('+F('√2','2')+').','<b>tan '+ang(1,6)+' = '+F('√3','3')+'</b>, <b>tan '+ang(1,3)+' = √3</b>: non scambiarli.','La cotangente è l’<b>inverso</b> della tangente: cot '+ang(1,6)+' = √3, cot '+ang(1,3)+' = '+F('√3','3')+'.'],
+ orale:[
+  ['Scrivi i valori di seno, coseno, tangente e cotangente di '+ang(1,6)+'.','Seno un mezzo, coseno radice di tre su due, tangente radice di tre su tre, cotangente radice di tre.'],
+  ['Scrivi i valori di seno, coseno, tangente e cotangente di '+ang(1,4)+'.','Seno e coseno valgono radice di due su due, tangente e cotangente valgono 1.'],
+  ['Scrivi i valori di seno, coseno, tangente e cotangente di '+ang(1,3)+'.','Seno radice di tre su due, coseno un mezzo, tangente radice di tre, cotangente radice di tre su tre.'],
+  ['Come ricordi i valori della tabella?','Il seno vale radice di 1, radice di 2, radice di 3, tutto su 2, per '+ang(1,6)+', '+ang(1,4)+', '+ang(1,3)+'; il coseno ha gli stessi valori in ordine inverso. La tangente è seno diviso coseno, la cotangente è l’inverso della tangente.']],
+ quiz:[
+  ['Quanto vale sin '+ang(1,6)+'?',F('1','2'),[F('√3','2'),F('√2','2')],'30°.'],
+  ['Quanto vale cos '+ang(1,4)+'?',F('√2','2'),[F('1','2'),F('√3','2')],'Uguale al seno.'],
+  ['Quanto vale tan '+ang(1,6)+'?',F('√3','3'),['√3','1'],'Seno diviso coseno.'],
+  ['Quanto vale cot '+ang(1,3)+'?',F('√3','3'),['√3','1'],'Inverso di tan '+ang(1,3)+' = √3.'],
+  ['Quanto vale tan '+ang(1,4)+'?','1',['√3',F('√2','2')],'Seno e coseno uguali.']]
+},
+u2:{
+ cose:`<div class="box bia"><p>Per calcolare il <b>valore di un’espressione</b> con gli angoli particolari si segue sempre lo stesso <b>metodo in 3 passaggi</b>: <b>sostituire</b> i valori, <b>svolgere le moltiplicazioni</b>, <b>semplificare</b>.</p></div>`,
+ ricette:[
+  card('blu','Passaggio 1 · Sostituire i valori',stepsHtml(['Cerca nella tabella il valore di ogni funzione (sin, cos, tan, cot) per l’angolo dato.','Scrivi il valore al posto della funzione, <b>mettendo tra parentesi</b> le somme.'])),
+  card('ver','Passaggio 2 · Svolgere le moltiplicazioni',stepsHtml(['Moltiplica numeratori con numeratori e denominatori con denominatori.','Ricorda: <b>√2 · √2 = 2</b> e <b>√3 · √3 = 3</b>.'])),
+  card('gia','Passaggio 3 · Semplificare',stepsHtml(['Semplifica ogni frazione.','Somma i termini simili: numeri con numeri, √3 con √3.','Riscrivi il risultato, anche in forma di frazione (es. '+F('7','2')+').']))
+ ],
+ esempio:`<div class="box bia"><h3>Esempio svolto (dalla guida)</h3>
+ <p>Calcolare il valore dell’espressione:</p>
+ <p class="m">E = ${F('1','2')} sin ${ang(1,6)} + ${F('√3','2')} cos ${ang(1,6)} + ${F('√2','2')} (sin ${ang(1,4)} + cos ${ang(1,4)}) + 3 cot ${ang(1,3)} tan ${ang(1,6)} + cos ${ang(1,3)}</p>
+ <p><b>Passaggio 1</b>: sostituire i valori degli angoli particolari</p>
+ <p class="m">E = ${F('1','2')} · ${F('1','2')} + ${F('√3','2')} · ${F('√3','2')} + ${F('√2','2')} (${F('√2','2')} + ${F('√2','2')}) + 3 · ${F('√3','3')} · ${F('√3','3')} + ${F('1','2')}</p>
+ <p><b>Passaggio 2</b>: svolgere le moltiplicazioni</p>
+ <p class="m">E = ${F('1','4')} + ${F('3','4')} + ${F('√2','2')} · √2 + 3 · ${F('1','3')} + ${F('1','2')}</p>
+ <p><b>Passaggio 3</b>: semplificare</p>
+ <p class="m">E = ${F('1','4')} + ${F('3','4')} + 1 + 1 + ${F('1','2')} = 1 + 1 + 1 + ${F('1','2')} = <b>${F('7','2')}</b></p></div>`,
+ errori:['Non dimenticare le <b>parentesi</b> quando sostituisci una somma.','<b>√3 · √3 = 3</b>, non √9.','<b>cot '+ang(1,3)+' = √3/3</b> (e <b>tan '+ang(1,6)+' = √3/3</b>): il prodotto è '+F('3','9')+' = '+F('1','3')+'.','Somma solo termini simili.'],
+ orale:[
+  ['Come si calcola il valore di un’espressione con gli angoli particolari?','Si seguono tre passaggi. Primo: si sostituiscono i valori degli angoli particolari presi dalla tabella. Secondo: si svolgono le moltiplicazioni, ricordando che radice di due per radice di due fa due e radice di tre per radice di tre fa tre. Terzo: si semplifica e si sommano i termini simili.'],
+  ['Spiega l’esempio svolto: quanto vale E?','Sostituendo i valori si ottiene un quarto più tre quarti più radice di due su due per radice di due più tre per un terzo più un mezzo. Si semplifica: un quarto più tre quarti fa uno, il prodotto con le radici fa uno, tre per un terzo fa uno, poi si aggiunge un mezzo. Il risultato è sette mezzi.']],
+ quiz:[
+  ['Qual è il primo passaggio?','Sostituire i valori degli angoli',['Semplificare','Sommare tutto'],'Si parte dalla tabella.'],
+  ['Quanto vale '+F('√2','2')+' · √2?','1',[F('√2','2'),'2'],'√2 · √2 = 2, poi 2/2.'],
+  ['Quanto vale 3 · '+F('√3','3')+' · '+F('√3','3')+'?','1',['3','√3'],'3 · 3/9 = 1.'],
+  ['Quanto vale '+F('1','4')+' + '+F('3','4')+'?','1',[F('4','8'),F('3','16')],'Stesso denominatore.'],
+  ['Quanto vale l’espressione E dell’esempio svolto?',F('7','2'),['3',F('5','2')],'1 + 1 + 1 + 1/2.']]
+},
+u3:{
+ cose:`<div class="box bia"><p>Gli <b>angoli associati</b> sono gli angoli del tipo <b>−α</b>, <b>2π − α</b>, <b>π ± α</b>, <b>${ang(1,2)} ± α</b>, <b>${ang(3,2)} ± α</b>. Le loro funzioni si riscrivono con le funzioni di α usando la <b>griglia degli angoli associati</b>: così si <b>semplificano</b> le espressioni.</p></div>`,
+ ricette:[
+  card('blu','Griglia · −α e 2π − α',TAB(['Angolo −α','Angolo 2π − α'],[
+   ['sin(−α) = −sin α','sin(2π − α) = −sin α'],['cos(−α) = cos α','cos(2π − α) = cos α'],['tan(−α) = −tan α','tan(2π − α) = −tan α'],['cot(−α) = −cot α','cot(2π − α) = −cot α']])),
+  card('ver','Griglia · π − α e π + α',TAB(['Angolo π − α','Angolo π + α'],[
+   ['sin(π − α) = sin α','sin(π + α) = −sin α'],['cos(π − α) = −cos α','cos(π + α) = −cos α'],['tan(π − α) = −tan α','tan(π + α) = tan α'],['cot(π − α) = −cot α','cot(π + α) = cot α']])),
+  card('gia','Griglia · '+ang(1,2)+' − α e '+ang(1,2)+' + α',TAB(['Angolo '+ang(1,2)+' − α','Angolo '+ang(1,2)+' + α'],[
+   ['sin('+ang(1,2)+' − α) = cos α','sin('+ang(1,2)+' + α) = cos α'],['cos('+ang(1,2)+' − α) = sin α','cos('+ang(1,2)+' + α) = −sin α'],['tan('+ang(1,2)+' − α) = cot α','tan('+ang(1,2)+' + α) = −cot α'],['cot('+ang(1,2)+' − α) = tan α','cot('+ang(1,2)+' + α) = −tan α']])),
+  card('ros','Griglia · '+ang(3,2)+' − α e '+ang(3,2)+' + α',TAB(['Angolo '+ang(3,2)+' − α','Angolo '+ang(3,2)+' + α'],[
+   ['sin('+ang(3,2)+' − α) = −cos α','sin('+ang(3,2)+' + α) = −cos α'],['cos('+ang(3,2)+' − α) = −sin α','cos('+ang(3,2)+' + α) = sin α'],['tan('+ang(3,2)+' − α) = cot α','tan('+ang(3,2)+' + α) = −cot α'],['cot('+ang(3,2)+' − α) = tan α','cot('+ang(3,2)+' + α) = −tan α']])),
+  card('blu','In più · Come ricordare la griglia',stepsHtml(['Con <b>−α, 2π − α, π − α, π + α</b> la <b>funzione non cambia</b>: cambia solo il segno.','Con <b>'+ang(1,2)+' ± α</b> e <b>'+ang(3,2)+' ± α</b> la funzione <b>cambia</b>: seno ↔ coseno, tangente ↔ cotangente.','Il <b>segno</b> si trova pensando α piccolo: guarda in quale <b>quadrante</b> cade l’angolo e quale segno ha lì la funzione (es. π − α è nel 2° quadrante: il seno è positivo, il coseno negativo).'])),
+  card('gia','In più · Usare la griglia per calcolare',stepsHtml(['Per calcolare cos '+ang(2,3)+': scrivo '+ang(2,3)+' = π − '+ang(1,3)+'.','Griglia: cos(π − α) = −cos α, con α = '+ang(1,3)+'.','cos '+ang(2,3)+' = −cos '+ang(1,3)+' = <b>'+MIN+F('1','2')+'</b>.']))
+ ],
+ esempio:`<div class="box bia"><h3>Esempio 1</h3><p class="m">sin(${ang(1,2)} + α) = <b>cos α</b> &nbsp; (la funzione cambia, il segno è +)</p></div>
+ <div class="box bia"><h3>Esempio 2</h3><p class="m">sin(π + α) = <b>${MIN}sin α</b> &nbsp; (la funzione non cambia, il segno è −)</p></div>
+ <div class="box bia"><h3>Esempio 3</h3><p class="m">tan(${ang(3,2)} − α) = <b>cot α</b></p></div>`,
+ errori:['Con <b>'+ang(1,2)+'</b> e <b>'+ang(3,2)+'</b> la funzione <b>cambia</b>; con <b>π</b>, <b>2π</b> e <b>−α</b> no.','<b>cos(−α) = cos α</b> (il coseno non cambia segno), <b>sin(−α) = −sin α</b>.','<b>tan(π + α) = tan α</b> (non −tan α).','Attenzione al segno: copia la griglia con calma.'],
+ orale:[
+  ['Che cosa sono gli angoli associati?','Sono gli angoli −α, 2π − α, π − α, π + α, '+ang(1,2)+' − α, '+ang(1,2)+' + α, '+ang(3,2)+' − α e '+ang(3,2)+' + α. Le funzioni di questi angoli si scrivono con le funzioni di α usando la griglia degli angoli associati.'],
+  ['Scrivi le formule per gli angoli −α e 2π − α.','Seno di meno alfa è meno seno di alfa; coseno di meno alfa è coseno di alfa; tangente e cotangente di meno alfa sono meno tangente e meno cotangente di alfa. Per 2π − α le formule sono le stesse.'],
+  ['Scrivi le formule per gli angoli π − α e π + α.','Per π − α: seno uguale a seno di alfa, coseno uguale a meno coseno di alfa, tangente e cotangente uguali a meno tangente e meno cotangente di alfa. Per π + α: seno e coseno cambiano segno, tangente e cotangente restano uguali.'],
+  ['Scrivi le formule per gli angoli '+ang(1,2)+' − α e '+ang(1,2)+' + α.','Per '+ang(1,2)+' − α: seno di '+ang(1,2)+' meno alfa è coseno di alfa, coseno è seno di alfa, tangente è cotangente di alfa, cotangente è tangente di alfa. Per '+ang(1,2)+' + α: seno è coseno di alfa, coseno è meno seno di alfa, tangente è meno cotangente, cotangente è meno tangente.'],
+  ['Scrivi le formule per gli angoli '+ang(3,2)+' − α e '+ang(3,2)+' + α.','Per '+ang(3,2)+' − α: seno è meno coseno di alfa, coseno è meno seno di alfa, tangente è cotangente, cotangente è tangente. Per '+ang(3,2)+' + α: seno è meno coseno, coseno è seno di alfa, tangente è meno cotangente, cotangente è meno tangente.']],
+ quiz:[
+  ['sin(π − α) vale…','sin α',['−sin α','cos α'],'Griglia: π − α.'],
+  ['cos(π + α) vale…','−cos α',['cos α','sin α'],'Griglia: π + α.'],
+  ['tan(−α) vale…','−tan α',['tan α','cot α'],'La tangente è dispari.'],
+  ['cos('+ang(1,2)+' + α) vale…','−sin α',['sin α','cos α'],'Griglia: '+ang(1,2)+' + α.'],
+  ['sin('+ang(3,2)+' − α) vale…','−cos α',['cos α','−sin α'],'Griglia: '+ang(3,2)+' − α.'],
+  ['tan('+ang(3,2)+' + α) vale…','−cot α',['cot α','−tan α'],'Griglia: '+ang(3,2)+' + α.']]
+},
+u4:{
+ cose:`<div class="box bia"><p>Per <b>semplificare un’espressione</b> con gli angoli associati si <b>applicano le formule della griglia</b> a ogni funzione, poi si <b>sistemano i segni</b> e si <b>semplificano</b> i prodotti. Alla fine si sommano i termini simili.</p></div>`,
+ ricette:[
+  card('blu','Passaggio 1 · Applicare le formule della griglia',stepsHtml(['Per ogni funzione cerca nella griglia la riga dell’angolo (−α, π − α, '+ang(1,2)+' + α…).','Scrivi il risultato con le funzioni di α, <b>con il segno</b> e tra parentesi se è negativo.'])),
+  card('ver','Passaggio 2 · Sistemare i segni e semplificare',stepsHtml(['Moltiplica i segni: meno per meno dà più, più per meno dà meno.','Semplifica i prodotti: <b>tan α = '+F('sin α','cos α')+'</b> e <b>cot α = '+F('cos α','sin α')+'</b>, quindi per esempio cos α · tan α = sin α e sin α · cot α = cos α.'])),
+  card('gia','Passaggio 3 · Sommare i termini simili',stepsHtml(['Riunisci i termini uguali (es. sin α + sin α = 2 sin α).','Scrivi il risultato nel modo più semplice.']))
+ ],
+ esempio:`<div class="box bia"><h3>Esempio svolto (dalla guida)</h3>
+ <p>Semplificare la seguente espressione:</p>
+ <p class="m">E = sin(${ang(1,2)} + α) tan(−α) + sin(π + α) cot(π − α) − cos(−α) sin(${ang(3,2)} − α)</p>
+ <p><b>Passaggio 1</b>: applicare le formule degli angoli associati</p>
+ <p class="m">E = cos α · (−tan α) + (−sin α) · (−cot α) − cos α · (−cos α)</p>
+ <p class="note">I passaggi seguenti nella foto non si vedono: li ho completati io con le stesse regole.</p>
+ <p><b>Passaggio 2</b>: sistemare i segni</p>
+ <p class="m">E = −cos α tan α + sin α cot α + cos² α</p>
+ <p><b>Passaggio 3</b>: semplificare (tan α = ${F('sin α','cos α')}, cot α = ${F('cos α','sin α')}) e sommare</p>
+ <p class="m">E = −sin α + cos α + cos² α = <b>cos² α + cos α − sin α</b></p></div>`,
+ errori:['Metti tra <b>parentesi</b> i fattori negativi prima di moltiplicare.','Meno per meno = più: <b>(−sin α)(−cot α) = + sin α cot α</b>.','<b>cos α · tan α = sin α</b> (non cos² α).','<b>sin α · cot α = cos α</b> (non sin² α).'],
+ orale:[
+  ['Come si semplifica un’espressione con gli angoli associati?','Si applicano le formule della griglia a ogni funzione, si sistemano i segni moltiplicando i fattori, si semplificano i prodotti usando tangente uguale seno su coseno e cotangente uguale coseno su seno, e infine si sommano i termini simili.'],
+  ['Spiega l’esempio svolto.','Applicando la griglia: seno di '+ang(1,2)+' più alfa diventa coseno di alfa, tangente di meno alfa diventa meno tangente, seno di π più alfa diventa meno seno, cotangente di π meno alfa diventa meno cotangente, coseno di meno alfa resta coseno e seno di '+ang(3,2)+' meno alfa diventa meno coseno. Poi si sistemano i segni e si semplifica: meno seno più coseno più coseno al quadrato.']],
+ quiz:[
+  ['Qual è il primo passaggio?','Applicare le formule della griglia',['Sommare i termini','Elevare al quadrato'],'Si parte dalla griglia.'],
+  ['cos α · tan α vale…','sin α',['cos² α','1'],'tan α = sin α / cos α.'],
+  ['sin α · cot α vale…','cos α',['sin² α','1'],'cot α = cos α / sin α.'],
+  ['(−sin α) · (−cot α) vale…','+ sin α cot α = cos α',['− cos α','sin α'],'Meno per meno = più.'],
+  ['Quanto vale l’espressione E dell’esempio svolto?','cos² α + cos α − sin α',['cos² α − cos α + sin α','sin² α + cos α'],'Dalla guida e dai passaggi finali.']]
+}
+};
+const GLOSS=[
+['Angolo particolare','Un angolo di cui conosciamo i valori esatti di seno, coseno, tangente e cotangente: '+ang(1,6)+' (30°), '+ang(1,4)+' (45°), '+ang(1,3)+' (60°).'],
+['Radiante','Unità di misura degli angoli: 180° = π radianti.'],
+['Seno (sin)','Una delle funzioni goniometriche: sul cerchio è l’ordinata del punto.'],
+['Coseno (cos)','Una delle funzioni goniometriche: sul cerchio è l’ascissa del punto.'],
+['Tangente (tan)','tan α = '+F('sin α','cos α')+'.'],
+['Cotangente (cot)','cot α = '+F('cos α','sin α')+', l’inverso della tangente.'],
+['Angoli associati','Gli angoli −α, 2π − α, π − α, π + α, '+ang(1,2)+' ± α, '+ang(3,2)+' ± α: le loro funzioni si scrivono con quelle di α.'],
+['Griglia degli angoli associati','La tabella con tutte le formule per gli angoli associati.'],
+['Radicale','Un numero sotto il segno di radice, come √2 o √3.'],
+['Razionalizzare','Eliminare il radicale dal denominatore: '+F('1','√3')+' = '+F('√3','3')+'.'],
+['Termini simili','Termini con la stessa parte (stesso radicale, o stessa funzione): si possono sommare.'],
+['Espressione','Una serie di operazioni da svolgere seguendo l’ordine: parentesi, moltiplicazioni, somme.']];
+const FORMULARIO=
+ '<div class="box blu"><h3>Valori degli angoli particolari</h3>'+TAB(['α','sin α','cos α','tan α','cot α'],[
+  [ang(1,6)+' (30°)',F('1','2'),F('√3','2'),F('√3','3'),'√3'],
+  [ang(1,4)+' (45°)',F('√2','2'),F('√2','2'),'1','1'],
+  [ang(1,3)+' (60°)',F('√3','2'),F('1','2'),'√3',F('√3','3')]])+'<p class="note">√2 · √2 = 2 · √3 · √3 = 3 · tan α = sin α / cos α · cot α = 1 / tan α</p></div>'+
+ '<div class="box ver"><h3>Griglia degli angoli associati</h3>'+TAB(['Angolo','sin','cos','tan','cot'],[
+  ['<b>−α</b>','−sin α','cos α','−tan α','−cot α'],
+  ['<b>2π − α</b>','−sin α','cos α','−tan α','−cot α'],
+  ['<b>π − α</b>','sin α','−cos α','−tan α','−cot α'],
+  ['<b>π + α</b>','−sin α','−cos α','tan α','cot α'],
+  ['<b>'+ang(1,2)+' − α</b>','cos α','sin α','cot α','tan α'],
+  ['<b>'+ang(1,2)+' + α</b>','cos α','−sin α','−cot α','−tan α'],
+  ['<b>'+ang(3,2)+' − α</b>','−cos α','−sin α','cot α','tan α'],
+  ['<b>'+ang(3,2)+' + α</b>','−cos α','sin α','−cot α','−tan α']])+'<p class="note">Con π, 2π e −α la funzione non cambia; con '+ang(1,2)+' e '+ang(3,2)+' la funzione cambia (sin ↔ cos, tan ↔ cot).</p></div>'+
+ '<div class="box gia"><h3>Metodo per le espressioni</h3>'+TAB(['Tipo','Passaggi'],[
+  ['<b>Angoli particolari</b>','1. sostituire i valori · 2. svolgere le moltiplicazioni · 3. semplificare'],
+  ['<b>Angoli associati</b>','1. applicare la griglia · 2. sistemare i segni e semplificare (tan = sin/cos, cot = cos/sin) · 3. sommare i termini simili']])+'</div>';
+
+/* ========== APP ========== */
+const $=(s,r)=>(r||document).querySelector(s);
+const TARGET=4;
+let PROG={};
+try{PROG=JSON.parse(localStorage.getItem('mat4_angoli_assoc_v1')||'{}')}catch(e){PROG={}}
+function saveProg(){try{localStorage.setItem('mat4_angoli_assoc_v1',JSON.stringify(PROG))}catch(e){}}
+
+function go(t){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.toggle('on',s.id===t));
+  window.scrollTo(0,0);
+  if(t==='guida')renderProgress();
+}
+
+/* domanda a scelta multipla */
+function showQ(cont,ex,onAnswer){
+  const L='ABCD';
+  cont.innerHTML=`<div class="q"><div class="qt">${ex.q}</div>
+  ${ex.opts.map((o,i)=>`<button class="opt" data-i="${i}"><b>${L[i]}</b><span>${o}</span></button>`).join('')}
+  <div class="fb" hidden></div>
+  <button class="big sec hs" hidden>Vedi come si fa</button>
+  <div class="how" hidden>${ex.steps||''}</div>
+  <div class="nxt"></div></div>`;
+  const opts=cont.querySelectorAll('.opt'),fb=$('.fb',cont),how=$('.how',cont),hs=$('.hs',cont);
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    const i=+o.dataset.i,good=i===ex.ans;
+    opts.forEach(x=>{x.disabled=true;if(+x.dataset.i===ex.ans)x.classList.add('good')});
+    if(!good)o.classList.add('bad');
+    fb.hidden=false;fb.className='fb '+(good?'okk':'nok');
+    fb.textContent=good?'Giusto!':'Non è questa. La risposta giusta è la '+L[ex.ans]+'.';
+    if(ex.steps){hs.hidden=false;if(!good){how.hidden=false;hs.textContent='Nascondi i passaggi'}}
+    onAnswer(good,cont.querySelector('.nxt'));
+  }));
+  hs.addEventListener('click',()=>{how.hidden=!how.hidden;hs.textContent=how.hidden?'Vedi come si fa':'Nascondi i passaggi'});
+}
+const stat=x=>({q:x[0],opts:null,_c:x[1],_w:x[2],steps:'<p>'+x[3]+'</p>'});
+function fromStatic(x){
+  const c=x[1],w=x[2],opts=shuffle([c,...w]);
+  return {q:x[0],opts,ans:opts.indexOf(c),steps:'<p>'+x[3]+'</p>'};
+}
+
+/* allenamento infinito con generatore */
+function practice(cont,unit){
+  let streak=0,tot=0,okc=0;
+  const done=()=>PROG[unit]&&PROG[unit].done;
+  function draw(){
+    const g=pick(GENS[unit]);const ex=g();
+    cont.innerHTML=`<div class="meter"><div class="mt">Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}</div><div class="progress"><i style="width:${Math.min(100,streak/TARGET*100)}%"></i></div><div class="note">${ex.tag} · Fatti: ${tot} · Giusti: ${okc}</div></div><div class="slot"></div>`;
+    showQ($('.slot',cont),ex,(good,nx)=>{
+      tot++;if(good){okc++;streak++}else streak=0;
+      if(streak>=TARGET&&!done()){PROG[unit]={...(PROG[unit]||{}),done:true};saveProg()}
+      nx.innerHTML=`<button class="big">Nuovo esercizio →</button>`;
+      nx.firstChild.addEventListener('click',draw);
+      const m=$('.meter',cont);m.querySelector('.mt').innerHTML=`Risposte giuste di fila: <b>${streak}</b> su ${TARGET} ${done()?'· <span class="badge">Unità superata ✔</span>':''}`;
+      m.querySelector('.progress i').style.width=Math.min(100,streak/TARGET*100)+'%';
+      if(streak===TARGET)nx.insertAdjacentHTML('afterbegin',`<div class="box ver">Bravo! ${TARGET} giuste di fila: questa unità è superata. Puoi continuare per esercitarti ancora.</div>`);
+    });
+  }
+  draw();
+}
+
+/* quiz di teoria (lista finita) */
+function theoryQuiz(cont,items){
+  let i=0,s=0,order=shuffle(items);
+  function draw(){
+    if(i>=order.length){
+      cont.innerHTML=`<div class="box ${s>=order.length-1?'ver':'gia'}"><h3>Risultato: ${s} su ${order.length}</h3>${s>=order.length-1?'Ottimo!':'Rileggi il metodo e riprova.'}</div><button class="big">Ricomincia</button>`;
+      cont.querySelector('button').addEventListener('click',()=>{i=0;s=0;order=shuffle(items);draw()});return;
+    }
+    cont.innerHTML=`<p class="note">Domanda ${i+1} di ${order.length}</p><div class="slot"></div>`;
+    showQ($('.slot',cont),fromStatic(order[i]),(good,nx)=>{
+      if(good)s++;
+      nx.innerHTML=`<button class="big">${i+1<order.length?'Avanti →':'Vedi il risultato'}</button>`;
+      nx.firstChild.addEventListener('click',()=>{i++;draw()});
+    });
+  }
+  draw();
+}
+
+/* pagine unità */
+function buildUnit(u){
+  const c=CONT[u];
+  const el=$('#'+u);
+  el.innerHTML=`<h2>${UNITS[u]}</h2>
+  <div class="stat"><h3 class="sec">Che cos'è</h3>${c.cose}<h3 class="sec">1. Il metodo</h3>${c.ricette.join('')}
+  <h3 class="sec">2. Esempi svolti</h3>${c.esempio}
+  <h3 class="sec">3. Attenzione agli errori</h3><div class="box ros"><ul>${c.errori.map(e=>'<li>'+e+'</li>').join('')}</ul></div></div>
+  <div class="dyn"><h3 class="sec">4. Allenati</h3><p class="note">Esercizi sempre nuovi. Rispondi, poi leggi i passaggi. Obiettivo: ${TARGET} giuste di fila.</p><div id="${u}p"></div>
+  <h3 class="sec">5. Quiz di teoria</h3><div id="${u}q"></div></div>`;
+  practice($('#'+u+'p'),u);
+  theoryQuiz($('#'+u+'q'),c.quiz);
+}
+
+/* orale */
+function buildOrale(){
+  let h='<h2>Interrogazione orale</h2><p>Queste sono le domande che può fare l\'insegnante. Leggi la domanda e <b>rispondi a voce alta</b>. Poi tocca «Vedi la risposta» e confronta. Spunta quelle che sai dire bene.</p>';
+  for(const u in CONT){
+    if(!CONT[u].orale.length)continue;
+    h+=`<h3 class="sec">${UNITS[u]}</h3>`;
+    CONT[u].orale.forEach((d,i)=>{
+      const id=u+i;
+      h+=`<div class="q"><div class="qt">${d[0]}</div><button class="big sec" data-r="${id}">Vedi la risposta</button><div class="how" id="r${id}" hidden><p>${d[1]}</p></div>
+      <label class="chk"><input type="checkbox" data-c="${id}" ${(PROG.orale&&PROG.orale[id])?'checked':''}> Lo so dire bene</label></div>`;
+    });
+  }
+  const el=$('#orale');el.innerHTML=h;
+  el.querySelectorAll('button[data-r]').forEach(b=>b.addEventListener('click',()=>{const r=$('#r'+b.dataset.r);r.hidden=!r.hidden;b.textContent=r.hidden?'Vedi la risposta':'Nascondi'}));
+  el.querySelectorAll('input[data-c]').forEach(c=>c.addEventListener('change',()=>{PROG.orale=PROG.orale||{};PROG.orale[c.dataset.c]=c.checked;saveProg()}));
+}
+
+/* prova finale */
+function buildProva(){
+  const el=$('#prova');
+  el.innerHTML='<h2>Prova finale</h2><p>15 esercizi presi da tutte le unità. Rispondi senza guardare gli appunti. Alla fine vedi che cosa ripassare.</p><button class="big" id="pstart">Comincia la prova</button><div id="pbody"></div>';
+  $('#pstart').addEventListener('click',()=>{$('#pstart').hidden=true;start()});
+  function start(){
+    const PLAN=PROVA_PLAN;const list=[];for(const u in PLAN)for(let k=0;k<PLAN[u];k++)list.push({u,ex:pick(GENS[u])()});
+    let i=0;const res={};for(const u in PLAN)res[u]=0;
+    const body=$('#pbody');
+    function draw(){
+      if(i>=list.length){
+        const tot=Object.values(res).reduce((a,b)=>a+b,0);
+        body.innerHTML=`<div class="box ${tot>=12?'ver':tot>=8?'gia':'ros'}"><h3>Risultato: ${tot} su 15</h3>${tot>=12?'Sei pronto per l\'interrogazione.':tot>=8?'Ci sei quasi: ripassa le unità sotto.':'Serve ancora un po\' di allenamento: parti dalle unità con il punteggio più basso.'}</div>
+        ${Object.keys(res).map(u=>`<div class="rowres"><span>${UNITS[u]}</span><b>${res[u]} / ${PLAN[u]}</b>${res[u]<PLAN[u]?'<button class="big sec" data-go="'+u+'">Ripassa</button>':'<span class="okk">✔</span>'}</div>`).join('')}
+        <button class="big" id="pre">Rifai la prova</button>`;
+        body.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+        $('#pre').addEventListener('click',start);return;
+      }
+      body.innerHTML=`<div class="progress"><i style="width:${i/list.length*100}%"></i></div><p class="note">Esercizio ${i+1} di ${list.length} · ${UNITS[list[i].u]}</p><div class="slot"></div>`;
+      showQ($('.slot',body),list[i].ex,(good,nx)=>{
+        if(good)res[list[i].u]++;
+        nx.innerHTML=`<button class="big">${i+1<list.length?'Avanti →':'Vedi il risultato'}</button>`;
+        nx.firstChild.addEventListener('click',()=>{i++;draw()});
+      });
+    }
+    draw();
+  }
+}
+
+function renderProgress(){
+  const el=$('#prog');if(!el)return;
+  el.innerHTML=Object.keys(UNITS).map(u=>`<div class="rowres"><span>${UNITS[u]}</span>${PROG[u]&&PROG[u].done?'<span class="okk">superata ✔</span>':'<span class="note">da fare</span>'}<button class="big sec" data-go="${u}">Vai</button></div>`).join('');
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+}
+
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.t)));
+Object.keys(UNITS).forEach(buildUnit);
+buildOrale();buildProva();
+$('#formulario').innerHTML='<h2>Formulario</h2><p class="note">Tutto quello che serve su una pagina.</p>'+FORMULARIO;
+$('#glossario').innerHTML='<h2>Glossario</h2><p class="note">Le parole difficili, spiegate semplice.</p>'+GLOSS.map(g=>`<div class="q"><b>${g[0]}</b><br>${g[1]}</div>`).join('');
+renderProgress();
+if(location.hash==='#stampa')document.body.classList.add('print');
+{const h=location.hash.slice(1);if(h&&h!=='stampa'&&document.getElementById(h)&&document.getElementById(h).classList.contains('tab'))go(h)}
+
+/* ========== FRAZIONI IN VERTICALE: converte "a/b" in frazione verticale in tutto il testo ========== */
+(function(){
+  const UNITS=new Set(['N','J','kg','K','Pa','W','L','cal','min','mm','cm','km','cl','mL','Hz','V·s']);
+  const PAIRS=new Set(['m/s','g/s','s/m','m/h']);
+  const OP="(?:(?:sen|sin|cos|tan|cot)\\s?α|\\d+[A-Za-z]?π|[A-Za-z]?π|\\d+(?:[.,]\\d+)?|\\(−?\\d+\\)|[A-ZΔ][A-Za-zΔα⊥]?(?:_[A-Za-z0-9]+)?|[a-zα](?:_[A-Za-z0-9]+)?)";
+  const RE=new RegExp("(?<![\\w.,/⁄])("+OP+")\\s?\\/\\s?("+OP+")(?![\\w²³⁻/·])","g");
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const sub=s=>esc(s).replace(/_([A-Za-z0-9]+)/g,'<sub>$1</sub>');
+  const isNum=t=>/^\d/.test(t);
+  function conv(m,a,b){
+    const A=a.trim(),B=b.trim();
+    if(PAIRS.has(A+'/'+B))return m;
+    if(UNITS.has(A)||UNITS.has(B))return m;
+    if(/^[a-z]$/.test(A)&&/^[a-z]$/.test(B)&&!(A==='x'&&B==='y')&&!(A==='y'&&B==='x')&&A!=='d'&&A!=='m'&&A!=='p'&&A!=='q'&&A!=='c')return m;
+    return '<span class="fr"><span class="fn">'+sub(A)+'</span><span class="fd">'+sub(B)+'</span></span>';
+  }
+  function fixText(node){
+    const t=node.nodeValue;
+    if(!t||t.indexOf('/')<0)return;
+    RE.lastIndex=0;
+    if(!RE.test(t))return;
+    RE.lastIndex=0;
+    let out='',last=0,mm;
+    while((mm=RE.exec(t))){
+      const rep=conv(mm[0],mm[1],mm[2]);
+      out+=esc(t.slice(last,mm.index))+(rep===mm[0]?esc(mm[0]):rep);
+      last=mm.index+mm[0].length;
+    }
+    out+=esc(t.slice(last));
+    if(out===esc(t))return;
+    const span=document.createElement('span');span.innerHTML=out;
+    const f=document.createDocumentFragment();while(span.firstChild)f.appendChild(span.firstChild);
+    node.parentNode.replaceChild(f,node);
+  }
+  const SKIP=new Set(['SCRIPT','STYLE','SVG','TEXTAREA','TITLE','OPTION','svg','text']);
+  function walk(root){
+    if(!root)return;
+    if(root.nodeType===3){const p=root.parentNode;if(p&&!SKIP.has(p.nodeName)&&!(p.classList&&p.classList.contains('fr')))fixText(root);return}
+    if(root.nodeType!==1||SKIP.has(root.nodeName)||(root.classList&&(root.classList.contains('fr')||root.classList.contains('sgf'))))return;
+    const kids=Array.from(root.childNodes);
+    kids.forEach(walk);
+  }
+  window.vfWalk=walk;
+  function start(){
+    walk(document.body);
+    new MutationObserver(ms=>{ms.forEach(m=>{m.addedNodes.forEach(n=>walk(n))})}).observe(document.body,{childList:true,subtree:true});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
+
+/* ========== TESTO INGRANDIBILE (A− / A+) ========== */
+(function(){
+  if(location.hash==='#stampa')return;
+  let s=1;try{s=parseFloat(localStorage.getItem('fz_scale')||'1')||1}catch(e){}
+  function apply(){document.documentElement.style.fontSize=(16*s)+'px';document.body.style.fontSize=(17*s)+'px';try{localStorage.setItem('fz_scale',String(s))}catch(e){}}
+  apply();
+  const m=document.getElementById('fzm'),p=document.getElementById('fzp');
+  if(m)m.addEventListener('click',()=>{s=Math.max(1,Math.round((s-0.15)*100)/100);apply()});
+  if(p)p.addEventListener('click',()=>{s=Math.min(2,Math.round((s+0.15)*100)/100);apply()});
+})();
+
+
+</script>
+<!--A11Y--><script>window.A11Y_CFG={"simple": {"u0": ["Per calcolare le espressioni servono due regole sui radicali: √2 · √2 = 2 e √3 · √3 = 3.", "Si moltiplica numeratore con numeratore e denominatore con denominatore. Si sommano solo i termini simili."], "u1": ["Gli angoli particolari sono 30°, 45° e 60° (π/6, π/4, π/3).", "Di questi angoli si deve sapere a memoria il valore di seno, coseno, tangente e cotangente.", "La tangente è seno diviso coseno. La cotangente è l’inverso della tangente."], "u2": ["Per calcolare un’espressione si fanno tre passaggi: sostituire i valori, fare le moltiplicazioni, semplificare.", "Si mettono le parentesi quando si sostituisce una somma."], "u3": ["Gli angoli associati sono −α, 2π − α, π − α, π + α, π/2 ± α, 3π/2 ± α.", "Con π, 2π e −α la funzione resta la stessa, cambia solo il segno.", "Con π/2 e 3π/2 la funzione cambia: seno diventa coseno, tangente diventa cotangente."], "u4": ["Per semplificare si applica la griglia a ogni funzione, si sistemano i segni e si semplifica.", "Ricorda: tan α = sin α / cos α e cot α = cos α / sin α.", "Alla fine si sommano i termini simili."]}, "es": false, "steps": false, "pics": [{"k": "cerchio", "re": "cerchio|circonferenza", "id": 4603}, {"k": "triangolo", "re": "triangolo", "id": 4763}], "pb": "../../../img/p/"};</script><script>/* ========== ACCESSIBILITÀ: In parole semplici, Ascolta, Se fai fatica ========== */
+(function(){
+  var CFG=window.A11Y_CFG||{simple:{},es:false};
+  var synth=window.speechSynthesis,CAN=!!(synth&&window.SpeechSynthesisUtterance);
+  var st=document.createElement('style');
+  st.textContent='.a11y-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;margin:6px 8px 6px 0;font:inherit;font-size:1rem;font-weight:bold;border:2px solid #22314d;border-radius:12px;background:#fff;color:#22314d;cursor:pointer}'+
+  '.a11y-btn.on{background:#22314d;color:#fff}'+
+  '.a11y-simple ul{margin:.3em 0;padding-left:1.2em}.a11y-simple li{margin:.45em 0;font-size:1.08em;line-height:1.6}'+
+  '.a11y-simple h3{margin-top:0}'+
+  '@media print{.a11y-ui{display:none!important}}body.print .a11y-ui{display:none!important}';
+  document.head.appendChild(st);
+  function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  /* testo adatto alla voce */
+  function say(t){
+    return t.replace(/²/g,' al quadrato').replace(/³/g,' al cubo').replace(/√/g,' radice di ').replace(/×/g,' per ').replace(/÷/g,' diviso ')
+     .replace(/−/g,' meno ').replace(/≥/g,' maggiore o uguale a ').replace(/≤/g,' minore o uguale a ').replace(/≠/g,' diverso da ')
+     .replace(/→/g,', ').replace(/π/g,' pi greco ').replace(/α/g,' alfa ').replace(/°/g,' gradi ').replace(/=/g,' uguale a ').replace(/\+/g,' più ')
+     .replace(/\s+/g,' ').trim();
+  }
+  function nodeText(n){
+    if(n.nodeType===3)return n.nodeValue;
+    if(n.nodeType!==1)return '';
+    if(n.classList&&(n.classList.contains('a11y-ui')))return '';
+    var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return '';
+    if(n.classList&&n.classList.contains('fr')){var a=n.querySelector('.fn'),b=n.querySelector('.fd');return ' '+(a?a.textContent:'')+' fratto '+(b?b.textContent:'')+' '}
+    if(tg==='SUP'){var t=n.textContent;return t==='2'?' al quadrato ':t==='3'?' al cubo ':' alla '+t+' '}
+    var s='';n.childNodes.forEach(function(c){s+=nodeText(c)});return s;
+  }
+  /* testo con parti in inglese: ogni parte con la sua voce */
+  function segs(el,dl){
+    var out=[],buf='';
+    function flush(){var t=say(buf);if(t.length>1)out.push({t:t,l:dl});buf=''}
+    (function walk(n){
+      if(n.nodeType===3){buf+=n.nodeValue;return}
+      if(n.nodeType!==1)return;
+      if(n.classList&&n.classList.contains('a11y-ui'))return;
+      var tg=n.nodeName;if(tg==='SCRIPT'||tg==='STYLE'||tg==='svg'||tg==='SVG'||tg==='BUTTON')return;
+      if(n.getAttribute('lang')==='en'){flush();var t=say(nodeText(n));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      if(n.classList.contains('fr')||tg==='SUP'){buf+=nodeText(n);return}
+      n.childNodes.forEach(walk);
+    })(el);
+    flush();return out;
+  }
+  var SEL='p,li,h2,h3,h4,.step>div,td,th,.note,.qt,.fb';
+  function chunks(root){
+    var els=[].slice.call(root.querySelectorAll(SEL)).filter(function(e){
+      if(e.closest('.a11y-ui'))return false;
+      if(e.closest('[hidden]'))return false;
+      return !e.querySelector(SEL);
+    });
+    if(!els.length)els=[root];
+    var out=[];
+    els.forEach(function(e){
+      var es=CFG.es&&(e.closest('table.sg')||e.classList.contains('m'));
+      if(e.closest('[lang="en"]')){var t=say(nodeText(e));if(t.length>1)out.push({t:t,l:'en-GB'});return}
+      segs(e,es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    return out;
+  }
+  var cur=null;
+  function stop(){if(CAN)synth.cancel();if(cur){cur.classList.remove('on');cur.firstChild.nodeValue='🔊 ';cur=null}}
+  function speak(list,btn,label){
+    if(!CAN)return;
+    if(cur===btn){stop();return}
+    stop();cur=btn;btn.classList.add('on');
+    list.forEach(function(c,i){
+      var u=new SpeechSynthesisUtterance(c.t);u.lang=c.l;u.rate=c.l==='en-GB'?0.8:0.85;
+      if(i===list.length-1)u.onend=function(){if(cur===btn)stop()};
+      u.onerror=function(){if(cur===btn)stop()};
+      synth.speak(u);
+    });
+  }
+  function mkBtn(getList,label){
+    var b=mk('button','a11y-btn a11y-ui',null);b.type='button';
+    b.appendChild(document.createTextNode('🔊 '));b.appendChild(document.createTextNode(label||'Ascolta'));
+    b.addEventListener('click',function(){speak(getList(),b)});
+    return b;
+  }
+  /* 1. In parole semplici + Ascolta per ogni unità */
+  Object.keys(CFG.simple||{}).forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-simple'))return;
+    var h=sec.querySelector('h2');
+    var box=mk('div','box ver a11y-simple','<h3>In parole semplici</h3><ul>'+CFG.simple[id].map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return [{t:'In parole semplici.',l:'it-IT'}].concat(chunks(box).filter(function(c){return c.t!=='In parole semplici'}))},'Ascolta questo riquadro'));
+    var stat=sec.querySelector('.stat');
+    if(stat)ui.appendChild(mkBtn(function(){return chunks(stat)},'Ascolta tutta la spiegazione'));
+    box.appendChild(ui);
+    if(h&&h.nextSibling)h.parentNode.insertBefore(box,h.nextSibling);else sec.insertBefore(box,sec.firstChild);
+  });
+  /* 2. Ascolta per le sezioni di testo senza riquadro (guida, formulario, glossario, ...) */
+  ['guida','metodo','studia','tabella','formulario','glossario'].forEach(function(id){
+    var sec=document.getElementById(id);if(!sec||sec.querySelector('.a11y-top'))return;
+    var h=sec.querySelector('h2')||sec.querySelector('h1');
+    var ui=mk('div','a11y-ui a11y-top');
+    ui.appendChild(mkBtn(function(){return chunks(sec)},'Ascolta questa pagina'));
+    if(h&&h.parentNode===sec)sec.insertBefore(ui,h.nextSibling);else sec.insertBefore(ui,sec.firstChild);
+  });
+  /* 3. Se fai fatica (nella guida) */
+  var g=document.getElementById('guida')||document.getElementById('metodo');
+  if(g&&!g.querySelector('.a11y-help')){
+    var h2=g.querySelector('h2');
+    var hp=mk('div','box gia a11y-help','<h3>Se fai fatica, fai così</h3>'+
+     '<div class="step"><b class="n">1</b><div>Leggi il riquadro <b>“In parole semplici”</b>: è la versione corta.</div></div>'+
+     '<div class="step"><b class="n">2</b><div>Premi <b>🔊 Ascolta</b> e fatti leggere il testo ad alta voce.</div></div>'+
+     (CFG.steps?'<div class="step"><b class="n">★</b><div>Gli <b>esempi svolti</b> si aprono <b>un passo alla volta</b>: tocca <b>▶ Prossimo passo</b> e leggi con calma. Se preferisci vedere tutto, tocca <b>Mostra tutto</b>.</div></div>':'')+
+     '<div class="step"><b class="n">3</b><div>Fai <b>un solo esercizio alla volta</b>. Se sbagli, leggi come si fa e riprova.</div></div>'+
+     '<div class="step"><b class="n">4</b><div>Le domande che sbagli tornano nel <b>🔁 Da rifare</b>: bastano 5 minuti al giorno.</div></div>'+
+     '<div class="step"><b class="n">5</b><div>Se il testo è difficile da leggere, premi <b>Aa Lettura facile</b>: lettere più grandi e una frase per riga.</div></div>'+
+     '<p class="note">Non c’è fretta e non ci sono voti. Puoi fermarti quando vuoi: i tuoi progressi restano salvati.</p>');
+    var anchor=g.querySelector('.a11y-top')||h2;
+    if(anchor&&anchor.parentNode===g)g.insertBefore(hp,anchor.nextSibling);else g.insertBefore(hp,g.firstChild);
+  }
+  /* 4. Ascolta la domanda (e le risposte) su ogni card */
+  function qList(q){
+    var out=[];var qt=q.querySelector('.qt');
+    if(qt)segs(qt,'it-IT').forEach(function(c){out.push(c)});
+    var L='ABCD';
+    q.querySelectorAll('.opt').forEach(function(o,i){
+      var sp=o.querySelector('span');
+      out.push({t:'Risposta '+L[i]+'.',l:'it-IT'});
+      segs(sp||o,CFG.es?'es-ES':'it-IT').forEach(function(c){out.push(c)});
+    });
+    var fb=q.querySelector('.fb');if(fb&&!fb.hidden)out.push({t:say(fb.textContent),l:'it-IT'});
+    var how=q.querySelector('.how');if(how&&!how.hidden)chunks(how).forEach(function(c){out.push(c)});
+    return out;
+  }
+  function decorate(q){
+    if(q.classList.contains('a11y-q')||!q.querySelector('.qt'))return;
+    q.classList.add('a11y-q');
+    var ui=mk('div','a11y-ui');
+    ui.appendChild(mkBtn(function(){return qList(q)},'Ascolta la domanda'));
+    q.insertBefore(ui,q.firstChild);
+  }
+  function scan(root){(root.querySelectorAll?root:document).querySelectorAll('.q').forEach(decorate)}
+  scan(document);
+  /* 5. messaggi d'errore più gentili */
+  var kind=/^Non è questa\. La risposta giusta è la ([A-D])\.$/;
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1){if(n.classList.contains('q'))decorate(n);else scan(n)}})});
+    document.querySelectorAll('.fb.nok').forEach(function(f){
+      var t=f.textContent,mm=kind.exec(t);
+      if(mm)f.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+mm[1]+'. Leggi come si fa qui sotto.';
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  /* se la voce non c'è, nascondi i pulsanti */
+  if(!CAN){var s2=document.createElement('style');s2.textContent='.a11y-ui{display:none!important}';document.head.appendChild(s2)}
+  window.addEventListener('pagehide',function(){if(CAN)synth.cancel()});
+
+  /* ===== LETTURA FACILE: testo grande, una frase per riga, molto spazio ===== */
+  var st2=document.createElement('style');
+  st2.textContent='.a11y-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}'+
+   'body.a11y-easy{font-size:1.2rem!important;line-height:2!important;letter-spacing:.02em;word-spacing:.12em;color:#000}'+
+   'body.a11y-easy main{max-width:36em}'+
+   'body.a11y-easy p,body.a11y-easy li{margin:.8em 0}'+
+   'body.a11y-easy .opt{font-size:1.15rem;min-height:58px}'+
+   'body.a11y-easy .box,body.a11y-easy .q{padding:16px 18px}'+
+   'body.a11y-easy .note{font-size:1rem;color:#222}'+
+   '.a11y-rev .opt{width:100%}.a11y-count{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}'+
+   '.a11y-count div{flex:1 1 90px;background:#fff;border:2px solid #d9d2bf;border-radius:12px;padding:8px;text-align:center}'+
+   '.a11y-count b{display:block;font-size:1.6rem}'+
+   '@media print{#oggi,.a11y-bar{display:none!important}}body.print #oggi,body.print .a11y-bar{display:none!important}';
+  document.head.appendChild(st2);
+  var BRK=/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/;
+  function breakIn(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),list=[],n;
+    while((n=w.nextNode())){
+      var p=n.parentElement;if(!p||!BRK.test(n.nodeValue))continue;
+      if(p.closest('.a11y-ui,.fr,.m,script,style,button,table,.nav,nav,svg'))continue;
+      if(!p.closest('p,li,.qt,.how,.fb'))continue;
+      list.push(n);
+    }
+    list.forEach(function(t){
+      var parts=t.nodeValue.split(/([.!?…])\s+(?=[A-ZÀ-ÖØ-Þ“«¿¡])/),frag=document.createDocumentFragment();
+      for(var i=0;i<parts.length;i+=2){
+        var piece=parts[i]+(parts[i+1]||'');
+        frag.appendChild(document.createTextNode(piece));
+        if(i+2<parts.length){var br=document.createElement('br');br.className='a11y-br';frag.appendChild(br)}
+      }
+      t.parentNode.replaceChild(frag,t);
+    });
+  }
+  function unbreak(){
+    document.querySelectorAll('br.a11y-br').forEach(function(b){b.parentNode.replaceChild(document.createTextNode(' '),b)});
+    document.body.normalize();
+  }
+  var easy=false;try{easy=localStorage.getItem('a11y_easy')==='1'}catch(e){}
+  var bar=mk('div','a11y-ui a11y-bar');
+  var eb=mk('button','a11y-btn a11y-ui',null);eb.type='button';
+  function paintEasy(){
+    eb.textContent='Aa Lettura facile: '+(easy?'SÌ':'NO');eb.classList.toggle('on',easy);eb.setAttribute('aria-pressed',easy?'true':'false');
+    document.body.classList.toggle('a11y-easy',easy);
+  }
+  function applyEasy(){ if(easy)breakIn(document.querySelector('main')||document.body); else unbreak(); paintEasy(); }
+  eb.addEventListener('click',function(){easy=!easy;try{localStorage.setItem('a11y_easy',easy?'1':'0')}catch(e){};applyEasy()});
+  bar.appendChild(eb);
+  /* ===== ESEMPI SVOLTI UN PASSO ALLA VOLTA ===== */
+  if(CFG.steps&&location.hash!=='#stampa'){
+    var stOn=true;try{stOn=localStorage.getItem('a11y_steps')!=='0'}catch(e){}
+    var st4=document.createElement('style');
+    st4.textContent='section.tab .box.bia [hidden]{display:none!important}'+
+     '.a11y-newstep{background:#fff8dc;border-left:6px solid #d1b24a;padding:4px 8px;border-radius:6px}'+
+     '.a11y-stepper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 2px}'+
+     '.a11y-sc{font-weight:bold;font-size:.95rem;color:#22314d}'+
+     '.a11y-stepper .a11y-btn{margin:0}'+
+     '@media print{.a11y-stepper{display:none!important}section.tab .box.bia [hidden]{display:revert!important}.a11y-newstep{background:none;border:0;padding:0}}';
+    document.head.appendChild(st4);
+    var stGroups=[];
+    document.querySelectorAll('section.tab .stat .box.bia').forEach(function(box){
+      var h=box.querySelector(':scope>h3');if(!h||!/^Esempio/i.test(h.textContent))return;
+      var kids=[].slice.call(box.children).filter(function(c){return c!==h});
+      if(kids.length<3)return;
+      var isNum=function(e){return /^\s*\d+\./.test(e.textContent)};
+      var rest=kids.slice(1),groups=[];
+      if(rest.some(isNum)){
+        var started=false;
+        rest.forEach(function(e){
+          if(isNum(e)){groups.push([e]);started=true}
+          else if(started)groups[groups.length-1].push(e);
+        });
+      }else{rest.forEach(function(e){groups.push([e])})}
+      if(groups.length<2)return;
+      var idx=0,bx=mk('div','a11y-ui a11y-stepper'),go=mk('button','a11y-btn',null),all=mk('button','a11y-btn',null),cnt=mk('span','a11y-sc',null);
+      go.type='button';all.type='button';all.textContent='Mostra tutto';
+      bx.appendChild(go);bx.appendChild(cnt);bx.appendChild(all);box.appendChild(bx);
+      function paint(){
+        groups.forEach(function(g,i){g.forEach(function(e){e.hidden=stOn&&i>=idx;e.classList.toggle('a11y-newstep',stOn&&idx>0&&i===idx-1&&idx<groups.length+1)})});
+        bx.style.display=stOn?'':'none';
+        cnt.textContent='Passo '+idx+' di '+groups.length;
+        go.textContent=idx===0?'▶ Mostrami il primo passo':idx<groups.length?'▶ Prossimo passo':'↺ Ricomincia';
+        all.hidden=idx>=groups.length;
+      }
+      go.addEventListener('click',function(){
+        if(idx>=groups.length)idx=0;else idx++;
+        paint();
+        var t=idx>0?groups[idx-1][0]:box;try{t.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}
+      });
+      all.addEventListener('click',function(){idx=groups.length;paint()});
+      stGroups.push({paint:paint,reset:function(){idx=0}});
+      paint();
+    });
+    if(stGroups.length){
+      var sb=mk('button','a11y-btn a11y-ui',null);sb.type='button';
+      var paintSb=function(){sb.textContent='👣 Esempi un passo alla volta: '+(stOn?'SÌ':'NO');sb.classList.toggle('on',stOn);sb.setAttribute('aria-pressed',stOn?'true':'false')};
+      sb.addEventListener('click',function(){stOn=!stOn;try{localStorage.setItem('a11y_steps',stOn?'1':'0')}catch(e){};stGroups.forEach(function(g){g.reset();g.paint()});paintSb()});
+      paintSb();bar.appendChild(sb);
+    }
+  }
+  var mainEl=document.querySelector('main');
+  if(mainEl)mainEl.insertBefore(bar,mainEl.firstChild);else document.body.insertBefore(bar,document.body.firstChild);
+  applyEasy();
+  /* contenuti che compaiono dopo (spiegazioni, domande) */
+  new MutationObserver(function(ms){
+    if(!easy)return;
+    ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1&&!n.classList.contains('a11y-ui'))breakIn(n)})});
+  }).observe(document.body,{childList:true,subtree:true});
+
+  /* ===== IMMAGINI (pittogrammi ARASAAC) ACCANTO ALLE PAROLE ===== */
+  (function(){
+    var L=CFG.pics||[];if(!L.length)return;
+    var base=CFG.pb||'img/p/';
+    var st3=document.createElement('style');
+    st3.textContent='.a11y-pic{height:2.2em;width:2.2em;vertical-align:middle;margin:0 .3em;object-fit:contain}'+
+     '.a11y-pics{display:inline-block;margin-right:.5em;white-space:nowrap}.a11y-credit{margin-top:2em}';
+    document.head.appendChild(st3);
+    var rx=L.map(function(p){return {id:p.id,re:new RegExp('(^|[^\\p{L}])('+p.re+')(?![\\p{L}])','iu')}});
+    function find(text,max){
+      var hits=[];rx.forEach(function(r){var m=r.re.exec(text);if(m)hits.push({pos:m.index+m[1].length,r:r})});
+      hits.sort(function(a,b){return a.pos-b.pos});var seen={},out=[];
+      hits.forEach(function(h){if(!seen[h.r.id]&&out.length<max){seen[h.r.id]=1;out.push(h.r)}});return out;
+    }
+    function img(r){var i=document.createElement('img');i.src=base+r.id+'.png';i.alt='';i.setAttribute('aria-hidden','true');i.className='a11y-pic';i.width=44;i.height=44;return i}
+    var used=0;
+    document.querySelectorAll('.a11y-simple').forEach(function(box){
+      var seenB={};
+      box.querySelectorAll('li').forEach(function(li){
+        var h=find(li.textContent,2).filter(function(r){return !seenB[r.id]});if(!h.length)return;
+        var sp=document.createElement('span');sp.className='a11y-pics';
+        h.forEach(function(r){seenB[r.id]=1;sp.appendChild(img(r))});
+        li.insertBefore(sp,li.firstChild);used++;
+      });
+    });
+    document.querySelectorAll('#glossario .q').forEach(function(q){
+      var b=q.querySelector('b');if(!b)return;var h=find(b.textContent,1);if(!h.length)return;
+      q.insertBefore(img(h[0]),q.firstChild);used++;
+    });
+    document.querySelectorAll('section.tab').forEach(function(sec){
+      if(!/^u\d+$/.test(sec.id))return;
+      var seen={},n=0;
+      sec.querySelectorAll('.stat b').forEach(function(b){
+        if(n>=8||b.closest('.a11y-ui,.how,table,.fr'))return;
+        var h=find(b.textContent,1);if(!h.length||seen[h[0].id])return;
+        seen[h[0].id]=1;n++;used++;b.parentNode.insertBefore(img(h[0]),b);
+      });
+    });
+    if(used){
+      var c=document.createElement('p');c.className='note a11y-credit';
+      c.textContent='Simboli: ARASAAC (arasaac.org). Autore: Sergio Palao. Proprietà: Governo di Aragona. Licenza: CC BY-NC-SA.';
+      (document.querySelector('main')||document.body).appendChild(c);
+    }
+  })();
+
+  /* ===== RIPASSO DI OGGI: ripetizione dilazionata delle domande sbagliate ===== */
+  if(location.hash==='#stampa')return;
+  var KEY='ripasso_cards:'+location.pathname,STEP=[3,7,14],MAXS=8;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-250)))}catch(e){}}
+  function p2(n){return (n<10?'0':'')+n}
+  function fmt(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+  function inDays(n){var d=new Date();d.setDate(d.getDate()+n);return fmt(d)}
+  function hs(str){var h=5381;for(var i=0;i<str.length;i++)h=((h<<5)+h+str.charCodeAt(i))|0;return 'c'+(h>>>0).toString(36)}
+  function capture(root){
+    if(!root||root.closest('.a11y-review'))return false;
+    var opts=[].slice.call(root.querySelectorAll('.opt'));if(!opts.length)return false;
+    var qe=root.querySelector('.qt')||root.querySelector('p b');if(!qe)return false;
+    var good=-1;opts.forEach(function(o,i){if(o.classList.contains('good'))good=i});if(good<0)return false;
+    var cl=qe.cloneNode(true);cl.querySelectorAll('.a11y-ui').forEach(function(x){x.remove()});
+    var qh=cl.innerHTML.trim();
+    var oh=opts.map(function(o){var sp=o.querySelector('span');return (sp||o).innerHTML});
+    var how=root.querySelector('.how')||root.querySelector('.fb');
+    var sec=root.closest('section.tab'),h2=sec&&sec.querySelector('h2');
+    var sh=how?how.innerHTML.replace(/^\s*[✘✔]\s*(Non proprio\.|Giusto!)\s*/,''):'';
+    var id=hs(qh+'|'+oh.join('|')),cards=load(),c=cards.filter(function(x){return x.id===id})[0];
+    if(!c){c={id:id,q:qh,o:oh,a:good,s:sh,u:h2?h2.textContent:'',box:0,due:inDays(1),done:false};cards.push(c)}
+    else{c.box=0;c.due=inDays(1);c.done=false;if(sh)c.s=sh}
+    save(cards);badge();return true;
+  }
+  /* cattura automatica degli errori + pulsante «non ero sicuro» */
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      var t=m.target;if(t.nodeType!==1||!t.classList||!t.classList.contains('opt'))return;
+      var root=t.closest('.q')||t.parentElement;if(!root||root.dataset.a11yCap)return;
+      if(t.classList.contains('bad')){root.dataset.a11yCap='1';capture(root)}
+      else if(t.classList.contains('good')&&!root.querySelector('.opt.bad')&&!root.closest('.a11y-review')){
+        setTimeout(function(){
+          if(root.dataset.a11yCap||root.querySelector('.opt.bad')||root.querySelector('.a11y-add'))return;
+          var ui=mk('div','a11y-ui a11y-add');
+          var nb=mk('button','a11y-btn',null);nb.type='button';nb.textContent='🔁 Non ero sicuro: rifalla';
+          nb.addEventListener('click',function(){capture(root);root.dataset.a11yCap='1';nb.textContent='✔ Aggiunta alle domande da rifare';nb.disabled=true});
+          ui.appendChild(nb);root.appendChild(ui);
+        },50);
+      }
+    });
+  }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  /* scheda nel menu + sezione */
+  var nav=document.querySelector('nav'),tabBtn=null,sec=document.createElement('section');
+  sec.className='tab dyn';sec.id='oggi';
+  (mainEl||document.body).appendChild(sec);
+  if(nav){
+    tabBtn=document.createElement('button');tabBtn.setAttribute('data-t','oggi');tabBtn.type='button';
+    if(nav.children.length>0)nav.insertBefore(tabBtn,nav.children[1]||null);else nav.appendChild(tabBtn);
+    tabBtn.addEventListener('click',function(){showOggi()});
+  }
+  function dueList(){var t=fmt(new Date());return load().filter(function(c){return !c.done&&c.due<=t})}
+  function badge(){var n=dueList().length;if(tabBtn)tabBtn.textContent='🔁 Da rifare'+(n?' ('+n+')':'')}
+  function showOggi(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.toggle('on',b===tabBtn)});
+    document.querySelectorAll('section.tab').forEach(function(s){s.classList.toggle('on',s.id==='oggi')});
+    window.scrollTo(0,0);render();
+  }
+  function render(){
+    var cards=load(),today=fmt(new Date()),due=cards.filter(function(c){return !c.done&&c.due<=today});
+    var learned=cards.filter(function(c){return c.done}).length,soon=cards.filter(function(c){return !c.done&&c.due>today}).length;
+    sec.className='tab dyn on';
+    var h='<h2>Domande da rifare</h2><div class="box ver"><h3>Come funziona</h3><p>Qui tornano le domande che hai sbagliato.</p><p>Rifalle un po’ ogni giorno: così le ricordi davvero.</p><p>Bastano 5 minuti. Non c’è fretta.</p></div>'+
+      '<div class="a11y-count"><div><b>'+due.length+'</b>da rifare oggi</div><div><b>'+soon+'</b>in arrivo</div><div><b>'+learned+'</b>imparate ✔</div></div>';
+    if(!due.length){
+      h+='<div class="box bia"><h3>'+(cards.length?'Per oggi hai finito, bravo!':'Ancora nessuna domanda da rifare')+'</h3><p>'+(cards.length?'Torna domani: le domande difficili ti aspettano.':'Fai gli esercizi nelle unità. Se sbagli una domanda, la trovi qui.')+'</p></div>';
+      sec.innerHTML=h;return;
+    }
+    h+='<p>Oggi rifai <b>'+Math.min(due.length,MAXS)+'</b> domande'+(due.length>MAXS?' (le altre domani)':'')+'.</p><button class="big a11y-start" type="button">Comincia</button>';
+    sec.innerHTML=h;
+    sec.querySelector('.a11y-start').addEventListener('click',function(){session(due.slice(0,MAXS))});
+  }
+  function session(queue){
+    var i=0,okc=0,total=queue.length,retry=[];
+    function step(){
+      if(i>=queue.length){
+        sec.innerHTML='<h2>Domande da rifare</h2><div class="box ver"><h3>Fatto, bravo!</h3><p>Hai rifatto '+total+' domande.</p><p>Giuste al primo colpo: <b>'+okc+'</b>.</p><p>Bravo per l’impegno. Torna domani.</p></div><button class="big a11y-back" type="button">Torna alle domande</button>';
+        sec.querySelector('.a11y-back').addEventListener('click',function(){render();badge()});badge();return;
+      }
+      var c=queue[i],L='ABCD';
+      sec.innerHTML='<h2>Domande da rifare</h2><div class="progress"><i style="width:'+(i/queue.length*100)+'%"></i></div><p class="note">Domanda '+(i+1)+' di '+queue.length+(c.u?' · '+c.u:'')+'</p>'+
+        '<div class="q a11y-review a11y-rev"><div class="qt">'+c.q+'</div>'+c.o.map(function(o,k){return '<button class="opt" data-i="'+k+'"><b>'+L[k]+'</b><span>'+o+'</span></button>'}).join('')+
+        '<div class="fb" hidden></div><div class="how" hidden></div><div class="nxt"></div></div>';
+      var card=sec.querySelector('.q'),fb=card.querySelector('.fb'),how=card.querySelector('.how'),opts=card.querySelectorAll('.opt');
+      opts.forEach(function(o){o.addEventListener('click',function(){
+        var k=+o.dataset.i,ok=k===c.a;
+        opts.forEach(function(x){x.disabled=true;if(+x.dataset.i===c.a)x.classList.add('good')});
+        if(!ok)o.classList.add('bad');
+        var cards=load(),cc=cards.filter(function(x){return x.id===c.id})[0]||c;
+        if(ok){
+          if(!queue.retried||queue.retried.indexOf(c.id)<0)okc++;
+          cc.box=(cc.box||0)+1;
+          if(cc.box>STEP.length){cc.done=true;fb.textContent='Giusto! Questa domanda la sai: è imparata.'}
+          else{cc.due=inDays(STEP[cc.box-1]);fb.textContent='Giusto! La rivedi tra '+STEP[cc.box-1]+' giorni.'}
+          fb.className='fb okk';
+        }else{
+          cc.box=0;cc.due=inDays(1);
+          fb.textContent='Non è questa, ma non è un problema! La risposta giusta è la '+L[c.a]+'. Leggi come si fa qui sotto.';fb.className='fb nok';
+          (queue.retried=queue.retried||[]);
+          if(queue.retried.indexOf(c.id)<0){queue.retried.push(c.id);queue.push(c)}
+        }
+        fb.hidden=false;if(c.s){how.innerHTML=c.s;how.hidden=false}
+        cards=cards.map(function(x){return x.id===cc.id?cc:x});save(cards);badge();
+        var nx=card.querySelector('.nxt');nx.innerHTML='<button class="big" type="button">'+(i+1<queue.length?'Avanti →':'Fine')+'</button>';
+        nx.firstChild.addEventListener('click',function(){i++;step();window.scrollTo(0,0)});
+        if(easy)breakIn(card);
+      })});
+    }
+    step();
+  }
+  badge();
+  if(location.hash==='#oggi')showOggi();
+})();
+</script><!--/A11Y--><!--AGG--><script>
+(function(){
+ var B="20261118103817",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
