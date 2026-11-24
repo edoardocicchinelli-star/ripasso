@@ -248,7 +248,7 @@ const exScelte=mapGroup('Le scelte dell’impresa',l=>`<b>${l}</b>`,[
  ['Per iniziare un’attività produttiva servono…','dei finanziamenti, cioè risorse monetarie','Servono finanziamenti.',['solo dei macchinari','solo dei clienti']],
  ['Esistono due tipi di finanziamento:','capitale proprio e capitale di credito','Proprio e di credito.',['capitale fisso e variabile','capitale primario e terziario']],
  ['La start up può finanziarsi tramite…','il crowdfunding, cioè chiedendo di donare fondi sui social','Crowdfunding: donazioni sui social.',['la vendita della ditta','la liquidazione giudiziale']],
- ['I fattori produttivi sono…','la natura, il lavoro, il capitale, l’organizzazione e lo Stato per regolare l’attività','I fattori produttivi.',['solo il lavoro e il capitale','solo le materie prime']]]);
+ ['I fattori produttivi sono…','la natura, il lavoro, il capitale e l’organizzazione','I fattori produttivi.',['solo il lavoro e il capitale','solo le materie prime']]]);
 const exProdTot=()=>{
   const n=pick([50,100,120,200]),per=pick([5,8,10,12,15]),P=n*per;
   const k=rnd(0,2);
@@ -367,7 +367,7 @@ u3:[
  ['Settore primario','L’agricoltura, cioè la prima forma di attività economica.'],
  ['Settore secondario','Le imprese che operano nel piano industriale.'],
  ['Settore terziario','Prestazioni di servizio, per esempio trasporti o attività bancarie.'],
- ['Fattori produttivi','Natura, lavoro, capitale, organizzazione e Stato (per regolare l’attività).'],
+ ['Fattori produttivi','Natura, lavoro, capitale e organizzazione. Lo Stato regola l’attività.'],
  ['Produttività totale','La produzione complessivamente ottenuta impiegando una data quantità di un fattore.'],
  ['Produttività media','Produzione totale divisa per la quantità del fattore (per esempio gli operai).'],
  ['Produttività marginale','La variazione della produzione totale quando si aggiunge una unità del fattore.'],
@@ -481,7 +481,7 @@ u3:{
   card('ver','2 · I settori produttivi',
    TAB(['Settore','Che cosa comprende'],[['<b>Primario</b>','agricoltura: la prima forma di attività economica'],['<b>Secondario</b>','imprese che operano nel piano industriale'],['<b>Terziario</b>','prestazioni di servizio, per esempio trasporti o attività bancarie']])),
   card('gia','3 · I fattori produttivi',
-   '<p>Sono i beni e servizi utilizzati e realizzati dagli imprenditori:</p>'+LI(['la <b>natura</b>','il <b>lavoro</b>','il <b>capitale</b>','l’<b>organizzazione</b>','lo <b>Stato</b>, per regolare l’attività'])),
+   '<p>Sono i beni e servizi utilizzati e realizzati dagli imprenditori:</p>'+LI(['la <b>natura</b>','il <b>lavoro</b>','il <b>capitale</b>','l’<b>organizzazione</b>'])+'<p>Lo Stato non è un fattore: regola l’attività.</p>'),
   card('ros','4 · La produttività',
    TAB(['Tipo','Che cos’è','Esempio (100 operai, 1000 prodotti)'],[['<b>Totale</b>','produzione complessivamente ottenuta con una data quantità di quel fattore','1000'],['<b>Media</b>','produzione totale divisa per il numero di operai',M(F('1000','100')+' = 10')],['<b>Marginale</b>','variazione nella produzione totale con un operaio in più','da 1000 a 1015: 15']])),
   card('blu','5 · La legge dei rendimenti decrescenti',stepsHtml([
@@ -497,7 +497,7 @@ u3:{
  orale:[
   ['Come si finanzia un’impresa?','Servono finanziamenti, cioè risorse monetarie. Due tipi: capitale proprio (soldi propri) e capitale di credito (prestiti). I giovani possono usare la start up con il crowdfunding, chiedendo di donare fondi sui social.'],
   ['Quali sono i settori produttivi?','Primario (agricoltura, la prima forma di attività economica), secondario (imprese che operano nel piano industriale), terziario (prestazioni di servizio, come trasporti e attività bancarie).'],
-  ['Che cosa sono i fattori produttivi?','Sono la natura, il lavoro, il capitale, l’organizzazione e lo Stato, che regola l’attività.'],
+  ['Che cosa sono i fattori produttivi?','Sono la natura, il lavoro, il capitale e l’organizzazione. Lo Stato non è un fattore: regola l’attività.'],
   ['Spiega produttività totale, media e marginale.','La totale è la produzione complessiva ottenuta con una quantità di fattore. La media è la produzione totale divisa per la quantità del fattore. La marginale è la variazione della produzione totale quando si aggiunge un’unità del fattore.'],
   ['Che cos’è la legge dei rendimenti decrescenti?','Se si aumenta un solo fattore produttivo lasciando fermi gli altri, ogni aggiunta produce sempre meno.'],
  ],
@@ -587,7 +587,7 @@ const GLOSS=Object.values(DEFS).flat();
 const FORMULARIO=`
 <div class="box blu"><h3>Imprenditore e azienda</h3><p>Imprenditore (art. 2082): attività <b>economica, professionale, organizzata</b>, per produrre o scambiare beni e servizi.</p><p>Impresa familiare (art. 230 bis): decisioni a <b>maggioranza</b>; risponde il <b>titolare</b>.</p><p>Impresa = attività · Azienda = complesso dei beni (materiali, immateriali, contratti, debiti e crediti).</p></div>
 <div class="box ver"><h3>Avviamento e segni distintivi</h3><p><b>Avviamento</b>: attitudine a produrre reddito · divieto di concorrenza <b>5 anni</b>.</p><p><b>Ditta</b> = nome · <b>insegna</b> = locali · <b>marchio</b> = prodotti.</p></div>
-<div class="box gia"><h3>Le scelte dell’impresa</h3><p>Finanziamenti: <b>capitale proprio</b> / <b>di credito</b> (crowdfunding per le start up). Settori: <b>primario</b> (agricoltura), <b>secondario</b> (industria), <b>terziario</b> (servizi). Fattori: natura, lavoro, capitale, organizzazione, Stato.</p><p class="m">Produttività media = ${F('produzione totale','n. operai')} · marginale = variazione della produzione</p><p>Rendimenti decrescenti: ogni aggiunta di una risorsa produce sempre meno.</p></div>
+<div class="box gia"><h3>Le scelte dell’impresa</h3><p>Finanziamenti: <b>capitale proprio</b> / <b>di credito</b> (crowdfunding per le start up). Settori: <b>primario</b> (agricoltura), <b>secondario</b> (industria), <b>terziario</b> (servizi). Fattori: natura, lavoro, capitale, organizzazione.</p><p class="m">Produttività media = ${F('produzione totale','n. operai')} · marginale = variazione della produzione</p><p>Rendimenti decrescenti: ogni aggiunta di una risorsa produce sempre meno.</p></div>
 <div class="box ros"><h3>Costi, ricavi, profitto</h3><p class="m">profitto = ricavo − costi</p><p class="m">costo medio = ${F('costo totale','unità prodotte')} · ricavo medio = ${F('ricavo totale','quantità venduta')}</p><p>Marginale = aumento del totale con un’unità in più. Costi fissi (macchinari) / variabili (luce e gas): solo nel breve periodo.</p></div>
 <div class="box blu"><h3>Budget, pareggio, esternalità</h3><p>Budget: programma per l’esercizio futuro. Break-even: costi = ricavi. Successo: qualità, produttività, innovazione, velocità di risposta. Esternalità: effetti positivi e negativi su altri.</p></div>`;
 
@@ -950,7 +950,7 @@ CONT.u13={
    ['c)','<b>si dividono</b> i mercati o le fonti di approvvigionamento']])),
   card('ros','4 · Chi controlla: l’AGCM',stepsHtml([
    'Si chiama <b>Autorità garante della concorrenza e del mercato</b> e fu istituita dalla <b>legge 287 del 1990</b>.',
-   'Ha sede a <b>Roma</b>, opera in <b>piena autonomia</b> e indipendenza ed è formata da un <b>presidente</b> e <b>quattro componenti</b>, nominati per <b>sette anni</b>.',
+   'Ha sede a <b>Roma</b>, opera in <b>piena autonomia</b> e indipendenza ed è formata da un <b>presidente</b> e <b>due componenti</b>, nominati per <b>sette anni</b>.',
    'Vigila su <b>intese</b>, <b>abusi di posizione dominante</b> e <b>concentrazioni</b>.',
    'Può dare <b>sanzioni</b>: fino al <b>10%</b> del fatturato dell’impresa.'])),
   card('gia','5 · Per ricordare',stepsHtml([
@@ -963,7 +963,7 @@ CONT.u13={
  orale:[
   ['Quali sono le principali forme di accordo tra imprese: cartelli, consorzi, trust?','Il cartello è un accordo tra imprese concorrenti che invece di competere fissano i prezzi, limitano la produzione o si dividono i mercati. Il consorzio è un’organizzazione comune per svolgere alcune fasi delle imprese (art. 2602). Il trust unisce più imprese concorrenti sotto una direzione unica.'],
   ['Qual è la normativa antitrust in Italia?','È la legge 287 del 1990. Vieta le intese restrittive della concorrenza e l’abuso di posizione dominante e prevede il controllo delle concentrazioni.'],
-  ['Che cos’è l’Autorità garante della concorrenza e del mercato?','È l’autorità indipendente istituita con la legge 287 del 1990. Ha sede a Roma ed è formata da un presidente e quattro componenti. Vigila su intese, abusi di posizione dominante e concentrazioni e può dare sanzioni fino al 10% del fatturato.']],
+  ['Che cos’è l’Autorità garante della concorrenza e del mercato?','È l’autorità indipendente istituita con la legge 287 del 1990. Ha sede a Roma ed è formata da un presidente e due componenti. Vigila su intese, abusi di posizione dominante e concentrazioni e può dare sanzioni fino al 10% del fatturato.']],
  quiz:[
   ['Che cos’è un cartello?','Un accordo tra imprese concorrenti',['Una società cooperativa','Un tipo di marchio'],'Fissano prezzi o dividono i mercati.'],
   ['Qual è la legge antitrust italiana?','La legge 287 del 1990',['L’art. 41','L’art. 2598'],'Istituisce anche l’AGCM.'],
@@ -990,7 +990,7 @@ const FORMULARIO=`
  ['<b>Consorzio</b>','organizzazione comune di imprenditori (art. 2602)'],
  ['<b>Trust</b>','imprese concorrenti sotto una direzione unica (Standard Oil)'],
  ['<b>Legge 287/1990</b>','vieta intese restrittive e abuso di posizione dominante · controlla le concentrazioni'],
- ['<b>AGCM</b>','autorità indipendente · sede a Roma · presidente e 4 componenti · sanzioni fino al 10% del fatturato']])}</div>`;
+ ['<b>AGCM</b>','autorità indipendente · sede a Roma · presidente e 2 componenti · sanzioni fino al 10% del fatturato']])}</div>`;
 
 /* ========== DIRITTO 3 ES: GENERATORI ========== */
 const wy=(t,a)=>`<p>${t}</p><p>Risposta: ${B(a)}.</p>`;
@@ -1692,7 +1692,7 @@ if(location.hash==='#stampa')document.body.classList.add('print');
 })();
 </script><!--/A11Y--><!--AGG--><script>
 (function(){
- var B="20261124095115",t0=Date.now(),touched=false,last=0;
+ var B="20261124095716",t0=Date.now(),touched=false,last=0;
  ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
  function banner(){
   if(document.getElementById('agg'))return;
