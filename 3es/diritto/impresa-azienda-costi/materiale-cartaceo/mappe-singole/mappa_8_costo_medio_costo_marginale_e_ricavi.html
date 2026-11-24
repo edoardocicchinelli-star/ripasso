@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="it"><head><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mappa 8 · Costo medio, costo marginale e ricavi</title><style>
+.fr{display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 .18em}.fr>span{display:block;padding:0 .2em}.fr>span:first-child{border-bottom:1.1px solid currentColor}sub,sup{line-height:0;font-size:.72em}
+*{box-sizing:border-box}
+@page{size:A4 landscape;margin:7mm}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#1b1b1b;background:#fff}
+.page{width:282mm;height:195mm;position:relative;break-after:page;page-break-after:always;padding:0;overflow:hidden}
+.page:last-child{break-after:auto;page-break-after:auto}
+.hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.2mm}
+.kick{font-size:7.6pt;letter-spacing:.06em;color:#5b4a9c;text-transform:uppercase}
+h1{font-size:15.5pt;margin:0;color:#2c2763}
+.hint{font-size:7.4pt;color:#444;max-width:78mm;text-align:right;line-height:1.25}
+.open{border:1.6px solid #5b4a9c;border-radius:9px;padding:2.2mm 3.4mm;font-size:10.4pt;line-height:1.28;margin-bottom:2mm;display:flex;gap:3mm;align-items:baseline}
+.lab{font-size:6.6pt;letter-spacing:.07em;color:#777;text-transform:uppercase;white-space:nowrap;font-weight:bold}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 6mm}
+.col{display:flex;flex-direction:column}
+.card{border:1.6px solid var(--c);border-radius:8px;padding:1.4mm 2.6mm 1.4mm 7.5mm;position:relative;font-size:9.3pt;line-height:1.25;background:#fff}
+.card .n{position:absolute;left:2.4mm;top:1.6mm;font-size:8.6pt;color:#999}
+.card h3{margin:0 0 .5mm;font-size:9.4pt;color:var(--c);text-transform:uppercase;letter-spacing:.01em}
+.card p{margin:0}
+.it{font-size:.82em;color:#1a4a8a;font-style:normal}.tag{display:flex;align-items:center;gap:1.6mm;margin-top:1mm;font-size:7.6pt;color:#444}
+.chip{font-size:6.3pt;font-weight:bold;letter-spacing:.05em;padding:.2mm 1.4mm;border:1px solid var(--t);color:var(--t);border-radius:3px;white-space:nowrap}
+.conn{text-align:center;font-size:8pt;color:#3b3b9c;margin:.5mm 0;line-height:1}
+.conn span.p{border:1px solid #6a64c8;border-radius:9px;padding:.1mm 2.2mm;margin-left:1.2mm;background:#fff}
+.conn.top{text-align:right;padding-right:6mm}
+.bot{display:grid;grid-template-columns:64mm 1fr;gap:5mm;margin-top:2.2mm;align-items:stretch;height:25mm}
+.sch{border:1.4px solid #bbb;border-radius:9px;padding:1.4mm 2.4mm;background:#fff;display:flex;flex-direction:column}
+.sch .lab{margin-bottom:1mm}
+.sch svg{width:100%;height:100%;min-height:0;flex:1}
+.close{border:1.6px solid #2a6ec0;border-radius:9px;padding:2.4mm 4mm;display:flex;gap:4mm;align-items:center;font-size:12.4pt;line-height:1.3}
+.close .lab{font-size:6.8pt}
+@media screen and (max-width:900px){.page{width:auto;height:auto;padding:10px}.cols{grid-template-columns:1fr}.hint{display:none}.card,.open{font-size:15px}.card h3{font-size:15px}.tag{font-size:12px}.chip{font-size:10px}.conn{font-size:13px}.bot{grid-template-columns:1fr}.close{font-size:17px}h1{font-size:20px}}
+.big .page{width:auto;height:auto;padding:0 0 8mm}
+.big .cols{grid-template-columns:1fr}
+.big .card,.big .open{font-size:13pt;line-height:1.35}
+.big .card h3{font-size:13pt}
+.big .tag{font-size:11pt}.big .chip{font-size:9pt}.big .conn{font-size:11.5pt;margin:1.4mm 0}
+.big .bot{height:auto}.big .sch svg{height:auto;width:75%;max-width:120mm;margin:0 auto;flex:none}.big .card,.big .bot,.big .open{break-inside:avoid;page-break-inside:avoid}.big .conn{break-after:avoid;page-break-after:avoid}
+.big h1{font-size:19pt}.big .kick,.big .hint{font-size:10pt}.big .close{font-size:15pt}.big .bot{grid-template-columns:1fr}.big .lab{font-size:9pt}
+.page .card{font-size:10pt;line-height:1.22}.page .card h3{font-size:10pt}.page .tag{font-size:8.6pt}.page .chip{font-size:6.6pt}.page .conn{font-size:8.6pt}.page .open{font-size:11pt}.page .close{font-size:13.2pt}.page .bot{height:28mm}.page .fr{font-size:1.05em}.big .card{font-size:13pt!important}.big .card h3{font-size:13pt!important}.big .tag{font-size:11pt!important}.big .chip{font-size:9pt!important}.big .conn{font-size:11.5pt!important}.big .open{font-size:13pt!important}.big .close{font-size:15pt!important}.big .bot{height:auto!important}</style></head><body class=""><div class="page"><div class="hd"><div><div class="kick">Diritto · Classe III ES · Interrogazione 1 · per l’interrogazione</div><h1>Mappa 8 di 19 · Costo medio, costo marginale e ricavi</h1></div><div class="hint">Leggi in ordine: prima la colonna a sinistra (1–5), poi quella a destra (6–10). Le parole piccole sulle frecce sono i <b>collegamenti</b> che devi dire.</div></div><div class="open"><span class="lab">Per cominciare dico</span><span>Oggi parlo dei <b>costi</b> e dei <b>ricavi</b> divisi per unità: <b>costo medio</b>, <b>costo marginale</b>, <b>ricavo medio</b> e <b>ricavo marginale</b>.</span></div><div class="cols"><div class="col"><div class="card" style="--c:#8B2A1A"><span class="n">1</span><h3>Il costo medio</h3><p>Il <b>costo medio</b> è il costo totale <b>diviso</b> per le unità prodotte.</p><div class="tag"><span class="chip" style="--t:#6A3FA0">FORMULA</span><span>costo medio = <span class="fr"><span>costo totale</span><span>unità prodotte</span></span></span></div></div><div class="conn">↓<span class="p">cioè</span></div><div class="card" style="--c:#2E7D32"><span class="n">2</span><h3>Il costo marginale</h3><p>Il <b>costo marginale</b> è l’<b>aumento del costo totale</b> se produco <b>un’unità in più</b>.</p><div class="tag"><span class="chip" style="--t:#6A3FA0">FORMULA</span><span>costo marginale = costo totale nuovo − costo totale vecchio</span></div></div><div class="conn">↓<span class="p">poi</span></div><div class="card" style="--c:#4C7A1E"><span class="n">3</span><h3>Per distinguerli</h3><p>Il costo medio guarda <b>tutte</b> le unità. Il costo marginale guarda <b>solo l’ultima</b>.</p><div class="tag"><span class="chip" style="--t:#0F6E56">RICORDA</span><span>medio = per tutte · marginale = per l’ultima</span></div></div><div class="conn">↓<span class="p">per ricordare</span></div><div class="card" style="--c:#1F5FA8"><span class="n">4</span><h3>Economie di scala</h3><p>Le <b>economie di scala</b> sono la possibilità di produrre a <b>costi inferiori</b> aumentando la <b>quantità prodotta</b>.</p><div class="tag"><span class="chip" style="--t:#A8761D">PAROLA</span><span>più produco → meno costa ogni pezzo</span></div></div><div class="conn">↓<span class="p">un altro concetto</span></div><div class="card" style="--c:#A8245F"><span class="n">5</span><h3>Il ricavo totale</h3><p>Il <b>ricavo totale</b> è la <b>somma</b> incassata con la vendita in un certo <b>arco di tempo</b>.</p><div class="tag"><span class="chip" style="--t:#A8761D">PAROLA</span><span>ricavo totale = tutto ciò che incasso</span></div></div></div><div class="col"><div class="conn top">↳ <span class="p">ora i ricavi</span></div><div class="card" style="--c:#B8651B"><span class="n">6</span><h3>Il ricavo medio</h3><p>Il <b>ricavo medio</b> è il ricavo <b>per ogni unità venduta</b>.</p><div class="tag"><span class="chip" style="--t:#6A3FA0">FORMULA</span><span>ricavo medio = <span class="fr"><span>ricavo totale</span><span>quantità venduta</span></span></span></div></div><div class="conn">↓<span class="p">poi</span></div><div class="card" style="--c:#1F5FA8"><span class="n">7</span><h3>Il ricavo marginale</h3><p>Il <b>ricavo marginale</b> è l’<b>aumento del ricavo totale</b> se vendo <b>un’unità in più</b>.</p><div class="tag"><span class="chip" style="--t:#6A3FA0">FORMULA</span><span>ricavo marginale = ricavo nuovo − ricavo vecchio</span></div></div><div class="conn">↓<span class="p">poi</span></div><div class="card" style="--c:#B03A2E"><span class="n">8</span><h3>Il confronto</h3><p>I due «marginali» si calcolano allo stesso modo: <b>nuovo meno vecchio</b>.</p><div class="tag"><span class="chip" style="--t:#0F6E56">RICORDA</span><span>marginale = nuovo − vecchio</span></div></div><div class="conn">↓<span class="p">per ricordare</span></div><div class="card" style="--c:#2E7D32"><span class="n">9</span><h3>Costi e ricavi insieme</h3><p>Per ogni unità in più guardo <b>quanto costa</b> e <b>quanto rende</b>.</p><div class="tag"><span class="chip" style="--t:#0F6E56">RICORDA</span><span>costo marginale ↔ ricavo marginale</span></div></div><div class="conn">↓<span class="p">insieme</span></div><div class="card" style="--c:#0F6E56"><span class="n">10</span><h3>Perché serve</h3><p>Così l’imprenditore capisce il suo <b>profitto</b>.</p><div class="tag"><span class="chip" style="--t:#A8761D">PAROLA</span><span>profitto = ricavo − costi</span></div></div></div></div><div class="bot"><div class="sch"><div class="lab">Schema da indicare</div><svg viewBox="0 0 230 68" xmlns="http://www.w3.org/2000/svg"><rect x="3.0" y="6.0" width="110.5" height="30.0" rx="5" fill="#B03A2E" stroke="#B03A2E" stroke-width="1"/><text x="58.2" y="24.1" font-family="Arial,Helvetica,sans-serif" font-size="9" text-anchor="middle" fill="#fff" font-weight="bold">costo medio</text><rect x="116.5" y="6.0" width="110.5" height="30.0" rx="5" fill="#1F5FA8" stroke="#1F5FA8" stroke-width="1"/><text x="171.8" y="24.1" font-family="Arial,Helvetica,sans-serif" font-size="9" text-anchor="middle" fill="#fff" font-weight="bold">ricavo medio</text><rect x="3.0" y="39.0" width="110.5" height="30.0" rx="5" fill="#B03A2E" stroke="#B03A2E" stroke-width="1"/><text x="58.2" y="57.1" font-family="Arial,Helvetica,sans-serif" font-size="9" text-anchor="middle" fill="#fff" font-weight="bold">costo marginale</text><rect x="116.5" y="39.0" width="110.5" height="30.0" rx="5" fill="#1F5FA8" stroke="#1F5FA8" stroke-width="1"/><text x="171.8" y="57.1" font-family="Arial,Helvetica,sans-serif" font-size="9" text-anchor="middle" fill="#fff" font-weight="bold">ricavo marginale</text></svg></div><div class="close"><span class="lab">Per chiudere dico</span><span>Il <b>medio</b> si calcola <b>dividendo</b> per le unità. Il <b>marginale</b> guarda <b>un’unità in più</b>: <b>nuovo meno vecchio</b>.</span></div></div></div><script>window.addEventListener("load",function(){var r=[];document.querySelectorAll(".page").forEach(function(p,i){var b=p.querySelector(".bot");var e=b.getBoundingClientRect().bottom-p.getBoundingClientRect().top;var c=p.querySelector(".cols").getBoundingClientRect();var q=p.querySelector(".bot").getBoundingClientRect();r.push(i+1+":"+Math.round(e)+"/"+p.clientHeight+" cols"+Math.round(c.bottom-q.top))});document.title=r.join(" | ")})</script><!--AGG--><script>
+(function(){
+ var B="20261124095115",t0=Date.now(),touched=false,last=0;
+ ['click','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){touched=true},{once:true,passive:true})});
+ function banner(){
+  if(document.getElementById('agg'))return;
+  var d=document.createElement('div');d.id='agg';d.setAttribute('role','alert');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#b71c1c;color:#fff;padding:14px 16px;font:bold 18px Verdana,Arial,sans-serif;text-align:center';
+  d.innerHTML='\u00c8 disponibile una versione aggiornata. <button id="aggb" style="font:inherit;margin-left:8px;padding:8px 16px;border-radius:8px;border:2px solid #fff;background:#fff;color:#b71c1c;cursor:pointer">Aggiorna</button>';
+  document.body.appendChild(d);document.getElementById('aggb').onclick=function(){go(true)};
+ }
+ function go(){
+  fetch(location.href,{cache:'reload'}).then(function(){location.reload()},function(){location.reload()});
+ }
+ function check(){
+  if(Date.now()-last<30000)return;last=Date.now();
+  fetch("../../../../../version.json?t="+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+   if(!v||!v.build||v.build===B)return;
+   var tried=false;try{tried=sessionStorage.getItem('agg_'+v.build)==='1'}catch(e){}
+   if(!tried&&!touched&&Date.now()-t0<10000){try{sessionStorage.setItem('agg_'+v.build,'1')}catch(e){}go()}
+   else banner();
+  }).catch(function(){});
+ }
+ check();
+ document.addEventListener('visibilitychange',function(){if(!document.hidden)check()});
+})();
+</script><!--/AGG--></body></html>
